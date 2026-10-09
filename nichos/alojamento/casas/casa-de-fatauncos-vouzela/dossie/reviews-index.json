@@ -1,0 +1,1470 @@
+{
+  "versao": 1,
+  "reviews": [
+    {
+      "id": "B-001",
+      "titulo_original": "Octávio (Portugal) — nota 9,0/10",
+      "impressao_digital": "0abf9970f091faff62b9e9ad6378514c5abda0851138936aec3e2eaaadb6a920"
+    },
+    {
+      "id": "B-002",
+      "titulo_original": "Helga (Portugal) — nota 10/10",
+      "impressao_digital": "9802b9a1f3637ebfe45f115253231f2933febe1cbb60b616ce42629f8d0ff4bc"
+    },
+    {
+      "id": "B-003",
+      "titulo_original": "Miguel (Portugal) — nota 10/10",
+      "impressao_digital": "8025706bc28eb0ee4f7c25528b7d4dde2db93d7dbbe6d7547b70702db54bb9a9"
+    },
+    {
+      "id": "B-004",
+      "titulo_original": "Isabel (Portugal) — nota 10/10",
+      "impressao_digital": "8b397fdcbe1918373c82ff60b147f573af1c20a00be83ab3aafc848b1ab1e04b"
+    },
+    {
+      "id": "B-005",
+      "titulo_original": "Costa (Portugal) — nota 10/10",
+      "impressao_digital": "45616c2d12d4a8dd27947e7fbf5f00b5abc1cc3eba6131190d94790b1ac16b65"
+    },
+    {
+      "id": "B-006",
+      "titulo_original": "Silva (Portugal) — nota 10/10",
+      "impressao_digital": "cdb63641e0a0845a11a171fdb6decab98210644aa8c5007ca5926c9864bf5c1d"
+    },
+    {
+      "id": "B-007",
+      "titulo_original": "António (Portugal) — nota 10/10",
+      "impressao_digital": "ecb1c6aace347b72df8c3c77428c154491dd9e2e7af76eb668893bd97782defa"
+    },
+    {
+      "id": "B-008",
+      "titulo_original": "Alfredo (Portugal) — nota 9,0/10",
+      "impressao_digital": "0a122d2f0019890b02c709c0d27a1baebe512c5936b2438d759bafde12f3b3c5"
+    },
+    {
+      "id": "B-009",
+      "titulo_original": "José (Portugal) — nota 10/10",
+      "impressao_digital": "172200ad7e22bc569232fc493d5724aa8cd46ff344e81ab88fcb59bfd7038e4c"
+    },
+    {
+      "id": "B-010",
+      "titulo_original": "Eduarda (Portugal) — nota 10/10",
+      "impressao_digital": "afa61211d775f47b330d50c1ac4444b54f3084607b5243d61d356f79b03c2113"
+    },
+    {
+      "id": "B-011",
+      "titulo_original": "Fatima (Portugal) — nota 10/10",
+      "impressao_digital": "4fa054935db401b7d07fb0f3ecfd8c493550a4dc2c419e91528dda2736056109"
+    },
+    {
+      "id": "B-012",
+      "titulo_original": "Isabel (Portugal) — nota 10/10",
+      "impressao_digital": "8a74012577933a529f44ab1d3dc923ac95698d9ff68a81b0abbde08b86a3a34b"
+    },
+    {
+      "id": "B-013",
+      "titulo_original": "Cátia (Portugal) — nota 10/10",
+      "impressao_digital": "dd068d99e8507216292eb3af131551ba06a3030cd18e55efdcf1e143d872ef90"
+    },
+    {
+      "id": "B-014",
+      "titulo_original": "Inês (Portugal) — nota 10/10",
+      "impressao_digital": "3beadf3db23ac7e6c37dfdaba1c11249321f240e1320862af02a6337536b98d5"
+    },
+    {
+      "id": "B-015",
+      "titulo_original": "Carlos (Portugal) — nota 9,0/10",
+      "impressao_digital": "beefe9d0f4f1a5d9a490435a3c1d4dc30bf8e1f653eeebd2893b578cd554fe83"
+    },
+    {
+      "id": "B-016",
+      "titulo_original": "Paulo (Portugal) — nota 10/10",
+      "impressao_digital": "abbf3b0f7c9777151e3f37005cd6de78d5cd25a8023a708e6264be4905cb5a17"
+    },
+    {
+      "id": "B-017",
+      "titulo_original": "Walter (Portugal) — nota 10/10",
+      "impressao_digital": "0e0db7b74c835c0e46cae64a777dece2f1142a1a7bb08ffc9e742ae98f2b923b"
+    },
+    {
+      "id": "B-018",
+      "titulo_original": "Aida (Portugal) — nota 9,0/10",
+      "impressao_digital": "cadfa342bbdc029a3af10ba0bb12bd0facdbb89ba54600e6053946f68929e478"
+    },
+    {
+      "id": "B-019",
+      "titulo_original": "Ivanir (Brasil) — nota 10/10",
+      "impressao_digital": "55c291cf990d86829cac2c7bc9432cd33d9b50fb35aba4d1f60396cb3f84d936"
+    },
+    {
+      "id": "B-020",
+      "titulo_original": "Luis (Portugal) — nota 9,0/10",
+      "impressao_digital": "9884a4d433b9f93611b1633ca9c8a94cdb2d842224bf613a4bae142500587aab"
+    },
+    {
+      "id": "B-021",
+      "titulo_original": "Bruno (Portugal) — nota 10/10",
+      "impressao_digital": "72100f3cf7243f176d2b4282d0c4474f68346318b42b337feb5225dc055a9fb2"
+    },
+    {
+      "id": "B-022",
+      "titulo_original": "Ana (Portugal) — nota 10/10",
+      "impressao_digital": "a42d63b75943eaa13816cedec614da6551a9f92f2b8bcc2cba82a2c850278bf7"
+    },
+    {
+      "id": "B-023",
+      "titulo_original": "Octávio (Portugal) — nota 9,0/10",
+      "impressao_digital": "2ef4170f8d5685899533290b411679898cd4bba3794d43a20501f46102985ad4"
+    },
+    {
+      "id": "B-024",
+      "titulo_original": "Armanda (Portugal) — nota 10/10",
+      "impressao_digital": "904f8b70597c8bd23b6c248d1ea4e816308c7eec643f2595c40f8cccd1c8a72b"
+    },
+    {
+      "id": "B-025",
+      "titulo_original": "Lora (Portugal) — nota 10/10",
+      "impressao_digital": "25a3013efe922f04c4737071943ba5fee0bbc6f667fedac8bca1c213f74b1ade"
+    },
+    {
+      "id": "B-026",
+      "titulo_original": "Alda (Portugal) — nota 10/10",
+      "impressao_digital": "ce233cf41bf2020d29677ee385456998bd85865e8fc74685d7c602d016348327"
+    },
+    {
+      "id": "B-027",
+      "titulo_original": "Ana (Portugal) — nota 9,0/10",
+      "impressao_digital": "09e04cb5ab1a95cfd849af9d6fcdf2de036d1e0fb9be72180df15ed25d7bac10"
+    },
+    {
+      "id": "B-028",
+      "titulo_original": "Andreia (Portugal) — nota 10/10",
+      "impressao_digital": "e060fdacad82bf6b4a58a3deb06e474ab68a6326c8d625a052f289f2ed378933"
+    },
+    {
+      "id": "B-029",
+      "titulo_original": "José (Portugal) — nota 10/10",
+      "impressao_digital": "a634c1b4750cbae0a25997d479dd3d651b38d03bcd7ea1f85259becb562393e3"
+    },
+    {
+      "id": "B-030",
+      "titulo_original": "Angela (Portugal) — nota 10/10",
+      "impressao_digital": "8db31de2ef2d8bcb42fc2c35413f8965c124869607b727ae661293751da4c465"
+    },
+    {
+      "id": "B-031",
+      "titulo_original": "Elsa (Portugal) — nota 9,0/10",
+      "impressao_digital": "6ac65198587342095952b953665644be8478340b6cad95ee8cce931296919ed4"
+    },
+    {
+      "id": "B-032",
+      "titulo_original": "Maria (Portugal) — nota 10/10",
+      "impressao_digital": "101398bb998e0b95228c247884b3c50854ffa941080b1ab842bb9494bbf2db78"
+    },
+    {
+      "id": "B-033",
+      "titulo_original": "Daniel (Portugal) — nota 9,0/10",
+      "impressao_digital": "45d7f23467359a0515142b0a6c5baf908392691984899eb5b0186af2fb4a760b"
+    },
+    {
+      "id": "B-034",
+      "titulo_original": "Lídia (Portugal) — nota 10/10",
+      "impressao_digital": "33a69c92c76abdfc92c83578b10341b8e86b5aa138b619c281b15186a4267dad"
+    },
+    {
+      "id": "B-035",
+      "titulo_original": "Carlos (Portugal) — nota 10/10",
+      "impressao_digital": "674fd48e5491288d4488cde76e5e9440415a18d958a0d3afcc2f77cc104c1405"
+    },
+    {
+      "id": "B-036",
+      "titulo_original": "Raquel (Portugal) — nota 10/10",
+      "impressao_digital": "6a52a687f177607f1c6d93e4d237be6bfc036f36e7e2859828b8fca2aced3c69"
+    },
+    {
+      "id": "B-037",
+      "titulo_original": "Rosa (Portugal) — nota 10/10",
+      "impressao_digital": "daefed0b6b5142b12a8f7b9b97f3e6200c5860e0bd76520e33df4aaa2ff71692"
+    },
+    {
+      "id": "B-038",
+      "titulo_original": "Luís (Portugal) — nota 10/10",
+      "impressao_digital": "a1dae787b2d0f0de0e1f629cb34762561e86184a35e60060e5a9ab705bc1b04d"
+    },
+    {
+      "id": "B-039",
+      "titulo_original": "Luis (Suíça) — nota 10/10",
+      "impressao_digital": "f7083a07da45085f7407c3642f1f71398d45f6851b0278a83a119f8825ae0c5a"
+    },
+    {
+      "id": "B-040",
+      "titulo_original": "Ana (Portugal) — nota 8,0/10",
+      "impressao_digital": "fd6e4a58b2469cd942e56d2b35a67dc65a8d8adfa68269b94fd6769ddc84a1a5"
+    },
+    {
+      "id": "B-041",
+      "titulo_original": "Andreia (Portugal) — nota 10/10",
+      "impressao_digital": "b533ae81702342cd648ce5fcc65f9f0a019c49abdb2cff3bd9b63225ebb5b495"
+    },
+    {
+      "id": "B-042",
+      "titulo_original": "Raquel (Portugal) — nota 10/10",
+      "impressao_digital": "91d07c9c59592378e1379640af1955eecc13793d37fde81474309fc72a77ef47"
+    },
+    {
+      "id": "B-043",
+      "titulo_original": "Vasco (Portugal) — nota 10/10",
+      "impressao_digital": "23534c8793173e42ba74eba6775066aeae9c76c43789e73922e004d988bd5d63"
+    },
+    {
+      "id": "B-044",
+      "titulo_original": "Da (Portugal) — nota 10/10",
+      "impressao_digital": "f229d096dc3aaa208f8b2b5b86cc2e565fac16d50399a04b857bbbae704bb5b9"
+    },
+    {
+      "id": "B-045",
+      "titulo_original": "Andre (Portugal) — nota 10/10",
+      "impressao_digital": "e6d8abf64ffdc72e06a06b92e49b640f6da9948d6a3053528b3149a4aa94376a"
+    },
+    {
+      "id": "B-046",
+      "titulo_original": "Manuel (Portugal) — nota 10/10",
+      "impressao_digital": "4d3e8f6f5b9fa08f98d91ee7f3bd8cad26fc74c23e220385a6b12669670bdb55"
+    },
+    {
+      "id": "B-047",
+      "titulo_original": "Sérgio (Portugal) — nota 10/10",
+      "impressao_digital": "a46946ad8676e0b34592e7f5c0456d1580dd2b01a7d15a4c523dde70d5bb360c"
+    },
+    {
+      "id": "B-048",
+      "titulo_original": "Carlos (Portugal) — nota 9,0/10",
+      "impressao_digital": "e8d46bd5b94db0d6cd7b3a91693c295badea0a2bf44e10cbf844cd59bf836385"
+    },
+    {
+      "id": "B-049",
+      "titulo_original": "Jose (Portugal) — nota 10/10",
+      "impressao_digital": "ddccf8b2e918f0cbe1a54a9a44c5a33d8cc9d9747ee4c8d302c51efb0824e65e"
+    },
+    {
+      "id": "B-050",
+      "titulo_original": "Sergio (Portugal) — nota 10/10",
+      "impressao_digital": "1c69032d2da461c9a4b087711db21f217e9a3bef2d55a419f2ee701e9ed581df"
+    },
+    {
+      "id": "B-051",
+      "titulo_original": "Agna (Portugal) — nota 10/10",
+      "impressao_digital": "69912333c63182a6d58065d61f84a441e60c7e79a9716a8a2f89eea22cd02897"
+    },
+    {
+      "id": "B-052",
+      "titulo_original": "Almeida (Portugal) — nota 10/10",
+      "impressao_digital": "2cdc8b963a960e36f4c1d3d166e5dbad47d6b43dc76f715a692acf6cbae0409b"
+    },
+    {
+      "id": "B-053",
+      "titulo_original": "Ana (Portugal) — nota 10/10",
+      "impressao_digital": "b8ce353e064fc6d1f8b03ad07b1afff3b0e5b68221690cdead13e075f75a088d"
+    },
+    {
+      "id": "B-054",
+      "titulo_original": "José (Portugal) — nota 10/10",
+      "impressao_digital": "d5c4df2ce490c7cccce7ac73122b69173975737e7ab2b5db859c5f2a657c5eb9"
+    },
+    {
+      "id": "B-055",
+      "titulo_original": "André (Portugal) — nota 9,0/10",
+      "impressao_digital": "074abc01c5b0700aa0400372526ea6f4ce6007413ed2cbc832b7052beeb2771d"
+    },
+    {
+      "id": "B-056",
+      "titulo_original": "Joana (Portugal) — nota 10/10",
+      "impressao_digital": "5a8f6f0bdeb0b61d18c47747b22941552b35bf2f00a2b914d324f9c07dc9a6e3"
+    },
+    {
+      "id": "B-057",
+      "titulo_original": "Fatima (Portugal) — nota 10/10",
+      "impressao_digital": "2caa96d149a968357a21c423e3847fcfd6ae3de25c1609610f27a3f7ad82a223"
+    },
+    {
+      "id": "B-058",
+      "titulo_original": "Telma (Portugal) — nota 10/10",
+      "impressao_digital": "230bb95999297673e6b6d8bfeb32d80bf02c674457e5c84d62b91c20d23b93a4"
+    },
+    {
+      "id": "B-059",
+      "titulo_original": "Heitor (Portugal) — nota 9,0/10",
+      "impressao_digital": "ddd15ea227e64448b4d8d2cd159bf0475b7c5ee480431f3110133c06055511e0"
+    },
+    {
+      "id": "B-060",
+      "titulo_original": "Tiago (Portugal) — nota 9,0/10",
+      "impressao_digital": "8cc247a6d5f64e28fe1c771c5940077cc85ba3eba8096ebdaca95e6e6f998fed"
+    },
+    {
+      "id": "B-061",
+      "titulo_original": "António (Portugal) — nota 10/10",
+      "impressao_digital": "f96f0673a6f1d79e2549b0756a1221c029283f2904245270b24b1404f27ffa0b"
+    },
+    {
+      "id": "B-062",
+      "titulo_original": "Ana (Luxemburgo) — nota 10/10",
+      "impressao_digital": "e9d3fa95e1428167c21ba136fe0645cc385ee251134c30da02ce8444561799bb"
+    },
+    {
+      "id": "B-063",
+      "titulo_original": "Júlia (Portugal) — nota 10/10",
+      "impressao_digital": "30febcaba19132efae666ce973134edbcb3dff68ab94a892d0f9db35cc80d345"
+    },
+    {
+      "id": "B-064",
+      "titulo_original": "João (Portugal) — nota 9,0/10",
+      "impressao_digital": "8e0eb502020ac6307ccf75b56a5a3a6048996022c69b148ca95a57fc15a94208"
+    },
+    {
+      "id": "B-065",
+      "titulo_original": "Adriano (Portugal) — nota 10/10",
+      "impressao_digital": "fb520950ebbc1174ae118bc029cc40dce06aa88cc35f5cb77ff29db190989bde"
+    },
+    {
+      "id": "B-066",
+      "titulo_original": "Lima (Portugal) — nota 10/10",
+      "impressao_digital": "3432a9acc700df0e838913e3a4ffe6a4b611f458a51b10e773804ec69ed9b85f"
+    },
+    {
+      "id": "B-067",
+      "titulo_original": "Francisco (Portugal) — nota 10/10",
+      "impressao_digital": "b19d69210bac6afe0218eecab8913e2cc6dac9b4b9c0ad75c12b27ff14c1bd0c"
+    },
+    {
+      "id": "B-068",
+      "titulo_original": "Eduarda (Portugal) — nota 9,0/10",
+      "impressao_digital": "862f1c35ea045c42db3f0530e1f7e5e896cc3b059d7a12d650db488763663c81"
+    },
+    {
+      "id": "B-069",
+      "titulo_original": "Aristides (Portugal) — nota 10/10",
+      "impressao_digital": "4f4e8fc1c7b735c294b62d44bf125d3a15e053717853f93748e510a368b70741"
+    },
+    {
+      "id": "B-070",
+      "titulo_original": "Ana (Portugal) — nota 10/10",
+      "impressao_digital": "44d8a84fbf9e53c618e26ef944377fa57660232fbac7509515a4b5dfa3a72a46"
+    },
+    {
+      "id": "B-071",
+      "titulo_original": "Andreia (Portugal) — nota 9,0/10",
+      "impressao_digital": "5c9b55f7fea74586cc0c5ac962324dea682470453857d606ffb53ad504429721"
+    },
+    {
+      "id": "B-072",
+      "titulo_original": "Sonia (Portugal) — nota 9,0/10",
+      "impressao_digital": "d7d2d681b592a46ccdf222d3f6ba621449cad363ef3864f3986ac731b97cc840"
+    },
+    {
+      "id": "B-073",
+      "titulo_original": "Iljú (Portugal) — nota 9,0/10",
+      "impressao_digital": "557eae9c0a5c2dd2149befca393559d37f456608f1037794121e3c5e281d78a7"
+    },
+    {
+      "id": "B-074",
+      "titulo_original": "Jorge (Portugal) — nota 8,0/10",
+      "impressao_digital": "18681aa1382e7919a203e813b354b2000ae56a4e101fc16822cad23b6416100a"
+    },
+    {
+      "id": "B-075",
+      "titulo_original": "Paulo (Portugal) — nota 8,0/10",
+      "impressao_digital": "1ac42b1bb128499a0e087002c6305f729918d5e4e2632318e39603a092d1b884"
+    },
+    {
+      "id": "B-076",
+      "titulo_original": "Alexandre (Portugal) — nota 8,0/10",
+      "impressao_digital": "250f9492bf22ddab80e184748aea21ce04226e42b6113254a062e587b1158f5c"
+    },
+    {
+      "id": "B-077",
+      "titulo_original": "Mafalda (Portugal) — nota 8,0/10",
+      "impressao_digital": "acf81f9b476336ae2f6c3770fffdb6a6243e5434814b5e172e93e411943c133e"
+    },
+    {
+      "id": "B-078",
+      "titulo_original": "Jorge (Portugal) — nota 8,0/10",
+      "impressao_digital": "27edd1ffc64d0bfd4f254b4a5cd817463fc2484a9fb666094006d6d1295be03a"
+    },
+    {
+      "id": "B-079",
+      "titulo_original": "Inocêncio (Portugal) — nota 9,0/10",
+      "impressao_digital": "2f5dab826c6d155f75cce8e05955d073d3dbd75bffcb4b012c3c198937cbf0ac"
+    },
+    {
+      "id": "B-080",
+      "titulo_original": "Fernando (Portugal) — nota 10/10",
+      "impressao_digital": "825e2ecf4c3dcbb8ba00148630a1d117abf58752c87c783eca650c67eb4942a6"
+    },
+    {
+      "id": "B-081",
+      "titulo_original": "Rui (Portugal) — nota 8,0/10",
+      "impressao_digital": "145de1151c7b54d0c4bf85c0996520e85ce2563990431fbcb19a9f46760cf4a6"
+    },
+    {
+      "id": "B-082",
+      "titulo_original": "Santos (Portugal) — nota 9,0/10",
+      "impressao_digital": "7359237fc4264ae557fa8ce64e19b697a5a36b0c751dd8b7aa90cf8d902533bd"
+    },
+    {
+      "id": "B-083",
+      "titulo_original": "José (Portugal) — nota 9,0/10",
+      "impressao_digital": "9255c5bc33042903f9c5c92efbf1e82348de44a72421a1cec7ccbf973d395ff5"
+    },
+    {
+      "id": "B-084",
+      "titulo_original": "Tânia (Portugal) — nota 9,0/10",
+      "impressao_digital": "b0184afb730043d70b59f62d4d370cd2ccbea97fc811fd3f6ad6592bcdadea30"
+    },
+    {
+      "id": "B-085",
+      "titulo_original": "Eduardo (Portugal) — nota 9,0/10",
+      "impressao_digital": "72c98e3d21435d6479a3db0c7016a50ffb8a0a55290ee9c431b06c2f47ee868b"
+    },
+    {
+      "id": "B-086",
+      "titulo_original": "Miguel (Portugal) — nota 8,0/10",
+      "impressao_digital": "4f4315b6afd900123076b294ea25e2e529b61995a13530427d06dd9cdd89780a"
+    },
+    {
+      "id": "B-087",
+      "titulo_original": "José (Portugal) — nota 10/10",
+      "impressao_digital": "48f565ce6c24d6601bab07f657564ffb7a7cb89649565237d43ec13c01d59389"
+    },
+    {
+      "id": "B-088",
+      "titulo_original": "Cláudia (Portugal) — nota 10/10",
+      "impressao_digital": "ed739ab334eb787a38140d5f90ee95a75880a52b352117ef4208f353318d0097"
+    },
+    {
+      "id": "B-089",
+      "titulo_original": "Carlaamaral (Portugal) — nota 8,0/10",
+      "impressao_digital": "ea7fe457c0dc001fa84735fcac3b9748a6de153944017a00e6b1e48ced0652c7"
+    },
+    {
+      "id": "B-090",
+      "titulo_original": "Filipe (Portugal) — nota 9,0/10",
+      "impressao_digital": "0591d2456b28c3deb807c307d43f1baccc5327bebd3a311aca2eb1e179c6c2e3"
+    },
+    {
+      "id": "B-091",
+      "titulo_original": "Rodrigues (Portugal) — nota 10/10",
+      "impressao_digital": "137d3d4391cb477ddbab4260292fab4e2fe856bd59018187ee018396c32260fb"
+    },
+    {
+      "id": "B-092",
+      "titulo_original": "Eduardo (Portugal) — nota 5,0/10",
+      "impressao_digital": "06809ce47f220d7ff0672d53f72d91c81139c5a4e6796147556c6df12d35bfe1"
+    },
+    {
+      "id": "B-093",
+      "titulo_original": "Nicole (Portugal) — nota 10/10",
+      "impressao_digital": "0bc251ef69a5baa59706cbd303e4a764d87657cdf0e5c37cd37158e3f6c2b06e"
+    },
+    {
+      "id": "B-094",
+      "titulo_original": "Andreiaspesantos (Portugal) — nota 10/10",
+      "impressao_digital": "d5821f308ac85ab2b948742f54886b92bfdf9717c2d21beec8ba7c5b189be2a0"
+    },
+    {
+      "id": "B-095",
+      "titulo_original": "Rawlinson (Reino Unido) — nota 10/10",
+      "impressao_digital": "754d416c32e299a7c2120d40585c1844c3ba2c0399f09d680206efeb06366408"
+    },
+    {
+      "id": "B-096",
+      "titulo_original": "Steve (Estados Unidos da América) — nota 10/10",
+      "impressao_digital": "f2c1705554e720c98d05a3f4380feca12a5a8594f853e748c6753d09a5f9c053"
+    },
+    {
+      "id": "B-097",
+      "titulo_original": "Kezia (Reino Unido) — nota 10/10",
+      "impressao_digital": "14c04dd13fefa1d0ca33ea67d198167f6d81858b39da4cefa2d48b112e294f0d"
+    },
+    {
+      "id": "B-098",
+      "titulo_original": "Martin (Reino Unido) — nota 8,0/10",
+      "impressao_digital": "719d0d31819e015d594746d2292721d4e324a9e6b29caa475efacd574aba9220"
+    },
+    {
+      "id": "B-099",
+      "titulo_original": "Gail (Portugal) — nota 10/10",
+      "impressao_digital": "17c52dce6916303d2b6558f0f864257ff2819e6aae8ff9ee291237a08640ff31"
+    },
+    {
+      "id": "B-100",
+      "titulo_original": "Rubens (Panamá) — nota 9,0/10",
+      "impressao_digital": "731eadb6965d94437302dbfa449198a08d0824ef79d21c4036cfd42e548c37a8"
+    },
+    {
+      "id": "B-101",
+      "titulo_original": "Roman (Portugal) — nota 9,0/10",
+      "impressao_digital": "feb564f18771c6dd62fa43f1a1f7a09e6849fee380f73ead48b236a9b7f5e734"
+    },
+    {
+      "id": "B-102",
+      "titulo_original": "Osnat (Israel) — nota 10/10",
+      "impressao_digital": "370bb252c2da0db478dccc6f370d97fe21d12a64d9a04aee23cecbd967a75612"
+    },
+    {
+      "id": "B-103",
+      "titulo_original": "Leandrojbatista (Portugal) — nota 10/10",
+      "impressao_digital": "8d0398da207d017ed13e73cf8c59cefc3eb610b0932b9bebabfba81f54960a27"
+    },
+    {
+      "id": "B-104",
+      "titulo_original": "Lee-ann (Portugal) — nota 10/10",
+      "impressao_digital": "3280d7aa05e7cf6e7c6625c0fb14f36b35ac3e074bfe8e4b0ad4ff7b318ab2f9"
+    },
+    {
+      "id": "B-105",
+      "titulo_original": "Sueli (Reino Unido) — nota 10/10",
+      "impressao_digital": "b2b7f4b95e831ecc02a18d515aa23b7fa4db297966f24b34280f6a5650e84d9d"
+    },
+    {
+      "id": "B-106",
+      "titulo_original": "Aman (Estados Unidos da América) — nota 10/10",
+      "impressao_digital": "f160c57e03817a9950330abbc18745dc15dc3ff478c6cfb1f94bf1eda338e90d"
+    },
+    {
+      "id": "B-107",
+      "titulo_original": "Mykhailo (Ucrânia) — nota 10/10",
+      "impressao_digital": "529b374fc5324fcf8ac65e69b7160dd0d5a59a02d6721d38a82d4e531bc06cee"
+    },
+    {
+      "id": "B-108",
+      "titulo_original": "Hideki (Japão) — nota 10/10",
+      "impressao_digital": "e67ac6deb1992f12b12616017db8c02c931cb682a064c23e8a283cfb3a2a7d1f"
+    },
+    {
+      "id": "B-109",
+      "titulo_original": "Kerry (Estados Unidos da América) — nota 10/10",
+      "impressao_digital": "1255edde0736cc18d1ce7bcfcca5f799be6bb6b3ecc8b199a208a38263092430"
+    },
+    {
+      "id": "B-110",
+      "titulo_original": "Laura (Austrália) — nota 9,0/10",
+      "impressao_digital": "2bdc0c53abde3a0c34ea4bb0ef16eb856ceb23aca090abc8f38943fc2ae9a992"
+    },
+    {
+      "id": "B-111",
+      "titulo_original": "Jeff (Canadá) — nota 9,0/10",
+      "impressao_digital": "24e9b55a13c5d0228119e487c8aec880ef3c68d8b9fc1cc403264981a979eb7e"
+    },
+    {
+      "id": "B-112",
+      "titulo_original": "Caroline (Portugal) — nota 10/10",
+      "impressao_digital": "aef8148056d22687ee401d6ef0b9bb7ec947f98cd0f94c078731b5c36b925162"
+    },
+    {
+      "id": "B-113",
+      "titulo_original": "Cesone5844 (Espanha) — nota 10/10",
+      "impressao_digital": "688e54286cf7629c6515027e0bcc0e194e636530cc9e8f4440bdc25d8b958245"
+    },
+    {
+      "id": "B-114",
+      "titulo_original": "Aleida (Países Baixos) — nota 10/10",
+      "impressao_digital": "a9941a4bd0b6adbaf86284c7e8af89c999fb3f228b787fe02f8b2861dc75cf46"
+    },
+    {
+      "id": "B-115",
+      "titulo_original": "Rosa (Espanha) — nota 10/10",
+      "impressao_digital": "a219fa49388d8cf55d1121f275009a1749ca781822d06bca115e8db0b799508f"
+    },
+    {
+      "id": "B-116",
+      "titulo_original": "Michel (Bélgica) — nota 10/10",
+      "impressao_digital": "cb156ace6f1ce7401ae9e9d5d7c3673ef9aebed878fca29db83e1d5caacf5d10"
+    },
+    {
+      "id": "B-117",
+      "titulo_original": "Lionel (Portugal) — nota 10/10",
+      "impressao_digital": "289093bd9ad60e5ea5d5851abbe08d27efd0823454b500a48176d59800c09c50"
+    },
+    {
+      "id": "B-118",
+      "titulo_original": "Cornelia (Alemanha) — nota 10/10",
+      "impressao_digital": "8dc79593b64b390893e40568fb35aabeebee5cc246d67d323bfd0ff3b8908edf"
+    },
+    {
+      "id": "B-119",
+      "titulo_original": "Joaquim (França) — nota 10/10",
+      "impressao_digital": "bc731804a277f2494e75e94ff7e3f024d01170a475a67ed1d9ac9cf81edc00f7"
+    },
+    {
+      "id": "B-120",
+      "titulo_original": "Johannes (Países Baixos) — nota 9,0/10",
+      "impressao_digital": "e47cd12db32702d0bbf9f40c7dc3cbda433e71fcaf01e0ebe7e8f92d5fdd23fb"
+    },
+    {
+      "id": "B-121",
+      "titulo_original": "Hardrockoly (Espanha) — nota 10/10",
+      "impressao_digital": "ca28c70a48f6095797a47355d1e093b834510ad73355d26aec82a0c6e6a45a05"
+    },
+    {
+      "id": "B-122",
+      "titulo_original": "Bac (Espanha) — nota 9,0/10",
+      "impressao_digital": "521d24a9e1cbcb210d370b6e8352957ef97db4c429b181fa2a70cc254638e3a9"
+    },
+    {
+      "id": "B-123",
+      "titulo_original": "Nadya (Espanha) — nota 9,0/10",
+      "impressao_digital": "2ce1effa7d50ec3b0a9a4f113a776226420192d16fe672c8eaa7b9bbaaed19a6"
+    },
+    {
+      "id": "B-124",
+      "titulo_original": "Lola (Espanha) — nota 10/10",
+      "impressao_digital": "2f90a2e444e2c247226b95e5e284695ef862aecc1ceac9a26ec7235d1387248e"
+    },
+    {
+      "id": "B-125",
+      "titulo_original": "Jean-yves (França) — nota 10/10",
+      "impressao_digital": "81c3534de2020e441319c64bc2d17ad9922a8e850d7deef8726e15901c1d447d"
+    },
+    {
+      "id": "B-126",
+      "titulo_original": "Claus (Alemanha) — nota 10/10",
+      "impressao_digital": "f11cacc46d683d415c6f13df20c2b79be72e2baca35cffb73fbd91960ed372b7"
+    },
+    {
+      "id": "B-127",
+      "titulo_original": "Aleksandr (Portugal) — nota 10/10",
+      "impressao_digital": "88fd9303af504636f278e63fb6cdab71ebd90b95e33ed86f0c29890bd1208cd3"
+    },
+    {
+      "id": "B-128",
+      "titulo_original": "Eppel (Israel) — nota 9,0/10",
+      "impressao_digital": "253d3eda7f0dd92d3849ec2adbd5bc8561763e09c8ebc248067408e543ea4052"
+    },
+    {
+      "id": "B-129",
+      "titulo_original": "Carlos (Espanha) — nota 10/10",
+      "impressao_digital": "969d9e8b1c3a01eadd9460d8ca4304af10ec970991ce8a12f54a08db17951412"
+    },
+    {
+      "id": "B-130",
+      "titulo_original": "Alessandra (Espanha) — nota 10/10",
+      "impressao_digital": "9aa6e17261dbc71145a0f6c654f16cd928344d48f2a28ad8cbf09216a7d79e30"
+    },
+    {
+      "id": "B-131",
+      "titulo_original": "Carolina (Espanha) — nota 9,0/10",
+      "impressao_digital": "5d8ed7611fcd02d64e0af0d640cb77a2816d937969ef7ce92ac548a46670b998"
+    },
+    {
+      "id": "B-132",
+      "titulo_original": "Alejandra (Espanha) — nota 10/10",
+      "impressao_digital": "2cf9a5b6b20b84d1b6e2c1dd80b479f9ce8f4844b18cd0f25c060d6e6519226f"
+    },
+    {
+      "id": "B-133",
+      "titulo_original": "Carlos (Luxemburgo) — nota 10/10",
+      "impressao_digital": "dfe4a82077df11f6625f78c7f08216e0fefc1bb3beeff06e45f749c996e4814c"
+    },
+    {
+      "id": "B-134",
+      "titulo_original": "Miguel (Espanha) — nota 8,0/10",
+      "impressao_digital": "2f4760ea64298176b12d3facd9ce23fa8036eeb9690dd3a58c2052d35e082ec5"
+    },
+    {
+      "id": "B-135",
+      "titulo_original": "Felisa (Espanha) — nota 10/10",
+      "impressao_digital": "ff1380ed9d9cca57f27d88521e5e49b9139d792c061b8566a4a0f0b57d812d8c"
+    },
+    {
+      "id": "B-136",
+      "titulo_original": "Nirit (Israel) — nota 9,0/10",
+      "impressao_digital": "89cab90a1ba79d34e41a541c04304dad155c45088e8c258805f370a2f85c433b"
+    },
+    {
+      "id": "B-137",
+      "titulo_original": "Maha (França) — nota 9,0/10",
+      "impressao_digital": "660ce5ce9e0b3688d9c9359cf7f368941ee5b5a399d8b8f061de67375765a255"
+    },
+    {
+      "id": "B-138",
+      "titulo_original": "Isabel (Alemanha) — nota 10/10",
+      "impressao_digital": "db9f2b2f0777d5fa3db39a44a01f38aa9afaffa2a2f5cdc4b9174632b7eb0c7c"
+    },
+    {
+      "id": "B-139",
+      "titulo_original": "Rafael (Espanha) — nota 8,0/10",
+      "impressao_digital": "a0249a783f070400e11d49ccd475eeb15ccfbd62b770468d5974ad26a5367cdd"
+    },
+    {
+      "id": "B-140",
+      "titulo_original": "Teresa (Bélgica) — nota 8,0/10",
+      "impressao_digital": "ddbaf5662330e7eabf4f5bb0eb826f933619c63e3fc569eed4028daba6e72ed5"
+    },
+    {
+      "id": "B-141",
+      "titulo_original": "Manuel (Portugal) — nota 9,0/10",
+      "impressao_digital": "3034e79c33df70dc28aa4866b3c3e4d801345659c57e563f9139bdc416540455"
+    },
+    {
+      "id": "B-142",
+      "titulo_original": "Pereira (Portugal) — nota 10/10",
+      "impressao_digital": "1992bfaa246da0dc03e2399bef73a198c87630391600b722726496056b53b13a"
+    },
+    {
+      "id": "B-143",
+      "titulo_original": "Vitor (Portugal) — nota 10/10",
+      "impressao_digital": "7f82907a13a4e8b16950ace2ff890fbcdcb9e0ee9824cb38c573d3edc058858a"
+    },
+    {
+      "id": "B-144",
+      "titulo_original": "Jose (Portugal) — nota 7,0/10",
+      "impressao_digital": "cf4df31418f1ba57290687ba057ff87417b9ab0fc24e48c67df9b847159298c2"
+    },
+    {
+      "id": "T-001",
+      "titulo_original": "Antlitos — 05/2026",
+      "impressao_digital": "e92ebba0dbf6d94ef190918d93a80c61426b8c1ee900232538c3dcea2fc8f229"
+    },
+    {
+      "id": "T-002",
+      "titulo_original": "Celso Menezes Castro — 11/2024",
+      "impressao_digital": "7e1bc15005dcca6ae1ea2e12292d1fb6096cbddb1ebb1db30799cdd29b4aa58d"
+    },
+    {
+      "id": "T-003",
+      "titulo_original": "Rita B — 10/2023",
+      "impressao_digital": "3c51b19407d212aaf928fef31cbaa844cc173403fefb0c06c16ef11b83c8ed9b"
+    },
+    {
+      "id": "T-004",
+      "titulo_original": "Arménio Eusébio — 12/2022",
+      "impressao_digital": "f1f6852cc84aa7067459adf162488291d3f68391ac3fa3b8ea97e0c34075b503"
+    },
+    {
+      "id": "T-005",
+      "titulo_original": "ehelkur — 07/2021",
+      "impressao_digital": "e826d6709bc3e8c24758fa8717c3c1d729b489cb3aa8ccb907e140df38933ecc"
+    },
+    {
+      "id": "T-006",
+      "titulo_original": "José G — 07/2020",
+      "impressao_digital": "b165399584ab5b37c2da85e5979517e419463f228a8fe7ccaa0a5fcff2adee57"
+    },
+    {
+      "id": "T-007",
+      "titulo_original": "dluisneto — 06/2020",
+      "impressao_digital": "4cd8369a338def9f4831c6d685f7e4db54e4b740d12167a02188655c1436c5c1"
+    },
+    {
+      "id": "T-008",
+      "titulo_original": "M.C. — 03/2020",
+      "impressao_digital": "780669ab7ebe5fa235e21445729b1d3897231cedbee87eb8980c90ecb79aa7b6"
+    },
+    {
+      "id": "T-009",
+      "titulo_original": "J L Silva Santos — 12/2019",
+      "impressao_digital": "11bf354d62199a8e63226fde7777fb96edb234e0ead82ae101ad93c0c3acf2ab"
+    },
+    {
+      "id": "T-010",
+      "titulo_original": "Jose Mendinhos — 10/2019",
+      "impressao_digital": "a45d200946e35206d6454f6b3478f5ecfc9127bb8268adf3acc1d3dce6cf95fb"
+    },
+    {
+      "id": "T-011",
+      "titulo_original": "ritacosta00 — 08/2019",
+      "impressao_digital": "23b7d0fd3697bffc0056278a539be167bf16fb42bf35dfee02beef934864bbeb"
+    },
+    {
+      "id": "T-012",
+      "titulo_original": "Taxidiotis2014 — 08/2019",
+      "impressao_digital": "f4a9240c513436db8f323911e1c6350e1462860646747cf11c74fed3ef48f4ae"
+    },
+    {
+      "id": "T-013",
+      "titulo_original": "Jose M — 10/2018",
+      "impressao_digital": "92ec4c7274374ab4ec380e9dca12384fdc2a3db7aadf39863ffc8152a2e37c83"
+    },
+    {
+      "id": "T-014",
+      "titulo_original": "joseecmagalhaes — 10/2018",
+      "impressao_digital": "a9fd1e557354b49f67c2c2d790b74534a51be8ae9a953a71f6edfd1420c3d352"
+    },
+    {
+      "id": "T-015",
+      "titulo_original": "Vitor Manuel L — 09/2018",
+      "impressao_digital": "4f6d5666ffc3cf053f4404a736e60dca64c328e37248321ca026576725058653"
+    },
+    {
+      "id": "T-016",
+      "titulo_original": "Henrique O — 08/2018",
+      "impressao_digital": "8b5ecfb675235efa7d39fca00941169800706cd9ad643b5d8e36d6673c60319e"
+    },
+    {
+      "id": "T-017",
+      "titulo_original": "nat47160 — 07/2018",
+      "impressao_digital": "d3711b598538bd160107873d8565f7e7f7bb028e73ed062e76d364718e3255fa"
+    },
+    {
+      "id": "T-018",
+      "titulo_original": "Hugo B — 06/2018",
+      "impressao_digital": "fd08484eb01b7b1229a4cd07d0e72d9b2b91bb438f85a32b48a4db565607c22a"
+    },
+    {
+      "id": "T-019",
+      "titulo_original": "Ze S — 05/2018",
+      "impressao_digital": "6dce239193338883d16f5b6663206a81ca93348f557858bedb0e4ab4fa9d0368"
+    },
+    {
+      "id": "T-020",
+      "titulo_original": "laura k — 02/2018",
+      "impressao_digital": "8d5efdf9bcc31b71b8b8d309d90b6e12825a7751c945a915befdd1bff85def89"
+    },
+    {
+      "id": "T-021",
+      "titulo_original": "Rui F — 01/2018",
+      "impressao_digital": "d1955df7a945689dc8b649de6b07983c4b16b5abcd7b77b8610db094486ea834"
+    },
+    {
+      "id": "T-022",
+      "titulo_original": "Lia S — 11/2017",
+      "impressao_digital": "1a6fe0f62542707eea96feda1819f9aaec621071cce62fa4638a366522c513e3"
+    },
+    {
+      "id": "T-023",
+      "titulo_original": "Maria Isabel V — 08/2017",
+      "impressao_digital": "d257fd958faea6142aa5fdf4c4b95dfdd1393a4587c6c27a5143c1a862408fd9"
+    },
+    {
+      "id": "T-024",
+      "titulo_original": "MariaVMB — 08/2017",
+      "impressao_digital": "cc617f1d6586758323cc8a21be65bd2428111c2653ad93a4cc432f64b8e5e046"
+    },
+    {
+      "id": "T-025",
+      "titulo_original": "mariabatista1234 — 08/2017",
+      "impressao_digital": "97b992620c7aaa0f915d62e2e9a05eaecccfe5ae57b0781894d13373c803a31b"
+    },
+    {
+      "id": "T-026",
+      "titulo_original": "marsanz2015 — 07/2017",
+      "impressao_digital": "3903f2915ac341a17eb98c6c2abdac50fe0e2912a05a4b93c1f9f3f257f66b39"
+    },
+    {
+      "id": "T-027",
+      "titulo_original": "AnneFIDE — 06/2017",
+      "impressao_digital": "4d1dcae2aa982c636ca92731d5fbb5208586748cf78b7403c9ba85646a60d40d"
+    },
+    {
+      "id": "T-028",
+      "titulo_original": "Flávia B — 03/2017",
+      "impressao_digital": "8700baf6442656b5a5141ecc46a8f7b9f4061bb1290244301625d13006a65ff3"
+    },
+    {
+      "id": "T-029",
+      "titulo_original": "cucurralpa — 12/2016",
+      "impressao_digital": "29c5dc64572bf02c99483dcc616992fa5e97411f4d6f70f74223de56964d5a96"
+    },
+    {
+      "id": "T-030",
+      "titulo_original": "Carla F — 08/2016",
+      "impressao_digital": "5160ace1d9799a8f817f907f5bdfa1e53504d3e567a3d7d5681c785048dfe25f"
+    },
+    {
+      "id": "T-031",
+      "titulo_original": "MarcoCouto82 — 08/2016",
+      "impressao_digital": "ced9ac4b5decff8fcfb5fbb93fec50e191694d59d9072e30dfe329e6d6d653c1"
+    },
+    {
+      "id": "T-032",
+      "titulo_original": "Vitor Iria — 07/2016",
+      "impressao_digital": "dffa0697beeb56f9730ce25fc5a48ed018ca9098f23fa87ea90b12cef95e5533"
+    },
+    {
+      "id": "T-033",
+      "titulo_original": "boss5 — 04/2016",
+      "impressao_digital": "4e261feee016ccb7444f480bb5a5518bb2e6d2ab5230e8f344b1d987c67be04c"
+    },
+    {
+      "id": "T-034",
+      "titulo_original": "António M. Basto — 03/2016",
+      "impressao_digital": "e9ff35a6b6ff60481853caf1cbc8759c0f0cef63eaccad859b0df21337133e98"
+    },
+    {
+      "id": "T-035",
+      "titulo_original": "Luis S — 11/2015",
+      "impressao_digital": "8efe771a0102c045834dbd062492654ecfc14cd1411739ce112aa60eeb3b0dcb"
+    },
+    {
+      "id": "T-036",
+      "titulo_original": "Louise G — 10/2015",
+      "impressao_digital": "eebc510cfded320df24cc580af7c9f98fdeea1c801cf7c4d5a3ddc20aab61260"
+    },
+    {
+      "id": "T-037",
+      "titulo_original": "Eva A — 08/2015",
+      "impressao_digital": "c774b4224e27984f2f7972452c49153d3b9de0a973751be2a72c54656dcd4269"
+    },
+    {
+      "id": "T-038",
+      "titulo_original": "Patrícia S — 06/2015",
+      "impressao_digital": "2373ed23d6bc0e3e8d8c23e406b9200d846170ef520a67e55af0061dd309872b"
+    },
+    {
+      "id": "T-039",
+      "titulo_original": "Tome E — 05/2015",
+      "impressao_digital": "8660bb184c7aa90efb266a625ba72e116accca08bf72f635180c75dacca815a1"
+    },
+    {
+      "id": "T-040",
+      "titulo_original": "Mimi P — 04/2015",
+      "impressao_digital": "66c63e115b4822a33ed54ebb66d33a194a9a3fa5b12a0742633c686d2eeaf191"
+    },
+    {
+      "id": "T-041",
+      "titulo_original": "Edgar M — 04/2015",
+      "impressao_digital": "9c98b87f2b9176894637d5cf841be53404c5f643755aa733f0f50423e6e1d14a"
+    },
+    {
+      "id": "T-042",
+      "titulo_original": "PROTEU — 08/2014",
+      "impressao_digital": "dad9414ef24ed598d1d589bed73de09edfd4c8c625f65119d4cadec926e7a8c4"
+    },
+    {
+      "id": "T-043",
+      "titulo_original": "tugatourist — 07/2014",
+      "impressao_digital": "e5eddffe403e619cae46b8b619e34bb56d4981e1e70ed33f6c8a2fd4bc492c91"
+    },
+    {
+      "id": "T-044",
+      "titulo_original": "ecencia — 06/2014",
+      "impressao_digital": "9e4508cbdff7a6bb5a8ac3926749498bbdcfd46ee919463da8b2b601b717b5c8"
+    },
+    {
+      "id": "T-045",
+      "titulo_original": "Susana S — 04/2014",
+      "impressao_digital": "213b4addc6ffacc2e297ddbcbceaf074f5d8a01f7f69b670c53b5d27e0964692"
+    },
+    {
+      "id": "T-046",
+      "titulo_original": "MarianXica — 04/2014",
+      "impressao_digital": "eba914fdd8c21b6831e119828666dab74ffab14f6d869352253b803bf2f3414e"
+    },
+    {
+      "id": "T-047",
+      "titulo_original": "ddartt — 09/2012",
+      "impressao_digital": "4b85c6ae069adf6bceffbc12a7fedbc9e77f7ab82c40c28c06b15df00eef081c"
+    },
+    {
+      "id": "T-048",
+      "titulo_original": "Jetlagged787 — 09/2012",
+      "impressao_digital": "a51d5c4402ffa48a5899580b7afe02fc381fd1821bbd19db9cef6f1541bbbc34"
+    },
+    {
+      "id": "T-049",
+      "titulo_original": "CaetanoC — 07/2012",
+      "impressao_digital": "7910aa42d9148015ac28b044da1a082745863683fb1b852ccadf9d1810e9a63d"
+    },
+    {
+      "id": "T-050",
+      "titulo_original": "guysmum — 04/2011",
+      "impressao_digital": "11777f7b877b348797759f06ecbdf11ae1a1e450f4957a6c50addca45fd16531"
+    },
+    {
+      "id": "A-001",
+      "titulo_original": "Jose Carlos (Está na Airbnb há 1 ano) — 5/5",
+      "impressao_digital": "77deab8828b05b2c31c0fbe182aa8dfa7c92ec08f7f336afa2f8b330c7a00cfe"
+    },
+    {
+      "id": "A-002",
+      "titulo_original": "Carlos (Está na Airbnb há 3 anos) — 5/5",
+      "impressao_digital": "7ad07310cc37fdb14254c78fb6d481c6f673a64ff9d11b227a486c1501554291"
+    },
+    {
+      "id": "A-003",
+      "titulo_original": "Frank (Montreux, Suíça) — 5/5",
+      "impressao_digital": "a50d1cef4b68288cf047588116bd64929fefccbc7f4cc93bd2bcf23d8a825b41"
+    },
+    {
+      "id": "A-004",
+      "titulo_original": "Benno (Está na Airbnb há 7 anos) — 5/5",
+      "impressao_digital": "ccd67ddaeaa3b2ef346af499c5ccf14437d695e52c9476eba55aa10ab999f62c"
+    },
+    {
+      "id": "A-005",
+      "titulo_original": "Robert (Está na Airbnb há 8 anos) — 5/5",
+      "impressao_digital": "876fa916a43d6625540295c6261471260aaae5c5639b12ae4f9c9fbfcea189d7"
+    },
+    {
+      "id": "A-006",
+      "titulo_original": "Cesar (Está na Airbnb há 13 anos) — 5/5",
+      "impressao_digital": "920f56d59ee16242b27cc2c73859c97dd04aa3fc80e9378211a350c14ee7e03b"
+    },
+    {
+      "id": "A-007",
+      "titulo_original": "Inês (Está na Airbnb há 12 anos) — 5/5",
+      "impressao_digital": "1e27145b98a410dd6e646f54924e46f218ab869e302898bdb508a42c23146315"
+    },
+    {
+      "id": "A-008",
+      "titulo_original": "Pilar (Está na Airbnb há 9 anos) — 5/5",
+      "impressao_digital": "341d106b789ff1c9105dea58242cf2e4b9aed8ba0aef201fa0a38a59e73bec0e"
+    },
+    {
+      "id": "A-009",
+      "titulo_original": "Christine (San Rafael, Califórnia) — 5/5",
+      "impressao_digital": "d469e4256bfdd82e35918b1d60879b8cb84371b631d7cbb84bc1759966534ae2"
+    },
+    {
+      "id": "A-010",
+      "titulo_original": "Guillermina (Está na Airbnb há 11 anos) — 5/5",
+      "impressao_digital": "9b55fde78431995c203b329c6d449ad1f27319227f0797db5942be0ec98ea68f"
+    },
+    {
+      "id": "A-011",
+      "titulo_original": "Paloma (Está na Airbnb há 7 anos) — 5/5",
+      "impressao_digital": "48cfff401c811b7c5b4268c19d21da6f20f189fb5aa0f4457de34ca6c9de01b8"
+    },
+    {
+      "id": "A-012",
+      "titulo_original": "Kristian (Está na Airbnb há 9 anos) — 5/5",
+      "impressao_digital": "514fb7d2b8ef3f4f785d701147755e7396a06e75d36f4704b744a6b16a3b7a97"
+    },
+    {
+      "id": "A-013",
+      "titulo_original": "Silvia (Está na Airbnb há 12 anos) — 5/5",
+      "impressao_digital": "84a0da1a7ffef0ec8e53d9bee3f303c805d335d84a4b17b45bf1e7e186f239d0"
+    },
+    {
+      "id": "A-014",
+      "titulo_original": "Catarina (Está na Airbnb há 8 anos) — 5/5",
+      "impressao_digital": "cbd62b3b047fe4abb67e5c9771705ff274f43a9b82b07e3e655afed3118af164"
+    },
+    {
+      "id": "A-015",
+      "titulo_original": "Isabel (Está na Airbnb há 11 anos) — 5/5",
+      "impressao_digital": "e3dc3ecd5033345be3211ffbe2c88031455e00163987fa17c196d0e21a39cf1f"
+    },
+    {
+      "id": "A-016",
+      "titulo_original": "Megan (Está na Airbnb há 12 anos) — 5/5",
+      "impressao_digital": "6ba0f6be01e4359db6600a3f7ec1b2347c8cbdc0370aa5bfbdc4ea7e1883aa8f"
+    },
+    {
+      "id": "G-001",
+      "titulo_original": "Pontus Modig — 5/5",
+      "impressao_digital": "8f1b9ea310f12d60090ceb5df24e19b82a3a7d6bdcbe68521349a1bbc8797f17"
+    },
+    {
+      "id": "G-002",
+      "titulo_original": "Heidi — 5/5",
+      "impressao_digital": "2ad69fec6d2bfe38f786a07d9220516316b129ca7b53e7ac6d80853409e5d5ea"
+    },
+    {
+      "id": "G-003",
+      "titulo_original": "David Gebhardt — 5/5",
+      "impressao_digital": "81d4592523135d17cf8fa74a7194d18273646954cfe5eedd9f86df5f85063b80"
+    },
+    {
+      "id": "G-004",
+      "titulo_original": "Ady ka — 5/5",
+      "impressao_digital": "d7abbc08ae0c6e4ed93a62b66e685fd95bb65474c498eee521088b902d7aeb3c"
+    },
+    {
+      "id": "G-005",
+      "titulo_original": "Luis Lamela — 5/5",
+      "impressao_digital": "2986a1f2113336b6627915d88c0a565381046152aa5a52795bc671286a25bcbc"
+    },
+    {
+      "id": "G-006",
+      "titulo_original": "Manuel Costa — 5/5",
+      "impressao_digital": "52705381f1ccfdae40f3a205bce4f6a750e468d6bc5ac0df021d50af2591b231"
+    },
+    {
+      "id": "G-007",
+      "titulo_original": "Paula Ribeiro — 5/5",
+      "impressao_digital": "42ae03605392eec3bf240b519a1da50fa0e3c50f5042b84a49e4e1fd89d999a0"
+    },
+    {
+      "id": "G-008",
+      "titulo_original": "Carlos Robalo — 4/5",
+      "impressao_digital": "4afa917ac459278cc382bbf9907c09c564f1f580bce32976387d013cda9588e6"
+    },
+    {
+      "id": "G-009",
+      "titulo_original": "Ype Strikwerda — 5/5",
+      "impressao_digital": "f7c5ca41dfefbc2249a2b968f5c6bbdf434a68dd3d4aa4f347a1ce5122e5fed8"
+    },
+    {
+      "id": "G-010",
+      "titulo_original": "António Rodrigues — 5/5",
+      "impressao_digital": "89ff2b84aecc0d309828f8fef747a73708ca3a669439093affea02fe80fffdea"
+    },
+    {
+      "id": "G-011",
+      "titulo_original": "ARMENIO EUSEBIO — 5/5",
+      "impressao_digital": "80fc817fc9923b716a129e23d45020df8c36b0677e68687ec2282deb269bcc8c"
+    },
+    {
+      "id": "G-012",
+      "titulo_original": "Carlos Banza — 5/5",
+      "impressao_digital": "d4010b37d3d846d648da822793b894e1ba988211942e40ae5d6c1935b04f7a14"
+    },
+    {
+      "id": "G-013",
+      "titulo_original": "Patricia Queiros — 5/5",
+      "impressao_digital": "e5c1f2bff4f999d68be937630f446dbef5fe40d2d4c1a368590342a7399ad31b"
+    },
+    {
+      "id": "G-014",
+      "titulo_original": "Ana Salgado — 5/5",
+      "impressao_digital": "ac0376a3f45dc13b5d5ee51f43430e64e80559172f401d3b9c49a59428f610aa"
+    },
+    {
+      "id": "G-015",
+      "titulo_original": "Noortje Randag — 5/5",
+      "impressao_digital": "3033cd00c76aadd709c3009d862909891ab0ea062aebdb30c714388cee75aa9a"
+    },
+    {
+      "id": "G-016",
+      "titulo_original": "Fátima Pinto — 5/5",
+      "impressao_digital": "859691eceab8ac6c912f748868ab70988ea0c46fa832a7a183e521b434b5c912"
+    },
+    {
+      "id": "G-017",
+      "titulo_original": "Fernanda Gomes de Oliveira — 5/5",
+      "impressao_digital": "7ac2537cdf2e1e8cdd0c72543fd283d234cc7d3f50c237fcd45acd3d2a972cda"
+    },
+    {
+      "id": "G-018",
+      "titulo_original": "Fátima Costa — 5/5",
+      "impressao_digital": "2cd1a741ebe72db9753d40f30f18e05fbedf5e2988c32763e701556a18fc3fbe"
+    },
+    {
+      "id": "G-019",
+      "titulo_original": "Marta Oliveira — 4/5",
+      "impressao_digital": "6b3d85ec995102329e78a39a6827fa0190afc74131df02500d347bb763dfb9d0"
+    },
+    {
+      "id": "G-020",
+      "titulo_original": "Hugo Madeira — 5/5",
+      "impressao_digital": "08428f915fd15958fdbe2abcd301eae4fca6253bbaf2c65903722abf2667061d"
+    },
+    {
+      "id": "G-021",
+      "titulo_original": "Paulo Santos — 5/5",
+      "impressao_digital": "ddc778aa5d1048c1422ebca0f0a5e84e085f69255f9da09c6d12973cab2e8da8"
+    },
+    {
+      "id": "G-022",
+      "titulo_original": "Beatriz Sanjuan — 5/5",
+      "impressao_digital": "1e29ec4861ded384fb50db4ac0848ff23b96e7573ac0d9716ba3d39a4371a3de"
+    },
+    {
+      "id": "G-023",
+      "titulo_original": "Marineide Santos — 5/5",
+      "impressao_digital": "6428828a0ea220087d2ece793ff2bef88bda0583f18fe6c284914cfe215af408"
+    },
+    {
+      "id": "G-024",
+      "titulo_original": "Nuno Canha — 5/5",
+      "impressao_digital": "3c075cc19ab387045a7f22b5d9d3a0551cb7f99a9382523c203e1230d5ca4878"
+    },
+    {
+      "id": "G-025",
+      "titulo_original": "Sylvain LEBRETON — 5/5",
+      "impressao_digital": "27b2aa15e7aad8b66798d3059a4c79b0f6cb2c29626f40df8bbbdab6295bfeb9"
+    },
+    {
+      "id": "G-026",
+      "titulo_original": "Nuno Teixeira — 5/5",
+      "impressao_digital": "bee903c53c2e8cff26153474fc3c168a687685d61e71030cbbc421c6bc930458"
+    },
+    {
+      "id": "G-027",
+      "titulo_original": "Dora Saraiva — 5/5",
+      "impressao_digital": "278f43e7d05ac9dcf655ec20514a1ed6feee6875e27fe01f2d8af833e482a9cd"
+    },
+    {
+      "id": "G-028",
+      "titulo_original": "Joao Guedes — 5/5",
+      "impressao_digital": "f772667398ae01adaf5478b780016fc96936ddea62f9a0a4a07c35132a5de91d"
+    },
+    {
+      "id": "G-029",
+      "titulo_original": "José Carlos Rocha — 4/5",
+      "impressao_digital": "542baf4ff6779081f9c6fa7e52659a4e7716a072be77160cdc9aa555dee804b6"
+    },
+    {
+      "id": "G-030",
+      "titulo_original": "francisco pulido valente — 5/5",
+      "impressao_digital": "18cd63ec4bad48b65580b892742fe138e6dad4048426b875c66c7cb7a118ffae"
+    },
+    {
+      "id": "G-031",
+      "titulo_original": "André Valente — 5/5",
+      "impressao_digital": "42061a0f6e4758988b6a67092078e7b2a8517c89962d4861b3c3594fa5a31751"
+    },
+    {
+      "id": "G-032",
+      "titulo_original": "Carine Van der Vaart — 5/5",
+      "impressao_digital": "371e6811e5180ddd5ca5615fd8a269a665b4edc7223f7da48625e4de287f2e1b"
+    },
+    {
+      "id": "G-033",
+      "titulo_original": "filipe silva — 5/5",
+      "impressao_digital": "3646450c0086fecad9e02d03ac0b42d10b9323b1b869b19a6c682983ee6945a9"
+    },
+    {
+      "id": "G-034",
+      "titulo_original": "Maria Azevedo — 4/5",
+      "impressao_digital": "03eb429bdf20120233a6d385f08521d9fe0d93fa8bbff94a9236bc672e4bcd51"
+    },
+    {
+      "id": "G-035",
+      "titulo_original": "Joao Miguel — 5/5",
+      "impressao_digital": "ab0551fddd1fadcb176e966488f717d34faa72a3cb257ffaff39fd3b86c756c7"
+    },
+    {
+      "id": "G-036",
+      "titulo_original": "Marcelo L — 5/5",
+      "impressao_digital": "f870cf8d809e52ebad2a0f76cfa2296cfa1b28dfce7501b567d9c36eca2b72a5"
+    },
+    {
+      "id": "G-037",
+      "titulo_original": "João Oliveira — 4/5",
+      "impressao_digital": "585fec162b858fd14f5b9a89445e7f0e4a337b423c2e24133ba7c8a794abfb58"
+    },
+    {
+      "id": "G-038",
+      "titulo_original": "Javier Gutiérrez — 5/5",
+      "impressao_digital": "04767d0468e82eba74d1c39ca8190a25e9d3a139a48a80aa16fa894b1a3e3a06"
+    },
+    {
+      "id": "G-039",
+      "titulo_original": "Regina Tiago — 5/5",
+      "impressao_digital": "d71d7e309ce5864f1bd15214d2db0eb9a2447d05db0257a89494011bfb2d417a"
+    },
+    {
+      "id": "G-040",
+      "titulo_original": "Vince Deb — 5/5",
+      "impressao_digital": "5bb568dd9247fbbfad186229ba9167abde63468657047d8144fdfc32aafc6468"
+    },
+    {
+      "id": "G-041",
+      "titulo_original": "Maria del Pilar Sampedro — 5/5",
+      "impressao_digital": "993b0c6942db0808d14af19b843196a5ad1fb76b276dee8acdcee50646b3e231"
+    },
+    {
+      "id": "G-042",
+      "titulo_original": "Rosaria Pinto — 5/5",
+      "impressao_digital": "d28e97b51ac90b83d1ae9a332753de77507e6203fabea1175139dba8b3117a9c"
+    },
+    {
+      "id": "G-043",
+      "titulo_original": "Dora Couto — 5/5",
+      "impressao_digital": "8333649b6f442bdc729974645b0b00eadf35646b275def65a782ba230c14c146"
+    },
+    {
+      "id": "G-044",
+      "titulo_original": "Manuela Costa — 5/5",
+      "impressao_digital": "1d3cc11d2cee36f9ddd9b7eeb49ea737bc9af994e17f5476fd00a03291c45500"
+    },
+    {
+      "id": "G-045",
+      "titulo_original": "liliana lourenco — 5/5",
+      "impressao_digital": "7bbe893f545d32e9a9e6dcb2633ef9fdfd36ad5cfae99d9982a64196cdf96833"
+    },
+    {
+      "id": "G-046",
+      "titulo_original": "Sole Perez Mendez — 5/5",
+      "impressao_digital": "7b8b60a05fc042da4bd6fc9d6535ca4c20cbd3e126073b5f46b05a86374858aa"
+    },
+    {
+      "id": "G-047",
+      "titulo_original": "Marisela Silva — 5/5",
+      "impressao_digital": "91255cdd7dd5aa0626c3851ab23c810faf79bedbae360d4cf1a3cfad78ec0c2a"
+    },
+    {
+      "id": "G-048",
+      "titulo_original": "Carla Fernandes — 5/5",
+      "impressao_digital": "97aba7267435d8c3fccfbd95a7e0046e077f6fc3b0e992f3b834231385d11365"
+    },
+    {
+      "id": "G-049",
+      "titulo_original": "Francisco Amorim — 5/5",
+      "impressao_digital": "3708172185a0ddeb0f245eef12a45086b5e0824e5b3b9dbf9052e4e27e896416"
+    },
+    {
+      "id": "G-050",
+      "titulo_original": "Carlos Alberto — 5/5",
+      "impressao_digital": "b1c916c827e07e27df8c58393163bff7231ef509cb84f15f1963f78852c5e312"
+    },
+    {
+      "id": "G-051",
+      "titulo_original": "Ricardo Duarte — 5/5",
+      "impressao_digital": "1139bcce714875101ec6ae97978ed5e4e40560260def3ba0f7ac9c3f3ad2cf64"
+    },
+    {
+      "id": "G-052",
+      "titulo_original": "Carmo Ribeiro — 5/5",
+      "impressao_digital": "6863985b6a2403f32346b8d0b35dc2d0fe5f96e2a07198465380c0cd911c1050"
+    },
+    {
+      "id": "G-053",
+      "titulo_original": "Vitor Martins — 4/5",
+      "impressao_digital": "54eec45b06207df2116d926f390a86309c0790c5e24e150b24e8f56b18809639"
+    },
+    {
+      "id": "G-054",
+      "titulo_original": "marta ponte — 5/5",
+      "impressao_digital": "5b8440b78931d02ae23840dc3e39f31f91ab922fe935c2fc1b000a365c4aec35"
+    },
+    {
+      "id": "G-055",
+      "titulo_original": "Isabel Flora Marques — 5/5",
+      "impressao_digital": "380ed3fe7f329ba4ba816013c8078b845b2189c618b04b0c06de2d33b937941f"
+    },
+    {
+      "id": "G-056",
+      "titulo_original": "jp p — 4/5",
+      "impressao_digital": "a223c81f956e5a83d816b136ad96c89cd8c165885953ee6d64837c280575aa6d"
+    },
+    {
+      "id": "G-057",
+      "titulo_original": "Patrícia Leitão — 5/5",
+      "impressao_digital": "e4c68a7f84bb239224a8b103c00e2d411e9a9f5d64710327fe31f77f93c3c250"
+    },
+    {
+      "id": "G-058",
+      "titulo_original": "Rita Batista — 5/5",
+      "impressao_digital": "bd830f3ba8adc29946cf715ee29d782a941e6161c705fc51170a74aca3cd10e5"
+    },
+    {
+      "id": "G-059",
+      "titulo_original": "Alfredo Pereira — 5/5",
+      "impressao_digital": "2d49b21fa6d85495b0cbccc6aadcc3d2a32c3d8a13bf54244ffcaa1be406401c"
+    },
+    {
+      "id": "G-060",
+      "titulo_original": "Filipe Batista — 5/5",
+      "impressao_digital": "46ebee88388cbe601bc3a972d06918ee82091f00c1e5cd1143663ef405e03f7c"
+    },
+    {
+      "id": "G-061",
+      "titulo_original": "Patrícia Gil — 5/5",
+      "impressao_digital": "f990998ca6ad6edce366b438f842cbc736dca4dc3c93ded4187b308b6d96dd0b"
+    },
+    {
+      "id": "G-062",
+      "titulo_original": "Patrícia Frazao — 5/5",
+      "impressao_digital": "c3e1f4a4e9409019ca2a78ce9e8c90559c68c1263986c284ef80357c9933b482"
+    },
+    {
+      "id": "G-063",
+      "titulo_original": "António José Santos — 5/5",
+      "impressao_digital": "1f676318bf9f3d5ad15976a63944b49670446c45eead9dbee66a5611882605dd"
+    },
+    {
+      "id": "G-064",
+      "titulo_original": "BAC — 5/5",
+      "impressao_digital": "d882f91f95a402cdbd5772fe91384d6318ca0e2f7717ebe0ed3d5402c8f4b1b6"
+    },
+    {
+      "id": "G-065",
+      "titulo_original": "Ana Inocêncio — 5/5",
+      "impressao_digital": "0afe30e7d6e5bb874139ec90461a07be0a163b267cc598c9726146be70e868ca"
+    },
+    {
+      "id": "G-066",
+      "titulo_original": "Alexey Mikhnevich — 5/5",
+      "impressao_digital": "ad22dd22d0b74ebfde6274f56000ee817b01684264a848725c34ca399e1bae37"
+    },
+    {
+      "id": "G-067",
+      "titulo_original": "Ana Almeida — 5/5",
+      "impressao_digital": "14af7b703560d5b676baa248686ba93152b704d92c6adab531d898a33405119d"
+    },
+    {
+      "id": "G-068",
+      "titulo_original": "Agna Suely — 5/5",
+      "impressao_digital": "6f8cfb804ad3b0d5e8408bbd84607e518f077784117961c707bda3e6db4e8601"
+    },
+    {
+      "id": "G-069",
+      "titulo_original": "José António Moura Brito — 5/5",
+      "impressao_digital": "7c3be8bfa1374a3170f5e02494f6390a07b87291416fa652292d7fd08bc85070"
+    },
+    {
+      "id": "G-070",
+      "titulo_original": "Antonio Almeida — 3/5",
+      "impressao_digital": "92c50d34715531da3085934696892939d4a55a4183e5d13a762d69826bbc82b8"
+    },
+    {
+      "id": "G-071",
+      "titulo_original": "Rui Jorge Veiga Lima — 5/5",
+      "impressao_digital": "b82b84a845be0a6a3fa01323a270ee7cce2b5208de1ae26b87002e697e01fe0b"
+    },
+    {
+      "id": "G-072",
+      "titulo_original": "Jürgen Stelbrink — 5/5",
+      "impressao_digital": "2dd64f804db43a3ddb8aef8736f5d361921105c59595eaf755322f854533ae2f"
+    },
+    {
+      "id": "G-073",
+      "titulo_original": "Jose Silva — 4/5",
+      "impressao_digital": "a28852feb1c649ea2c9c490cbd5bde354b6da854d7355a43af4da02c2ee7f454"
+    },
+    {
+      "id": "G-074",
+      "titulo_original": "Isabel Oliveira — 5/5",
+      "impressao_digital": "795243a6f55fd181d67c6daf71174d72006a65850376dfd99d85e347188dc5f9"
+    },
+    {
+      "id": "G-075",
+      "titulo_original": "Paulo Chaves — 5/5",
+      "impressao_digital": "ff137680b791e08e264dc49d7c4af7ddbe3b3def80481c7e51b08938b535d206"
+    },
+    {
+      "id": "G-076",
+      "titulo_original": "Arlindo Quirino — 5/5",
+      "impressao_digital": "89f601a0c3e4d019c6501f48e4ab25f0cb54a466a0f217d80a8bc6414de025ee"
+    },
+    {
+      "id": "G-077",
+      "titulo_original": "Margarida Almeida — 5/5",
+      "impressao_digital": "4b1d14c099216f14cd953d991d24817484e949123d1bebcd65e113a4ef3ddde1"
+    },
+    {
+      "id": "G-078",
+      "titulo_original": "Victor Silva — 5/5",
+      "impressao_digital": "f632587bf3bd4de77957952aba4c0a2ecc3efc2a4c4a86df8e5d64758185ab29"
+    },
+    {
+      "id": "G-079",
+      "titulo_original": "Bernd Gaugele — 5/5",
+      "impressao_digital": "a9266e74f648e9a7b63c90fbacebce3abd82a2e07c35e87ee01d1f1f5860377a"
+    },
+    {
+      "id": "G-080",
+      "titulo_original": "Daniela Silva (Dani) — 5/5",
+      "impressao_digital": "fa753031c3044a9599da532091fdf0c3ac7398d8e1f1c6512cff03312421d9ca"
+    },
+    {
+      "id": "G-081",
+      "titulo_original": "Ana coutinho — 5/5",
+      "impressao_digital": "6ca413662f8d6fd622a31b80f363dcd53d36daffd953cfe0267213842a5b4074"
+    },
+    {
+      "id": "G-082",
+      "titulo_original": "ricardo rodrigues — 5/5",
+      "impressao_digital": "4fa933b9501ecc771ddd0a599fdaa46799c29023a14292f2f33fed94d830d40b"
+    },
+    {
+      "id": "G-083",
+      "titulo_original": "SANDRO EURORUBBER — 5/5",
+      "impressao_digital": "cc471bb08598d2dbd296e5f978f07116bae533521898a0ee3ce39a33db12560f"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "manifesto": {
+    "slug": "cerrado-dos-outeirinhos",
+    "revisao": "2026-09-21",
+    "prontidao": "com_limitacoes",
+    "notas": "Migração do dossiê legado. A morada, a classificação de suites, o voucher e a atribuição de fotografias a unidades permanecem condicionados ou bloqueados."
+  },
+  "entidades": [
+    {"id": "CASA-CER", "tipo": "casa", "nome": "Cerrado dos Outeirinhos"},
+    {"id": "TIPO-CER-DUPLO", "tipo": "tipo_quarto", "nome": "Quarto Duplo", "pai_id": "CASA-CER"},
+    {"id": "TIPO-CER-SUITE-JARDIM", "tipo": "tipo_quarto", "nome": "Suite com Entrada Jardim", "pai_id": "CASA-CER"},
+    {"id": "TIPO-CER-SUITE", "tipo": "tipo_quarto", "nome": "Suite", "pai_id": "CASA-CER"},
+    {"id": "ESPACO-CER-JARDIM", "tipo": "espaco", "nome": "Jardim", "pai_id": "CASA-CER"}
+  ],
+  "evidencias": [
+    {"id": "EVID-CER-RNT", "origem": "registo_publico", "entidade_ids": ["CASA-CER"], "local": "factos.md, Identificação", "bloco": "RNET 4538", "recolhido_em": "2026-09-19", "atualidade": "Registo público consultado na recolha."},
+    {"id": "EVID-CER-BOOKING", "origem": "plataforma", "entidade_ids": ["CASA-CER", "TIPO-CER-DUPLO", "TIPO-CER-SUITE-JARDIM", "TIPO-CER-SUITE"], "local": "factos.md, Capacidade e quartos; quartos.md", "bloco": "Tipos e políticas Booking", "recolhido_em": "2026-09-19", "atualidade": "Rever na plataforma antes de publicar políticas ou disponibilidade."},
+    {"id": "EVID-CER-SITE", "origem": "casa", "entidade_ids": ["CASA-CER", "ESPACO-CER-JARDIM"], "local": "factos.md, Refeições e Espaços", "bloco": "Site da casa", "recolhido_em": "2026-09-19", "atualidade": "Voz e factos publicados pela casa; verificar serviços temporários."},
+    {"id": "EVID-CER-B004", "origem": "hospede", "entidade_ids": ["CASA-CER", "TIPO-CER-SUITE-JARDIM"], "local": "reviews.md, B-004", "recolhido_em": "2026-09-19", "publicado_em": "2026-09-16"},
+    {"id": "EVID-CER-B013", "origem": "hospede", "entidade_ids": ["CASA-CER", "TIPO-CER-SUITE-JARDIM"], "local": "reviews.md, B-013", "recolhido_em": "2026-09-19", "publicado_em": "2026-09-06"},
+    {"id": "EVID-CER-FOTOS", "origem": "casa", "entidade_ids": ["CASA-CER", "ESPACO-CER-JARDIM"], "local": "marketing/fotos.md, Exterior", "bloco": "capa e jardim", "recolhido_em": "2026-09-19"}
+  ],
+  "afirmacoes": [
+    {"id": "AFIR-CER-TIPO", "entidade_id": "CASA-CER", "texto": "O Cerrado dos Outeirinhos é uma Casa de Campo registada no RNET sob o número 4538.", "natureza": "facto", "categoria": "geral", "origem": "registo_publico", "estado": "confirmado", "uso": "afirmar", "evidencia_ids": ["EVID-CER-RNT"]},
+    {"id": "AFIR-CER-CINFANES", "entidade_id": "CASA-CER", "texto": "A casa situa-se no concelho de Cinfães.", "natureza": "facto", "categoria": "geral", "origem": "registo_publico", "estado": "confirmado", "uso": "afirmar", "evidencia_ids": ["EVID-CER-RNT"]},
+    {"id": "AFIR-CER-CAPACIDADE", "entidade_id": "CASA-CER", "texto": "O RNT regista seis unidades de alojamento e doze utentes.", "natureza": "facto", "categoria": "inventario", "origem": "registo_publico", "estado": "confirmado", "uso": "afirmar", "evidencia_ids": ["EVID-CER-RNT"], "atualidade": "Não confundir com a classificação comercial das suites."},
+    {"id": "AFIR-CER-TIPOS-BOOKING", "entidade_id": "CASA-CER", "texto": "A página Booking observada vende Quarto Duplo, Suite com Entrada Jardim e Suite.", "natureza": "facto", "categoria": "inventario", "origem": "plataforma", "estado": "confirmado", "uso": "afirmar_com_condicao", "evidencia_ids": ["EVID-CER-BOOKING"], "ambito": {"canal": "Booking", "recolhido_em": "2026-09-19"}, "condicao": "Descrever como tipos observados no Booking na data de recolha, não como inventário completo ou classificação RNT."},
+    {"id": "AFIR-CER-PEQUENO-ALMOCO", "entidade_id": "CASA-CER", "texto": "O pequeno-almoço está incluído nas tarifas publicadas pela casa e no Booking observado.", "natureza": "facto", "categoria": "politica", "origem": "casa", "estado": "confirmado", "uso": "afirmar_com_condicao", "evidencia_ids": ["EVID-CER-SITE", "EVID-CER-BOOKING"], "ambito": {"tarifas": "publicadas ou observadas em 2026-09-19"}, "condicao": "Confirmar na tarifa selecionada antes de prometer ao visitante."},
+    {"id": "AFIR-CER-JARDIM", "entidade_id": "ESPACO-CER-JARDIM", "texto": "A casa publica fotografias e descrição de jardim e esplanadas.", "natureza": "facto", "categoria": "geral", "origem": "casa", "estado": "confirmado", "uso": "afirmar", "evidencia_ids": ["EVID-CER-SITE", "EVID-CER-FOTOS"]},
+    {"id": "AFIR-CER-MORADA", "entidade_id": "CASA-CER", "texto": "A morada tem um único número de porta confirmado.", "natureza": "facto", "categoria": "contacto", "origem": "plataforma", "estado": "conflitante", "uso": "nao_usar", "evidencia_ids": ["EVID-CER-RNT", "EVID-CER-BOOKING", "EVID-CER-SITE"], "atualidade": "As fontes divergem entre 62, 64/66 e 67."},
+    {"id": "AFIR-CER-SUITES", "entidade_id": "CASA-CER", "texto": "A classificação de suites é uniforme entre RNT, site e Booking.", "natureza": "facto", "categoria": "inventario", "origem": "plataforma", "estado": "conflitante", "uso": "nao_usar", "evidencia_ids": ["EVID-CER-RNT", "EVID-CER-BOOKING", "EVID-CER-SITE"]},
+    {"id": "AFIR-CER-VOUCHER", "entidade_id": "CASA-CER", "texto": "O voucher-presente está atualmente disponível.", "natureza": "facto", "categoria": "politica", "origem": "casa", "estado": "desconhecido", "uso": "nao_usar", "evidencia_ids": ["EVID-CER-SITE"]},
+    {"id": "AFIR-CER-DOCES-AUTORIA", "entidade_id": "CASA-CER", "texto": "D. Ana faz atualmente os doces do pequeno-almoço.", "natureza": "facto", "categoria": "geral", "origem": "hospede", "estado": "historico", "uso": "nao_usar", "evidencia_ids": ["EVID-CER-B013"], "atualidade": "A atribuição nominal surge em reviews antigas; provas recentes não confirmam a autoria."},
+    {"id": "AFIR-CER-BANHO-EIRA", "entidade_id": "TIPO-CER-SUITE-JARDIM", "texto": "Uma fotografia de casa de banho identifica a Suite Eira.", "natureza": "facto", "categoria": "inventario", "origem": "plataforma", "estado": "desconhecido", "uso": "nao_usar", "evidencia_ids": ["EVID-CER-BOOKING"]}
+  ],
+  "citacoes": [
+    {"id": "CIT-CER-ANFITRIAO", "review_id": "B-004", "texto_original": "Gostei muito do proprietário, o professor Zezé, da sua simpatia, o seu profissionalismo e dos seus conhecimentos.", "autor": "Alice", "plataforma": "Booking", "data": "2026-09-16", "lingua": "pt"},
+    {"id": "CIT-CER-SUITE", "review_id": "B-013", "texto_original": "Tudo espetacular. Ficamos na suite com entrada pelo jardim e era excecional.", "autor": "Filipa", "plataforma": "Booking", "data": "2026-09-06", "lingua": "pt"}
+  ],
+  "ativos": [
+    {"id": "ATIVO-CER-CAPA", "caminho": "marketing/fotos/capa.jpg", "dimensoes": {"largura": 3000, "altura": 2000}, "assunto": "Exterior da casa", "publicador": "casa", "entidade_confirmada": "CASA-CER", "uso": "utilizavel", "restricoes": ["Não atribuir a uma unidade ou serviço específico."]},
+    {"id": "ATIVO-CER-JARDIM", "caminho": "marketing/fotos/exterior/jardim-01.jpg", "dimensoes": {"largura": 3000, "altura": 2000}, "assunto": "Jardim da casa", "publicador": "plataforma", "entidade_confirmada": "ESPACO-CER-JARDIM", "uso": "utilizavel", "restricoes": ["Usar como fotografia de espaço comum; não inferir atividade ou estação."]}
+  ],
+  "decisoes": [
+    {"id": "DEC-CER-MORADA", "estado": "ativa", "efeito": "bloquear_uso", "texto": "Não publicar número de porta enquanto as fontes mantiverem conflito.", "decidido_em": "2026-09-21", "fonte": "migração Lote D, baseada em fontes.md", "afetados": ["AFIR-CER-MORADA"]},
+    {"id": "DEC-CER-SUITES", "estado": "ativa", "efeito": "bloquear_uso", "texto": "Não converter tipos de Booking, suites do site e inventário RNT numa classificação única.", "decidido_em": "2026-09-21", "fonte": "migração Lote D, baseada em factos.md", "afetados": ["AFIR-CER-SUITES", "AFIR-CER-BANHO-EIRA"]},
+    {"id": "DEC-CER-SERVICOS", "estado": "ativa", "efeito": "bloquear_uso", "texto": "Não prometer voucher atual nem atribuir doces a uma pessoa sem confirmação recente.", "decidido_em": "2026-09-21", "fonte": "migração Lote D, baseada em factos.md e pontos-fortes.md", "afetados": ["AFIR-CER-VOUCHER", "AFIR-CER-DOCES-AUTORIA"]}
+  ],
+  "cobertura": [
+    {"id": "COB-CER-IDENTIDADE", "fonte": "RNT, site e Booking", "material": "identidade", "estado": "completo_no_universo_observado", "superficie": "Identidade, tipo e concelho", "observado": 3, "recolhido": 3, "limitacao": "Morada com números de porta divergentes."},
+    {"id": "COB-CER-REVIEWS", "fonte": "Booking, Google e TripAdvisor", "material": "reviews", "estado": "parcial", "superficie": "823 reviews recolhidas no legado", "observado": 823, "recolhido": 823, "limitacao": "Não se repetiu a recolha nesta migração; conservadas as fontes existentes."},
+    {"id": "COB-CER-QUARTOS", "fonte": "Booking, site e RNT", "material": "quartos", "estado": "parcial", "superficie": "Tipos e inventário", "limitacao": "Divergência na classificação de suites e associação de fotografias."},
+    {"id": "COB-CER-FOTOS", "fonte": "Site, Booking e Facebook da casa", "material": "fotos", "estado": "parcial", "superficie": "Índice local de fotografias", "limitacao": "Instagram e álbuns Facebook completos exigiam sessão; apenas associações explícitas são utilizáveis."}
+  ]
+}

@@ -1,0 +1,1486 @@
+{
+  "modelo": "claude-haiku",
+  "atualizado": "2026-10-09T14:23:59.310Z",
+  "fotos": [
+    {
+      "id": "ATIVO-interior_quarto-01",
+      "assunto": "Cama de casal com vista para paisagem de socalcos do Douro através de duas janelas. Paredes revestidas em granito, toalhas brancas dobradas sobre a cama.",
+      "onde_esta_o_assunto": "Cama ocupa a metade de baixo e esquerda; janelas dominam a metade de cima com vista para paisagem em profundidade",
+      "ponto_focal": {
+        "x": 50,
+        "y": 45
+      },
+      "zona_segura": "A cama (terço de baixo) e pelo menos uma das janelas devem estar visíveis em cortes verticais e panorâmicos",
+      "luz": {
+        "tipo": "luz natural por janelas",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 5,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 5
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Quarto de casal com janelas e vista para o Douro",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#1F1714",
+        "#706960",
+        "#433B31",
+        "#8D9390",
+        "#F1F0EE"
+      ],
+      "desejo": 5,
+      "caminho": "marketing/fotos/interior/quarto-01.jpg",
+      "bytes": 493449,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-interior_cozinha-01",
+      "assunto": "Cozinha compacta com armários verdes e máquina de café numa parede de granito. Escada de madeira visível ao fundo esquerdo.",
+      "onde_esta_o_assunto": "Armários e máquina de café ocupam o terço central e direito; escada ao fundo; parede de pedra granito toda",
+      "ponto_focal": {
+        "x": 65,
+        "y": 45
+      },
+      "zona_segura": "Armários verdes e máquina de café devem permanecer visíveis",
+      "luz": {
+        "tipo": "interior com flash",
+        "hora_aparente": "indeterminada"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 3,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 3
+      },
+      "largura_maxima_px": 2400,
+      "mostra": "Cozinha compacta com armários verdes",
+      "pessoas": false,
+      "texto_ou_marcas": "placa de extintor de incêndio, números/símbolos na parede",
+      "cores_dominantes": [
+        "#968570",
+        "#9FA497",
+        "#725B43",
+        "#3B2F1F",
+        "#D5D3D5"
+      ],
+      "desejo": 2,
+      "caminho": "marketing/fotos/interior/cozinha-01.jpg",
+      "bytes": 559649,
+      "largura": 3000,
+      "altura": 1996
+    },
+    {
+      "id": "ATIVO-interior_sala-01",
+      "assunto": "Sala de estar com sofá cinzento, mesa de vidro frente, luminária artesanal com ramo de árvore ao centro. Paredes revestidas em madeira de pinheiro, pé direito duplo, janelas para exterior.",
+      "onde_esta_o_assunto": "Sofá centro-esquerda; mesa vidro à frente; luminária teto centro; madeira nas paredes envolvendo tudo",
+      "ponto_focal": {
+        "x": 40,
+        "y": 50
+      },
+      "zona_segura": "Sofá deve permanecer visível em qualquer corte",
+      "luz": {
+        "tipo": "luz natural misturada com interior",
+        "hora_aparente": "tarde"
+      },
+      "qualidade": {
+        "nitidez": 5,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 5
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Sala de estar com sofá e pé direito alto",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#1E1C17",
+        "#B1A79D",
+        "#5B4531",
+        "#7F7E75",
+        "#F1F2F1"
+      ],
+      "desejo": 4,
+      "caminho": "marketing/fotos/interior/sala-01.jpg",
+      "bytes": 339129,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-interior_quarto-02",
+      "assunto": "Quarto em sótão com teto de madeira inclinado e branco. Cama com roupa branca à direita, pufe azul à esquerda. Luz alaranjada entra pela porta aberta ao fundo.",
+      "onde_esta_o_assunto": "Cama terço direito; pufe terço esquerdo; teto inclinado abrange tudo; porta/luz ao fundo centro",
+      "ponto_focal": {
+        "x": 75,
+        "y": 50
+      },
+      "zona_segura": "Teto inclinado e cama devem estar visíveis em qualquer corte",
+      "luz": {
+        "tipo": "luz alaranjada artificial",
+        "hora_aparente": "indeterminada"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 3,
+        "exposicao": "contraste excessivo",
+        "artefactos": "nenhum",
+        "nota": 3
+      },
+      "largura_maxima_px": 2400,
+      "mostra": "Quarto em sótão",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#A5702A",
+        "#C7B18E",
+        "#364359",
+        "#81756F",
+        "#A0B2E0"
+      ],
+      "desejo": 3,
+      "caminho": "marketing/fotos/interior/quarto-02.jpg",
+      "bytes": 290200,
+      "largura": 3000,
+      "altura": 1996
+    },
+    {
+      "id": "ATIVO-interior_quarto-03",
+      "assunto": "Quarto em sótão com teto de madeira inclinado branco. Porta vermelha escuro à direita abrindo para outro espaço. Cama com roupa branca ao fundo. Coração decorativo dourado na parede.",
+      "onde_esta_o_assunto": "Cama ao fundo centro; porta vermelha direita; coração parede superior centro",
+      "ponto_focal": {
+        "x": 60,
+        "y": 40
+      },
+      "zona_segura": "Porta e cama devem estar visíveis em qualquer corte",
+      "luz": {
+        "tipo": "luz natural/artificial homogênea",
+        "hora_aparente": "indeterminada"
+      },
+      "qualidade": {
+        "nitidez": 5,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Quarto em sótão com porta vermelha",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#845231",
+        "#D7A787",
+        "#B27A55",
+        "#E2CCC4",
+        "#472514"
+      ],
+      "desejo": 3,
+      "caminho": "marketing/fotos/interior/quarto-03.jpg",
+      "bytes": 268555,
+      "largura": 3000,
+      "altura": 1996
+    },
+    {
+      "id": "ATIVO-interior_casa-de-banho-01",
+      "assunto": "Casa de banho com duche de vidro à esquerda, janela com portadas vermelhas escuras ao fundo. Lavatório branco redondo à direita sobre madeira. Azulejos de padrão colourido nas paredes, granito nalguma zona.",
+      "onde_esta_o_assunto": "Duche terço esquerdo; janela centro-fundo; lavatório direita; azulejos patchwork",
+      "ponto_focal": {
+        "x": 40,
+        "y": 50
+      },
+      "zona_segura": "Duche e janela devem estar visíveis em qualquer corte",
+      "luz": {
+        "tipo": "luz natural pela janela e artificial",
+        "hora_aparente": "indeterminada"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 3,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 3
+      },
+      "largura_maxima_px": 2400,
+      "mostra": "Casa de banho com duche de vidro e janela com portadas",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#B8B3A6",
+        "#9D9486",
+        "#796E60",
+        "#4C2C1F",
+        "#E5E6DC"
+      ],
+      "desejo": 3,
+      "caminho": "marketing/fotos/interior/casa-de-banho-01.jpg",
+      "bytes": 294092,
+      "largura": 3000,
+      "altura": 1996
+    },
+    {
+      "id": "ATIVO-interior_quarto-04",
+      "assunto": "Detalhe de cama com almofada estampada com padrão de folhas verdes. Toalhas brancas ao fundo. Luminária de cabeceira com vidro fosco ao lado.",
+      "onde_esta_o_assunto": "Almofada ocupa centro e frente da imagem; tecto de madeira inclinado acima; luminária à direita",
+      "ponto_focal": {
+        "x": 50,
+        "y": 55
+      },
+      "zona_segura": "Almofada e tecto devem estar visíveis",
+      "luz": {
+        "tipo": "luz artificial de luminária de cabeceira",
+        "hora_aparente": "noite"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 3,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 3
+      },
+      "largura_maxima_px": 2400,
+      "mostra": "Detalhe de cama em quarto com almofada",
+      "pessoas": false,
+      "texto_ou_marcas": "Casa da Alufinha em rodapé",
+      "cores_dominantes": [
+        "#301F10",
+        "#52422C",
+        "#8D6E44",
+        "#BAA790",
+        "#E5DEDA"
+      ],
+      "desejo": 2,
+      "caminho": "marketing/fotos/interior/quarto-04.jpg",
+      "bytes": 236615,
+      "largura": 3000,
+      "altura": 1996
+    },
+    {
+      "id": "ATIVO-interior_quarto-05",
+      "assunto": "Quarto em sótão com roupeiro de vidro e madeira à direita. Cadeira com almofada rosa à esquerda. Janela com vista para paisagem. Tecto de madeira inclinado.",
+      "onde_esta_o_assunto": "Roupeiro direita; cadeira esquerda; janela centro-topo; tecto inclinado todo",
+      "ponto_focal": {
+        "x": 60,
+        "y": 45
+      },
+      "zona_segura": "Roupeiro, cadeira e janela devem estar visíveis",
+      "luz": {
+        "tipo": "luz natural pela janela",
+        "hora_aparente": "dia"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 3,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 3
+      },
+      "largura_maxima_px": 2400,
+      "mostra": "Quarto em sótão com roupeiro",
+      "pessoas": false,
+      "texto_ou_marcas": "Casa da Alufinha em rodapé",
+      "cores_dominantes": [
+        "#836857",
+        "#6A4828",
+        "#3F2911",
+        "#948991",
+        "#BCD6D9"
+      ],
+      "desejo": 3,
+      "caminho": "marketing/fotos/interior/quarto-05.jpg",
+      "bytes": 299628,
+      "largura": 3000,
+      "altura": 1996
+    },
+    {
+      "id": "ATIVO-interior_sala-02",
+      "assunto": "Patamar em sótão com pufes coloridos (amarelo e verde com almofadas). Porta aberta ao fundo mostrando vista para exterior com paisagem. Parede de granito, chão de madeira.",
+      "onde_esta_o_assunto": "Pufes centro e frente; porta ao fundo centro; parede granito envolvendo",
+      "ponto_focal": {
+        "x": 50,
+        "y": 60
+      },
+      "zona_segura": "Pufes e porta devem estar visíveis",
+      "luz": {
+        "tipo": "luz natural pela porta aberta, interior com sombras",
+        "hora_aparente": "dia"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 2,
+        "exposicao": "contraste excessivo",
+        "artefactos": "nenhum",
+        "nota": 3
+      },
+      "largura_maxima_px": 2400,
+      "mostra": "Patamar em sótão com pufes e porta para exterior",
+      "pessoas": false,
+      "texto_ou_marcas": "Casa da Alufinha em rodapé",
+      "cores_dominantes": [
+        "#814F1C",
+        "#65380D",
+        "#3B210A",
+        "#817D77",
+        "#BFC6C9"
+      ],
+      "desejo": 3,
+      "caminho": "marketing/fotos/interior/sala-02.jpg",
+      "bytes": 305328,
+      "largura": 3000,
+      "altura": 1996
+    },
+    {
+      "id": "ATIVO-interior_cozinha-02",
+      "assunto": "Cozinha com armários verdes em forma de L. Janela com moldura vermelha à esquerda com vista exterior. Backsplash em granito natural. Eletrodomésticos em aço inox. Chão com padrão geométrico em tons de bege e cinzento.",
+      "onde_esta_o_assunto": "Armários ocupam dois lados; janela esquerda; backsplash centro; chão em primeiro plano",
+      "ponto_focal": {
+        "x": 50,
+        "y": 50
+      },
+      "zona_segura": "Armários verdes e janela devem estar visíveis",
+      "luz": {
+        "tipo": "luz natural pela janela e artificial",
+        "hora_aparente": "dia"
+      },
+      "qualidade": {
+        "nitidez": 5,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Cozinha com armários verdes",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#5B583F",
+        "#808166",
+        "#312419",
+        "#B6A99D",
+        "#E0E3EA"
+      ],
+      "desejo": 4,
+      "caminho": "marketing/fotos/interior/cozinha-02.jpg",
+      "bytes": 437490,
+      "largura": 3000,
+      "altura": 1996
+    },
+    {
+      "id": "ATIVO-interior_sala-03",
+      "assunto": "Sala de estar e jantar com sofá cinzento-verde, múltiplas janelas com vistas para o Douro. Paredes de madeira de pinheiro e granito. Luminária artesanal com ramo ao teto. Móvel branco, mesa de madeira, cadeira antiga.",
+      "onde_esta_o_assunto": "Sofá frente-esquerda; janelas topo; móvel branco e mesa centro; luminária teto; paredes madeira envolvem",
+      "ponto_focal": {
+        "x": 40,
+        "y": 50
+      },
+      "zona_segura": "Sofá e janelas devem estar visíveis em qualquer corte",
+      "luz": {
+        "tipo": "luz natural pelas janelas e artificial",
+        "hora_aparente": "dia"
+      },
+      "qualidade": {
+        "nitidez": 5,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 5
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Sala de estar e jantar com vistas para o Douro",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#2B251E",
+        "#96918A",
+        "#874F20",
+        "#61615C",
+        "#CACECC"
+      ],
+      "desejo": 5,
+      "caminho": "marketing/fotos/interior/sala-03.jpg",
+      "bytes": 441710,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-interior_detalhe-01",
+      "assunto": "Detalhe de escada com aparador branco ao fundo. Espelho redondo na parede de granito. Flores secas em primeiro plano desfocadas. Peixes decorativos pintados na parede. Luminária vintage pendurada.",
+      "onde_esta_o_assunto": "Flores secas em primeiro plano (desfocadas); aparador e espelho ao fundo; peixes parede; granito toda",
+      "ponto_focal": {
+        "x": 50,
+        "y": 40
+      },
+      "zona_segura": "Aparador, espelho e peixes devem estar visíveis ao desfocar primeiro plano",
+      "luz": {
+        "tipo": "luz artificial morna",
+        "hora_aparente": "noite"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 3,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 3
+      },
+      "largura_maxima_px": 2400,
+      "mostra": "Detalhe de escada com aparador e espelho",
+      "pessoas": false,
+      "texto_ou_marcas": "Casa da Alufinha em rodapé",
+      "cores_dominantes": [
+        "#5E4732",
+        "#3B2914",
+        "#AF9174",
+        "#746555",
+        "#A3B0C4"
+      ],
+      "desejo": 3,
+      "caminho": "marketing/fotos/interior/detalhe-01.jpg",
+      "bytes": 339522,
+      "largura": 3000,
+      "altura": 2104
+    },
+    {
+      "id": "ATIVO-interior_casa-de-banho-02",
+      "assunto": "Lavabo compacto com sanita à esquerda, lavatório ao centro com jarro com flores. Espelho redondo à direita pendurado com corda. Chão com padrão de azulejos colorido. Mala de primeiros socorros vermelha.",
+      "onde_esta_o_assunto": "Sanita terço esquerdo; lavatório centro; espelho direita; padrão colorido chão; vista vertical",
+      "ponto_focal": {
+        "x": 50,
+        "y": 50
+      },
+      "zona_segura": "Lavatório e espelho devem estar visíveis em cortes horizontais",
+      "luz": {
+        "tipo": "interior com artificial",
+        "hora_aparente": "indeterminada"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 3,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 3
+      },
+      "largura_maxima_px": 2000,
+      "mostra": "Lavabo compacto com padrão azulejo",
+      "pessoas": false,
+      "texto_ou_marcas": "Placa vermelha de primeiros socorros, símbolo farmácia verde",
+      "cores_dominantes": [
+        "#766F59",
+        "#8F958C",
+        "#5E4E2F",
+        "#3F2B0C",
+        "#AEBBB9"
+      ],
+      "desejo": 2,
+      "caminho": "marketing/fotos/interior/casa-de-banho-02.jpg",
+      "bytes": 301227,
+      "largura": 1996,
+      "altura": 3000
+    },
+    {
+      "id": "ATIVO-interior_quarto-06",
+      "assunto": "Cama de casal com dois grandes quadros decorativos de jarros com flores secas acima. Mesas de cabeceira brancas suspensas com luminárias de vidro fosco. Toalhas brancas dobradas em primeiro plano (três maços).",
+      "onde_esta_o_assunto": "Cama ocupa centro; quadros acima da cama; toalhas brancas frente; mesas cabeceira suspensos aos lados",
+      "ponto_focal": {
+        "x": 50,
+        "y": 50
+      },
+      "zona_segura": "Cama, quadros e toalhas devem estar visíveis",
+      "luz": {
+        "tipo": "artificial das luminárias",
+        "hora_aparente": "noite"
+      },
+      "qualidade": {
+        "nitidez": 5,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 5
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Quarto de casal com cama e decoração",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#AEA495",
+        "#A18364",
+        "#513316",
+        "#6E6965",
+        "#B8C8D2"
+      ],
+      "desejo": 4,
+      "caminho": "marketing/fotos/interior/quarto-06.jpg",
+      "bytes": 448097,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-interior_detalhe-02",
+      "assunto": "Jarro branco em primeiro plano com flores e folhas verdes dentro. Espelho redondo branco pendurado ao fundo desfocado. Parede de granito ao fundo. Foco seletivo no jarro.",
+      "onde_esta_o_assunto": "Jarro em primeiro plano frente-centro em foco; espelho ao fundo desfocado; granito fundo todo desfocado",
+      "ponto_focal": {
+        "x": 50,
+        "y": 40
+      },
+      "zona_segura": "Jarro deve estar visível e em foco",
+      "luz": {
+        "tipo": "luz natural suave",
+        "hora_aparente": "dia"
+      },
+      "qualidade": {
+        "nitidez": 5,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 2000,
+      "mostra": "Detalhe de jarro com flores",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#625240",
+        "#D9C9B5",
+        "#857461",
+        "#B8A795",
+        "#3C3627"
+      ],
+      "desejo": 3,
+      "caminho": "marketing/fotos/interior/detalhe-02.jpg",
+      "bytes": 155470,
+      "largura": 1536,
+      "altura": 2048
+    },
+    {
+      "id": "ATIVO-interior_quarto-07",
+      "assunto": "Cama de casal com dois grandes quadros decorativos com jarros e flores secas acima. Mesas de cabeceira brancas suspensas com luminárias com tons quentes. Toalhas brancas e azuis dobradas sobre a cama. Granito à esquerda.",
+      "onde_esta_o_assunto": "Cama centro; quadros acima; toalhas frente azuis/brancas; granito parede esquerda; luz solar diagonal",
+      "ponto_focal": {
+        "x": 50,
+        "y": 50
+      },
+      "zona_segura": "Cama, quadros e granito devem estar visíveis",
+      "luz": {
+        "tipo": "artificial das luminárias",
+        "hora_aparente": "noite"
+      },
+      "qualidade": {
+        "nitidez": 5,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 5
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Quarto de casal com cama e decoração",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#3C2D12",
+        "#A8A08E",
+        "#618FA4",
+        "#7D6E4A",
+        "#ADCBDE"
+      ],
+      "desejo": 4,
+      "caminho": "marketing/fotos/interior/quarto-07.jpg",
+      "bytes": 351814,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-interior_quarto-08",
+      "assunto": "Cama de casal com duas almofadas cinzentas grandes. Paredes de granito natural em toda volta. Duas janelas com molduras vermelhas escuras com vistas para o Douro. Luz solar branca forte sobre a cama.",
+      "onde_esta_o_assunto": "Cama centro; janelas ambos lados; granito todas paredes; luz solar diagonal clara",
+      "ponto_focal": {
+        "x": 50,
+        "y": 55
+      },
+      "zona_segura": "Cama, janelas e granito devem estar visíveis",
+      "luz": {
+        "tipo": "luz natural forte do sol",
+        "hora_aparente": "dia"
+      },
+      "qualidade": {
+        "nitidez": 5,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 5
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Quarto de casal com vistas para o Douro",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#1D1712",
+        "#423B30",
+        "#76736E",
+        "#A5A6A2",
+        "#FBFBFB"
+      ],
+      "desejo": 5,
+      "caminho": "marketing/fotos/interior/quarto-08.jpg",
+      "bytes": 610655,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-interior_detalhe-03",
+      "assunto": "Cómoda branca com três espelhos redondos pendurados acima. Jarras com flores secas sobre o móvel. Parede de granito à direita. Luz natural cria sombras de objetos decorativos na parede.",
+      "onde_esta_o_assunto": "Cómoda centro-frente; espelhos acima; jarras sobre móvel; granito direita; sombras parede esquerda",
+      "ponto_focal": {
+        "x": 50,
+        "y": 40
+      },
+      "zona_segura": "Espelhos, cómoda e jarras devem estar visíveis",
+      "luz": {
+        "tipo": "luz natural que cria sombras",
+        "hora_aparente": "dia"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 3,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 3
+      },
+      "largura_maxima_px": 2400,
+      "mostra": "Detalhe de móvel com decoração",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#BEA795",
+        "#A69385",
+        "#4F3F27",
+        "#6A573B",
+        "#8D7C69"
+      ],
+      "desejo": 3,
+      "caminho": "marketing/fotos/interior/detalhe-03.jpg",
+      "bytes": 346212,
+      "largura": 3000,
+      "altura": 1996
+    },
+    {
+      "id": "ATIVO-interior_casa-de-banho-03",
+      "assunto": "Lavatório branco retangular sobre plataforma de madeira com torneira termostática. Espelho retangular grande acima. Paredes com azulejos cinzentos e rosa pastel na metade inferior. Vasos com plantas, dispensador de sabonete e cesto decorativo.",
+      "onde_esta_o_assunto": "Lavatório centro-frente sobre madeira; espelho acima; azulejos cinzentos/rosa; decoração ambos lados",
+      "ponto_focal": {
+        "x": 50,
+        "y": 50
+      },
+      "zona_segura": "Lavatório e espelho devem estar visíveis em cortes horizontais",
+      "luz": {
+        "tipo": "interior com artificial overhead",
+        "hora_aparente": "indeterminada"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 3,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 3
+      },
+      "largura_maxima_px": 2000,
+      "mostra": "Casa de banho com lavatório de bancada",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#9A8979",
+        "#A8A5A1",
+        "#6E6356",
+        "#3C2B1A",
+        "#CFD3D7"
+      ],
+      "desejo": 3,
+      "caminho": "marketing/fotos/interior/casa-de-banho-03.jpg",
+      "bytes": 268357,
+      "largura": 2000,
+      "altura": 3000
+    },
+    {
+      "id": "ATIVO-interior_casa-de-banho-04",
+      "assunto": "Sanitário branco com bidé branco lado a lado. Parede com padrão de azulejos patchwork colorido com vários padrões geométricos e florais (verde, rosa, amarelo, azul, preto). Cesto de vime castanho. Paredes brancas acima da meia altura, azulejos abaixo.",
+      "onde_esta_o_assunto": "Sanitário-bidé esquerda/centro; padrão azulejo patchwork parede; cesto direita; chão cinzento",
+      "ponto_focal": {
+        "x": 50,
+        "y": 50
+      },
+      "zona_segura": "Sanitário, bidé e padrão azulejo devem estar visíveis",
+      "luz": {
+        "tipo": "interior com artificial",
+        "hora_aparente": "indeterminada"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 3,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 3
+      },
+      "largura_maxima_px": 2000,
+      "mostra": "Casa de banho com sanitário e bidé",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#A89E97",
+        "#BFB8B3",
+        "#DAD4D0",
+        "#827A70",
+        "#43392A"
+      ],
+      "desejo": 2,
+      "caminho": "marketing/fotos/interior/casa-de-banho-04.jpg",
+      "bytes": 336993,
+      "largura": 2000,
+      "altura": 3000
+    },
+    {
+      "id": "ATIVO-interior_casa-de-banho-05",
+      "assunto": "Duche com vidro fechado incolor. Sistema chuveiro termostático em aço inox com chuveiro de teto e suporte deslizante. Parede com padrão de azulejos patchwork colorido (vários padrões). Espelho branco à esquerda. Paredes lisas cinzentas acima meia altura.",
+      "onde_esta_o_assunto": "Duche centro ocupando espaço principal; padrão azulejo patchwork parede direita; espelho esquerda; chuveiro topo",
+      "ponto_focal": {
+        "x": 50,
+        "y": 50
+      },
+      "zona_segura": "Duche e padrão azulejo devem estar visíveis",
+      "luz": {
+        "tipo": "interior com artificial",
+        "hora_aparente": "indeterminada"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 3,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 3
+      },
+      "largura_maxima_px": 2000,
+      "mostra": "Casa de banho com duche",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#8B8883",
+        "#A9A8A7",
+        "#696760",
+        "#DDD8D5",
+        "#EFF3F9"
+      ],
+      "desejo": 3,
+      "caminho": "marketing/fotos/interior/casa-de-banho-05.jpg",
+      "bytes": 382374,
+      "largura": 2000,
+      "altura": 3000
+    },
+    {
+      "id": "ATIVO-interior_detalhe-04",
+      "assunto": "Detalhe de corredor com parede de granito. Banco/puff de palha trama natural com almofadas verdes e amarelas. Espelho redondo branco pendurado na parede. Gancho branco com toalha. Chão de madeira castanha.",
+      "onde_esta_o_assunto": "Banco frente-centro; parede granito fundo; espelho parede topo; gancho direita; madeira chão",
+      "ponto_focal": {
+        "x": 50,
+        "y": 60
+      },
+      "zona_segura": "Banco, espelho e granito devem estar visíveis",
+      "luz": {
+        "tipo": "luz natural suave",
+        "hora_aparente": "dia"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 3,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 3
+      },
+      "largura_maxima_px": 2000,
+      "mostra": "Detalhe de corredor com banco de palha",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#6B5943",
+        "#917B5D",
+        "#B5A38D",
+        "#DFD2C4",
+        "#3E3122"
+      ],
+      "desejo": 3,
+      "caminho": "marketing/fotos/interior/detalhe-04.jpg",
+      "bytes": 577182,
+      "largura": 1536,
+      "altura": 2048
+    },
+    {
+      "id": "ATIVO-exterior_piscina-01",
+      "assunto": "Piscina retangular com água turquesa clara. Espreguiçadeiras cinzentas em primeiro plano. Muro de pedra natural ao fundo com vinha verde envolvendo. Paisagem montanhosa verde atrás. Boia salva-vidas vermelha. Pérgola telha ao topo esquerda.",
+      "onde_esta_o_assunto": "Piscina ocupa centro e frente; espreguiçadeiras frente-laterais; muro fundo; paisagem topo; vinha envolvendo",
+      "ponto_focal": {
+        "x": 50,
+        "y": 50
+      },
+      "zona_segura": "Piscina e muro devem estar visíveis em qualquer corte",
+      "luz": {
+        "tipo": "sol alto e duro",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 5,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 5
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Piscina com espreguiçadeiras",
+      "pessoas": false,
+      "texto_ou_marcas": "Boia salva-vidas vermelha",
+      "cores_dominantes": [
+        "#D4CECA",
+        "#3B3F27",
+        "#857C4A",
+        "#3FB8C3",
+        "#11717E"
+      ],
+      "desejo": 5,
+      "caminho": "marketing/fotos/exterior/piscina-01.jpg",
+      "bytes": 941759,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-exterior_piscina-02",
+      "assunto": "Piscina retangular com água turquesa. Pérgola com telha vermelha ao topo esquerda com área de estar com almofadas brancas. Vinha verde luxuriante envolvendo a pérgola. Muro de pedra ao fundo. Paisagem montanhosa verde ao fundo.",
+      "onde_esta_o_assunto": "Piscina centro frente ocupando espaço; pérgola topo esquerda com almofadas; vinha ao redor; muro fundo; paisagem topo",
+      "ponto_focal": {
+        "x": 40,
+        "y": 50
+      },
+      "zona_segura": "Piscina e pérgola devem estar visíveis em qualquer corte",
+      "luz": {
+        "tipo": "sol alto e duro",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 5,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 5
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Piscina com pérgola e área de estar",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#2B2C1F",
+        "#0F130D",
+        "#545240",
+        "#D3CBC0",
+        "#978574"
+      ],
+      "desejo": 5,
+      "caminho": "marketing/fotos/exterior/piscina-02.jpg",
+      "bytes": 781313,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-exterior_cozinha-01",
+      "assunto": "Cozinha exterior com churrasqueira de granito de dois fogões. Bancada com revestimento de azulejo verde em tons pastéis. Mesa de madeira branca com bancos. Móvel/armário de madeira. Vaso com planta decorativa.",
+      "onde_esta_o_assunto": "Churrasqueira-bancada ocupam espaço central-traseiro; mesa frente; armário esquerda; parede branca fundo",
+      "ponto_focal": {
+        "x": 50,
+        "y": 50
+      },
+      "zona_segura": "Churrasqueira e bancada devem estar visíveis",
+      "luz": {
+        "tipo": "luz natural",
+        "hora_aparente": "dia"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 3,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 3
+      },
+      "largura_maxima_px": 2400,
+      "mostra": "Cozinha exterior com churrasqueira",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#A69C90",
+        "#7A644D",
+        "#2D261C",
+        "#D2CAC0",
+        "#F5F3EF"
+      ],
+      "desejo": 3,
+      "caminho": "marketing/fotos/exterior/cozinha-01.jpg",
+      "bytes": 538608,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-exterior_piscina-03",
+      "assunto": "Piscina retangular com água turquesa clara. Chapéus-de-sol em rosa/bege. Espreguiçadeiras brancas e cinzentas. Encosta com socalcos de vinha ao fundo. Paisagem montanhosa verde.",
+      "onde_esta_o_assunto": "Piscina centro; chapéus-de-sol topo e laterais; espreguiçadeiras frente; socalcos ao fundo",
+      "ponto_focal": {
+        "x": 50,
+        "y": 50
+      },
+      "zona_segura": "Piscina e socalcos devem estar visíveis em qualquer corte",
+      "luz": {
+        "tipo": "sol alto e duro",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 5,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 5
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Piscina com chapéus-de-sol",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#7C784C",
+        "#3B412E",
+        "#E7EEEE",
+        "#C0A888",
+        "#64A3B0"
+      ],
+      "desejo": 5,
+      "caminho": "marketing/fotos/exterior/piscina-03.jpg",
+      "bytes": 890811,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-exterior_piscina-04",
+      "assunto": "Piscina retangular com água turquesa. Casa de telhado vermelho escuro atrás (Casa da Alufinha). Espreguiçadeiras cinzentas. Grade de ferro verde ao fundo. Paisagem montanhosa verde. Chapéus-de-sol bege.",
+      "onde_esta_o_assunto": "Piscina centro; casa telhado vermelho topo-direita; grade ferro fundo; espreguiçadeiras laterais",
+      "ponto_focal": {
+        "x": 40,
+        "y": 40
+      },
+      "zona_segura": "Piscina e casa telhado devem estar visíveis em qualquer corte",
+      "luz": {
+        "tipo": "sol alto",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 5,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 5
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Piscina com casa de telhado vermelho atrás",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#8B7655",
+        "#444132",
+        "#4F898C",
+        "#D5CAC3",
+        "#9AC1C0"
+      ],
+      "desejo": 5,
+      "caminho": "marketing/fotos/exterior/piscina-04.jpg",
+      "bytes": 863579,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-exterior_piscina-05",
+      "assunto": "Piscina retangular com água turquesa. Grande muro de pedra ao fundo com vinha verde envolvendo. Pérgola de madeira ao topo. Espreguiçadeiras. Chapéu-de-sol rosa/bege. Paisagem montanhosa verde ao fundo.",
+      "onde_esta_o_assunto": "Piscina centro; muro pedra fundo ocupando espaço; pérgola topo; vinha no muro; paisagem topo",
+      "ponto_focal": {
+        "x": 50,
+        "y": 50
+      },
+      "zona_segura": "Piscina e muro devem estar visíveis em qualquer corte",
+      "luz": {
+        "tipo": "sol alto",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 5,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 5
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Piscina com muro de pedra e pérgola",
+      "pessoas": false,
+      "texto_ou_marcas": "Boia salva-vidas vermelha, sinalética azul",
+      "cores_dominantes": [
+        "#47472F",
+        "#7D714B",
+        "#BBA897",
+        "#DCD4CD",
+        "#50808C"
+      ],
+      "desejo": 5,
+      "caminho": "marketing/fotos/exterior/piscina-05.jpg",
+      "bytes": 863635,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-exterior_cozinha-02",
+      "assunto": "Cozinha exterior com churrasqueira de granito grande com encastre de fogão. Bancada de granito em ângulo. Armários de madeira ao lado. Parede de granito atrás. Tecto em construção (laje exposta). Vaso decorativo com vinha.",
+      "onde_esta_o_assunto": "Churrasqueira-bancada ocupam espaço central; armários madeira esquerda e direita; parede granito fundo",
+      "ponto_focal": {
+        "x": 50,
+        "y": 45
+      },
+      "zona_segura": "Churrasqueira devem estar visível",
+      "luz": {
+        "tipo": "luz natural",
+        "hora_aparente": "dia"
+      },
+      "qualidade": {
+        "nitidez": 3,
+        "ruido": 3,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 2
+      },
+      "largura_maxima_px": 2000,
+      "mostra": "Cozinha exterior em construção com churrasqueira",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#C3A891",
+        "#A7886C",
+        "#796144",
+        "#D8D4CF",
+        "#45372B"
+      ],
+      "desejo": 2,
+      "caminho": "marketing/fotos/exterior/cozinha-02.jpg",
+      "bytes": 990717,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-exterior_detalhe-01",
+      "assunto": "Rede de baloiço de macramé junto à piscina com vista para a água turquesa. Suportes de granito aos lados. Grade de metal preto ao fundo. Paisagem verde ao fundo. Vaso com planta ao lado.",
+      "onde_esta_o_assunto": "Rede macramé centro-frente ocupando espaço; suportes granito ambos lados; grade metal fundo; piscina ao lado direita",
+      "ponto_focal": {
+        "x": 50,
+        "y": 50
+      },
+      "zona_segura": "Rede deve estar visível em qualquer corte",
+      "luz": {
+        "tipo": "luz natural",
+        "hora_aparente": "dia"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 3,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Rede de baloiço junto à piscina",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#8D836C",
+        "#70623D",
+        "#EBE7DD",
+        "#383D26",
+        "#B7B29F"
+      ],
+      "desejo": 4,
+      "caminho": "marketing/fotos/exterior/detalhe-01.jpg",
+      "bytes": 838177,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-exterior_vista-01",
+      "assunto": "Pérgola de madeira com telha metálica. Área de estar com mesa de madeira e cadeiras de vime, sofá cinzento ao fundo. Vistas para paisagem de socalcos do Douro. Céu azul claro. Vegetação verdejante envolvente.",
+      "onde_esta_o_assunto": "Pérgola ocupa teto; mesa-cadeiras frente; sofá esquerda-fundo; paisagem socalcos todo fundo",
+      "ponto_focal": {
+        "x": 50,
+        "y": 50
+      },
+      "zona_segura": "Pérgola e mesa devem estar visíveis em qualquer corte",
+      "luz": {
+        "tipo": "sol alto",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 5,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 5
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Pérgola com área de estar e vista para o Douro",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#787240",
+        "#44492F",
+        "#B0966F",
+        "#D6D1CD",
+        "#74B0C4"
+      ],
+      "desejo": 5,
+      "caminho": "marketing/fotos/exterior/vista-01.jpg",
+      "bytes": 940308,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-exterior_detalhe-02",
+      "assunto": "Sofá de vime cinzento com almofadas estampadas. Plantas e flores em primeiro plano. Vinha verde ao fundo. Varanda com grade de ferro. Paisagem montanhosa verde desfocada ao fundo.",
+      "onde_esta_o_assunto": "Sofá ocupa terço central; plantas frente-lado esquerdo em foco; vinha fundo; grade varanda fundo",
+      "ponto_focal": {
+        "x": 50,
+        "y": 50
+      },
+      "zona_segura": "Sofá deve estar visível em qualquer corte",
+      "luz": {
+        "tipo": "luz natural suave",
+        "hora_aparente": "dia"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 3,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 3
+      },
+      "largura_maxima_px": 2400,
+      "mostra": "Detalhe de sofá de vime exterior",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#3E3A1F",
+        "#695D36",
+        "#ABA592",
+        "#988750",
+        "#E4DED0"
+      ],
+      "desejo": 3,
+      "caminho": "marketing/fotos/exterior/detalhe-02.jpg",
+      "bytes": 591788,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-exterior_detalhe-03",
+      "assunto": "Árvore em vaso sobre mesa de madeira clara. Sombra nítida da árvore projetada na madeira. Paisagem verde com varanda de madeira ao fundo desfocada. Luz solar direta.",
+      "onde_esta_o_assunto": "Árvore-vaso centro-frente; sombra sobre mesa; paisagem varanda fundo; luz solar cria contraste",
+      "ponto_focal": {
+        "x": 50,
+        "y": 40
+      },
+      "zona_segura": "Árvore e sombra devem estar visíveis",
+      "luz": {
+        "tipo": "sol direto",
+        "hora_aparente": "dia"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 3,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 3
+      },
+      "largura_maxima_px": 2400,
+      "mostra": "Detalhe de árvore em vaso",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#D2AA88",
+        "#A38B51",
+        "#6C6435",
+        "#2E2F21",
+        "#DDD9D6"
+      ],
+      "desejo": 3,
+      "caminho": "marketing/fotos/exterior/detalhe-03.jpg",
+      "bytes": 353827,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-exterior_piscina-06",
+      "assunto": "Piscina retangular com água turquesa. Grande muro de pedra natural ao fundo. Pérgola de madeira ao topo com telha metálica. Espreguiçadeiras e chapéu-de-sol. Boia salva-vidas vermelha. Encosta com vinha ao fundo.",
+      "onde_esta_o_assunto": "Piscina centro; muro pedra fundo ocupando espaço; pérgola topo; espreguiçadeiras laterais; paisagem topo",
+      "ponto_focal": {
+        "x": 50,
+        "y": 50
+      },
+      "zona_segura": "Piscina e muro devem estar visíveis em qualquer corte",
+      "luz": {
+        "tipo": "sol alto",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 5,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 5
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Piscina com muro de pedra e pérgola",
+      "pessoas": false,
+      "texto_ou_marcas": "Boia salva-vidas vermelha",
+      "cores_dominantes": [
+        "#BAAFA2",
+        "#A49077",
+        "#776A51",
+        "#D6D7D4",
+        "#3D3D29"
+      ],
+      "desejo": 5,
+      "caminho": "marketing/fotos/exterior/piscina-06.jpg",
+      "bytes": 1045766,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-exterior_fachada-01",
+      "assunto": "Pormenor de janela com moldura vermelha escuro e varanda de ferro forjado decorativo. Parede de pedra/granito. Plantas em primeiro plano parcialmente desfocadas. Luz natural.",
+      "onde_esta_o_assunto": "Janela-varanda centro; parede granito envolvendo; plantas frente desfocadas",
+      "ponto_focal": {
+        "x": 50,
+        "y": 50
+      },
+      "zona_segura": "Janela e varanda devem estar visíveis em qualquer corte",
+      "luz": {
+        "tipo": "luz natural",
+        "hora_aparente": "dia"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 3,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 3
+      },
+      "largura_maxima_px": 2047,
+      "mostra": "Pormenor de janela e varanda de ferro",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#B0AFC2",
+        "#5A5C4F",
+        "#8A8892",
+        "#272E1C",
+        "#E4E7F5"
+      ],
+      "desejo": 2,
+      "caminho": "marketing/fotos/exterior/fachada-01.jpg",
+      "bytes": 295465,
+      "largura": 2047,
+      "altura": 1362
+    },
+    {
+      "id": "ATIVO-exterior_fachada-02",
+      "assunto": "Portão de ferro decorativo com nome 'Casa da Alufinha' em letras douradas. Caminho de calçada portuguesa com padrão geométrico. Paisagem/socalcos ao fundo desfocados. Céu azul ao final da tarde. Luz quente.",
+      "onde_esta_o_assunto": "Portão centro-frente ocupando espaço; caminho abaixo; paisagem fundo; céu topo",
+      "ponto_focal": {
+        "x": 50,
+        "y": 50
+      },
+      "zona_segura": "Portão deve estar visível em qualquer corte",
+      "luz": {
+        "tipo": "luz de fim de tarde",
+        "hora_aparente": "fim de tarde"
+      },
+      "qualidade": {
+        "nitidez": 5,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 2048,
+      "mostra": "Portão de entrada com nome da casa",
+      "pessoas": false,
+      "texto_ou_marcas": "Casa da Alufinha em letras douradas",
+      "cores_dominantes": [
+        "#0B1B17",
+        "#1D97F7",
+        "#363F42",
+        "#696B70",
+        "#AFA08E"
+      ],
+      "desejo": 4,
+      "caminho": "marketing/fotos/exterior/fachada-02.jpg",
+      "bytes": 589790,
+      "largura": 2048,
+      "altura": 2048
+    },
+    {
+      "id": "ATIVO-exterior_fachada-03",
+      "assunto": "Vista aérea da propriedade. Casa com telhado vermelho ao centro. Piscina retangular turquesa abaixo da casa. Vinhas em socalcos ao redor. Paisagem montanhosa verde. Encosta com vegetação frondosa.",
+      "onde_esta_o_assunto": "Casa telhado vermelho centro; piscina abaixo; vinhas ao redor ocupando espaço lateral; paisagem topo",
+      "ponto_focal": {
+        "x": 50,
+        "y": 50
+      },
+      "zona_segura": "Casa e piscina devem estar visíveis em qualquer corte",
+      "luz": {
+        "tipo": "sol alto",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 5,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 5
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Vista aérea da casa e piscina",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#3D492A",
+        "#182115",
+        "#6B753E",
+        "#A2A34D",
+        "#D1C3AB"
+      ],
+      "desejo": 5,
+      "caminho": "marketing/fotos/exterior/fachada-03.jpg",
+      "bytes": 702743,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-exterior_vista-02",
+      "assunto": "Vista aérea da propriedade e arredores. Casa principal com telhado vermelho. Piscina retangular turquesa. Vinhas em socalcos ao redor. Propriedades vizinhas. Paisagem montanhosa verdejante com casas dispersas.",
+      "onde_esta_o_assunto": "Casa telhado vermelho esquerda-centro; piscina centro; vinhas ao redor; propriedades vizinhas; paisagem topo montanhosa",
+      "ponto_focal": {
+        "x": 50,
+        "y": 50
+      },
+      "zona_segura": "Casa e piscina devem estar visíveis em qualquer corte",
+      "luz": {
+        "tipo": "sol alto",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 5,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 5
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Vista aérea da propriedade com piscina e vinhas",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#13160B",
+        "#313117",
+        "#5C4E2F",
+        "#9D7153",
+        "#BEB2A1"
+      ],
+      "desejo": 5,
+      "caminho": "marketing/fotos/exterior/vista-02.jpg",
+      "bytes": 858264,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-exterior_vista-03",
+      "assunto": "Vista aérea do Rio Douro com barco de cruzeiro branco navegando. Praia de areia junto ao rio. Socalcos e casas com telhados vermelhos nas margens. Paisagem montanhosa verdejante. Ponte ou porto ao lado.",
+      "onde_esta_o_assunto": "Rio Douro ocupa centro; barco branco no rio; praia areia junto margem; casas telhados vermelhos margens; paisagem montanhosa topo",
+      "ponto_focal": {
+        "x": 50,
+        "y": 50
+      },
+      "zona_segura": "Rio, barco e socalcos devem estar visíveis em qualquer corte",
+      "luz": {
+        "tipo": "sol alto",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 5,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 5
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Vista aérea do Douro com barco e porto",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#383F33",
+        "#635E3C",
+        "#192119",
+        "#91815E",
+        "#DBC8B1"
+      ],
+      "desejo": 5,
+      "caminho": "marketing/fotos/exterior/vista-03.jpg",
+      "bytes": 791323,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-exterior_vista-04",
+      "assunto": "Vista aérea do Rio Douro com barco de cruzeiro branco navegando. Encostas com casas de São João de Fontoura com telhados vermelhos. Paisagem montanhosa verdejante com socalcos de vinha. Propriedades dispersas.",
+      "onde_esta_o_assunto": "Rio Douro ocupa centro-esquerda; barco branco no rio; casas telhados vermelhos encostas; paisagem montanhosa envolvendo",
+      "ponto_focal": {
+        "x": 50,
+        "y": 50
+      },
+      "zona_segura": "Rio, barco e encostas devem estar visíveis em qualquer corte",
+      "luz": {
+        "tipo": "sol alto",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 5,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 5
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Vista aérea do Douro com barco e encostas",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#2D352C",
+        "#121914",
+        "#5B5745",
+        "#A5B2B7",
+        "#A57B5E"
+      ],
+      "desejo": 5,
+      "caminho": "marketing/fotos/exterior/vista-04.jpg",
+      "bytes": 690251,
+      "largura": 3000,
+      "altura": 2000
+    }
+  ]
+}

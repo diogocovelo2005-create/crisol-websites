@@ -1,0 +1,440 @@
+{
+  "versao_validador": "1.0.0",
+  "dossie": "penthouse",
+  "resultado": "aprovado",
+  "erros": [],
+  "avisos": [],
+  "verificacoes": [
+    "ficheiros_obrigatorios",
+    "reviews_e_citacoes",
+    "quartos",
+    "pontos_fortes",
+    "fotos",
+    "contrato"
+  ],
+  "impressao_digital": {
+    "sha256": "602eeef46bf0d629b2c7d3532094ee421d74087cdb7b7e8679d0b8a1d3b3b22a",
+    "ficheiros": [
+      {
+        "caminho": "canais.md",
+        "bytes": 1939,
+        "sha256": "4331a00065f7e9797868b2c932503f52deb81b7aa9028b46475a6832cf8c220e"
+      },
+      {
+        "caminho": "compliance.md",
+        "bytes": 1914,
+        "sha256": "6c050c433a576c6eb34dc3d8ec3a310180539cf9ec1b794822a85ebb6b2a11b1"
+      },
+      {
+        "caminho": "contrato.json",
+        "bytes": 40046,
+        "sha256": "b2f2d5be70a44f1b8331df96222038bd5e451ad661236fa24a2aab73de447a95"
+      },
+      {
+        "caminho": "descricao-al.md",
+        "bytes": 3042,
+        "sha256": "ee1a2c07d85b465859b82c812073564c196419137dbe54fe88a0533585bb2691"
+      },
+      {
+        "caminho": "dono.md",
+        "bytes": 1582,
+        "sha256": "9df916c9c91f7e8ea98449e3eb378e45a15ee2ad0ad53f1d228927398e96082d"
+      },
+      {
+        "caminho": "factos.md",
+        "bytes": 5908,
+        "sha256": "51d411317bb16d025977e3ae828cdb326edbd23e1580da61667875fe0cab6e82"
+      },
+      {
+        "caminho": "fontes.md",
+        "bytes": 6592,
+        "sha256": "af5bd7e763850cf36a55e15eb2ea361890dcd2a95d3fe8079d86485b1288ceb2"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/vista-01.jpg",
+        "bytes": 307688,
+        "sha256": "ec250fa7c2801b4cb8e82e6a49e5c19a8504a4acb3aba94f494380cd118e3fb9"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/vista-02.jpg",
+        "bytes": 171318,
+        "sha256": "547b279cc858749718a00dba1a9c521483d876dc6f0af35f207810b471366df6"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/vista-03.jpg",
+        "bytes": 287115,
+        "sha256": "3cc1423835292a1c769c6cd874e988f27b86c837bea90488b851885ca8415aec"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/vista-04.jpg",
+        "bytes": 327425,
+        "sha256": "cd5f7e102f1e26ed8b88b535243ba492998cc90d17913418ac94d1a72b5683c0"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/vista-05.jpg",
+        "bytes": 478806,
+        "sha256": "a814271b6d963117cf62154a6c9a716325e50973ab886a3dc0546de1f289ddae"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/vista-06.jpg",
+        "bytes": 348116,
+        "sha256": "ed9fb2f2d0776f13a1d26505157192d0d25171199a2d8c449be89e8c4b7289ab"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/vista-07.jpg",
+        "bytes": 436956,
+        "sha256": "a9b967b82d651bea38ec043b11d131a362b2dab3e360ac1e00e158a7fc774cfc"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/vista-08.jpg",
+        "bytes": 500002,
+        "sha256": "faf19b2946f671c2e71390c57b2991f4fb10b900c0b8e58864bda95f9fc60f13"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/vista-09.jpg",
+        "bytes": 577589,
+        "sha256": "357bb403d0563aa5c3701d52d8cca139ded3ca12598672d92a8e9eff7cadb3e8"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/vista-10.jpg",
+        "bytes": 358863,
+        "sha256": "a60319698c88ec51633ef7ef8beb6b42e4d9a94968d2a8eb167f994ff5db431c"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/vista-11.jpg",
+        "bytes": 408506,
+        "sha256": "55ddd78a71c95fead1e6b6f34e41dc1506edbca7bd1a65d412f58c5c5730c061"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/vista-12.jpg",
+        "bytes": 262304,
+        "sha256": "838de140c78bafce70e67fc418e3997e1cc5b252e37723b6ff5e11c82213b385"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/vista-13.jpg",
+        "bytes": 485983,
+        "sha256": "ae9ca6ec3cb6e34fe3ec2d738db7821db396502e4d95ef27753c482af86f4d3a"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/vista-14.jpg",
+        "bytes": 300022,
+        "sha256": "1ad0eeab3806f2b9cb5b654b332bd0d2f36695f01d184e43b4714d8d215067de"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/vista-15.jpg",
+        "bytes": 67963,
+        "sha256": "e41a3dccfaf3906f14f8b40239f6b24b22915c8a74e6d53d187420e2faedc9db"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/vista-16.jpg",
+        "bytes": 125621,
+        "sha256": "53e97ac5d74f1a64516944437e350425e163bb5bd95fbda431e0b88a14e72c6a"
+      },
+      {
+        "caminho": "marketing/fotos/interior/casa-de-banho-01.jpg",
+        "bytes": 2533958,
+        "sha256": "cddd581c90084e5b0ce3c385445970319f95de4e348f74fe9157a023e8aa658a"
+      },
+      {
+        "caminho": "marketing/fotos/interior/casa-de-banho-02.jpg",
+        "bytes": 202422,
+        "sha256": "54754b4afed60876afe96297f641f1105856807e57b16f9d143fcf800d7c1959"
+      },
+      {
+        "caminho": "marketing/fotos/interior/casa-de-banho-03.jpg",
+        "bytes": 223340,
+        "sha256": "4e9a3224453c89667de4c528d2ebe679744d0f12c3ff2d680c73cfa25af6b4bf"
+      },
+      {
+        "caminho": "marketing/fotos/interior/casa-de-banho-04.jpg",
+        "bytes": 220704,
+        "sha256": "2318ac7db34928c68ac78db17cc83ee259df57174734ce8236ecc305c48540be"
+      },
+      {
+        "caminho": "marketing/fotos/interior/casa-de-banho-05.jpg",
+        "bytes": 255893,
+        "sha256": "c42baa3e7aa74126480f0456bd9264dede98442dbc16817af356c34cb68b302d"
+      },
+      {
+        "caminho": "marketing/fotos/interior/casa-de-banho-06.jpg",
+        "bytes": 245690,
+        "sha256": "9f7a8ca5c4a1be756065577c1e8e578b1e95b3b3eee3720596076a6fdfe47a34"
+      },
+      {
+        "caminho": "marketing/fotos/interior/casa-de-banho-07.jpg",
+        "bytes": 59043,
+        "sha256": "4b68a202212f17389da4a607cf6314980bf438f1b87042100dea20474df8fb61"
+      },
+      {
+        "caminho": "marketing/fotos/interior/casa-de-banho-08.jpg",
+        "bytes": 50965,
+        "sha256": "dc5874e6787798631ea1e37042aad32be3ce8bc3e92a25feac14f4a8a40a39f5"
+      },
+      {
+        "caminho": "marketing/fotos/interior/corredor-01.jpg",
+        "bytes": 225356,
+        "sha256": "b492ec3184777fcb1a4debd9a8ae1ca4f0d3e0fd4cca60ef151feddf9f869bee"
+      },
+      {
+        "caminho": "marketing/fotos/interior/corredor-02.jpg",
+        "bytes": 242350,
+        "sha256": "4b48667ffc2162cfd1bf87297059b46a1fdc531d427febdb8151f266b62e8623"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-01.jpg",
+        "bytes": 222393,
+        "sha256": "6886a91e206799bec8737a2931574eb04af2806eef2f1cd371ce95cd00d02dce"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-02.jpg",
+        "bytes": 269470,
+        "sha256": "4818d2c3f342d2eac0414be97ca674315088b0ca32bb6c6cd922913ea5b2ebf1"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-03.jpg",
+        "bytes": 256784,
+        "sha256": "b7a1b25d3f7ede60beb3fca16199c6e443bd3099caeb4607e0013547b7e26aee"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-04.jpg",
+        "bytes": 209675,
+        "sha256": "bae5c95761a403a432a4327c5b7e6abf591d26aa04f8d4f9475007a41cdca01a"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-05.jpg",
+        "bytes": 240343,
+        "sha256": "01b352661266266e2329093ef1c83781d0fe9573932d99ba16490905d200871e"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-06.jpg",
+        "bytes": 179969,
+        "sha256": "78ce11995872154498e98becc46fc9c1f2e772bd7168f052ca91e5c4e598a158"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-07.jpg",
+        "bytes": 281688,
+        "sha256": "ff1d4b1db4f64d33ee7eb7a29ccd78d169d90532f256cce3c2e9bd76cc1e8410"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-08.jpg",
+        "bytes": 185399,
+        "sha256": "632864ad192e04a15ce7f0e85e2786e6deeeed6a46367a1d70ad23713e1f4b4c"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-09.jpg",
+        "bytes": 209700,
+        "sha256": "d3f300fdf557885043b9b21d85bd6622948972f3743ca66b33880575dc05e552"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-10.jpg",
+        "bytes": 198845,
+        "sha256": "7e1ddc7d2196d404d250a6ebecc3f68fbc622a70782834a5aa2f3a68c2c6572c"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-11.jpg",
+        "bytes": 227646,
+        "sha256": "815624a0c10d8dc73cf285359c491babeb1fac83f5b7a445e3835cd14192a82d"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-12.jpg",
+        "bytes": 196592,
+        "sha256": "667a9224ec91b0c553a91a2832bfd333d6f21a3ad0ba5696f96da358db949259"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-13.jpg",
+        "bytes": 208899,
+        "sha256": "7500c46030fc2eab20eab9fd4272e521ffdc3ffe4f383ff48fda75efb2d25854"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-14.jpg",
+        "bytes": 260067,
+        "sha256": "90321f6fadedd10e84e875732107b8c98d0e8fc7396919e2e4c4131b44b30156"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-15.jpg",
+        "bytes": 229242,
+        "sha256": "f77737d34a6e697a5fa6358cb94606df2fb685dee05af0fed2263b584ff88924"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-16.jpg",
+        "bytes": 105733,
+        "sha256": "666b2c8174ee3572548b116162143ead717db096f36daac6881c4c3eb1163441"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-17.jpg",
+        "bytes": 222853,
+        "sha256": "f448ce24857a9a830c2243c3bc2a513ae8bca01629b5d5327c24a71eb935c2af"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-18.jpg",
+        "bytes": 222924,
+        "sha256": "397d66080d120dbc47dbcabea6b0dd3ff9c7edfd86a2f165078ccc41ced5d1cf"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-19.jpg",
+        "bytes": 86012,
+        "sha256": "5c9f062a9edebf006ba3fab6fcde399d51060ae81ad2451b0e3f90b02f632882"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-20.jpg",
+        "bytes": 285843,
+        "sha256": "0cd30f57ddb5c03bd46ba94220ad6c191d2c9bc6d0f6ac0d9207c95607f8d862"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-21.jpg",
+        "bytes": 232145,
+        "sha256": "6f4fe8c4fcb47f839600e41125ec362134986eb5d5ab5db67578c09636eaf6d6"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-22.jpg",
+        "bytes": 261540,
+        "sha256": "0220c09563b9d2f26e994c6d1cd93d42955ea7f8e1ba680ee9b55a893233c6d3"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-23.jpg",
+        "bytes": 98796,
+        "sha256": "af3a717d463893935b03ac9a911ebf4c39bdafbedbbc866a5aecc9d69e3aa296"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-24.jpg",
+        "bytes": 251235,
+        "sha256": "2c82c4d4ff1cfc7cbff95f7279643411a179c0a6bc52241c7c8be27db7f7ac39"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-25.jpg",
+        "bytes": 276342,
+        "sha256": "afaa76a056375997586c84563d00e8994bc20ae3f2995d1fb139bdf78ca9de4b"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-26.jpg",
+        "bytes": 215926,
+        "sha256": "f3059b7cf49720b51feafafcd927ed348aeff3a96b88d19b745d8435243f2d62"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-27.jpg",
+        "bytes": 204502,
+        "sha256": "164190a9492153f0b9f1c690f414f919f663780201de4de1280ea18b63eef3c4"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-28.jpg",
+        "bytes": 1847401,
+        "sha256": "1b0a8da0f3ee6b1b276e8ccc4720064190da48598abcce88152bf0eeca0f0f64"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-29.jpg",
+        "bytes": 213839,
+        "sha256": "8f2306591efceed5ed59164b15cbbe966512da9220b7205362af14bc1ef786ac"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-30.jpg",
+        "bytes": 1718484,
+        "sha256": "6397216076419545809f3e853a192a294a97e8f5bbf58c2d4a50acec6c7f3d1c"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-31.jpg",
+        "bytes": 1617697,
+        "sha256": "e188380c7c3fdef00ceb179b1157969898cb1b698179d5a3a98ac6c9f233727a"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-32.jpg",
+        "bytes": 1818165,
+        "sha256": "377b4641fe1e12c097e7c9e8ce20a23299fcf7bd5812807112ed5a5220aa3c65"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-33.jpg",
+        "bytes": 240396,
+        "sha256": "4237e68cf6b7388bdefef6d56646b62468cbc8cf002e37c46e4bba3f440d85ff"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-34.jpg",
+        "bytes": 239061,
+        "sha256": "063eeedff25825067b6a7b43cffed596a742cb73187d284a82e524b1bf019151"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-35.jpg",
+        "bytes": 1591494,
+        "sha256": "3aac6a59e9a9ee1fa7fefd5286f9ebf09e2469efb2af59caaa8a03e370c3d3ec"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-36.jpg",
+        "bytes": 228319,
+        "sha256": "4d2490146e0e722d681423ec20cd2c53afec8ad908d5da542c984f3648ef83b0"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-37.jpg",
+        "bytes": 49920,
+        "sha256": "382db9dc37b70fe7af4fe99b5d346a5ecf36e591359777f4fb1bdc07916ecf4e"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-38.jpg",
+        "bytes": 69892,
+        "sha256": "5f66bd4aa5d6d9cc6bcb898272f87c59b54da055170c73383a627158e40c561f"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-39.jpg",
+        "bytes": 52744,
+        "sha256": "88caf9d500523254b994336587fa10be1f88d6a52934a37548fde2ac669aeb2e"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-40.jpg",
+        "bytes": 49016,
+        "sha256": "d3ff94b52659b2df33b0d992c42349d2273b38d3b3cb230b3cf16b6470cd8847"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-41.jpg",
+        "bytes": 56052,
+        "sha256": "84490d7108b8ee247b27c7f47a98c7e1ab941ec7908059b8f22db53ed7a6ffc6"
+      },
+      {
+        "caminho": "marketing/fotos/interior/sala-01.jpg",
+        "bytes": 270673,
+        "sha256": "ee448c01a1fdef30a8b4725cce5d366d6bd0c7fcdaea52a7a2a2a9ccf497b1c9"
+      },
+      {
+        "caminho": "marketing/fotos/interior/sala-02.jpg",
+        "bytes": 153715,
+        "sha256": "07ec3d5ff24d499ed1a0a570e503f6b8eaff87e2415cdabb2298a794c8c3f06e"
+      },
+      {
+        "caminho": "marketing/fotos/interior/sala-03.jpg",
+        "bytes": 64625,
+        "sha256": "009f451bb8079b598884b9b7977c4458c32110b9bfa8b3f7a74588937a2d2496"
+      },
+      {
+        "caminho": "marketing/fotos.md",
+        "bytes": 23975,
+        "sha256": "c2899269aa2d0ced0737cf27c37ea6e4f878557981b949e1de91173a3db42683"
+      },
+      {
+        "caminho": "marketing/textos.md",
+        "bytes": 11763,
+        "sha256": "5fa4a5d604f0f7cbed2e96222c8e2ef6f6a603d146b467ebc592ad936f89fbca"
+      },
+      {
+        "caminho": "pontos-fortes.md",
+        "bytes": 10380,
+        "sha256": "e00d614353d1beb624636d0def4609e1d6346d2aa90ec1625edebc328fb43e0d"
+      },
+      {
+        "caminho": "quartos.md",
+        "bytes": 6836,
+        "sha256": "39572479521e0a4f4e42dca085b8bad283ee7f06fb17f1f70e2af2b738c93533"
+      },
+      {
+        "caminho": "resumo.md",
+        "bytes": 6943,
+        "sha256": "2a5a4491946b2a0f28bdab728ca91c576c1e601f3f0f0530fadf1ec46314150c"
+      },
+      {
+        "caminho": "reviews.md",
+        "bytes": 26904,
+        "sha256": "8d2459a2a2ef9c86ed6990c414a5e5bba301928da5c8f9960c51a2e12665597d"
+      },
+      {
+        "caminho": "site-pronto.md",
+        "bytes": 9217,
+        "sha256": "a89451fbcdb68f9b6e43f69100925beb8db2d030a3d70af5005f2dc8ed7ca5a6"
+      }
+    ]
+  }
+}

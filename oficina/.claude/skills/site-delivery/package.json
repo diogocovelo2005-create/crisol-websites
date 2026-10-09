@@ -1,0 +1,14 @@
+{
+  "name": "site-delivery",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "crawl": "node scripts/crawl-old-site.js",
+    "dns": "node scripts/dns-snapshot.js",
+    "redirects": "node scripts/check-redirects.js",
+    "preflight": "node scripts/preflight.js"
+  },
+  "dependencies": { "playwright": "^1.47.0" },
+  "engines": { "node": ">=20" }
+}

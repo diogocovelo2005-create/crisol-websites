@@ -1,0 +1,70 @@
+{
+  "nicho": "alojamento",
+  "sub_oficios": [
+    "hostel e alojamento partilhado",
+    "casa de hóspedes urbana e bed & breakfast",
+    "turismo rural, quintas e casas de campo"
+  ],
+  "places_types": [
+    "bed_and_breakfast",
+    "guest_house",
+    "hostel",
+    "cottage",
+    "farmstay",
+    "inn",
+    "lodging",
+    "private_guest_room"
+  ],
+  "tem_tipos_diretos": true,
+  "termos": {
+    "formal": [
+      "alojamento local",
+      "casa de hóspedes",
+      "guest house",
+      "hostel",
+      "bed and breakfast",
+      "turismo rural",
+      "turismo de habitação",
+      "casa de campo",
+      "residencial",
+      "hospedaria",
+      "albergaria",
+      "estalagem",
+      "agroturismo",
+      "unidade de alojamento"
+    ],
+    "coloquial": [
+      "quartos para alugar",
+      "aluguer de quartos",
+      "casa de férias",
+      "sítio para dormir"
+    ],
+    "regional": [
+      "casa de xisto",
+      "casa senhorial",
+      "quinta turística",
+      "casa de granito"
+    ],
+    "servico": [
+      "dormida e pequeno almoço",
+      "alojamento com pequeno almoço",
+      "estadia",
+      "quarto duplo",
+      "quarto privado",
+      "alojamento turístico",
+      "alojamento para grupos",
+      "casa para férias",
+      "retiro",
+      "camas em dormitório"
+    ],
+    "adjacente": [
+      "aparthotel",
+      "apartamento turístico",
+      "glamping",
+      "parque de campismo",
+      "albergue de peregrinos",
+      "hotel rural"
+    ]
+  },
+  "notas": "TRÊS sub-ofícios pelo teste do leigo. Quem procura cama barata em dormitório não procura uma quinta com piscina, e quem quer um fim-de-semana no campo não considera um hostel de cidade. O bed & breakfast e a casa de hóspedes urbana são o mesmo mercado em Portugal, com o mesmo tipo de dono e o mesmo tipo de hóspede, por isso contam como um só e não como dois.\n\nO registo REGIONAL não está vazio porque em alojamento a arquitetura é que dá o nome ao produto, e ela muda com a região: casa de xisto nas aldeias serranas do centro, casa de granito no norte, casa senhorial e quinta turística um pouco por todo o lado. São termos que os donos escrevem no nome da casa e que nenhum termo formal apanha. Evitei nomes de região dentro dos termos, que o validador reprova e que gastariam uma passagem pela grelha inteira.\n\nO registo FORMAL inclui de propósito residencial, hospedaria, albergaria e estalagem, que são categorias legalmente de hotelaria e não de alojamento local. Entram porque a fase de descoberta é de recall e porque muitas casas pequenas ainda usam estes nomes por herança. Quem for mesmo hotel cai na porta de inclusão, que é o passo seguinte, e fica registado como fora do nicho em vez de desaparecer sem se saber porquê.\n\nO registo ADJACENTE tem campismo, glamping e apartamentos turísticos. Não são o nicho, mas partilham as mesmas pesquisas e trazem à rede casas que se descrevem por comparação. O albergue de peregrinos existe porque os caminhos de Santiago atravessam metade do país e essas casas são quase sempre geridas pelo dono.\n\nOs places_types cobrem alojamento de pequena escala e deixam de fora hotel, resort_hotel, motel e extended_stay_hotel, que são o que não queremos. O tipo lodging fica porque é o guarda-chuva e apanha as casas que o Google não categorizou com precisão."
+}

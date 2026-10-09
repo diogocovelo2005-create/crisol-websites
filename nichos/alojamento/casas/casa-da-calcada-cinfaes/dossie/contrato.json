@@ -1,0 +1,2050 @@
+{
+  "schema_version": "1.0",
+  "manifesto": {
+    "slug": "casa-da-calcada-cinfaes",
+    "revisao": "2026-09-22",
+    "prontidao": "com_limitacoes",
+    "notas": "Identidade confirmada por cinco campos independentes e caminho de contacto confirmado pela própria casa: dá para construir a base. Limitações: (1) as 147 reviews do Google ficaram por recolher, (2) não há fotografia com pessoas nem fora do verão, (3) as tarifas publicadas pela casa não têm data e não podem ir para o site, (4) os programas e a oferta de eventos são de material anterior a 2010 e estão bloqueados até o dono confirmar."
+  },
+  "entidades": [
+    {
+      "id": "CASA-CALCADA",
+      "tipo": "casa",
+      "nome": "Casa da Calçada — Turismo de Habitação"
+    },
+    {
+      "id": "QT-SUITE",
+      "tipo": "tipo_quarto",
+      "nome": "Suite",
+      "pai_id": "CASA-CALCADA"
+    },
+    {
+      "id": "QT-TWIN",
+      "tipo": "tipo_quarto",
+      "nome": "Quarto Twin",
+      "pai_id": "CASA-CALCADA"
+    },
+    {
+      "id": "QT-INDIVIDUAL",
+      "tipo": "tipo_quarto",
+      "nome": "Quarto Individual",
+      "pai_id": "CASA-CALCADA"
+    },
+    {
+      "id": "UN-APARTAMENTO",
+      "tipo": "unidade",
+      "nome": "Apartamento com 2 quartos, na casa de pedra junto à piscina",
+      "pai_id": "CASA-CALCADA"
+    },
+    {
+      "id": "UN-CASA-INTEIRA",
+      "tipo": "unidade",
+      "nome": "Casa principal inteira, 8 quartos",
+      "pai_id": "CASA-CALCADA"
+    },
+    {
+      "id": "ESP-CAPELA",
+      "tipo": "espaco",
+      "nome": "Capela",
+      "pai_id": "CASA-CALCADA"
+    },
+    {
+      "id": "ESP-PISCINA",
+      "tipo": "espaco",
+      "nome": "Piscina exterior e balneários",
+      "pai_id": "CASA-CALCADA"
+    },
+    {
+      "id": "ESP-JARDINS",
+      "tipo": "espaco",
+      "nome": "Jardins, patamares panorâmicos e alameda de glicínias",
+      "pai_id": "CASA-CALCADA"
+    },
+    {
+      "id": "ESP-TANQUE",
+      "tipo": "espaco",
+      "nome": "Tanque de pedra e nascente no jardim",
+      "pai_id": "CASA-CALCADA"
+    },
+    {
+      "id": "ESP-TENIS",
+      "tipo": "espaco",
+      "nome": "Court de ténis e campo de futebol",
+      "pai_id": "CASA-CALCADA"
+    },
+    {
+      "id": "ESP-SALAO-JANTAR",
+      "tipo": "espaco",
+      "nome": "Salão para jantares",
+      "pai_id": "CASA-CALCADA"
+    },
+    {
+      "id": "ESP-BILHAR",
+      "tipo": "espaco",
+      "nome": "Salão de jogos com bilhar",
+      "pai_id": "CASA-CALCADA"
+    },
+    {
+      "id": "ESP-COZINHA",
+      "tipo": "espaco",
+      "nome": "Cozinha industrial com forno a lenha",
+      "pai_id": "CASA-CALCADA"
+    },
+    {
+      "id": "ESP-BAR",
+      "tipo": "espaco",
+      "nome": "Salão com bar",
+      "pai_id": "CASA-CALCADA"
+    },
+    {
+      "id": "ESP-SALAS",
+      "tipo": "espaco",
+      "nome": "Salas de estar e de jantar com lareira",
+      "pai_id": "CASA-CALCADA"
+    },
+    {
+      "id": "ESP-AGUAS-FURTADAS",
+      "tipo": "espaco",
+      "nome": "Segundo andar: quartos com tectos panorâmicos e claraboias",
+      "pai_id": "CASA-CALCADA"
+    },
+    {
+      "id": "CANAL-SITE",
+      "tipo": "canal",
+      "nome": "casacalcada.com",
+      "pai_id": "CASA-CALCADA"
+    },
+    {
+      "id": "CANAL-BOOKING",
+      "tipo": "canal",
+      "nome": "Booking",
+      "pai_id": "CASA-CALCADA"
+    },
+    {
+      "id": "CANAL-DIRETO",
+      "tipo": "canal",
+      "nome": "Contacto direto: telemóvel e email",
+      "pai_id": "CASA-CALCADA"
+    }
+  ],
+  "evidencias": [
+    {
+      "id": "EV-SITE-INICIO",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-CALCADA"
+      ],
+      "local": "https://www.casacalcada.com/pt/inicio",
+      "bloco": "corpo da página de entrada, título \"História e Requinte\"",
+      "excerto": "Situada em Oliveira do Douro - Cinfães, a cerca de 6 km da sede de concelho e a 10 Km da vila de Resende, a Casa da Calçada desfruta de todo um enquadramento paisagístico excepcional da zona.",
+      "recolhido_em": "2026-09-22",
+      "atualidade": "Página sem data; rodapé do site declara 2010. O facto geográfico não caduca."
+    },
+    {
+      "id": "EV-SITE-LOCALIZACAO",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-CALCADA"
+      ],
+      "local": "https://www.casacalcada.com/pt/localizacao",
+      "bloco": "corpo da página",
+      "excerto": "encontra-se num ponto de passagem obrigatório para quem circula ao longo das margens do rio pela E.N. 222 e o atravessa na ponte de Mosteirô. Essa localização particular enfatiza o efeito surpreendente da sua arquitectura.",
+      "recolhido_em": "2026-09-22"
+    },
+    {
+      "id": "EV-SITE-A-CASA",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-CALCADA",
+        "ESP-PISCINA",
+        "ESP-TENIS",
+        "ESP-JARDINS",
+        "ESP-COZINHA",
+        "ESP-BILHAR",
+        "ESP-BAR",
+        "ESP-SALAS",
+        "ESP-SALAO-JANTAR",
+        "ESP-AGUAS-FURTADAS"
+      ],
+      "local": "https://www.casacalcada.com/pt/a-casa",
+      "bloco": "corpo e listas Interior / Casa Anexa / Exterior",
+      "recolhido_em": "2026-09-22",
+      "atualidade": "Inventário de espaços, sem data. Rever com o dono antes de publicar."
+    },
+    {
+      "id": "EV-SITE-HISTORIA",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-CALCADA",
+        "ESP-CAPELA"
+      ],
+      "local": "https://www.casacalcada.com/pt/historia",
+      "bloco": "corpo da página",
+      "excerto": "Mais tarde, já no sec. XVIII, a casa passa por um aumento que de grosso modo lhe confere aquele que é ainda hoje o tronco central da sua forma.",
+      "recolhido_em": "2026-09-22"
+    },
+    {
+      "id": "EV-SITE-TARIFAS",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-CALCADA",
+        "QT-SUITE",
+        "QT-TWIN",
+        "QT-INDIVIDUAL",
+        "UN-APARTAMENTO"
+      ],
+      "local": "https://www.casacalcada.com/pt/tarifas",
+      "bloco": "tabela de preços e nota final",
+      "excerto": "Todas as estadias incluem o pequeno-almoço.",
+      "recolhido_em": "2026-09-22",
+      "atualidade": "Preços sem data nem época, num site cujo rodapé é de 2010. Não utilizáveis."
+    },
+    {
+      "id": "EV-SITE-RESERVAS",
+      "origem": "casa",
+      "entidade_ids": [
+        "CANAL-DIRETO"
+      ],
+      "local": "https://www.casacalcada.com/pt/reservas",
+      "bloco": "corpo da página",
+      "excerto": "Para Reservas por favor contacte-nos através dos números",
+      "recolhido_em": "2026-09-22",
+      "atualidade": "Contacto a confirmar com o dono antes de publicar."
+    },
+    {
+      "id": "EV-SITE-CONTACTOS",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-CALCADA",
+        "CANAL-DIRETO"
+      ],
+      "local": "https://www.casacalcada.com/pt/contactos",
+      "bloco": "bloco de morada, telemóveis e email",
+      "excerto": "CASA DA CALÇADA Turismo de Habitação Oliveira do Douro 4690 Cinfães",
+      "recolhido_em": "2026-09-22"
+    },
+    {
+      "id": "EV-SITE-EVENTOS",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-CALCADA"
+      ],
+      "local": "https://www.casacalcada.com/pt/eventos",
+      "bloco": "corpo da página",
+      "excerto": "Temos tudo para que o seu evento se torne único.",
+      "recolhido_em": "2026-09-22",
+      "atualidade": "Sem data. A oferta de eventos pode ter mudado."
+    },
+    {
+      "id": "EV-SITE-PROGRAMAS",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-CALCADA"
+      ],
+      "local": "https://www.casacalcada.com/pt/programas e /pt/quinta-da-massorra",
+      "bloco": "corpo das páginas",
+      "excerto": "Preços sob consulta.",
+      "recolhido_em": "2026-09-22",
+      "atualidade": "Material antigo: os vinhos citados são colheitas de 2008."
+    },
+    {
+      "id": "EV-SITE-AMBIENTAL",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-CALCADA"
+      ],
+      "local": "https://www.casacalcada.com/pt/preocupacao-ambiental",
+      "bloco": "corpo da página",
+      "excerto": "Na propriedade encontram-se instalados 18 painéis fotovoltaicos de 2 m2 para microgeração de energia que é utilizada no aquecimento da água da casa.",
+      "recolhido_em": "2026-09-22",
+      "atualidade": "Texto anterior a 2010; anuncia um projeto futuro que não se sabe se avançou."
+    },
+    {
+      "id": "EV-SITE-EN-CASA",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-CALCADA",
+        "ESP-PISCINA",
+        "ESP-CAPELA"
+      ],
+      "local": "https://www.casacalcada.com/en/the-house",
+      "bloco": "corpo da página inglesa",
+      "excerto": "Fully equipped swimming pool (includes towels) with changing rooms",
+      "recolhido_em": "2026-09-22"
+    },
+    {
+      "id": "EV-BOOKING-ANFITRIAO",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-CALCADA",
+        "ESP-CAPELA",
+        "ESP-PISCINA",
+        "ESP-TENIS",
+        "UN-APARTAMENTO"
+      ],
+      "local": "https://www.booking.com/hotel/pt/casa-da-quinta-da-calcada.pt-pt.html",
+      "bloco": "Informação do anfitrião → \"Informação do alojamento\" (bloco preenchido pela casa)",
+      "excerto": "Fruto dum total restauro de uma antiga casa senhorial, a casa principal proporciona hoje todo o conforto e modernidade do mundo actual. A Quinta tem piscina exterior, court de ténis e inúmeros recantos e jardins para explorar. A capela, também ela reconstruída, dá-lhe um toque nobre e sóbrio.",
+      "recolhido_em": "2026-09-22"
+    },
+    {
+      "id": "EV-BOOKING-IMPORTANTE",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-CALCADA"
+      ],
+      "local": "https://www.booking.com/hotel/pt/casa-da-quinta-da-calcada.pt-pt.html",
+      "bloco": "Pormenores → \"Informações importantes\" (bloco preenchido pela casa)",
+      "excerto": "Por favor, note que um depósito de 25% do valor total da estadia será cobrado no momento da reserva.",
+      "recolhido_em": "2026-09-22"
+    },
+    {
+      "id": "EV-BOOKING-REGRAS",
+      "origem": "plataforma",
+      "entidade_ids": [
+        "CASA-CALCADA"
+      ],
+      "local": "https://www.booking.com/hotel/pt/casa-da-quinta-da-calcada.pt-pt.html",
+      "bloco": "Regras da propriedade",
+      "excerto": "Check-in Das 15:00 às 20:00 · Check-out Às 12:00 · Animais de estimação: não admitidos.",
+      "recolhido_em": "2026-09-22",
+      "atualidade": "Regras de plataforma; confirmar com o dono antes de publicar."
+    },
+    {
+      "id": "EV-BOOKING-TIPOS",
+      "origem": "plataforma",
+      "entidade_ids": [
+        "QT-SUITE",
+        "QT-TWIN",
+        "QT-INDIVIDUAL",
+        "UN-APARTAMENTO",
+        "UN-CASA-INTEIRA"
+      ],
+      "local": "https://www.booking.com/hotel/pt/casa-da-quinta-da-calcada.pt-pt.html",
+      "bloco": "tabela \"Tipo de quarto / Número de hóspedes\", sem datas escolhidas",
+      "excerto": "Casa com 8 Quartos × 16",
+      "recolhido_em": "2026-09-22"
+    },
+    {
+      "id": "EV-BOOKING-LICENCA",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-CALCADA"
+      ],
+      "local": "https://www.booking.com/hotel/pt/casa-da-quinta-da-calcada.pt-pt.html",
+      "bloco": "Pormenores → \"Licença número\"",
+      "excerto": "Licença número: 1375",
+      "recolhido_em": "2026-09-22"
+    },
+    {
+      "id": "EV-BOOKING-NOTAS",
+      "origem": "plataforma",
+      "entidade_ids": [
+        "CASA-CALCADA"
+      ],
+      "local": "https://www.booking.com/hotel/pt/casa-da-quinta-da-calcada.pt-pt.html",
+      "bloco": "Comentários de clientes → pontuação e categorias",
+      "excerto": "8,8 Fabuloso · 46 comentários · Funcionários 9,4",
+      "recolhido_em": "2026-09-22",
+      "atualidade": "Métrica viva: muda a cada review nova. Mostrar sempre com data e fonte."
+    },
+    {
+      "id": "EV-GOOGLE-FICHA",
+      "origem": "plataforma",
+      "entidade_ids": [
+        "CASA-CALCADA"
+      ],
+      "local": "Google Maps, ficha ChIJz5OiLASkJA0RX5XsXOd85Jg",
+      "bloco": "vista geral e resumo de críticas",
+      "excerto": "4,4 · 152 críticas · 936 345 815 · casacalcada.com",
+      "recolhido_em": "2026-09-22",
+      "atualidade": "Métrica viva."
+    },
+    {
+      "id": "EV-RNT",
+      "origem": "registo_publico",
+      "entidade_ids": [
+        "CASA-CALCADA"
+      ],
+      "local": "https://www.visitportugal.com/en/content/casa-da-quinta-da-calçada — portal do Turismo de Portugal",
+      "bloco": "ficha do empreendimento",
+      "excerto": "Tourism in a Manor House · Registration Number 1375 · 10 rooms, 20 beds",
+      "recolhido_em": "2026-09-22"
+    },
+    {
+      "id": "EV-REV-CAPELA",
+      "origem": "hospede",
+      "entidade_ids": [
+        "ESP-CAPELA",
+        "CASA-CALCADA"
+      ],
+      "local": "reviews.md, B-001, B-012, B-016, B-040 e G-004",
+      "recolhido_em": "2026-09-22",
+      "publicado_em": "2021-09 a 2026-09"
+    },
+    {
+      "id": "EV-REV-ACOLHIMENTO",
+      "origem": "hospede",
+      "entidade_ids": [
+        "CASA-CALCADA"
+      ],
+      "local": "reviews.md, B-006, B-017, B-021, B-023, B-039, B-043 e G-004",
+      "recolhido_em": "2026-09-22",
+      "publicado_em": "2023-10 a 2026-08"
+    },
+    {
+      "id": "EV-REV-SOSSEGO",
+      "origem": "hospede",
+      "entidade_ids": [
+        "CASA-CALCADA"
+      ],
+      "local": "reviews.md, B-002, B-003, B-033, B-040, B-041, B-039 e G-002",
+      "recolhido_em": "2026-09-22",
+      "publicado_em": "2023-10 a 2026-08"
+    },
+    {
+      "id": "EV-REV-PISCINA",
+      "origem": "hospede",
+      "entidade_ids": [
+        "ESP-PISCINA"
+      ],
+      "local": "reviews.md, B-001, B-012, B-016, B-022, B-030 e B-036",
+      "recolhido_em": "2026-09-22",
+      "publicado_em": "2024-07 a 2026-09"
+    },
+    {
+      "id": "EV-REV-GRUPO",
+      "origem": "hospede",
+      "entidade_ids": [
+        "UN-CASA-INTEIRA",
+        "ESP-COZINHA"
+      ],
+      "local": "reviews.md, G-003 e B-027",
+      "recolhido_em": "2026-09-22",
+      "publicado_em": "2023-06 e 2024-09"
+    },
+    {
+      "id": "EV-REV-CHEGADA",
+      "origem": "hospede",
+      "entidade_ids": [
+        "CASA-CALCADA"
+      ],
+      "local": "reviews.md, B-010, B-012, B-022 e B-045",
+      "recolhido_em": "2026-09-22",
+      "publicado_em": "2023-10 a 2026-04"
+    },
+    {
+      "id": "EV-REV-MANUTENCAO",
+      "origem": "hospede",
+      "entidade_ids": [
+        "ESP-PISCINA",
+        "CASA-CALCADA"
+      ],
+      "local": "reviews.md, B-002, B-037, B-038, B-045 e G-005",
+      "recolhido_em": "2026-09-22",
+      "publicado_em": "2018-08 a 2026-08"
+    },
+    {
+      "id": "EV-REV-PA",
+      "origem": "hospede",
+      "entidade_ids": [
+        "CASA-CALCADA"
+      ],
+      "local": "reviews.md, B-002, B-003, B-006, B-016, B-025, B-030, B-038 e G-005",
+      "recolhido_em": "2026-09-22",
+      "publicado_em": "2018-08 a 2026-08"
+    },
+    {
+      "id": "EV-REV-APARTAMENTO",
+      "origem": "hospede",
+      "entidade_ids": [
+        "UN-APARTAMENTO"
+      ],
+      "local": "reviews.md, B-002, B-034 e B-045",
+      "recolhido_em": "2026-09-22",
+      "publicado_em": "2023-10 a 2026-08"
+    },
+    {
+      "id": "EV-REV-BAR-FECHADO",
+      "origem": "hospede",
+      "entidade_ids": [
+        "ESP-BAR"
+      ],
+      "local": "reviews.md, B-002",
+      "excerto": "El bar que se publicita estaba cerrado.",
+      "recolhido_em": "2026-09-22",
+      "publicado_em": "2026-08-23"
+    },
+    {
+      "id": "EV-FOTOS-BOOKING",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-CALCADA"
+      ],
+      "local": "marketing/fotos.md — galeria do anúncio do Booking",
+      "recolhido_em": "2026-09-22"
+    },
+    {
+      "id": "EV-FOTOS-SITE",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-CALCADA"
+      ],
+      "local": "marketing/fotos.md — galeria do site próprio",
+      "recolhido_em": "2026-09-22"
+    }
+  ],
+  "afirmacoes": [
+    {
+      "id": "AFIR-TIPOLOGIA",
+      "entidade_id": "CASA-CALCADA",
+      "texto": "A Casa da Calçada é uma casa de Turismo de Habitação, em Oliveira do Douro, concelho de Cinfães, distrito de Viseu.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "registo_publico",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-RNT",
+        "EV-SITE-CONTACTOS"
+      ],
+      "atualidade": "Registo público; estável."
+    },
+    {
+      "id": "AFIR-REGISTO",
+      "entidade_id": "CASA-CALCADA",
+      "texto": "A casa está registada com o número 1375.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "registo_publico",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "condicao": "Publicar apenas o número, sem prefixo, até o dono confirmar a forma exata (RNET nº 1375 / ano). Duas fontes dão o número, nenhuma dá o formato completo.",
+      "evidencia_ids": [
+        "EV-RNT",
+        "EV-BOOKING-LICENCA"
+      ]
+    },
+    {
+      "id": "AFIR-LOCALIZACAO",
+      "entidade_id": "CASA-CALCADA",
+      "texto": "A casa fica na encosta virada a norte, com a fachada principal virada para o rio Douro, junto à E.N. 222, a cerca de 6 km de Cinfães e 10 km de Resende.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-SITE-INICIO",
+        "EV-SITE-LOCALIZACAO"
+      ]
+    },
+    {
+      "id": "AFIR-MORADA",
+      "entidade_id": "CASA-CALCADA",
+      "texto": "Morada: Lugar da Calçada, Oliveira do Douro, 4690 Cinfães.",
+      "natureza": "facto",
+      "categoria": "contacto",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "condicao": "Sem os quatro dígitos finais do código postal: o Booking diz 4690-376 e o Turismo de Portugal diz 4690-387. Confirmar com o dono antes de publicar a morada completa.",
+      "evidencia_ids": [
+        "EV-SITE-CONTACTOS",
+        "EV-RNT"
+      ]
+    },
+    {
+      "id": "AFIR-CONTACTO",
+      "entidade_id": "CANAL-DIRETO",
+      "texto": "Contacta-se a casa pelos telemóveis (+351) 936 345 815 e (+351) 932 476 339 e pelo email geral@casacalcada.com.",
+      "natureza": "facto",
+      "categoria": "contacto",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "condicao": "Confirmar com o dono antes de publicar. O 936 345 815 está também confirmado no Google; o telefone fixo 255 562 292, que aparece numa ficha municipal, não está confirmado por nenhuma fonte da casa e não deve ser usado.",
+      "evidencia_ids": [
+        "EV-SITE-CONTACTOS",
+        "EV-SITE-RESERVAS",
+        "EV-GOOGLE-FICHA"
+      ]
+    },
+    {
+      "id": "AFIR-COMO-RESERVAR",
+      "entidade_id": "CANAL-DIRETO",
+      "texto": "A reserva faz-se por contacto direto: a casa responde a confirmar a disponibilidade.",
+      "natureza": "facto",
+      "categoria": "politica",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-SITE-RESERVAS"
+      ],
+      "atualidade": "É o que a casa declara. O formulário do site atual está partido; a base deve oferecer telefone, email e, se o dono quiser, formulário que funcione."
+    },
+    {
+      "id": "AFIR-CAPACIDADE",
+      "entidade_id": "CASA-CALCADA",
+      "texto": "A casa tem 10 quartos e 20 camas: 8 quartos na casa principal e 2 na casa de pedra junto à piscina.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "registo_publico",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-RNT",
+        "EV-SITE-A-CASA",
+        "EV-BOOKING-ANFITRIAO"
+      ]
+    },
+    {
+      "id": "AFIR-SUITES",
+      "entidade_id": "QT-SUITE",
+      "texto": "Há 2 suites com cama de casal e casa de banho privativa, no primeiro andar da casa principal.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-SITE-A-CASA",
+        "EV-SITE-TARIFAS",
+        "EV-BOOKING-ANFITRIAO"
+      ]
+    },
+    {
+      "id": "AFIR-TWIN",
+      "entidade_id": "QT-TWIN",
+      "texto": "Há 6 quartos duplos com duas camas de solteiro e casa de banho privativa.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-SITE-A-CASA",
+        "EV-SITE-TARIFAS",
+        "EV-BOOKING-ANFITRIAO"
+      ]
+    },
+    {
+      "id": "AFIR-AGUAS-FURTADAS",
+      "entidade_id": "ESP-AGUAS-FURTADAS",
+      "texto": "Quatro dos quartos ficam no segundo andar, com ar condicionado, tectos panorâmicos e claraboias viradas ao vale.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-SITE-A-CASA"
+      ],
+      "atualidade": "Declarado pela casa e visível nas fotografias. Nenhuma review confirma nem desmente."
+    },
+    {
+      "id": "AFIR-INDIVIDUAL",
+      "entidade_id": "QT-INDIVIDUAL",
+      "texto": "A casa vende um Quarto Individual no Booking.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "plataforma",
+      "estado": "conflitante",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-BOOKING-TIPOS",
+        "EV-SITE-TARIFAS"
+      ],
+      "atualidade": "O tipo não consta da descrição de quartos do site nem do registo. Não mostrar na base sem confirmação do dono."
+    },
+    {
+      "id": "AFIR-APARTAMENTO",
+      "entidade_id": "UN-APARTAMENTO",
+      "texto": "Junto à piscina há uma casa de pedra independente com 2 quartos duplos com ar condicionado, casa de banho, sala com kitchenette e varanda.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-SITE-A-CASA",
+        "EV-BOOKING-ANFITRIAO"
+      ]
+    },
+    {
+      "id": "AFIR-APARTAMENTO-COZINHA",
+      "entidade_id": "UN-APARTAMENTO",
+      "texto": "A kitchenette do apartamento está equipada para cozinhar.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "conflitante",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-SITE-A-CASA",
+        "EV-REV-APARTAMENTO"
+      ],
+      "atualidade": "A casa diz que sim; duas reviews de anos diferentes (2024 e 2026) dizem que falta o básico para cozinhar."
+    },
+    {
+      "id": "AFIR-CASA-INTEIRA",
+      "entidade_id": "UN-CASA-INTEIRA",
+      "texto": "A casa principal pode ser reservada inteira, para um grupo.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "plataforma",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "condicao": "Dizer que a casa se pode reservar inteira, sem prometer capacidade exata nem preço. O número de 16 pessoas vem da tabela do Booking, não de uma declaração da casa.",
+      "evidencia_ids": [
+        "EV-BOOKING-TIPOS",
+        "EV-REV-GRUPO"
+      ]
+    },
+    {
+      "id": "AFIR-CAPELA",
+      "entidade_id": "ESP-CAPELA",
+      "texto": "A quinta tem capela própria, reconstruída, com torre sineira e vitrais.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-BOOKING-ANFITRIAO",
+        "EV-SITE-HISTORIA",
+        "EV-SITE-A-CASA",
+        "EV-REV-CAPELA"
+      ]
+    },
+    {
+      "id": "AFIR-CAPELA-VISITA",
+      "entidade_id": "ESP-CAPELA",
+      "texto": "Os hóspedes podem entrar na capela.",
+      "natureza": "testemunho",
+      "categoria": "geral",
+      "origem": "hospede",
+      "estado": "desconhecido",
+      "uso": "citar",
+      "evidencia_ids": [
+        "EV-REV-CAPELA"
+      ],
+      "atualidade": "Dois hóspedes contam que percorreram a casa e a capela (B-001, set. 2026; B-040, nov. 2023). Nenhum canal da casa o promete. Citar, nunca prometer."
+    },
+    {
+      "id": "AFIR-PISCINA",
+      "entidade_id": "ESP-PISCINA",
+      "texto": "A quinta tem piscina exterior com balneários de apoio.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-SITE-A-CASA",
+        "EV-BOOKING-ANFITRIAO",
+        "EV-SITE-EN-CASA"
+      ]
+    },
+    {
+      "id": "AFIR-PISCINA-ESTADO",
+      "entidade_id": "ESP-PISCINA",
+      "texto": "A piscina está sempre limpa e pronta a usar.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "hospede",
+      "estado": "conflitante",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-REV-PISCINA",
+        "EV-REV-MANUTENCAO"
+      ],
+      "atualidade": "Três relatos independentes de água turva, lixo ou cloro a mais entre 2024 e 2026, ao lado de seis elogios. O estado não é constante."
+    },
+    {
+      "id": "AFIR-TENIS",
+      "entidade_id": "ESP-TENIS",
+      "texto": "A quinta tem court de ténis, que serve também de campo de futebol.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-SITE-A-CASA",
+        "EV-SITE-EN-CASA",
+        "EV-BOOKING-ANFITRIAO"
+      ],
+      "atualidade": "Declarado pela casa e visível na fotografia aérea. Nenhuma review o menciona: não afirmar que está em bom estado."
+    },
+    {
+      "id": "AFIR-JARDINS",
+      "entidade_id": "ESP-JARDINS",
+      "texto": "A quinta tem jardins, patamares panorâmicos com vista sobre a propriedade e sobre o rio Douro, hortas e árvores de fruto.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-SITE-A-CASA"
+      ]
+    },
+    {
+      "id": "AFIR-ESPACOS-COMUNS",
+      "entidade_id": "CASA-CALCADA",
+      "texto": "Os hóspedes têm à disposição salas de estar e de jantar com lareira, salão de jogos com bilhar, salão para jantares e cozinha equipada.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-BOOKING-ANFITRIAO",
+        "EV-SITE-A-CASA"
+      ]
+    },
+    {
+      "id": "AFIR-COZINHA",
+      "entidade_id": "ESP-COZINHA",
+      "texto": "A cozinha industrial com forno a lenha está ao dispor dos hóspedes.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-SITE-A-CASA",
+        "EV-BOOKING-ANFITRIAO",
+        "EV-REV-GRUPO"
+      ]
+    },
+    {
+      "id": "AFIR-BAR",
+      "entidade_id": "ESP-BAR",
+      "texto": "A casa tem bar em funcionamento.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "conflitante",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-SITE-A-CASA",
+        "EV-REV-BAR-FECHADO"
+      ],
+      "atualidade": "A casa anuncia bar; uma review de agosto de 2026 diz que estava fechado. Mostrar o espaço, não prometer o serviço."
+    },
+    {
+      "id": "AFIR-PA-INCLUIDO",
+      "entidade_id": "CASA-CALCADA",
+      "texto": "Todas as estadias incluem o pequeno-almoço.",
+      "natureza": "facto",
+      "categoria": "politica",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-SITE-TARIFAS",
+        "EV-SITE-RESERVAS"
+      ]
+    },
+    {
+      "id": "AFIR-PA-QUALIDADE",
+      "entidade_id": "CASA-CALCADA",
+      "texto": "O pequeno-almoço é farto e caseiro.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "hospede",
+      "estado": "conflitante",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-REV-PA"
+      ],
+      "atualidade": "Cinco elogios e quatro críticas entre 2018 e 2026. Não descrever o pequeno-almoço na base."
+    },
+    {
+      "id": "AFIR-HORARIOS",
+      "entidade_id": "CASA-CALCADA",
+      "texto": "Check-in das 15:00 às 20:00 e check-out até às 12:00.",
+      "natureza": "facto",
+      "categoria": "politica",
+      "origem": "plataforma",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "condicao": "São as regras que a casa declarou no Booking. Confirmar com o dono antes de publicar, e não prometer receção fora desse horário.",
+      "evidencia_ids": [
+        "EV-BOOKING-REGRAS"
+      ]
+    },
+    {
+      "id": "AFIR-RECECAO",
+      "entidade_id": "CASA-CALCADA",
+      "texto": "Há sempre alguém na casa a receber os hóspedes.",
+      "natureza": "facto",
+      "categoria": "politica",
+      "origem": "hospede",
+      "estado": "conflitante",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-REV-CHEGADA",
+        "EV-REV-ACOLHIMENTO"
+      ],
+      "atualidade": "Quatro reviews entre 2023 e 2026 descrevem chegar e não encontrar ninguém. A chegada combina-se; não há receção permanente."
+    },
+    {
+      "id": "AFIR-ANIMAIS",
+      "entidade_id": "CASA-CALCADA",
+      "texto": "Não são admitidos animais de estimação.",
+      "natureza": "facto",
+      "categoria": "politica",
+      "origem": "plataforma",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "condicao": "Regra declarada pela casa no Booking; confirmar com o dono antes de publicar.",
+      "evidencia_ids": [
+        "EV-BOOKING-REGRAS"
+      ]
+    },
+    {
+      "id": "AFIR-DEPOSITO",
+      "entidade_id": "CASA-CALCADA",
+      "texto": "As reservas pelo Booking levam um depósito de 25% do total, por transferência bancária.",
+      "natureza": "facto",
+      "categoria": "politica",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "condicao": "Vale só para as reservas feitas pelo Booking. Não se sabe se a condição é a mesma na reserva direta: não a alargar.",
+      "ambito": {
+        "canal": "Booking"
+      },
+      "evidencia_ids": [
+        "EV-BOOKING-IMPORTANTE"
+      ]
+    },
+    {
+      "id": "AFIR-TARIFAS",
+      "entidade_id": "CASA-CALCADA",
+      "texto": "O site da casa publica preços \"a partir de\" — single 45 €, duplo 60 €, suite 70 €, apartamento 140 €, com pequeno-almoço — sem data nem época.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "nao_usar",
+      "ambito": {
+        "fonte": "site próprio, página Tarifas",
+        "datas": "sem data; site com rodapé de 2010"
+      },
+      "evidencia_ids": [
+        "EV-SITE-TARIFAS"
+      ],
+      "atualidade": "Os preços existem e estão publicados, mas sem data e num site parado desde 2010. Registados como facto sobre o site, não como tarifa utilizável: a base não mostra preços até o dono dar a tabela atual."
+    },
+    {
+      "id": "AFIR-HISTORIA",
+      "entidade_id": "CASA-CALCADA",
+      "texto": "A casa começou como construção rural em granito, cresceu no século XVIII até à forma que tem hoje, e foi depois adaptada pelo Monsenhor António Pinto d'Abreu para servir de colónia de férias de verão aos alunos e professores do colégio Vasco da Gama, de Lisboa. O arquiteto António Couto d'Abreu desenhou então a capela e a varanda de acesso, acrescentadas à empena leste, que passou a ser a entrada.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-SITE-HISTORIA"
+      ],
+      "atualidade": "História; não caduca. É a casa que a conta."
+    },
+    {
+      "id": "AFIR-CANTARIA",
+      "entidade_id": "CASA-CALCADA",
+      "texto": "A cantaria foi executada à mão, com técnicas e materiais da região.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-SITE-HISTORIA"
+      ]
+    },
+    {
+      "id": "AFIR-DESDE-2006",
+      "entidade_id": "CASA-CALCADA",
+      "texto": "A quinta recebe hóspedes desde 2006.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "terceiro",
+      "estado": "desconhecido",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-RNT"
+      ],
+      "atualidade": "A data aparece em portais de turismo de terceiros; nenhuma fonte da casa a confirma."
+    },
+    {
+      "id": "AFIR-PAINEIS",
+      "entidade_id": "CASA-CALCADA",
+      "texto": "A propriedade tem 18 painéis fotovoltaicos que aquecem a água da casa.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "desconhecido",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-SITE-AMBIENTAL"
+      ],
+      "atualidade": "Texto da casa anterior a 2010, sem confirmação posterior. Voltar a perguntar ao dono: se ainda for verdade, é um argumento bom."
+    },
+    {
+      "id": "AFIR-EVENTOS",
+      "entidade_id": "CASA-CALCADA",
+      "texto": "A casa organiza casamentos, batizados, aniversários e festas particulares, e serve almoços e jantares com aviso prévio.",
+      "natureza": "promessa_subjetiva",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "desconhecido",
+      "uso": "inspiracao_editorial",
+      "evidencia_ids": [
+        "EV-SITE-EVENTOS"
+      ],
+      "atualidade": "A casa oferece-o num site parado desde 2010. Pode orientar o tom e justificar uma secção sobre grupos; não pode criar um serviço nem um horário."
+    },
+    {
+      "id": "AFIR-PROGRAMAS",
+      "entidade_id": "CASA-CALCADA",
+      "texto": "A casa oferece programas com provas de vinho na Quinta da Massôrra, passeios a cavalo, canoagem e passeios de veleiro no Douro, com preços por pessoa.",
+      "natureza": "promessa_subjetiva",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "historico",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-SITE-PROGRAMAS"
+      ],
+      "atualidade": "Material antigo: os vinhos das provas são colheitas de 2008 e os preços não têm data."
+    },
+    {
+      "id": "AFIR-NOTA-BOOKING",
+      "entidade_id": "CANAL-BOOKING",
+      "texto": "No Booking, a casa tem 8,8 em 46 comentários, com 9,4 na categoria Funcionários.",
+      "natureza": "metrica",
+      "categoria": "avaliacao",
+      "origem": "plataforma",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "condicao": "Mostrar sempre com a fonte, a escala e a data da leitura (Booking, 22 de setembro de 2026). É um número vivo.",
+      "ambito": {
+        "plataforma": "Booking",
+        "lido_em": "2026-09-22"
+      },
+      "evidencia_ids": [
+        "EV-BOOKING-NOTAS"
+      ]
+    },
+    {
+      "id": "AFIR-NOTA-GOOGLE",
+      "entidade_id": "CASA-CALCADA",
+      "texto": "No Google, a casa tem 4,4 em 152 críticas.",
+      "natureza": "metrica",
+      "categoria": "avaliacao",
+      "origem": "plataforma",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "condicao": "Mostrar com fonte, escala e data (Google Maps, 22 de setembro de 2026).",
+      "ambito": {
+        "plataforma": "Google Maps",
+        "lido_em": "2026-09-22"
+      },
+      "evidencia_ids": [
+        "EV-GOOGLE-FICHA"
+      ]
+    },
+    {
+      "id": "AFIR-ACOLHIMENTO",
+      "entidade_id": "CASA-CALCADA",
+      "texto": "Quem recebe é elogiado pelo nome e pelos gestos: esperar por quem chega tarde, deixar o pequeno-almoço feito, espremer laranjas.",
+      "natureza": "testemunho",
+      "categoria": "avaliacao",
+      "origem": "hospede",
+      "estado": "confirmado",
+      "uso": "citar",
+      "evidencia_ids": [
+        "EV-REV-ACOLHIMENTO"
+      ],
+      "atualidade": "Oito reviews entre out. 2023 e ago. 2026. Citar as palavras dos hóspedes; não transformar em promessa de serviço, e não nomear a pessoa sem autorização do dono."
+    },
+    {
+      "id": "AFIR-SOSSEGO",
+      "entidade_id": "CASA-CALCADA",
+      "texto": "Os hóspedes descrevem a casa como extremamente sossegada e dizem que se sentiram em casa.",
+      "natureza": "testemunho",
+      "categoria": "avaliacao",
+      "origem": "hospede",
+      "estado": "confirmado",
+      "uso": "citar",
+      "evidencia_ids": [
+        "EV-REV-SOSSEGO"
+      ]
+    },
+    {
+      "id": "AFIR-CASA-SO-PARA-SI",
+      "entidade_id": "CASA-CALCADA",
+      "texto": "Quem fica tem a casa toda para si.",
+      "natureza": "inferencia",
+      "categoria": "geral",
+      "origem": "hospede",
+      "estado": "conflitante",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-REV-GRUPO",
+        "EV-REV-SOSSEGO"
+      ],
+      "atualidade": "Cinco hóspedes contam que estavam sozinhos na casa e uma sexta descreve o mesmo como desconforto. Depende de mais ninguém reservar: não é promessa que a base possa fazer para um quarto solto. Vale como argumento para a casa inteira — ver AFIR-CASA-INTEIRA."
+    }
+  ],
+  "citacoes": [
+    {
+      "id": "CIT-CAPELA-JAMES",
+      "review_id": "B-012",
+      "texto_original": "Absolutely beautiful property, lovely setting and a beautiful conversion of an old church.",
+      "traducao": "Propriedade absolutamente linda, enquadramento adorável e uma bela conversão de uma igreja antiga.",
+      "autor": "James",
+      "plataforma": "Booking",
+      "data": "2025-08-28",
+      "lingua": "en"
+    },
+    {
+      "id": "CIT-CAPELA-LEROBOT",
+      "review_id": "B-016",
+      "texto_original": "Expérience unique alliant détente dans la piscine et découverte de ce lieu unique avec sa propre église.",
+      "traducao": "Experiência única, que junta o descanso na piscina à descoberta deste lugar único com a sua própria igreja.",
+      "autor": "Lerobot",
+      "plataforma": "Booking",
+      "data": "2025-08-16",
+      "lingua": "fr"
+    },
+    {
+      "id": "CIT-CASTELO-RAMIRO",
+      "review_id": "B-040",
+      "texto_original": "Alojamiento situado en el interior de un castillo, en el que estuvimos completamente solos.",
+      "traducao": "Alojamento situado no interior de um castelo, no qual estivemos completamente sozinhos.",
+      "autor": "Ramiro",
+      "plataforma": "Booking",
+      "data": "2023-11-23",
+      "lingua": "es"
+    },
+    {
+      "id": "CIT-GENIA-LOCI",
+      "review_id": "B-001",
+      "texto_original": "Mohli jsme projít cely dům a kapli.",
+      "traducao": "Pudemos percorrer a casa inteira e a capela.",
+      "autor": "Cyrany",
+      "plataforma": "Booking",
+      "data": "2026-09-02",
+      "lingua": "cs"
+    },
+    {
+      "id": "CIT-PISCINA-JARDIM",
+      "review_id": "B-001",
+      "texto_original": "Bazén ke koupání je v dokonalé zahradě. […] Na zahradě vyvěrá pitný pramen. Nádherné místo.",
+      "traducao": "A piscina fica num jardim perfeito. No jardim brota uma nascente de água potável. Lugar maravilhoso.",
+      "autor": "Cyrany",
+      "plataforma": "Booking",
+      "data": "2026-09-02",
+      "lingua": "cs"
+    },
+    {
+      "id": "CIT-AVOS-RICOS",
+      "review_id": "G-001",
+      "texto_original": "You feel like at your rich grand-parents home.",
+      "traducao": "Sente-se como na casa dos seus avós ricos.",
+      "autor": "Marc L.",
+      "plataforma": "Google Maps",
+      "data": "2021-09-19",
+      "lingua": "en"
+    },
+    {
+      "id": "CIT-GRUPO-KAYAK",
+      "review_id": "G-003",
+      "texto_original": "I could easily imagine a whole big extended family staying here for a wedding or reunion or group retreat.",
+      "traducao": "Conseguia bem imaginar uma família grande inteira aqui para um casamento, um reencontro ou um retiro de grupo.",
+      "autor": "Ann Meyer",
+      "plataforma": "Google Maps",
+      "data": "2023-06-29",
+      "lingua": "en"
+    },
+    {
+      "id": "CIT-ACOLHIMENTO-ILYA",
+      "review_id": "B-023",
+      "texto_original": "Very caring and welcoming staff. They met me at a late check-in, left a late breakfast, were always in touch",
+      "traducao": "Pessoal muito atencioso e acolhedor. Receberam-me num check-in tardio, deixaram um pequeno-almoço para mais tarde, estiveram sempre em contacto.",
+      "autor": "Ilya",
+      "plataforma": "Booking",
+      "data": "2025-06-01",
+      "lingua": "en"
+    },
+    {
+      "id": "CIT-ACOLHIMENTO-MIIA",
+      "review_id": "B-006",
+      "texto_original": "Emäntä Tina otti ihanasti vastaan ja huolehti aamupaloistamne tuotepuristettua appelsiinimehua myöten.",
+      "traducao": "A anfitriã Tina recebeu-nos maravilhosamente e tratou dos nossos pequenos-almoços até ao sumo de laranja espremido na hora.",
+      "autor": "Miia",
+      "plataforma": "Booking",
+      "data": "2026-08-14",
+      "lingua": "fi"
+    },
+    {
+      "id": "CIT-EM-CASA",
+      "review_id": "B-039",
+      "texto_original": "Muito bem recebido pela anfitriã. Senti-me em casa.",
+      "autor": "Luis",
+      "plataforma": "Booking",
+      "data": "2023-12-29",
+      "lingua": "pt"
+    },
+    {
+      "id": "CIT-EM-CASA-2",
+      "review_id": "B-041",
+      "texto_original": "Sentimo-nos em casa",
+      "autor": "Carlos",
+      "plataforma": "Booking",
+      "data": "2023-10-14",
+      "lingua": "pt"
+    },
+    {
+      "id": "CIT-SOSSEGO-JOHNNY",
+      "review_id": "G-002",
+      "texto_original": "É um local calmo e muito sossegado, ideal para descansar e desligar do mundo.",
+      "autor": "Johnny Lino",
+      "plataforma": "Google Maps",
+      "data": "2024-10-08",
+      "lingua": "pt"
+    },
+    {
+      "id": "CIT-ENVOLVENCIA",
+      "review_id": "B-033",
+      "texto_original": "O que mais gostei foi a envolvencia em que o alojamento se encontra, com espaços verdes e generosos, ideal para momentos de descanso.",
+      "autor": "Maria",
+      "plataforma": "Booking",
+      "data": "2024-08-18",
+      "lingua": "pt"
+    },
+    {
+      "id": "CIT-ENCANTADA",
+      "review_id": "B-036",
+      "texto_original": "Fiquei encantada com tudo. Desde a piscina, as condições do alojamento, o jardim, tudo!",
+      "autor": "Margarida",
+      "plataforma": "Booking",
+      "data": "2024-07-14",
+      "lingua": "pt"
+    },
+    {
+      "id": "CIT-ESPACOS-TODOS",
+      "review_id": "B-027",
+      "texto_original": "funcionários bastante simpáticos, deixando-nos á vontade para a utilização de todos os espaços do edifício.",
+      "autor": "Vitor",
+      "plataforma": "Booking",
+      "data": "2024-09-02",
+      "lingua": "pt"
+    },
+    {
+      "id": "CIT-MAGIA",
+      "review_id": "G-004",
+      "texto_original": "A casa tem uma magia e beleza característica.",
+      "autor": "Carlos Filipe",
+      "plataforma": "Google Maps",
+      "data": "2024-04-01",
+      "lingua": "pt"
+    },
+    {
+      "id": "CIT-PERSONALIDADE",
+      "review_id": "B-006",
+      "texto_original": "Persoonallinen majapaikka Douron joen alueella.",
+      "traducao": "Um alojamento com personalidade própria na zona do rio Douro.",
+      "autor": "Miia",
+      "plataforma": "Booking",
+      "data": "2026-08-14",
+      "lingua": "fi"
+    },
+    {
+      "id": "CIT-RESTAURADA",
+      "review_id": "B-046",
+      "texto_original": "Meget smukt renoveret og indrettet ejendom.",
+      "traducao": "Propriedade muito bonita, restaurada e decorada.",
+      "autor": "Elin",
+      "plataforma": "Booking",
+      "data": "2023-09-24",
+      "lingua": "da"
+    },
+    {
+      "id": "CIT-ATRITO-CHEGADA",
+      "review_id": "B-012",
+      "texto_original": "Check-in process was not ideal, had to contact the property as there was no one on site when we arrived",
+      "traducao": "O processo de check-in não foi ideal, tivemos de contactar a propriedade porque não estava ninguém no local quando chegámos.",
+      "autor": "James",
+      "plataforma": "Booking",
+      "data": "2025-08-28",
+      "lingua": "en"
+    },
+    {
+      "id": "CIT-ATRITO-PISCINA",
+      "review_id": "B-002",
+      "texto_original": "La piscina tenia el fondo verdoso y el agua turbia.",
+      "traducao": "A piscina tinha o fundo esverdeado e a água turva.",
+      "autor": "Alba",
+      "plataforma": "Booking",
+      "data": "2026-08-23",
+      "lingua": "es"
+    }
+  ],
+  "ativos": [
+    {
+      "id": "ATV-CAPA",
+      "caminho": "marketing/fotos/capa.jpg",
+      "dimensoes": {
+        "largura": 1620,
+        "altura": 1080
+      },
+      "assunto": "A piscina com a torre da capela e a serra ao fundo",
+      "publicador": "casa",
+      "entidade_confirmada": "ESP-PISCINA",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorizacao para o site definitivo por confirmar com o dono; para a versao de demonstracao a foto e utilizavel porque foi a propria casa que a publicou."
+      ],
+      "derivado_de": "ATV-PISCINA-03"
+    },
+    {
+      "id": "ATV-PISCINA-03",
+      "caminho": "marketing/fotos/exterior/piscina-torre-03.jpg",
+      "dimensoes": {
+        "largura": 1620,
+        "altura": 1080
+      },
+      "assunto": "A piscina com a torre da capela e a serra ao fundo, ao meio-dia",
+      "publicador": "casa",
+      "entidade_confirmada": "ESP-PISCINA",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização de uso por confirmar com o dono.",
+        "Não usar como prova do estado atual da água."
+      ]
+    },
+    {
+      "id": "ATV-PISCINA-02",
+      "caminho": "marketing/fotos/exterior/piscina-torre-02.jpg",
+      "dimensoes": {
+        "largura": 1620,
+        "altura": 1080
+      },
+      "assunto": "A piscina azul, a torre e a serra, com céu de nuvens",
+      "publicador": "casa",
+      "entidade_confirmada": "ESP-PISCINA",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização de uso por confirmar com o dono."
+      ]
+    },
+    {
+      "id": "ATV-AEREA",
+      "caminho": "marketing/fotos/exterior/aerea-01.jpg",
+      "dimensoes": {
+        "largura": 1920,
+        "altura": 760
+      },
+      "assunto": "Vista aérea da quinta inteira: ténis, piscina, capela, jardins e a E.N. 222",
+      "publicador": "casa",
+      "entidade_confirmada": "CASA-CALCADA",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização de uso por confirmar com o dono."
+      ]
+    },
+    {
+      "id": "ATV-CAPELA-05",
+      "caminho": "marketing/fotos/exterior/capela-05.jpg",
+      "dimensoes": {
+        "largura": 1620,
+        "altura": 1080
+      },
+      "assunto": "A capela vista do jardim, por cima de flores rosa",
+      "publicador": "casa",
+      "entidade_confirmada": "ESP-CAPELA",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização de uso por confirmar com o dono."
+      ]
+    },
+    {
+      "id": "ATV-CAPELA-03",
+      "caminho": "marketing/fotos/exterior/capela-03.jpg",
+      "dimensoes": {
+        "largura": 1620,
+        "altura": 1080
+      },
+      "assunto": "Fachada de granito da capela e do corpo anexo, com relvado à frente",
+      "publicador": "casa",
+      "entidade_confirmada": "ESP-CAPELA",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização de uso por confirmar com o dono."
+      ]
+    },
+    {
+      "id": "ATV-CAPELA-06",
+      "caminho": "marketing/fotos/exterior/capela-06.jpg",
+      "dimensoes": {
+        "largura": 1620,
+        "altura": 1080
+      },
+      "assunto": "Torre e telhados vistos do relvado alto, com as ameias em primeiro plano",
+      "publicador": "casa",
+      "entidade_confirmada": "ESP-CAPELA",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização de uso por confirmar com o dono."
+      ]
+    },
+    {
+      "id": "ATV-CAPELA-INT",
+      "caminho": "marketing/fotos/interior/capela-interior-01.jpg",
+      "dimensoes": {
+        "largura": 720,
+        "altura": 480
+      },
+      "assunto": "Interior da capela: altar, arcos, vitrais e bancos de madeira",
+      "publicador": "casa",
+      "entidade_confirmada": "ESP-CAPELA",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização de uso por confirmar com o dono.",
+        "Só 720×480: não aguenta hero nem imagem grande."
+      ]
+    },
+    {
+      "id": "ATV-CAPELA-VITRAIS",
+      "caminho": "marketing/fotos/interior/capela-vitrais-01.jpg",
+      "dimensoes": {
+        "largura": 480,
+        "altura": 720
+      },
+      "assunto": "Os vitrais a arder de luz sobre a consola e as flores",
+      "publicador": "casa",
+      "entidade_confirmada": "ESP-CAPELA",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização de uso por confirmar com o dono.",
+        "Pequena: só para cartão ou detalhe."
+      ]
+    },
+    {
+      "id": "ATV-ESTRADA",
+      "caminho": "marketing/fotos/exterior/estrada-en222-01.jpg",
+      "dimensoes": {
+        "largura": 720,
+        "altura": 480
+      },
+      "assunto": "O conjunto visto da E.N. 222: muralha ameada, torre e portões",
+      "publicador": "casa",
+      "entidade_confirmada": "CASA-CALCADA",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização de uso por confirmar com o dono.",
+        "Pequena."
+      ]
+    },
+    {
+      "id": "ATV-GLICINIAS-01",
+      "caminho": "marketing/fotos/exterior/glicinias-alameda-01.jpg",
+      "dimensoes": {
+        "largura": 1620,
+        "altura": 1080
+      },
+      "assunto": "Alameda de glicínias sobre calçada, ao longo do muro de granito",
+      "publicador": "casa",
+      "entidade_confirmada": "ESP-JARDINS",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização de uso por confirmar com o dono."
+      ]
+    },
+    {
+      "id": "ATV-GLICINIAS-02",
+      "caminho": "marketing/fotos/exterior/glicinias-alameda-02.jpg",
+      "dimensoes": {
+        "largura": 720,
+        "altura": 480
+      },
+      "assunto": "A alameda de glicínias em calçada, sob a arcada de pedra",
+      "publicador": "casa",
+      "entidade_confirmada": "ESP-JARDINS",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização de uso por confirmar com o dono.",
+        "Pequena."
+      ]
+    },
+    {
+      "id": "ATV-TANQUE",
+      "caminho": "marketing/fotos/exterior/tanque-nascente-01.jpg",
+      "dimensoes": {
+        "largura": 1620,
+        "altura": 1080
+      },
+      "assunto": "O tanque de pedra com o repuxo, a árvore grande e a relva",
+      "publicador": "casa",
+      "entidade_confirmada": "ESP-TANQUE",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização de uso por confirmar com o dono."
+      ]
+    },
+    {
+      "id": "ATV-VISTA-DOURO",
+      "caminho": "marketing/fotos/exterior/vista-douro-01.jpg",
+      "dimensoes": {
+        "largura": 1620,
+        "altura": 1080
+      },
+      "assunto": "O rio Douro visto do alto da propriedade, entre encostas verdes",
+      "publicador": "casa",
+      "entidade_confirmada": "CASA-CALCADA",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização de uso por confirmar com o dono."
+      ]
+    },
+    {
+      "id": "ATV-JARDIM-CAPELA",
+      "caminho": "marketing/fotos/exterior/jardim-capela-01.jpg",
+      "dimensoes": {
+        "largura": 1620,
+        "altura": 1080
+      },
+      "assunto": "Jardim com árvores de grande porte e a capela à direita",
+      "publicador": "casa",
+      "entidade_confirmada": "ESP-JARDINS",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização de uso por confirmar com o dono."
+      ]
+    },
+    {
+      "id": "ATV-AGUAS-FURTADAS",
+      "caminho": "marketing/fotos/interior/quarto-aguas-furtadas-02.jpg",
+      "dimensoes": {
+        "largura": 1620,
+        "altura": 1080
+      },
+      "assunto": "Quarto das águas-furtadas com as claraboias abertas sobre o vale e a secretária",
+      "publicador": "casa",
+      "entidade_confirmada": "ESP-AGUAS-FURTADAS",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização de uso por confirmar com o dono."
+      ]
+    },
+    {
+      "id": "ATV-AGUAS-FURTADAS-03",
+      "caminho": "marketing/fotos/interior/quarto-aguas-furtadas-03.jpg",
+      "dimensoes": {
+        "largura": 1620,
+        "altura": 1080
+      },
+      "assunto": "Quarto das águas-furtadas com as claraboias, a janela e a cómoda",
+      "publicador": "casa",
+      "entidade_confirmada": "ESP-AGUAS-FURTADAS",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização de uso por confirmar com o dono."
+      ]
+    },
+    {
+      "id": "ATV-SUITE",
+      "caminho": "marketing/fotos/interior/quarto-casal-01.jpg",
+      "dimensoes": {
+        "largura": 1620,
+        "altura": 1080
+      },
+      "assunto": "Quarto de casal com parede de granito, cómoda e as toalhas dobradas em cisne",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização de uso por confirmar com o dono.",
+        "Não está provado a que tipo de quarto pertence: a galeria do Booking não separa por unidade."
+      ]
+    },
+    {
+      "id": "ATV-TWIN",
+      "caminho": "marketing/fotos/interior/quarto-twin-06.jpg",
+      "dimensoes": {
+        "largura": 720,
+        "altura": 1080
+      },
+      "assunto": "Quarto twin com a parede de granito à vista e as colchas laranja",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização de uso por confirmar com o dono.",
+        "Não está provado a que quarto pertence."
+      ]
+    },
+    {
+      "id": "ATV-APARTAMENTO",
+      "caminho": "marketing/fotos/interior/anexo-kitchenette-01.jpg",
+      "dimensoes": {
+        "largura": 1620,
+        "altura": 1080
+      },
+      "assunto": "Kitchenette do apartamento anexo: mesa redonda, salamandra, bancada e paredes de granito",
+      "publicador": "casa",
+      "entidade_confirmada": "UN-APARTAMENTO",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização de uso por confirmar com o dono.",
+        "Não usar como prova de que a cozinha está equipada: ver AFIR-APARTAMENTO-COZINHA."
+      ]
+    },
+    {
+      "id": "ATV-SALAO-JANTAR",
+      "caminho": "marketing/fotos/interior/salao-jantar-01.jpg",
+      "dimensoes": {
+        "largura": 720,
+        "altura": 480
+      },
+      "assunto": "Salão para jantares: mesa comprida posta para dezasseis, contra a parede de granito",
+      "publicador": "casa",
+      "entidade_confirmada": "ESP-SALAO-JANTAR",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização de uso por confirmar com o dono.",
+        "Pequena."
+      ]
+    },
+    {
+      "id": "ATV-BILHAR",
+      "caminho": "marketing/fotos/interior/bilhar-01.jpg",
+      "dimensoes": {
+        "largura": 1620,
+        "altura": 1080
+      },
+      "assunto": "Mesa de bilhar de pano vermelho, com a parede de granito e o quadro",
+      "publicador": "casa",
+      "entidade_confirmada": "ESP-BILHAR",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização de uso por confirmar com o dono."
+      ]
+    },
+    {
+      "id": "ATV-SALA-LAREIRA",
+      "caminho": "marketing/fotos/interior/sala-lareira-01.jpg",
+      "dimensoes": {
+        "largura": 1620,
+        "altura": 1080
+      },
+      "assunto": "Sala de estar com a lareira de pedra, tapetes e os cadeirões",
+      "publicador": "casa",
+      "entidade_confirmada": "ESP-SALAS",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização de uso por confirmar com o dono."
+      ]
+    },
+    {
+      "id": "ATV-CORREDOR-PEDRA",
+      "caminho": "marketing/fotos/interior/corredor-pedra-01.jpg",
+      "dimensoes": {
+        "largura": 1620,
+        "altura": 1080
+      },
+      "assunto": "Corredor entre paredes de granito, com claraboia e tapete",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização de uso por confirmar com o dono."
+      ]
+    },
+    {
+      "id": "ATV-SALAO-EVENTOS",
+      "caminho": "marketing/fotos/interior/salao-eventos-01.jpg",
+      "dimensoes": {
+        "largura": 720,
+        "altura": 480
+      },
+      "assunto": "Salão de eventos: abóbada de pedra, lareira grande, cadeirões vermelhos e tela de projeção",
+      "publicador": "casa",
+      "uso": "restrito",
+      "restricoes": [
+        "Autorização de uso por confirmar com o dono.",
+        "Pequena.",
+        "Mostra tela de projeção e disposição de conferência: não usar para sugerir um serviço de eventos que não está confirmado."
+      ]
+    },
+    {
+      "id": "ATV-BAR",
+      "caminho": "marketing/fotos/interior/bar-01.jpg",
+      "dimensoes": {
+        "largura": 1620,
+        "altura": 1080
+      },
+      "assunto": "O bar: balcão de madeira curvo, parede de granito e garrafas na prateleira",
+      "publicador": "casa",
+      "entidade_confirmada": "ESP-BAR",
+      "uso": "restrito",
+      "restricoes": [
+        "Autorização de uso por confirmar com o dono.",
+        "Não usar com legenda que prometa bar em funcionamento: ver AFIR-BAR."
+      ]
+    },
+    {
+      "id": "ATV-MESA-POSTA",
+      "caminho": "marketing/fotos/interior/mesa-posta-01.jpg",
+      "dimensoes": {
+        "largura": 1620,
+        "altura": 1080
+      },
+      "assunto": "Mesa posta com terrina, copos de vinho e taça de cerejas, contra a parede de granito",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorizacao para o site definitivo por confirmar com o dono; para a versao de demonstracao a foto e utilizavel porque foi a propria casa que a publicou.",
+        "Mesa posta de arranjo: nao usar como prova do que a casa serve a mesa."
+      ]
+    },
+    {
+      "id": "ATV-QUARTO-PEDRA",
+      "caminho": "marketing/fotos/interior/quarto-pedra-01.jpg",
+      "dimensoes": {
+        "largura": 1620,
+        "altura": 1080
+      },
+      "assunto": "Canto de quarto com a parede de granito e a fresta antiga",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorizacao para o site definitivo por confirmar com o dono; para a versao de demonstracao a foto e utilizavel porque foi a propria casa que a publicou.",
+        "Nao esta provado a que quarto pertence."
+      ]
+    },
+    {
+      "id": "ATV-TELHADO-CLARABOIAS",
+      "caminho": "marketing/fotos/exterior/telhado-claraboias-01.jpg",
+      "dimensoes": {
+        "largura": 1620,
+        "altura": 1080
+      },
+      "assunto": "Telhado com as claraboias dos quartos das aguas-furtadas, sobre o vale",
+      "publicador": "casa",
+      "entidade_confirmada": "ESP-AGUAS-FURTADAS",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorizacao para o site definitivo por confirmar com o dono; para a versao de demonstracao a foto e utilizavel porque foi a propria casa que a publicou."
+      ]
+    },
+    {
+      "id": "ATV-PISCINA-01",
+      "caminho": "marketing/fotos/exterior/piscina-torre-01.jpg",
+      "dimensoes": {
+        "largura": 1620,
+        "altura": 1080
+      },
+      "assunto": "A piscina e o relvado, com a torre da capela e as montanhas ao fundo",
+      "publicador": "casa",
+      "entidade_confirmada": "ESP-PISCINA",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorizacao para o site definitivo por confirmar com o dono; para a versao de demonstracao a foto e utilizavel porque foi a propria casa que a publicou."
+      ]
+    },
+    {
+      "id": "ATV-PATIO-TORRE",
+      "caminho": "marketing/fotos/exterior/patio-torre-01.jpg",
+      "dimensoes": {
+        "largura": 1620,
+        "altura": 1080
+      },
+      "assunto": "Patio interior de pedra com a torre da capela por cima",
+      "publicador": "casa",
+      "entidade_confirmada": "ESP-CAPELA",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorizacao para o site definitivo por confirmar com o dono; para a versao de demonstracao a foto e utilizavel porque foi a propria casa que a publicou."
+      ]
+    },
+    {
+      "id": "ATV-TELHADO-AMEIAS",
+      "caminho": "marketing/fotos/exterior/telhado-ameias-01.jpg",
+      "dimensoes": {
+        "largura": 1620,
+        "altura": 1080
+      },
+      "assunto": "Telhado com claraboias e as ameias da muralha",
+      "publicador": "casa",
+      "entidade_confirmada": "CASA-CALCADA",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorizacao para o site definitivo por confirmar com o dono; para a versao de demonstracao a foto e utilizavel porque foi a propria casa que a publicou."
+      ]
+    },
+    {
+      "id": "ATV-TWIN-02",
+      "caminho": "marketing/fotos/interior/quarto-twin-02.jpg",
+      "dimensoes": {
+        "largura": 1620,
+        "altura": 1080
+      },
+      "assunto": "Quarto twin com o candeeiro aceso e as cortinas",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorizacao para o site definitivo por confirmar com o dono; para a versao de demonstracao a foto e utilizavel porque foi a propria casa que a publicou."
+      ]
+    },
+    {
+      "id": "ATV-TWIN-07",
+      "caminho": "marketing/fotos/interior/quarto-twin-07.jpg",
+      "dimensoes": {
+        "largura": 720,
+        "altura": 1080
+      },
+      "assunto": "Quarto twin com o armario e as toalhas sobre a cama",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorizacao para o site definitivo por confirmar com o dono; para a versao de demonstracao a foto e utilizavel porque foi a propria casa que a publicou."
+      ]
+    },
+    {
+      "id": "ATV-CAMINHO-CALCADA",
+      "caminho": "marketing/fotos/exterior/caminho-calcada-01.jpg",
+      "dimensoes": {
+        "largura": 720,
+        "altura": 480
+      },
+      "assunto": "Caminho de calcada entre muros de granito, com roseiras e a casa ao fundo",
+      "publicador": "casa",
+      "entidade_confirmada": "ESP-TANQUE",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorizacao para o site definitivo por confirmar com o dono; para a versao de demonstracao a foto e utilizavel porque foi a propria casa que a publicou.",
+        "So 720x480: nao aguenta area grande."
+      ]
+    },
+    {
+      "id": "ATV-JARDIM-CAPELA-03",
+      "caminho": "marketing/fotos/exterior/jardim-capela-03.jpg",
+      "dimensoes": {
+        "largura": 720,
+        "altura": 480
+      },
+      "assunto": "Relvado grande com a capela e as arvores altas",
+      "publicador": "casa",
+      "entidade_confirmada": "ESP-TANQUE",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorizacao para o site definitivo por confirmar com o dono; para a versao de demonstracao a foto e utilizavel porque foi a propria casa que a publicou.",
+        "So 720x480: nao aguenta area grande."
+      ]
+    },
+    {
+      "id": "ATV-TANQUE-03",
+      "caminho": "marketing/fotos/exterior/tanque-nascente-03.jpg",
+      "dimensoes": {
+        "largura": 720,
+        "altura": 480
+      },
+      "assunto": "O tanque com o repuxo a correr, sob a arvore",
+      "publicador": "casa",
+      "entidade_confirmada": "ESP-TANQUE",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorizacao para o site definitivo por confirmar com o dono; para a versao de demonstracao a foto e utilizavel porque foi a propria casa que a publicou.",
+        "So 720x480: nao aguenta area grande."
+      ]
+    }
+  ],
+  "decisoes": [
+    {
+      "id": "DEC-FOTOS-POR-AUTORIZAR",
+      "estado": "ativa",
+      "efeito": "informativo",
+      "texto": "Todas as fotografias do dossie foram publicadas pela propria casa, no Booking e no site, mas o dono ainda nao autorizou o uso delas. Sao utilizaveis na versao de demonstracao, porque a autoria e da casa e o material e publico; antes de publicar o site definitivo, confirmar com ele. Ficam restritas as duas fotos que arriscam prometer um servico por confirmar: o bar e o salao montado para eventos.",
+      "decidido_em": "2026-09-22",
+      "fonte": "decisão do utilizador, sem contacto com o dono",
+      "afetados": [
+        "ATV-CAPA",
+        "ATV-PISCINA-03",
+        "ATV-AEREA",
+        "ATV-CAPELA-05",
+        "ATV-CAPELA-INT",
+        "ATV-BAR",
+        "ATV-SALAO-EVENTOS"
+      ]
+    },
+    {
+      "id": "DEC-PROGRAMAS-ANTIGOS",
+      "estado": "ativa",
+      "efeito": "bloquear_uso",
+      "texto": "Os programas publicados pela casa (provas de vinho na Quinta da Massôrra, passeios a cavalo, veleiro, roteiro de oito dias) citam colheitas de 2008 e preços sem data, num site cujo rodapé é de 2010. Não entram na base até o dono confirmar o que ainda existe.",
+      "decidido_em": "2026-09-22",
+      "fonte": "fase 3 do dossiê: verificação de atualidade",
+      "afetados": [
+        "AFIR-PROGRAMAS"
+      ]
+    },
+    {
+      "id": "DEC-TARIFAS-SEM-DATA",
+      "estado": "ativa",
+      "efeito": "bloquear_uso",
+      "texto": "Os preços publicados no site não têm data nem época e são de um site parado desde 2010. A base não mostra preços até o dono dar a tabela atual.",
+      "decidido_em": "2026-09-22",
+      "fonte": "fase 3 do dossiê: verificação de atualidade",
+      "afetados": [
+        "AFIR-TARIFAS"
+      ]
+    },
+    {
+      "id": "DEC-NAO-NOMEAR-QUEM-RECEBE",
+      "estado": "ativa",
+      "efeito": "informativo",
+      "texto": "Os hóspedes nomeiam a D. Tina em cinco reviews, mas nenhum canal da casa a nomeia. A base pode citar as reviews tal como estão escritas; não pode apresentar ninguém como anfitrião da casa sem o dono decidir.",
+      "decidido_em": "2026-09-22",
+      "fonte": "fase 4 do dossiê",
+      "afetados": [
+        "AFIR-ACOLHIMENTO",
+        "CIT-ACOLHIMENTO-MIIA"
+      ]
+    },
+    {
+      "id": "DEC-SEM-HOTEL",
+      "estado": "ativa",
+      "efeito": "informativo",
+      "texto": "O Google Maps rotula a casa como \"Hotel de 3 estrelas\". É categoria da plataforma e contraria o registo. A base não usa a palavra hotel nem estrelas: é Turismo de Habitação.",
+      "decidido_em": "2026-09-22",
+      "fonte": "fase 1 do dossiê: confirmação de tipo",
+      "afetados": [
+        "AFIR-TIPOLOGIA"
+      ]
+    }
+  ],
+  "cobertura": [
+    {
+      "id": "COB-SITE-PAGINAS",
+      "fonte": "casacalcada.com",
+      "material": "textos",
+      "estado": "completo_no_universo_observado",
+      "superficie": "16 páginas PT e 3 EN, a totalidade do menu e dos submenus, recolhidas em HTML a 2026-09-22",
+      "observado": 19,
+      "recolhido": 19
+    },
+    {
+      "id": "COB-SITE-FOTOS",
+      "fonte": "casacalcada.com — galeria de imagens",
+      "material": "fotos",
+      "estado": "completo_no_universo_observado",
+      "superficie": "galeria numerada 1–25 e 31, mais o banner de interface",
+      "observado": 27,
+      "recolhido": 27,
+      "limitacao": "8 guardadas foram depois descartadas por serem a mesma cena que o Booking serve em 1620 px"
+    },
+    {
+      "id": "COB-BOOKING-FICHA",
+      "fonte": "Booking — ficha do anúncio",
+      "material": "factos",
+      "estado": "completo_no_universo_observado",
+      "superficie": "descrição, bloco do anfitrião, comodidades, regras, informações importantes, informação legal, proximidades",
+      "observado": 1,
+      "recolhido": 1
+    },
+    {
+      "id": "COB-BOOKING-REVIEWS",
+      "fonte": "Booking — comentários dos hóspedes",
+      "material": "reviews",
+      "estado": "completo_no_universo_observado",
+      "superficie": "5 páginas do separador de comentários, todas percorridas, 2026-09-22",
+      "observado": 46,
+      "recolhido": 46
+    },
+    {
+      "id": "COB-BOOKING-FOTOS",
+      "fonte": "Booking — galeria do anúncio",
+      "material": "fotos",
+      "estado": "completo_no_universo_observado",
+      "superficie": "galeria principal aberta até ao fim; a página anuncia \"mais 107 fotografias\"",
+      "observado": 115,
+      "recolhido": 115,
+      "limitacao": "O Booking não serve estas fotos acima de 1620 px; 67 das 115 são 720×480 ou menores no original"
+    },
+    {
+      "id": "COB-BOOKING-QUARTOS",
+      "fonte": "Booking — tabela de tipos",
+      "material": "quartos",
+      "estado": "parcial",
+      "superficie": "tabela de tipos sem datas escolhidas",
+      "observado": 5,
+      "recolhido": 5,
+      "limitacao": "As descrições escritas de cada quarto só aparecem depois de escolher datas; não foram recolhidas para não converter uma pesquisa de disponibilidade em inventário"
+    },
+    {
+      "id": "COB-GOOGLE-REVIEWS",
+      "fonte": "Google Maps — críticas",
+      "material": "reviews",
+      "estado": "parcial",
+      "superficie": "separador Críticas aberto, filtro \"Tudo\", painel percorrido até ao fim; depois Places API",
+      "observado": 152,
+      "recolhido": 5,
+      "limitacao": "A lista de críticas não é servida a um browser sem sessão iniciada: zero cartões no DOM depois de percorrer o painel. As 5 recolhidas vêm da Places API, que devolve no máximo cinco. Faltam 147"
+    },
+    {
+      "id": "COB-GOOGLE-FOTOS",
+      "fonte": "Google Maps — fotografias",
+      "material": "fotos",
+      "estado": "nao_aplicavel",
+      "superficie": "separadores Quartos, Exterior, Comodidades, De visitantes",
+      "limitacao": "Não há separador \"Do proprietário\" identificável; as fotos não têm autoria confirmada da casa e por isso não entram no dossiê"
+    },
+    {
+      "id": "COB-RNT",
+      "fonte": "Registo Nacional de Turismo, via portal visitportugal.com",
+      "material": "compliance",
+      "estado": "parcial",
+      "superficie": "ficha do empreendimento",
+      "observado": 1,
+      "recolhido": 1,
+      "limitacao": "Confirma tipologia, número 1375 e capacidade, mas não dá a forma completa do registo (RNET nº / ano)"
+    },
+    {
+      "id": "COB-AIRBNB",
+      "fonte": "Airbnb",
+      "material": "canais",
+      "estado": "nao_encontrado",
+      "superficie": "pesquisa por nome e concelho",
+      "limitacao": "Não foi encontrado anúncio próprio neste percurso; não prova que não exista"
+    },
+    {
+      "id": "COB-TRIPADVISOR",
+      "fonte": "TripAdvisor",
+      "material": "canais",
+      "estado": "nao_encontrado",
+      "superficie": "pesquisa por nome e concelho",
+      "limitacao": "Não foi encontrado perfil próprio neste percurso"
+    },
+    {
+      "id": "COB-FACEBOOK",
+      "fonte": "Facebook",
+      "material": "textos",
+      "estado": "bloqueado",
+      "superficie": "o site liga a facebook.com sem página; uma pesquisa devolveu facebook.com/casadacalcada.cinfaes",
+      "limitacao": "A autoria da página não foi confirmada e a página não foi recolhida. Confirmar com o dono"
+    },
+    {
+      "id": "COB-DONO",
+      "fonte": "o dono da casa",
+      "material": "identidade",
+      "estado": "nao_aplicavel",
+      "limitacao": "Não houve contacto com o dono. Todo o dossiê é material público. Ver a lista de perguntas em dono.md"
+    }
+  ]
+}

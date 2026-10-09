@@ -1,0 +1,190 @@
+@import "tailwindcss";
+
+/*
+  As cores e as fontes sao as do prototipo escolhido: trocam-se aqui os
+  valores, nao os nomes. Os nomes sao papeis, usados pelo primeiro ecra,
+  pelo cabecalho e pelo rodape:
+
+  linho       o fundo da pagina        tinta     o texto
+  cartao      fundos claros elevados   floresta  os paineis escuros e o rodape
+  ouro        o acento (o botao)       osso      texto sobre foto ou escuro
+  noite       o veu do primeiro ecra   linha     os filetes
+
+  Os valores abaixo sao do molde antigo: substitui-os todos.
+*/
+
+@theme {
+  /* linho: o fundo da pagina (--cor-fundo do prototipo C) */
+  --color-linho: #ece5da;
+  --color-linho-escuro: #e4d9ca;
+  --color-cartao: #f6efe6;
+
+  /* texto */
+  --color-tinta: #211f19;
+  --color-tinta-medio: #5a5246;
+
+  /* a faixa escura (Por dentro) e o rodape: o proprio texto do prototipo */
+  --color-floresta: #211f19;
+  --color-floresta-fundo: #211f19;
+
+  /* o acento: o rosa-pedra do botao Reservar. Claro: so como fundo de
+     botao com texto escuro, nunca como texto sobre linho. */
+  --color-ouro: #e2ccc4;
+  --color-ouro-escuro: #c9aea3;
+
+  /* o vermelho das janelas: o numero de telefone, as distancias, o fio */
+  --color-vermelho: #8a2f27;
+  --color-vermelho-escuro: #6c231d;
+
+  --color-osso: #f6efe6;
+  --color-noite: #241a14;
+
+  --color-linha: #cfc4b3;
+  --color-linha-escura: #4b443a;
+  --color-linha-clara: rgba(246, 239, 230, 0.15);
+
+  --font-display: var(--fonte-display), Georgia, serif;
+  --font-corpo: var(--fonte-corpo), system-ui, sans-serif;
+
+  --radius-media: 0px;
+  --radius-botao: 2px;
+}
+
+@layer base {
+  html {
+    background-color: var(--color-linho);
+    color-scheme: light;
+  }
+
+  body {
+    font-family: var(--font-corpo);
+    font-size: 1rem;
+    line-height: 1.7;
+    background-color: var(--color-linho);
+    color: var(--color-tinta);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1.02;
+  }
+
+  /* O italico dos titulos e da mesma familia. Com descendentes (y g j p)
+     precisa de folga em baixo, senao corta. */
+  h1 em, h2 em, h3 em {
+    font-style: italic;
+    padding-bottom: 0.06em;
+  }
+
+  ::selection {
+    background: var(--color-floresta);
+    color: var(--color-osso);
+  }
+
+  /* A cor do proprio texto: contrasta sempre com o fundo onde esta, seja
+     linho, a faixa escura ou a fotografia. */
+  :focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+  }
+}
+
+/* As pecas que o prototipo C repete em todas as seccoes. */
+@layer components {
+  .caixa {
+    max-width: 1320px;
+    margin-inline: auto;
+    padding-inline: 24px;
+  }
+  @media (min-width: 768px) {
+    .caixa { padding-inline: 40px; }
+  }
+
+  .titulo-seccao {
+    font-size: clamp(2.6rem, 6vw, 5.6rem);
+  }
+
+  .marca-pequena {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-tinta-medio);
+  }
+
+  /* A passagem de uma seccao para a outra, em italico grande. */
+  .corte {
+    padding-block: 88px;
+  }
+  .corte p {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(1.6rem, 2.6vw, 2.3rem);
+    line-height: 1.2;
+    max-width: 24ch;
+  }
+  @media (max-width: 767px) {
+    .corte { padding-block: 64px; }
+  }
+}
+
+@layer utilities {
+  /* Versaletes das referencias: pequenos, espacados, em maiusculas. */
+  .versalete {
+    font-family: var(--font-corpo);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  /* Veu do hero: so escurece onde esta o texto, em cima e a esquerda (o
+     texto do primeiro ecra fica alinhado em cima). A fotografia fica com
+     a luz dela no resto. */
+  .veu-hero {
+    background:
+      linear-gradient(180deg, rgba(36, 26, 20, 0.46) 0%, rgba(36, 26, 20, 0.3) 45%, rgba(36, 26, 20, 0.12) 80%, rgba(36, 26, 20, 0) 94%),
+      linear-gradient(90deg, rgba(36, 26, 20, 0.55) 0%, rgba(36, 26, 20, 0.4) 34%, rgba(36, 26, 20, 0.12) 52%, rgba(36, 26, 20, 0) 66%);
+  }
+
+  /* No telemovel o texto ocupa a largura toda e fica por cima da casa:
+     o veu passa a cobrir tudo, mais leve em cima e em baixo. */
+  @media (max-width: 767px) {
+    .veu-hero {
+      background: linear-gradient(
+        to bottom,
+        rgba(36, 26, 20, 0.45) 0%,
+        rgba(36, 26, 20, 0.5) 45%,
+        rgba(36, 26, 20, 0.3) 100%
+      );
+    }
+  }
+
+  /* Veu da legenda do portao: so no canto de baixo, onde esta o texto. */
+  .veu-portao {
+    background:
+      linear-gradient(to top, rgba(36, 26, 20, 0.66) 0%, rgba(36, 26, 20, 0.34) 20%, rgba(36, 26, 20, 0) 42%),
+      linear-gradient(to right, rgba(36, 26, 20, 0.3) 0%, rgba(36, 26, 20, 0) 45%);
+  }
+
+  .sem-barra::-webkit-scrollbar {
+    display: none;
+  }
+  .sem-barra {
+    scrollbar-width: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

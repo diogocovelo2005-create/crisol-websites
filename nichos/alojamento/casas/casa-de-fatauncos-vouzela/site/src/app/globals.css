@@ -1,0 +1,250 @@
+@import "tailwindcss";
+
+/* telemovel deitado: ecra largo mas com ~400 px de altura */
+@custom-variant deitado (@media (orientation: landscape) and (max-height: 500px));
+/* telemovel baixo de pe (320x568, 360x640, 375x667 e afins) */
+@custom-variant baixo (@media (orientation: portrait) and (max-height: 700px));
+
+/*
+  Casa de Fataunços - Turismo de Habitacao em Fataunços, Vouzela.
+
+  A estrutura vem do molde (fundo claro, faixas escuras, um acento so para
+  o botao que converte, serifa nos titulos com uma palavra em italico,
+  rotulos pequenos em versaletes). As cores vem das fotografias desta casa:
+  paredes de cal fria, cantaria de granito cinza-azulada, portas e janelas
+  em verde escuro, telha de barro.
+
+  Os nomes dos tokens ficam os do molde, mesmo quando deixam de descrever a
+  cor (`ouro` e agora terracota): mudar os nomes obrigava a mexer em dezenas
+  de sitios. A correspondencia esta em ADAPTACAO.md.
+
+  Cantos: fotografias e cartoes a 10px. Botoes e campos a 2px, quase
+  retos, como nas referencias. Nao ha terceiro valor.
+*/
+
+@theme {
+  /* cal das paredes */
+  --color-linho: #ecebe4;
+  --color-linho-escuro: #e1dfd5;
+  --color-cartao: #f6f5f0;
+
+  /* texto: quase-preto com o verde do granito */
+  --color-tinta: #1d2220;
+  --color-tinta-medio: #575d56;
+
+  /* verde das portadas: faixas escuras, rodape, botao secundario */
+  --color-floresta: #24352c;
+  --color-floresta-fundo: #1b281f;
+
+  /* castanho da placa de madeira da casa: o CTA, e o acento. O valor foi
+     medido nas tabuas da placa "CASA FATAUNCOS" que esta a porta, na propria
+     fotografia do hero (media das zonas de sombra e de luz).
+     ouro         botoes e filetes sobre a cal (texto claro por cima)
+     ouro-escuro  texto pequeno sobre a cal
+     ouro-claro   a mesma madeira clareada, SO sobre fundo escuro ou
+                  fotografia; sobre a cal nao passa contraste.
+
+     O valor de `ouro` esta calibrado com o Playwright: mediu-se a madeira
+     da placa na fotografia que o site serve (#4f3831) e o botao ja
+     desenhado, com os frisos por cima, que clareiam a cor cerca de 4
+     niveis. #4d352d desenha a #503930, a 4 de distancia RGB da placa. */
+  --color-ouro: #5f4239;
+  --color-ouro-escuro: #533a2c;
+  --color-ouro-claro: #c9a184;
+
+  --color-osso: #f7f4ec;
+  --color-noite: #111a14;
+
+  --color-linha: rgba(29, 34, 32, 0.14);
+  --color-linha-clara: rgba(247, 244, 236, 0.2);
+
+  --font-display: var(--fonte-display), 'Times New Roman', serif;
+  --font-corpo: var(--fonte-corpo), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-media: 10px;
+  --radius-botao: 2px;
+}
+
+@layer base {
+  html {
+    background-color: var(--color-linho);
+    color-scheme: light;
+  }
+
+  body {
+    font-family: var(--font-corpo);
+    background-color: var(--color-linho);
+    color: var(--color-tinta);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.08;
+  }
+
+  /* O italico dos titulos e da mesma familia. Com descendentes (y g j p)
+     precisa de folga em baixo, senao corta. */
+  h1 em, h2 em, h3 em {
+    font-style: italic;
+    padding-bottom: 0.06em;
+  }
+
+  ::selection {
+    background: var(--color-floresta);
+    color: var(--color-osso);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ouro);
+    outline-offset: 3px;
+  }
+}
+
+@layer utilities {
+  /* Versaletes das referencias: pequenos, espacados, em maiusculas. */
+  .versalete {
+    font-family: var(--font-corpo);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  /* Veu do hero: so escurece a faixa onde esta o texto, a esquerda.
+     A fotografia fica com a luz dela no resto.
+
+     Aqui e mais forte do que no molde: a fachada desta casa e de cal
+     branca ao sol, e o titulo claro passa-lhe por cima. */
+  .veu-hero {
+    background:
+      linear-gradient(90deg, rgba(17, 26, 20, 0.72) 0%, rgba(17, 26, 20, 0.46) 42%, rgba(17, 26, 20, 0) 72%),
+      linear-gradient(to bottom, rgba(17, 26, 20, 0.4) 0%, rgba(17, 26, 20, 0) 24%);
+  }
+
+  /* No telemovel o texto ocupa a largura toda e fica por cima da casa:
+     o veu passa a cobrir tudo, mais leve em cima e em baixo. */
+  @media (max-width: 767px) {
+    .veu-hero {
+      background: linear-gradient(
+        to bottom,
+        rgba(17, 26, 20, 0.45) 0%,
+        rgba(17, 26, 20, 0.5) 45%,
+        rgba(17, 26, 20, 0.3) 100%
+      );
+    }
+  }
+
+  /* A madeira da placa da casa.
+
+     O veio nao sao riscas regulares: numa tabua as linhas sao irregulares,
+     ondulam e juntam-se em nos. Por isso o desenho vem de um `feTurbulence`
+     (ruido fractal) num SVG embutido, com a frequencia muito baixa em X e
+     alta em Y: da fibras compridas na horizontal, todas diferentes umas das
+     outras. Por cima fica so a luz de cima e a sombra de baixo da tabua.
+
+     Sem imagens nem dependencias: o SVG vai no proprio CSS. O `#` do
+     `url(#v)` tem de ir escrito `%23` dentro do data URI.
+
+     A forca esta calibrada com o Playwright contra a placa da casa; ver
+     ADAPTACAO.md. Se se mexer nos alfas, a cor media do botao muda e o
+     token `--color-ouro` tem de ser medido outra vez. */
+  .madeira {
+    background-image:
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='260' height='70'><filter id='v' color-interpolation-filters='sRGB'><feTurbulence type='fractalNoise' baseFrequency='0.013 0.62' numOctaves='4' seed='13'/><feColorMatrix type='matrix' values='0 0 0 0 0.09 0 0 0 0 0.06 0 0 0 0 0.04 0.34 0.34 0.34 0 -0.2'/></filter><rect width='260' height='70' filter='url(%23v)'/></svg>"),
+      linear-gradient(180deg, rgba(255, 247, 236, 0.09) 0%, rgba(26, 16, 10, 0.13) 100%);
+    background-size: 260px 70px, 100% 100%;
+    background-repeat: repeat, no-repeat;
+  }
+  /* a mesma madeira, so a partir de lg (os Reservar no computador) */
+  @media (min-width: 64rem) {
+    .madeira-lg {
+      background-image:
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='260' height='70'><filter id='v' color-interpolation-filters='sRGB'><feTurbulence type='fractalNoise' baseFrequency='0.013 0.62' numOctaves='4' seed='13'/><feColorMatrix type='matrix' values='0 0 0 0 0.09 0 0 0 0 0.06 0 0 0 0 0.04 0.34 0.34 0.34 0 -0.2'/></filter><rect width='260' height='70' filter='url(%23v)'/></svg>"),
+        linear-gradient(180deg, rgba(255, 247, 236, 0.09) 0%, rgba(26, 16, 10, 0.13) 100%);
+      background-size: 260px 70px, 100% 100%;
+      background-repeat: repeat, no-repeat;
+    }
+  }
+
+  /* Capitular: a primeira letra de um paragrafo em Bodoni, grande, a
+     ocupar tres linhas, como nos livros antigos. Castanho da placa
+     (ouro-escuro, que passa contraste sobre a cal). So no texto da historia. */
+  .capitular::first-letter {
+    float: left;
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 4.1em;
+    line-height: 0.82;
+    padding: 0.06em 0.1em 0 0;
+    color: var(--color-ouro-escuro);
+  }
+
+  .sem-barra::-webkit-scrollbar {
+    display: none;
+  }
+  .sem-barra {
+    scrollbar-width: none;
+  }
+}
+
+/* ShinyText (React Bits): a faixa de brilho atravessa o texto da direita
+   para a esquerda, em ciclo */
+@keyframes shine {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+.shiny-text {
+  animation: shine 5s linear infinite;
+}
+
+/* "Veja as 7 maneiras de acordar": com rato, aproxima-se ao passar por cima.
+   Sem rato (telemovel) nao ha hover, por isso aproxima-se sozinha, uma vez
+   por ciclo, ao mesmo tempo que o brilho passa; e ao tocar encolhe um pouco,
+   para o dedo sentir que carregou. */
+.ligacao-zoom {
+  transform-origin: left center;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+@media (hover: hover) {
+  .ligacao-zoom:hover {
+    transform: scale(1.08);
+  }
+}
+@keyframes respirar {
+  0%,
+  30%,
+  70%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+}
+@media (hover: none) {
+  .ligacao-zoom {
+    animation: respirar 3.2s ease-in-out infinite;
+  }
+  .ligacao-zoom:active {
+    animation: none;
+    transform: scale(0.97);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

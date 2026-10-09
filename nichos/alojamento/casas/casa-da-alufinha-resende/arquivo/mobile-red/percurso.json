@@ -1,0 +1,160 @@
+{
+  "url": "http://localhost:3500",
+  "data": "2026-10-09T21:12:02.537Z",
+  "reduzido": true,
+  "dispositivos": [
+    {
+      "nome": "tel-320",
+      "motor": "chromium",
+      "largura": 320,
+      "altura": 568,
+      "tipo": "telemovel",
+      "alturaPagina": 13248,
+      "ecras": 23.3,
+      "problemas": []
+    },
+    {
+      "nome": "tel-360",
+      "motor": "chromium",
+      "largura": 360,
+      "altura": 780,
+      "tipo": "telemovel",
+      "alturaPagina": 13270,
+      "ecras": 17,
+      "problemas": []
+    },
+    {
+      "nome": "tel-375",
+      "motor": "chromium",
+      "largura": 375,
+      "altura": 667,
+      "tipo": "telemovel",
+      "alturaPagina": 13076,
+      "ecras": 19.6,
+      "problemas": []
+    },
+    {
+      "nome": "tel-390",
+      "motor": "chromium",
+      "largura": 390,
+      "altura": 844,
+      "tipo": "telemovel",
+      "alturaPagina": 13460,
+      "ecras": 15.9,
+      "problemas": []
+    },
+    {
+      "nome": "tel-414",
+      "motor": "chromium",
+      "largura": 414,
+      "altura": 896,
+      "tipo": "telemovel",
+      "alturaPagina": 13651,
+      "ecras": 15.2,
+      "problemas": []
+    },
+    {
+      "nome": "tel-430",
+      "motor": "chromium",
+      "largura": 430,
+      "altura": 932,
+      "tipo": "telemovel",
+      "alturaPagina": 13731,
+      "ecras": 14.7,
+      "problemas": []
+    },
+    {
+      "nome": "tel-h-667",
+      "motor": "chromium",
+      "largura": 667,
+      "altura": 375,
+      "tipo": "telemovel",
+      "alturaPagina": 13718,
+      "ecras": 36.6,
+      "problemas": []
+    },
+    {
+      "nome": "tel-h-844",
+      "motor": "chromium",
+      "largura": 844,
+      "altura": 390,
+      "tipo": "telemovel",
+      "alturaPagina": 15134,
+      "ecras": 38.8,
+      "problemas": []
+    },
+    {
+      "nome": "tel-h-932",
+      "motor": "chromium",
+      "largura": 932,
+      "altura": 430,
+      "tipo": "telemovel",
+      "alturaPagina": 15801,
+      "ecras": 36.7,
+      "problemas": []
+    },
+    {
+      "nome": "tablet-768",
+      "motor": "chromium",
+      "largura": 768,
+      "altura": 1024,
+      "tipo": "tablet",
+      "alturaPagina": 16128,
+      "ecras": 15.8,
+      "problemas": []
+    },
+    {
+      "nome": "tablet-820",
+      "motor": "chromium",
+      "largura": 820,
+      "altura": 1180,
+      "tipo": "tablet",
+      "alturaPagina": 16953,
+      "ecras": 14.4,
+      "problemas": []
+    },
+    {
+      "nome": "tablet-h-1024",
+      "motor": "chromium",
+      "largura": 1024,
+      "altura": 768,
+      "tipo": "tablet",
+      "alturaPagina": 10498,
+      "ecras": 13.7,
+      "problemas": []
+    },
+    {
+      "nome": "pc-1280",
+      "motor": "chromium",
+      "largura": 1280,
+      "altura": 800,
+      "tipo": "computador",
+      "alturaPagina": 10947,
+      "ecras": 13.7,
+      "problemas": []
+    },
+    {
+      "nome": "pc-1440",
+      "motor": "chromium",
+      "largura": 1440,
+      "altura": 900,
+      "tipo": "computador",
+      "alturaPagina": 11821,
+      "ecras": 13.1,
+      "problemas": []
+    },
+    {
+      "nome": "pc-1920",
+      "motor": "chromium",
+      "largura": 1920,
+      "altura": 1080,
+      "tipo": "computador",
+      "alturaPagina": 13372,
+      "ecras": 12.4,
+      "problemas": []
+    }
+  ],
+  "avisos": [],
+  "resumo": {},
+  "ok": true
+}

@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Casa da Calçada</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg: #EAE6DF;
+      --card-bg: #F3EFE9;
+      --text: #3A4737;
+      --accent: #7A8D4F;
+      --font-head: 'Cormorant Garamond', serif;
+      --font-body: 'Montserrat', sans-serif;
+      --radius-sm: 24px;
+      --radius-md: 40px;
+      --radius-pill: 9999px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3 {
+      font-family: var(--font-head);
+      font-weight: 400;
+      line-height: 1.1;
+      color: var(--text);
+    }
+    
+    h1 i, h2 i, h3 i {
+      font-style: italic;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    a {
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    a:hover {
+      color: var(--accent);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--text);
+      color: var(--bg);
+      padding: 1rem 2rem;
+      border-radius: var(--radius-pill);
+      font-family: var(--font-body);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-size: 0.875rem;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background-color: var(--accent);
+      color: #fff;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 5%;
+    }
+
+    .pill-mask {
+      border-radius: 40vw;
+      overflow: hidden;
+    }
+
+    .img-wrap {
+      overflow: hidden;
+      border-radius: 80px;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 5%;
+    }
+
+    .hero-img-container {
+      position: absolute;
+      top: 5vh;
+      left: 5%;
+      right: 5%;
+      bottom: 5vh;
+      border-radius: 200px;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .hero-img-container::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(234,230,223,0.3) 0%, rgba(234,230,223,0.8) 100%);
+    }
+
+    .hero-img {
+      width: 100%;
+      height: 100%;
+      object-position: 71% 38%;
+      max-width: 1620px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 600px;
+      margin-top: auto;
+      padding-bottom: 10vh;
+    }
+
+    .hero h1 {
+      font-size: clamp(3.5rem, 8vw, 6rem);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero p {
+      font-size: 1.125rem;
+      margin-bottom: 2.5rem;
+    }
+
+    /* Sections General */
+    section {
+      padding: 6rem 0;
+      position: relative;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border-radius: var(--radius-md);
+      padding: 4rem;
+      margin: -2rem 0 4rem 0;
+      position: relative;
+      z-index: 3;
+    }
+
+    .section-title {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    /* Grid Layouts */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .grid-text {
+      max-width: 500px;
+    }
+
+    .grid-images {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .overlap-img {
+      border-radius: 100px;
+      margin-left: -20%;
+      margin-top: -10%;
+      z-index: 2;
+      position: relative;
+      border: 10px solid var(--card-bg);
+    }
+
+    /* Quotes */
+    .quote-block {
+      text-align: center;
+      max-width: 800px;
+      margin: 4rem auto;
+      padding: 3rem;
+      background-color: rgba(122, 141, 79, 0.1);
+      border-radius: var(--radius-md);
+    }
+
+    blockquote {
+      font-family: var(--font-head);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-style: italic;
+      margin-bottom: 1rem;
+      line-height: 1.4;
+    }
+
+    .quote-author {
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      opacity: 0.8;
+    }
+
+    .translation {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      margin-top: 1rem;
+    }
+
+    /* Specific Image Styles based on requirements */
+    .img-telhado { object-position: 82% 23%; border-radius: 150px; }
+    .img-corredor { object-position: 51% 68%; }
+    .img-aerea { object-position: 60% 45%; border-radius: 200px; margin-top: 4rem;}
+    
+    .img-capela { object-position: 81% 42%; border-radius: 150px 150px 40px 40px;}
+    .img-jardim { object-position: 80% 55%; border-radius: 40px 40px 150px 150px;}
+    .img-capela-int { max-width: 720px; object-position: 30% 42%; border-radius: 100px; margin: 2rem auto; }
+
+    .img-quarto-casal { max-width: 1200px; object-position: 35% 85%; border-radius: 100px; }
+    .img-quarto-aguas { max-width: 1200px; object-position: 51% 64%; border-radius: 100px; margin-top: 2rem;}
+
+    .img-piscina2 { object-position: 62% 32%; border-radius: 200px; }
+    .img-glicinias { object-position: 48% 60%; border-radius: 100px; }
+    .img-tanque { max-width: 1200px; object-position: 73% 62%; border-radius: 100px; }
+    .img-douro { max-width: 800px; object-position: 48% 57%; border-radius: 80px; }
+    .img-mesa { max-width: 1200px; object-position: 68% 66%; border-radius: 100px; }
+    .img-bilhar { object-position: 68% 66%; border-radius: 100px; }
+
+    /* Lists */
+    ul {
+      list-style: none;
+      margin: 2rem 0;
+    }
+
+    li {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    li::before {
+      content: '•';
+      color: var(--accent);
+      position: absolute;
+      left: 0;
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+
+    /* Contacts Footer */
+    .contacts-card {
+      background-color: var(--text);
+      color: var(--bg);
+      border-radius: var(--radius-md);
+      padding: 5rem;
+      text-align: center;
+    }
+
+    .contacts-card h2 {
+      color: var(--bg);
+    }
+    
+    .contacts-card a {
+      color: var(--bg);
+      text-decoration: underline;
+    }
+    
+    .contacts-card a:hover {
+      color: var(--accent);
+    }
+
+    .contacts-info {
+      margin: 3rem 0;
+      font-size: 1.125rem;
+    }
+
+    .btn-light {
+      background-color: var(--bg);
+      color: var(--text);
+    }
+    .btn-light:hover {
+      background-color: var(--accent);
+      color: var(--bg);
+    }
+
+    /* Animations classes for GSAP */
+    .reveal-up {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-img-container {
+        border-radius: 100px;
+      }
+      .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .overlap-img {
+        margin-left: 0;
+        margin-top: -2rem;
+      }
+      .card {
+        padding: 2rem;
+      }
+      .contacts-card {
+        padding: 3rem 1.5rem;
+      }
+      .hero h1 {
+        font-size: 3rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal-up {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+      .hero-img-container, .img-wrap {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. Primeiro ecrã -->
+  <header class="hero">
+    <div class="hero-img-container">
+      <img src="../../fotos/piscina-torre-01.jpg" alt="Piscina com vista para a torre" class="hero-img">
+    </div>
+    <div class="hero-content reveal-up">
+      <h1>Casa da <i>Calçada</i></h1>
+      <p>Turismo de Habitação em Oliveira do Douro, Cinfães, com a fachada virada para o rio Douro.</p>
+      <a href="#reservar" class="btn">Consultar disponibilidade</a>
+    </div>
+  </header>
+
+  <!-- 2. A casa -->
+  <section class="container" id="casa">
+    <div class="card reveal-up">
+      <h2 class="section-title">História e <i>Requinte</i></h2>
+      <div class="grid-2">
+        <div class="grid-text">
+          <p>A casa começou como construção rural em granito, cresceu no século XVIII até à forma que tem hoje, e foi depois adaptada pelo Monsenhor António Pinto d'Abreu para servir de colónia de férias de verão aos alunos e professores do colégio Vasco da Gama, de Lisboa.</p>
+          <p>O arquiteto António Couto d'Abreu desenhou então a capela e a varanda de acesso, acrescentadas à empena leste, que passou a ser a entrada.</p>
+          <p>A cantaria foi executada à mão, com técnicas e materiais da região.</p>
+          <p>Fica na encosta virada a norte, junto à E.N. 222, a cerca de 6 km de Cinfães e 10 km de Resende.</p>
+        </div>
+        <div class="grid-images">
+          <img src="../../fotos/telhado-ameias-01.jpg" alt="Telhado e torre com ameias" class="img-wrap img-telhado">
+          <img src="../../fotos/corredor-pedra-01.jpg" alt="Corredor em pedra" class="img-wrap overlap-img img-corredor">
+        </div>
+      </div>
+      <img src="../../fotos/aerea-01.jpg" alt="Vista aérea da quinta" class="img-wrap img-aerea reveal-up">
+    </div>
+  </section>
+
+  <!-- 3. A capela -->
+  <section class="container reveal-up">
+    <h2 class="section-title">A <i>capela</i></h2>
+    <div class="grid-2">
+      <div class="grid-images">
+        <img src="../../fotos/capela-06.jpg" alt="Exterior da capela" class="img-wrap img-capela">
+        <img src="../../fotos/jardim-capela-01.jpg" alt="Jardim junto à capela" class="img-wrap img-jardim" style="margin-top:-2rem;">
+      </div>
+      <div class="grid-text">
+        <p>A quinta tem capela própria, reconstruída, com torre sineira e vitrais.</p>
+        <div class="quote-block" style="padding:2rem; margin:2rem 0;">
+          <blockquote>"Absolutely beautiful property, lovely setting and a beautiful conversion of an old church."</blockquote>
+          <div class="quote-author">James, Booking</div>
+          <div class="translation">Tradução: Propriedade absolutamente linda, enquadramento adorável e uma bela conversão de uma igreja antiga.</div>
+        </div>
+        <div class="quote-block" style="padding:2rem; margin:2rem 0;">
+          <blockquote>"Mohli jsme projít cely dům a kapli."</blockquote>
+          <div class="quote-author">Cyrany, Booking</div>
+          <div class="translation">Tradução: Pudemos percorrer a casa inteira e a capela.</div>
+        </div>
+      </div>
+    </div>
+    <img src="../../fotos/capela-interior-01.jpg" alt="Interior da capela" class="img-wrap img-capela-int reveal-up">
+  </section>
+
+  <!-- 4. Os quartos -->
+  <section class="container">
+    <div class="card reveal-up">
+      <h2 class="section-title">Os <i>quartos</i></h2>
+      <div class="grid-2">
+        <div class="grid-text">
+          <p>A casa tem 10 quartos e 20 camas: 8 quartos na casa principal e 2 na casa de pedra junto à piscina.</p>
+          <ul>
+            <li><strong>Suites:</strong> há 2 suites com cama de casal e casa de banho privativa, no primeiro andar da casa principal.</li>
+            <li><strong>Quartos duplos:</strong> há 6 quartos duplos com duas camas de solteiro e casa de banho privativa.</li>
+            <li><strong>Águas-furtadas:</strong> quatro dos quartos ficam no segundo andar, com ar condicionado, tectos panorâmicos e claraboias viradas ao vale.</li>
+            <li><strong>Casa de pedra:</strong> junto à piscina há uma casa de pedra independente com 2 quartos duplos com ar condicionado, casa de banho, sala com kitchenette e varanda.</li>
+          </ul>
+          <p>Todas as estadias incluem o pequeno-almoço.</p>
+        </div>
+        <div class="grid-images">
+          <img src="../../fotos/quarto-casal-01.jpg" alt="Quarto suite de casal" class="img-wrap img-quarto-casal">
+          <img src="../../fotos/quarto-aguas-furtadas-02.jpg" alt="Quarto nas águas-furtadas" class="img-wrap img-quarto-aguas">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. A quinta, dentro e fora -->
+  <section class="container reveal-up">
+    <h2 class="section-title">Dentro e <i>fora</i></h2>
+    <div class="grid-2">
+      <div class="grid-text">
+        <p>A quinta tem piscina exterior com balneários de apoio.</p>
+        <p>Tem court de ténis, que serve também de campo de futebol.</p>
+        <p>Tem jardins, patamares panorâmicos com vista sobre a propriedade e sobre o rio Douro, hortas e árvores de fruto.</p>
+        <p>Dentro, os hóspedes têm à disposição salas de estar e de jantar com lareira, salão de jogos com bilhar, salão para jantares e cozinha equipada. A cozinha industrial com forno a lenha está ao dispor dos hóspedes.</p>
+      </div>
+      <div class="grid-images">
+        <img src="../../fotos/piscina-torre-02.jpg" alt="Piscina exterior" class="img-wrap img-piscina2">
+      </div>
+    </div>
+    
+    <div class="quote-block reveal-up">
+      <blockquote>"O que mais gostei foi a envolvencia em que o alojamento se encontra, com espaços verdes e generosos, ideal para momentos de descanso."</blockquote>
+      <div class="quote-author">Maria, Booking</div>
+    </div>
+
+    <div style="display:flex; flex-wrap:wrap; gap:2rem; justify-content:center; margin-top:4rem;">
+      <img src="../../fotos/glicinias-alameda-01.jpg" alt="Alameda de glicínias" class="img-wrap img-glicinias reveal-up" style="flex: 1 1 400px;">
+      <img src="../../fotos/tanque-nascente-01.jpg" alt="Tanque com nascente" class="img-wrap img-tanque reveal-up" style="flex: 1 1 400px;">
+      <img src="../../fotos/mesa-posta-01.jpg" alt="Mesa de jantar posta" class="img-wrap img-mesa reveal-up" style="flex: 1 1 400px;">
+      <img src="../../fotos/bilhar-01.jpg" alt="Salão de bilhar" class="img-wrap img-bilhar reveal-up" style="flex: 1 1 400px;">
+    </div>
+    <div style="text-align:center; margin-top:2rem;">
+      <img src="../../fotos/vista-douro-01.jpg" alt="Vista sobre o rio Douro" class="img-wrap img-douro reveal-up" style="margin:0 auto;">
+    </div>
+  </section>
+
+  <!-- 6. A casa inteira -->
+  <section class="container reveal-up">
+    <div class="card" style="text-align:center; padding: 6rem 2rem;">
+      <h2 class="section-title">A casa <i>inteira</i></h2>
+      <p style="font-size:1.25rem; max-width:600px; margin:0 auto 2rem auto;">A casa principal pode ser reservada inteira, para um grupo.</p>
+      <div class="quote-block" style="background:none; margin:0 auto;">
+        <blockquote>"I could easily imagine a whole big extended family staying here for a wedding or reunion or group retreat."</blockquote>
+        <div class="quote-author">Ann Meyer, Google Maps</div>
+        <div class="translation">Tradução: Conseguia bem imaginar uma família grande inteira aqui para um casamento, um reencontro ou um retiro de grupo.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Quem já ficou -->
+  <section class="container reveal-up">
+    <h2 class="section-title">Quem já <i>ficou</i></h2>
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:2rem;">
+      <div class="quote-block" style="margin:0;">
+        <blockquote>"Muito bem recebido pela anfitriã. Senti-me em casa."</blockquote>
+        <div class="quote-author">Luis, Booking</div>
+      </div>
+      <div class="quote-block" style="margin:0;">
+        <blockquote>"É um local calmo e muito sossegado, ideal para descansar e desligar do mundo."</blockquote>
+        <div class="quote-author">Johnny Lino, Google Maps</div>
+      </div>
+      <div class="quote-block" style="margin:0;">
+        <blockquote>"You feel like at your rich grand-parents home."</blockquote>
+        <div class="quote-author">Marc L., Google Maps</div>
+        <div class="translation">Tradução: Sente-se como na casa dos seus avós ricos.</div>
+      </div>
+      <div class="quote-block" style="margin:0;">
+        <blockquote>"Very caring and welcoming staff. They met me at a late check-in, left a late breakfast, were always in touch"</blockquote>
+        <div class="quote-author">Ilya, Booking</div>
+        <div class="translation">Tradução: Pessoal muito atencioso e acolhedor. Receberam-me num check-in tardio, deixaram um pequeno-almoço para mais tarde, estiveram sempre em contacto.</div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:4rem; font-size:0.9rem; opacity:0.8;">
+      <p>Booking: 8,8 em 10, em 46 comentários (lido a 22 de setembro de 2026).</p>
+      <p>Google Maps: 4,4 em 5, em 152 críticas (lido a 22 de setembro de 2026).</p>
+    </div>
+  </section>
+
+  <!-- 8. Consultar disponibilidade -->
+  <section class="container" id="reservar">
+    <div class="contacts-card reveal-up">
+      <h2 class="section-title">Consultar <i>disponibilidade</i></h2>
+      <p>A reserva faz-se por contacto direto: a casa responde a confirmar a disponibilidade.</p>
+      
+      <div class="contacts-info">
+        <p>Telemóvel: <a href="tel:+351936345815">+351 936 345 815</a></p>
+        <p>Telemóvel: <a href="tel:+351932476339">+351 932 476 339</a></p>
+        <p>Email: <a href="mailto:geral@casacalcada.com">geral@casacalcada.com</a></p>
+      </div>
+
+      <p>Morada: Lugar da Calçada, Oliveira do Douro, 4690 Cinfães.</p>
+      <p>Check-in das 15:00 às 20:00. Check-out até às 12:00.</p>
+      <p>Não são admitidos animais de estimação.</p>
+      <p style="margin-top:2rem; font-size:0.8rem; opacity:0.7;">Registo 1375</p>
+      
+      <div style="margin-top:3rem;">
+        <a href="mailto:geral@casacalcada.com" class="btn btn-light">Contactar a casa</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scripts: Lenis (Smooth Scroll) and GSAP -->
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  
+  <script>
+    // Smooth Scroll
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      direction: 'vertical',
+      gestureDirection: 'vertical',
+      smooth: true,
+      mouseMultiplier: 1,
+      smoothTouch: false,

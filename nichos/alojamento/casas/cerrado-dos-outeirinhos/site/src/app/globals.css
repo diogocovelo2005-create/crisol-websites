@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+/*
+  Cerrado dos Outeirinhos - Casa de Campo em Cinfaes.
+
+  A paleta sai das fotografias da casa: o granito quente das paredes e
+  o fundo, a lousa que reveste o piso de cima (e o ceu de noite nas
+  fotos da fachada) e o escuro, e a telha e o barro dos vasos dao o
+  destaque. Os nomes dos tokens ficam os do molde: 'floresta' e agora
+  lousa, 'ouro' e agora telha. A correspondencia esta em ADAPTACAO.md.
+
+  Cantos: fotografias e cartoes a 10px. Botoes e campos a 2px, quase
+  retos, como nas referencias. Nao ha terceiro valor.
+*/
+
+@theme {
+  /* granito claro */
+  --color-linho: #f1ece2;
+  --color-linho-escuro: #e3dcce;
+  --color-cartao: #f9f5ee;
+
+  /* texto */
+  --color-tinta: #23272c;
+  --color-tinta-medio: #5a6067;
+
+  /* lousa: faixas escuras, rodape, botao secundario. O nome fica. */
+  --color-floresta: #2e3a46;
+  --color-floresta-fundo: #232c36;
+
+  /* telha: o CTA, e o acento. O nome fica. Texto nesta cor so em
+     tamanho grande ou sobre a lousa; em texto pequeno usa-se o escuro. */
+  --color-ouro: #d3805b;
+  --color-ouro-escuro: #9a4528;
+
+  --color-osso: #f7f3ec;
+  --color-noite: #141a20;
+
+  --color-linha: rgba(35, 39, 44, 0.14);
+  --color-linha-clara: rgba(247, 243, 236, 0.2);
+
+  --font-display: var(--fonte-display), 'Times New Roman', serif;
+  --font-corpo: var(--fonte-corpo), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-media: 10px;
+  --radius-botao: 2px;
+}
+
+@layer base {
+  html {
+    background-color: var(--color-linho);
+    color-scheme: light;
+  }
+
+  body {
+    font-family: var(--font-corpo);
+    background-color: var(--color-linho);
+    color: var(--color-tinta);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.08;
+  }
+
+  /* O italico dos titulos e da mesma familia. Com descendentes (y g j p)
+     precisa de folga em baixo, senao corta. */
+  h1 em, h2 em, h3 em {
+    font-style: italic;
+    padding-bottom: 0.06em;
+  }
+
+  ::selection {
+    background: var(--color-floresta);
+    color: var(--color-osso);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ouro);
+    outline-offset: 3px;
+  }
+}
+
+@layer utilities {
+  /* Versaletes das referencias: pequenos, espacados, em maiusculas. */
+  .versalete {
+    font-family: var(--font-corpo);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  /* Veu do hero: so escurece a faixa onde esta o texto, a esquerda.
+     A fotografia fica com a luz dela no resto.
+
+     Ajuste desta casa: mais escuro e mais largo do que no molde. A foto
+     do hero e o jardim ao sol, com relvado claro e ceu claro do lado
+     esquerdo, que e onde o texto vive; com o veu do molde a promessa
+     nao se lia. */
+  .veu-hero {
+    background:
+      linear-gradient(90deg, rgba(20, 26, 32, 0.74) 0%, rgba(20, 26, 32, 0.5) 40%, rgba(20, 26, 32, 0) 74%),
+      linear-gradient(to bottom, rgba(20, 26, 32, 0.45) 0%, rgba(20, 26, 32, 0) 26%);
+  }
+
+  /* No telemovel o texto ocupa a largura toda e fica por cima da casa:
+     o veu passa a cobrir tudo, mais leve em cima e em baixo. */
+  @media (max-width: 767px) {
+    .veu-hero {
+      background: linear-gradient(
+        to bottom,
+        rgba(20, 26, 32, 0.55) 0%,
+        rgba(20, 26, 32, 0.6) 45%,
+        rgba(20, 26, 32, 0.4) 100%
+      );
+    }
+  }
+
+  .sem-barra::-webkit-scrollbar {
+    display: none;
+  }
+  .sem-barra {
+    scrollbar-width: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,761 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Casa Rural da Costeira · Cinfães</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --fonte-titulos: "Bodoni Moda", "Didot", Georgia, serif;
+    --fonte-texto: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+    --cor-fundo: #E6F4FD;
+    --cor-texto: #37392E;
+    --cor-acento: #3A70AE;
+    --veu: #23261F;
+    --papel: #E6F4FD;
+    --claro: #F4FAFE;
+    --grafite: #37392E;
+    --suave: #5C6158;
+    --linha: rgba(55, 57, 46, 0.18);
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--papel);
+    color: var(--grafite);
+    font-family: var(--fonte-texto);
+    font-size: 17px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; }
+  p { margin: 0; }
+  figure { margin: 0; }
+
+  .pe-raiz { --pe-claro: #F4FAFE; }
+  
+
+  /* ---------- peças comuns */
+  .moldura { max-width: 1320px; margin: 0 auto; padding: 0 24px; }
+  .rotulo {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--suave);
+  }
+  .gigante {
+    margin: 0;
+    font-family: var(--fonte-titulos);
+    font-weight: 400;
+    font-size: clamp(2.7rem, 7.2vw, 7.6rem);
+    line-height: 0.96;
+    letter-spacing: -0.035em;
+  }
+  .gigante em { font-style: italic; }
+  .legenda {
+    margin-top: 10px;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    color: var(--suave);
+  }
+  .credito { margin-top: 8px; font-size: 0.75rem; line-height: 1.45; color: var(--suave); }
+  .credito a { text-underline-offset: 2px; }
+  .corpo { max-width: 34ch; }
+  .corpo + .corpo { margin-top: 18px; }
+  .passagem {
+    font-family: var(--fonte-titulos);
+    font-style: italic;
+    font-size: 1.35rem;
+    line-height: 1.3;
+  }
+  .frase {
+    margin: 0;
+    font-family: var(--fonte-titulos);
+    font-size: clamp(1.8rem, 3.6vw, 3.4rem);
+    line-height: 1.12;
+    letter-spacing: -0.015em;
+  }
+  .frase-autor { margin-top: 22px; }
+  .foto { width: 100%; height: 100%; object-fit: cover; }
+  .seta { text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 1px; }
+
+  /* ---------- 1b. a voz, solta no vazio */
+  .voz { padding: 110px 0 40px; }
+  .voz .frase { max-width: 17ch; margin-left: 33%; }
+  .voz .frase-autor { margin-left: 33%; }
+  .voz .passagem { margin: 70px 0 0 8%; }
+
+  /* ---------- 2. o pátio: colagem desigual */
+  .patio { padding: 60px 0 90px; }
+  .patio .gigante { max-width: 12ch; }
+  .patio-colagem {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 24px;
+    align-items: start;
+  }
+  .patio-a { grid-column: 1 / 8; grid-row: 1 / span 2; }
+  .patio-a .foto { aspect-ratio: 3 / 2; object-position: 50% 45%; }
+  .patio-texto { grid-column: 9 / 12; grid-row: 1; padding-top: 20px; }
+  .patio-b { grid-column: 9 / 13; grid-row: 2; margin-top: 50px; }
+  .patio-b .foto { aspect-ratio: 4 / 3; object-position: 50% 55%; }
+  .patio .passagem { grid-column: 2 / 7; margin-top: 50px; }
+
+  /* ---------- 3. o dia lá fora: três tempos espalhados */
+  .dia { padding: 40px 0 100px; }
+  .dia-topo { display: flex; justify-content: space-between; align-items: baseline; gap: 24px; }
+  .dia .gigante { text-align: right; margin-left: auto; max-width: 9ch; }
+  .tempos {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 24px;
+    row-gap: 0;
+  }
+  .t-manha { grid-column: 4 / 12; }
+  .t-manha .foto { aspect-ratio: 16 / 9; object-position: 50% 40%; }
+  .t-manha-texto { grid-column: 1 / 4; grid-row: 1; align-self: end; }
+  .t-fogo { grid-column: 2 / 4; margin-top: 60px; }
+  .t-fogo .foto { aspect-ratio: 2 / 3; object-position: 50% 50%; }
+  .t-fogo-texto { grid-column: 4 / 7; margin-top: 200px; padding-left: 24px; }
+  .t-jogos { grid-column: 8 / 13; grid-row: 2; margin-top: 110px; }
+  .t-jogos .foto { aspect-ratio: 3 / 2; }
+  .t-jogos-texto { grid-column: 8 / 12; grid-row: 3; margin-top: 20px; }
+  .tempo-nome { font-family: var(--fonte-titulos); font-style: italic; font-size: 1.6rem; line-height: 1.15; margin-bottom: 10px; }
+  .dia-citacao { margin: -120px 0 0 0; max-width: 26ch; }
+  .dia-citacao .frase { font-size: clamp(1.5rem, 2.7vw, 2.5rem); }
+  .dia .passagem { margin: 60px 0 0 62%; }
+
+  /* ---------- 4. a sala: a única faixa azul */
+  .sala { background: var(--cor-acento); color: var(--claro); padding: 100px 0 100px; }
+  .sala .rotulo, .sala .legenda { color: rgba(244, 250, 254, 0.86); }
+  .sala-grelha {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 24px;
+    align-items: start;
+  }
+  .sala .gigante { grid-column: 1 / 13; margin-bottom: 50px; }
+  .sala-a { grid-column: 1 / 10; }
+  .sala-a .foto { aspect-ratio: 16 / 10; object-position: 55% 50%; }
+  .sala-texto { grid-column: 10 / 13; padding-top: 8px; }
+  .sala-b { grid-column: 3 / 6; grid-row: 3; margin-top: 50px; }
+  .sala-b .foto { aspect-ratio: 1 / 1; object-position: 50% 55%; }
+  .sala-citacao { grid-column: 7 / 13; grid-row: 3; margin-top: 110px; }
+  .sala-citacao .frase { font-size: clamp(1.6rem, 3vw, 2.8rem); }
+  .sala .passagem { grid-column: 7 / 13; grid-row: 4; margin-top: 10px; }
+
+  /* ---------- 5. os quartos: pares foto + legenda dispersos */
+  .quartos { padding: 100px 0 80px; }
+  .quartos-grelha {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 24px;
+    align-items: start;
+  }
+  .quartos .gigante { grid-column: 5 / 13; }
+  .q-a { grid-column: 1 / 7; margin-top: 50px; }
+  .q-a .foto { aspect-ratio: 4 / 3; }
+  .q-b { grid-column: 8 / 12; margin-top: 150px; }
+  .q-b .foto { aspect-ratio: 3 / 2; object-position: 50% 45%; }
+  .q-c { grid-column: 4 / 6; margin-top: -40px; }
+  .q-c .foto { aspect-ratio: 1 / 1; object-position: 45% 55%; }
+  .q-par p { margin-top: 14px; max-width: 30ch; }
+  .quartos .passagem { grid-column: 8 / 13; align-self: end; margin-top: 40px; }
+
+  /* ---------- 6. à volta: lista vertical, do perto ao longe */
+  .volta { padding: 40px 0 90px; }
+  .volta-topo { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 24px; align-items: end; }
+  .volta .gigante { grid-column: 1 / 10; }
+  .volta-topo .corpo { grid-column: 10 / 13; }
+  .lugares { list-style: none; margin: 50px 0 0; padding: 0; border-top: 1px solid var(--linha); }
+  .lugar {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 24px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--linha);
+    align-items: start;
+  }
+  .lugar .rotulo { grid-column: 1 / 3; padding-top: 10px; }
+  .lugar-nome { grid-column: 3 / 7; font-family: var(--fonte-titulos); font-size: 2rem; line-height: 1.05; letter-spacing: -0.02em; margin: 0; }
+  .lugar-frase { grid-column: 3 / 7; margin-top: 12px; max-width: 36ch; }
+  .lugar figure { grid-row: 1 / span 2; }
+  .l1 figure { grid-column: 8 / 12; }
+  .l2 figure { grid-column: 10 / 13; }
+  .l3 figure { grid-column: 8 / 11; }
+  .l4 figure { grid-column: 9 / 13; }
+  .l5 figure { grid-column: 8 / 11; }
+  .volta-nota { margin-top: 18px; font-size: 0.85rem; color: var(--suave); }
+  .volta-citacao { margin: 80px 0 0 42%; max-width: 26ch; }
+  .volta-citacao .frase { font-size: clamp(1.5rem, 2.6vw, 2.4rem); font-style: italic; }
+  .traducao { margin-top: 16px; color: var(--suave); max-width: 40ch; }
+  .volta .passagem { margin: 50px 0 0 8%; max-width: 30ch; }
+
+  /* ---------- 7. escolher as datas */
+  .datas { padding: 20px 0 60px; }
+  .datas-grelha { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 24px; align-items: start; }
+  .datas .gigante { grid-column: 1 / 13; }
+  .datas-foto { grid-column: 7 / 13; grid-row: 2; margin-top: 50px; }
+  .datas-foto .foto { aspect-ratio: 3 / 2; object-position: 50% 35%; }
+  .datas-intro { grid-column: 2 / 6; grid-row: 2; margin-top: 90px; }
+  .contacto-linha { grid-column: 1 / 13; margin-top: 80px; }
+  .contacto-linha a {
+    display: inline-block;
+    font-family: var(--fonte-titulos);
+    font-size: clamp(2.2rem, 6.4vw, 6.4rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.12em;
+  }
+  .contacto-linha a:hover { color: var(--cor-acento); }
+  .contacto-linha .email { margin-top: 18px; font-size: clamp(1.25rem, 2.4vw, 2.1rem); letter-spacing: -0.01em; }
+  .airbnb { display: inline-block; margin-top: 36px; font-weight: 500; color: var(--cor-acento); }
+  .datas-tiago { grid-column: 2 / 6; grid-row: 4; margin-top: 80px; }
+  .datas-tiago .frase { font-size: clamp(1.5rem, 2.4vw, 2.2rem); margin-top: 22px; }
+  .factos { grid-column: 8 / 13; grid-row: 4; margin: 80px 0 0; padding: 0; border-top: 1px solid var(--linha); }
+  .factos div { padding: 18px 0; border-bottom: 1px solid var(--linha); }
+  .factos dt { margin-bottom: 6px; }
+  .factos dd { margin: 0; }
+  .rodape { margin-top: 70px; padding-top: 26px; border-top: 1px solid var(--linha); display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+
+  @media (min-width: 768px) { .moldura { padding: 0 40px; } }
+
+  /* ---------- telemóvel: a mesma colagem, desalinhada numa só coluna */
+  @media (max-width: 860px) {
+    .patio-colagem, .tempos, .sala-grelha, .quartos-grelha, .volta-topo, .lugar, .datas-grelha { display: block; }
+    .voz { padding: 100px 0 80px; }
+    .voz .frase, .voz .frase-autor { margin-left: 10%; }
+    .voz .passagem { margin: 70px 0 0; }
+    .patio-colagem { margin-top: 50px; }
+    .patio-texto { padding: 36px 0 0 14%; }
+    .patio-b { width: 72%; margin: 60px 0 0 auto; }
+    .patio .passagem, .dia .passagem, .volta .passagem { margin: 60px 0 0; }
+    .dia .gigante { text-align: left; margin-left: 0; }
+    .tempos { margin-top: 50px; }
+    .t-manha-texto { margin-top: 24px; }
+    .t-fogo { width: 62%; margin-top: 70px; }
+    .t-fogo-texto { padding-left: 0; }
+    .t-fogo-texto { margin: 24px 0 0 20%; }
+    .t-jogos { width: 84%; margin: 70px 0 0 auto; }
+    .t-jogos-texto { margin-left: 16%; }
+    .dia-citacao { margin: 80px 0 0 6%; }
+    .sala { padding: 90px 0 100px; }
+    .sala .gigante { margin-bottom: 50px; }
+    .sala-texto { margin-top: 30px; }
+    .sala-b { width: 64%; margin: 60px 0 0 18%; }
+    .sala-citacao { margin-top: 80px; }
+    .sala .passagem { margin-top: 50px; }
+    .quartos { padding: 100px 0 90px; }
+    .q-a { margin-top: 50px; }
+    .q-b { width: 80%; margin: 70px 0 0 auto; }
+    .q-c { width: 66%; margin-top: 70px; }
+    .quartos .passagem { margin-top: 60px; }
+    .volta-topo .corpo { margin-top: 28px; }
+    .lugares { margin-top: 50px; }
+    .lugar-nome { margin-top: 10px; }
+    .lugar figure { margin-top: 22px; }
+    .l2 figure, .l4 figure { width: 78%; margin-left: auto; }
+    .l3 figure { width: 70%; }
+    .volta-citacao { margin: 80px 0 0 8%; }
+    .datas-foto { margin-top: 40px; }
+    .datas-intro, .contacto-linha, .datas-tiago, .factos { margin-top: 60px; }
+  }
+</style>
+<style>
+  .pe-raiz {
+    --pe-claro: #f7f2e9; /* o texto sobre a foto; acerta-o à tua pele se quiseres */
+    position: relative;
+  }
+  .pe-raiz a { text-decoration: none; }
+
+  /* versaletes: a navegação, a etiqueta e os botões */
+  .pe-nav a,
+  .pe-etiqueta,
+  .pe-botao {
+    font-family: var(--fonte-texto);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  /* ---------------------------------------------------------- cabeçalho */
+  .pe-cabecalho {
+    position: absolute;
+    inset: 0 0 auto;
+    z-index: 20;
+    border-bottom: 1px solid color-mix(in srgb, var(--pe-claro) 15%, transparent);
+  }
+  .pe-barra {
+    max-width: 1320px;
+    height: 80px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .pe-marca {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    font-family: var(--fonte-titulos);
+    font-size: 1.35rem;
+    font-weight: 500;
+    line-height: 1;
+    color: var(--pe-claro);
+  }
+  .pe-marca img { display: block; width: auto; height: 40px; }
+  .pe-nav { display: none; align-items: center; gap: 36px; }
+  .pe-nav a { color: color-mix(in srgb, var(--pe-claro) 85%, transparent); }
+  .pe-nav a:hover { color: var(--pe-claro); }
+  .pe-nav .pe-reservar {
+    padding: 12px 24px;
+    border-radius: 2px;
+    background: var(--cor-acento);
+    color: var(--veu);
+  }
+
+  /* o menu do telemóvel e do tablet, sem JavaScript */
+  .pe-menu summary {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    margin-right: -10px;
+    list-style: none;
+    cursor: pointer;
+    color: var(--pe-claro);
+  }
+  .pe-menu summary::-webkit-details-marker { display: none; }
+  .pe-menu summary svg { width: 26px; height: 26px; }
+  .pe-menu .pe-fechar,
+  .pe-menu[open] .pe-abrir { display: none; }
+  .pe-menu[open] .pe-fechar { display: block; }
+  .pe-menu[open] summary {
+    position: fixed;
+    top: 18px;
+    right: 24px;
+    z-index: 31;
+    color: var(--cor-texto);
+  }
+  .pe-painel {
+    position: fixed;
+    inset: 0;
+    z-index: 30;
+    overflow-y: auto;
+    padding: 112px 24px 40px;
+    background: var(--cor-fundo);
+    display: flex;
+    flex-direction: column;
+  }
+  .pe-painel a:not(.pe-botao) {
+    padding: 20px 0;
+    border-bottom: 1px solid color-mix(in srgb, var(--cor-texto) 14%, transparent);
+    font-family: var(--fonte-titulos);
+    font-size: 2rem;
+    line-height: 1.1;
+    color: var(--cor-texto);
+  }
+  .pe-painel .pe-botao { margin-top: 40px; width: 100%; }
+
+  /* -------------------------------------------------------- primeiro ecrã */
+  .pe {
+    position: relative;
+    isolation: isolate;
+    height: 100vh;
+    height: 100svh;
+    min-height: 560px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    color: var(--pe-claro);
+  }
+  .pe-foto {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+  }
+  .pe-veu {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    /* só escurece onde está o texto: em cima e à esquerda */
+    background:
+      linear-gradient(180deg,
+        color-mix(in srgb, var(--veu) 46%, transparent) 0%,
+        color-mix(in srgb, var(--veu) 30%, transparent) 45%,
+        color-mix(in srgb, var(--veu) 12%, transparent) 80%,
+        transparent 94%),
+      linear-gradient(90deg,
+        color-mix(in srgb, var(--veu) 55%, transparent) 0%,
+        color-mix(in srgb, var(--veu) 40%, transparent) 34%,
+        color-mix(in srgb, var(--veu) 12%, transparent) 52%,
+        transparent 66%);
+  }
+  .pe-conteudo {
+    max-width: 1320px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 128px 24px 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .pe-etiqueta { margin: 0; color: var(--pe-claro); }
+  .pe-titulo {
+    max-width: 15ch;
+    margin: 20px 0 0;
+    font-family: var(--fonte-titulos);
+    font-size: 2.9rem;
+    font-weight: 500;
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    color: var(--pe-claro);
+  }
+  .pe-titulo em { font-style: italic; padding-bottom: 0.06em; }
+  .pe-texto {
+    max-width: 46ch;
+    margin: 24px 0 0;
+    font-family: var(--fonte-texto);
+    font-size: 1.02rem;
+    line-height: 1.625;
+    color: var(--pe-claro);
+  }
+  .pe-acoes { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 12px; }
+  .pe-botao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 28px;
+    border-radius: 2px;
+    white-space: nowrap;
+    transition: background-color 0.2s, border-color 0.2s;
+  }
+  .pe-botao--cheio { background: var(--cor-acento); color: var(--veu); }
+  .pe-botao--contorno {
+    border: 1px solid color-mix(in srgb, var(--pe-claro) 55%, transparent);
+    color: var(--pe-claro);
+  }
+  .pe-botao--contorno:hover {
+    border-color: var(--pe-claro);
+    background: color-mix(in srgb, var(--pe-claro) 10%, transparent);
+  }
+
+  @media (min-width: 640px) {
+    .pe-titulo { font-size: 4.2rem; }
+  }
+  @media (min-width: 768px) {
+    .pe-barra { padding: 0 40px; }
+    .pe-conteudo { padding: 144px 40px 64px; }
+    .pe-texto { font-size: 1.12rem; }
+  }
+  @media (min-width: 1024px) {
+    .pe-nav { display: flex; }
+    .pe-menu { display: none; }
+    .pe-conteudo { padding-top: 160px; }
+    .pe-titulo { font-size: 5.75rem; }
+  }
+  /* no telemóvel o texto ocupa a largura toda: o véu cobre tudo, mais leve
+     em cima e em baixo */
+  @media (max-width: 767px) {
+    .pe-veu {
+      background: linear-gradient(to bottom,
+        color-mix(in srgb, var(--veu) 45%, transparent) 0%,
+        color-mix(in srgb, var(--veu) 50%, transparent) 45%,
+        color-mix(in srgb, var(--veu) 30%, transparent) 100%);
+    }
+  }
+  .pe-botao--cheio, .pe-nav .pe-reservar { color: #F4FAFE; }
+  .pe-titulo { font-weight: 400; letter-spacing: -0.03em; }
+</style>
+</head>
+<body>
+
+<div class="pe-raiz">
+  <header class="pe-cabecalho">
+    <div class="pe-barra">
+      <a class="pe-marca" href="#inicio"><span>Casa Rural da Costeira</span></a>
+
+      <nav class="pe-nav" aria-label="Secções">
+        <a href="#casa">A casa</a>
+        <a href="#dia">O dia</a>
+        <a href="#sala">A sala</a>
+        <a href="#quartos">Quartos</a>
+        <a href="#volta">À volta</a>
+        <a class="pe-reservar" href="#contacto">Ver disponibilidade</a>
+      </nav>
+
+      <details class="pe-menu">
+        <summary aria-label="Menu">
+          <svg class="pe-abrir" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round" aria-hidden="true"><path d="M40 64h176M40 128h176M40 192h176"/></svg>
+          <svg class="pe-fechar" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round" aria-hidden="true"><path d="M200 56 56 200M56 56l144 144"/></svg>
+        </summary>
+        <nav class="pe-painel" aria-label="Secções">
+          <a href="#casa">A casa</a>
+          <a href="#dia">O dia</a>
+          <a href="#sala">A sala</a>
+          <a href="#quartos">Quartos</a>
+          <a href="#volta">À volta</a>
+          <a class="pe-botao pe-botao--cheio" href="#contacto">Ver disponibilidade</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+
+  <section class="pe" id="inicio">
+    <img class="pe-foto" src="fotos/piscina-06.jpg" alt="A piscina comprida com trampolim, a casa de granito à esquerda e a encosta ao fundo" style="object-position: 50% 50%">
+    <div class="pe-veu" aria-hidden="true"></div>
+    <div class="pe-conteudo">
+      <p class="pe-etiqueta">Casa de Campo · Cinfães</p>
+      <h1 class="pe-titulo">Pedra, piscina e <em>uma mesa para todos</em></h1>
+      <p class="pe-texto">Uma Casa de Campo de granito em Cinfães, com piscina, churrasco com forno a lenha e uma sala com lareira. O centro da vila fica a cerca de 1,5 km e o Douro a cerca de 8 a 10 minutos de carro.</p>
+      <div class="pe-acoes">
+        <a class="pe-botao pe-botao--cheio" href="#contacto">Ver disponibilidade</a>
+        <a class="pe-botao pe-botao--contorno" href="#casa">Conhecer a casa</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<main>
+  <!-- a voz do hóspede, sozinha no papel -->
+  <section class="voz" aria-label="A voz de um hóspede">
+    <div class="moldura">
+      <blockquote style="margin:0">
+        <p class="frase">"num espaço acolhedor onde impera o sossego."</p>
+        <p class="frase-autor rotulo">D, Airbnb</p>
+      </blockquote>
+      <p class="passagem">Primeiro, a casa de perto.</p>
+    </div>
+  </section>
+
+  <!-- 2. o pátio -->
+  <section class="patio" id="casa">
+    <div class="moldura">
+      <h2 class="gigante">Granito, uma torre e <em>um pátio com fonte</em></h2>
+      <div class="patio-colagem">
+        <figure class="patio-a">
+          <img class="foto" src="fotos/fachada-02.jpg" alt="A fachada de granito com o alpendre, a rede e o pátio empedrado">
+          <figcaption class="legenda">A fachada e o alpendre</figcaption>
+        </figure>
+        <div class="patio-texto">
+          <p class="corpo">A casa principal foi recuperada em 2006, segundo a casa, preservando a traça original. Abriu a hóspedes em 2013.</p>
+          <p class="corpo">À frente, um pátio empedrado com fonte e sofás de exterior. Debaixo do alpendre, uma rede à espera de quem chegar primeiro.</p>
+        </div>
+        <figure class="patio-b">
+          <img class="foto" src="fotos/fachada-04.jpg" alt="O pátio empedrado com a fonte de pedra e os sofás, a torre à direita" loading="lazy">
+          <figcaption class="legenda">O pátio, a fonte e a torre</figcaption>
+        </figure>
+        <p class="passagem">Mas o dia passa-se lá fora, à volta da água.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. o dia lá fora -->
+  <section class="dia" id="dia">
+    <div class="moldura">
+      <div class="dia-topo">
+        <p class="rotulo">Manhã · almoço · tarde</p>
+        <h2 class="gigante">Um dia inteiro <em>cá fora</em></h2>
+      </div>
+      <div class="tempos">
+        <figure class="t-manha">
+          <img class="foto" src="fotos/piscina-01.jpg" alt="A piscina de manhã, com as escadas e o churrasco coberto ao fundo" loading="lazy">
+        </figure>
+        <div class="t-manha-texto">
+          <p class="tempo-nome">De manhã, a piscina.</p>
+          <p class="corpo">Uma piscina exterior com trampolim e espreguiçadeiras, com a casa logo ao lado.</p>
+        </div>
+        <figure class="t-fogo">
+          <img class="foto" src="fotos/piscina-09.jpg" alt="As espreguiçadeiras junto à piscina, o churrasco coberto e a encosta" loading="lazy">
+          <figcaption class="legenda">O churrasco coberto, ao fundo</figcaption>
+        </figure>
+        <div class="t-fogo-texto">
+          <p class="tempo-nome">Ao almoço, o fogo.</p>
+          <p class="corpo">Churrasqueira, forno a lenha e fogão, com uma mesa para comer ao ar livre.</p>
+        </div>
+        <figure class="t-jogos">
+          <img class="foto" src="fotos/jogos-01.jpg" alt="A zona coberta com a mesa de bilhar e os matraquilhos" loading="lazy">
+        </figure>
+        <div class="t-jogos-texto">
+          <p class="tempo-nome">À tarde, a desforra.</p>
+          <p class="corpo">Numa zona coberta, uma mesa de bilhar e matraquilhos.</p>
+        </div>
+      </div>
+      <blockquote class="dia-citacao">
+        <p class="frase">"A área externa também é muito boa, com churrasqueira, forno a lenha, mesa de sinuca, e uma grande área verde, com pés de frutas."</p>
+        <p class="frase-autor rotulo">Tarsila, Airbnb</p>
+      </blockquote>
+      <p class="passagem">Quando o sol baixa, a casa chama para dentro.</p>
+    </div>
+  </section>
+
+  <!-- 4. a sala: a faixa azul -->
+  <section class="sala" id="sala">
+    <div class="moldura sala-grelha">
+      <h2 class="gigante">Lareira, sofás e <em>a mesa grande</em></h2>
+      <figure class="sala-a">
+        <img class="foto" src="fotos/sala-03.jpg" alt="A sala em plano aberto, com o tecto de vigas, a mesa e as portas envidraçadas" loading="lazy">
+        <figcaption class="legenda">A sala de estar e de jantar</figcaption>
+      </figure>
+      <div class="sala-texto">
+        <p class="corpo">A sala de estar e de jantar tem lareira a lenha, sofás fundos e uma mesa grande de madeira, onde a conversa do jantar se estica pela noite.</p>
+        <p class="corpo">A cozinha tem fogão, forno, micro-ondas, frigorífico, máquina de lavar loiça e máquina de café. E a casa tem aquecimento, para os meses frios.</p>
+      </div>
+      <figure class="sala-b">
+        <img class="foto" src="fotos/refeicoes-02.jpg" alt="A mesa de madeira entre a parede de granito e a parede amarela" loading="lazy">
+        <figcaption class="legenda">A mesa grande</figcaption>
+      </figure>
+      <blockquote class="sala-citacao" style="margin-left:0;margin-right:0">
+        <p class="frase">"é uma casa muito bem aquecida e confortável no inverno."</p>
+        <p class="frase-autor rotulo">Tarsila, Airbnb</p>
+      </blockquote>
+      <p class="passagem">Ao fim da noite, a escada leva aos quartos.</p>
+    </div>
+  </section>
+
+  <!-- 5. os quartos -->
+  <section class="quartos" id="quartos">
+    <div class="moldura quartos-grelha">
+      <h2 class="gigante">Ferro forjado e <em>paredes de granito</em></h2>
+      <figure class="q-a q-par">
+        <img class="foto" src="fotos/quarto-01.jpg" alt="Cama de casal de ferro forjado preto contra a parede de granito" loading="lazy">
+        <p>Os quartos têm camas de ferro forjado, madeiras e paredes de granito ou em tons de terra, e ficam nos dois pisos da casa.</p>
+      </figure>
+      <figure class="q-b q-par">
+        <img class="foto" src="fotos/quarto-05.jpg" alt="O quarto do sótão, com as vigas em ângulo e duas camas de ferro branco" loading="lazy">
+        <p>Um deles fica no sótão, debaixo do tecto de madeira, com duas camas individuais de ferro.</p>
+      </figure>
+      <figure class="q-c q-par">
+        <img class="foto" src="fotos/quarto-03.jpg" alt="Quarto de parede amarelo-laranja com cama de ferro forjado e berço" loading="lazy">
+        <p>Para os mais pequenos, há berço a pedido.</p>
+      </figure>
+      <p class="passagem">De manhã, vale a pena sair: o Douro está perto.</p>
+    </div>
+  </section>
+
+  <!-- 6. à volta -->
+  <section class="volta" id="volta">
+    <div class="moldura">
+      <div class="volta-topo">
+        <h2 class="gigante">O Douro, a serra e <em>o românico</em></h2>
+        <p class="corpo">A casa fica na Calçada de Medados, em Cinfães, a cerca de 1,5 km do centro da vila e dos restaurantes.</p>
+      </div>
+      <ol class="lugares">
+        <li class="lugar l1">
+          <p class="rotulo">Cerca de 8 a 10 min de carro</p>
+          <h3 class="lugar-nome">O Douro em Porto Antigo e no Carrapatelo</h3>
+          <p class="lugar-frase">A barragem do Carrapatelo, inaugurada em 1972, tem uma das maiores eclusas da Europa, com 35 m de desnível.</p>
+          <figure>
+            <img src="fotos/regiao-regiao-03.jpg" alt="O Douro em Porto Antigo, com a ponte, o cais e as casas à beira-rio" loading="lazy">
+            <figcaption class="credito">Porto Antigo. Foto: ManuelFBorges / Wikimedia Commons, <a href="https://commons.wikimedia.org/wiki/File:Porto_Antigo_-_Cinf%C3%A3es.jpg">página no Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></figcaption>
+          </figure>
+        </li>
+        <li class="lugar l2">
+          <p class="rotulo">Cerca de 12 min de carro</p>
+          <h3 class="lugar-nome">O Vale do Bestança</h3>
+          <p class="lugar-frase">Um percurso circular de cerca de 6,7 km ao longo do rio, por Vila de Muros, Covelas e Vale Verde.</p>
+          <figure>
+            <img src="fotos/regiao-regiao-02.jpg" alt="O Douro na foz do Bestança, com o viaduto e as encostas" loading="lazy">
+            <figcaption class="credito">A foz do Bestança. Foto: Vitor Oliveira from Torres Vedras, PORTUGAL / Wikimedia Commons, <a href="https://commons.wikimedia.org/wiki/File:Foz_do_Rio_Bestan%C3%A7a_-_Portugal_(52345064659).jpg">página no Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a></figcaption>
+          </figure>
+        </li>
+        <li class="lugar l3">
+          <p class="rotulo">Cerca de 14 min de carro</p>
+          <h3 class="lugar-nome">A igreja de Tarouquela</h3>
+          <p class="lugar-frase">Românica, fundada no século XII, Monumento Nacional desde 1945. No portal, os «cães de Tarouquela», que, diz a tradição, afastam o mal. Visita por marcação, pela Rota do Românico.</p>
+          <figure>
+            <img src="fotos/regiao-regiao-01.jpg" alt="A igreja românica de Tarouquela vista do adro, com a torre sineira" loading="lazy">
+            <figcaption class="credito">Tarouquela. Foto: Pedro from Maia (Porto), Portugal / Wikimedia Commons, <a href="https://commons.wikimedia.org/wiki/File:Igreja_de_Santa_Maria_Maior_de_Tarouquela_I_(36411616644).jpg">página no Commons</a>, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a></figcaption>
+          </figure>
+        </li>
+        <li class="lugar l4">
+          <p class="rotulo">Cerca de 22 min de carro</p>
+          <h3 class="lugar-nome">As Portas de Montemuro</h3>
+          <p class="lugar-frase">Por estrada de serra. Um miradouro a 1220 m, junto à Capela do Senhor do Amparo, em zona da Rede Natura 2000. É aqui que nasce o Bestança.</p>
+          <figure>
+            <img src="fotos/regiao-regiao-04.jpg" alt="A encosta da Serra de Montemuro, com socalcos verdes e cores de outono" loading="lazy">
+            <figcaption class="credito">Serra de Montemuro. Foto: C.felix / Wikimedia Commons, <a href="https://commons.wikimedia.org/wiki/File:IMG_montemuro.JPG">página no Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a></figcaption>
+          </figure>
+        </li>
+        <li class="lugar l5">
+          <p class="rotulo">Cerca de 32 min de carro</p>
+          <h3 class="lugar-nome">Os Passadiços do Paiva</h3>
+          <p class="lugar-frase">Até à entrada de Espiunca. Um passadiço de madeira ao longo do Paiva, exigente, por praias fluviais e geossítios do Arouca Geopark.</p>
+          <figure>
+            <img src="fotos/regiao-regiao-05.jpg" alt="Passadiço de madeira sobre o rio Paiva, entre rochas e vegetação" loading="lazy">
+            <figcaption class="credito">Passadiços do Paiva. Foto: Joseolgon / Wikimedia Commons, <a href="https://commons.wikimedia.org/wiki/File:Passadi%C3%A7o_do_Paiva_(10).JPG">página no Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></figcaption>
+          </figure>
+        </li>
+      </ol>
+      <p class="volta-nota">Tempos de carro aproximados, sem trânsito. Fontes: Rota do Românico e município de Arouca.</p>
+      <blockquote class="volta-citacao" lang="fr">
+        <p class="frase">"Tiago nous a fournit d'excellent conseil pour les visites à faire dans la vallée du Douro."</p>
+        <p class="frase-autor rotulo">Roland, Airbnb</p>
+        <p class="traducao" lang="pt">O Tiago deu-nos excelentes conselhos para as visitas a fazer no vale do Douro.</p>
+      </blockquote>
+      <p class="passagem">Ao fim do dia, volta-se para a piscina. Falta só escolher as datas.</p>
+    </div>
+  </section>
+
+  <!-- 7. escolher as datas -->
+  <section class="datas" id="contacto">
+    <div class="moldura datas-grelha">
+      <h2 class="gigante">Escolher <em>as datas</em></h2>
+      <figure class="datas-foto">
+        <img class="foto" src="fotos/piscina-04.jpg" alt="A piscina em primeiro plano e a torre da casa por cima do muro de pedra" loading="lazy">
+        <figcaption class="legenda">A piscina e a torre, ao fim da tarde</figcaption>
+      </figure>
+      <div class="datas-intro">
+        <p class="corpo">No Airbnb, a casa reserva-se inteira, por um só grupo, com uso de toda a casa, da piscina e do Wi-Fi. É aí que se faz a reserva online.</p>
+        <a class="airbnb seta" href="https://www.airbnb.pt/rooms/2768412">Ver disponibilidade no Airbnb ↗</a>
+      </div>
+      <div class="contacto-linha">
+        <p class="rotulo">Telefone</p>
+        <a href="tel:+351914797673">+351 914 797 673</a>
+        <p class="rotulo" style="margin-top:34px">Email</p>
+        <a class="email" href="mailto:casaruraldacosteira@gmail.com">casaruraldacosteira@gmail.com</a>
+      </div>
+      <div class="datas-tiago">
+        <p class="corpo">Quem responde é o Tiago, que fala português, inglês e espanhol.</p>
+        <blockquote style="margin:0">
+          <p class="frase">"Ótimas condições com um anfitrião incrível que esteve sempre disponível!"</p>
+          <p class="frase-autor rotulo">Sara, Airbnb</p>
+        </blockquote>
+      </div>
+      <dl class="factos">
+        <div><dt class="rotulo">Airbnb</dt><dd>4,88 em 5, com 25 avaliações (lido em outubro de 2026).</dd></div>
+        <div><dt class="rotulo">Google</dt><dd>4,8 em 5, com 49 críticas (lido em outubro de 2026).</dd></div>
+        <div><dt class="rotulo">Na propriedade</dt><dd>Wi-Fi e estacionamento gratuito na propriedade.</dd></div>
+        <div><dt class="rotulo">Morada</dt><dd>Calçada de Medados, 158, 4690-055 Cinfães, distrito de Viseu.</dd></div>
+        <div><dt class="rotulo">Registo</dt><dd>Casa de Campo, Turismo no Espaço Rural, RNET n.º 4967.</dd></div>
+      </dl>
+    </div>
+    <div class="moldura">
+      <div class="rodape">
+        <p class="rotulo">Casa Rural da Costeira · Cinfães</p>
+        <a class="rotulo seta" href="#inicio">Voltar ao início ↑</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+</body>
+</html>

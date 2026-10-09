@@ -1,0 +1,3129 @@
+{
+  "schema_version": "1.0",
+  "manifesto": {
+    "slug": "casa-da-alufinha-resende",
+    "revisao": "2026-10-09",
+    "prontidao": "com_limitacoes",
+    "notas": "Identidade confirmada (RNAL 157740/AL no RNT, Booking e Airbnb; morada, telefone e coordenadas no Google e no município; o email da titular no RNT é o do município). Limitações: só 6 reviews, todas do verão de 2026; capacidade (6 contra 8), camas (3 contra 4), área (150 contra 210 m²) e horários em conflito; 'património mundial da UNESCO' não se aplica a Resende; textos dos canais escritos pela gestora Holidu; sem reserva direta; fotos de uma só sessão de dia e de verão, por autorizar pelo dono."
+  },
+  "entidades": [
+    {
+      "id": "CASA-1",
+      "tipo": "casa",
+      "nome": "Casa da Alufinha (Calçada da Ponte da Alufinha 142, São João de Fontoura, Resende), RNAL 157740/AL"
+    },
+    {
+      "id": "TQ-1",
+      "tipo": "tipo_quarto",
+      "nome": "Villa com Vista Jardim (casa inteira, único tipo no Booking)",
+      "pai_id": "CASA-1"
+    },
+    {
+      "id": "ESP-PISCINA",
+      "tipo": "espaco",
+      "nome": "Piscina exterior privada",
+      "pai_id": "CASA-1"
+    },
+    {
+      "id": "ESP-EXTERIOR",
+      "tipo": "espaco",
+      "nome": "Pérgolas, terraços em socalco, rede e duche exterior",
+      "pai_id": "CASA-1"
+    },
+    {
+      "id": "ESP-COZEXT",
+      "tipo": "espaco",
+      "nome": "Cozinha exterior com churrasqueira de granito",
+      "pai_id": "CASA-1"
+    },
+    {
+      "id": "ESP-SALA",
+      "tipo": "espaco",
+      "nome": "Sala de estar e jantar",
+      "pai_id": "CASA-1"
+    },
+    {
+      "id": "ESP-COZINHA",
+      "tipo": "espaco",
+      "nome": "Cozinha interior",
+      "pai_id": "CASA-1"
+    },
+    {
+      "id": "ESP-SOTAO",
+      "tipo": "espaco",
+      "nome": "Patamar do sótão",
+      "pai_id": "CASA-1"
+    },
+    {
+      "id": "ESP-QUARTOS",
+      "tipo": "espaco",
+      "nome": "Três quartos (fotos sem atribuição a um quarto)",
+      "pai_id": "CASA-1"
+    },
+    {
+      "id": "ESP-WC",
+      "tipo": "espaco",
+      "nome": "Casas de banho",
+      "pai_id": "CASA-1"
+    },
+    {
+      "id": "TAR-1",
+      "tipo": "tarifa",
+      "nome": "Booking, 2 adultos, 2 noites (21-23/10/2026 e 06-08/11/2026)",
+      "pai_id": "TQ-1"
+    },
+    {
+      "id": "TAR-2",
+      "tipo": "tarifa",
+      "nome": "Booking, 4 adultos e 2 crianças, 3 noites (18-21/11/2026)",
+      "pai_id": "TQ-1"
+    },
+    {
+      "id": "CANAL-BOOKING",
+      "tipo": "canal",
+      "nome": "Booking (gerido pela Holidu)",
+      "pai_id": "CASA-1"
+    },
+    {
+      "id": "CANAL-AIRBNB",
+      "tipo": "canal",
+      "nome": "Airbnb (anfitriã/o Holidu)",
+      "pai_id": "CASA-1"
+    },
+    {
+      "id": "CANAL-VRBO",
+      "tipo": "canal",
+      "nome": "Vrbo (Holidu)",
+      "pai_id": "CASA-1"
+    },
+    {
+      "id": "CANAL-INSTAGRAM",
+      "tipo": "canal",
+      "nome": "Instagram @casa_da_alufinha_al",
+      "pai_id": "CASA-1"
+    },
+    {
+      "id": "CANAL-GOOGLE",
+      "tipo": "canal",
+      "nome": "Google Maps",
+      "pai_id": "CASA-1"
+    },
+    {
+      "id": "CANAL-MUNICIPIO",
+      "tipo": "canal",
+      "nome": "Visit Resende (município)",
+      "pai_id": "CASA-1"
+    },
+    {
+      "id": "REG-PORTOREI",
+      "tipo": "espaco",
+      "nome": "Região: Parque Fluvial de Porto de Rei",
+      "pai_id": "CASA-1"
+    },
+    {
+      "id": "REG-CEREJAIS",
+      "tipo": "espaco",
+      "nome": "Região: Rota dos Cerejais (e Solar de Porto de Rei)",
+      "pai_id": "CASA-1"
+    },
+    {
+      "id": "REG-BARRO",
+      "tipo": "espaco",
+      "nome": "Região: Igreja de Santa Maria de Barrô",
+      "pai_id": "CASA-1"
+    },
+    {
+      "id": "REG-CARQUERE",
+      "tipo": "espaco",
+      "nome": "Região: Mosteiro de Santa Maria de Cárquere",
+      "pai_id": "CASA-1"
+    },
+    {
+      "id": "REG-MUSEU",
+      "tipo": "espaco",
+      "nome": "Região: Museu do Douro (Peso da Régua)",
+      "pai_id": "CASA-1"
+    },
+    {
+      "id": "REG-REMEDIOS",
+      "tipo": "espaco",
+      "nome": "Região: Santuário de Nossa Senhora dos Remédios (Lamego)",
+      "pai_id": "CASA-1"
+    }
+  ],
+  "evidencias": [
+    {
+      "id": "EVID-RNT",
+      "origem": "registo_publico",
+      "entidade_ids": [
+        "CASA-1"
+      ],
+      "local": "https://rnt.turismodeportugal.pt/RNT/RNAL.aspx?nr=157740; marketing/provas/rnt-157740.txt; compliance.md",
+      "recolhido_em": "2026-10-09",
+      "bloco": "detalhe do registo RNAL",
+      "excerto": "RNAL nº 157740/AL Registado em 2024-07-10 · CASA DA ALUFUNHA · abertura ao público 2024-06-25 · Imóvel posterior a 1951? Não · Moradia · Utentes 8 · Quartos 3 · Camas 4 · Calçada de Alufinha 142, 4660-339 Porto do Rei · Freguesia São João de Fontoura · Concelho Resende · Distrito Viseu · Titular (comodatária) com o email mariajoaopaulapinto@gmail.com · Seguro RC Fidelidade RC65761348 2026-06-25 a 2027-06-25",
+      "publicado_em": "2024-07-10",
+      "atualidade": "registo em vigor a 2026-10-09; detalhe aberto pelo juízo"
+    },
+    {
+      "id": "EVID-BK-TEXTO",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-1",
+        "TQ-1"
+      ],
+      "local": "https://www.booking.com/hotel/pt/casa-da-alufinha.pt-pt.html; marketing/textos.md",
+      "recolhido_em": "2026-10-09",
+      "bloco": "Informação do alojamento (perfil 'Gerido por Holidu')",
+      "excerto": "Situada em São João de Fontoura, no coração do Vale do Douro, património mundial da UNESCO, a Casa da Alufinha é uma acolhedora moradia de 150 m² ideal para até 6 pessoas. Dispõe de 3 quartos confortáveis, 3 casas de banho e cozinha privada totalmente equipada. [...]",
+      "atualidade": "texto da gestora Holidu, sem data; igual no Airbnb e traduzido na Vrbo; não é a voz do dono"
+    },
+    {
+      "id": "EVID-BK-ESTR",
+      "origem": "plataforma",
+      "entidade_ids": [
+        "TQ-1",
+        "CASA-1"
+      ],
+      "local": "https://www.booking.com/hotel/pt/casa-da-alufinha.pt-pt.html; quartos.md e factos.md",
+      "recolhido_em": "2026-10-09",
+      "bloco": "tabela do tipo 'Villa com Vista Jardim', dados do tipo e lista de comodidades",
+      "atualidade": "observado 2026-10-09; 210 m², 3 camas de casal, maxPersons 6"
+    },
+    {
+      "id": "EVID-BK-REGRAS",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-1",
+        "CANAL-BOOKING"
+      ],
+      "local": "https://www.booking.com/hotel/pt/casa-da-alufinha.pt-pt.html; factos.md e marketing/textos.md",
+      "recolhido_em": "2026-10-09",
+      "bloco": "Regras da casa e Informações importantes",
+      "excerto": "Check-in 16:00-22:00; check-out até às 11:00; caução de € 500 por transferência; não é permitido fumar, festas, despedidas de solteiro, animais; crianças com 2 ou mais anos pagam tarifa de adulto; 1 berço grátis; cartões Visa, Mastercard, UnionPay; Licença número: 157740/AL",
+      "atualidade": "observado 2026-10-09; regras dos anúncios geridos pela Holidu"
+    },
+    {
+      "id": "EVID-BK-PRECO",
+      "origem": "plataforma",
+      "entidade_ids": [
+        "TAR-1",
+        "TAR-2"
+      ],
+      "local": "https://www.booking.com/hotel/pt/casa-da-alufinha.pt-pt.html; quartos.md",
+      "recolhido_em": "2026-10-09",
+      "bloco": "tabela de preços em 3 pesquisas",
+      "excerto": "21-23/10 e 06-08/11, 2 adultos: 590 € não reembolsável, 650 € cancelamento gratuito; 18-21/11, 4 adultos e 2 crianças: 860 € não reembolsável, 950 € cancelamento gratuito",
+      "atualidade": "pesquisa de 2026-10-09; muda com datas e ocupação"
+    },
+    {
+      "id": "EVID-BK-NOTA",
+      "origem": "plataforma",
+      "entidade_ids": [
+        "CANAL-BOOKING"
+      ],
+      "local": "https://www.booking.com/hotel/pt/casa-da-alufinha.pt-pt.html; canais.md e reviews.md",
+      "recolhido_em": "2026-10-09",
+      "bloco": "pontuação",
+      "excerto": "Excecional 10, 1 comentário; Localização 7,5",
+      "atualidade": "2026-10-09"
+    },
+    {
+      "id": "EVID-AB",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-1",
+        "CANAL-AIRBNB"
+      ],
+      "local": "https://www.airbnb.pt/rooms/1709247571486500891; marketing/textos.md e factos.md",
+      "recolhido_em": "2026-10-09",
+      "bloco": "descrição, 45 comodidades, dados do registo, destaques",
+      "excerto": "Dados do registo: 157740/AL; 3 quartos, 1 cama de casal cada; 6 pessoas; check-in autónomo com teclado numérico; lareira interior; cadeira alta e portões de segurança; detetor de fumo e de monóxido de carbono: 'este espaço pode não ter'",
+      "atualidade": "observado 2026-10-09"
+    },
+    {
+      "id": "EVID-AB-NOTA",
+      "origem": "plataforma",
+      "entidade_ids": [
+        "CANAL-AIRBNB"
+      ],
+      "local": "https://www.airbnb.pt/rooms/1709247571486500891; canais.md",
+      "recolhido_em": "2026-10-09",
+      "bloco": "pontuação",
+      "excerto": "5,0 em 5 avaliações, 'Favorito dos hóspedes'; localização 4,4",
+      "atualidade": "2026-10-09"
+    },
+    {
+      "id": "EVID-VRBO",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-1",
+        "CANAL-VRBO"
+      ],
+      "local": "https://www.vrbo.com/en-gb/p5796211; marketing/textos.md",
+      "recolhido_em": "2026-10-09",
+      "bloco": "título, descrição, galeria",
+      "excerto": "Villa 'Casa da Alufinha' with Private Pool, Wi-Fi and Air Conditioning; ideal for up to 6 guests",
+      "atualidade": "2026-10-09; texto da Holidu"
+    },
+    {
+      "id": "EVID-IG-2024",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-1",
+        "CANAL-INSTAGRAM"
+      ],
+      "local": "https://www.instagram.com/casa_da_alufinha_al/ (reel C-K9RI2K7we); marketing/textos.md",
+      "recolhido_em": "2026-10-09",
+      "bloco": "legenda do dono",
+      "excerto": "Situada em pleno vale do Douro, património mundial da UNESCO [...] capacidade para receber até 8 pessoas [...] A 5 minutos a pé encontra a Praia Fluvial de Porto de Rei [...]",
+      "publicado_em": "2024-08-02",
+      "atualidade": "texto do dono com mais de 2 anos: o que só ele afirma fica por confirmar"
+    },
+    {
+      "id": "EVID-IG-2026",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-1",
+        "CANAL-INSTAGRAM"
+      ],
+      "local": "https://www.instagram.com/casa_da_alufinha_al/; marketing/textos.md",
+      "recolhido_em": "2026-10-09",
+      "bloco": "legendas de 2026",
+      "excerto": "Entre o azul da piscina e o verde da paisagem [...]; Um refúgio onde a tranquilidade da natureza se encontra com o conforto",
+      "publicado_em": "2026-06-02 a 2026-09-24",
+      "atualidade": "atual"
+    },
+    {
+      "id": "EVID-MUN",
+      "origem": "terceiro",
+      "entidade_ids": [
+        "CASA-1",
+        "CANAL-MUNICIPIO"
+      ],
+      "local": "https://cm-resende.pt/visit/visitar/casa-da-alufinha/; marketing/textos.md",
+      "recolhido_em": "2026-10-09",
+      "bloco": "ficha da casa",
+      "excerto": "Capacidade: N.º Utentes:6 N.º Quartos: 3 N.º Camas: 3 · Check-In: 11h Check-Out: 15h · E-Mail: mariajoaopaulapinto@gmail.com Telemóvel: 912331756 · Calçada Ponte de Alufinha, N.º 142 4660-339 S. João de Fontoura",
+      "atualidade": "página sem data; texto do dono"
+    },
+    {
+      "id": "EVID-GM",
+      "origem": "plataforma",
+      "entidade_ids": [
+        "CASA-1",
+        "CANAL-GOOGLE"
+      ],
+      "local": "https://www.google.com/maps/place/Casa+da+Alufinha/@41.113903,-7.9156847,17z; fontes.md",
+      "recolhido_em": "2026-10-09",
+      "bloco": "ficha",
+      "excerto": "Calçada da Ponte da Alufinha Nº 142, 4660-339; 912 331 756; 0 críticas",
+      "atualidade": "2026-10-09"
+    },
+    {
+      "id": "EVID-REV",
+      "origem": "hospede",
+      "entidade_ids": [
+        "CASA-1",
+        "TQ-1"
+      ],
+      "local": "reviews.md (B-01, A-01 a A-05)",
+      "recolhido_em": "2026-10-09",
+      "bloco": "reviews completas",
+      "publicado_em": "2026-07 a 2026-08",
+      "atualidade": "6 reviews, todas de julho e agosto de 2026"
+    },
+    {
+      "id": "EVID-HOLIDU-RESP",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-1",
+        "CANAL-AIRBNB"
+      ],
+      "local": "https://www.airbnb.pt/rooms/1709247571486500891; reviews.md, resposta à review A-02",
+      "recolhido_em": "2026-10-09",
+      "bloco": "resposta da gestora",
+      "excerto": "Maria est effectivement une hôte fantastique",
+      "publicado_em": "2026-08",
+      "atualidade": "agosto de 2026"
+    },
+    {
+      "id": "EVID-FOTOS",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-1"
+      ],
+      "local": "marketing/fotos.md e marketing/fotos/",
+      "recolhido_em": "2026-10-09",
+      "bloco": "galeria de 40 fotos do Booking (= Airbnb) e 3 variantes da Vrbo",
+      "atualidade": "sessão profissional de dia e de verão, sem data exata; nos anúncios a 2026-10-09"
+    },
+    {
+      "id": "EVID-UNESCO",
+      "origem": "terceiro",
+      "entidade_ids": [
+        "CASA-1"
+      ],
+      "local": "https://diariodarepublica.pt/dr/detalhe/resolucao-conselho-ministros/116-2006-541654; fontes.md, conflito 11",
+      "recolhido_em": "2026-10-09",
+      "bloco": "PIOTADV: concelhos do Alto Douro Vinhateiro",
+      "excerto": "13 concelhos: Alijó, Armamar, Carrazeda de Ansiães, Lamego, Mesão Frio, Peso da Régua, Sabrosa, Santa Marta de Penaguião, São João da Pesqueira, Tabuaço, Torre de Moncorvo, Vila Nova de Foz Côa e Vila Real (Resende não)",
+      "atualidade": "pesquisa do juízo a 2026-10-09"
+    },
+    {
+      "id": "EVID-REG-OSRM",
+      "origem": "terceiro",
+      "entidade_ids": [
+        "REG-PORTOREI",
+        "REG-CEREJAIS",
+        "REG-BARRO",
+        "REG-CARQUERE",
+        "REG-MUSEU",
+        "REG-REMEDIOS"
+      ],
+      "local": "regiao/regiao.md, 'Como as distâncias foram calculadas'",
+      "recolhido_em": "2026-10-09",
+      "bloco": "OSRM a partir de 41.113903, -7.9156847",
+      "atualidade": "calculado a 2026-10-09, sem trânsito"
+    },
+    {
+      "id": "EVID-REG-PORTOREI",
+      "origem": "terceiro",
+      "entidade_ids": [
+        "REG-PORTOREI"
+      ],
+      "local": "https://cm-resende.pt/visit/visitar/parque-fluvial-de-porto-de-rei/ e https://www.rotadoromanico.com/pt/experiencias/o-que-ver-e-fazer/praia-fluvial-de-porto-de-rei/; regiao/regiao.md",
+      "recolhido_em": "2026-10-09",
+      "bloco": "fichas do município e da Rota do Românico",
+      "excerto": "cais de acostagem para embarque turístico, um pontão de ligação, um passadiço, uma piscina, praia fluvial [...] peixe do rio de escabeche e as enguias [...] Excelentes condições para a prática de atividades aquáticas lúdicas e desportivas",
+      "atualidade": "relido pelo juízo a 2026-10-09"
+    },
+    {
+      "id": "EVID-REG-CEREJAIS",
+      "origem": "terceiro",
+      "entidade_ids": [
+        "REG-CEREJAIS"
+      ],
+      "local": "https://www.rotadoromanico.com/pt/experiencias/o-que-ver-e-fazer/rota-dos-cerejais/ e https://cm-resende.pt/visit/visitar/rota-dos-cerejais/; regiao/regiao.md",
+      "recolhido_em": "2026-10-09",
+      "bloco": "fichas da Rota do Românico e do município",
+      "excerto": "Percurso pedestre de pequena rota (5,7 km), circular, com início na Junta de Freguesia de São João de Fontoura [...] os cerejais [...] Solar de Porto de Rei, o Parque Fluvial de Porto de Rei e deslumbrar-se com as vistas incríveis sobre o rio Douro · município: manto branco na floração; morada Lugar da Senhora da Guia",
+      "atualidade": "relido pelo juízo a 2026-10-09"
+    },
+    {
+      "id": "EVID-REG-BARRO",
+      "origem": "terceiro",
+      "entidade_ids": [
+        "REG-BARRO"
+      ],
+      "local": "https://www.rotadoromanico.com/pt/monumentos/igreja-de-santa-maria-de-barro; regiao/regiao.md",
+      "recolhido_em": "2026-10-09",
+      "bloco": "ficha da Rota do Românico",
+      "excerto": "Monumento Nacional 1922 · Horário de Visita Por marcação · Culto Domingo 8h00 · não acessível a mobilidade reduzida · capitéis do arco triunfal com cenas de caça",
+      "atualidade": "relido pelo juízo a 2026-10-09"
+    },
+    {
+      "id": "EVID-REG-BARRO-WIKI",
+      "origem": "terceiro",
+      "entidade_ids": [
+        "REG-BARRO"
+      ],
+      "local": "https://pt.wikipedia.org/wiki/Igreja_de_Santa_Maria_de_Barr%C3%B4; regiao/regiao.md",
+      "recolhido_em": "2026-10-03",
+      "bloco": "artigo",
+      "excerto": "século XII, Egas Moniz",
+      "atualidade": "recolhido a 2026-10-03 (dossiê da Casa do Valado)"
+    },
+    {
+      "id": "EVID-REG-CARQUERE",
+      "origem": "terceiro",
+      "entidade_ids": [
+        "REG-CARQUERE"
+      ],
+      "local": "https://www.rotadoromanico.com/pt/monumentos/mosteiro-de-santa-maria-de-carquere/; regiao/regiao.md",
+      "recolhido_em": "2026-10-09",
+      "bloco": "ficha da Rota do Românico",
+      "excerto": "Monumento Nacional 1910 · a lenda atribui a fundação a Egas Moniz · visita por marcação · não acessível a mobilidade reduzida · +351 255 810 706",
+      "atualidade": "relido pelo juízo a 2026-10-09"
+    },
+    {
+      "id": "EVID-REG-MUSEU",
+      "origem": "terceiro",
+      "entidade_ids": [
+        "REG-MUSEU"
+      ],
+      "local": "https://www.museudodouro.pt/ e https://pt.wikipedia.org/wiki/Museu_do_Douro; regiao/regiao.md",
+      "recolhido_em": "2026-10-09",
+      "bloco": "site do museu",
+      "excerto": "'A Companhia' restaurante e wine bar · Prémio Portugal Cinco Estrelas, Categoria Museus 2018 · Google Arts & Culture desde 2018",
+      "atualidade": "relido pelo juízo a 2026-10-09"
+    },
+    {
+      "id": "EVID-REG-REMEDIOS",
+      "origem": "terceiro",
+      "entidade_ids": [
+        "REG-REMEDIOS"
+      ],
+      "local": "https://agencia.ecclesia.pt/portal/lamego-historia-e-patrimonio-no-santuario-de-nossa-senhora-dos-remedios/; regiao/regiao.md",
+      "recolhido_em": "2026-10-09",
+      "bloco": "artigo da Agência Ecclesia",
+      "excerto": "686 degraus · construído entre 1750 e 1761, barroco · festa maior a 8 de setembro · Romaria de Portugal",
+      "publicado_em": "2015-08-21",
+      "atualidade": "relido pelo juízo a 2026-10-09"
+    },
+    {
+      "id": "EVID-COMMONS",
+      "origem": "terceiro",
+      "entidade_ids": [
+        "REG-PORTOREI",
+        "REG-CEREJAIS",
+        "REG-BARRO",
+        "REG-CARQUERE",
+        "REG-MUSEU",
+        "REG-REMEDIOS"
+      ],
+      "local": "API do Wikimedia Commons (imageinfo/extmetadata); regiao/regiao.md",
+      "recolhido_em": "2026-10-09",
+      "bloco": "licenças, autores e dimensões das 6 fotos",
+      "atualidade": "conferido pelo juízo a 2026-10-09"
+    }
+  ],
+  "afirmacoes": [
+    {
+      "id": "AFIR-01",
+      "entidade_id": "CASA-1",
+      "texto": "Alojamento Local, modalidade Moradia, registo RNAL 157740/AL.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "registo_publico",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EVID-RNT",
+        "EVID-BK-REGRAS",
+        "EVID-AB"
+      ],
+      "atualidade": "RNT consultado a 2026-10-09"
+    },
+    {
+      "id": "AFIR-02",
+      "entidade_id": "CASA-1",
+      "texto": "Fica em São João de Fontoura, concelho de Resende, distrito de Viseu, junto ao rio Douro.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "registo_publico",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EVID-RNT",
+        "EVID-MUN",
+        "EVID-GM",
+        "EVID-FOTOS"
+      ],
+      "atualidade": "RNT e município; o Douro está nas fotos aéreas"
+    },
+    {
+      "id": "AFIR-03",
+      "entidade_id": "CASA-1",
+      "texto": "Morada: Calçada da Ponte da Alufinha, 142, 4660-339 São João de Fontoura, Resende.",
+      "natureza": "facto",
+      "categoria": "contacto",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EVID-BK-REGRAS",
+        "EVID-GM",
+        "EVID-MUN",
+        "EVID-RNT"
+      ],
+      "ambito": {
+        "fonte": "Booking, Google Maps, município, RNT"
+      },
+      "condicao": "O RNT escreve 'Calçada de Alufinha, 142, 4660-339 Porto do Rei'; usar a forma do Booking e do Google e confirmar com o dono a forma preferida."
+    },
+    {
+      "id": "AFIR-04",
+      "entidade_id": "CASA-1",
+      "texto": "Aberta ao público desde 2024.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "registo_publico",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EVID-RNT",
+        "EVID-IG-2024"
+      ],
+      "ambito": {
+        "fonte": "RNT, data de abertura 2024-06-25"
+      },
+      "condicao": "Só o ano; não sugerir longa tradição como alojamento."
+    },
+    {
+      "id": "AFIR-05",
+      "entidade_id": "CASA-1",
+      "texto": "Casa antiga (anterior a 1951), de paredes de granito, remodelada.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "registo_publico",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EVID-RNT",
+        "EVID-FOTOS",
+        "EVID-REV"
+      ],
+      "ambito": {
+        "fonte": "RNT ('Imóvel posterior a 1951? Não'), fotos dos anúncios, B-01"
+      },
+      "condicao": "Sem ano, história, família ou autor da obra: nenhuma fonte os dá. 'Remodelada' vem de uma review e das fotos; não inventar a história do restauro."
+    },
+    {
+      "id": "AFIR-06",
+      "entidade_id": "CASA-1",
+      "texto": "A casa fica numa zona 'património mundial da UNESCO'.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "conflitante",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EVID-IG-2024",
+        "EVID-BK-TEXTO",
+        "EVID-UNESCO"
+      ],
+      "atualidade": "Resende não é um dos 13 concelhos do Alto Douro Vinhateiro classificado; dizer 'no vale do Douro', sem 'património mundial', até o dono decidir"
+    },
+    {
+      "id": "AFIR-07",
+      "entidade_id": "CASA-1",
+      "texto": "Casa inteira, só para quem a reserva: entrada privada, piscina privada, jardim privado.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EVID-BK-TEXTO",
+        "EVID-BK-ESTR",
+        "EVID-AB"
+      ]
+    },
+    {
+      "id": "AFIR-08",
+      "entidade_id": "CASA-1",
+      "texto": "Três quartos.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EVID-BK-ESTR",
+        "EVID-AB",
+        "EVID-MUN",
+        "EVID-RNT"
+      ]
+    },
+    {
+      "id": "AFIR-09",
+      "entidade_id": "CASA-1",
+      "texto": "Três casas de banho.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EVID-BK-TEXTO",
+        "EVID-BK-ESTR",
+        "EVID-AB",
+        "EVID-VRBO"
+      ],
+      "atualidade": "o RNT não indica casas de banho"
+    },
+    {
+      "id": "AFIR-10",
+      "entidade_id": "CASA-1",
+      "texto": "Capacidade da casa: 6 pessoas (anúncios, município) ou 8 (RNT, Instagram do dono).",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "conflitante",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EVID-RNT",
+        "EVID-IG-2024",
+        "EVID-BK-ESTR",
+        "EVID-AB",
+        "EVID-VRBO",
+        "EVID-MUN"
+      ],
+      "atualidade": "conflito não resolvido; confirmar com o dono"
+    },
+    {
+      "id": "AFIR-11",
+      "entidade_id": "CANAL-BOOKING",
+      "texto": "Nos anúncios do Booking, Airbnb e Vrbo a casa é reservável para até 6 pessoas.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EVID-BK-ESTR",
+        "EVID-AB",
+        "EVID-VRBO",
+        "EVID-MUN"
+      ],
+      "ambito": {
+        "canais": [
+          "CANAL-BOOKING",
+          "CANAL-AIRBNB",
+          "CANAL-VRBO"
+        ]
+      },
+      "condicao": "Só como lotação das reservas nesses canais ('reservas até 6 pessoas'); não escrever a capacidade da casa nem '8' até o dono confirmar."
+    },
+    {
+      "id": "AFIR-12",
+      "entidade_id": "CASA-1",
+      "texto": "Camas: 3 camas de casal, uma por quarto (Booking, Airbnb, município) ou 4 camas (RNT).",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "conflitante",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EVID-RNT",
+        "EVID-BK-ESTR",
+        "EVID-AB",
+        "EVID-MUN"
+      ],
+      "atualidade": "conflito aberto pelo detalhe do RNT a 2026-10-09; confirmar com o dono"
+    },
+    {
+      "id": "AFIR-13",
+      "entidade_id": "CASA-1",
+      "texto": "Área da casa: 150 m² (texto do anúncio) ou 210 m² (dados do Booking).",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "conflitante",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EVID-BK-TEXTO",
+        "EVID-BK-ESTR"
+      ],
+      "atualidade": "não usar número de m²"
+    },
+    {
+      "id": "AFIR-14",
+      "entidade_id": "ESP-QUARTOS",
+      "texto": "Que quarto mostra cada foto, e em que piso fica cada quarto.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "desconhecido",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EVID-FOTOS"
+      ],
+      "atualidade": "nenhuma fonte atribui as fotos aos quartos"
+    },
+    {
+      "id": "AFIR-15",
+      "entidade_id": "ESP-QUARTOS",
+      "texto": "Quartos com paredes de granito ou tectos de madeira no sótão, janelas e portas de madeira vermelha.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EVID-FOTOS"
+      ],
+      "ambito": {
+        "fonte": "fotos dos anúncios"
+      },
+      "condicao": "Descrever só o conjunto; não dizer que quarto é qual nem quantos estão no sótão."
+    },
+    {
+      "id": "AFIR-16",
+      "entidade_id": "ESP-PISCINA",
+      "texto": "Piscina exterior privada.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EVID-BK-TEXTO",
+        "EVID-BK-ESTR",
+        "EVID-AB",
+        "EVID-IG-2026",
+        "EVID-MUN",
+        "EVID-FOTOS"
+      ]
+    },
+    {
+      "id": "AFIR-17",
+      "entidade_id": "ESP-PISCINA",
+      "texto": "Piscina aquecida, aberta todo o ano, ou com época, medidas e profundidade definidas.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "desconhecido",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EVID-BK-ESTR",
+        "EVID-REV"
+      ],
+      "atualidade": "nenhuma fonte; 'água a uma temperatura excelente' (B-01, agosto) é testemunho de verão"
+    },
+    {
+      "id": "AFIR-18",
+      "entidade_id": "ESP-COZEXT",
+      "texto": "Cozinha exterior com churrasqueira privada, para refeições ao ar livre.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EVID-BK-TEXTO",
+        "EVID-AB",
+        "EVID-MUN",
+        "EVID-FOTOS"
+      ]
+    },
+    {
+      "id": "AFIR-19",
+      "entidade_id": "ESP-EXTERIOR",
+      "texto": "Jardim privado com duche exterior, terraços com pérgolas e mesa de refeições, e duas varandas.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EVID-BK-TEXTO",
+        "EVID-BK-ESTR",
+        "EVID-FOTOS"
+      ],
+      "ambito": {
+        "fonte": "texto do anúncio (Holidu) e fotos"
+      },
+      "condicao": "'Duas varandas' só o texto do anúncio diz; as pérgolas e o duche estão nas fotos."
+    },
+    {
+      "id": "AFIR-20",
+      "entidade_id": "CASA-1",
+      "texto": "Ar condicionado em todas as divisões.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EVID-IG-2024",
+        "EVID-BK-TEXTO",
+        "EVID-MUN"
+      ]
+    },
+    {
+      "id": "AFIR-21",
+      "entidade_id": "CASA-1",
+      "texto": "Wi-Fi gratuito.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EVID-BK-ESTR",
+        "EVID-AB",
+        "EVID-MUN"
+      ]
+    },
+    {
+      "id": "AFIR-22",
+      "entidade_id": "CASA-1",
+      "texto": "Wi-Fi de alta velocidade, adequado a videochamadas.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EVID-BK-TEXTO"
+      ],
+      "ambito": {
+        "fonte": "texto do anúncio (Holidu)"
+      },
+      "condicao": "Não dar velocidades; nenhuma review o confirma. Confirmar com o dono antes de o destacar para teletrabalho."
+    },
+    {
+      "id": "AFIR-23",
+      "entidade_id": "ESP-COZINHA",
+      "texto": "Cozinha equipada com forno, micro-ondas, máquina de lavar louça, máquina de café, chaleira e torradeira; máquina de lavar roupa.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EVID-BK-ESTR",
+        "EVID-BK-TEXTO",
+        "EVID-AB",
+        "EVID-FOTOS"
+      ]
+    },
+    {
+      "id": "AFIR-24",
+      "entidade_id": "CASA-1",
+      "texto": "Lareira interior.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "plataforma",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EVID-BK-ESTR",
+        "EVID-AB"
+      ],
+      "ambito": {
+        "fonte": "listas de comodidades do Booking e do Airbnb"
+      },
+      "condicao": "Nenhuma foto a mostra e o texto da casa não a nomeia: confirmar com o dono antes de a destacar; não mostrar outra foto como se fosse a lareira."
+    },
+    {
+      "id": "AFIR-25",
+      "entidade_id": "CASA-1",
+      "texto": "TV com canais por satélite e streaming.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EVID-BK-ESTR",
+        "EVID-BK-TEXTO"
+      ]
+    },
+    {
+      "id": "AFIR-26",
+      "entidade_id": "CASA-1",
+      "texto": "Estacionamento privado gratuito dentro da propriedade.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EVID-BK-ESTR",
+        "EVID-MUN"
+      ]
+    },
+    {
+      "id": "AFIR-27",
+      "entidade_id": "CASA-1",
+      "texto": "Berço gratuito mediante pedido, cadeira alta e portões de segurança para bebé.",
+      "natureza": "facto",
+      "categoria": "politica",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EVID-BK-REGRAS",
+        "EVID-AB"
+      ],
+      "ambito": {
+        "fonte": "Booking (berço) e Airbnb (cadeira alta, portões)"
+      },
+      "condicao": "Sempre 'mediante pedido' no berço; confirmar com o dono para reservas diretas."
+    },
+    {
+      "id": "AFIR-28",
+      "entidade_id": "CASA-1",
+      "texto": "Não há refeições incluídas; a casa tem cozinha própria.",
+      "natureza": "facto",
+      "categoria": "politica",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EVID-BK-ESTR",
+        "EVID-BK-PRECO"
+      ],
+      "ambito": {
+        "fonte": "Booking"
+      },
+      "condicao": "Não prometer pequeno-almoço, cabaz nem refeições."
+    },
+    {
+      "id": "AFIR-29",
+      "entidade_id": "CASA-1",
+      "texto": "Detetor de fumo e de monóxido de carbono.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "plataforma",
+      "estado": "desconhecido",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EVID-AB"
+      ],
+      "atualidade": "o Airbnb diz que o espaço pode não ter; não falar de segurança sem o dono"
+    },
+    {
+      "id": "AFIR-30",
+      "entidade_id": "CASA-1",
+      "texto": "Casa não adaptada a cadeira de rodas.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "plataforma",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EVID-BK-ESTR",
+        "EVID-FOTOS"
+      ],
+      "ambito": {
+        "fonte": "Booking"
+      },
+      "condicao": "Só em informação prática; nunca dizer 'acessível'."
+    },
+    {
+      "id": "AFIR-31",
+      "entidade_id": "CASA-1",
+      "texto": "Horário de entrada e saída (Booking: entrada 16:00-22:00, saída até 11:00; município: entrada 11h, saída 15h).",
+      "natureza": "facto",
+      "categoria": "politica",
+      "origem": "casa",
+      "estado": "conflitante",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EVID-BK-REGRAS",
+        "EVID-MUN"
+      ],
+      "atualidade": "conflito; confirmar com o dono antes de publicar qualquer hora"
+    },
+    {
+      "id": "AFIR-32",
+      "entidade_id": "CANAL-AIRBNB",
+      "texto": "Check-in autónomo com teclado numérico.",
+      "natureza": "facto",
+      "categoria": "politica",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EVID-AB"
+      ],
+      "ambito": {
+        "canal": "CANAL-AIRBNB"
+      },
+      "condicao": "Só o Airbnb o diz; confirmar com o dono e não contradizer as reviews que falam da Maria."
+    },
+    {
+      "id": "AFIR-33",
+      "entidade_id": "CASA-1",
+      "texto": "Não é permitido fumar, nem festas, eventos ou despedidas de solteiro.",
+      "natureza": "facto",
+      "categoria": "politica",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EVID-BK-REGRAS"
+      ],
+      "ambito": {
+        "canal": "CANAL-BOOKING"
+      },
+      "condicao": "Regra dos anúncios; confirmar com o dono para reservas diretas."
+    },
+    {
+      "id": "AFIR-34",
+      "entidade_id": "CASA-1",
+      "texto": "Não são aceites animais de estimação.",
+      "natureza": "facto",
+      "categoria": "politica",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EVID-BK-REGRAS"
+      ],
+      "ambito": {
+        "canal": "CANAL-BOOKING"
+      },
+      "condicao": "Só o Booking o diz (o Airbnb não indica); confirmar com o dono."
+    },
+    {
+      "id": "AFIR-35",
+      "entidade_id": "CANAL-BOOKING",
+      "texto": "Caução reembolsável de 500 € por transferência bancária, devolvida até 7 dias após a saída se não houver danos.",
+      "natureza": "facto",
+      "categoria": "politica",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EVID-BK-REGRAS"
+      ],
+      "ambito": {
+        "canal": "CANAL-BOOKING"
+      },
+      "condicao": "Condição das reservas pelo Booking; não a dar como regra das reservas diretas."
+    },
+    {
+      "id": "AFIR-36",
+      "entidade_id": "CANAL-BOOKING",
+      "texto": "Crianças a partir dos 2 anos pagam tarifa de adulto.",
+      "natureza": "facto",
+      "categoria": "politica",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EVID-BK-REGRAS"
+      ],
+      "ambito": {
+        "canal": "CANAL-BOOKING"
+      },
+      "condicao": "Regra do Booking; confirmar com o dono."
+    },
+    {
+      "id": "AFIR-37",
+      "entidade_id": "CANAL-BOOKING",
+      "texto": "Pagamento com cartão (Visa, Mastercard, UnionPay); não aceita dinheiro.",
+      "natureza": "facto",
+      "categoria": "politica",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EVID-BK-REGRAS"
+      ],
+      "ambito": {
+        "canal": "CANAL-BOOKING"
+      },
+      "condicao": "Só para reservas pelo Booking."
+    },
+    {
+      "id": "AFIR-38",
+      "entidade_id": "TAR-1",
+      "texto": "590 € (não reembolsável) ou 650 € (cancelamento gratuito) por 2 noites para 2 adultos.",
+      "natureza": "facto",
+      "categoria": "tarifa",
+      "origem": "plataforma",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EVID-BK-PRECO"
+      ],
+      "ambito": {
+        "tarifa": "TAR-1",
+        "datas": "21-23/10/2026 e 06-08/11/2026",
+        "ocupacao": "2 adultos",
+        "pesquisa": "2026-10-09"
+      },
+      "condicao": "Preço observado numa pesquisa; nunca como 'desde' nem como preço fixo; rever antes de publicar."
+    },
+    {
+      "id": "AFIR-39",
+      "entidade_id": "TAR-2",
+      "texto": "860 € (não reembolsável) ou 950 € (cancelamento gratuito) por 3 noites para 4 adultos e 2 crianças.",
+      "natureza": "facto",
+      "categoria": "tarifa",
+      "origem": "plataforma",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EVID-BK-PRECO"
+      ],
+      "ambito": {
+        "tarifa": "TAR-2",
+        "datas": "18-21/11/2026",
+        "ocupacao": "4 adultos e 2 crianças",
+        "pesquisa": "2026-10-09"
+      },
+      "condicao": "Preço observado numa pesquisa; rever antes de publicar."
+    },
+    {
+      "id": "AFIR-40",
+      "entidade_id": "CASA-1",
+      "texto": "Aberta todo o ano.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "desconhecido",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EVID-BK-PRECO"
+      ],
+      "atualidade": "nenhuma fonte o diz; haver preço em outubro e novembro não prova abertura todo o ano"
+    },
+    {
+      "id": "AFIR-41",
+      "entidade_id": "CANAL-BOOKING",
+      "texto": "Reservas pelo Booking, Airbnb e Vrbo, anúncios geridos pela Holidu.",
+      "natureza": "facto",
+      "categoria": "contacto",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EVID-BK-REGRAS",
+        "EVID-AB",
+        "EVID-VRBO"
+      ],
+      "ambito": {
+        "canais": [
+          "CANAL-BOOKING",
+          "CANAL-AIRBNB",
+          "CANAL-VRBO"
+        ],
+        "urls": [
+          "https://www.booking.com/hotel/pt/casa-da-alufinha.pt-pt.html",
+          "https://www.airbnb.pt/rooms/1709247571486500891",
+          "https://www.vrbo.com/en-gb/p5796211"
+        ]
+      },
+      "condicao": "Não há reserva direta; confirmar com o dono que canal o site mostra primeiro (a bio do Instagram aponta para o Airbnb). A Holidu não tem de ser nomeada no site."
+    },
+    {
+      "id": "AFIR-42",
+      "entidade_id": "CASA-1",
+      "texto": "Contacto: telemóvel 912 331 756 e email mariajoaopaulapinto@gmail.com.",
+      "natureza": "facto",
+      "categoria": "contacto",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EVID-MUN",
+        "EVID-GM",
+        "EVID-RNT"
+      ],
+      "ambito": {
+        "fonte": "município e Google (telefone); município e RNT (email)"
+      },
+      "condicao": "O email tem o nome da titular: confirmar com o dono que estes contactos podem ir para o site antes de publicar."
+    },
+    {
+      "id": "AFIR-43",
+      "entidade_id": "CASA-1",
+      "texto": "Nome completo da titular do registo.",
+      "natureza": "facto",
+      "categoria": "contacto",
+      "origem": "registo_publico",
+      "estado": "confirmado",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EVID-RNT"
+      ],
+      "atualidade": "dado pessoal; não publicar sem o dono"
+    },
+    {
+      "id": "AFIR-44",
+      "entidade_id": "CANAL-AIRBNB",
+      "texto": "Nota 5,0 em 5 avaliações no Airbnb, 'Favorito dos hóspedes'.",
+      "natureza": "metrica",
+      "categoria": "avaliacao",
+      "origem": "plataforma",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EVID-AB-NOTA"
+      ],
+      "ambito": {
+        "canal": "CANAL-AIRBNB",
+        "data": "2026-10-09"
+      },
+      "condicao": "Sempre com o número de avaliações e a data; rever antes de publicar."
+    },
+    {
+      "id": "AFIR-45",
+      "entidade_id": "CANAL-BOOKING",
+      "texto": "Nota 10 no Booking.",
+      "natureza": "metrica",
+      "categoria": "avaliacao",
+      "origem": "plataforma",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EVID-BK-NOTA"
+      ],
+      "ambito": {
+        "canal": "CANAL-BOOKING",
+        "data": "2026-10-09"
+      },
+      "condicao": "Só com 'em 1 avaliação'; sem isso parece mais do que é."
+    },
+    {
+      "id": "AFIR-46",
+      "entidade_id": "CASA-1",
+      "texto": "Todas as avaliações publicadas têm a nota máxima.",
+      "natureza": "metrica",
+      "categoria": "avaliacao",
+      "origem": "plataforma",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EVID-BK-NOTA",
+        "EVID-AB-NOTA",
+        "EVID-REV"
+      ],
+      "ambito": {
+        "data": "2026-10-09",
+        "total": "6 avaliações (Booking 1, Airbnb 5)"
+      },
+      "condicao": "Com o total: 6 avaliações, de julho e agosto de 2026."
+    },
+    {
+      "id": "AFIR-47",
+      "entidade_id": "CASA-1",
+      "texto": "Quem recebe os hóspedes chama-se Maria.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EVID-REV",
+        "EVID-HOLIDU-RESP"
+      ],
+      "ambito": {
+        "fonte": "reviews A-02 e A-05 e resposta da Holidu a A-02"
+      },
+      "condicao": "Só o primeiro nome; confirmar com o dono que a Maria quer aparecer. Não dizer que recebe em pessoa (o Airbnb fala de check-in autónomo)."
+    },
+    {
+      "id": "AFIR-48",
+      "entidade_id": "CASA-1",
+      "texto": "A Maria foi acolhedora, excecional e sempre rápida a responder.",
+      "natureza": "testemunho",
+      "categoria": "avaliacao",
+      "origem": "hospede",
+      "estado": "confirmado",
+      "uso": "citar",
+      "evidencia_ids": [
+        "EVID-REV"
+      ],
+      "ambito": {
+        "reviews": [
+          "A-02",
+          "A-04",
+          "A-05"
+        ]
+      },
+      "atualidade": "3 reviews, julho e agosto de 2026"
+    },
+    {
+      "id": "AFIR-49",
+      "entidade_id": "ESP-PISCINA",
+      "texto": "A piscina tem bom tamanho e a água estava a uma temperatura excelente; 'piscine incroyable'.",
+      "natureza": "testemunho",
+      "categoria": "avaliacao",
+      "origem": "hospede",
+      "estado": "confirmado",
+      "uso": "citar",
+      "evidencia_ids": [
+        "EVID-REV"
+      ],
+      "ambito": {
+        "reviews": [
+          "B-01",
+          "A-02"
+        ]
+      },
+      "atualidade": "agosto de 2026, verão"
+    },
+    {
+      "id": "AFIR-50",
+      "entidade_id": "ESP-EXTERIOR",
+      "texto": "O espaço exterior é incrível, muito bem equipado, 'sublime'.",
+      "natureza": "testemunho",
+      "categoria": "avaliacao",
+      "origem": "hospede",
+      "estado": "confirmado",
+      "uso": "citar",
+      "evidencia_ids": [
+        "EVID-REV"
+      ],
+      "ambito": {
+        "reviews": [
+          "B-01",
+          "A-05"
+        ]
+      },
+      "atualidade": "julho e agosto de 2026"
+    },
+    {
+      "id": "AFIR-51",
+      "entidade_id": "CASA-1",
+      "texto": "A casa é maior e mais acolhedora do que as fotos mostram, rústica e muito bem remodelada.",
+      "natureza": "testemunho",
+      "categoria": "avaliacao",
+      "origem": "hospede",
+      "estado": "confirmado",
+      "uso": "citar",
+      "evidencia_ids": [
+        "EVID-REV"
+      ],
+      "ambito": {
+        "reviews": [
+          "A-01",
+          "B-01"
+        ]
+      },
+      "atualidade": "agosto de 2026"
+    },
+    {
+      "id": "AFIR-52",
+      "entidade_id": "CASA-1",
+      "texto": "Espaços que garantem a intimidade de cada um.",
+      "natureza": "testemunho",
+      "categoria": "avaliacao",
+      "origem": "hospede",
+      "estado": "confirmado",
+      "uso": "citar",
+      "evidencia_ids": [
+        "EVID-REV"
+      ],
+      "ambito": {
+        "reviews": [
+          "A-05"
+        ]
+      },
+      "atualidade": "uma menção, julho de 2026"
+    },
+    {
+      "id": "AFIR-53",
+      "entidade_id": "CASA-1",
+      "texto": "Sítio para quem procura calma e descanso, ideal para famílias.",
+      "natureza": "testemunho",
+      "categoria": "avaliacao",
+      "origem": "hospede",
+      "estado": "confirmado",
+      "uso": "citar",
+      "evidencia_ids": [
+        "EVID-REV"
+      ],
+      "ambito": {
+        "reviews": [
+          "B-01",
+          "A-03"
+        ]
+      },
+      "atualidade": "julho e agosto de 2026"
+    },
+    {
+      "id": "AFIR-54",
+      "entidade_id": "CASA-1",
+      "texto": "Bem equipada para cozinhar em casa; tem tudo o que é preciso para umas férias.",
+      "natureza": "testemunho",
+      "categoria": "avaliacao",
+      "origem": "hospede",
+      "estado": "confirmado",
+      "uso": "citar",
+      "evidencia_ids": [
+        "EVID-REV"
+      ],
+      "ambito": {
+        "reviews": [
+          "B-01",
+          "A-02",
+          "A-03"
+        ]
+      },
+      "atualidade": "julho e agosto de 2026"
+    },
+    {
+      "id": "AFIR-55",
+      "entidade_id": "CASA-1",
+      "texto": "Acesso à casa difícil, com muitas curvas.",
+      "natureza": "testemunho",
+      "categoria": "avaliacao",
+      "origem": "hospede",
+      "estado": "confirmado",
+      "uso": "citar",
+      "evidencia_ids": [
+        "EVID-REV",
+        "EVID-BK-NOTA",
+        "EVID-AB-NOTA"
+      ],
+      "ambito": {
+        "reviews": [
+          "A-02"
+        ]
+      },
+      "condicao": "Atrito: não é para pôr em destaque no site, mas impede prometer acesso fácil ou 'perto de tudo'.",
+      "atualidade": "uma menção, agosto de 2026; a localização é a nota mais baixa nas duas plataformas"
+    },
+    {
+      "id": "AFIR-56",
+      "entidade_id": "CASA-1",
+      "texto": "'Um refúgio onde a tranquilidade da natureza se encontra com o conforto'.",
+      "natureza": "promessa_subjetiva",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "citar",
+      "evidencia_ids": [
+        "EVID-IG-2026"
+      ],
+      "atualidade": "2026"
+    },
+    {
+      "id": "AFIR-57",
+      "entidade_id": "CASA-1",
+      "texto": "'Entre o azul da piscina e o verde da paisagem [...] relaxar ao som dos pássaros, da brisa suave e da natureza envolvente'.",
+      "natureza": "promessa_subjetiva",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "citar",
+      "evidencia_ids": [
+        "EVID-IG-2026"
+      ],
+      "atualidade": "2026-06-02"
+    },
+    {
+      "id": "AFIR-58",
+      "entidade_id": "CASA-1",
+      "texto": "Silêncio, elegância, conforto e encontro com a natureza; tranquilidade em família.",
+      "natureza": "promessa_subjetiva",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "citar",
+      "evidencia_ids": [
+        "EVID-IG-2024"
+      ],
+      "atualidade": "texto do dono de 2024; as reviews de 2026 confirmam a calma e o descanso"
+    },
+    {
+      "id": "AFIR-59",
+      "entidade_id": "CASA-1",
+      "texto": "Cerejeiras e socalcos envolvem a casa, com sons de passarinhos e de quedas de água; cerejas nas encostas da casa.",
+      "natureza": "promessa_subjetiva",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "inspiracao_editorial",
+      "evidencia_ids": [
+        "EVID-IG-2024",
+        "EVID-BK-TEXTO"
+      ],
+      "atualidade": "antigo (2024) e só da casa: nenhuma review nem foto o confirma; não prometer cerejas, flor nem quedas de água; confirmar com o dono"
+    },
+    {
+      "id": "AFIR-60",
+      "entidade_id": "CASA-1",
+      "texto": "A Praia Fluvial de Porto de Rei fica 'a 5 minutos a pé'.",
+      "natureza": "promessa_subjetiva",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "citar",
+      "evidencia_ids": [
+        "EVID-IG-2024",
+        "EVID-BK-TEXTO",
+        "EVID-MUN",
+        "EVID-REG-OSRM"
+      ],
+      "ambito": {
+        "fonte": "todos os textos da casa"
+      },
+      "atualidade": "só a casa dá o tempo a pé; por estrada são cerca de 0,8 km; o caminho a pé (declive, passeio) não está confirmado"
+    },
+    {
+      "id": "AFIR-61",
+      "entidade_id": "CASA-1",
+      "texto": "Peixe do rio (lúcio e barbo), Cavacas de Resende e cerejas como sabores da região.",
+      "natureza": "promessa_subjetiva",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "inspiracao_editorial",
+      "evidencia_ids": [
+        "EVID-IG-2024",
+        "EVID-BK-TEXTO"
+      ],
+      "atualidade": "texto da casa; sem restaurante, loja ou época indicados"
+    },
+    {
+      "id": "AFIR-62",
+      "entidade_id": "CASA-1",
+      "texto": "'Localização privilegiada em pleno Douro'.",
+      "natureza": "promessa_subjetiva",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "conflitante",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EVID-IG-2024",
+        "EVID-REV",
+        "EVID-BK-NOTA",
+        "EVID-AB-NOTA"
+      ],
+      "atualidade": "conflito com A-02 (acesso difícil) e com a nota de localização, a mais baixa nas duas plataformas"
+    },
+    {
+      "id": "AFIR-63",
+      "entidade_id": "CASA-1",
+      "texto": "Os anfitriões recebem cada hóspede em pessoa e estão sempre presentes.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "desconhecido",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EVID-AB",
+        "EVID-REV"
+      ],
+      "atualidade": "check-in autónomo no Airbnb; as reviews só dizem que a Maria foi acolhedora e disponível"
+    },
+    {
+      "id": "AREG-PORTOREI-DIST",
+      "entidade_id": "REG-PORTOREI",
+      "texto": "Parque Fluvial de Porto de Rei: praia fluvial no Douro, a cerca de 0,8 km por estrada.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "terceiro",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EVID-REG-OSRM"
+      ],
+      "ambito": {
+        "origem": "coordenadas da casa",
+        "metodo": "OSRM, 2026-10-09"
+      },
+      "condicao": "Distância e tempo de carro aproximados, sem trânsito; escrever sempre 'cerca de'."
+    },
+    {
+      "id": "AREG-CEREJAIS-DIST",
+      "entidade_id": "REG-CEREJAIS",
+      "texto": "Rota dos Cerejais: percurso pedestre que passa a cerca de 0,8 km por estrada (ponto da Rota do Românico).",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "terceiro",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EVID-REG-OSRM"
+      ],
+      "ambito": {
+        "origem": "coordenadas da casa",
+        "metodo": "OSRM, 2026-10-09"
+      },
+      "condicao": "Distância e tempo de carro aproximados, sem trânsito; escrever sempre 'cerca de'."
+    },
+    {
+      "id": "AREG-BARRO-DIST",
+      "entidade_id": "REG-BARRO",
+      "texto": "Igreja de Santa Maria de Barrô: igreja românica, a cerca de 7 km (cerca de 9 min) de carro.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "terceiro",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EVID-REG-OSRM"
+      ],
+      "ambito": {
+        "origem": "coordenadas da casa",
+        "metodo": "OSRM, 2026-10-09"
+      },
+      "condicao": "Distância e tempo de carro aproximados, sem trânsito; escrever sempre 'cerca de'."
+    },
+    {
+      "id": "AREG-CARQUERE-DIST",
+      "entidade_id": "REG-CARQUERE",
+      "texto": "Mosteiro de Santa Maria de Cárquere: mosteiro românico, a cerca de 13 km (cerca de 19 min) de carro.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "terceiro",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EVID-REG-OSRM"
+      ],
+      "ambito": {
+        "origem": "coordenadas da casa",
+        "metodo": "OSRM, 2026-10-09"
+      },
+      "condicao": "Distância e tempo de carro aproximados, sem trânsito; escrever sempre 'cerca de'."
+    },
+    {
+      "id": "AREG-MUSEU-DIST",
+      "entidade_id": "REG-MUSEU",
+      "texto": "Museu do Douro, em Peso da Régua: a cerca de 23 km (cerca de 24 min) de carro.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "terceiro",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EVID-REG-OSRM"
+      ],
+      "ambito": {
+        "origem": "coordenadas da casa",
+        "metodo": "OSRM, 2026-10-09"
+      },
+      "condicao": "Distância e tempo de carro aproximados, sem trânsito; escrever sempre 'cerca de'."
+    },
+    {
+      "id": "AREG-REMEDIOS-DIST",
+      "entidade_id": "REG-REMEDIOS",
+      "texto": "Santuário de Nossa Senhora dos Remédios, em Lamego: a cerca de 19 km (cerca de 30 min) de carro.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "terceiro",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EVID-REG-OSRM"
+      ],
+      "ambito": {
+        "origem": "coordenadas da casa",
+        "metodo": "OSRM, 2026-10-09"
+      },
+      "condicao": "Distância e tempo de carro aproximados, sem trânsito; escrever sempre 'cerca de'."
+    },
+    {
+      "id": "AREG-PORTOREI-1",
+      "entidade_id": "REG-PORTOREI",
+      "texto": "Praia fluvial na margem do Douro, com cais de acostagem para embarque turístico, pontão, passadiço, piscina e parque de merendas.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "terceiro",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EVID-REG-PORTOREI"
+      ],
+      "ambito": {
+        "fonte": "município"
+      },
+      "condicao": "Sem época balnear, horários, vigilância nem passeios de barco garantidos: nenhuma fonte os dá. A foto é de 2016."
+    },
+    {
+      "id": "AREG-PORTOREI-2",
+      "entidade_id": "REG-PORTOREI",
+      "texto": "Boas condições para atividades aquáticas lúdicas e desportivas.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "terceiro",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EVID-REG-PORTOREI"
+      ],
+      "ambito": {
+        "fonte": "Rota do Românico"
+      },
+      "condicao": "Não nomear atividades, empresas nem horários."
+    },
+    {
+      "id": "AREG-PORTOREI-3",
+      "entidade_id": "REG-PORTOREI",
+      "texto": "Restaurante local com peixe do rio de escabeche e enguias.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "terceiro",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EVID-REG-PORTOREI"
+      ],
+      "ambito": {
+        "fonte": "município"
+      },
+      "condicao": "Sem nome, horário nem preço; nada de recomendação da casa."
+    },
+    {
+      "id": "AREG-PORTOREI-4",
+      "entidade_id": "REG-PORTOREI",
+      "texto": "A praia fluvial mais visitada e frequentada do Douro, com bar, campo de futebol de cinco e piscina para crianças.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "terceiro",
+      "estado": "desconhecido",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EVID-IG-2024",
+        "EVID-REG-PORTOREI"
+      ],
+      "atualidade": "só a casa o diz (2024); o município e a Rota do Românico não confirmam o superlativo nem esses equipamentos"
+    },
+    {
+      "id": "AREG-PORTOREI-5",
+      "entidade_id": "REG-PORTOREI",
+      "texto": "Praia vigiada, com época balnear e horários.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "terceiro",
+      "estado": "desconhecido",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EVID-REG-PORTOREI"
+      ],
+      "atualidade": "sem fonte"
+    },
+    {
+      "id": "AREG-CEREJAIS-1",
+      "entidade_id": "REG-CEREJAIS",
+      "texto": "Percurso pedestre circular de pequena rota, com 5,7 km, entre cerejais, com passagem pelo Solar de Porto de Rei e pelo Parque Fluvial de Porto de Rei e vistas sobre o Douro.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "terceiro",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EVID-REG-CEREJAIS"
+      ],
+      "ambito": {
+        "fonte": "Rota do Românico e município"
+      },
+      "condicao": "Sem duração, dificuldade nem sinalização (só em fontes não oficiais)."
+    },
+    {
+      "id": "AREG-CEREJAIS-2",
+      "entidade_id": "REG-CEREJAIS",
+      "texto": "Na floração das cerejeiras, as encostas ficam cobertas de branco.",
+      "natureza": "facto",
+      "categoria": "disponibilidade",
+      "origem": "terceiro",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EVID-REG-CEREJAIS"
+      ],
+      "ambito": {
+        "periodo": "floração das cerejeiras, sem datas"
+      },
+      "condicao": "Sem datas exatas; 'março e abril' só citando a casa. A foto da região não mostra flor: não a legendar como cerejeiras em flor."
+    },
+    {
+      "id": "AREG-CEREJAIS-3",
+      "entidade_id": "REG-CEREJAIS",
+      "texto": "Ponto de partida da Rota dos Cerejais (Junta de Freguesia, segundo a Rota do Românico; Lugar da Senhora da Guia, segundo o município).",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "terceiro",
+      "estado": "conflitante",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EVID-REG-CEREJAIS"
+      ],
+      "atualidade": "as fontes oficiais divergem; não indicar ponto de partida"
+    },
+    {
+      "id": "AREG-CEREJAIS-4",
+      "entidade_id": "REG-CEREJAIS",
+      "texto": "Rota dos Cerejais com 6,0 km.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "terceiro",
+      "estado": "conflitante",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EVID-REG-CEREJAIS"
+      ],
+      "atualidade": "só um site não oficial; usar 5,7 km"
+    },
+    {
+      "id": "AREG-BARRO-1",
+      "entidade_id": "REG-BARRO",
+      "texto": "Igreja românica, Monumento Nacional desde 1922, com capitéis do arco triunfal com cenas de caça.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "terceiro",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EVID-REG-BARRO"
+      ],
+      "ambito": {
+        "fonte": "Rota do Românico"
+      },
+      "condicao": "Sem data de construção."
+    },
+    {
+      "id": "AREG-BARRO-2",
+      "entidade_id": "REG-BARRO",
+      "texto": "Visita ao interior só por marcação (Rota do Românico); missa ao domingo às 8h00; não acessível a mobilidade reduzida.",
+      "natureza": "facto",
+      "categoria": "politica",
+      "origem": "terceiro",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EVID-REG-BARRO"
+      ],
+      "ambito": {
+        "fonte": "Rota do Românico, 2026-10-09"
+      },
+      "condicao": "Obrigatório junto da atração: 'visita só por marcação'."
+    },
+    {
+      "id": "AREG-BARRO-3",
+      "entidade_id": "REG-BARRO",
+      "texto": "Data ou século de construção da Igreja de Barrô.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "terceiro",
+      "estado": "conflitante",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EVID-REG-BARRO",
+        "EVID-REG-BARRO-WIKI"
+      ],
+      "atualidade": "a Rota do Românico não dá cronologia certa; a Wikipedia diz século XII"
+    },
+    {
+      "id": "AREG-CARQUERE-1",
+      "entidade_id": "REG-CARQUERE",
+      "texto": "Mosteiro românico, Monumento Nacional desde 1910, na Rota do Românico; a lenda atribui a fundação a Egas Moniz, aio de D. Afonso Henriques.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "terceiro",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EVID-REG-CARQUERE"
+      ],
+      "ambito": {
+        "fonte": "Rota do Românico"
+      },
+      "condicao": "Egas Moniz só como lenda ou tradição, nunca como facto."
+    },
+    {
+      "id": "AREG-CARQUERE-2",
+      "entidade_id": "REG-CARQUERE",
+      "texto": "Visita ao interior só por marcação (Rota do Românico: +351 255 810 706); não acessível a mobilidade reduzida.",
+      "natureza": "facto",
+      "categoria": "politica",
+      "origem": "terceiro",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EVID-REG-CARQUERE"
+      ],
+      "ambito": {
+        "fonte": "Rota do Românico, 2026-10-09"
+      },
+      "condicao": "Obrigatório junto da atração: 'visita só por marcação'."
+    },
+    {
+      "id": "AREG-MUSEU-1",
+      "entidade_id": "REG-MUSEU",
+      "texto": "Museu do património da Região Demarcada do Douro e dos seus vinhos, com exposição permanente e exposições temporárias, restaurante e wine bar; Prémio Portugal Cinco Estrelas, categoria Museus, 2018.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "terceiro",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EVID-REG-MUSEU"
+      ],
+      "ambito": {
+        "fonte": "site do museu"
+      },
+      "condicao": "Sem horários nem preços: remeter para o site do museu."
+    },
+    {
+      "id": "AREG-MUSEU-2",
+      "entidade_id": "REG-MUSEU",
+      "texto": "Horários, preços e entradas gratuitas do Museu do Douro.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "terceiro",
+      "estado": "desconhecido",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EVID-REG-MUSEU"
+      ],
+      "atualidade": "não recolhidos"
+    },
+    {
+      "id": "AREG-REMEDIOS-1",
+      "entidade_id": "REG-REMEDIOS",
+      "texto": "Santuário barroco construído entre 1750 e 1761, com escadório de 686 degraus.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "terceiro",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EVID-REG-REMEDIOS"
+      ],
+      "ambito": {
+        "fonte": "Agência Ecclesia"
+      },
+      "condicao": "Sem ano de classificação (1984 só na Wikipedia)."
+    },
+    {
+      "id": "AREG-REMEDIOS-2",
+      "entidade_id": "REG-REMEDIOS",
+      "texto": "Festa maior a 8 de setembro, a 'Romaria de Portugal', com festividades desde agosto.",
+      "natureza": "facto",
+      "categoria": "disponibilidade",
+      "origem": "terceiro",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EVID-REG-REMEDIOS"
+      ],
+      "ambito": {
+        "periodo": "agosto a 8 de setembro, anual"
+      },
+      "condicao": "Sem programa nem datas de agosto."
+    },
+    {
+      "id": "AREG-GERAL-1",
+      "entidade_id": "CASA-1",
+      "texto": "As atrações da região são sugestões de passeio sem ligação ao alojamento.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "terceiro",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EVID-REG-OSRM"
+      ],
+      "ambito": {
+        "secao": "À volta"
+      },
+      "condicao": "Nunca sugerir parceria, desconto ou organização de visitas pela casa."
+    }
+  ],
+  "citacoes": [
+    {
+      "id": "CIT-01",
+      "review_id": "B-01",
+      "texto_original": "Food, sleep, swim, repeat!",
+      "autor": "Diana",
+      "plataforma": "Booking",
+      "data": "2026-08-25",
+      "lingua": "en"
+    },
+    {
+      "id": "CIT-02",
+      "review_id": "B-01",
+      "texto_original": "A piscina tem um bom tamanho e a água estava a uma temperatura excelente.",
+      "autor": "Diana",
+      "plataforma": "Booking",
+      "data": "2026-08-25",
+      "lingua": "pt"
+    },
+    {
+      "id": "CIT-03",
+      "review_id": "B-01",
+      "texto_original": "O espaço exterior é incrível e também muito bem equipado.",
+      "autor": "Diana",
+      "plataforma": "Booking",
+      "data": "2026-08-25",
+      "lingua": "pt"
+    },
+    {
+      "id": "CIT-04",
+      "review_id": "B-01",
+      "texto_original": "A casa é rústica, muito bem remodelada e acolhedora.",
+      "autor": "Diana",
+      "plataforma": "Booking",
+      "data": "2026-08-25",
+      "lingua": "pt"
+    },
+    {
+      "id": "CIT-05",
+      "review_id": "B-01",
+      "texto_original": "Está num sítio muito bom para quem procura calmaria e descanso.",
+      "autor": "Diana",
+      "plataforma": "Booking",
+      "data": "2026-08-25",
+      "lingua": "pt"
+    },
+    {
+      "id": "CIT-06",
+      "review_id": "B-01",
+      "texto_original": "Muito bem equipada a nível de utensílios para quem procura fazer refeições em casa.",
+      "autor": "Diana",
+      "plataforma": "Booking",
+      "data": "2026-08-25",
+      "lingua": "pt"
+    },
+    {
+      "id": "CIT-07",
+      "review_id": "A-01",
+      "texto_original": "Espaço muito bonito, as fotos não demonstram como a casa é grande e acolhedora!",
+      "autor": "Cátia",
+      "plataforma": "Airbnb",
+      "data": "2026-08",
+      "lingua": "pt"
+    },
+    {
+      "id": "CIT-08",
+      "review_id": "A-02",
+      "texto_original": "Piscine incroyable",
+      "autor": "Cindy",
+      "plataforma": "Airbnb",
+      "data": "2026-08",
+      "lingua": "fr",
+      "traducao": "Piscina incrível [tradução do dossiê, não do hóspede]"
+    },
+    {
+      "id": "CIT-09",
+      "review_id": "A-02",
+      "texto_original": "L'hôte Maria a été très accueillante et toujours disponible très rapidement.",
+      "autor": "Cindy",
+      "plataforma": "Airbnb",
+      "data": "2026-08",
+      "lingua": "fr",
+      "traducao": "A anfitriã Maria foi muito acolhedora e sempre disponível, muito rapidamente. [tradução do dossiê, não do hóspede]"
+    },
+    {
+      "id": "CIT-10",
+      "review_id": "A-02",
+      "texto_original": "Maison très belle et bien équipé.",
+      "autor": "Cindy",
+      "plataforma": "Airbnb",
+      "data": "2026-08",
+      "lingua": "fr",
+      "traducao": "Casa muito bonita e bem equipada. [tradução do dossiê, não do hóspede]"
+    },
+    {
+      "id": "CIT-11",
+      "review_id": "A-03",
+      "texto_original": "A casa era um sonho , ideal para famílias que queiram descansar",
+      "autor": "Rui",
+      "plataforma": "Airbnb",
+      "data": "2026-07",
+      "lingua": "pt"
+    },
+    {
+      "id": "CIT-12",
+      "review_id": "A-03",
+      "texto_original": "a casa tem tudo o que precisa para passar umas ótimas férias",
+      "autor": "Rui",
+      "plataforma": "Airbnb",
+      "data": "2026-07",
+      "lingua": "pt"
+    },
+    {
+      "id": "CIT-13",
+      "review_id": "A-03",
+      "texto_original": "a zona tem uma praia fluvial com atividades",
+      "autor": "Rui",
+      "plataforma": "Airbnb",
+      "data": "2026-07",
+      "lingua": "pt"
+    },
+    {
+      "id": "CIT-14",
+      "review_id": "A-04",
+      "texto_original": "Casa maravilhosa e anfitriã muito simpática.",
+      "autor": "Ana Rita",
+      "plataforma": "Airbnb",
+      "data": "2026-07",
+      "lingua": "pt"
+    },
+    {
+      "id": "CIT-15",
+      "review_id": "A-05",
+      "texto_original": "Maria a été exceptionnelle.",
+      "autor": "Fany",
+      "plataforma": "Airbnb",
+      "data": "2026-07",
+      "lingua": "fr",
+      "traducao": "A Maria foi excecional. [tradução do dossiê, não do hóspede]"
+    },
+    {
+      "id": "CIT-16",
+      "review_id": "A-05",
+      "texto_original": "que dire de l'espace de vie extérieure sublime!",
+      "autor": "Fany",
+      "plataforma": "Airbnb",
+      "data": "2026-07",
+      "lingua": "fr",
+      "traducao": "e que dizer do espaço de estar exterior, sublime! [tradução do dossiê, não do hóspede]"
+    },
+    {
+      "id": "CIT-17",
+      "review_id": "A-05",
+      "texto_original": "la maison est bien aménagée avec des espace assurant l'intimité de chacun",
+      "autor": "Fany",
+      "plataforma": "Airbnb",
+      "data": "2026-07",
+      "lingua": "fr",
+      "traducao": "a casa está bem arrumada, com espaços que garantem a intimidade de cada um [tradução do dossiê, não do hóspede]"
+    },
+    {
+      "id": "CIT-18",
+      "review_id": "A-03",
+      "texto_original": "Gostámos muitos voltaríamos sem dúvidas",
+      "autor": "Rui",
+      "plataforma": "Airbnb",
+      "data": "2026-07",
+      "lingua": "pt"
+    }
+  ],
+  "ativos": [
+    {
+      "id": "ATIVO-interior_quarto-01",
+      "caminho": "marketing/fotos/interior/quarto-01.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 2000
+      },
+      "assunto": "quarto: Cama de casal junto a janela com parede de granito, toalhas dobradas",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Publicada nos anúncios geridos pela Holidu (Booking, Airbnb, Vrbo): serve para a demonstração; confirmar com o dono a permissão de uso e o autor antes do site definitivo.",
+        "Sessão de dia e de verão: não serve para sugerir noite, inverno, pessoas ou refeições.",
+        "Não dizer que quarto é (nenhuma fonte atribui as fotos aos 3 quartos)."
+      ]
+    },
+    {
+      "id": "ATIVO-interior_cozinha-01",
+      "caminho": "marketing/fotos/interior/cozinha-01.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 1996
+      },
+      "assunto": "cozinha: Zona de entrada e cozinha com parede de pedra, escada de madeira e móvel verde",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Publicada nos anúncios geridos pela Holidu (Booking, Airbnb, Vrbo): serve para a demonstração; confirmar com o dono a permissão de uso e o autor antes do site definitivo.",
+        "Sessão de dia e de verão: não serve para sugerir noite, inverno, pessoas ou refeições."
+      ]
+    },
+    {
+      "id": "ATIVO-interior_sala-01",
+      "caminho": "marketing/fotos/interior/sala-01.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 2000
+      },
+      "assunto": "sala: Sala com sofá, mesa de refeições e revestimento de madeira",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Publicada nos anúncios geridos pela Holidu (Booking, Airbnb, Vrbo): serve para a demonstração; confirmar com o dono a permissão de uso e o autor antes do site definitivo.",
+        "Sessão de dia e de verão: não serve para sugerir noite, inverno, pessoas ou refeições."
+      ]
+    },
+    {
+      "id": "ATIVO-interior_quarto-02",
+      "caminho": "marketing/fotos/interior/quarto-02.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 1996
+      },
+      "assunto": "quarto: Quarto no sótão com tecto de madeira, pufe azul e cama",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Publicada nos anúncios geridos pela Holidu (Booking, Airbnb, Vrbo): serve para a demonstração; confirmar com o dono a permissão de uso e o autor antes do site definitivo.",
+        "Sessão de dia e de verão: não serve para sugerir noite, inverno, pessoas ou refeições.",
+        "Não dizer que quarto é (nenhuma fonte atribui as fotos aos 3 quartos)."
+      ]
+    },
+    {
+      "id": "ATIVO-interior_quarto-03",
+      "caminho": "marketing/fotos/interior/quarto-03.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 1996
+      },
+      "assunto": "quarto: Quarto no sótão com tecto de madeira, cama branca e porta vermelha",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Publicada nos anúncios geridos pela Holidu (Booking, Airbnb, Vrbo): serve para a demonstração; confirmar com o dono a permissão de uso e o autor antes do site definitivo.",
+        "Sessão de dia e de verão: não serve para sugerir noite, inverno, pessoas ou refeições.",
+        "Não dizer que quarto é (nenhuma fonte atribui as fotos aos 3 quartos)."
+      ]
+    },
+    {
+      "id": "ATIVO-interior_casa-de-banho-01",
+      "caminho": "marketing/fotos/interior/casa-de-banho-01.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 1996
+      },
+      "assunto": "casa-de-banho: Casa de banho com duche de vidro, lavatório e janela de portadas vermelhas",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Publicada nos anúncios geridos pela Holidu (Booking, Airbnb, Vrbo): serve para a demonstração; confirmar com o dono a permissão de uso e o autor antes do site definitivo.",
+        "Sessão de dia e de verão: não serve para sugerir noite, inverno, pessoas ou refeições."
+      ]
+    },
+    {
+      "id": "ATIVO-interior_quarto-04",
+      "caminho": "marketing/fotos/interior/quarto-04.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 1996
+      },
+      "assunto": "quarto: Detalhe de cama com toalhas",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Publicada nos anúncios geridos pela Holidu (Booking, Airbnb, Vrbo): serve para a demonstração; confirmar com o dono a permissão de uso e o autor antes do site definitivo.",
+        "Sessão de dia e de verão: não serve para sugerir noite, inverno, pessoas ou refeições.",
+        "Não dizer que quarto é (nenhuma fonte atribui as fotos aos 3 quartos).",
+        "Tem o logótipo da casa sobreposto: não o apagar nem recortar só para o esconder; evitar como imagem principal."
+      ]
+    },
+    {
+      "id": "ATIVO-interior_quarto-05",
+      "caminho": "marketing/fotos/interior/quarto-05.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 1996
+      },
+      "assunto": "quarto: Quarto com roupeiro de madeira, cadeira verde e janela",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Publicada nos anúncios geridos pela Holidu (Booking, Airbnb, Vrbo): serve para a demonstração; confirmar com o dono a permissão de uso e o autor antes do site definitivo.",
+        "Sessão de dia e de verão: não serve para sugerir noite, inverno, pessoas ou refeições.",
+        "Não dizer que quarto é (nenhuma fonte atribui as fotos aos 3 quartos)."
+      ]
+    },
+    {
+      "id": "ATIVO-interior_sala-02",
+      "caminho": "marketing/fotos/interior/sala-02.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 1996
+      },
+      "assunto": "sala: Patamar no sótão com pufes e porta aberta para o jardim",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Publicada nos anúncios geridos pela Holidu (Booking, Airbnb, Vrbo): serve para a demonstração; confirmar com o dono a permissão de uso e o autor antes do site definitivo.",
+        "Sessão de dia e de verão: não serve para sugerir noite, inverno, pessoas ou refeições.",
+        "Tem o logótipo da casa sobreposto: não o apagar nem recortar só para o esconder; evitar como imagem principal.",
+        "Mostra o patamar do sótão, não a sala de estar."
+      ]
+    },
+    {
+      "id": "ATIVO-interior_cozinha-02",
+      "caminho": "marketing/fotos/interior/cozinha-02.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 1996
+      },
+      "assunto": "cozinha: Cozinha com armários verdes, máquina de lavar loiça e forno",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Publicada nos anúncios geridos pela Holidu (Booking, Airbnb, Vrbo): serve para a demonstração; confirmar com o dono a permissão de uso e o autor antes do site definitivo.",
+        "Sessão de dia e de verão: não serve para sugerir noite, inverno, pessoas ou refeições."
+      ]
+    },
+    {
+      "id": "ATIVO-interior_sala-03",
+      "caminho": "marketing/fotos/interior/sala-03.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 2000
+      },
+      "assunto": "sala: Sala de estar e jantar com madeira e pedra",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Publicada nos anúncios geridos pela Holidu (Booking, Airbnb, Vrbo): serve para a demonstração; confirmar com o dono a permissão de uso e o autor antes do site definitivo.",
+        "Sessão de dia e de verão: não serve para sugerir noite, inverno, pessoas ou refeições."
+      ]
+    },
+    {
+      "id": "ATIVO-interior_detalhe-01",
+      "caminho": "marketing/fotos/interior/detalhe-01.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 2104
+      },
+      "assunto": "detalhe: Escadaria com aparador branco, peixes decorativos e flores secas em primeiro plano",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Publicada nos anúncios geridos pela Holidu (Booking, Airbnb, Vrbo): serve para a demonstração; confirmar com o dono a permissão de uso e o autor antes do site definitivo.",
+        "Sessão de dia e de verão: não serve para sugerir noite, inverno, pessoas ou refeições.",
+        "Tem o logótipo da casa sobreposto: não o apagar nem recortar só para o esconder; evitar como imagem principal."
+      ]
+    },
+    {
+      "id": "ATIVO-interior_casa-de-banho-02",
+      "caminho": "marketing/fotos/interior/casa-de-banho-02.jpg",
+      "dimensoes": {
+        "largura": 1996,
+        "altura": 3000
+      },
+      "assunto": "casa-de-banho: Lavabo com lavatório pequeno e azulejos de padrão",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Publicada nos anúncios geridos pela Holidu (Booking, Airbnb, Vrbo): serve para a demonstração; confirmar com o dono a permissão de uso e o autor antes do site definitivo.",
+        "Sessão de dia e de verão: não serve para sugerir noite, inverno, pessoas ou refeições.",
+        "Tem o logótipo da casa sobreposto: não o apagar nem recortar só para o esconder; evitar como imagem principal."
+      ]
+    },
+    {
+      "id": "ATIVO-interior_quarto-06",
+      "caminho": "marketing/fotos/interior/quarto-06.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 2000
+      },
+      "assunto": "quarto: Quarto de casal com dois quadros de jarros, mesas de cabeceira e toalhas",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Publicada nos anúncios geridos pela Holidu (Booking, Airbnb, Vrbo): serve para a demonstração; confirmar com o dono a permissão de uso e o autor antes do site definitivo.",
+        "Sessão de dia e de verão: não serve para sugerir noite, inverno, pessoas ou refeições.",
+        "Não dizer que quarto é (nenhuma fonte atribui as fotos aos 3 quartos)."
+      ]
+    },
+    {
+      "id": "ATIVO-interior_detalhe-02",
+      "caminho": "marketing/fotos/interior/detalhe-02.jpg",
+      "dimensoes": {
+        "largura": 1536,
+        "altura": 2048
+      },
+      "assunto": "detalhe: Espelho redondo e jarro com flores sobre parede de granito",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Publicada nos anúncios geridos pela Holidu (Booking, Airbnb, Vrbo): serve para a demonstração; confirmar com o dono a permissão de uso e o autor antes do site definitivo.",
+        "Sessão de dia e de verão: não serve para sugerir noite, inverno, pessoas ou refeições."
+      ]
+    },
+    {
+      "id": "ATIVO-interior_quarto-07",
+      "caminho": "marketing/fotos/interior/quarto-07.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 2000
+      },
+      "assunto": "quarto: Quarto de casal com dois quadros de jarros, cama com toalhas",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Publicada nos anúncios geridos pela Holidu (Booking, Airbnb, Vrbo): serve para a demonstração; confirmar com o dono a permissão de uso e o autor antes do site definitivo.",
+        "Sessão de dia e de verão: não serve para sugerir noite, inverno, pessoas ou refeições.",
+        "Não dizer que quarto é (nenhuma fonte atribui as fotos aos 3 quartos)."
+      ]
+    },
+    {
+      "id": "ATIVO-interior_quarto-08",
+      "caminho": "marketing/fotos/interior/quarto-08.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 2000
+      },
+      "assunto": "quarto: Quarto com parede de granito, janela e televisão",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Publicada nos anúncios geridos pela Holidu (Booking, Airbnb, Vrbo): serve para a demonstração; confirmar com o dono a permissão de uso e o autor antes do site definitivo.",
+        "Sessão de dia e de verão: não serve para sugerir noite, inverno, pessoas ou refeições.",
+        "Não dizer que quarto é (nenhuma fonte atribui as fotos aos 3 quartos)."
+      ]
+    },
+    {
+      "id": "ATIVO-interior_detalhe-03",
+      "caminho": "marketing/fotos/interior/detalhe-03.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 1996
+      },
+      "assunto": "detalhe: Cómoda branca com espelhos redondos e flor seca (a Vrbo descreve-a como bancada de casa de banho)",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Publicada nos anúncios geridos pela Holidu (Booking, Airbnb, Vrbo): serve para a demonstração; confirmar com o dono a permissão de uso e o autor antes do site definitivo.",
+        "Sessão de dia e de verão: não serve para sugerir noite, inverno, pessoas ou refeições."
+      ]
+    },
+    {
+      "id": "ATIVO-interior_casa-de-banho-03",
+      "caminho": "marketing/fotos/interior/casa-de-banho-03.jpg",
+      "dimensoes": {
+        "largura": 2000,
+        "altura": 3000
+      },
+      "assunto": "casa-de-banho: Lavatório de bancada sobre madeira, espelho",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Publicada nos anúncios geridos pela Holidu (Booking, Airbnb, Vrbo): serve para a demonstração; confirmar com o dono a permissão de uso e o autor antes do site definitivo.",
+        "Sessão de dia e de verão: não serve para sugerir noite, inverno, pessoas ou refeições."
+      ]
+    },
+    {
+      "id": "ATIVO-interior_casa-de-banho-04",
+      "caminho": "marketing/fotos/interior/casa-de-banho-04.jpg",
+      "dimensoes": {
+        "largura": 2000,
+        "altura": 3000
+      },
+      "assunto": "casa-de-banho: Sanita e bidé com azulejos de padrão e cesto",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Publicada nos anúncios geridos pela Holidu (Booking, Airbnb, Vrbo): serve para a demonstração; confirmar com o dono a permissão de uso e o autor antes do site definitivo.",
+        "Sessão de dia e de verão: não serve para sugerir noite, inverno, pessoas ou refeições."
+      ]
+    },
+    {
+      "id": "ATIVO-interior_casa-de-banho-05",
+      "caminho": "marketing/fotos/interior/casa-de-banho-05.jpg",
+      "dimensoes": {
+        "largura": 2000,
+        "altura": 3000
+      },
+      "assunto": "casa-de-banho: Duche de vidro com azulejos de padrão",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Publicada nos anúncios geridos pela Holidu (Booking, Airbnb, Vrbo): serve para a demonstração; confirmar com o dono a permissão de uso e o autor antes do site definitivo.",
+        "Sessão de dia e de verão: não serve para sugerir noite, inverno, pessoas ou refeições."
+      ]
+    },
+    {
+      "id": "ATIVO-interior_detalhe-04",
+      "caminho": "marketing/fotos/interior/detalhe-04.jpg",
+      "dimensoes": {
+        "largura": 1536,
+        "altura": 2048
+      },
+      "assunto": "detalhe: Corredor com parede de granito, banco, espelho e almofadas",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Publicada nos anúncios geridos pela Holidu (Booking, Airbnb, Vrbo): serve para a demonstração; confirmar com o dono a permissão de uso e o autor antes do site definitivo.",
+        "Sessão de dia e de verão: não serve para sugerir noite, inverno, pessoas ou refeições."
+      ]
+    },
+    {
+      "id": "ATIVO-interior_sala-04",
+      "caminho": "marketing/fotos/interior/sala-04.jpg",
+      "dimensoes": {
+        "largura": 2400,
+        "altura": 1401
+      },
+      "assunto": "sala: Variante da foto do patamar do sótão (Booking 885461441), recorte diferente, o logótipo aparece cortado",
+      "publicador": "casa",
+      "uso": "restrito",
+      "restricoes": [
+        "Publicada nos anúncios geridos pela Holidu (Booking, Airbnb, Vrbo): serve para a demonstração; confirmar com o dono a permissão de uso e o autor antes do site definitivo.",
+        "Sessão de dia e de verão: não serve para sugerir noite, inverno, pessoas ou refeições.",
+        "Tem o logótipo da casa sobreposto: não o apagar nem recortar só para o esconder; evitar como imagem principal.",
+        "Mostra o patamar do sótão, não a sala de estar.",
+        "Variante da Vrbo com recorte diferente e menor resolução: preferir o original do Booking."
+      ],
+      "derivado_de": "ATIVO-interior_sala-02"
+    },
+    {
+      "id": "ATIVO-interior_detalhe-05",
+      "caminho": "marketing/fotos/interior/detalhe-05.jpg",
+      "dimensoes": {
+        "largura": 2400,
+        "altura": 1477
+      },
+      "assunto": "detalhe: Variante da foto da escadaria com flores (Booking 884878018), recorte diferente, o logótipo aparece cortado",
+      "publicador": "casa",
+      "uso": "restrito",
+      "restricoes": [
+        "Publicada nos anúncios geridos pela Holidu (Booking, Airbnb, Vrbo): serve para a demonstração; confirmar com o dono a permissão de uso e o autor antes do site definitivo.",
+        "Sessão de dia e de verão: não serve para sugerir noite, inverno, pessoas ou refeições.",
+        "Tem o logótipo da casa sobreposto: não o apagar nem recortar só para o esconder; evitar como imagem principal.",
+        "Variante da Vrbo com recorte diferente e menor resolução: preferir o original do Booking."
+      ],
+      "derivado_de": "ATIVO-interior_detalhe-01"
+    },
+    {
+      "id": "ATIVO-interior_casa-de-banho-06",
+      "caminho": "marketing/fotos/interior/casa-de-banho-06.jpg",
+      "dimensoes": {
+        "largura": 1672,
+        "altura": 2000
+      },
+      "assunto": "casa-de-banho: Variante do lavabo (Booking 885461442), recorte diferente",
+      "publicador": "casa",
+      "uso": "restrito",
+      "restricoes": [
+        "Publicada nos anúncios geridos pela Holidu (Booking, Airbnb, Vrbo): serve para a demonstração; confirmar com o dono a permissão de uso e o autor antes do site definitivo.",
+        "Sessão de dia e de verão: não serve para sugerir noite, inverno, pessoas ou refeições.",
+        "Tem o logótipo da casa sobreposto: não o apagar nem recortar só para o esconder; evitar como imagem principal.",
+        "Variante da Vrbo com recorte diferente e menor resolução: preferir o original do Booking."
+      ],
+      "derivado_de": "ATIVO-interior_casa-de-banho-02"
+    },
+    {
+      "id": "ATIVO-exterior_piscina-01",
+      "caminho": "marketing/fotos/exterior/piscina-01.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 2000
+      },
+      "assunto": "piscina: Piscina de frente, espreguiçadeiras, muro de pedra e socalcos ao fundo (aguenta hero)",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Publicada nos anúncios geridos pela Holidu (Booking, Airbnb, Vrbo): serve para a demonstração; confirmar com o dono a permissão de uso e o autor antes do site definitivo.",
+        "Sessão de dia e de verão: não serve para sugerir noite, inverno, pessoas ou refeições."
+      ]
+    },
+    {
+      "id": "ATIVO-exterior_piscina-02",
+      "caminho": "marketing/fotos/exterior/piscina-02.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 2000
+      },
+      "assunto": "piscina: Vista elevada da piscina com pérgola de telha e área de estar, vinha à volta (aguenta hero)",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Publicada nos anúncios geridos pela Holidu (Booking, Airbnb, Vrbo): serve para a demonstração; confirmar com o dono a permissão de uso e o autor antes do site definitivo.",
+        "Sessão de dia e de verão: não serve para sugerir noite, inverno, pessoas ou refeições."
+      ]
+    },
+    {
+      "id": "ATIVO-exterior_cozinha-01",
+      "caminho": "marketing/fotos/exterior/cozinha-01.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 2000
+      },
+      "assunto": "cozinha: Cozinha exterior com churrasqueira, bancada com azulejo verde e mesa com bancos",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Publicada nos anúncios geridos pela Holidu (Booking, Airbnb, Vrbo): serve para a demonstração; confirmar com o dono a permissão de uso e o autor antes do site definitivo.",
+        "Sessão de dia e de verão: não serve para sugerir noite, inverno, pessoas ou refeições."
+      ]
+    },
+    {
+      "id": "ATIVO-exterior_piscina-03",
+      "caminho": "marketing/fotos/exterior/piscina-03.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 2000
+      },
+      "assunto": "piscina: Piscina com chapéus-de-sol e encosta de socalcos ao fundo (aguenta hero)",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Publicada nos anúncios geridos pela Holidu (Booking, Airbnb, Vrbo): serve para a demonstração; confirmar com o dono a permissão de uso e o autor antes do site definitivo.",
+        "Sessão de dia e de verão: não serve para sugerir noite, inverno, pessoas ou refeições."
+      ]
+    },
+    {
+      "id": "ATIVO-exterior_piscina-04",
+      "caminho": "marketing/fotos/exterior/piscina-04.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 2000
+      },
+      "assunto": "piscina: Piscina, espreguiçadeiras e a casa de telhado vermelho atrás (aguenta hero)",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Publicada nos anúncios geridos pela Holidu (Booking, Airbnb, Vrbo): serve para a demonstração; confirmar com o dono a permissão de uso e o autor antes do site definitivo.",
+        "Sessão de dia e de verão: não serve para sugerir noite, inverno, pessoas ou refeições."
+      ]
+    },
+    {
+      "id": "ATIVO-exterior_piscina-05",
+      "caminho": "marketing/fotos/exterior/piscina-05.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 2000
+      },
+      "assunto": "piscina: Piscina com muro de pedra, pérgola e espreguiçadeiras (aguenta hero)",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Publicada nos anúncios geridos pela Holidu (Booking, Airbnb, Vrbo): serve para a demonstração; confirmar com o dono a permissão de uso e o autor antes do site definitivo.",
+        "Sessão de dia e de verão: não serve para sugerir noite, inverno, pessoas ou refeições."
+      ]
+    },
+    {
+      "id": "ATIVO-exterior_cozinha-02",
+      "caminho": "marketing/fotos/exterior/cozinha-02.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 2000
+      },
+      "assunto": "cozinha: Churrasqueira de granito com bancada de azulejo",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Publicada nos anúncios geridos pela Holidu (Booking, Airbnb, Vrbo): serve para a demonstração; confirmar com o dono a permissão de uso e o autor antes do site definitivo.",
+        "Sessão de dia e de verão: não serve para sugerir noite, inverno, pessoas ou refeições."
+      ]
+    },
+    {
+      "id": "ATIVO-exterior_detalhe-01",
+      "caminho": "marketing/fotos/exterior/detalhe-01.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 2000
+      },
+      "assunto": "detalhe: Rede de baloiço junto à piscina e grade",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Publicada nos anúncios geridos pela Holidu (Booking, Airbnb, Vrbo): serve para a demonstração; confirmar com o dono a permissão de uso e o autor antes do site definitivo.",
+        "Sessão de dia e de verão: não serve para sugerir noite, inverno, pessoas ou refeições."
+      ]
+    },
+    {
+      "id": "ATIVO-exterior_vista-01",
+      "caminho": "marketing/fotos/exterior/vista-01.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 2000
+      },
+      "assunto": "vista: Pérgola com mesa e sofás sobre os socalcos do Douro (aguenta hero)",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Publicada nos anúncios geridos pela Holidu (Booking, Airbnb, Vrbo): serve para a demonstração; confirmar com o dono a permissão de uso e o autor antes do site definitivo.",
+        "Sessão de dia e de verão: não serve para sugerir noite, inverno, pessoas ou refeições."
+      ]
+    },
+    {
+      "id": "ATIVO-exterior_detalhe-02",
+      "caminho": "marketing/fotos/exterior/detalhe-02.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 2000
+      },
+      "assunto": "detalhe: Sofá de vime e mesa de vidro na zona exterior",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Publicada nos anúncios geridos pela Holidu (Booking, Airbnb, Vrbo): serve para a demonstração; confirmar com o dono a permissão de uso e o autor antes do site definitivo.",
+        "Sessão de dia e de verão: não serve para sugerir noite, inverno, pessoas ou refeições."
+      ]
+    },
+    {
+      "id": "ATIVO-exterior_detalhe-03",
+      "caminho": "marketing/fotos/exterior/detalhe-03.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 2000
+      },
+      "assunto": "detalhe: Árvore em vaso sobre mesa de madeira",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Publicada nos anúncios geridos pela Holidu (Booking, Airbnb, Vrbo): serve para a demonstração; confirmar com o dono a permissão de uso e o autor antes do site definitivo.",
+        "Sessão de dia e de verão: não serve para sugerir noite, inverno, pessoas ou refeições."
+      ]
+    },
+    {
+      "id": "ATIVO-exterior_piscina-06",
+      "caminho": "marketing/fotos/exterior/piscina-06.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 2000
+      },
+      "assunto": "piscina: Piscina com boia salva-vidas, muro de pedra e pérgola ao fundo",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Publicada nos anúncios geridos pela Holidu (Booking, Airbnb, Vrbo): serve para a demonstração; confirmar com o dono a permissão de uso e o autor antes do site definitivo.",
+        "Sessão de dia e de verão: não serve para sugerir noite, inverno, pessoas ou refeições."
+      ]
+    },
+    {
+      "id": "ATIVO-exterior_fachada-01",
+      "caminho": "marketing/fotos/exterior/fachada-01.jpg",
+      "dimensoes": {
+        "largura": 2047,
+        "altura": 1362
+      },
+      "assunto": "fachada: Pormenor de janela e varanda de ferro na fachada de pedra",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Publicada nos anúncios geridos pela Holidu (Booking, Airbnb, Vrbo): serve para a demonstração; confirmar com o dono a permissão de uso e o autor antes do site definitivo.",
+        "Sessão de dia e de verão: não serve para sugerir noite, inverno, pessoas ou refeições."
+      ]
+    },
+    {
+      "id": "ATIVO-exterior_fachada-02",
+      "caminho": "marketing/fotos/exterior/fachada-02.jpg",
+      "dimensoes": {
+        "largura": 2048,
+        "altura": 2048
+      },
+      "assunto": "fachada: Portão de ferro com o nome da casa e caminho de calçada ao fim da tarde",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Publicada nos anúncios geridos pela Holidu (Booking, Airbnb, Vrbo): serve para a demonstração; confirmar com o dono a permissão de uso e o autor antes do site definitivo.",
+        "Sessão de dia e de verão: não serve para sugerir noite, inverno, pessoas ou refeições.",
+        "Tem o logótipo da casa sobreposto: não o apagar nem recortar só para o esconder; evitar como imagem principal.",
+        "Céu muito saturado; formato quadrado."
+      ]
+    },
+    {
+      "id": "ATIVO-exterior_fachada-03",
+      "caminho": "marketing/fotos/exterior/fachada-03.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 2000
+      },
+      "assunto": "fachada: Vista aérea sobre a casa e a piscina entre a vinha (aguenta hero)",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Publicada nos anúncios geridos pela Holidu (Booking, Airbnb, Vrbo): serve para a demonstração; confirmar com o dono a permissão de uso e o autor antes do site definitivo.",
+        "Sessão de dia e de verão: não serve para sugerir noite, inverno, pessoas ou refeições.",
+        "Mostra várias casas entre a vegetação: não legendar como 'a casa' sem indicar qual."
+      ]
+    },
+    {
+      "id": "ATIVO-exterior_vista-02",
+      "caminho": "marketing/fotos/exterior/vista-02.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 2000
+      },
+      "assunto": "vista: Vista aérea da propriedade, piscina e vinhas (aguenta hero)",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Publicada nos anúncios geridos pela Holidu (Booking, Airbnb, Vrbo): serve para a demonstração; confirmar com o dono a permissão de uso e o autor antes do site definitivo.",
+        "Sessão de dia e de verão: não serve para sugerir noite, inverno, pessoas ou refeições."
+      ]
+    },
+    {
+      "id": "ATIVO-exterior_vista-03",
+      "caminho": "marketing/fotos/exterior/vista-03.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 2000
+      },
+      "assunto": "vista: Vista aérea do Douro e do Parque Fluvial de Porto de Rei (aguenta hero)",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Publicada nos anúncios geridos pela Holidu (Booking, Airbnb, Vrbo): serve para a demonstração; confirmar com o dono a permissão de uso e o autor antes do site definitivo.",
+        "Sessão de dia e de verão: não serve para sugerir noite, inverno, pessoas ou refeições.",
+        "Vista aérea da zona (Douro, Porto de Rei, aldeia), não da casa: não sugerir que é a vista de uma janela ou varanda."
+      ]
+    },
+    {
+      "id": "ATIVO-exterior_vista-04",
+      "caminho": "marketing/fotos/exterior/vista-04.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 2000
+      },
+      "assunto": "vista: Vista aérea do Douro com barco, encostas e casas de São João de Fontoura (aguenta hero)",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Publicada nos anúncios geridos pela Holidu (Booking, Airbnb, Vrbo): serve para a demonstração; confirmar com o dono a permissão de uso e o autor antes do site definitivo.",
+        "Sessão de dia e de verão: não serve para sugerir noite, inverno, pessoas ou refeições.",
+        "Vista aérea da zona (Douro, Porto de Rei, aldeia), não da casa: não sugerir que é a vista de uma janela ou varanda."
+      ]
+    },
+    {
+      "id": "ATIVO-regiao_porto-de-rei",
+      "caminho": "marketing/fotos/regiao/porto-de-rei.jpg",
+      "dimensoes": {
+        "largura": 3888,
+        "altura": 2094
+      },
+      "assunto": "Parque Fluvial de Porto de Rei, praia no Douro (2016)",
+      "publicador": "terceiro",
+      "uso": "restrito",
+      "restricoes": [
+        "Crédito: 'Foto: Vitor Oliveira / Wikimedia Commons, CC BY-SA 2.0' (https://creativecommons.org/licenses/by-sa/2.0/; https://commons.wikimedia.org/wiki/File:Porto_de_Rei_-_Portugal_(30637451243).jpg).",
+        "Foto de terceiros: nunca a apresentar como da casa.",
+        "Sem texto por cima, sem recorte e sem alteração de cor: usar a imagem inteira (uma versão alterada é obra derivada).",
+        "Crédito visível junto da foto ou num bloco de créditos ligado a ela, com ligação à licença e à página no Commons.",
+        "Marca de água do autor no canto: mantê-la intacta.",
+        "Foto de 2016 com banhistas: não sugerir que as instalações atuais são as da foto."
+      ]
+    },
+    {
+      "id": "ATIVO-regiao_rota-dos-cerejais",
+      "caminho": "marketing/fotos/regiao/rota-dos-cerejais.jpg",
+      "dimensoes": {
+        "largura": 3600,
+        "altura": 2319
+      },
+      "assunto": "Solar de Porto de Rei sobre o Douro, na Rota dos Cerejais (2019)",
+      "publicador": "terceiro",
+      "uso": "restrito",
+      "restricoes": [
+        "Crédito: 'Foto: Hans Birger Nilsen / Wikimedia Commons, CC BY 2.0' (https://creativecommons.org/licenses/by/2.0/; https://commons.wikimedia.org/wiki/File:São_João_de_Fontoura_(48115125086).jpg).",
+        "Foto de terceiros: nunca a apresentar como da casa.",
+        "Sem texto por cima, sem recorte e sem alteração de cor: usar a imagem inteira (uma versão alterada é obra derivada).",
+        "Crédito visível junto da foto ou num bloco de créditos ligado a ela, com ligação à licença e à página no Commons.",
+        "Não mostra cerejeiras em flor: não a legendar como tal."
+      ]
+    },
+    {
+      "id": "ATIVO-regiao_barro",
+      "caminho": "marketing/fotos/regiao/barro.jpg",
+      "dimensoes": {
+        "largura": 3888,
+        "altura": 2592
+      },
+      "assunto": "Igreja de Santa Maria de Barrô, fachada (2009)",
+      "publicador": "terceiro",
+      "uso": "restrito",
+      "restricoes": [
+        "Crédito: 'Foto: LilianaMarques / Wikimedia Commons, CC BY-SA 4.0' (https://creativecommons.org/licenses/by-sa/4.0/; https://commons.wikimedia.org/wiki/File:Fachada_Igreja_Santa_Maria_de_Barrô1.jpg).",
+        "Foto de terceiros: nunca a apresentar como da casa.",
+        "Sem texto por cima, sem recorte e sem alteração de cor: usar a imagem inteira (uma versão alterada é obra derivada).",
+        "Crédito visível junto da foto ou num bloco de créditos ligado a ela, com ligação à licença e à página no Commons."
+      ]
+    },
+    {
+      "id": "ATIVO-regiao_carquere",
+      "caminho": "marketing/fotos/regiao/carquere.jpg",
+      "dimensoes": {
+        "largura": 3888,
+        "altura": 2592
+      },
+      "assunto": "Mosteiro de Santa Maria de Cárquere, fachada e torre (2008)",
+      "publicador": "terceiro",
+      "uso": "restrito",
+      "restricoes": [
+        "Crédito: 'Foto: Acscosta / Wikimedia Commons, CC BY-SA 3.0' (https://creativecommons.org/licenses/by-sa/3.0/; https://commons.wikimedia.org/wiki/File:Igreja_Matriz_de_Cárquere.jpg).",
+        "Foto de terceiros: nunca a apresentar como da casa.",
+        "Sem texto por cima, sem recorte e sem alteração de cor: usar a imagem inteira (uma versão alterada é obra derivada).",
+        "Crédito visível junto da foto ou num bloco de créditos ligado a ela, com ligação à licença e à página no Commons."
+      ]
+    },
+    {
+      "id": "ATIVO-regiao_museu-do-douro",
+      "caminho": "marketing/fotos/regiao/museu-do-douro.jpg",
+      "dimensoes": {
+        "largura": 4032,
+        "altura": 2688
+      },
+      "assunto": "Museu do Douro, Peso da Régua (2010)",
+      "publicador": "terceiro",
+      "uso": "restrito",
+      "restricoes": [
+        "Crédito: 'Foto: FWinkel / Wikimedia Commons, CC BY-SA 4.0' (https://creativecommons.org/licenses/by-sa/4.0/; https://commons.wikimedia.org/wiki/File:Museu_do_Douro_in_Peso_da_Régua.jpg).",
+        "Foto de terceiros: nunca a apresentar como da casa.",
+        "Sem texto por cima, sem recorte e sem alteração de cor: usar a imagem inteira (uma versão alterada é obra derivada).",
+        "Crédito visível junto da foto ou num bloco de créditos ligado a ela, com ligação à licença e à página no Commons."
+      ]
+    },
+    {
+      "id": "ATIVO-regiao_remedios",
+      "caminho": "marketing/fotos/regiao/remedios.jpg",
+      "dimensoes": {
+        "largura": 2048,
+        "altura": 1536
+      },
+      "assunto": "Santuário de Nossa Senhora dos Remédios, Lamego (2006)",
+      "publicador": "terceiro",
+      "uso": "restrito",
+      "restricoes": [
+        "Domínio público no Commons (conferido 2026-10-09): crédito não exigido; mostrar por cortesia 'Foto: Mcff / Wikimedia Commons, domínio público' (https://commons.wikimedia.org/wiki/File:Santuário_de_Nossa_Senhora_dos_Remédios.jpg).",
+        "Foto de terceiros: nunca a apresentar como da casa.",
+        "Sem texto por cima, sem recorte e sem alteração de cor: usar a imagem inteira (uma versão alterada é obra derivada).",
+        "Crédito visível junto da foto ou num bloco de créditos ligado a ela, com ligação à licença e à página no Commons.",
+        "2048×1536: não usar em ecrã inteiro."
+      ]
+    }
+  ],
+  "decisoes": [],
+  "cobertura": [
+    {
+      "id": "COB-01",
+      "fonte": "Booking",
+      "material": "quartos",
+      "estado": "completo_no_universo_observado",
+      "superficie": "página, regras, tabela do tipo, 3 pesquisas de preço",
+      "observado": 1,
+      "recolhido": 1
+    },
+    {
+      "id": "COB-02",
+      "fonte": "Booking",
+      "material": "reviews",
+      "estado": "completo_no_universo_observado",
+      "superficie": "painel de reviews, 2026-10-09",
+      "observado": 1,
+      "recolhido": 1
+    },
+    {
+      "id": "COB-03",
+      "fonte": "Booking",
+      "material": "fotos",
+      "estado": "completo_no_universo_observado",
+      "superficie": "galeria principal e do tipo (iguais)",
+      "observado": 40,
+      "recolhido": 40
+    },
+    {
+      "id": "COB-04",
+      "fonte": "Airbnb",
+      "material": "textos",
+      "estado": "completo_no_universo_observado",
+      "superficie": "descrição e 45 comodidades",
+      "observado": 1,
+      "recolhido": 1
+    },
+    {
+      "id": "COB-05",
+      "fonte": "Airbnb",
+      "material": "reviews",
+      "estado": "completo_no_universo_observado",
+      "superficie": "reviews em modo original",
+      "observado": 5,
+      "recolhido": 5
+    },
+    {
+      "id": "COB-06",
+      "fonte": "Airbnb",
+      "material": "fotos",
+      "estado": "completo_no_universo_observado",
+      "superficie": "Mostrar todas as fotos",
+      "observado": 40,
+      "recolhido": 0,
+      "limitacao": "todas duplicadas do Booking, que serve maior resolução"
+    },
+    {
+      "id": "COB-07",
+      "fonte": "Vrbo",
+      "material": "fotos",
+      "estado": "completo_no_universo_observado",
+      "superficie": "galeria All photos",
+      "observado": 37,
+      "recolhido": 3,
+      "limitacao": "34 duplicadas do Booking; 3 variantes guardadas; sem reviews na página"
+    },
+    {
+      "id": "COB-08",
+      "fonte": "Google Maps",
+      "material": "reviews",
+      "estado": "completo_no_universo_observado",
+      "superficie": "ficha",
+      "observado": 0,
+      "recolhido": 0,
+      "limitacao": "0 críticas"
+    },
+    {
+      "id": "COB-09",
+      "fonte": "Google Maps",
+      "material": "fotos",
+      "estado": "bloqueado",
+      "superficie": "ficha",
+      "observado": 2,
+      "recolhido": 0,
+      "limitacao": "autoria desconhecida, sem separador do proprietário sem sessão"
+    },
+    {
+      "id": "COB-10",
+      "fonte": "Instagram @casa_da_alufinha_al",
+      "material": "textos",
+      "estado": "parcial",
+      "superficie": "bio e 9 publicações",
+      "observado": 9,
+      "recolhido": 6,
+      "limitacao": "3 publicações sem legenda pública"
+    },
+    {
+      "id": "COB-11",
+      "fonte": "Instagram @casa_da_alufinha_al",
+      "material": "fotos",
+      "estado": "bloqueado",
+      "superficie": "9 publicações",
+      "observado": 9,
+      "recolhido": 0,
+      "limitacao": "fotos e carrosséis exigem sessão; fotos publicadas pela casa no Instagram por recolher"
+    },
+    {
+      "id": "COB-12",
+      "fonte": "Visit Resende (município)",
+      "material": "factos",
+      "estado": "completo_no_universo_observado",
+      "superficie": "ficha da casa",
+      "observado": 1,
+      "recolhido": 1,
+      "limitacao": "4 fotos sem autoria confirmada, não guardadas"
+    },
+    {
+      "id": "COB-13",
+      "fonte": "RNT",
+      "material": "compliance",
+      "estado": "completo_no_universo_observado",
+      "superficie": "pesquisa por número e detalhe do registo (aberto pelo juízo a 2026-10-09)",
+      "observado": 1,
+      "recolhido": 1
+    },
+    {
+      "id": "COB-14",
+      "fonte": "Facebook, TripAdvisor, site próprio",
+      "material": "canais",
+      "estado": "nao_encontrado",
+      "superficie": "pesquisas por nome e URLs prováveis",
+      "observado": 0,
+      "recolhido": 0
+    },
+    {
+      "id": "COB-15",
+      "fonte": "Holidu (holidu.pt)",
+      "material": "canais",
+      "estado": "nao_encontrado",
+      "superficie": "não procurado",
+      "limitacao": "possível página do anúncio na gestora, não procurada"
+    },
+    {
+      "id": "COB-16",
+      "fonte": "Região: 6 atrações (município, Rota do Românico, museu, Agência Ecclesia)",
+      "material": "factos",
+      "estado": "completo_no_universo_observado",
+      "superficie": "6 fichas relidas pelo juízo a 2026-10-09",
+      "observado": 6,
+      "recolhido": 6,
+      "limitacao": "sem horários nem preços; sem foto de cerejeiras em flor"
+    },
+    {
+      "id": "COB-17",
+      "fonte": "Wikimedia Commons",
+      "material": "fotos",
+      "estado": "completo_no_universo_observado",
+      "superficie": "6 fotos da região, licenças conferidas na API a 2026-10-09",
+      "observado": 6,
+      "recolhido": 6
+    },
+    {
+      "id": "COB-18",
+      "fonte": "Identidade entre plataformas",
+      "material": "identidade",
+      "estado": "completo_no_universo_observado",
+      "superficie": "RNAL, morada, telefone, coordenadas, texto e ligações entre canais",
+      "observado": 7,
+      "recolhido": 7
+    }
+  ]
+}

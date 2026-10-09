@@ -1,0 +1,23 @@
+# ── Segredos ─────────────────────────────────────────────────────────
+# Nota: este padrao casa com ".env" exacto e NAO com ".env.example",
+# que tem de ser versionado para o repo ser utilizavel por outra pessoa.
+.env
+.env.local
+.env.*.local
+
+# ── Dependencias ─────────────────────────────────────────────────────
+node_modules/
+
+# ── Estado de execucao ───────────────────────────────────────────────
+# Checkpoints de retoma do discover.js e do audit.js. Reconstruivel a
+# partir de uma nova corrida; versiona-lo so cria conflitos de merge.
+.state/
+
+# ── Saidas do audit ──────────────────────────────────────────────────
+screenshots/
+
+# ── Sistema / ruido ──────────────────────────────────────────────────
+Thumbs.db
+.DS_Store
+*.log
+npm-debug.log*

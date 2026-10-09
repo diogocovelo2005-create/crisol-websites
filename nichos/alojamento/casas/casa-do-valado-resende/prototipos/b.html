@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Casa do Valado · Resende</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cafe:#3B2A20;      /* madeira escura, chão de dentro à sombra */
+    --creme:#F3E9D8;     /* creme quente */
+    --palha:#D2B48C;     /* tan das fotos de interior */
+    --barro:#A9472C;     /* terracota/ferrugem, só nos botões */
+    --serif:"Playfair Display", Georgia, serif;
+    --sans:"Karla", system-ui, sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{font-family:var(--sans);font-weight:300;font-size:17px;line-height:1.7;color:var(--cafe);background:var(--creme);overflow-x:hidden}
+  img{display:block;max-width:100%}
+  a{color:inherit}
+  .rot{font-family:var(--sans);font-weight:500;font-size:12px;letter-spacing:.24em;text-transform:uppercase}
+  h2{font-family:var(--serif);font-weight:400;font-size:clamp(36px,4.4vw,60px);line-height:1.1;letter-spacing:-.005em}
+  h2 em{font-style:italic}
+  .escuro{background:var(--cafe);color:var(--creme)}
+  .claro{background:var(--creme);color:var(--cafe)}
+  .palha{background:var(--palha);color:var(--cafe)}
+  blockquote p{font-family:var(--serif);font-style:italic;font-weight:400}
+  cite{display:block;font-style:normal;margin-top:18px}
+  .trad{font-family:var(--sans);font-style:normal;font-weight:300;font-size:16px;opacity:.85;margin-top:12px}
+
+  /* faixa do nome */
+  .faixa{display:flex;justify-content:space-between;align-items:center;padding:16px 56px;background:var(--cafe);color:var(--creme)}
+  .faixa strong{font-family:var(--serif);font-weight:400;font-size:24px}
+  .faixa span{opacity:.8}
+
+  /* bloco foto sangrada + painel da mesma altura */
+  .par{display:grid;grid-template-columns:7fr 5fr;min-height:660px}
+  .par.troca{grid-template-columns:5fr 7fr}
+  .par.troca .foto{order:2}
+  .par .foto{position:relative;min-height:420px}
+  .par .foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .par .painel{padding:80px 64px;display:flex;flex-direction:column;justify-content:center;gap:26px}
+  .legenda{position:absolute;left:24px;bottom:20px;background:var(--cafe);color:var(--creme);padding:7px 12px}
+
+  /* 2 · o vale */
+  .vale .painel p.frase{font-family:var(--serif);font-size:clamp(28px,2.6vw,38px);line-height:1.3}
+
+  /* respiro: uma frase só */
+  .respiro{padding:120px 24px;display:flex;justify-content:center}
+  .respiro blockquote{max-width:860px}
+  .respiro blockquote p{font-size:clamp(26px,2.8vw,40px);line-height:1.35}
+  .respiro .trad{font-size:17px;max-width:620px}
+
+  /* 3 · lá fora: linha do dia */
+  .dia{padding:110px 56px 100px}
+  .dia-topo{display:grid;grid-template-columns:5fr 7fr;gap:56px;align-items:end;max-width:1300px;margin:0 auto 72px}
+  .dia-topo p{font-family:var(--serif);font-style:italic;font-size:22px;line-height:1.45}
+  .linha{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:48px;max-width:1300px;margin:0 auto;position:relative}
+  .linha::before{content:"";position:absolute;left:0;right:0;top:27px;height:1px;background:var(--cafe);opacity:.45}
+  .linha li{position:relative}
+  .linha svg{width:56px;height:56px;background:var(--creme);padding:8px;stroke:var(--cafe);fill:none;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round;position:relative}
+  .linha h3{font-family:var(--serif);font-weight:400;font-size:28px;margin:22px 0 8px}
+  .linha p{max-width:330px}
+
+  .piscina .painel blockquote p{font-size:clamp(28px,2.7vw,40px);line-height:1.3}
+
+  /* deck + churrasqueira: foto grande, foto pequena encaixada e duas vozes */
+  .deck{display:grid;grid-template-columns:8fr 4fr;grid-template-rows:auto auto}
+  .deck .grande{grid-row:1 / span 2;position:relative;min-height:640px}
+  .deck .grande img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%}
+  .deck .voz{padding:64px 56px 40px}
+  .deck .voz blockquote p{font-size:24px;line-height:1.4}
+  .deck .peq{padding:0 56px 64px}
+  .deck .peq img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:65% 55%;margin-bottom:22px}
+  .deck .peq blockquote p{font-size:20px;line-height:1.45}
+
+  /* 4 · por dentro */
+  .dentro .painel p{max-width:460px}
+  .dentro .painel h2{margin-bottom:6px}
+  .mesa{display:grid;grid-template-columns:6fr 5fr;align-items:stretch}
+  .mesa .txt{padding:72px 64px 72px 56px;display:flex;flex-direction:column;justify-content:center;gap:20px}
+  .mesa .txt p{max-width:520px}
+  .mesa .foto{position:relative;min-height:460px}
+  .mesa .foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+  /* 5 · quartos: cartões de foto pequena */
+  .quartos{padding:110px 56px;display:grid;grid-template-columns:4fr 8fr;gap:64px;max-width:1440px;margin:0 auto;align-items:start}
+  .quartos .intro p{margin-top:22px;max-width:380px}
+  .quartos .intro p.nota{font-size:16px}
+  .cartoes{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
+  .cartao{background:#fff8ec;border:1px solid rgba(59,42,32,.18)}
+  .cartao img{width:100%;aspect-ratio:4/5;object-fit:cover}
+  .cartao figcaption{padding:14px 16px 16px;font-family:var(--serif);font-style:italic;font-size:18px;line-height:1.35}
+  .cartao:nth-child(2){margin-top:48px}
+
+  /* 6 · quem recebe: citações uma de cada vez */
+  .vozes{padding:120px 56px}
+  .vozes header{max-width:1200px;margin:0 auto 80px}
+  .vozes blockquote{max-width:900px;margin:0 auto 88px}
+  .vozes blockquote:nth-of-type(2){margin-left:auto;margin-right:max(56px,8vw);max-width:720px}
+  .vozes blockquote:nth-of-type(1){margin-left:max(0px,6vw)}
+  .vozes blockquote p{font-size:clamp(28px,3vw,44px);line-height:1.3}
+  .notas{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:32px;border-top:1px solid rgba(243,233,216,.35);padding-top:36px}
+  .notas dt{margin-bottom:8px;color:var(--palha)}
+  .notas dd{font-family:var(--serif);font-size:20px;line-height:1.4}
+
+  /* 7 · onde fica */
+  .onde{padding:110px 56px;display:grid;grid-template-columns:6fr 6fr;gap:72px;max-width:1440px;margin:0 auto}
+  .onde dl{margin-top:40px;display:grid;grid-template-columns:150px 1fr;gap:14px 24px;border-top:1px solid rgba(59,42,32,.3);padding-top:28px}
+  .onde dt{padding-top:4px}
+  .onde .duas{display:flex;flex-direction:column;justify-content:center;gap:48px}
+  .onde blockquote p{font-size:26px;line-height:1.4}
+
+  /* 8 · reservar */
+  .reservar{padding:110px 56px 80px;display:grid;grid-template-columns:7fr 5fr;gap:72px;max-width:1440px;margin:0 auto}
+  .botoes{display:flex;flex-wrap:wrap;gap:14px;margin:36px 0 40px}
+  .btn{display:inline-block;padding:16px 26px;text-decoration:none;border:1px solid var(--barro)}
+  .btn.cheio{background:var(--barro);color:var(--creme)}
+  .btn.cheio:hover{background:#8f3a23}
+  .btn.linha{border-color:var(--creme);color:var(--creme)}
+  .btn.linha:hover{background:rgba(243,233,216,.1)}
+  .contactos a{text-decoration:none;border-bottom:1px solid rgba(243,233,216,.5)}
+  .contactos a:hover{border-color:var(--creme)}
+  .regras{list-style:none;border-top:1px solid rgba(243,233,216,.35)}
+  .regras li{padding:18px 0;border-bottom:1px solid rgba(243,233,216,.35)}
+  .rnal{padding:0 56px 40px;font-size:16px;opacity:.85;max-width:1440px;margin:0 auto}
+
+  @media (max-width:900px){
+    body{font-size:16px}
+    .faixa{padding:14px 22px}
+    .faixa span{display:none}
+    .par,.par.troca,.deck,.mesa{grid-template-columns:1fr;min-height:0}
+    .par.troca .foto{order:0}
+    .par .foto{min-height:300px}
+    .par .painel,.mesa .txt{padding:52px 24px}
+    .respiro{padding:80px 24px}
+    .dia{padding:72px 24px}
+    .dia-topo{grid-template-columns:1fr;gap:20px;margin-bottom:48px}
+    .linha{grid-template-columns:1fr;gap:36px;padding-left:0}
+    .linha::before{left:27px;right:auto;top:0;bottom:0;width:1px;height:auto}
+    .deck .grande{grid-row:auto;min-height:300px}
+    .deck .voz{padding:44px 24px 28px}
+    .deck .peq{padding:0 24px 52px}
+    .mesa .foto{min-height:280px}
+    .quartos,.onde,.reservar{grid-template-columns:1fr;padding:72px 24px;gap:40px}
+    .cartoes{grid-template-columns:1fr 1fr;gap:14px}
+    .cartao:nth-child(2){margin-top:0}
+    .cartao figcaption{font-size:16px;padding:10px 12px 12px}
+    .vozes{padding:80px 24px}
+    .vozes header{margin-bottom:52px}
+    .vozes blockquote,.vozes blockquote:nth-of-type(1),.vozes blockquote:nth-of-type(2){margin:0 0 56px}
+    .notas{grid-template-columns:1fr;gap:22px}
+    .onde dl{grid-template-columns:1fr;gap:4px}
+    .onde dd{margin-bottom:12px}
+    .onde blockquote p{font-size:22px}
+    .rnal{padding:0 24px 36px}
+  }
+</style>
+</head>
+<body>
+
+<header class="faixa">
+  <strong>Casa do Valado</strong>
+  <span class="rot">Resende</span>
+</header>
+
+<!-- 2 · O vale: foto sangrada à esquerda, painel escuro com a frase -->
+<section class="par vale escuro" aria-label="O vale">
+  <div class="foto">
+    <img src="fotos/vista-02.jpg" alt="O vale e as serras vistos da casa" style="object-position:50% 50%">
+    <span class="legenda rot">O vale e as serras</span>
+  </div>
+  <div class="painel">
+    <span class="rot" style="color:var(--palha)">O vale</span>
+    <p class="frase">Vista aberta sobre o vale, as encostas e as serras em redor.</p>
+  </div>
+</section>
+
+<!-- respiro -->
+<section class="respiro claro" aria-label="Voz de hóspede">
+  <blockquote>
+    <p>"Das Haus ist toll gelegen mit fantastischem Ausblick und tolle Gärten."</p>
+    <p class="trad">A casa está muito bem situada, com uma vista fantástica e jardins ótimos.</p>
+    <cite class="rot">Anja · Booking</cite>
+  </blockquote>
+</section>
+
+<!-- 3 · Os dias lá fora: linha do dia com ícones de traço -->
+<section class="dia palha" aria-labelledby="t-fora">
+  <div class="dia-topo">
+    <h2 id="t-fora">Lá fora, <em>o dia todo</em></h2>
+  </div>
+  <ol class="linha">
+    <li>
+      <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M4 26c3 0 3-2 6-2s3 2 6 2 3-2 6-2 3 2 6 2 3-2 6-2"/><path d="M4 32c3 0 3-2 6-2s3 2 6 2 3-2 6-2 3 2 6 2 3-2 6-2"/><path d="M12 22V8a3 3 0 0 1 6 0M24 22V8a3 3 0 0 1 6 0M12 13h12M12 18h12"/></svg>
+      <h3>A piscina</h3>
+      <p>Piscina privada ao ar livre, rodeada de relva e com pátio de lajes.</p>
+    </li>
+    <li>
+      <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M5 12h30M7 9h26M9 12v22M31 12v22M15 12v4M20 12v4M25 12v4"/><path d="M4 34h32"/><path d="M14 27h12M16 27v7M24 27v7"/></svg>
+      <h3>O deck</h3>
+      <p>No jardim, um deck de madeira com pérgola, virado ao vale.</p>
+    </li>
+    <li>
+      <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M6 16 20 6l14 10"/><path d="M10 14v20h20V14"/><path d="M15 34v-9h10v9"/><path d="M17 21c0-2 2-2 2-4M22 21c0-2 2-2 2-4"/><path d="M6 34h28"/></svg>
+      <h3>A churrasqueira</h3>
+      <p>Uma churrasqueira exterior coberta, junto ao pátio.</p>
+    </li>
+  </ol>
+</section>
+
+<!-- a piscina: foto sangrada à direita, painel creme à esquerda -->
+<section class="par troca piscina claro" aria-label="A piscina">
+  <div class="foto">
+    <img src="fotos/piscina-01.jpg" alt="Piscina rodeada de relva, com uma palmeira e as encostas ao fundo" style="object-position:50% 60%">
+  </div>
+  <div class="painel">
+    <span class="rot">A piscina</span>
+    <blockquote>
+      <p>"the pool area was very beautiful with great views of the valley"</p>
+      <cite class="rot">Richard · Booking</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- o deck e a churrasqueira: foto dominante + foto pequena e duas vozes -->
+<section class="deck escuro" aria-label="O deck e a churrasqueira">
+  <div class="grande">
+    <img src="fotos/vista-01.jpg" alt="O deck com sofás de exterior e guarda-sol, virado ao vale">
+    <span class="legenda rot" style="background:var(--creme);color:var(--cafe)">O deck</span>
+  </div>
+  <div class="voz">
+    <blockquote>
+      <p>"Espaço exterior com óptima paisagem e um deck muito bom para fazer refeições."</p>
+      <cite class="rot" style="color:var(--palha)">Nuno Besteiro · Google</cite>
+    </blockquote>
+  </div>
+  <div class="peq">
+    <img src="fotos/jardim-03.jpg" alt="A churrasqueira coberta de tijolo junto ao pátio de lajes" loading="lazy">
+    <blockquote>
+      <p>"Churrasco  foram feitos, banhos de sol tomados"</p>
+      <cite class="rot" style="color:var(--palha)">Helena Maria Sampaio De Castro Henriques · Google</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- respiro -->
+<section class="respiro claro" aria-label="Voz de hóspede">
+  <blockquote>
+    <p>"De tuin is mooi aangelegd met veel groen, ideaal om uren te zonnen of een goed boek te lezen."</p>
+    <p class="trad">O jardim está bem arranjado, com muito verde, ideal para apanhar sol horas a fio ou ler um bom livro.</p>
+    <cite class="rot">Basma · Booking</cite>
+  </blockquote>
+</section>
+
+<!-- 4 · A casa de pedra: sala sangrada à esquerda, painel café -->
+<section class="par dentro escuro" aria-labelledby="t-dentro">
+  <div class="foto">
+    <img src="fotos/sala-02.jpg" alt="A sala com lareira de pedra, sofás vermelhos e a janela grande sobre o vale" loading="lazy" style="object-position:50% 50%">
+  </div>
+  <div class="painel">
+    <span class="rot" style="color:var(--palha)">A casa de pedra</span>
+    <h2 id="t-dentro">Por dentro, <em>pedra</em></h2>
+    <p>Uma casa de granito, com as paredes de pedra à vista na sala e na cozinha, e um anexo de pedra antigo ao lado.</p>
+    <p>Na sala, uma lareira de pedra e uma janela grande sobre o vale.</p>
+  </div>
+</section>
+
+<section class="mesa palha" aria-label="A cozinha e a mesa">
+  <div class="txt">
+    <p>A cozinha tem máquina de lavar loiça, forno, micro-ondas, torradeira, chaleira e máquina de café, e a mesa de refeições fica junto a uma churrasqueira interior de tijolo. Há Wi-Fi gratuito, ar condicionado, televisão e máquina de lavar roupa.</p>
+    <blockquote>
+      <p style="font-size:22px;line-height:1.4">"Huis staat in orde zoals op de fotos, geen verborgen gebreken."</p>
+      <p class="trad">A casa está em ordem, tal como nas fotos, sem defeitos escondidos.</p>
+      <cite class="rot">Kris Van de Spiegle · Google</cite>
+    </blockquote>
+  </div>
+  <div class="foto">
+    <img src="fotos/refeicoes-01.jpg" alt="A mesa de refeições junto à churrasqueira interior de tijolo" loading="lazy" style="object-position:50% 50%">
+  </div>
+</section>
+
+<!-- 5 · Os quartos: cartões de foto pequena -->
+<section class="claro" aria-labelledby="t-quartos">
+  <div class="quartos">
+    <div class="intro">
+      <span class="rot">O fim do dia</span>
+      <h2 id="t-quartos" style="margin-top:14px">Três quartos</h2>
+      <p>A casa tem três quartos e uma casa de banho. Dois quartos com cama de casal e um quarto com duas camas individuais.</p>
+      <p class="nota">Roupa de cama e toalhas incluídas. Berço e cadeira alta de bebé gratuitos, mediante pedido.</p>
+    </div>
+    <div class="cartoes">
+      <figure class="cartao">
+        <img src="fotos/quarto-08.jpg" alt="Quarto de casal com janela para as encostas" loading="lazy" style="object-position:50% 45%">
+        <figcaption>Cama de casal, janela para as encostas</figcaption>
+      </figure>
+      <figure class="cartao">
+        <img src="fotos/quarto-02.jpg" alt="Quarto de casal com cama escura" loading="lazy" style="object-position:50% 50%">
+        <figcaption>Cama de casal</figcaption>
+      </figure>
+      <figure class="cartao">
+        <img src="fotos/quarto-01.jpg" alt="Quarto com duas camas individuais" loading="lazy" style="object-position:50% 45%">
+        <figcaption>Duas camas individuais</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- 6 · Quem recebe: uma citação de cada vez -->
+<section class="vozes escuro" aria-labelledby="t-vozes">
+  <header>
+    <span class="rot" style="color:var(--palha)">Quem recebe</span>
+    <h2 id="t-vozes" style="margin-top:14px">Nas palavras de <em>quem ficou</em></h2>
+  </header>
+  <blockquote>
+    <p>"O proprietário Manuel é muito simpático e prestável. Orientou-nos no espaço, na vila e aconselhou-nos vários locais."</p>
+    <cite class="rot" style="color:var(--palha)">Catarina · Booking</cite>
+  </blockquote>
+  <blockquote>
+    <p>"proprietário incrível e incansável na disponibilidade"</p>
+    <cite class="rot" style="color:var(--palha)">Luis · Booking</cite>
+  </blockquote>
+  <blockquote>
+    <p>"Hier ben je echt op vakantie met een super vriendelijke gastheer die klaar staat om elk probleem op te lossen die er niet zijn"</p>
+    <p class="trad">Aqui está-se mesmo de férias, com um anfitrião super simpático, pronto a resolver qualquer problema que não existe.</p>
+    <cite class="rot" style="color:var(--palha)">Kris Van de Spiegle · Google</cite>
+  </blockquote>
+  <dl class="notas">
+    <div><dt class="rot">Booking</dt><dd>9,2 em 10, com 11 avaliações (outubro de 2026)</dd></div>
+    <div><dt class="rot">No Booking</dt><dd>Funcionários 10, Localização 9,8, Limpeza 9,7</dd></div>
+    <div><dt class="rot">Google</dt><dd>4,7 em 5, com 15 avaliações (outubro de 2026)</dd></div>
+  </dl>
+</section>
+
+<!-- 7 · Onde fica: pares rótulo/valor e duas vozes -->
+<section class="palha" aria-labelledby="t-onde">
+  <div class="onde">
+    <div>
+      <span class="rot">Onde fica</span>
+      <h2 id="t-onde" style="margin-top:14px">Perto da vila, <em>longe do barulho</em></h2>
+      <dl>
+        <dt class="rot">Morada</dt><dd>Rua Valado 321, Resende</dd>
+        <dt class="rot">A vila</dt><dd>A poucos minutos de carro do centro de Resende, onde há supermercados e restaurantes.</dd>
+        <dt class="rot">A região</dt><dd>Fica na região do Vale do Douro; a vista é para o vale e as serras, não para o rio.</dd>
+        <dt class="rot">Carro</dt><dd>Estacionamento gratuito dentro da propriedade.</dd>
+      </dl>
+    </div>
+    <div class="duas">
+      <blockquote>
+        <p>"Local calmo e bastante isolado mas simultaneamente muito próximo do centro de Resende e de fácil acesso."</p>
+        <cite class="rot">Joana · Booking</cite>
+      </blockquote>
+      <blockquote>
+        <p>"it was well located for wine tasting trips also close to grocery stores"</p>
+        <cite class="rot">Richard · Booking</cite>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- 8 · Reservar -->
+<section class="escuro" aria-labelledby="t-reservar">
+  <div class="reservar">
+    <div>
+      <span class="rot" style="color:var(--palha)">A decisão</span>
+      <h2 id="t-reservar" style="margin-top:14px">Reservar</h2>
+      <p style="margin-top:22px">Reserva pelo Booking ou pelo Airbnb.</p>
+      <div class="botoes">
+        <a class="btn cheio rot" href="https://www.booking.com/hotel/pt/casa-do-valado-resende.pt-pt.html">Ver disponibilidade</a>
+        <a class="btn linha rot" href="https://www.airbnb.pt/">Airbnb</a>
+      </div>
+      <p class="contactos">Para perguntas: telefone <a href="tel:+351911505394">911 505 394</a> e email <a href="mailto:wearecasadovalado@gmail.com">wearecasadovalado@gmail.com</a>.</p>
+    </div>
+    <ul class="regras">
+      <li>Check-in a partir das 15:00.</li>
+      <li>Estadias longas são possíveis.</li>
+      <li>Nas reservas pelo Booking e pelo Airbnb, não são permitidos animais.</li>
+      <li>Não é permitido fumar dentro de casa.</li>
+    </ul>
+  </div>
+  <p class="rnal">Alojamento Local, modalidade Moradia, registo RNAL 88302/AL.</p>
+</section>
+
+</body>
+</html>

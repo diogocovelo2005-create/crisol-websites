@@ -1,0 +1,117 @@
+# Fotografias: Penthouse - Low Cost
+
+Recolhidas a 2026-09-25. Recolhidas para a versão de demonstração do site. **Antes de publicar o site definitivo, confirmar com os donos (Celeste e António José Carvalho) que podem ser usadas.** Todas são `[OFICIAL]`: publicadas pela própria casa. Nenhuma foto de hóspede entrou. Quando a mesma imagem estava em várias plataformas, ficou a versão maior; as outras aparecem na coluna "Também em".
+
+## Cobertura por plataforma
+
+| Plataforma | Link da galeria | Fotos na galeria | Guardadas | Duplicados de outra plataforma | Em falta e porquê |
+|---|---|---|---|---|---|
+| Booking | https://www.booking.com/hotel/pt/penthouse-low-cost.pt-pt.html (galeria completa "1 / 55"; galerias dos tipos Quarto Duplo, Quarto Triplo e Quarto Duplo ou Twin dentro da principal) | 55 | 49 | algumas existem iguais e maiores no Visit Vouzela | — |
+| Airbnb | https://www.airbnb.pt/rooms/601851160568908210 ("Penthouse Lowcost") | 43 | 5 | quase todas iguais às do Booking | — |
+| Visit Vouzela (site da casa, arquivado) | https://web.archive.org/web/2026/https://www.visitvouzela.com/penthouse (e /penthousequartos) | 16 imagens distintas | 6 | as outras são iguais ao Booking ou de interface | logótipos e selos repetidos em todas as páginas do site: estão no dossiê da Casa das Ameias |
+| Site antigo casamuseu.com | https://www.casamuseu.com/penthouse.php | 11 | 10 | — (cortes de 980×480 das mesmas cenas; guardados à parte porque o corte muda o enquadramento) | — |
+| Google Maps | ficha "Penthouse - Low Cost" | — | 0 | — | Sem autoria da casa confirmada |
+
+Total no disco: 70 ficheiros.
+
+## Pastas
+- `interior/` — os três quartos, as casas de banho abertas, a sala e a entrada
+- `exterior/` — a vista das janelas: telhados de Vouzela, o viaduto, a Senhora do Castelo e a serra
+
+## Interior (`interior/`)
+
+| Ficheiro | Espaço | O que mostra | Legenda da casa | Galeria onde aparece | Quarto | Orientação | Resolução | Qualidade | Aguenta hero? | Fonte principal | Também em | Marcas | Nota |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| interior/quarto-01.jpg | quarto | Quarto duplo com cabeceira de madeira e janela corrida com vista | — | Airbnb; Booking: principal, Quarto Duplo com Casa de Banho Privativa | | horizontal | 3000×2250 | boa | sim | Booking (Penthouse - Low Cost), id 129811324, recolhido 2026-09-25 | Airbnb |  |  |
+| interior/quarto-02.jpg | quarto | Quarto duplo com janela corrida | — | Airbnb; Booking: principal, Quarto Duplo com Casa de Banho Privativa | | horizontal | 3000×2250 | boa | não: não mostra o mais forte da casa | Booking (Penthouse - Low Cost), id 129811323, recolhido 2026-09-25 | Airbnb |  |  |
+| interior/quarto-03.jpg | quarto | Quarto duplo com televisão e janela corrida | — | Airbnb; Booking: principal, Quarto Duplo com Casa de Banho Privativa | | horizontal | 3000×2250 | boa | não: não mostra o mais forte da casa | Booking (Penthouse - Low Cost), id 129811270, recolhido 2026-09-25 | Airbnb |  |  |
+| interior/quarto-04.jpg | quarto | Quarto duplo com cabeceira de madeira | — | Airbnb; Booking: principal, Quarto Duplo com Casa de Banho Privativa | | horizontal | 3000×2250 | boa | não: não mostra o mais forte da casa | Booking (Penthouse - Low Cost), id 129811341, recolhido 2026-09-25 | Airbnb |  |  |
+| interior/quarto-05.jpg | quarto | Quarto triplo em panorâmica com a janela corrida | — | Airbnb; Booking: principal, Quarto Triplo com Casa de Banho Privativa | | horizontal | 3000×1536 | escura | não: escura | Booking (Penthouse - Low Cost), id 130108651, recolhido 2026-09-25 | Airbnb |  |  |
+| interior/quarto-06.jpg | quarto | Quarto duplo com a serra na janela | — | Airbnb; Booking: principal, Quarto Duplo com Casa de Banho Privativa; Visit Vouzela | | horizontal | 3000×1818 | escura | não: escura | Booking (Penthouse - Low Cost), id 130108629, recolhido 2026-09-25 | Airbnb, Visit Vouzela |  |  |
+| interior/quarto-07.jpg | quarto | Quarto duplo com janela corrida | — | Airbnb; Booking: principal, Quarto Duplo com Casa de Banho Privativa | | horizontal | 3000×2486 | boa | não: não mostra o mais forte da casa | Booking (Penthouse - Low Cost), id 130108603, recolhido 2026-09-25 | Airbnb |  |  |
+| interior/casa-de-banho-01.jpg | casa-de-banho | Casa de banho com lavatório preto e toalhas com o brasão | — | Airbnb; Booking: principal, Quarto Duplo com Casa de Banho Privativa; Visit Vouzela | | horizontal | 4672×4032 | boa | não: não mostra o mais forte da casa | visitvouzela.com (site da casa, cópia do Web Archive de 2026; páginas penthouse, penthousequartos), recolhido 2026-09-25 | Airbnb, Booking |  |  |
+| interior/quarto-08.jpg | quarto | Quarto com ar condicionado, mesa e quadro | — | Airbnb; Booking: principal, Quarto Duplo com Casa de Banho Privativa; site antigo; Visit Vouzela | | horizontal | 3000×1536 | boa | não: não mostra o mais forte da casa | Booking (Penthouse - Low Cost), id 130108617, recolhido 2026-09-25 | Airbnb, Visit Vouzela, site antigo |  |  |
+| interior/quarto-09.jpg | quarto | Quarto com espelho e porta | — | Airbnb; Booking: principal, Quarto Triplo com Casa de Banho Privativa | | horizontal | 3000×2250 | boa | não: não mostra o mais forte da casa | Booking (Penthouse - Low Cost), id 129811307, recolhido 2026-09-25 | Airbnb |  |  |
+| interior/casa-de-banho-02.jpg | casa-de-banho | Casa de banho com janela | — | Airbnb; Booking: principal, Quarto Duplo com Casa de Banho Privativa | | vertical | 2250×3000 | boa | não: vertical | Booking (Penthouse - Low Cost), id 129811293, recolhido 2026-09-25 | Airbnb |  |  |
+| interior/quarto-10.jpg | quarto | Quarto com a casa de banho aberta ao lado | — | Airbnb; Booking: principal, Quarto Duplo com Casa de Banho Privativa | | horizontal | 3000×1800 | escura | não: escura | Booking (Penthouse - Low Cost), id 130108634, recolhido 2026-09-25 | Airbnb |  |  |
+| interior/quarto-11.jpg | quarto | Quarto com janela para os telhados da vila | — | Airbnb; Booking: principal, Quarto Duplo com Casa de Banho Privativa; Visit Vouzela | | horizontal | 3000×1928 | boa | não: não mostra o mais forte da casa | Booking (Penthouse - Low Cost), id 130108620, recolhido 2026-09-25 | Airbnb, Visit Vouzela |  |  |
+| interior/quarto-12.jpg | quarto | Quarto twin com quadro na parede | — | Airbnb; Booking: principal, Quarto Duplo ou Twin com Vista da Cidade | | horizontal | 3000×1868 | boa | não: não mostra o mais forte da casa | Booking (Penthouse - Low Cost), id 130108642, recolhido 2026-09-25 | Airbnb |  |  |
+| interior/casa-de-banho-03.jpg | casa-de-banho | Casa de banho branca | — | Airbnb; Booking: principal, Quarto Triplo com Casa de Banho Privativa | | horizontal | 3000×2250 | boa | não: não mostra o mais forte da casa | Booking (Penthouse - Low Cost), id 129811266, recolhido 2026-09-25 | Airbnb |  |  |
+| interior/quarto-13.jpg | quarto | Quarto twin com ar condicionado | — | Airbnb; Booking: principal, Quarto Triplo com Casa de Banho Privativa | | horizontal | 3000×2250 | boa | não: não mostra o mais forte da casa | Booking (Penthouse - Low Cost), id 129811344, recolhido 2026-09-25 | Airbnb |  |  |
+| interior/quarto-14.jpg | quarto | Quarto com secretária, quadro e casa de banho ao fundo | — | Airbnb; Booking: principal, Quarto Triplo com Casa de Banho Privativa | | horizontal | 3000×2250 | boa | não: não mostra o mais forte da casa | Booking (Penthouse - Low Cost), id 129811247, recolhido 2026-09-25 | Airbnb |  |  |
+| interior/quarto-15.jpg | quarto | Quarto twin com janela corrida | — | Airbnb; Booking: principal, Quarto Duplo ou Twin com Vista da Cidade | | horizontal | 3000×2250 | boa | não: não mostra o mais forte da casa | Booking (Penthouse - Low Cost), id 129811328, recolhido 2026-09-25 | Airbnb |  |  |
+| interior/quarto-16.jpg | quarto | Quarto com quadro e frigorífico | — | Airbnb | | horizontal | 1200×900 | boa | não: 1200 px | Airbnb (anúncio 601851160568908210, "Penthouse Lowcost"), recolhido 2026-09-25 |  |  |  |
+| interior/quarto-17.jpg | quarto | Quarto duplo ao pôr-do-sol, janela corrida | — | Airbnb; Booking: principal, Quarto Duplo com Casa de Banho Privativa | | horizontal | 3000×2250 | boa | não: não mostra o mais forte da casa | Booking (Penthouse - Low Cost), id 129811298, recolhido 2026-09-25 | Airbnb |  |  |
+| interior/quarto-18.jpg | quarto | Quarto com secretária | — | Airbnb; Booking: principal, Quarto Triplo com Casa de Banho Privativa | | horizontal | 3000×2250 | boa | não: não mostra o mais forte da casa | Booking (Penthouse - Low Cost), id 129811318, recolhido 2026-09-25 | Airbnb |  |  |
+| interior/quarto-19.jpg | quarto | Quarto twin com quadro | — | Airbnb | | horizontal | 1200×900 | boa | não: 1200 px | Airbnb (anúncio 601851160568908210, "Penthouse Lowcost"), recolhido 2026-09-25 |  |  |  |
+| interior/quarto-20.jpg | quarto | Mesa com cadeiras e bancada com chaleira e micro-ondas | — | Airbnb; Booking: principal, Quarto Duplo com Casa de Banho Privativa | | horizontal | 3000×2250 | boa | não: não mostra o mais forte da casa | Booking (Penthouse - Low Cost), id 129811314, recolhido 2026-09-25 | Airbnb |  |  |
+| interior/quarto-21.jpg | quarto | Quarto twin com janela corrida | — | Airbnb; Booking: principal, Quarto Duplo ou Twin com Vista da Cidade | | horizontal | 3000×2250 | boa | não: não mostra o mais forte da casa | Booking (Penthouse - Low Cost), id 129811265, recolhido 2026-09-25 | Airbnb |  |  |
+| interior/quarto-22.jpg | quarto | Quarto com mesa, frigorífico e televisão | — | Airbnb; Booking: principal, Quarto Duplo com Casa de Banho Privativa | | horizontal | 3000×2250 | boa | não: não mostra o mais forte da casa | Booking (Penthouse - Low Cost), id 129811310, recolhido 2026-09-25 | Airbnb |  |  |
+| interior/quarto-23.jpg | quarto | Quarto twin com cadeira de escritório | — | Airbnb | | horizontal | 1200×900 | boa | não: 1200 px | Airbnb (anúncio 601851160568908210, "Penthouse Lowcost"), recolhido 2026-09-25 |  |  |  |
+| interior/corredor-01.jpg | corredor | Entrada com arca antiga e quadro de rosas | — | Airbnb; Booking: principal, Quarto Duplo com Casa de Banho Privativa, Quarto Triplo com Casa de Banho Privativa, Quarto Duplo ou Twin com Vista da Cidade | | vertical | 2250×3000 | boa | não: vertical | Booking (Penthouse - Low Cost), id 129811245, recolhido 2026-09-25 | Airbnb |  |  |
+| interior/casa-de-banho-04.jpg | casa-de-banho | Casa de banho com lavatório preto | — | Airbnb; Booking: principal, Quarto Duplo com Casa de Banho Privativa | | vertical | 2250×3000 | boa | não: vertical | Booking (Penthouse - Low Cost), id 129811347, recolhido 2026-09-25 | Airbnb |  |  |
+| interior/sala-01.jpg | sala | Sala com cadeirões e mesa redonda entalhada | — | Airbnb; Booking: principal, Quarto Duplo com Casa de Banho Privativa, Quarto Triplo com Casa de Banho Privativa, Quarto Duplo ou Twin com Vista da Cidade | | horizontal | 3000×2250 | boa | não: não mostra o mais forte da casa | Booking (Penthouse - Low Cost), id 129811267, recolhido 2026-09-25 | Airbnb |  |  |
+| interior/quarto-24.jpg | quarto | Quarto visto por um espelho | — | Airbnb; Booking: principal, Quarto Duplo com Casa de Banho Privativa | | vertical | 2250×3000 | boa | não: vertical | Booking (Penthouse - Low Cost), id 129811253, recolhido 2026-09-25 | Airbnb |  |  |
+| interior/quarto-25.jpg | quarto | Quarto com frigorífico e mesa com toalha de renda | — | Airbnb; Booking: principal, Quarto Duplo ou Twin com Vista da Cidade | | horizontal | 3000×2250 | boa | não: não mostra o mais forte da casa | Booking (Penthouse - Low Cost), id 129811325, recolhido 2026-09-25 | Airbnb |  |  |
+| interior/quarto-26.jpg | quarto | Quarto twin com quadro | — | Airbnb; Booking: principal, Quarto Triplo com Casa de Banho Privativa; Visit Vouzela | | horizontal | 3000×2486 | boa | não: não mostra o mais forte da casa | Booking (Penthouse - Low Cost), id 130108646, recolhido 2026-09-25 | Airbnb, Visit Vouzela |  |  |
+| interior/sala-02.jpg | sala | Sala com cadeirões e candeeiro | — | Airbnb | | horizontal | 1200×900 | boa | não: 1200 px | Airbnb (anúncio 601851160568908210, "Penthouse Lowcost"), recolhido 2026-09-25 |  |  |  |
+| interior/quarto-27.jpg | quarto | Quarto twin com quadro e mesa | — | Airbnb; Booking: principal, Quarto Triplo com Casa de Banho Privativa | | horizontal | 3000×1834 | boa | não: não mostra o mais forte da casa | Booking (Penthouse - Low Cost), id 130108648, recolhido 2026-09-25 | Airbnb |  |  |
+| interior/casa-de-banho-05.jpg | casa-de-banho | Casa de banho com parede de tijolo de vidro e duche | — | Airbnb; Booking: principal, Quarto Duplo ou Twin com Vista da Cidade | | vertical | 2250×3000 | boa | não: vertical | Booking (Penthouse - Low Cost), id 129811274, recolhido 2026-09-25 | Airbnb |  |  |
+| interior/quarto-28.jpg | quarto | Quarto triplo com parede de tijolo de vidro | — | Booking: principal, Quarto Duplo ou Twin com Vista da Cidade; Visit Vouzela | | horizontal | 3264×2448 | boa | não: não mostra o mais forte da casa | visitvouzela.com (site da casa, cópia do Web Archive de 2026; páginas penthouse, penthousequartos), recolhido 2026-09-25 | Booking |  |  |
+| interior/quarto-29.jpg | quarto | Quarto S. Macário (placa na porta), duas camas e secretária | — | Booking: principal, Quarto Triplo com Casa de Banho Privativa | | horizontal | 3000×2250 | boa | não: não mostra o mais forte da casa | Booking (Penthouse - Low Cost), id 129811243, recolhido 2026-09-25 |  | texto | identifica o quarto pelo nome |
+| interior/quarto-30.jpg | quarto | Quarto com quadro, mesa e frigorífico | — | Booking: principal, Quarto Triplo com Casa de Banho Privativa; Visit Vouzela | | horizontal | 3264×2448 | boa | não: não mostra o mais forte da casa | visitvouzela.com (site da casa, cópia do Web Archive de 2026; páginas penthouse, penthousequartos), recolhido 2026-09-25 | Booking |  |  |
+| interior/corredor-02.jpg | corredor | Entrada com arca antiga | — | Booking: principal, Quarto Duplo com Casa de Banho Privativa, Quarto Triplo com Casa de Banho Privativa, Quarto Duplo ou Twin com Vista da Cidade | | vertical | 2250×3000 | boa | não: vertical | Booking (Penthouse - Low Cost), id 129811269, recolhido 2026-09-25 |  |  |  |
+| interior/casa-de-banho-06.jpg | casa-de-banho | Casa de banho com janela para a serra | — | Booking: principal, Quarto Duplo com Casa de Banho Privativa | | vertical | 2250×3000 | boa | não: vertical | Booking (Penthouse - Low Cost), id 129811277, recolhido 2026-09-25 |  |  |  |
+| interior/quarto-31.jpg | quarto | Quarto Torre (placa na porta), cama de casal | — | Booking: principal, Quarto Duplo com Casa de Banho Privativa; Visit Vouzela | | horizontal | 3264×2448 | boa | não: não mostra o mais forte da casa | visitvouzela.com (site da casa, cópia do Web Archive de 2026; páginas penthouse, penthousequartos), recolhido 2026-09-25 | Booking | texto | identifica o quarto pelo nome |
+| interior/quarto-32.jpg | quarto | Quarto duplo com janela corrida | — | Booking: principal, Quarto Duplo com Casa de Banho Privativa; Visit Vouzela | | horizontal | 3264×2448 | boa | não: não mostra o mais forte da casa | visitvouzela.com (site da casa, cópia do Web Archive de 2026; páginas penthouse, penthousequartos), recolhido 2026-09-25 | Booking |  |  |
+| interior/quarto-33.jpg | quarto | Quarto com tijolo de vidro e mesa | — | Booking: principal, Quarto Duplo ou Twin com Vista da Cidade | | horizontal | 3000×2250 | boa | não: não mostra o mais forte da casa | Booking (Penthouse - Low Cost), id 129811333, recolhido 2026-09-25 |  |  |  |
+| interior/quarto-34.jpg | quarto | Quarto com quadro, mesa e frigorífico | — | Booking: principal, Quarto Duplo com Casa de Banho Privativa | | horizontal | 3000×2250 | boa | não: não mostra o mais forte da casa | Booking (Penthouse - Low Cost), id 129811338, recolhido 2026-09-25 |  |  |  |
+| interior/quarto-35.jpg | quarto | Quarto twin com quadro | — | Booking: principal, Quarto Duplo ou Twin com Vista da Cidade; Visit Vouzela | | horizontal | 3264×2448 | boa | não: não mostra o mais forte da casa | visitvouzela.com (site da casa, cópia do Web Archive de 2026; páginas penthouse, penthousequartos), recolhido 2026-09-25 | Booking |  |  |
+| interior/quarto-36.jpg | quarto | Quarto twin com espelho | — | Booking: principal, Quarto Triplo com Casa de Banho Privativa | | horizontal | 3000×2250 | boa | não: não mostra o mais forte da casa | Booking (Penthouse - Low Cost), id 129811343, recolhido 2026-09-25 |  |  |  |
+| interior/quarto-37.jpg | quarto | Quarto twin (corte do site antigo) | — | site antigo | | horizontal | 980×480 | boa | não: 980 px | casamuseu.com (site antigo), recolhido 2026-09-25 |  |  |  |
+| interior/quarto-38.jpg | quarto | Quarto triplo em panorâmica (corte do site antigo) | — | site antigo | | horizontal | 980×480 | escura | não: 980 px | casamuseu.com (site antigo), recolhido 2026-09-25 |  |  |  |
+| interior/quarto-39.jpg | quarto | Quarto duplo (corte do site antigo) | — | site antigo | | horizontal | 980×480 | boa | não: 980 px | casamuseu.com (site antigo), recolhido 2026-09-25 |  |  |  |
+| interior/quarto-40.jpg | quarto | Quarto duplo ao pôr-do-sol (corte do site antigo) | — | site antigo | | horizontal | 980×480 | boa | não: 980 px | casamuseu.com (site antigo), recolhido 2026-09-25 |  |  |  |
+| interior/casa-de-banho-07.jpg | casa-de-banho | Casa de banho (corte do site antigo) | — | site antigo | | horizontal | 980×480 | boa | não: 980 px | casamuseu.com (site antigo), recolhido 2026-09-25 |  |  |  |
+| interior/sala-03.jpg | sala | Sala com cadeirões (corte do site antigo) | — | site antigo | | horizontal | 980×480 | boa | não: 980 px | casamuseu.com (site antigo), recolhido 2026-09-25 |  |  |  |
+| interior/casa-de-banho-08.jpg | casa-de-banho | Lavatório preto (corte do site antigo) | — | site antigo | | horizontal | 980×480 | boa | não: 980 px | casamuseu.com (site antigo), recolhido 2026-09-25 |  |  |  |
+| interior/quarto-41.jpg | quarto | Mesa e cadeiras junto à janela (corte do site antigo) | — | site antigo | | horizontal | 980×480 | boa | não: 980 px | casamuseu.com (site antigo), recolhido 2026-09-25 |  |  |  |
+
+## Vista e exterior (`exterior/`)
+
+| Ficheiro | Espaço | O que mostra | Legenda da casa | Galeria onde aparece | Quarto | Orientação | Resolução | Qualidade | Aguenta hero? | Fonte principal | Também em | Marcas | Nota |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| exterior/vista-01.jpg | vista | A vila e a serra vistas da janela, com nuvens | — | Airbnb; Booking: principal, Quarto Duplo com Casa de Banho Privativa | | horizontal | 3000×2250 | boa | sim | Booking (Penthouse - Low Cost), id 129811308, recolhido 2026-09-25 | Airbnb |  |  |
+| exterior/vista-02.jpg | vista | Serra e telhados vistos da janela | — | Airbnb | | horizontal | 1200×900 | boa | não: 1200 px | Airbnb (anúncio 601851160568908210, "Penthouse Lowcost"), recolhido 2026-09-25 |  |  |  |
+| exterior/vista-03.jpg | vista | A vila e a serra ao longe | — | Airbnb; Booking: principal, Quarto Triplo com Casa de Banho Privativa | | horizontal | 3000×2250 | boa | sim | Booking (Penthouse - Low Cost), id 129811259, recolhido 2026-09-25 | Airbnb |  |  |
+| exterior/vista-04.jpg | vista | Telhados e o monte da Senhora do Castelo | — | Airbnb; Booking: principal, Quarto Duplo ou Twin com Vista da Cidade | | horizontal | 3000×2250 | boa | sim | Booking (Penthouse - Low Cost), id 129811302, recolhido 2026-09-25 | Airbnb |  |  |
+| exterior/vista-05.jpg | vista | Telhados da vila e o viaduto ferroviário | — | Airbnb; Booking: principal, Quarto Duplo ou Twin com Vista da Cidade | | horizontal | 3000×2250 | boa | sim | Booking (Penthouse - Low Cost), id 129811250, recolhido 2026-09-25 | Airbnb |  |  |
+| exterior/vista-06.jpg | vista | Telhados e monte | — | Airbnb; Booking: principal, Quarto Duplo ou Twin com Vista da Cidade | | horizontal | 3000×2250 | boa | não: não mostra o mais forte da casa | Booking (Penthouse - Low Cost), id 129811320, recolhido 2026-09-25 | Airbnb |  |  |
+| exterior/vista-07.jpg | vista | Telhados e serra | — | Airbnb; Booking: principal, Quarto Triplo com Casa de Banho Privativa | | horizontal | 3000×2250 | boa | não: não mostra o mais forte da casa | Booking (Penthouse - Low Cost), id 129811264, recolhido 2026-09-25 | Airbnb |  |  |
+| exterior/vista-08.jpg | vista | Telhados, vale e viaduto ferroviário | — | Airbnb; Booking: principal, Quarto Duplo com Casa de Banho Privativa | | horizontal | 3000×2250 | boa | sim | Booking (Penthouse - Low Cost), id 129811291, recolhido 2026-09-25 | Airbnb |  |  |
+| exterior/vista-09.jpg | vista | Casa senhorial e a serra vistas do terraço | — | Booking: principal, Quarto Duplo ou Twin com Vista da Cidade | | horizontal | 3000×2250 | boa | não: não mostra o mais forte da casa | Booking (Penthouse - Low Cost), id 129811287, recolhido 2026-09-25 |  |  |  |
+| exterior/vista-10.jpg | vista | Telhados e a serra ao longe | — | Booking: principal, Quarto Duplo ou Twin com Vista da Cidade | | horizontal | 3000×2250 | boa | não: não mostra o mais forte da casa | Booking (Penthouse - Low Cost), id 129811241, recolhido 2026-09-25 |  |  |  |
+| exterior/vista-11.jpg | vista | Telhados e monte | — | Booking: principal, Quarto Duplo ou Twin com Vista da Cidade | | horizontal | 3000×2250 | boa | não: não mostra o mais forte da casa | Booking (Penthouse - Low Cost), id 129811317, recolhido 2026-09-25 |  |  |  |
+| exterior/vista-12.jpg | vista | Vale e prédios | — | Booking: principal, Quarto Duplo com Casa de Banho Privativa | | horizontal | 3000×2250 | boa | não: não mostra o mais forte da casa | Booking (Penthouse - Low Cost), id 129811319, recolhido 2026-09-25 |  |  |  |
+| exterior/vista-13.jpg | vista | Telhados e o viaduto ferroviário | — | Booking: principal, Quarto Duplo ou Twin com Vista da Cidade | | horizontal | 3000×2250 | boa | não: não mostra o mais forte da casa | Booking (Penthouse - Low Cost), id 129811329, recolhido 2026-09-25 |  |  |  |
+| exterior/vista-14.jpg | vista | Telhados e serra, pela janela | — | Booking: principal, Quarto Duplo ou Twin com Vista da Cidade | | horizontal | 3000×2250 | boa | não: não mostra o mais forte da casa | Booking (Penthouse - Low Cost), id 129811337, recolhido 2026-09-25 |  |  |  |
+| exterior/vista-15.jpg | vista | Telhados e serra (corte do site antigo) | — | site antigo | | horizontal | 980×480 | boa | não: 980 px | casamuseu.com (site antigo), recolhido 2026-09-25 |  |  |  |
+| exterior/vista-16.jpg | vista | Telhados e viaduto (corte do site antigo) | — | site antigo | | horizontal | 980×480 | boa | não: 980 px | casamuseu.com (site antigo), recolhido 2026-09-25 |  |  |  |
+
+## Fotos por espaço
+
+| Pasta | Espaço | Fotos | Aguentam hero |
+|---|---|---|---|
+| exterior | vista | 16 | 5 |
+| interior | casa-de-banho | 8 | 0 |
+| interior | corredor | 2 | 0 |
+| interior | quarto | 41 | 1 |
+| interior | sala | 3 | 0 |
+
+## Espaços sem fotografia ou fracos
+
+- **O prédio e a entrada:** nenhuma foto da fachada, da escada nem da rua. Os hóspedes queixam-se dos 4 andares sem elevador; o site deve dizê-lo, mas não há imagem.
+- **Quarto Castelo:** as placas identificam só o S. Macário (`interior/quarto-*` com a placa) e o Torre; nenhuma foto diz "Castelo".
+- **O apartamento de baixo (Apartamento com 2 Quartos, 110 m², com lareira):** listado no Booking sem nenhuma foto.
+- **Qualidade:** fotos de 2013–2015 (câmara compacta), com luz dura e muitas escuras. Só as vistas aguentam hero.
+

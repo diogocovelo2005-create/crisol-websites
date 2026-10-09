@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+/*
+  Simples: fundo cinzento claro, cartões brancos, uma cor por fase.
+  A cor diz a fase; o texto diz o que fazer.
+*/
+@theme {
+  --color-fundo: #f3f3f1;
+  --color-cartao: #ffffff;
+  --color-tinta: #1c1c1a;
+  --color-tinta-2: #62625d;
+  --color-tinta-3: #9a9a94;
+  --color-linha: #e3e3df;
+  --color-alerta: #d32f2f;
+
+  /* Post-its: cor da prioridade e cor do papel. */
+  --color-p-alta: #d32f2f;
+  --color-p-media: #e0a92e;
+  --color-p-baixa: #2e9e4f;
+  --color-papel: #fff8d6;
+  --color-papel-texto: #55491f;
+  --color-papel-texto-2: #8a7c47;
+
+  /* Uma cor por fase do quadro. */
+  --color-f-sem: #d32f2f;
+  --color-f-base: #6d6a63;
+  --color-f-enviada: #d9822b;
+  --color-f-sim: #2e9e4f;
+  --color-f-construcao: #2f6fd1;
+  --color-f-no-ar: #7a4fc9;
+
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-cartao: 0 1px 2px rgb(28 28 26 / 0.06), 0 2px 8px -2px rgb(28 28 26 / 0.08);
+  --shadow-cartao-hover: 0 2px 4px rgb(28 28 26 / 0.08), 0 10px 24px -8px rgb(28 28 26 / 0.18);
+
+  /* Post-it assente no quadro e post-it levantado (a ser arrastado). */
+  --shadow-nota: 0 1px 2px rgb(28 28 26 / 0.08), 0 6px 14px -6px rgb(28 28 26 / 0.22);
+  --shadow-nota-levantada: 0 4px 10px rgb(28 28 26 / 0.12), 0 22px 40px -14px rgb(28 28 26 / 0.38);
+}
+
+html {
+  background: var(--color-fundo);
+  color: var(--color-tinta);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: var(--color-fundo);
+  min-height: 100dvh;
+}
+
+::selection {
+  background: var(--color-tinta);
+  color: var(--color-cartao);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-f-construcao);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* A letra das notas: a mesma do painel, simples (o Diogo não quis manuscrita). */
+.letra-nota {
+  font-family: var(--font-sans);
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(6px) scale(0.98); }
+}
+.aparecer { animation: aparecer 180ms cubic-bezier(0.2, 0.8, 0.2, 1); }
+
+@media (prefers-reduced-motion: reduce) {
+  .aparecer { animation: none; }
+}
+
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+/* O dossiê, lido do markdown de cada casa. */
+.dossie h1 { font-weight: 700; font-size: 1.75rem; line-height: 1.15; margin: 0 0 1rem; }
+.dossie h2 { font-weight: 700; font-size: 1.25rem; margin: 2rem 0 0.6rem; }
+.dossie h3 { font-weight: 600; font-size: 1rem; margin: 1.5rem 0 0.4rem; }
+.dossie p, .dossie ul, .dossie ol, .dossie blockquote, .dossie table { margin: 0 0 0.9rem; }
+.dossie ul { list-style: disc; padding-left: 1.2rem; }
+.dossie ol { list-style: decimal; padding-left: 1.4rem; }
+.dossie li { margin: 0.2rem 0; }
+.dossie strong { font-weight: 600; }
+.dossie blockquote { border-left: 2px solid var(--color-linha); padding-left: 1rem; color: var(--color-tinta-2); }
+.dossie a { text-decoration: underline; text-underline-offset: 3px; }
+.dossie code { font-size: 0.85em; }
+.dossie table { display: block; overflow-x: auto; font-size: 13px; border-collapse: collapse; }
+.dossie th, .dossie td { border-bottom: 1px solid var(--color-linha); padding: 0.35rem 0.75rem 0.35rem 0; text-align: left; vertical-align: top; }
+.dossie th { font-weight: 600; }

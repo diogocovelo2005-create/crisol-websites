@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+/* --------------------------------------------------------------------------
+   Paleta tirada da propriedade, não da referência.
+   Granito das paredes, cal dos interiores, verde do jardim, e o vermelho
+   escuro dos caixilhos, das portas e do gradeamento — a assinatura da casa.
+   -------------------------------------------------------------------------- */
+
+@theme {
+  --color-cal: #f3e9d8;
+  --color-cal-fundo: #f3e9d8;
+  --color-granito: #e0d8c8;
+  --color-granito-linha: #d2c8b5;
+
+  --color-xisto: #221f1b;
+  --color-xisto-medio: #57514799;
+  --color-xisto-suave: #5e584e;
+
+  --color-caixilho: #7a2b2b;
+  --color-caixilho-claro: #9b4038;
+
+  --color-vale: #2c3729;
+  --color-vale-claro: #46523f;
+
+  --font-display: var(--fonte-display), "Iowan Old Style", Georgia, serif;
+  --font-cartaz: var(--fonte-cartaz), "Rockwell", Georgia, serif;
+  --font-corpo: var(--fonte-corpo), ui-sans-serif, system-ui, sans-serif;
+
+  --text-monumental: clamp(3rem, 9.5vw, 8rem);
+  --text-titulo: clamp(2.25rem, 5.2vw, 4rem);
+  --text-subtitulo: clamp(1.35rem, 2.3vw, 1.85rem);
+  --text-corpo-grande: clamp(1.05rem, 1.35vw, 1.2rem);
+
+  --ease-calma: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* A Young Serif tem um só peso e já nasce grossa. Estas duas classes só
+   afinam o espacejamento conforme o tamanho a que o título aparece. */
+.rustico {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+}
+
+/* A Young Serif só tem um peso. Um contorno finíssimo da própria cor
+   engrossa-a o suficiente sem a deformar. */
+.rustico-encorpado {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  -webkit-text-stroke: 0.45px currentColor;
+  paint-order: stroke fill;
+}
+
+.cartaz {
+  font-family: var(--font-cartaz);
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  line-height: 0.94;
+}
+
+.rustico-medio {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.012em;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--color-cal);
+  color: var(--color-xisto);
+  font-family: var(--font-corpo);
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* O corte do que transborda na horizontal vive aqui e nao no body: posto
+   no body, o overflow-y passa a auto, o body torna-se um contentor de
+   scroll e o position: sticky deixa de funcionar em toda a pagina. */
+html {
+  overflow-x: clip;
+}
+
+::selection {
+  background-color: var(--color-caixilho);
+  color: var(--color-cal);
+}
+
+/* O sublinhado da navegação e dos links de texto cresce a partir da esquerda. */
+.sublinha {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  transition: background-size 0.45s var(--ease-calma);
+}
+.sublinha:hover,
+.sublinha:focus-visible {
+  background-size: 100% 1px;
+}
+
+/* Maiúsculas pequenas usadas nas etiquetas de secção. */
+.etiqueta {
+  font-size: 0.6875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+@keyframes desfilar-comodidades {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.carrossel-comodidades {
+  animation: desfilar-comodidades 42s linear infinite;
+}
+
+.faixa-comodidades:hover .carrossel-comodidades {
+  animation-play-state: paused;
+}
+
+
+:where(a, button, input, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--color-caixilho);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faixa-comodidades {
+    overflow-x: auto;
+    scrollbar-width: thin;
+  }
+
+  .carrossel-comodidades {
+    animation: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

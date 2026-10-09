@@ -1,0 +1,22 @@
+# Dependencias
+node_modules/
+
+# Segredos
+.env
+.env.*
+!.env.example
+
+# Artefactos de execucao das ferramentas
+screenshots/
+*.log
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Artefactos do MCP do Playwright
+.playwright-mcp/
+
+# Playground do React Bits: montra local, nao e molde de cliente
+playground-reactbits/node_modules/
+playground-reactbits/.next/

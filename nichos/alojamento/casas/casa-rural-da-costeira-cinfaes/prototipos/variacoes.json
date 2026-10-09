@@ -1,0 +1,29 @@
+[
+  {
+    "letra": "a",
+    "nome": "Granito",
+    "ideia": "A casa lida como projeto de arquitetura: grelha à vista, linhas finas, números, tudo em tons de pedra.",
+    "cor": "Família do granito e do pátio: cinza-pedra quente claro como fundo, quase-preto esverdeado no texto (#C3BFB5, #88827C, #272C23). Sem acento; a única cor é das fotos.",
+    "formato": "Grelha editorial de 12 colunas com as linhas da grelha visíveis em hairline; texto em coluna estreita, fotos alinhadas à grelha, umas sangram até à margem. Títulos em grotesca pesada com meia-frase em itálico serifado.",
+    "ritmo": "Regular e calmo: cada momento do guião é um bloco numerado (01—07) com rótulo no canto, separado por uma linha fina; muito branco entre blocos.",
+    "apresentacao": "Factos e quartos como fichas técnicas (rótulo / valor em duas colunas com linhas); citações pequenas em itálico, alinhadas à coluna de texto; contactos como tabela limpa no fim."
+  },
+  {
+    "letra": "b",
+    "nome": "Mato",
+    "ideia": "Uma sequência de cinema: fotos a ecrã inteiro e faixas verde-escuras, títulos altos em caixa alta, quase sem moldura.",
+    "cor": "Família do verde-escuro da mata e da relva à volta da piscina: verde-quase-preto como base das faixas escuras, papel cinza-esverdeado claro como contraponto (#2E372E, #33443C, #9C9479).",
+    "formato": "Painéis inteiros: alterna foto a sangrar com faixa de cor sólida; texto pousado em cima ou ao lado, nunca em caixas. Título em serifa condensada em caixa alta, acento em itálico serifado fino.",
+    "ritmo": "Cinematográfico: planos largos longos (foto inteira) cortados por pausas curtas só de texto; a sequência 'um dia cá fora' corre como três planos seguidos.",
+    "apresentacao": "Citações grandes em itálico, centradas, sozinhas numa faixa escura; quartos como tira horizontal de fotos com legenda curta; factos em linha única espaçada com separadores ·; contacto numa faixa final escura."
+  },
+  {
+    "letra": "c",
+    "nome": "Água",
+    "ideia": "Uma galeria quase vazia: papel branco-azulado, fotos soltas em tamanhos diferentes e o azul da piscina como única cor.",
+    "cor": "Família da água da piscina e do céu: branco-azulado como fundo, azul de piscina profundo como único acento e numa faixa sólida, texto em grafite (#E6F4FD, #447FC0, #37392E).",
+    "formato": "Colagem assimétrica tipo galeria: fotos de tamanhos e alturas desiguais com muito vazio entre elas, legendas minúsculas; títulos em serifa de alto contraste, enormes, a ocupar a largura.",
+    "ritmo": "Muito arejado e irregular: secções longas com poucas coisas, uma única faixa azul sólida a meio (o fecho do dia / a sala), o resto em papel.",
+    "apresentacao": "Citações como frases soltas grandes no meio do vazio; quartos como pares foto + legenda dispersos; factos em lista vertical com rótulos em caixa alta; contacto como uma linha grande e sublinhada."
+  }
+]

@@ -1,0 +1,9 @@
+{
+  "name": "criar-base",
+  "private": true,
+  "type": "module",
+  "description": "Scripts da skill criar-base. Só precisa do Playwright para a verificação automática.",
+  "dependencies": {
+    "playwright": "1.62.1"
+  }
+}

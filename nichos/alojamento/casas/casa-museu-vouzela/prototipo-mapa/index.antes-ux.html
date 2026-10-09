@@ -1,0 +1,1716 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Casa Museu · Seis casas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet"></noscript>
+<link href="https://cdn.jsdelivr.net/npm/maplibre-gl@5.6.0/dist/maplibre-gl.css" rel="stylesheet" media="print" onload="this.media='all'">
+<style>
+  :root {
+    --paper: #f2e6c9;
+    --ink: #24160b;
+    --ink-soft: #6b4d33;
+    --line: rgba(36, 22, 11, .3);
+    --red: #b3261e;
+    --red-dark: #7d1510;
+    --card: #f7e7c9;  /* creme quente (papel antigo): o "branco" de todo o site */
+    --vinho: #641c15;
+    --display: "Cormorant Garamond", Georgia, serif;
+    --serif: "Cormorant Garamond", Georgia, serif;
+    --sans: "Cormorant Garamond", Georgia, serif;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); }
+
+  /* altura estável no telemóvel: 100lvh é o ecrã sem a barra do browser; com a barra à vista, o fundo fica só tapado por ela */
+  .stage { position: fixed; left: 0; right: 0; top: 0; height: 100vh; height: 100lvh; overflow: hidden; }
+  /* secção dos contactos (telemóvel): madeira escurecida, texto creme e dourado; entra por baixo a seguir o scroll */
+  .contactos { display: none; }
+  @media (max-width: 759px) {
+    .contactos { display: grid; place-items: center; position: fixed; left: 0; right: 0; top: 0; height: 100vh; height: 100lvh; z-index: 25;
+      background: #2a1a10; transform: translateY(100%); will-change: transform; pointer-events: none; visibility: hidden; }
+    /* a mesma madeira do fecho, virada ao contrário: a emenda com o ecrã de cima fica espelhada e não se nota;
+       escurece aos poucos a partir da emenda, para o texto ter contraste */
+    .contactos::before { content: ""; position: absolute; inset: 0; background: #2a1a10 url(fotos/nogueira.jpg) center / cover; transform: scaleY(-1); }
+    .contactos::after { content: ""; position: absolute; inset: 0; background: linear-gradient(rgba(0, 0, 0, .38), rgba(20, 10, 4, .6) 30%, rgba(20, 10, 4, .68)); }
+    .contactos .cin { position: relative; z-index: 1; }
+    /* a sombra da mesa no fecho passa a vertical, para acabar em baixo com o mesmo tom com que a secção começa */
+    .mesa::after { background: linear-gradient(rgba(0, 0, 0, .12), rgba(0, 0, 0, .38)); }
+    .contactos.on { pointer-events: auto; visibility: visible; }
+    .contactos .cin { width: min(100%, 420px); padding: 32px 28px 48px; text-align: center; color: #f4e2c0; }
+    .contactos img { width: 64px; height: auto; }
+    .contactos .cnome { display: block; margin-top: 8px; font-family: var(--display); font-weight: 500; font-size: 30px; letter-spacing: .12em; text-transform: uppercase; color: #d9b87c; }
+    .contactos .kick { margin-top: 26px; font-size: 12px; color: #d9b87c; }
+    .contactos p { margin: 14px 0 0; font-size: 21px; line-height: 1.5; color: #ecd4ab; }
+    .contactos p em { font-style: italic; font-weight: 600; color: #e6b98a; }
+    .contactos small { display: block; margin: 34px 0 12px; font-size: 12px; font-weight: 700; letter-spacing: .26em; text-transform: uppercase; color: #d9b87c; }
+    .contactos a { display: block; width: fit-content; margin: 0 auto 12px; font-size: 26px; font-weight: 600; letter-spacing: .04em; color: #f4e2c0; text-decoration: none; border-bottom: 1.5px solid rgba(217, 184, 124, .6); padding-bottom: 2px; }
+    .contactos a[href^="mailto"] { font-size: 22px; }
+    /* no fecho os contactos saem do fundo (estão na secção seguinte): mais espaço para os cartões */
+    .outro .ohead .contacts { display: none; }
+  }
+  /* --barra: quanto a barra do browser tapa em baixo (o palco tem a altura do ecrã sem barra); o que está encostado ao fundo sobe isto */
+  :root { --barra: 0px; }
+  @supports (height: 100svh) { :root { --barra: calc(100lvh - 100svh); } }
+  .hprobe { position: fixed; left: 0; top: 0; width: 0; height: 100vh; height: 100lvh; visibility: hidden; pointer-events: none; }
+  #world { position: absolute; inset: 0; transform-origin: 0 0; will-change: transform; }
+  #map { position: absolute; inset: 0; }
+  /* fecho: a maquete de gesso pousada numa mesa de nogueira. o mar do mapa fica transparente e vê-se a mesa por baixo */
+  .mesa { position: absolute; inset: 0; background: #2a1a10 center / cover; opacity: 0; transition: opacity .9s; }
+  .mesa::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 90% at 60% 35%, rgba(255, 190, 120, .07), rgba(0, 0, 0, .38)); }
+  .fim .mesa { opacity: 1; }
+  /* sem recorte: o drone leva o "mundo" para os lados, e a foto e os cartões têm de continuar para lá do retângulo original
+     (o .stage, fixo e do tamanho do ecrã, é que corta) */
+  #aerial { position: absolute; inset: 0; overflow: visible; pointer-events: none; z-index: 1; }
+  .aerial-on #map.maplibregl-map { overflow: visible; }
+  /* os pioneses ficam por cima da foto aérea (o #map não cria contexto próprio, por isso o z-index sobe até aqui) */
+  .maplibregl-marker { z-index: 2; }
+  #aerial img { position: absolute; display: block; object-fit: fill; opacity: 0; visibility: hidden; will-change: transform, opacity; }
+  #aerial img.feather { -webkit-mask-image: radial-gradient(ellipse var(--fx, 71%) var(--fx, 71%) at 50% 50%, #000 52%, transparent 100%); mask-image: radial-gradient(ellipse var(--fx, 71%) var(--fx, 71%) at 50% 50%, #000 52%, transparent 100%); }  /* sem mix-blend-mode: por cima de um canvas WebGL obriga a recompor o ecrã inteiro a cada frame */
+  .grain, .vignette { position: absolute; inset: 0; pointer-events: none; }
+  .grain {
+    opacity: var(--grain, .1);
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .2  0 0 0 0 .12  0 0 0 0 .05  0 0 0 1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
+  /* por cima das fotos aéreas o grão (filtro caro, ecrã inteiro) e a vinheta não fazem falta */
+  .aerial-on .grain, .aerial-on .vignette { display: none !important; }
+  .vignette { display: var(--vig, block); background: radial-gradient(ellipse at 50% 50%, transparent 42%, rgba(60, 34, 12, .5) 130%); }
+
+  .brand { position: absolute; top: 28px; left: 36px; font-family: var(--serif); font-weight: 600; font-size: 21px; line-height: 1; letter-spacing: .24em; text-transform: uppercase; color: var(--ink); z-index: 3; }
+  .brand small { display: block; font-family: var(--sans); font-size: 12.5px; font-weight: 600; letter-spacing: .24em; color: var(--ink-soft); margin-top: 6px; }
+  .halo { text-shadow: 0 0 12px var(--paper), 0 0 5px var(--paper), 0 0 2px var(--paper); }
+  /* estilos de mar escuro: o halo claro vira mancha sobre o mar; o texto solto passa a ter uma etiqueta */
+  .fast .caption.halo { text-shadow: none; background: color-mix(in srgb, var(--card, #faf6ef) 92%, transparent); padding: 10px 14px 9px; border-radius: 3px; box-shadow: 0 10px 30px -18px rgba(0,0,0,.6); }
+
+  /* ---------- abertura em Vouzela ---------- */
+  .intro { position: absolute; inset: 0; pointer-events: none; opacity: 0; visibility: hidden; }
+  /* véu creme por baixo do título, para ler bem por cima da foto aérea */
+  /* mais pequeno e mais suave: só atrás do título, e entra deslizando a partir da borda esquerda */
+  .intro .scrim { position: absolute; left: 0; top: 0; bottom: 0; width: min(420px, 25vw); background: linear-gradient(90deg, rgba(239, 222, 188, .85) 0%, rgba(239, 222, 188, .55) 45%, rgba(239, 222, 188, .18) 75%, rgba(239, 222, 188, 0) 100%); opacity: 0; will-change: transform, opacity; }
+  .intro .head { position: absolute; left: 5vw; top: 14vh; width: min(560px, 36vw); }
+  .intro .kicker { font-size: 14px; font-weight: 700; letter-spacing: .3em; text-transform: uppercase; color: var(--vinho); }
+  .intro h1 { font-family: var(--title, var(--display)); font-weight: var(--title-w, 600); color: var(--title-ink, var(--ink)); font-size: var(--title-size, clamp(52px, 5.9vw, 98px)); line-height: var(--title-lh, .94); margin: 16px 0 0; letter-spacing: var(--title-ls, -.015em); text-shadow: 0 0 4px var(--paper), 0 0 1px var(--paper); }
+  .intro h1 em { color: var(--title-em, var(--vinho)); }
+  .intro h1 { text-transform: var(--title-tt, none); }
+  .intro h1 em { font-family: var(--title-em-font, inherit); text-transform: var(--title-em-tt, inherit); }
+  .cords { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+  .cords .shadow { fill: none; stroke: rgba(40, 20, 5, .22); stroke-width: 2; }
+  .cords .cord { fill: none; stroke: var(--red); stroke-width: 1.7; stroke-linecap: round; }
+  .polaroid { position: absolute; width: clamp(170px, 14vw, 226px); padding: 9px 9px 12px; background: var(--card); border: 0; text-align: left; cursor: pointer; color: var(--ink); font: inherit; pointer-events: auto;
+    transform: translate(-50%, 0) rotate(var(--r)); transform-origin: 50% 0; box-shadow: 0 2px 0 rgba(36, 22, 11, .08), 0 20px 40px -16px rgba(40, 20, 5, .55); transition: transform .35s cubic-bezier(.2,.7,.2,1); }
+  .polaroid:hover { transform: translate(-50%, -6px) rotate(0deg); }
+  .polaroid .gal { aspect-ratio: 1 / 1; }
+  .polaroid .pgo { display: block; width: 100%; padding: 0; background: none; border: 0; text-align: left; cursor: pointer; color: inherit; font: inherit; }
+  .polaroid small { display: block; margin: 10px 2px 2px; font-size: 11.5px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--red); }
+  .polaroid b { display: block; margin: 0 2px; font-family: var(--display); font-size: 26px; font-weight: 600; line-height: 1.05; }
+  .polaroid .tack { position: absolute; left: 50%; top: -9px; width: 18px; height: 18px; margin-left: -9px; filter: drop-shadow(0 2px 1px rgba(40, 20, 5, .3)); }
+
+  /* ---------- "faltam" + seta ---------- */
+  .next { position: absolute; left: 50%; bottom: 30px; transform: translate(-50%, 10px); opacity: 0; pointer-events: none; transition: opacity .4s, transform .4s; }
+  .next.on { opacity: 1; transform: translate(-50%, 0); pointer-events: auto; }
+  .next button { white-space: nowrap; display: flex; align-items: center; gap: 12px; background: var(--card); color: var(--red); border: 0; border-radius: 999px; padding: 12px 18px 12px 22px; font: 600 15px/1 var(--sans); letter-spacing: .08em; cursor: pointer; box-shadow: 0 12px 30px -12px rgba(40, 20, 5, .7); }
+  .next button em { font-family: var(--display); font-style: italic; font-weight: 600; font-size: 19px; letter-spacing: 0; }
+  .next .arrow { width: 18px; height: 18px; color: var(--red); animation: bob 1.6s ease-in-out infinite; }
+  @keyframes bob { 0%, 100% { transform: translateY(-2px); } 50% { transform: translateY(3px); } }
+
+  /* ---------- régua ---------- */
+  .ruler { position: absolute; right: 38px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; transition: opacity .4s; }
+  .ruler::before { content: ""; position: absolute; right: 5px; top: 20px; bottom: 20px; width: 1px; background: var(--line); }
+  .ruler .fill { position: absolute; right: 4.5px; top: 20px; width: 2px; height: 100%; background: var(--red); transform-origin: top; transform: scaleY(0); }
+  .ruler button { position: relative; display: flex; align-items: center; justify-content: flex-end; gap: 14px; background: none; border: 0; padding: 10px 0; cursor: pointer; color: var(--ink-soft); font: 600 12.5px/1.3 var(--sans); letter-spacing: .14em; text-transform: uppercase; text-align: right; }
+  .ruler button b { display: block; font-family: var(--display); font-size: 18px; letter-spacing: .01em; text-transform: none; font-weight: 600; color: var(--ink); opacity: .5; transition: opacity .3s; }
+  .ruler button i { width: 11px; height: 11px; border-radius: 50%; border: 1.5px solid var(--ink-soft); background: var(--paper); position: relative; z-index: 1; transition: transform .3s, background .3s; }
+  .ruler button.passed i { background: var(--red); border-color: var(--red); }
+  .ruler button.on b { opacity: 1; }
+  .ruler button.on i { transform: scale(1.4); }
+
+  .hud { position: absolute; left: 36px; bottom: 34px; display: flex; gap: 34px; align-items: flex-end; transition: opacity .4s; }
+  .hud small { display: block; font-size: 12.5px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 8px; }
+  .odo strong { font-family: var(--display); font-weight: 600; font-size: 56px; line-height: .9; font-variant-numeric: tabular-nums; }
+  .odo strong span { font-size: 20px; margin-left: 4px; color: var(--red); }
+  .scale .bar { height: 7px; border: 1.5px solid var(--ink); border-top: 0; width: 100px; }
+  .scale em { font-style: normal; font-size: 14px; font-weight: 700; display: block; margin-top: 6px; }
+  .caption { position: absolute; left: 50%; bottom: 40px; transform: translate(-50%, 8px); font-family: var(--display); font-style: italic; font-weight: 600; font-size: clamp(25px, 2.7vw, 36px); opacity: 0; transition: opacity .35s, transform .35s; white-space: nowrap; pointer-events: none; }
+  .caption.on { opacity: 1; transform: translate(-50%, 0); }
+
+  /* ---------- pioneses e postais ---------- */
+  .pin { width: 26px; height: 36px; cursor: pointer; }
+  .pin > * { transition: opacity .35s; }
+  /* o pionés e o cartão desfazem o zoom e a rotação do drone: ficam sempre direitos e do mesmo tamanho */
+  .pin .pinbody { position: absolute; inset: 0; transform-origin: 50% 100%; }
+  /* camada própria: a contra-rotação do drone roda o cartão (com a sombra) sem o redesenhar a cada fotograma */
+  .aerial-on .pin .pinbody { will-change: transform; }
+  .aerial-on .maplibregl-marker { will-change: transform; }
+  .pin .tackpin { position: absolute; left: 0; bottom: 0; width: 26px; height: 36px; overflow: visible; filter: drop-shadow(0 2px 1px rgba(40, 20, 5, .25)); }
+  .pin .stem { position: absolute; left: 50%; bottom: 30px; width: 1.6px; margin-left: -.8px; height: 30px; background: var(--red); }
+  .pin .thumb { position: absolute; left: 50%; bottom: 58px; width: 52px; height: 52px; margin-left: -26px; border-radius: 50%; overflow: hidden; border: 3px solid var(--card); box-shadow: 0 6px 14px -4px rgba(40, 20, 5, .5); }
+  .pin .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .pin .num { position: absolute; left: 25px; top: 2px; font: 700 14px/1 var(--sans); letter-spacing: .08em; color: var(--ink); white-space: nowrap; }
+  .pin .badge { position: absolute; left: 50%; bottom: 118px; transform: translateX(-50%); background: var(--red); color: var(--card); font: 700 12.5px/1 var(--sans); letter-spacing: .08em; padding: 6px 9px; border-radius: 999px; white-space: nowrap; opacity: 0; }
+  .pin.grouped .badge { opacity: 1; }
+  .pin.hidden { pointer-events: none; }
+  .pin.hidden > *, .pin.bare .thumb, .pin.bare .stem, .pin.bare .num { opacity: 0 !important; }
+
+  .card { position: absolute; left: 50%; bottom: 60px; width: 380px; transform: translate(calc(-50% + var(--cdx, 0px)), 16px) scale(.96); transform-origin: bottom center; opacity: 0; pointer-events: none; background: var(--card); padding: 10px 10px 18px; box-shadow: 0 2px 0 rgba(36, 22, 11, .08), 0 30px 70px -24px rgba(40, 20, 5, .6); transition: opacity .45s, transform .55s cubic-bezier(.2,.7,.2,1); }
+  .card .gal { aspect-ratio: 4 / 3; }
+  .card .meta { display: flex; flex-wrap: wrap; gap: 4px 12px; justify-content: space-between; font-size: 12.5px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--red); margin: 16px 8px 6px; }
+  .card h2 { font-family: var(--display); font-weight: 600; font-size: 40px; line-height: 1; margin: 0 8px 10px; }
+  .card p { font-size: 17.5px; line-height: 1.55; margin: 0 8px; color: #3d2a1a; }
+  .card .note { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line); font-family: var(--serif); font-style: italic; font-weight: 600; font-size: 17px; line-height: 1.35; color: var(--red-dark); }
+  .card a { display: inline-block; margin: 14px 8px 0; font-size: 14px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--ink); text-decoration: none; border-bottom: 2px solid var(--red); padding-bottom: 3px; }
+  .pin.active { z-index: 5; }
+  .pin.active .card { opacity: 1; transform: translate(calc(-50% + var(--cdx, 0px)), 0) scale(1); pointer-events: auto; }
+  .pin.active .thumb, .pin.active .num { opacity: 0; }
+  .pin.side-l .card { left: auto; right: 40px; bottom: auto; top: 12px; transform: translate(16px, -50%) scale(.96); transform-origin: right center; }
+  .pin.side-r .card { left: 40px; bottom: auto; top: 12px; transform: translate(-16px, -50%) scale(.96); transform-origin: left center; }
+  .pin.side-l.active .card, .pin.side-r.active .card { transform: translate(0, -50%) scale(1); }
+  .pin.side-l .stem, .pin.side-r .stem { opacity: 0 !important; }
+
+  /* régua e conta-quilómetros por cima da foto aérea: um fundo creme para se lerem */
+  .aerial-on .ruler, .aerial-on .hud { background: rgba(245, 230, 200, .92); border-radius: 14px; box-shadow: 0 12px 30px -18px rgba(40, 20, 5, .6); }
+  .aerial-on .ruler { padding: 10px 16px 10px 20px; right: 30px; }
+  .aerial-on .ruler::before { right: 21px; }
+  .aerial-on .ruler .fill { right: 20.5px; }
+  .aerial-on .hud { padding: 14px 20px; left: 28px; bottom: 28px; }
+
+  /* ---------- carrossel de fotos ---------- */
+  .gal { position: relative; overflow: hidden; background: #d9c9a8; }
+  .gal img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .45s ease; }
+  .gal img.on { opacity: 1; }
+  .gal button { position: absolute; top: 50%; width: 32px; height: 32px; margin-top: -16px; border-radius: 50%; border: 0; background: rgba(247, 231, 201, .92); color: var(--ink); display: grid; place-items: center; cursor: pointer; opacity: 0; transition: opacity .25s, transform .25s; box-shadow: 0 4px 12px -4px rgba(40, 20, 5, .5); }
+  .gal button svg { width: 16px; height: 16px; }
+  .gal .gprev { left: 8px; } .gal .gnext { right: 8px; }
+  .gal:hover button, .gal:focus-within button { opacity: 1; }
+  .gal button:hover { transform: scale(1.08); }
+  .gal .gdots { position: absolute; left: 0; right: 0; bottom: 8px; display: flex; justify-content: center; gap: 5px; pointer-events: none; }
+  .gal .gdots i { width: 6px; height: 6px; border-radius: 3px; background: rgba(247, 231, 201, .75); box-shadow: 0 1px 3px rgba(0, 0, 0, .3); transition: width .3s, background .3s; }
+  .gal .gdots i.on { width: 16px; background: var(--card); }
+  @media (hover: none) { .gal button { opacity: 1; } }
+
+  /* ---------- fecho ---------- */
+  .outro { position: absolute; inset: 0; pointer-events: none; visibility: hidden; transition: visibility 0s .9s; }
+  .outro.on { visibility: visible; transition: none; }
+  /* o título fica sobre o mar, em creme */
+  .outro .fscrim { position: absolute; left: var(--fw); top: 0; bottom: 0; width: 13vw; background: linear-gradient(90deg, rgba(239, 222, 188, .94) 0%, rgba(239, 222, 188, .85) 30%, rgba(239, 222, 188, 0) 100%); opacity: 0; transform: translateX(-40%); transition: opacity .8s, transform 1s cubic-bezier(.2,.7,.2,1); }
+  .outro.on .fscrim { opacity: 1; transform: none; }
+  .outro .ohead { position: absolute; left: 4.5vw; top: max(270px, 36vh); width: min(34vw, 560px); color: var(--ink); opacity: 0; transform: translateY(18px); transition: opacity .6s, transform .7s cubic-bezier(.2,.7,.2,1); pointer-events: auto; }
+  .outro.on .ohead { opacity: 1; transform: none; transition-delay: .35s; }
+  .outro h2 em { font-style: italic; color: var(--vinho); }
+  .outro .ohead p em { font-family: var(--serif); font-style: italic; font-weight: 600; font-size: 1.2em; color: var(--vinho); }
+  .outro h2 { font-family: var(--display); font-weight: 600; font-size: clamp(40px, 4.1vw, 70px); margin: 14px 0 18px; line-height: .95; }
+  .outro .ohead p { font-size: 19px; line-height: 1.55; margin: 0; color: #3d2a1a; max-width: 34ch; }
+  .outro .contacts { margin-top: 26px; font-size: 16.5px; font-weight: 600; letter-spacing: .06em; display: flex; gap: 8px 22px; flex-wrap: wrap; }
+  .outro .contacts a { color: inherit; text-decoration: none; border-bottom: 1.5px solid var(--vinho); padding-bottom: 2px; }
+  .outro .contacts small { flex-basis: 100%; font-size: 12.5px; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; color: var(--ink-soft); }
+  /* polaroids do fecho: entram uma a uma, e os fios a seguir */
+  .outro .polaroid { width: var(--pw, 150px); padding: 7px 7px 10px; opacity: 0; translate: 0 -22px; transition: opacity .5s, translate .6s cubic-bezier(.2,.7,.2,1), transform .35s cubic-bezier(.2,.7,.2,1); transition-delay: calc(var(--i) * 90ms + 150ms); }
+  .outro.on .polaroid { opacity: 1; translate: 0 0; }
+  /* rato por cima: a polaroid cresce e balouça presa ao pionés (o eixo é o pionés, por isso o fio não se solta) */
+  .outro .polaroid:hover { z-index: 2; transform: translate(-50%, 0) rotate(var(--r)) scale(1.08); animation: balouco 1.1s cubic-bezier(.3,.6,.3,1); box-shadow: 0 2px 0 rgba(36, 22, 11, .08), 0 34px 50px -18px rgba(40, 20, 5, .6); }
+  @keyframes balouco {
+    0%   { transform: translate(-50%, 0) rotate(var(--r)) scale(1); }
+    22%  { transform: translate(-50%, 0) rotate(calc(var(--r) + 5deg)) scale(1.08); }
+    46%  { transform: translate(-50%, 0) rotate(calc(var(--r) - 3.5deg)) scale(1.08); }
+    68%  { transform: translate(-50%, 0) rotate(calc(var(--r) + 1.8deg)) scale(1.08); }
+    86%  { transform: translate(-50%, 0) rotate(calc(var(--r) - .7deg)) scale(1.08); }
+    100% { transform: translate(-50%, 0) rotate(var(--r)) scale(1.08); }
+  }
+  @media (prefers-reduced-motion: reduce) { .outro .polaroid:hover { animation: none; } }
+  .outro .polaroid .gal img { opacity: 1; }
+  .outro .polaroid small { margin-top: 8px; font-size: 10.5px; letter-spacing: .18em; }
+  .outro .polaroid b { font-size: calc(var(--pw, 150px) * .145); }
+  /* computador: fotos deitadas e nome numa linha, para os cartões crescerem e as três filas caberem na altura */
+  @media (min-width: 760px) { .outro .polaroid .gal { aspect-ratio: 2 / 1; } .outro .polaroid b { font-size: calc(var(--pw, 150px) * .12); white-space: nowrap; } }
+  .outro .cords g { opacity: 0; transition: opacity .6s; transition-delay: calc(var(--i) * 90ms + 450ms); }
+  .outro.on .cords g { opacity: 1; }
+  .outro .cords .dot { fill: var(--red); stroke: var(--card); stroke-width: 2; }
+  .outro .cords text { font: 700 12.5px var(--sans); letter-spacing: .18em; text-transform: uppercase; fill: var(--ink); paint-order: stroke; stroke: var(--paper); stroke-width: 3px; }
+  /* estandarte de pano: uma tira pendurada de alto a baixo, encostada à esquerda, que acaba logo a seguir às letras.
+     a borda é ondulada como pano caído (recorte calculado no script) e tem um galão dourado; cai de cima ao abrir o fecho */
+  .outro { --fwt: 36vw; }
+  .outro .flagwrap { position: absolute; left: 0; top: 0; bottom: 0; width: var(--fwt); pointer-events: none;
+    filter: drop-shadow(8px 2px 10px rgba(40, 20, 5, .45)) drop-shadow(2px 0 1px rgba(40, 20, 5, .35));
+    transform: translateY(-102%); transition: transform 1.1s cubic-bezier(.3,.7,.2,1); }
+  .outro.on .flagwrap { transform: none; }
+  .outro .flagwrap .hem { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+  .outro .flag { position: absolute; inset: 0; padding: clamp(28px, 5vh, 56px) 14px 0 0; clip-path: var(--fclip, none);
+    display: flex; flex-direction: column; align-items: center; pointer-events: none;
+    background: linear-gradient(90deg, rgba(0,0,0,.2), rgba(0,0,0,0) 10%, rgba(255,255,255,.04) 35%, rgba(0,0,0,0) 60%), linear-gradient(180deg, #5a1411, #6d1b17 28%, #661815 70%, #5a1411);
+    }
+  .outro .flag::before, .outro .flag::after { content: ""; position: absolute; inset: 0; pointer-events: none; }
+  /* trama: ruído fino + fios cruzados */
+  .outro .flag::before { background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.95 .35' numOctaves='2' seed='3'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 1.4 -.35'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"), repeating-linear-gradient(0deg, rgba(0,0,0,.07) 0 1px, transparent 1px 3px), repeating-linear-gradient(90deg, rgba(255,255,255,.035) 0 1px, transparent 1px 3px); mix-blend-mode: overlay; opacity: .9; }
+  /* pregas: sombras compridas na vertical, como pano pendurado */
+  .outro .flag::after { background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='1200' preserveAspectRatio='none'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.0045 .0006' numOctaves='3' seed='8'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.6 0 0 0 -.55'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E") 0 0 / 100% 100%, repeating-linear-gradient(90deg, rgba(0,0,0,0) 0, rgba(0,0,0,.14) 9%, rgba(255,255,255,.05) 15%, rgba(0,0,0,0) 22%); mix-blend-mode: multiply; opacity: .75; }
+  .outro .flag img, .outro .flag b { position: relative; z-index: 1; }
+  .outro .flag img { width: clamp(64px, 5.4vw, 100px); height: auto; filter: drop-shadow(0 1px 0 rgba(0,0,0,.35)); }
+  .outro .flag b { margin-top: clamp(10px, 1.6vh, 18px); font-family: var(--display); font-weight: 500; font-size: clamp(26px, 2.3vw, 42px); line-height: 1.02; letter-spacing: .07em; text-transform: uppercase; text-align: center; color: #d9b87c; text-shadow: 0 1px 0 rgba(0,0,0,.35); }
+  /* o texto fica todo em cima do pano, em creme e dourado */
+  .outro .ohead { color: #f4e2c0; text-align: center; }
+  .outro .contacts { justify-content: center; }
+  .outro .ohead .kick, .outro .contacts small { color: #d9b87c; }
+  .outro h2 em, .outro .ohead p em { color: #e6b98a; }
+  .outro .ohead p { color: #ecd4ab; margin-left: auto; margin-right: auto; }
+  .outro .contacts a { border-bottom-color: rgba(217, 184, 124, .7); }
+  .brand { transition: opacity .6s; }
+  .fim .brand { opacity: 0; }
+  .kick { font-size: 14px; font-weight: 700; letter-spacing: .3em; text-transform: uppercase; color: var(--vinho); }
+
+  /* ---------- hero: a foto da Casa Museu encolhe até ser a polaroid dela no mapa ---------- */
+  .hero { position: fixed; left: 0; right: 0; top: 0; height: 100vh; height: 100lvh; z-index: 20; pointer-events: none; }
+  .hero .hphoto { position: absolute; left: 0; top: 0; width: 100vw; height: 100vh; overflow: hidden; background: #2a2016; transform-origin: 50% 50%; will-change: transform, width, height; }
+  .hero .hphoto img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 38%; display: block; }
+  .hero .hphoto picture { display: contents; }
+  .aerial-on .hero .hphoto img { object-fit: fill; }
+  .hero .hshade { position: absolute; inset: 0; background:
+      linear-gradient(90deg, rgba(20, 13, 6, .78) 0%, rgba(20, 13, 6, .5) 38%, rgba(20, 13, 6, 0) 68%),
+      linear-gradient(0deg, rgba(20, 13, 6, .75) 0%, rgba(20, 13, 6, .3) 22%, rgba(20, 13, 6, 0) 42%),
+      linear-gradient(180deg, rgba(20, 13, 6, .45) 0%, rgba(20, 13, 6, 0) 16%); }
+  .hero .hfade { position: absolute; inset: 0; }
+  /* telemóvel: o hero abre mais afastado (vê-se a casa toda) e aproxima-se até ao retângulo do voo; por baixo, fundo escuro */
+  .hero .hback { position: absolute; inset: 0; background: #1d150d; display: none; }
+  .hero.hzoom .hback { display: block; }
+  .hero.hzoom .hphoto, .hero.hzoom .hvoo { -webkit-mask-image: linear-gradient(180deg, #000 calc(100% - var(--mk, 0%)), transparent); mask-image: linear-gradient(180deg, #000 calc(100% - var(--mk, 0%)), transparent); }
+  .hero .hvoo { position: absolute; object-fit: fill; opacity: 0; pointer-events: none; }
+  .hero .htop { position: absolute; top: 34px; left: 5vw; right: 5vw; display: flex; justify-content: space-between; align-items: baseline; color: #f4e2c0; }
+  .hero .htop b { font-family: var(--serif); font-weight: 600; font-size: 21px; letter-spacing: .24em; text-transform: uppercase; }
+  .hero .htop span { font-size: 14px; font-weight: 600; letter-spacing: .24em; text-transform: uppercase; opacity: .8; }
+  .hero .htext { position: absolute; left: 5vw; bottom: 17vh; width: min(620px, 50vw); color: #f4e2c0; }
+  .hero .htext .kicker { font-size: 14px; font-weight: 700; letter-spacing: .3em; text-transform: uppercase; color: #dcb27c; }
+  .hero h1 { font-family: var(--display); font-weight: 600; font-size: clamp(62px, 7.8vw, 128px); line-height: .9; letter-spacing: -.02em; margin: 18px 0 26px; }
+  .hero h1 em { display: block; font-style: italic; }
+  .hero h1 .v { color: var(--vinho); }
+  .hero p { font-family: var(--serif); font-size: clamp(17px, 1.3vw, 20px); font-weight: 500; line-height: 1.4; margin: 0; max-width: 24em; text-wrap: balance; color: #ecd4ab; }
+  .hero .hcta { white-space: nowrap; position: absolute; left: 50%; bottom: 34px; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 12px; background: none; border: 0; cursor: pointer; color: #f4e2c0; font: 600 14px/1 var(--sans); letter-spacing: .3em; text-transform: uppercase; pointer-events: auto; }
+  .hero .hcta i { width: 1px; height: 46px; background: rgba(244, 226, 192, .35); position: relative; overflow: hidden; }
+  .hero .hcta i::after { content: ""; position: absolute; left: 0; top: 0; width: 1px; height: 18px; background: #f4e2c0; animation: drip 1.8s cubic-bezier(.6,0,.3,1) infinite; }
+  @keyframes drip { from { transform: translateY(-18px); } to { transform: translateY(46px); } }
+  .hero .hcta svg { width: 14px; height: 14px; margin-top: -8px; }
+
+  /* o CSS do MapLibre põe Helvetica em tudo o que vive dentro do mapa (os cartões das casas) */
+  #map.maplibregl-map { font-family: var(--sans); }
+  .maplibregl-ctrl-attrib { background: transparent !important; font-size: 9px; opacity: .6; }
+  .scroller { position: relative; pointer-events: none; }
+  /* telemóvel: a página não rola; cada gesto leva à secção seguinte (ver snapTo) */
+  html.snap, html.snap body { overflow: hidden; overscroll-behavior: none; height: 100%; }
+  html.snap .scroller { display: none; }
+
+  @media (max-width: 760px) {
+    .brand { top: 22px; left: 22px; font-size: 14px; }
+    .brand small { display: none; }
+    .intro .head { left: 22px; right: 22px; top: 54px; width: auto; }
+    /* sem faixa: uma vinheta suave só atrás da frase (sem borda nem retângulo), que desvanece sem deslizar */
+    .intro .scrim { right: 0; bottom: auto; width: auto; height: 46vh; background: radial-gradient(ellipse 90% 70% at 20% 22%, rgba(239, 222, 188, .82) 0%, rgba(239, 222, 188, .5) 45%, rgba(239, 222, 188, 0) 100%); }
+    .intro h1 { font-size: 48px; }
+    .intro .kicker { font-size: 12px; letter-spacing: .2em; }
+    .polaroid { width: 124px; padding: 6px 6px 8px; }
+    .polaroid small { font-size: 9.5px; letter-spacing: .12em; margin-top: 6px; }
+    .polaroid b { font-size: 18px; }
+    .polaroid .gal button { width: 24px; height: 24px; margin-top: -12px; }
+    .polaroid .gal .gprev { left: 4px; } .polaroid .gal .gnext { right: 4px; }
+    .ruler { display: none; }
+    .hud { display: none; }
+    .aerial-on .hud { left: 16px; bottom: 80px; padding: 10px 14px; }
+    /* por cima da foto aérea a casa fica a meio do ecrã: cartão mais baixo para caber por cima do pionés */
+    .aerial-on .card { bottom: 44px; padding-bottom: 14px; }
+    .aerial-on .card .gal { aspect-ratio: 16 / 9; }
+    .aerial-on .card .meta { margin-top: 12px; }
+    .aerial-on .card h2 { font-size: 31px; margin-bottom: 6px; }
+    .aerial-on .card .note { display: none; }
+    .aerial-on .card a { margin-top: 10px; }
+    .odo strong { font-size: 38px; }
+    .scale { display: none; }
+    .next { bottom: calc(22px + var(--barra)); }
+    .next button { font-size: 14px; padding: 10px 14px; }
+    .next button em { font-size: 19px; }
+    .card { width: min(320px, 84vw); }
+    .card h2 { font-size: 34px; }
+    .card p { font-size: 16.5px; }
+    .caption { bottom: 30px; font-size: 25px; }
+    /* telemóvel: título em cima, Portugal ao meio, polaroids em 3 x 2 em baixo */
+    /* telemóvel: bandeira mais baixa e larga no canto, só com o brasão e o nome numa linha; o título logo a seguir */
+    .outro { --fh: 236px; }
+    .outro .flagwrap { bottom: auto; width: 100%; height: var(--fwt); filter: drop-shadow(0 8px 10px rgba(40, 20, 5, .4)) drop-shadow(0 2px 1px rgba(40, 20, 5, .3)); }
+    .outro .flag { padding: 14px 0 0; }
+    .outro .flag img { width: 36px; }
+    .outro .flag b { margin-top: 5px; font-size: 18px; letter-spacing: .12em; }
+    .outro .flag b br { display: none; }
+    .outro .contacts small { display: none; }
+    .outro .ohead { left: 22px; right: 22px; top: 90px; width: auto; transform: translateY(14px); }
+    .outro.on .ohead { transform: none; }
+    .outro .kick { font-size: 11.5px; }
+    .outro h2 { font-size: 44px; margin: 8px 0 0; line-height: .92; }
+    .outro .ohead p { display: none; }
+    .outro .contacts { position: fixed; left: 20px; right: 20px; bottom: 14px; margin: 0; font-size: 14px; gap: 4px 14px; justify-content: center; color: #f4e2c0; text-shadow: 0 1px 6px rgba(20, 10, 4, .9), 0 0 2px rgba(20, 10, 4, .8); }
+    .outro .contacts a { border-bottom-color: rgba(244, 226, 192, .5); }
+    .outro .polaroid { padding: 5px 5px 7px; }
+    .outro .polaroid .gal { aspect-ratio: 3 / 2; }
+    .outro .polaroid b { font-size: calc(var(--pw, 150px) * .115); white-space: nowrap; }
+    /* nomes dos sítios no mapa mais pequenos */
+    .outro .cords text { font-size: 9.5px; letter-spacing: .12em; stroke-width: 2.5px; }
+    .outro .polaroid small { font-size: 9px; letter-spacing: .12em; margin-top: 5px; }
+    .hero .htop { top: 24px; left: 22px; right: 22px; }
+    .hero .htop b { font-size: 14px; }
+    .hero .htop span { display: none; }
+    .hero .hshade { background: linear-gradient(0deg, rgba(20, 13, 6, .9) 0%, rgba(20, 13, 6, .62) 50%, rgba(20, 13, 6, 0) 84%),
+      linear-gradient(180deg, rgba(20, 13, 6, .5) 0%, rgba(20, 13, 6, 0) 14%); }
+    .hero .htext .kicker { font-size: 11px; letter-spacing: .13em; white-space: nowrap; }
+    .hero .htext { left: 22px; right: 22px; width: auto; bottom: calc(19vh + var(--barra)); }
+    .hero h1 { font-size: 56px; margin: 14px 0 18px; }
+    .hero p { font-size: 16px; }
+    .hero .hcta { bottom: calc(22px + var(--barra)); }
+    .hero .hcta i { height: 34px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .next .arrow, .hero .hcta i::after { animation: none; } }
+</style>
+</head>
+<body>
+<!-- gradientes partilhados pelos pioneses -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <radialGradient id="tackHead" cx="38%" cy="32%" r="70%">
+      <stop offset="0" stop-color="#ef5a45"/><stop offset=".55" stop-color="#b3261e"/><stop offset="1" stop-color="#6e120c"/>
+    </radialGradient>
+    <linearGradient id="tackNeedle" x1="0" x2="1"><stop offset="0" stop-color="#8b8b8b"/><stop offset=".5" stop-color="#e2e2e2"/><stop offset="1" stop-color="#6b6b6b"/></linearGradient>
+  </defs>
+</svg>
+
+<div class="hprobe" id="hprobe"></div>
+<div class="stage">
+  <div class="mesa" aria-hidden="true"></div>
+  <!-- "mundo": o mapa e a foto aérea mexem-se juntos quando o drone voa de casa em casa por cima da foto da vila -->
+  <div id="world">
+    <div id="map" aria-label="Mapa das seis casas"></div>
+    <div id="aerial" aria-hidden="true"></div>
+  </div>
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <div class="brand halo">Casa Museu<small>Vouzela · Oliveira de Frades · Alvor</small></div>
+
+  <div class="intro" id="intro">
+    <div class="scrim"></div>
+    <svg class="cords" id="cords"></svg>
+    <div class="head halo">
+      <div class="kicker">O mapa das seis casas</div>
+      <h1>Quatro na vila, uma no campo, <em>uma no mar.</em></h1>
+    </div>
+    <div id="polaroids"></div>
+  </div>
+
+  <nav class="ruler halo" aria-label="As seis casas"><div class="fill"></div></nav>
+
+  <div class="hud halo">
+    <div class="odo"><small>Da receção, na Casa Museu</small><strong id="odo">0<span>m</span></strong></div>
+    <div class="scale"><small>Escala</small><div class="bar" id="scalebar"></div><em id="scaletxt">—</em></div>
+  </div>
+  <div class="caption halo" id="caption"></div>
+
+  <div class="next" id="next">
+    <button type="button"><span id="nexttxt"></span>
+      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v15M6 13l6 6 6-6"/></svg>
+    </button>
+  </div>
+
+  <!-- fecho: as seis polaroids presas por fios vermelhos ao sítio exato de cada casa no mapa -->
+  <div class="outro" id="outro">
+    <!-- o estandarte da fachada: o texto por cima fica claro dentro dele e escuro fora (a cópia clara é recortada pela bandeira) -->
+    <div class="flagwrap" aria-hidden="true">
+      <div class="flag"><img src="fotos/brasao.png" alt=""><b>Casa <br>Museu</b></div>
+      <svg class="hem"><path class="h1" fill="none" stroke="#2e0907" stroke-width="2" stroke-opacity=".45"/><path class="h2" fill="none" stroke="#3f0d0a" stroke-width="9" stroke-opacity=".22"/><path class="h3" fill="none" stroke="#2e0907" stroke-width="1" stroke-dasharray="4 4" stroke-opacity=".35"/></svg>
+    </div>
+    <svg class="cords" id="fimcords"></svg>
+    <div class="ohead">
+      <div class="kick">Uma família, seis portas</div>
+      <h2>Escolha a sua <em>casa.</em></h2>
+      <p>Quatro portas na vila de Vouzela, uma entre os campos de Nespereira e outra à beira-mar, em Alvor. <em>Todas da mesma família.</em></p>
+      <div class="contacts"><small>Reservas diretas</small>
+        <a href="tel:+351232771514">232 771 514</a>
+        <a href="tel:+351966059265">966 059 265</a>
+        <a href="mailto:info@casamuseu.com">info@casamuseu.com</a>
+      </div>
+    </div>
+    <div id="fimpols"></div>
+  </div>
+</div>
+
+<section class="hero" id="hero" aria-label="Seis casas, uma família">
+  <!-- o hero é o 1.º fotograma do voo (telemóvel ao alto: a faixa vertical); o script confirma a escolha e o retângulo -->
+  <div class="hback"></div>
+  <div class="hphoto" id="hphoto"><picture>
+    <img alt="A fachada da Casa Museu, em Vouzela" fetchpriority="high" decoding="async">
+  </picture></div>
+  <video class="hvoo" id="hvoo" muted playsinline preload="auto" aria-hidden="true"></video>
+  <script>
+  // corre já, a meio da leitura da página: o hero nasce no retângulo da foto aérea de Vouzela (as mesmas contas que
+  // aerialFit/layoutVoo fazem depois) e com a imagem certa, sem esperar pelo mapa. Assim não há salto nem 2 downloads.
+  (function () {
+    var img = document.querySelector('#hphoto img');
+    if (/[?&]semaerea/.test(location.search)) { img.src = 'fotos/hero-casa-museu.jpg'; return; }
+    var W = innerWidth, H = document.getElementById('hprobe').offsetHeight || innerHeight, sc = Math.max(W / 1600, H / 900), iw = 1600 * sc, ih = 900 * sc;
+    var cl = function (v, a, b) { return Math.min(b, Math.max(a, v)); };
+    var ox = cl(W / 2 - .62 * iw, W - iw, 0), oy = cl(H * .55 - .5 * ih, H - ih, 0);
+    var x0 = 1690 / 3840, x1 = 3072 / 3840, faixa = -ox / iw >= x0 && (W - ox) / iw <= x1;
+    if (!faixa) { x0 = 0; x1 = 1; }
+    img.src = faixa ? 'fotos/voo-m-0.jpg' : 'fotos/voo-0.jpg';
+    var box = 'left:' + (ox + x0 * iw) + 'px;top:' + oy + 'px;width:' + ((x1 - x0) * iw) + 'px;height:' + ih + 'px';
+    document.getElementById('hphoto').style.cssText = box; document.getElementById('hvoo').style.cssText = box;
+    // ecrã ao alto: abre afastado, com a faixa inteira à largura do ecrã (a mesma conta que heroZoom faz depois)
+    var bw = (x1 - x0) * iw, z0 = W < H ? cl(W / bw, .7, 1) : 1;
+    if (z0 < 1) { var hs = document.getElementById('hero'), o = (W / 2 - (ox + x0 * iw)) + 'px 0px'; hs.classList.add('hzoom');
+      ['hphoto', 'hvoo'].forEach(function (id) { var st = document.getElementById(id).style; st.transformOrigin = o; st.transform = 'scale(' + z0 + ')'; st.setProperty('--mk', ((1 - z0) * 80).toFixed(1) + '%'); }); }
+  })();
+  </script>
+  <div class="hshade" id="hshade"></div>
+  <div class="hfade" id="hfade">
+    <div class="htop"><b>Casa Museu</b><span>Vouzela · Oliveira de Frades · Alvor</span></div>
+    <div class="htext">
+      <div class="kicker">Uma família de antiquários de Vouzela</div>
+      <h1>Seis casas, <em>uma só <span class="v">família.</span></em></h1>
+      <p>Quatro casas no centro de Vouzela, uma no campo e outra junto ao mar, em Alvor.</p>
+    </div>
+    <button type="button" class="hcta" id="hcta">Veja as seis casas<i></i>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+  </div>
+</section>
+<!-- telemóvel: depois do fecho, o cabeçalho completo e os contactos numa secção na madeira, que sobe por cima ao continuar o scroll -->
+<section class="contactos" id="contactos" aria-label="Reservas diretas">
+  <div class="cin">
+    <img src="fotos/brasao.png" alt="">
+    <b class="cnome">Casa Museu</b>
+    <div class="kick">Uma família, seis portas</div>
+    <p>Quatro portas na vila de Vouzela, uma entre os campos de Nespereira e outra à beira-mar, em Alvor. <em>Todas da mesma família.</em></p>
+    <small>Reservas diretas</small>
+    <a href="tel:+351232771514">232 771 514</a>
+    <a href="tel:+351966059265">966 059 265</a>
+    <a href="mailto:info@casamuseu.com">info@casamuseu.com</a>
+  </div>
+</section>
+<div class="scroller" id="scroller"></div>
+
+<script type="module">
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+// 1.º a foto do hero aparece; só depois o motor do mapa (pesado no telemóvel) é lido e posto a correr
+await new Promise(r => { const im = document.querySelector('#hphoto img'); if (im.complete) return r(); im.addEventListener('load', r, { once: true }); im.addEventListener('error', r, { once: true }); setTimeout(r, 3500); });
+await new Promise(r => requestAnimationFrame(() => setTimeout(r, 0)));
+if (!window.maplibregl) await new Promise((r, j) => { const sc = document.createElement('script'); sc.src = 'https://cdn.jsdelivr.net/npm/maplibre-gl@5.6.0/dist/maplibre-gl.js'; sc.onload = r; sc.onerror = j; document.head.appendChild(sc); });
+// a página abre sempre no início do percurso, mesmo ao recarregar
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+scrollTo(0, 0);
+
+// ---------- as casas (dados dos dossiês) ----------
+const HOUSES = [
+  { id: 'museu', n: '01', name: 'Casa Museu', imgs: ['fotos/casa-museu-1.jpg', 'fotos/casa-museu-2.jpg'], ll: [-8.11249, 40.72296],
+    meta: ['Vouzela', 'Desde 2008'], text: 'Hospedaria de 11 quartos no centro histórico, entre arte sacra e peças de antiquário.',
+    note: 'A receção do grupo: aqui faz-se o check-in da Penthouse, da Casa das Ameias e do BIKEINN.',
+    cam: { zoom: 17.4, pitch: 48, bearing: -18 } },
+  { id: 'penthouse', n: '02', name: 'Penthouse', imgs: ['fotos/penthouse-1.jpg', 'fotos/penthouse-2.jpg'], ll: [-8.1123392, 40.7228504],
+    meta: ['Vouzela', 'Desde 2018'], text: 'Três quartos num último andar, com os telhados da vila à janela. A opção mais em conta.',
+    caption: 'Vinte metros ao lado.', cam: { zoom: 17.8, pitch: 50, bearing: 14 } },
+  { id: 'ameias', n: '03', name: 'Casa das Ameias', imgs: ['fotos/ameias-1.jpg', 'fotos/ameias-2.jpg'], ll: [-8.1106896, 40.723327],
+    meta: ['Praça da República', 'Desde 2022'], text: 'Casa quinhentista com ameias, reerguida das ruínas: oito suites, capela, piscina e o Museu do Pastel.',
+    caption: 'Pela praça, até às ameias.', cam: { zoom: 17.3, pitch: 48, bearing: 38 } },
+  { id: 'bikeinn', n: '04', name: 'BIKEINN', imgs: ['fotos/bikeinn-1.jpg', 'fotos/bikeinn-2.jpg'], ll: [-8.1103009, 40.7236318],
+    meta: ['Vouzela', 'Desde 2021'], text: 'Casa de granito recuperada para ciclistas, a poucos metros da ecopista. Cinco quartos com nome de camisola.',
+    caption: 'Cinquenta metros, junto à ecopista.', cam: { zoom: 17.5, pitch: 48, bearing: 60 } },
+  { id: 'aido', n: '05', name: 'Casa Aido Santo', imgs: ['fotos/aido-santo-1.jpg', 'fotos/aido-santo-2.jpg'], ll: [-8.23056, 40.72822],
+    meta: ['Nespereira', 'Séc. XVII'], text: 'Casa beirã à volta de um pátio, alugada inteira: até 16 pessoas, piscina e forno de lenha.',
+    caption: 'Dez quilómetros, para o campo.', cam: { zoom: 15.4, pitch: 45, bearing: 22 } },
+  { id: 'philips', n: '06', name: "Philip's Flat", imgs: ['fotos/philips-flat-1.jpg', 'fotos/philips-flat-2.jpg'], ll: [-8.5926779, 37.1263558],
+    meta: ['Alvor, Algarve', 'Desde 2015'], text: 'Apartamento de praia num condomínio com piscina, para quatro pessoas em férias.',
+    caption: 'Quatrocentos quilómetros, até ao mar.', cam: { zoom: 15.2, pitch: 50, bearing: 172 } },
+];
+const PORTUGAL = [[-9.9, 36.8], [-6.0, 42.2]];
+const TOWN = HOUSES.slice(0, 4);
+
+// onde fica cada polaroid na abertura: [x do centro, y do topo] em fração do ecrã, e a inclinação
+const SLOTS = {
+  wide:   { museu: [.53, .12, -4], penthouse: [.47, .60, 3], ameias: [.74, .60, -3], bikeinn: [.82, .12, 4] },
+  narrow: { museu: [.24, .32, -4], penthouse: [.26, .69, 3], ameias: [.74, .71, -3], bikeinn: [.76, .33, 4] },
+};
+
+// um gesto = uma secção (ver snapTo), no telemóvel e no computador. ?livre volta ao scroll contínuo antigo
+// scroll: o original (livre, o ecrã segue o scroll) é o padrão. ?snap = uma secção por gesto; ?travar = livre mas um gesto não passa da secção seguinte
+const SNAP = new URLSearchParams(location.search).has('snap');
+
+// ---------- guião ----------
+// unidades de scroll de uma viagem: 20 m ≈ .37, 150 m ≈ .6, 10 km ≈ 1.3, 400 km ≈ 2
+function legUnits(a, b) {
+  const r = Math.PI / 180, m = 6371e3 * Math.hypot((b[0] - a[0]) * r * Math.cos(a[1] * r), (b[1] - a[1]) * r);
+  return .25 + .12 * Math.log2(1 + m / 20);
+}
+// pad: >0 empurra o ponto para baixo do ecrã; <0 para cima. padX: >0 empurra para a direita
+const SCENES = [
+  { id: 'vila', cam: { center: [-8.1113, 40.72325], zoom: 16.75, pitch: 36, bearing: -14 }, pad: .04, padX: .26, hold: 1.4 },
+  // telemóvel (um gesto por casa): paragem curta e viagem proporcional à distância (escala logarítmica: 20 m passa
+  // num instante, 400 km levam mais tempo). No computador fica o ritmo de sempre.
+  ...HOUSES.map((h, i) => ({ id: h.id, house: h, cam: { center: h.ll, ...h.cam }, pad: .36, padX: 0,
+      hold: SNAP ? [.4, .4, .4, .55, .9, .9][i] : [.9, .9, .9, 1.3, 1.6, 1.6][i],
+      tin: SNAP ? (i ? legUnits(HOUSES[i - 1].ll, h.ll) : .6) : [1.0, .7, .8, .7, 1.4, 2.2][i], caption: h.caption })),
+  { id: 'fim', overview: true, hold: 1.2, tin: 1.8 },
+];
+// unidades do guião para o hero se transformar no mapa (antes da vila); o voo em vídeo precisa de mais espaço
+const HERO_U = new URLSearchParams(location.search).has('semaerea') ? 2.4 : 2.8;
+const SCROLL_VH = 62;  // quanto scroll vale cada unidade do guião: mais scroll por transição = tudo aparece mais devagar (era 38)
+const SMOOTH_MS = 90;  // a câmara segue o scroll quase sem atraso (só alisa os saltos da roda); era 150
+
+// ---------- estilos para comparar: ?estilo=carta | mono | topo | campo ----------
+// cada um muda as cores do mapa, o relevo e o título; o resto da página é igual
+const PRESETS = {
+  // carta de estrada antiga: estradas amarelas com contorno, telhados terracota
+  carta: { css: {},
+    P: { land: '#f2e6c9', wood: '#cfd4a0', urban: '#ead6ad', water: '#9fc4c0', coast: '#2f5557', river: '#5f8f8f', shadow: '#4a2f18', highlight: '#fffaf0',
+      border: '#6b3a1c', caseDark: '#4a2c16', minorFill: '#fffaf0', majorFill: '#f0b25a', motorFill: '#c8553d', bld: '#dfa77a', bldLine: '#6e3f20', label: '#2a180a' },
+    hill: { max: 9, layerMax: 11, ex: .6 }, contours: false },
+  // papel branco e tinta preta; só os pioneses, as linhas e o título a vermelho
+  mono: { css: { '--paper': '#f7f5f0', '--title': '"Instrument Serif", Georgia, serif', '--title-w': '400', '--title-ink': '#111' },
+    P: { land: '#f7f5f0', wood: '#eceae3', urban: '#f0ede6', water: '#dde3e4', coast: '#3a3a3a', river: '#8a9596', shadow: '#2b2b2b', highlight: '#ffffff',
+      border: '#555', caseDark: '#2b2b2b', minorFill: '#f7f5f0', majorFill: '#f7f5f0', motorFill: '#f7f5f0', bld: '#e3dfd6', bldLine: '#6f6a60', label: '#222' },
+    hill: { max: 12, layerMax: 24, ex: .35 }, contours: false },
+  // carta topográfica: curvas de nível e relevo a sério, também dentro da vila
+  topo: { css: { '--paper': '#f3ead6', '--title': '"Fraunces", Georgia, serif', '--title-w': '700', '--title-ink': '#3a2412', '--title-em': '#a8431f' },
+    P: { land: '#f3ead6', wood: '#e2dfbd', urban: '#efe2c8', water: '#a9c7c9', coast: '#3e6466', river: '#6f9a9b', shadow: '#5a3b1e', highlight: '#fffaf0',
+      border: '#7a4a24', caseDark: '#7a5a3a', minorFill: '#fbf5e8', majorFill: '#ebc27e', motorFill: '#d27a4e', bld: '#e4c9a3', bldLine: '#8b6a48', label: '#3a2412' },
+    hill: { max: 12, layerMax: 24, ex: .9 }, contours: true, vilaZoom: 15.3 },
+  // campo: verdes, estradas brancas, título verde-escuro
+  campo: { css: { '--paper': '#eef0e2', '--title': '"Cormorant Garamond", Georgia, serif', '--title-w': '700', '--title-ink': '#1d3527' },
+    P: { land: '#eef0e2', wood: '#c9d8ad', urban: '#e7e6d3', water: '#b3d3d6', coast: '#4f7f86', river: '#7fa9ad', shadow: '#3c4f33', highlight: '#ffffff',
+      border: '#56613f', caseDark: '#7c8570', minorFill: '#ffffff', majorFill: '#f4d58d', motorFill: '#e39a6a', bld: '#dccbb0', bldLine: '#8c7a5e', label: '#1d3527' },
+    hill: { max: 12, layerMax: 24, ex: .55 }, contours: false },
+};
+// ----- três direções com mais personalidade -----
+// azulejo: cobalto sobre branco, o mar em padrão de azulejo
+PRESETS.azulejo = { css: { '--paper': '#f8f5ee', '--title': '"Playfair Display", Georgia, serif', '--title-w': '900', '--title-ink': '#16317d', '--title-em': '#b3261e', '--vig': 'none', '--title-lh': '.98', '--title-size': 'clamp(44px, 4.7vw, 78px)' },
+  P: { land: '#f8f5ee', landPattern: 'azulejoSoft', wood: '#e3e9f5', urban: '#f2f1ec', water: '#dbe4f5', waterPattern: 'azulejo', coast: '#16317d', river: '#3d5fb0', shadow: '#16317d', highlight: '#ffffff',
+    border: '#16317d', noCase: true, caseDark: '#16317d', minorFill: '#16317d', majorFill: '#16317d', motorFill: '#16317d', roadScale: .38, bld: '#d3def4', bldLine: '#16317d', label: '#16317d' },
+  hill: { max: 12, layerMax: 24, ex: .3 }, contours: false, vilaZoom: 16.3 };
+// cartaz de viagem dos anos 50: cores chapadas, estradas brancas grossas, título condensado
+PRESETS.cartaz = { css: { '--paper': '#f3e3c3', '--title': '"Anton", Impact, sans-serif', '--title-w': '400', '--title-ink': '#1b2a41', '--title-em': '#c4532d', '--title-tt': 'uppercase', '--title-ls': '.005em', '--title-lh': '.98', '--vig': 'none', '--title-em-font': '"Playfair Display", Georgia, serif', '--title-em-tt': 'none' },
+  P: { land: '#f3e3c3', wood: '#7d9a45', woodOpacity: 1, urban: '#ecd3a4', water: '#1f7a8c', coast: '#1b2a41', river: '#1f7a8c', shadow: '#5b3317', highlight: '#fff3d6',
+    border: '#1b2a41', noCase: true, caseDark: '#1b2a41', minorFill: '#fffaf0', majorFill: '#fffaf0', motorFill: '#fffaf0', roadScale: 1.25, bld: '#c4532d', bldLine: '#c4532d', label: '#1b2a41' },
+  hill: { max: 12, layerMax: 24, ex: .65 }, contours: false, vilaZoom: 15.8 };
+// risografia: duas tintas (azul e rosa) com pontos de impressão e registo desacertado
+PRESETS.riso = { css: { '--paper': '#f4efe6', '--title': '"Syne", sans-serif', '--title-w': '800', '--title-ink': '#0068b0', '--title-em': '#ff3fa4', '--grain': '.28', '--vig': 'none', '--title-ls': '-.03em', '--title-lh': '.92', '--title-size': 'clamp(38px, 3.9vw, 64px)' },
+  P: { land: '#f4efe6', wood: '#f4efe6', woodPattern: 'dotsBlue', urban: '#f4efe6', water: '#bcd6ec', waterPattern: 'dotsBlueDense', coast: '#0068b0', river: '#0068b0', shadow: '#0068b0', highlight: '#ffffff',
+    border: '#ff3fa4', noCase: true, caseDark: '#0068b0', minorFill: '#0068b0', majorFill: '#0068b0', motorFill: '#ff3fa4', roadScale: .5, ghost: '#ff3fa4', bld: '#ffc2df', bldPattern: 'dotsPink', bldLine: '#ff3fa4', label: '#0068b0' },
+  hill: { max: 12, layerMax: 24, ex: .3 }, contours: false, vilaZoom: 16.1 };
+
+// ----- estilos rápidos: poucas camadas, estradas sem contorno, mar escuro -----
+// o fundo é o mar e a terra vem de um contorno local (fotos/terra.json, 38 KB), por isso a meio de uma
+// viagem longa a costa aparece logo, mesmo antes de os mosaicos chegarem; de perto passa para os mosaicos
+const FAST = (c) => ({ css: { '--paper': c.paper || c.land }, fast: true, hill: { max: 12, layerMax: 24, ex: 0 }, contours: false,
+  P: { wood: c.land, urban: c.land, shadow: c.sea, highlight: '#fff', border: c.line, caseDark: c.line, noCase: true, coast: c.coast || c.line, river: c.river || c.sea,
+    minorFill: c.minor, majorFill: c.major, motorFill: c.motor, bld: c.bld, bldLine: c.bldLine || c.bld, label: c.label, halo: c.halo || c.land, ...c } });
+// papel e tinta: terra branca, estradas a carvão, mar azul-tinta
+PRESETS.tinta = FAST({ land: '#f6f3ec', sea: '#1e2d3b', line: '#2b2622', minor: '#b9b2a6', major: '#4a443d', motor: '#2b2622', bld: '#e4dfd4', bldLine: '#b9b2a6', river: '#6d7f8c', label: '#2b2622' });
+// ardósia: terra cinza-quente, estradas brancas, mar azul-ardósia
+PRESETS.ardosia = FAST({ land: '#ebe6dc', sea: '#2f4a5a', line: '#6c6558', minor: '#fbf9f5', major: '#ffffff', motor: '#ffffff', bld: '#d9d2c4', river: '#7d95a3', label: '#2f4a5a' });
+// petróleo: terra creme, estradas cor de areia, mar azul-petróleo fundo
+PRESETS.petroleo = FAST({ land: '#efdfbe', sea: '#f3e8d2', lake: '#6b4a30', coast: '#a8926a', line: '#8b7658', minor: '#d5c4a3', major: '#b8a178', motor: '#9c8252', bld: '#e1d0af', river: '#7a5a3e', label: '#2c5a66' });  // rios e albufeiras da cor da mesa de nogueira
+// a terra do Petróleo já vem desenhada, em maquete creme: relevo em gesso com luz a noroeste, sombra da terra no mar,
+// rios e divisórias (Natural Earth). 300 KB; da Madeira a França e ao norte de Marrocos, para a imagem nunca acabar à vista: o browser não tem de pintar um canvas de 4096 px no arranque
+PRESETS.petroleo.terraPng = 'fotos/terra-maquete.webp';
+// a maquete tem resolução até perto do nível 10; depois ficam os mosaicos (creme, estradas, rios)
+PRESETS.petroleo.terraFade = [9.5, 10.5];
+PRESETS.petroleo.credit = 'Relevo, rios e divisórias: Natural Earth';
+// noite: terra carvão, mar quase preto, estradas douradas apagadas
+PRESETS.noite = FAST({ paper: '#f5f1ea', land: '#2b2825', sea: '#10181f', line: '#c9b07a', coast: '#6d5f45', minor: '#45403a', major: '#6e6252', motor: '#a48b5c', bld: '#3a3632', bldLine: '#4a4540', river: '#2c4454', label: '#e2d6bd', halo: '#2b2825' });
+
+// padrões desenhados em canvas (a 2x) para o mapa usar como textura
+const PATTERNS = {
+  azulejo(ink = '#16317d', bg = '#f7f4ec', S = 96) {
+    const c = document.createElement('canvas'); c.width = c.height = S; const g = c.getContext('2d');
+    g.fillStyle = bg; g.fillRect(0, 0, S, S);
+    g.strokeStyle = ink; g.fillStyle = ink; g.lineWidth = 2;
+    g.strokeRect(1, 1, S - 2, S - 2);
+    const m = S / 2;
+    for (const [x, y] of [[0, 0], [S, 0], [0, S], [S, S]]) { g.beginPath(); g.arc(x, y, S * .22, 0, Math.PI * 2); g.stroke(); g.beginPath(); g.arc(x, y, S * .1, 0, Math.PI * 2); g.fill(); }
+    for (const a of [0, 1, 2, 3]) { g.save(); g.translate(m, m); g.rotate(a * Math.PI / 2); g.beginPath(); g.ellipse(0, -S * .16, S * .07, S * .15, 0, 0, Math.PI * 2); g.fill(); g.restore(); }
+    g.beginPath(); g.arc(m, m, S * .06, 0, Math.PI * 2); g.fillStyle = bg; g.fill(); g.stroke();
+    g.fillStyle = ink;
+    for (const [x, y] of [[m, 6], [m, S - 6], [6, m], [S - 6, m]]) { g.beginPath(); g.moveTo(x, y - 5); g.lineTo(x + 5, y); g.lineTo(x, y + 5); g.lineTo(x - 5, y); g.fill(); }
+    return g.getImageData(0, 0, S, S);
+  },
+  dots(color, step, r, bg) {
+    const S = step * 2, c = document.createElement('canvas'); c.width = c.height = S; const g = c.getContext('2d');
+    if (bg) { g.fillStyle = bg; g.fillRect(0, 0, S, S); }
+    g.fillStyle = color;
+    for (const [x, y] of [[step / 2, step / 2], [step * 1.5, step * 1.5]]) { g.beginPath(); g.arc(x, y, r, 0, Math.PI * 2); g.fill(); }
+    return g.getImageData(0, 0, S, S);
+  },
+};
+const PATTERN_FNS = {
+  azulejo: () => PATTERNS.azulejo(),
+  azulejoSoft: () => PATTERNS.azulejo('#d3dcf0', '#f8f5ee', 160),
+  dotsBlue: () => PATTERNS.dots('#0068b0', 10, 2, '#f4efe6'),
+  dotsBlueDense: () => PATTERNS.dots('#0068b0', 7, 2.4, '#dbe8f4'),
+  dotsPink: () => PATTERNS.dots('#ff3fa4', 6, 2, '#ffe1ef'),
+};
+
+const ESTILO = PRESETS[new URLSearchParams(location.search).get('estilo')] ? new URLSearchParams(location.search).get('estilo') : 'petroleo';
+const PRE = PRESETS[ESTILO];
+const P = { ...PRE.P, route: '#b3261e' };
+for (const [k, v] of Object.entries(PRE.css)) document.documentElement.style.setProperty(k, v);
+document.documentElement.classList.toggle('fast', !!PRE.fast);
+
+// curvas de nível calculadas no browser a partir do mesmo relevo (só no estilo topo)
+let contourSrc = null;
+if (PRE.contours && window.mlcontour) {
+  const dem = new mlcontour.DemSource({ url: 'https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png', encoding: 'terrarium', maxzoom: 12, worker: true });
+  dem.setupMaplibre(maplibregl);
+  contourSrc = { type: 'vector', maxzoom: 15, tiles: [dem.contourProtocolUrl({ thresholds: { 9: [100, 500], 11: [50, 250], 13: [20, 100], 15: [10, 50] }, elevationKey: 'ele', levelKey: 'level', contourLayer: 'contours' })] };
+}
+
+const RS = P.roadScale || 1;
+const road = (cls) => ['match', ['get', 'class'], cls, true, false];
+const W = (pairs) => ['interpolate', ['exponential', 1.6], ['zoom'], ...pairs];
+
+// com as fotos aéreas o relevo quase não se vê (só nas viagens) e custa muito: fica de fora
+const SEM_RELEVO = !new URLSearchParams(location.search).has('semaerea');
+const style = {
+  version: 8,
+  glyphs: 'https://tiles.openfreemap.org/fonts/{fontstack}/{range}.pbf',
+  sources: {
+    ofm: { type: 'vector', url: 'https://tiles.openfreemap.org/planet' },
+    // relevo só na vista do país: perto do chão não se nota e custa muito
+    ...(SEM_RELEVO ? {} : { hs: { type: 'raster-dem', tiles: ['https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png'], encoding: 'terrarium', tileSize: 256, maxzoom: PRE.hill.max } }),
+    ...(contourSrc ? { contours: contourSrc } : {}),
+    routes: { type: 'geojson', lineMetrics: true, data: { type: 'FeatureCollection', features: [] } },
+    sea: { type: 'geojson', data: { type: 'Feature', properties: { t: 'O C E A N O   A T L Â N T I C O' }, geometry: { type: 'Point', coordinates: [-11.2, 39.4] } } },
+  },
+  layers: PRE.fast ? [
+    // longe: fundo = mar, terra do contorno local. perto (a partir do 11): fundo = terra, o mar vem dos mosaicos
+    { id: 'bg', type: 'background', paint: { 'background-color': PRE.terraFade ? ['interpolate', ['linear'], ['zoom'], PRE.terraFade[0], P.sea, PRE.terraFade[1], P.land] : ['interpolate', ['linear'], ['zoom'], 10.5, P.sea, 11.5, P.land] } },
+    // o oceano é creme; rios e albufeiras ficam azuis, e uma linha fina marca a costa quando já se vêem os mosaicos
+    { id: 'water', type: 'fill', source: 'ofm', 'source-layer': 'water', paint: { 'fill-color': P.lake ? ['match', ['get', 'class'], 'ocean', P.sea, P.lake] : P.sea } },
+    ...(P.lake ? [{ id: 'coast', type: 'line', source: 'ofm', 'source-layer': 'water', minzoom: 9, filter: ['==', ['get', 'class'], 'ocean'], paint: { 'line-color': P.coast, 'line-width': W([9, .6, 16, 1.6]), 'line-opacity': .7 } }] : []),
+    { id: 'river', type: 'line', source: 'ofm', 'source-layer': 'waterway', minzoom: 10, filter: ['==', ['get', 'class'], 'river'], paint: { 'line-color': P.river, 'line-width': W([10, .6, 16, 3]) } },
+    { id: 'border', type: 'line', source: 'ofm', 'source-layer': 'boundary', filter: ['all', ['==', ['get', 'admin_level'], 2], ['!=', ['get', 'maritime'], 1]], maxzoom: PRE.terraFade ? 0 : 9, paint: { 'line-color': P.line, 'line-width': .8, 'line-opacity': .45, 'line-dasharray': [3, 2] } },
+    { id: 'minor', type: 'line', source: 'ofm', 'source-layer': 'transportation', minzoom: 13, filter: road(['minor', 'service', 'tertiary', 'secondary']), layout: { 'line-cap': 'round', 'line-join': 'round' }, paint: { 'line-color': P.minor, 'line-width': W([13, .4, 18, 7]) } },
+    { id: 'major', type: 'line', source: 'ofm', 'source-layer': 'transportation', minzoom: 8, filter: road(['primary', 'trunk']), layout: { 'line-cap': 'round', 'line-join': 'round' }, paint: { 'line-color': P.major, 'line-width': W([8, .4, 18, 10]) } },
+    { id: 'motorway', type: 'line', source: 'ofm', 'source-layer': 'transportation', minzoom: 6, filter: road(['motorway']), layout: { 'line-cap': 'round' }, paint: { 'line-color': P.motor, 'line-width': W([6, .5, 18, 12]) } },
+    { id: 'bld', type: 'fill', source: 'ofm', 'source-layer': 'building', minzoom: 15, paint: { 'fill-color': P.bld, 'fill-outline-color': P.bldLine } },
+    { id: 'route', type: 'line', source: 'routes', filter: ['<', ['get', 'k'], 0], layout: { 'line-cap': 'round' }, paint: { 'line-color': P.route, 'line-width': 2.5, 'line-dasharray': [2, 1.6] } },
+    { id: 'route-live', type: 'line', source: 'routes', filter: ['==', ['get', 'k'], -1], layout: { 'line-cap': 'round' }, paint: { 'line-width': 3, 'line-gradient': ['step', ['line-progress'], P.route, 1, 'rgba(0,0,0,0)'] } },
+    { id: 'towns', type: 'symbol', source: 'ofm', 'source-layer': 'place', minzoom: 6, maxzoom: 11,
+      filter: ['all', ['==', ['get', 'class'], 'city'], ['<=', ['coalesce', ['get', 'rank'], 99], 6]],
+      layout: { 'text-field': ['upcase', ['coalesce', ['get', 'name:pt'], ['get', 'name']]], 'text-font': ['Noto Sans Regular'], 'text-size': 10, 'text-letter-spacing': .3 },
+      paint: { 'text-color': P.label, 'text-opacity': .75, 'text-halo-color': P.halo, 'text-halo-width': 1.2 } },
+    { id: 'sea', type: 'symbol', source: 'sea', maxzoom: 8, layout: { 'text-field': ['get', 't'], 'text-font': ['Noto Sans Italic'], 'text-size': 13, 'text-rotate': -80, 'text-letter-spacing': .2 }, paint: { 'text-color': P.lake ? P.coast : P.land, 'text-opacity': P.lake ? .8 : .55 } },
+  ] : [
+    { id: 'bg', type: 'background', paint: P.landPattern ? { 'background-pattern': P.landPattern } : { 'background-color': ['interpolate', ['linear'], ['zoom'], 10.5, P.water, 11.5, P.land] } },
+    { id: 'wood', type: 'fill', source: 'ofm', 'source-layer': 'landcover', filter: ['in', ['get', 'class'], ['literal', ['wood', 'forest']]], paint: P.woodPattern ? { 'fill-pattern': P.woodPattern } : { 'fill-color': P.wood, 'fill-opacity': P.woodOpacity || .7 } },
+    { id: 'urban', type: 'fill', source: 'ofm', 'source-layer': 'landuse', filter: ['in', ['get', 'class'], ['literal', ['residential', 'suburb', 'neighbourhood']]], paint: { 'fill-color': P.urban, 'fill-opacity': .7 } },
+    ...(SEM_RELEVO ? [] : [{ id: 'hill', type: 'hillshade', source: 'hs', maxzoom: PRE.hill.layerMax, paint: { 'hillshade-shadow-color': P.shadow, 'hillshade-highlight-color': P.highlight, 'hillshade-accent-color': P.shadow, 'hillshade-exaggeration': PRE.hill.ex } }]),
+    ...(contourSrc ? [
+      { id: 'contour', type: 'line', source: 'contours', 'source-layer': 'contours', paint: { 'line-color': '#9a6a3c', 'line-opacity': ['match', ['get', 'level'], 1, .8, .45], 'line-width': ['match', ['get', 'level'], 1, 1.3, .7] } },
+      { id: 'contour-label', type: 'symbol', source: 'contours', 'source-layer': 'contours', filter: ['>', ['get', 'level'], 0], layout: { 'symbol-placement': 'line', 'text-field': ['concat', ['number-format', ['get', 'ele'], {}], ' m'], 'text-font': ['Noto Sans Italic'], 'text-size': 10 }, paint: { 'text-color': '#8a5a2e', 'text-halo-color': P.land, 'text-halo-width': 1.4 } },
+    ] : []),
+    { id: 'water', type: 'fill', source: 'ofm', 'source-layer': 'water', paint: P.waterPattern ? { 'fill-pattern': P.waterPattern } : { 'fill-color': P.water } },
+    { id: 'coast', type: 'line', source: 'ofm', 'source-layer': 'water', paint: { 'line-color': P.coast, 'line-width': W([4, .6, 12, 1.6]) } },
+    { id: 'river', type: 'line', source: 'ofm', 'source-layer': 'waterway', minzoom: 9, paint: { 'line-color': P.river, 'line-width': W([9, .5, 16, 3]) } },
+    { id: 'border', type: 'line', source: 'ofm', 'source-layer': 'boundary', filter: ['==', ['get', 'admin_level'], 2], maxzoom: 10, paint: { 'line-color': P.border, 'line-width': 1.4, 'line-dasharray': [4, 2, 1, 2] } },
+    { id: 'path', type: 'line', source: 'ofm', 'source-layer': 'transportation', minzoom: 15, filter: road(['path', 'track']), paint: { 'line-color': P.caseDark, 'line-width': 1, 'line-dasharray': [2, 2], 'line-opacity': .6 } },
+    // estradas com contorno escuro e miolo claro: é isto que dá o contraste de mapa impresso
+    { id: 'minor-case', type: 'line', source: 'ofm', 'source-layer': 'transportation', minzoom: 13, filter: road(['minor', 'service', 'tertiary', 'secondary']), layout: { 'line-cap': 'round', 'line-join': 'round', visibility: P.noCase ? 'none' : 'visible' }, paint: { 'line-color': P.caseDark, 'line-width': W([13, 1, 18, 11]) } },
+    { id: 'major-case', type: 'line', source: 'ofm', 'source-layer': 'transportation', minzoom: 8, filter: road(['primary', 'trunk', 'motorway']), layout: { 'line-cap': 'round', 'line-join': 'round', visibility: P.noCase ? 'none' : 'visible' }, paint: { 'line-color': P.caseDark, 'line-width': W([7, 1.2, 18, 17]) } },
+    ...(P.ghost ? [{ id: 'ghost', type: 'line', source: 'ofm', 'source-layer': 'transportation', minzoom: 7, filter: road(['minor', 'service', 'tertiary', 'primary', 'secondary', 'trunk', 'motorway']), layout: { 'line-cap': 'round', 'line-join': 'round' }, paint: { 'line-color': P.ghost, 'line-opacity': .75, 'line-translate': [3, 2], 'line-width': W([7, .5 * RS, 18, 12 * RS]) } }] : []),
+    { id: 'minor', type: 'line', source: 'ofm', 'source-layer': 'transportation', minzoom: 13, filter: road(['minor', 'service', 'tertiary', 'secondary']), layout: { 'line-cap': 'round', 'line-join': 'round' }, paint: { 'line-color': P.minorFill, 'line-width': W([13, .3 * RS, 18, 8 * RS]) } },
+    { id: 'major', type: 'line', source: 'ofm', 'source-layer': 'transportation', minzoom: 8, filter: road(['primary', 'trunk']), layout: { 'line-cap': 'round', 'line-join': 'round' }, paint: { 'line-color': P.majorFill, 'line-width': W([7, .5 * RS, 18, 13 * RS]) } },
+    { id: 'motorway', type: 'line', source: 'ofm', 'source-layer': 'transportation', minzoom: 5, filter: road(['motorway']), layout: { 'line-cap': 'round' }, paint: { 'line-color': P.motorFill, 'line-width': W([5, .8 * RS, 18, 14 * RS]) } },
+    { id: 'bld', type: 'fill', source: 'ofm', 'source-layer': 'building', minzoom: 14.5, paint: P.bldPattern ? { 'fill-pattern': P.bldPattern } : { 'fill-color': P.bld } },
+    { id: 'bldline', type: 'line', source: 'ofm', 'source-layer': 'building', minzoom: 14.5, paint: { 'line-color': P.bldLine, 'line-width': W([14.5, .4, 18, 1.4]) } },
+    // troços já percorridos: tracejado. troço em curso: linha que cresce (line-gradient, sem mexer nos dados)
+    { id: 'route', type: 'line', source: 'routes', filter: ['<', ['get', 'k'], 0], layout: { 'line-cap': 'round' }, paint: { 'line-color': P.route, 'line-width': 2.5, 'line-dasharray': [2, 1.6] } },
+    { id: 'route-live', type: 'line', source: 'routes', filter: ['==', ['get', 'k'], -1], layout: { 'line-cap': 'round' }, paint: { 'line-width': 3, 'line-gradient': ['step', ['line-progress'], P.route, 1, 'rgba(0,0,0,0)'] } },
+    { id: 'towns', type: 'symbol', source: 'ofm', 'source-layer': 'place', minzoom: 6, maxzoom: 12,
+      filter: ['in', ['get', 'class'], ['literal', ['city', 'town']]],
+      layout: { 'text-field': ['upcase', ['coalesce', ['get', 'name:pt'], ['get', 'name']]], 'text-font': ['Noto Sans Bold'], 'text-size': W([6, 9, 12, 12]), 'text-letter-spacing': .3 },
+      paint: { 'text-color': P.label, 'text-halo-color': P.land, 'text-halo-width': 1.6 } },
+    { id: 'sea', type: 'symbol', source: 'sea', maxzoom: 8, layout: { 'text-field': ['get', 't'], 'text-font': ['Noto Sans Italic'], 'text-size': 13, 'text-rotate': -80, 'text-letter-spacing': .2 }, paint: { 'text-color': P.coast } },
+  ],
+};
+
+const map = new maplibregl.Map({
+  container: 'map', style, center: SCENES[0].cam.center, zoom: SCENES[0].cam.zoom, pitch: SCENES[0].cam.pitch, bearing: SCENES[0].cam.bearing,
+  interactive: false, attributionControl: false, maxPitch: 55, fadeDuration: 0, renderWorldCopies: false, maxTileCacheSize: 800,
+  pixelRatio: Math.min(devicePixelRatio || 1, 1.5),
+});
+map.addControl(new maplibregl.AttributionControl({ compact: true, customAttribution: PRE.credit }), 'bottom-right');
+// no telemóvel os créditos ficam fechados no (i): abertos tapavam os contactos do fecho
+map.once('load', () => { if (narrow()) document.querySelector('.maplibregl-ctrl-attrib')?.classList.remove('maplibregl-compact-show'); });
+// a terra da Península desenhada uma vez num canvas (em Mercator) e posta como imagem por baixo
+// da água. uma imagem não passa pela fila dos mosaicos: a meio de uma viagem longa a costa já lá está
+if (!P.landPattern) map.once('load', async () => {
+  const [X0, Y0, X1, Y1] = [-19, 31, 8, 47];
+  const add = (url) => {
+    map.addSource('terra', { type: 'image', url, coordinates: [[X0, Y1], [X1, Y1], [X1, Y0], [X0, Y0]] });
+    // a imagem só tem resolução para o país: sai antes de ficar desfocada
+    const [z0, z1] = PRE.terraFade || [10.5, 11.5];
+    map.addLayer({ id: 'terra', type: 'raster', source: 'terra', maxzoom: z1, paint: { 'raster-fade-duration': 0, 'raster-resampling': 'linear', 'raster-opacity': ['interpolate', ['linear'], ['zoom'], z0, 1, z1, 0] } }, map.getLayer('wood') ? 'wood' : 'water');
+    dirty = true;
+  };
+  if (PRE.terraPng) return add(PRE.terraPng);
+  const gj = await (await fetch('fotos/terra.json')).json();
+  const w0 = toW([X0, Y1]), w1 = toW([X1, Y0]);
+  const Wd = 4096, Hd = Math.round(Wd * (w1[1] - w0[1]) / (w1[0] - w0[0]));
+  const c = document.createElement('canvas'); c.width = Wd; c.height = Hd; const g = c.getContext('2d');
+  g.fillStyle = P.land; g.beginPath();
+  for (const poly of gj.geometry.coordinates) for (const ring of poly) ring.forEach((p, i) => { const w = toW(p), x = (w[0] - w0[0]) / (w1[0] - w0[0]) * Wd, y = (w[1] - w0[1]) / (w1[1] - w0[1]) * Hd; i ? g.lineTo(x, y) : g.moveTo(x, y); });
+  g.fill('evenodd');
+  add(URL.createObjectURL(await new Promise(r => c.toBlob(r))));
+});
+map.on('styleimagemissing',(e) => { const f = PATTERN_FNS[e.id]; if (f && !map.hasImage(e.id)) map.addImage(e.id, f(), { pixelRatio: 2 }); });
+
+// ---------- utilidades ----------
+const toW = ([lng, lat]) => { const s = Math.sin(lat * Math.PI / 180); return [(lng + 180) / 360, .5 - Math.log((1 + s) / (1 - s)) / (4 * Math.PI)]; };
+const fromW = ([x, y]) => [x * 360 - 180, 360 / Math.PI * Math.atan(Math.exp((1 - 2 * y) * Math.PI)) - 90];
+const lerp = (a, b, t) => a + (b - a) * t;
+const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+const ease = (t) => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+const lerpAngle = (a, b, t) => a + ((((b - a + 540) % 360) - 180) * t);
+const hav = (a, b) => { const R = 6371e3, r = Math.PI / 180; const dLa = (b[1] - a[1]) * r, dLo = (b[0] - a[0]) * r; const x = Math.sin(dLa / 2) ** 2 + Math.cos(a[1] * r) * Math.cos(b[1] * r) * Math.sin(dLo / 2) ** 2; return 2 * R * Math.asin(Math.sqrt(x)); };
+const fmt = (m) => m < 1000 ? [String(Math.round(m / 5) * 5), 'm'] : [(m / 1000).toFixed(m < 20000 ? 1 : 0).replace('.', ','), 'km'];
+const $ = (s) => document.querySelector(s);
+const narrow = () => innerWidth < 760;
+// altura estável do ecrã (sem a barra do browser): todas as contas de layout usam esta, não innerHeight
+let STABLE_H = $('#hprobe').offsetHeight || innerHeight;
+const VH = () => STABLE_H;
+// quanto a barra do browser pode tapar em baixo (100lvh - 100svh)
+const BAR = () => { const p = $('#hprobe'); p.style.height = '100svh'; const sv = p.offsetHeight; p.style.height = ''; return sv ? Math.max(0, p.offsetHeight - sv) : 0; };
+HOUSES.forEach((h, i) => { h.dist = hav(HOUSES[0].ll, h.ll); h.step = i ? hav(HOUSES[i - 1].ll, h.ll) : 0; });
+const TACK = `<svg class="tackpin" viewBox="0 0 26 36" aria-hidden="true"><ellipse cx="17" cy="34.6" rx="5" ry="1.5" fill="rgba(40,20,5,.35)"/><path d="M13 17 L13 35" stroke="url(#tackNeedle)" stroke-width="1.8" stroke-linecap="round"/><circle cx="13" cy="11" r="9.5" fill="url(#tackHead)"/><ellipse cx="9.6" cy="7.4" rx="3.2" ry="2.1" fill="rgba(255,255,255,.55)"/></svg>`;
+
+// carrossel: a primeira foto é a principal; setas e deslizar mudam de foto
+const ARROW = (d) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="${d}"/></svg>`;
+function gallery(h) {
+  const n = h.imgs.length;
+  return `<div class="gal" data-i="0">${h.imgs.map((src, i) => `<img ${i ? 'data-src' : 'src'}="${src}" class="${i ? '' : 'on'}" decoding="async" fetchpriority="low" alt="${h.name}, foto ${i + 1} de ${n}">`).join('')}
+    ${n > 1 ? `<button type="button" class="gprev" aria-label="Foto anterior">${ARROW('M15 5l-7 7 7 7')}</button><button type="button" class="gnext" aria-label="Foto seguinte">${ARROW('M9 5l7 7-7 7')}</button>
+    <div class="gdots">${h.imgs.map((_, i) => `<i class="${i ? '' : 'on'}"></i>`).join('')}</div>` : ''}</div>`;
+}
+// as fotos que não são a principal só se descarregam quando o rato passa pelo cartão ou se muda de foto
+const fillGallery = (g) => g && g.querySelectorAll('img[data-src]').forEach((im) => { im.src = im.dataset.src; im.removeAttribute('data-src'); });
+document.addEventListener('pointerover', (e) => fillGallery(e.target.closest && e.target.closest('.gal')), { passive: true });
+function stepGallery(g, d) {
+  fillGallery(g);
+  const imgs = g.querySelectorAll('img'), dots = g.querySelectorAll('.gdots i');
+  const i = (+g.dataset.i + d + imgs.length) % imgs.length;
+  g.dataset.i = i;
+  imgs.forEach((im, k) => im.classList.toggle('on', k === i));
+  dots.forEach((dt, k) => dt.classList.toggle('on', k === i));
+}
+// em captura: as setas não podem chegar ao clique do pionés, que leva à casa
+document.addEventListener('click', (e) => {
+  const b = e.target.closest('.gprev, .gnext');
+  if (!b) return;
+  e.stopPropagation(); e.preventDefault();
+  stepGallery(b.closest('.gal'), b.classList.contains('gnext') ? 1 : -1);
+}, true);
+let swipe = null;
+document.addEventListener('touchstart', (e) => { const g = e.target.closest('.gal'); swipe = g ? { g, x: e.touches[0].clientX, y: e.touches[0].clientY } : null; }, { passive: true });
+document.addEventListener('touchend', (e) => {
+  if (!swipe) return;
+  const dx = e.changedTouches[0].clientX - swipe.x, dy = e.changedTouches[0].clientY - swipe.y;
+  if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy) * 1.5) stepGallery(swipe.g, dx < 0 ? 1 : -1);
+  swipe = null;
+}, { passive: true });
+
+// ---------- câmara ----------
+// fecho no computador: Portugal grande, quase da altura do ecrã, encostado à direita (de Espanha só se vê uma franja)
+// recorte apertado (Portugal 20% maior): corta o Minho e a franja da raia; Vouzela e Alvor ficam sempre à vista
+const FIM_PT = { pad: .025, left: .685, right: 6, bounds: [[-9.75, 36.97], [-6.65, 41.12]] };
+// onde fica a costa de Portugal no fecho (para os cartões não passarem dela): proporção altura/largura de Portugal em Mercator
+function fimCoastX(W, H) {
+  const my = (lat) => Math.log(Math.tan(Math.PI / 4 + lat * Math.PI / 360)), mx = (lng) => lng * Math.PI / 180;
+  const B = FIM_PT.bounds, ratio = (my(B[1][1]) - my(B[0][1])) / (mx(B[1][0]) - mx(B[0][0]));
+  const box = W - W * FIM_PT.left - FIM_PT.right, ptW = H * (1 - 2 * FIM_PT.pad) / ratio;
+  return W * FIM_PT.left + Math.max(0, (box - ptW) / 2);
+}
+function overviewCam() {
+  const pad = Math.min(innerWidth, VH()) * .1;
+  const wide = !narrow();  // o mesmo corte que as polaroids do fecho
+  const c = map.cameraForBounds(wide ? FIM_PT.bounds : PORTUGAL, { padding: wide ? { top: VH() * FIM_PT.pad, bottom: VH() * FIM_PT.pad, left: innerWidth * FIM_PT.left, right: FIM_PT.right } : { top: VH() * .3, bottom: VH() * .1, left: innerWidth * .25, right: innerWidth * .25 } });
+  // falha se a margem não couber no ecrã (ex.: a meio de um resize)
+  if (!c) return overviewCam.last || { center: [-8, 39.6], zoom: 5.6, pitch: 0, bearing: 0, pad: 0, padX: 0 };
+  return (overviewCam.last = { center: [c.center.lng, c.center.lat], zoom: c.zoom, pitch: 0, bearing: 0, pad: 0, padX: 0 });
+}
+// ---------- vistas aéreas (Higgsfield) ----------
+// cada imagem foi feita a partir de uma captura 1600x900 do mapa com esta câmara; nas paragens a câmara volta
+// a ser exatamente essa (ajustada ao tamanho do ecrã), por isso os pioneses caem no sítio certo da imagem
+const AERIAL_ON = !new URLSearchParams(location.search).has('semaerea');
+document.documentElement.classList.toggle('aerial-on', AERIAL_ON);
+const AERIALS = {
+  vila: { src: 'fotos/aerea-vouzela.jpg', cam: { center: [-8.1113, 40.72325], zoom: 16.75, pitch: 36, bearing: -14 }, padT: 36, padB: 0, padL: 416, focus: [.62, .5],
+    pins: { museu: [.507, .532], penthouse: [.517, .558], ameias: [.691, .527], bikeinn: [.735, .486] } },
+  aido: { pins: { aido: [.5, .68] }, src: 'fotos/aerea-aido-santo.jpg', cam: { center: [-8.23056, 40.72822], zoom: 15.4, pitch: 45, bearing: 22 }, padT: 324, padB: 0, padL: 0, focus: [.5, .62], over: 1.25 },
+  philips: { pins: { philips: [.5, .68] }, src: 'fotos/aerea-alvor.jpg', cam: { center: [-8.5926779, 37.1263558], zoom: 15.2, pitch: 50, bearing: 172 }, padT: 324, padB: 0, padL: 0, focus: [.5, .62], over: 1.25 },
+};
+// as quatro casas da vila vivem todas na imagem de Vouzela: abre-se o cartão sem mudar de imagem
+const aerialKey = (s) => !AERIAL_ON || !s ? null : ['vila', 'museu', 'penthouse', 'ameias', 'bikeinn'].includes(s.id) ? 'vila' : AERIALS[s.id] ? s.id : null;
+// a imagem cobre o ecrã; no telemóvel desliza para manter as casas à vista
+// over: no telemóvel a foto do campo e do mar fica maior que o ecrã (tem só a altura dele): assim, na descida,
+// já cobre o ecrã inteiro antes de chegar e entra por dissolvência, sem se ver o retângulo da foto
+function aerialFit(a, focus = a.focus, ay = .55) {
+  const W = innerWidth, H = VH(), s = Math.max(W / 1600, H / 900) * (a.over && narrow() ? a.over : 1), iw = 1600 * s, ih = 900 * s;
+  const ox = clamp(W / 2 - focus[0] * iw, W - iw, 0), oy = clamp(H * ay - focus[1] * ih, H - ih, 0);
+  return { s, iw, ih, ox, oy, ppx: ox + s * (800 + a.padL / 2), ppy: oy + s * (450 + (a.padT - a.padB) / 2) };
+}
+const aerialEls = {};
+for (const key in AERIALS) {
+  const el = document.createElement('img');
+  el.alt = ''; el.decoding = 'async';  // o src só vem na vez dela (loadAerials): no arranque a prioridade é o hero
+  $('#aerial').appendChild(el);
+  aerialEls[key] = { el, f: null, zoom: 0 };
+}
+// fila do arranque: 1) foto do hero  2) vídeo do voo  3) foto aérea da vila  4) as outras duas  5) mosaicos das viagens longas
+function loadAerials(keys = Object.keys(AERIALS)) {
+  return Promise.all(keys.map(k => { const el = aerialEls[k].el; if (!el.src) el.src = AERIALS[k].src; return el.decode ? el.decode().catch(() => {}) : null; }));
+}
+function layoutAerials() {
+  for (const key in AERIALS) {
+    const a = aerialEls[key], f = aerialFit(AERIALS[key]);
+    Object.assign(a.el.style, { left: f.ox + 'px', top: f.oy + 'px', width: f.iw + 'px', height: f.ih + 'px', transformOrigin: `${f.ppx - f.ox}px ${f.ppy - f.oy}px` });
+    a.f = f; a.zoom = aerialCam(key).zoom;
+  }
+}
+// no telemóvel a imagem da vila desliza até à casa aberta: o pionés fica ao centro, em baixo, e o cartão cabe por cima
+function aerialCam(key, house) {
+  const a = AERIALS[key], W = innerWidth, H = VH();
+  const f = house && a.pins && a.pins[house] && narrow() ? aerialFit(a, a.pins[house], .72) : aerialFit(a);
+  return { ...a.cam, zoom: a.cam.zoom + Math.log2(f.s), pad: (f.ppy - H / 2) * 2 / H, padX: (f.ppx - W / 2) * 2 / W, aerial: key };
+}
+
+// ---------- drone por cima da foto da vila ----------
+// a câmara do mapa fica parada na foto de Vouzela; quem voa é o "mundo" (foto + mapa + pioneses), em 2D:
+// p' = S + R(r) · (p − F) · k   → o ponto F (a casa) vai para o sítio S do ecrã, com zoom k e rotação r
+// Como um drone: desce em cada casa e aproxima-se devagar, sobe a meio do caminho, e roda sempre no mesmo sentido
+// (a orbitar a vila). A "altitude" base K é calculada uma vez para a foto cobrir sempre o ecrã, com folga.
+const TOWN_IDS = ['museu', 'penthouse', 'ameias', 'bikeinn'];
+const DRONE = { r: { museu: -2, penthouse: -4.5, ameias: -7, bikeinn: -9.5 }, spin: -1.2, down: 1.1, push: .045 };
+const VIEW0 = () => ({ F: [innerWidth / 2, VH() / 2], S: [innerWidth / 2, VH() / 2], k: 1, r: 0 });
+let droneK = 1.6;
+// onde fica cada casa no ecrã quando o drone desce sobre ela: perto de onde já estava na vista da vila, um pouco puxada
+// para o centro (como um drone que desce, não que arrasta a foto; assim precisa de pouco zoom e a foto fica nítida).
+// No telemóvel vai para o centro, em baixo, para o cartão caber por cima.
+// As casas da vila estão a 20-150 m umas das outras: se parassem todas no mesmo sítio do ecrã, a viagem quase não
+// se via. Cada uma pára num sítio diferente, escolhido para o ecrã deslizar sempre no sentido casa antiga → casa nova
+// (a Casa Museu à direita e em baixo, a Penthouse à esquerda e em cima, etc.).
+// telemóvel: posição no ecrã (fração); computador: desvio em relação ao sítio natural
+const TOWN_SPOT = {
+  narrow: { museu: [.66, .80], penthouse: [.34, .67], ameias: [.54, .74], bikeinn: [.32, .80] },
+  wide: { museu: [0, 0], penthouse: [0, 0], ameias: [0, 0], bikeinn: [0, 0] },  // no computador, o sítio de sempre
+};
+function townAnchor(id) {
+  const a = AERIALS.vila, f = aerialFit(a), W = innerWidth, H = VH(), fr = a.pins[id], nar = narrow(), k = droneK * DRONE.down;
+  const F = [f.ox + fr[0] * f.iw, f.oy + fr[1] * f.ih];
+  const b = (nar ? TOWN_SPOT.narrow : TOWN_SPOT.wide)[id];
+  const want = nar ? [W * b[0], H * b[1]] : [lerp(F[0], W * .5, .35) + W * b[0], lerp(F[1], H * .56, .35) + H * b[1]];
+  const S = [clamp(want[0], W - (f.ox + f.iw - F[0]) * k, (F[0] - f.ox) * k),
+             clamp(want[1], H - (f.oy + f.ih - F[1]) * k, (F[1] - f.oy) * k)];
+  return { F, S };
+}
+// parado sobre uma casa (t de 0 a 1): continua a descer devagar e a rodar; o fim de uma paragem é o início da viagem seguinte
+function townHold(id, t) {
+  const { F, S } = townAnchor(id);
+  return { F, S, k: droneK * (DRONE.down + DRONE.push * t), r: DRONE.r[id] + DRONE.spin * t };
+}
+// viagem entre duas casas: posição e rotação seguem direitas; a altitude sobe até K a meio e volta a descer
+function townLeg(A, B, u, rise = TOWN_RISE) {
+  // a meio do caminho o drone sobe (TOWN_RISE) e volta a descer sobre a casa seguinte: é isto que marca a passagem
+  const dip = Math.log(rise);
+  return { F: [lerp(A.F[0], B.F[0], u), lerp(A.F[1], B.F[1], u)], S: [lerp(A.S[0], B.S[0], u), lerp(A.S[1], B.S[1], u)],
+    k: Math.exp(lerp(Math.log(A.k), Math.log(B.k), u) - dip * Math.sin(Math.PI * u)), r: lerp(A.r, B.r, u) };
+}
+function mixView(A, B, u) {
+  return { F: [lerp(A.F[0], B.F[0], u), lerp(A.F[1], B.F[1], u)], S: [lerp(A.S[0], B.S[0], u), lerp(A.S[1], B.S[1], u)],
+    k: Math.exp(lerp(Math.log(A.k), Math.log(B.k), u)), r: lerp(A.r, B.r, u) };
+}
+// a foto cobre o ecrã inteiro com esta vista?
+function viewCovers(v) {
+  const f = aerialFit(AERIALS.vila), W = innerWidth, H = VH();
+  const c = Math.cos(-v.r * Math.PI / 180), sn = Math.sin(-v.r * Math.PI / 180);
+  return [[0, 0], [W, 0], [0, H], [W, H]].every(([x, y]) => {
+    const dx = (x - v.S[0]) / v.k, dy = (y - v.S[1]) / v.k;
+    const px = v.F[0] + c * dx - sn * dy, py = v.F[1] + sn * dx + c * dy;
+    return px >= f.ox + 1 && px <= f.ox + f.iw - 1 && py >= f.oy + 1 && py <= f.oy + f.ih - 1;
+  });
+}
+function minCoverK(v) {
+  let lo = .5, hi = 6;
+  for (let n = 0; n < 22; n++) { const m = (lo + hi) / 2; if (viewCovers({ ...v, k: m })) hi = m; else lo = m; }
+  return hi;
+}
+// K: a menor altitude em que todas as paragens e viagens da vila cobrem o ecrã (com 3% de folga)
+// quanto o drone sobe a meio de cada viagem na vila (1 = nada): é o que faz sentir a passagem de casa para casa.
+// Não conta para a altitude base (senão todas as paragens ficavam mais longe); a meio da subida o limite é a foto
+// continuar a cobrir o ecrã (rede de segurança no ciclo)
+const TOWN_RISE = SNAP ? 1.2 : 1.08;
+function computeDroneK() {
+  droneK = narrow() ? 1.35 : 1.45;
+  let need = 0;
+  for (let pass = 0; pass < 2; pass++) {
+    for (let i = 0; i < TOWN_IDS.length; i++) {
+      for (const t of [0, .5, 1]) { const v = townHold(TOWN_IDS[i], t); need = Math.max(need, minCoverK(v) / (v.k / droneK)); }
+      if (i) for (let u = .05; u < 1; u += .1) {
+        const v = townLeg(townHold(TOWN_IDS[i - 1], 1), townHold(TOWN_IDS[i], 0), u, 1);
+        need = Math.max(need, minCoverK(v) / (v.k / droneK));
+      }
+    }
+    droneK = Math.max(droneK, need * 1.03);
+  }
+}
+const viewPt = (v, p) => {
+  const c = Math.cos(v.r * Math.PI / 180), s = Math.sin(v.r * Math.PI / 180), x = (p.x - v.F[0]) * v.k, y = (p.y - v.F[1]) * v.k;
+  return { x: v.S[0] + c * x - s * y, y: v.S[1] + s * x + c * y };
+};
+let curView = { F: [0, 0], S: [0, 0], k: 1, r: 0 };
+
+function camOf(s) {
+  if (s.overview) return overviewCam();
+  if (aerialKey(s)) return aerialCam(aerialKey(s));
+  const n = narrow() && s.id === 'vila';
+  // no telemóvel a vila fica ao centro e um pouco mais afastada
+  const z0 = s.id === 'vila' && PRE.vilaZoom ? PRE.vilaZoom : s.cam.zoom;
+  return { ...s.cam, zoom: z0 - (n ? .9 : 0), pad: n ? .17 : s.pad, padX: n ? 0 : s.padX };
+}
+// afasta-se o necessário para ver as duas pontas e anda mais depressa quando está alto
+function makeLeg(A, B) {
+  const wa = toW(A.center), wb = toW(B.center);
+  const d = Math.hypot(wb[0] - wa[0], wb[1] - wa[1]);
+  const zFit = Math.log2(Math.min(innerWidth, VH()) * .7 / (Math.max(d, 1e-9) * 512));
+  const avg = (A.zoom + B.zoom) / 2, zC = 2 * Math.min(avg, zFit) - avg;
+  const zAt = (t) => (1 - t) * (1 - t) * A.zoom + 2 * t * (1 - t) * zC + t * t * B.zoom;
+  const N = 64, cum = [0];
+  for (let i = 1; i <= N; i++) cum.push(cum[i - 1] + (2 ** -zAt((i - 1) / N) + 2 ** -zAt(i / N)) / 2);
+  return (t) => {
+    const f = t * N, i = Math.min(N - 1, Math.floor(f));
+    const s = cum[N] ? lerp(cum[i], cum[i + 1], f - i) / cum[N] : t;
+    const z = zAt(t), low = clamp((z - 9) / 6);
+    return { center: fromW([lerp(wa[0], wb[0], s), lerp(wa[1], wb[1], s)]), zoom: z,
+      pitch: lerp(A.pitch, B.pitch, t) * low, bearing: lerpAngle(0, lerpAngle(A.bearing, B.bearing, t), low),
+      pad: lerp(A.pad, B.pad, t), padX: lerp(A.padX, B.padX, t) };
+  };
+}
+
+let timeline = [], TOTAL = 0, legs = [], maxScroll = 1, EXTRA = 0;
+function build() {
+  timeline = []; legs = []; let u = HERO_U;
+  SCENES.forEach((s, i) => {
+    if (i > 0) { timeline.push({ kind: 'leg', i, from: u, to: u + s.tin }); u += s.tin; }
+    timeline.push({ kind: 'hold', i, from: u, to: u + s.hold }); u += s.hold;
+  });
+  TOTAL = u;
+  for (let i = 1; i < SCENES.length; i++) legs[i] = makeLeg(camOf(SCENES[i - 1]), camOf(SCENES[i]));
+  // telemóvel: mais um ecrã de scroll no fim, para a secção dos contactos
+  EXTRA = !SNAP && narrow() ? VH() : 0;
+  $('#scroller').style.height = (TOTAL * SCROLL_VH + 100) + 'vh';
+  $('#scroller').style.paddingBottom = EXTRA + 'px';
+  maxScroll = Math.max(1, document.documentElement.scrollHeight - VH() - EXTRA);
+  measureRuler(); placePolaroids(); placeFim(); layoutAerials(); if (AERIAL_ON) { layoutVoo(); computeDroneK(); }
+  for (const id in markers) markers[id].cardH = 0;
+  contactosAt();
+  frame.camKey = null; for (const k in ui) if (k.startsWith('aer') || k === 'world') delete ui[k];
+  dirty = true;
+}
+function scrollForScene(i) {
+  const h = timeline.find(e => e.kind === 'hold' && e.i === i);
+  return ((h.from + h.to) / 2) / TOTAL * maxScroll;
+}
+function goTo(i) { if (SNAP) return snapTo(i); scrollTo({ top: scrollForScene(i), behavior: 'smooth' }); }
+
+// ---------- telemóvel: um gesto = uma secção ----------
+// No toque ninguém percebe quanto tem de deslizar: cada gesto (seja de que tamanho for) leva à secção seguinte
+// ou à anterior, e a passagem corre sozinha até ao fim, devagar e suave. Nunca fica a meio, nunca salta duas.
+// onde pára cada secção: na vila, quando o véu, o título, os pioneses e as polaroids já entraram todos;
+// nas casas, a meio da paragem (o drone já desceu e o cartão está aberto)
+const snapStops = () => SCENES.map((s, i) => {
+  const h = timeline.find(e => e.kind === 'hold' && e.i === i);
+  return s.id === 'vila' ? Math.min(h.to - .05, HERO_U + 1.1) : (h.from + h.to) / 2;
+});
+const snap = { i: -1, anim: 0 };  // i = -1: o hero; senão, a cena onde pára (ou para onde vai)
+const allStops = () => [0, ...snapStops()];  // posição k = cena k - 1
+// anda até à paragem i. Começa logo a andar (sem arranque lento) e trava devagar: o ecrã responde no instante do gesto
+function snapTo(i) {
+  const stops = allStops();
+  i = clamp(i, -1, stops.length - 2);
+  const to = stops[i + 1], from = target, d = Math.abs(to - from);
+  snap.i = i;
+  cancelAnimationFrame(snap.anim); snap.anim = 0;
+  if (d < 1e-3) return;
+  // a duração cresce com o caminho: o voo e as viagens longas levam mais tempo que um salto na vila
+  const ms = Math.min(4800, 450 + d * 850), t0 = performance.now();
+  const tick = (now) => {
+    const u = clamp((now - t0) / ms);
+    target = lerp(from, to, Math.sin(u * Math.PI / 2));
+    snap.anim = u < 1 ? requestAnimationFrame(tick) : 0;
+  };
+  snap.anim = requestAnimationFrame(tick);
+}
+if (!SNAP && new URLSearchParams(location.search).has('travar')) {
+  // computador: o scroll continua livre e imediato, mas um gesto (uma rodada, um deslize do trackpad com a inércia)
+  // nunca passa da secção seguinte: ao chegar lá, o resto desse gesto é ignorado. Depois de uma pausa curta
+  // (sem eventos da roda) conta como gesto novo.
+  // gesto novo: pausa curta, mudança de direção, ou (já parado numa secção) um impulso mais forte que o anterior —
+  // é o dedo a empurrar outra vez, não a inércia do trackpad a morrer
+  let lo = 0, hi = Infinity, lastW = 0, lastAbs = 0, lastSign = 0, atEdge = false;
+  addEventListener('wheel', (e) => {
+    if (e.ctrlKey) return;  // zoom do browser / pinça do trackpad
+    e.preventDefault();
+    const now = e.timeStamp;  // a hora em que o evento nasceu: com o ecrã ocupado os eventos chegam em rajada, atrasados
+    const px = e.deltaMode === 1 ? e.deltaY * 40 : e.deltaMode === 2 ? e.deltaY * innerHeight : e.deltaY;
+    const abs = Math.abs(px), sign = Math.sign(px);
+    const fresh = now - lastW > 180 || sign !== lastSign || (atEdge && abs > Math.max(lastAbs * 2.5, lastAbs + 25));
+    lastAbs = abs; lastSign = sign;
+    if (fresh) {
+      const ys = [0, ...snapStops().map(u => u / TOTAL * maxScroll), maxScroll], y = scrollY;
+      lo = Math.max(0, ...ys.filter(v => v < y - 2));
+      hi = Math.min(maxScroll, ...ys.filter(v => v > y + 2));
+    }
+    lastW = now;
+    const y = clamp(scrollY + px, lo, hi);
+    atEdge = y === lo || y === hi;
+    scrollTo(0, y);
+  }, { passive: false });
+}
+if (SNAP) {
+  document.documentElement.classList.add('snap');
+  // cada gesto novo conta, mesmo a meio de uma passagem: leva uma secção além daquela para onde já se ia
+  const step = (d) => snapTo(snap.i + d);
+  // o ecrã segue o dedo: enquanto se arrasta, a animação avança (ou recua) até meio caminho da secção seguinte;
+  // ao largar, acaba sozinha. Um gesto nunca passa mais do que uma secção.
+  let drag = null;
+  addEventListener('touchstart', (e) => {
+    cancelAnimationFrame(snap.anim); snap.anim = 0;
+    drag = { x: e.touches[0].clientX, y: e.touches[0].clientY, base: target, dest: null, dy: 0, axis: '' };
+  }, { passive: true });
+  addEventListener('touchmove', (e) => {
+    if (e.cancelable) e.preventDefault();  // o deslizar vertical é todo nosso (sem isto o browser rolava a página)
+    if (!drag) return;
+    const dy = drag.y - e.touches[0].clientY, dx = drag.x - e.touches[0].clientX;
+    if (!drag.axis && Math.hypot(dx, dy) > 6) drag.axis = Math.abs(dx) > Math.abs(dy) ? 'x' : 'y';
+    if (drag.axis !== 'y') return;  // de lado é o carrossel de fotos
+    drag.dy = dy;
+    // o ecrã está sempre entre a paragem anterior e a seguinte à de destino (snap.i): o gesto vale uma secção a partir dela
+    const dest = clamp(snap.i + (Math.sign(dy) || 1), -1, SCENES.length - 1);
+    drag.dest = dest;
+    if (dest === snap.i) { target = drag.base; return; }
+    const to = allStops()[dest + 1], frac = .5 * (1 - Math.exp(-Math.abs(dy) / (innerHeight * .4)));
+    target = lerp(drag.base, to, frac);
+  }, { passive: false });
+  addEventListener('touchend', () => {
+    if (!drag) return;
+    const g = drag; drag = null;
+    if (g.axis === 'y' && Math.abs(g.dy) > 24 && g.dest !== null && g.dest !== snap.i) snapTo(g.dest);
+    else snapTo(snap.i);  // gesto curto ou de lado: volta (ou continua) para onde ia
+  }, { passive: true });
+  // roda do rato / trackpad: o 1.º evento de cada gesto muda logo de secção (sem esperar). O resto do gesto (a inércia
+  // do trackpad, a rodada da roda) não conta. Gesto novo: pausa curta, mudança de direção, ou um empurrão novo com a
+  // inércia anterior já quase parada. Só um gesto muito, muito forte (muito scroll acumulado) passa uma 2.ª secção.
+  // Nunca duas mudanças em menos de 0,4 s.
+  let wheelT = -1e9, wheelAbs = 0, wheelSign = 0, stepT = -1e9, acc = 0, extra = 0;
+  addEventListener('wheel', (e) => {
+    if (e.ctrlKey) return;  // zoom do browser / pinça do trackpad
+    e.preventDefault();
+    const now = e.timeStamp, sign = Math.sign(e.deltaY);
+    if (!sign) return;
+    const abs = Math.abs(e.deltaY) * (e.deltaMode === 1 ? 40 : e.deltaMode === 2 ? innerHeight : 1);
+    const fresh = now - wheelT > 200 || sign !== wheelSign || (wheelAbs < 8 && abs > 40);
+    wheelT = now; wheelAbs = abs; wheelSign = sign;
+    if (fresh) { acc = 0; extra = 0; } else acc += abs;
+    if (now - stepT < 400) return;
+    // no máximo uma secção a mais por gesto, e só com muito scroll acumulado
+    if (fresh || (acc > 12000 && !extra)) { if (!fresh) extra = 1; acc = 0; stepT = now; step(sign); }
+  }, { passive: false });
+  addEventListener('keydown', (e) => {
+    const d = { ArrowDown: 1, PageDown: 1, ' ': 1, ArrowUp: -1, PageUp: -1 }[e.key];
+    if (d) { e.preventDefault(); step(d); }
+  });
+}
+const sceneOf = (id) => SCENES.findIndex(s => s.id === id);
+
+// ---------- marcadores ----------
+const markers = {};
+HOUSES.forEach((h) => {
+  const el = document.createElement('div');
+  el.className = 'pin';
+  el.innerHTML = `<div class="pinbody">
+    <div class="card">${gallery(h)}
+      <div class="meta"><span>N.º ${h.n} · ${h.meta[0]}</span><span>${h.meta[1]}</span></div>
+      <h2>${h.name}</h2><p>${h.text}</p>${h.note ? `<p class="note">${h.note}</p>` : ''}
+      <a href="#" onclick="return false">Ver a casa →</a></div>
+    <div class="stem"></div><div class="thumb"><img src="${h.imgs[0]}" alt="" decoding="async" fetchpriority="low"></div>
+    <div class="badge"></div><div class="num halo">${h.n}</div>${TACK}</div>`;
+  el.addEventListener('click', () => goTo(sceneOf(h.id)));
+  markers[h.id] = { el, body: el.querySelector('.pinbody'), badge: el.querySelector('.badge'), state: '' };
+  new maplibregl.Marker({ element: el, anchor: 'bottom', offset: [0, 1] }).setLngLat(h.ll).addTo(map);
+});
+
+const pinBodies = [...document.querySelectorAll('.pin .pinbody')];
+
+// ---------- polaroids da abertura, régua e grelha final ----------
+const polaroidsEl = $('#polaroids'), cords = $('#cords');
+const polaroids = {};
+TOWN.forEach((h) => {
+  const b = document.createElement('div');
+  b.className = 'polaroid';
+  b.innerHTML = `${gallery(h)}<button type="button" class="pgo"><small>N.º ${h.n} · ${h.dist ? 'a ' + fmt(h.dist).join(' ') : 'a receção'}</small><b>${h.name}</b></button>
+    <svg class="tack" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="7" fill="url(#tackHead)"/><ellipse cx="6.6" cy="6.4" rx="2.2" ry="1.5" fill="rgba(255,255,255,.55)"/></svg>`;
+  b.querySelector('.pgo').onclick = () => goTo(sceneOf(h.id));
+  polaroidsEl.appendChild(b);
+  polaroids[h.id] = b;
+});
+function placePolaroids() {
+  const slots = narrow() ? SLOTS.narrow : SLOTS.wide;
+  TOWN.forEach((h) => {
+    const [x, y, r] = slots[h.id], b = polaroids[h.id];
+    b.style.left = (x * 100) + '%'; b.style.top = (y * 100) + '%'; b.style.setProperty('--r', r + 'deg');
+  });
+}
+// cordão do pionés da casa até ao pionés da polaroid, a descair com o peso
+function drawCords(ops = {}) {
+  let out = '';
+  TOWN.forEach((h) => {
+    const o = ops[h.id] ?? 1;
+    if (o <= 0) return;
+    const r = polaroids[h.id].getBoundingClientRect();
+    const p = viewPt(curView, map.project(h.ll));
+    const a = [p.x, p.y - 25], b = [r.left + r.width / 2, r.top + 2];
+    const sag = 18 + Math.hypot(b[0] - a[0], b[1] - a[1]) * .12;
+    const c = [(a[0] + b[0]) / 2, Math.max(a[1], b[1]) + sag];
+    const d = `M${a[0].toFixed(1)},${a[1].toFixed(1)} Q${c[0].toFixed(1)},${c[1].toFixed(1)} ${b[0].toFixed(1)},${b[1].toFixed(1)}`;
+    out += `<g opacity="${o.toFixed(3)}"><path class="shadow" d="${d}" transform="translate(2 4)"/><path class="cord" d="${d}"/></g>`;
+  });
+  cords.innerHTML = out;
+}
+
+const ruler = $('.ruler');
+HOUSES.forEach((h) => {
+  const b = document.createElement('button');
+  b.innerHTML = `<span><b>${h.name}</b>${h.dist ? fmt(h.dist).join(' ') : 'receção'}</span><i></i>`;
+  b.onclick = () => goTo(sceneOf(h.id));
+  ruler.appendChild(b);
+});
+
+// ---------- fecho: seis polaroids presas por fios ao sítio de cada casa ----------
+const PLACE = { aido: 'Nespereira', philips: 'Alvor, Algarve' };
+const fimPols = {}, fimCords = $('#fimcords');
+HOUSES.forEach((h, i) => {
+  const b = document.createElement('div');
+  b.className = 'polaroid'; b.style.setProperty('--i', i);
+  b.innerHTML = `<div class="gal"><img src="${h.imgs[0]}" alt="" decoding="async" fetchpriority="low"></div><button type="button" class="pgo"><small>${PLACE[h.id] || 'Vouzela'}</small><b>${h.name}</b></button>
+    <svg class="tack" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="7" fill="url(#tackHead)"/><ellipse cx="6.6" cy="6.4" rx="2.2" ry="1.5" fill="rgba(255,255,255,.55)"/></svg>`;
+  b.querySelector('.pgo').onclick = () => goTo(sceneOf(h.id));
+  $('#fimpols').appendChild(b);
+  fimPols[h.id] = b;
+});
+// um fio por casa (sombra + fio); os pontos e os nomes dos três sítios por cima
+fimCords.innerHTML = HOUSES.map((h, i) => `<g style="--i:${i}"><path class="shadow" transform="translate(2 4)"/><path class="cord"/></g>`).join('')
+  + ['Vouzela', 'Nespereira', 'Alvor'].map((n, i) => `<g style="--i:${6 + i}"><circle class="dot" r="4.5"/><text>${n}</text></g>`).join('');
+const fimPaths = [...fimCords.querySelectorAll('.cord')], fimShadows = [...fimCords.querySelectorAll('.shadow')];
+const fimDots = [...fimCords.querySelectorAll('.dot')], fimLabels = [...fimCords.querySelectorAll('text')];
+// [coluna, linha, inclinação]; no computador duas colunas entre o título e o mapa, no telemóvel 3 x 2 em baixo
+const FIM_SLOTS = { museu: [0, 0, -3], penthouse: [1, 0, 2], ameias: [0, 1, 2.5], bikeinn: [1, 1, -2], aido: [0, 2, -1.5], philips: [1, 2, 3] };
+// telemóvel: Portugal ao meio e as polaroids dos dois lados, desencontradas (mar à esquerda, Espanha à direita)
+const FIM_SLOTS_N = { museu: [.16, .27], penthouse: [.84, .25], ameias: [.83, .51], bikeinn: [.17, .53], aido: [.18, .75], philips: [.82, .74] };
+// a fita acaba logo a seguir às letras (o fim do "a" de "sua"), com a borda ondulada como pano caído.
+// no telemóvel a tira atravessa o ecrã em cima e a borda ondulada é a de baixo, logo depois do título
+function fitFlag() {
+  const o = $('#outro'), h2 = $('#outro .ohead h2'), oh = $('#outro .ohead'), n = narrow();
+  const t = [...h2.childNodes].find(n => n.nodeType === 3 && n.data.includes('sua'));
+  let E;
+  oh.querySelector('p').style.maxWidth = oh.querySelector('.contacts').style.maxWidth = '';
+  if (n || !t) { oh.style.width = ''; E = oh.offsetTop + oh.offsetHeight + 26; }
+  else {
+    // o texto fica centrado na fita: a caixa do texto tem a largura de "Escolha a sua" e a fita a mesma margem dos dois lados
+    // (a borda ondulada recua em média uns 12 px)
+    oh.style.width = '';  // mede com a largura livre (senão o título já vem partido da medição anterior)
+    const r = document.createRange(); r.setStart(t, 0); r.setEnd(t, t.data.lastIndexOf('sua') + 3);
+    const Wt = r.getBoundingClientRect().width, m = oh.getBoundingClientRect().left;
+    oh.style.width = Math.ceil(Wt + 4) + 'px';
+    E = Math.round(2 * m + Wt + 12);
+  }
+  // borda: duas ondas sobrepostas (pregas largas e pequenas), amplitude de uns 12 px
+  const L = n ? o.clientWidth : o.clientHeight, A = 13, off = (v) => 7 * Math.sin(v / 150 + .6) + 5 * Math.sin(v / 57 + 1.7) - A + 1;
+  const pts = []; for (let v = 0; v <= L + 20; v += 8) pts.push([v, E + off(v)]);
+  const xy = ([v, e], k = 0) => n ? [v, e - k] : [e - k, v];
+  const line = (k) => 'M' + pts.map(p => xy(p, k).map(q => q.toFixed(1)).join(',')).join('L');
+  // recorte: do canto (0,0) ao longo da borda e de volta
+  const poly = 'M0,0 ' + pts.map(p => 'L' + xy(p).map(q => q.toFixed(1)).join(',')).join(' ') + (n ? ` L${L + 20},0` : ` L0,${L + 20}`) + ' Z';
+  o.style.setProperty('--fwt', (E + 4) + 'px');
+  o.style.setProperty('--fclip', `path('${poly}')`);
+  // bainha discreta, no tom do pano: orla escura, a dobra um pouco mais escura e um pesponto tom sobre tom
+  const hem = $('#outro .hem');
+  hem.querySelector('.h1').setAttribute('d', line(1));
+  hem.querySelector('.h2').setAttribute('d', line(9));
+  hem.querySelector('.h3').setAttribute('d', line(16));
+  return E + 4;
+}
+function placeFim() {
+  const W = innerWidth, H = VH(), n = narrow();
+  const fEnd = fitFlag();
+  // telemóvel: as três filas repartem o espaço entre o fundo da bandeira e 75% do ecrã; se não couberem, os cartões encolhem
+  const oh = $('#outro .ohead'), top = Math.max(H * .25, oh.offsetTop + oh.offsetHeight + 22);
+  // telemóvel: cartões grandes (foto 3:2 + nome numa linha ≈ .667 pw + 50); três por coluna entre a fita e o fundo (os contactos estão na secção seguinte)
+  const pwN = Math.max(96, Math.min(W * .42, ((H - 30 - BAR() - top) / 3 - 64) / .667)), cardHN = .667 * pwN + 50, bot = H - 20 - BAR() - cardHN;
+  // computador: altura de um cartão ≈ .626 pw + 32 (foto 2:1 + nome); podem avançar ~80 px sobre o mar junto à costa; três filas e o desfasamento da 2.ª coluna cabem na altura,
+  // e as duas colunas cabem no mar entre a fita e a costa (fimCoastX: onde começa Portugal)
+  const pw = n ? pwN
+    : Math.max(160, Math.min(480, ((H * .93 - 16) / 3 - 32) / .626, (fimCoastX(W, H) + 80 - fEnd) / 2.05));
+  const cardH = .626 * pw + 32;  // foto 2:1 + nome
+  const c0 = n ? 0 : fEnd + pw * .5 + 6;
+  HOUSES.forEach((h, i) => {
+    const [c, r, rot] = FIM_SLOTS[h.id], b = fimPols[h.id];
+    let x, y;
+    if (n) [x, y] = [FIM_SLOTS_N[h.id][0] < .5 ? pw / 2 + W * .03 : W - pw / 2 - W * .03, top + (FIM_SLOTS_N[h.id][1] - .25) / .5 * (bot - top)];
+    else { x = c0 + c * pw * 1.05; y = H * .03 + r * (cardH + 8) + c * H * .025; }
+    b.style.left = x + 'px'; b.style.top = y + 'px'; b.style.setProperty('--r', rot + 'deg'); b.style.setProperty('--pw', pw + 'px');
+  });
+}
+// a fonte do título chega depois: volta a medir quando chegar (e ao abrir o fecho, ver mais abaixo)
+document.fonts && document.fonts.addEventListener('loadingdone', () => placeFim());
+// os fios seguem o mapa: a ponta fica no ponto exato de cada casa (as quatro de Vouzela juntam-se no mesmo sítio)
+function drawFim() {
+  const pts = HOUSES.map(h => viewPt(curView, map.project(h.ll)));
+  HOUSES.forEach((h, i) => {
+    const r = fimPols[h.id], x = parseFloat(r.style.left), y = parseFloat(r.style.top);
+    const a = [x, y + 1], b = [pts[i].x, pts[i].y];
+    const sag = 14 + Math.hypot(b[0] - a[0], b[1] - a[1]) * .1;
+    const c = [(a[0] + b[0]) / 2, Math.max(a[1], b[1]) + sag];
+    const d = `M${a[0].toFixed(1)},${a[1].toFixed(1)} Q${c[0].toFixed(1)},${c[1].toFixed(1)} ${b[0].toFixed(1)},${b[1].toFixed(1)}`;
+    fimPaths[i].setAttribute('d', d); fimShadows[i].setAttribute('d', d);
+  });
+  // Vouzela à direita do ponto, Nespereira (10 km a oeste) à esquerda, Alvor à direita
+  (narrow() ? [[pts[0], 9, -6, 'start'], [pts[4], -9, -6, 'end'], [pts[5], 9, 4, 'start']] : [[pts[0], 9, 4, 'start'], [pts[4], -9, 12, 'end'], [pts[5], 9, 4, 'start']]).forEach(([p, dx, dy, anchor], k) => {
+    fimDots[k].setAttribute('cx', p.x.toFixed(1)); fimDots[k].setAttribute('cy', p.y.toFixed(1));
+    fimLabels[k].setAttribute('x', (p.x + dx).toFixed(1)); fimLabels[k].setAttribute('y', (p.y + dy).toFixed(1)); fimLabels[k].setAttribute('text-anchor', anchor);
+  });
+}
+// fecho: o mar do mapa (fundo e oceano) passa a transparente para se ver a mesa de nogueira; ao sair volta ao creme
+const MESA = 'fotos/nogueira.jpg';
+function fimMesa(on) {
+  if (!map.getLayer('water')) return;
+  const o = fimMesa.orig || (fimMesa.orig = { water: map.getPaintProperty('water', 'fill-color'), bg: map.getPaintProperty('bg', 'background-color') });
+  if (on) { const m = $('.mesa'); if (!m.style.backgroundImage) m.style.backgroundImage = 'url(' + MESA + ')'; }
+  const T = 'rgba(0,0,0,0)';
+  map.setPaintProperty('water', 'fill-color', on ? (P.lake ? ['match', ['get', 'class'], 'ocean', T, P.lake] : T) : o.water);
+  map.setPaintProperty('bg', 'background-color', on ? T : o.bg);
+}
+// a mesa carrega sem pressa depois do resto
+addEventListener('load', () => setTimeout(() => { new Image().src = MESA; }, 4000));
+const rulerBtns = [...ruler.querySelectorAll('button')];
+function measureRuler() {
+  if (!rulerBtns[0].offsetHeight) return;
+  const c = (b) => b.offsetTop + b.offsetHeight / 2;
+  const fill = $('.ruler .fill');
+  fill.style.top = c(rulerBtns[0]) + 'px'; fill.style.height = (c(rulerBtns[5]) - c(rulerBtns[0])) + 'px';
+}
+
+// ---------- linhas entre casas (dados fixos; o scroll só muda filtros e o gradiente) ----------
+function setRoutes() {
+  const feats = [];
+  for (let k = 1; k < HOUSES.length; k++) {
+    const wa = toW(HOUSES[k - 1].ll), wb = toW(HOUSES[k].ll), pts = [];
+    for (let j = 0; j <= 32; j++) pts.push(fromW([lerp(wa[0], wb[0], j / 32), lerp(wa[1], wb[1], j / 32)]));
+    feats.push({ type: 'Feature', properties: { k }, geometry: { type: 'LineString', coordinates: pts } });
+  }
+  map.getSource('routes').setData({ type: 'FeatureCollection', features: feats });
+}
+let routeDone = -1, routeLive = -1, routeT = -1;
+function updateRoutes(done, live, t) {
+  if (done !== routeDone) { map.setFilter('route', ['<=', ['get', 'k'], done]); routeDone = done; }
+  if (live !== routeLive) { map.setFilter('route-live', ['==', ['get', 'k'], live]); routeLive = live; }
+  const q = Math.round(t * 200) / 200;
+  if (q !== routeT) { map.setPaintProperty('route-live', 'line-gradient', ['step', ['line-progress'], P.route, Math.max(q, .0001), 'rgba(0,0,0,0)']); routeT = q; }
+}
+
+// ---------- texto do "faltam" ----------
+function nextText(s) {
+  if (s.id === 'vila') return narrow() ? 'Faltam duas: <em>campo e mar</em>' : 'Faltam duas: <em>uma no campo, outra no mar</em>';
+  const i = s.house ? HOUSES.indexOf(s.house) : -1;
+  if (i === 5) return 'Ver as seis juntas';
+  if (i < 0) return '';
+  const nx = HOUSES[i + 1], left = 5 - i;
+  const pre = left === 1 ? 'Falta uma' : i >= 3 ? 'Faltam duas' : 'A seguir';
+  return `${pre} · <em>${nx.name}, a ${fmt(nx.step).join(' ')}</em>`;
+}
+$('#next button').onclick = () => {
+  const e = timeline.find(x => cur >= x.from && cur <= x.to);
+  if (e) goTo(Math.min(SCENES.length - 1, e.i + 1));
+};
+
+// ---------- ciclo ----------
+let target = 0, cur = 0, mid = 0, lastT = performance.now(), ready = false, dirty = true;
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const ui = {}; // só escreve no DOM quando muda
+const set = (k, v, fn) => { if (ui[k] !== v) { ui[k] = v; fn(v); } };
+addEventListener('scroll', () => { if (!SNAP) target = clamp(scrollY / maxScroll) * TOTAL; contactosAt(); }, { passive: true });
+// telemóvel: a seguir ao fecho, o scroll desce pela madeira até à secção dos contactos
+function contactosAt() {
+  const c = $('#contactos');
+  if (!EXTRA) { c.classList.remove('on'); $('.stage').style.transform = ''; return; }
+  // desce tudo junto, como uma só imagem: o ecrã final sobe e a secção vem colada por baixo
+  const e = clamp((scrollY - maxScroll) / EXTRA), dy = e * VH();
+  $('.stage').style.transform = e > 0 ? 'translateY(' + (-dy).toFixed(1) + 'px)' : '';
+  c.style.transform = 'translateY(' + (VH() - dy).toFixed(1) + 'px)';
+  c.classList.toggle('on', e > 0);
+}
+
+// hero: o texto sai primeiro; depois a foto encolhe, roda e pousa exatamente em cima da polaroid da Casa Museu
+const hero = { el: $('#hero'), photo: $('#hphoto'), shade: $('#hshade'), fade: $('#hfade'), img: $('#hphoto img'), last: -1, z0: 1, z: -1 };
+$('#hcta').onclick = () => goTo(0);
+// voo do Higgsfield: da fachada até à vista aérea de Vouzela, com o scroll a percorrer o vídeo
+// (1920x1080, todos os fotogramas são fotogramas-chave: saltar para qualquer ponto é imediato)
+// pede-se sempre um fotograma inteiro (o meio dele) e só quando muda: o browser arredonda o tempo ao fotograma,
+// e pedir tempos soltos fazia-o saltar sem parar para o mesmo sítio
+const VOO_FPS = 24;
+// duas versões feitas do 4K: o ecrã inteiro (1920x1080) e, para o telemóvel, só a faixa vertical que ele mostra (960x1500)
+const VOOS = {
+  full: { src: 'fotos/voo.mp4', poster: 'fotos/voo-0.jpg', x0: 0, x1: 1 },
+  faixa: { src: 'fotos/voo-m.mp4', poster: 'fotos/voo-m-0.jpg', x0: 1690 / 3840, x1: 3072 / 3840 },
+};
+const voo = { v: $('#hvoo'), want: 0, asked: -1, cfg: null, loaded: false };
+const seekVoo = () => { const v = voo.v; if (v.seeking || voo.asked === voo.want) return; voo.asked = voo.want; v.currentTime = (voo.want + .5) / VOO_FPS; };
+voo.v.addEventListener('loadedmetadata', () => { voo.v.currentTime = .5 / VOO_FPS; });
+voo.v.addEventListener('loadeddata', () => { voo.ok = true; if (hero.last >= 0) updateHero(hero.last, true); });
+voo.v.addEventListener('seeked', seekVoo);
+// o vídeo só começa a descarregar depois de a página estar pronta; até lá o hero é a imagem do 1.º fotograma
+// O vídeo é descarregado inteiro para a memória (blob) logo à entrada. Deixado ao browser, o Chrome às vezes não o
+// carrega (várias abas abertas, poupança de dados, servidor sem pedidos parciais) e o voo não aparecia.
+// Com o ficheiro todo em memória, saltar para qualquer fotograma é sempre imediato.
+const vooBlobs = {};
+function setVooSrc(cfg) {
+  const use = (url) => { if (voo.cfg === cfg) { voo.v.src = url; voo.v.load(); } };
+  if (vooBlobs[cfg.src]) return use(vooBlobs[cfg.src]);
+  return fetch(cfg.src).then(r => r.ok ? r.blob() : Promise.reject(r.status))
+    .then(b => { vooBlobs[cfg.src] = URL.createObjectURL(b); use(vooBlobs[cfg.src]); })
+    .catch(() => use(cfg.src));
+}
+function loadVoo() { voo.loaded = true; return setVooSrc(voo.cfg); }
+// o voo (e o hero, que é o 1.º fotograma dele) ocupa o retângulo da foto aérea de Vouzela: o último fotograma cai em cima dela
+function layoutVoo() {
+  const f = aerialFit(AERIALS.vila), W = innerWidth;
+  const a = -f.ox / f.iw, b = (W - f.ox) / f.iw;
+  const cfg = a >= VOOS.faixa.x0 && b <= VOOS.faixa.x1 ? VOOS.faixa : VOOS.full;
+  if (cfg !== voo.cfg) {
+    voo.cfg = cfg; voo.ok = false; voo.asked = -1;
+    // se o <picture> escolheu outra imagem, manda o script (que sabe o retângulo exato)
+    if (!hero.img.currentSrc.endsWith(cfg.poster)) { hero.img.closest('picture').querySelectorAll('source').forEach(s => s.remove()); hero.img.src = cfg.poster; }
+    if (voo.loaded) setVooSrc(cfg);
+  }
+  const box = { left: f.ox + cfg.x0 * f.iw + 'px', top: f.oy + 'px', width: (cfg.x1 - cfg.x0) * f.iw + 'px', height: f.ih + 'px' };
+  Object.assign(voo.v.style, box);
+  Object.assign(hero.photo.style, box);
+  // ecrã ao alto: o hero abre afastado (a faixa inteira à largura do ecrã) e aproxima-se durante o voo
+  const bw = (cfg.x1 - cfg.x0) * f.iw;
+  hero.z0 = W < VH() ? clamp(W / bw, .7, 1) : 1;
+  const o = (W / 2 - (f.ox + cfg.x0 * f.iw)) + 'px 0px';
+  voo.v.style.transformOrigin = o; hero.photo.style.transformOrigin = o;
+  hero.z = -1;
+}
+// z0 = afastado (abertura), 1 = no retângulo do voo; a meio do voo já tem de estar em 1 (a foto aérea entra por baixo)
+function heroZoom(hp) {
+  const z = hero.z0 >= 1 ? 1 : lerp(hero.z0, 1, ease(clamp(hp / .42)));
+  if (z === hero.z) return;
+  hero.z = z;
+  hero.el.classList.toggle('hzoom', z < 1);
+  const tr = z < 1 ? 'scale(' + z.toFixed(4) + ')' : '', mk = ((1 - z) * 80).toFixed(1) + '%';
+  for (const st of [voo.v.style, hero.photo.style]) { st.transform = tr; st.setProperty('--mk', mk); }
+}
+function drawVoo(pos) {
+  const v = voo.v;
+  if (v.readyState < 1 || !v.duration) return false;
+  // o Chrome só descodifica fotogramas depois de um salto: pedir sempre a posição, mesmo antes de haver imagem
+  voo.want = Math.round(pos * (Math.floor(v.duration * VOO_FPS) - 1));
+  seekVoo();
+  // durante um salto o readyState desce por instantes; o que conta é já ter mostrado um fotograma
+  return voo.ok || v.readyState >= 2;
+}
+function updateHero(hp, force) {
+  if (hp === hero.last && !force) return;
+  hero.last = hp;
+  hero.el.style.visibility = hp >= 1 ? 'hidden' : 'visible';
+  if (hp >= 1) return;
+  if (AERIAL_ON) {
+    // 1) o texto sai enquanto o voo já arranca  2) o voo avança com o scroll  3) no fim desvanece para a foto aérea, que é igual
+    // o hero é o 1.º fotograma do vídeo no mesmo retângulo: quando o vídeo entra por cima não há salto nenhum
+    const tx = clamp(hp / .2);
+    hero.fade.style.opacity = (1 - tx).toFixed(3);
+    hero.fade.style.transform = `translateY(${(-tx * 40).toFixed(1)}px)`;
+    hero.fade.style.visibility = tx >= 1 ? 'hidden' : 'visible';
+    hero.shade.style.opacity = (1 - clamp(hp / .28)).toFixed(3);
+    heroZoom(hp);
+    const drawn = hp > .002 && drawVoo(clamp((hp - .04) / .54));
+    // o vídeo é mais mole que a foto: a troca faz-se depressa, logo no último fotograma
+    const out = 1 - clamp((hp - .58) / .03);
+    voo.v.style.opacity = (drawn ? out : 0).toFixed(3);
+    hero.photo.style.opacity = (drawn ? 0 : out).toFixed(3);
+    return;
+  }
+  const tx = clamp(hp / .3);
+  hero.fade.style.opacity = (1 - tx).toFixed(3);
+  hero.fade.style.transform = `translateY(${(-tx * 40).toFixed(1)}px)`;
+  hero.fade.style.visibility = tx >= 1 ? 'hidden' : 'visible';
+  hero.shade.style.opacity = (1 - clamp(hp / .45)).toFixed(3);
+  const k = ease(clamp((hp - .08) / .84));
+  const W = innerWidth, H = VH();
+  const g = polaroids.museu.querySelector('.gal');
+  const r = g.getBoundingClientRect();
+  const tw = g.offsetWidth, th = g.offsetHeight, rot = parseFloat(polaroids.museu.style.getPropertyValue('--r')) || 0;
+  const w = lerp(W, tw, k), h = lerp(H, th, k);
+  const cx = lerp(W / 2, r.left + r.width / 2, k), cy = lerp(H / 2, r.top + r.height / 2, k);
+  const p = hero.photo.style;
+  p.width = w.toFixed(1) + 'px'; p.height = h.toFixed(1) + 'px';
+  p.transform = `translate(${(cx - w / 2).toFixed(1)}px, ${(cy - h / 2).toFixed(1)}px) rotate(${(rot * k).toFixed(2)}deg)`;
+  p.boxShadow = k > .02 ? `0 ${(30 * k).toFixed(0)}px ${(60 * k).toFixed(0)}px -20px rgba(40, 20, 5, ${(.6 * k).toFixed(2)})` : 'none';
+  // no fim a foto some por cima da polaroid verdadeira, que tem a mesma imagem
+  p.opacity = (1 - clamp((hp - .9) / .1)).toFixed(3);
+  // a polaroid mostra um recorte mais apertado da mesma foto (4:3 dentro de um quadrado): aproxima para bater certo
+  hero.img.style.transform = `scale(${(1 + .333 * k).toFixed(4)})`;
+}
+
+function frame(now) {
+  requestAnimationFrame(frame);
+  const dt = Math.min(64, now - lastT); lastT = now;
+  const prev = cur;
+  // duas etapas de suavização em série: o movimento arranca devagar e pára devagar (sem esticão a cada volta da roda)
+  // no telemóvel quem suaviza é a própria passagem (snapTo): aqui só um toque, para o ecrã colar ao dedo
+  const aS = 1 - Math.exp(-dt / ((SNAP ? 50 : SMOOTH_MS) * .55));
+  mid = reduce ? target : lerp(mid, target, aS);
+  cur = reduce ? target : lerp(cur, mid, aS);
+  if (Math.abs(cur - target) < 1e-4 && Math.abs(mid - target) < 1e-4) cur = mid = target;
+  const hp = clamp(cur / HERO_U);
+  if (cur !== prev || dirty) updateHero(hp, dirty);
+  if (!ready || (cur === prev && !dirty)) return;
+  dirty = false;
+
+  const inHero = cur < HERO_U;
+  const e = inHero ? timeline[0] : timeline.find(x => cur >= x.from && cur <= x.to) || timeline[timeline.length - 1];
+  const t = inHero ? 0 : clamp((cur - e.from) / (e.to - e.from));
+  const s = SCENES[e.i], holding = e.kind === 'hold';
+  let cam, legT = 1;
+  // na paragem a câmara roda um pouco e volta; em zero nas pontas para não saltar quando a viagem começa ou acaba
+  if (holding) { const b = camOf(s); cam = { ...b, bearing: b.bearing + (s.overview || b.aerial ? 0 : 3 * Math.sin(Math.PI * t)) }; }
+  else { legT = ease(t); cam = legs[e.i](legT); }
+  // durante o hero a vila está mais perto e afasta-se enquanto a foto encolhe
+  if (inHero && !AERIAL_ON) { const k = ease(hp); cam.zoom += (1 - k) * 1.3; cam.pitch = lerp(55, cam.pitch, k); cam.bearing -= (1 - k) * 18; }
+  // só mexe no mapa quando a câmara muda: por cima da foto da vila a câmara está parada e o mapa não precisa de redesenhar
+  // o visitante começou a descer: acaba a viagem escondida já, e a câmara volta ao sítio neste mesmo fotograma
+  if (pf.on) { if (target > HERO_U * .3) { pf.on = false; frame.camKey = null; } else frame.camKey = 'pf'; }
+  if (AERIAL_ON && target > HERO_U * .2 && !aerialEls.vila.el.src) loadAerials();
+  const camKey = pf.on ? 'pf' : [cam.center[0].toFixed(7), cam.center[1].toFixed(7), cam.zoom.toFixed(4), cam.pitch.toFixed(2), cam.bearing.toFixed(2), cam.pad.toFixed(4), cam.padX.toFixed(4)].join();
+  if (camKey !== frame.camKey) {
+    frame.camKey = camKey;
+    map.jumpTo({ center: cam.center, zoom: cam.zoom, pitch: cam.pitch, bearing: cam.bearing,
+      padding: { top: Math.max(cam.pad, 0) * VH(), bottom: Math.max(-cam.pad, 0) * VH(), left: Math.max(cam.padX, 0) * innerWidth, right: Math.max(-cam.padX, 0) * innerWidth } });
+  }
+
+  // drone e fotos aéreas. Regra: a foto só entra ou sai quando cobre o ecrã inteiro, parada numa casa
+  // (a chegar: dissolve-se sobre o mapa e o drone desce; a partir: o drone sobe e a foto dissolve-se no mapa).
+  // Durante as viagens longas só se vê o mapa, por isso nunca aparece um retângulo a encolher.
+  if (AERIAL_ON) {
+    const sm = (x) => { const u = clamp(x); return u * u * (3 - 2 * u); };
+    const isTown = (sc) => sc && TOWN_IDS.includes(sc.id);
+    const keyNow = aerialKey(s);
+    let v = VIEW0(), photo = null, op = 0, fx = 0;
+    if (inHero) { photo = 'vila'; op = hp > .5 ? 1 : 0; }
+    else if (holding && keyNow) {
+      photo = keyNow;
+      const arrive = aerialKey(SCENES[e.i - 1]) !== keyNow && !(s.id === 'vila');
+      const depart = aerialKey(SCENES[e.i + 1]) !== keyNow;
+      const inA = 1, outA = depart ? sm((t - .8) / .2) : 0;
+      op = inA * (1 - outA);
+      if (isTown(s)) {
+        v = townHold(s.id, t);
+        if (depart) v = mixView(v, VIEW0(), sm((t - .62) / .38));
+      } else if (s.id !== 'vila') {
+        // campo e mar: o drone desce sobre a casa (zoom à volta do pionés, que fica no mesmo sítio do ecrã)
+        const p = map.project(s.house.ll), K = narrow() ? 1.35 / (AERIALS[s.id].over || 1) : 1.6;
+        const down = (arrive ? sm(t / .5) : 1) * (depart ? 1 - sm((t - .66) / .34) : 1);
+        // em ecrãs baixos o pionés desce o necessário para o cartão caber inteiro por cima dele
+        const card = markers[s.id].cardH || (markers[s.id].cardH = markers[s.id].el.querySelector('.card').offsetHeight);
+        const sy = Math.min(VH() - 110, Math.max(p.y, card + 84));
+        v = { F: [p.x, p.y], S: [p.x, lerp(p.y, sy, down)], k: 1 + (K * (1 + .05 * t) - 1) * down, r: -2.2 * down * (.4 + .6 * t) };
+      }
+    } else if (!holding) {
+      const sA = SCENES[e.i - 1];
+      if (isTown(sA) && isTown(s)) { v = townLeg(townHold(sA.id, 1), townHold(s.id, 0), legT); photo = 'vila'; op = 1; }
+      else if (sA.id === 'vila' && isTown(s)) { v = mixView(VIEW0(), townHold(s.id, 0), legT); photo = 'vila'; op = 1; }
+      else if (keyNow && legT > .5) {
+        // campo e mar: a foto entra já na descida, de margens esbatidas, e ao chegar está inteira
+        // (se só entrasse na paragem, via-se primeiro o mapa de perto, quase vazio e desbotado)
+        const kz = 2 ** (cam.zoom - aerialEls[keyNow].zoom);
+        photo = keyNow;
+        const ov = AERIALS[keyNow].over;
+        if (ov && narrow()) op = sm((kz - 1 / ov) / (1 - 1 / ov));  // telemóvel: só entra quando já cobre o ecrã todo
+        else { op = sm((kz - .7) / .3); fx = lerp(71, 300, sm((kz - .85) / .15)); }
+      }
+    }
+    // rede de segurança: com rotação a foto podia deixar um canto de fora
+    if ((v.k > 1 || v.r) && photo === 'vila' && !viewCovers(v)) v.k = minCoverK(v);
+    curView = v;
+    const c = Math.cos(v.r * Math.PI / 180) * v.k, sn = Math.sin(v.r * Math.PI / 180) * v.k;
+    const tx = v.S[0] - (c * v.F[0] - sn * v.F[1]), ty = v.S[1] - (sn * v.F[0] + c * v.F[1]);
+    const m = `matrix(${c.toFixed(5)}, ${sn.toFixed(5)}, ${(-sn).toFixed(5)}, ${c.toFixed(5)}, ${tx.toFixed(2)}, ${ty.toFixed(2)})`;
+    set('world', m, val => {
+      $('#world').style.transform = val;
+      // os pioneses desfazem o zoom e a rotação: ficam sempre direitos e do mesmo tamanho
+      const inv = `rotate(${(-v.r).toFixed(3)}deg) scale(${(1 / v.k).toFixed(5)})`;
+      for (const b of pinBodies) b.style.transform = inv;
+    });
+    for (const key in AERIALS) {
+      const a = aerialEls[key], o = key === photo ? op : 0;
+      set('aer-' + key, o.toFixed(3), val => { a.el.style.opacity = val; a.el.style.visibility = val > 0 ? 'visible' : 'hidden'; });
+      const f = key === photo && fx && fx < 299 ? fx.toFixed(0) : '';
+      set('aerf-' + key, f, val => { a.el.classList.toggle('feather', !!val); if (val) a.el.style.setProperty('--fx', val + '%'); });
+      if (o > 0) {
+        const p = map.project(AERIALS[key].cam.center), k = 2 ** (cam.zoom - a.zoom);
+        set('aert-' + key, `translate(${(p.x - a.f.ppx).toFixed(1)}px, ${(p.y - a.f.ppy).toFixed(1)}px) scale(${k.toFixed(4)})`, val => { a.el.style.transform = val; });
+      }
+    }
+    // com a foto a tapar tudo, o mapa não é pintado; só o <canvas> (os pioneses vivem no mesmo contentor)
+    set('mapvis', op >= 1, val => { map.getCanvas().style.visibility = val ? 'hidden' : 'visible'; });
+  }
+
+  // abertura
+  // entrada por etapas, num percurso longo (acaba já dentro da paragem da vila): véu → título → polaroids uma a uma
+  const r0 = HERO_U * (AERIAL_ON ? .66 : .55), ip = clamp((cur - r0) / (HERO_U + 1.05 - r0));
+  const introOut = e.i === 0 ? 1 : (e.i === 1 && !holding ? 1 - clamp(t * 2.5) : 0);
+  const introOp = ip > 0 ? introOut : 0;
+  set('intro', introOut.toFixed(3) + '|' + (ip > 0), () => { $('#intro').style.opacity = introOut.toFixed(3); $('#intro').style.visibility = introOp > 0 ? 'visible' : 'hidden'; });
+  if (introOp > 0) {
+    const sm = (a, b) => { const u = clamp((ip - a) / (b - a)); return u * u * (3 - 2 * u); };
+    // 1) o véu entra da borda  2) a frase  3) os cartões, um a um
+    const sc = sm(0, .38), hd = sm(.3, .62);
+    set('scrim', sc.toFixed(3), v => { const st = $('.intro .scrim').style; st.opacity = v; st.transform = narrow() ? 'none' : `translateX(${(-(1 - v) * 70).toFixed(1)}%)`; });
+    set('ihead', hd.toFixed(3), v => { const h = $('.intro .head').style; h.opacity = v; h.translate = `0 ${((1 - v) * 24).toFixed(1)}px`; });
+    const ops = {};
+    TOWN.forEach((h, i) => {
+      const o = sm(.66 + i * .07, .84 + i * .053); ops[h.id] = o;
+      set('pol-' + h.id, o.toFixed(3), v => { const p = polaroids[h.id].style; p.opacity = v; p.translate = `0 ${(-(1 - v) * 28).toFixed(1)}px`; });
+    });
+    drawCords(ops);
+  }
+
+  // pioneses (na entrada da vila só aparecem depois da frase, antes dos cartões)
+  const z = cam.zoom, hIdx = s.house ? HOUSES.indexOf(s.house) : -1;
+  const pinIn = (() => { const u = clamp((ip - .52) / .14); return u * u * (3 - 2 * u); })();
+  TOWN.forEach(h => set('pinin-' + h.id, pinIn.toFixed(3), v => { markers[h.id].body.style.opacity = v; }));
+  HOUSES.forEach((h) => {
+    const m = markers[h.id];
+    const town = ['penthouse', 'ameias', 'bikeinn'].includes(h.id);
+    // no fecho os pioneses dão lugar aos fios das polaroids
+    const hidden = (town && z < 14.8) || (h.id === 'aido' && z < 10.5) || (s.id === 'fim' && holding);
+    const active = holding && s.id === h.id;
+    // a Casa Museu e a Penthouse estão a 20 m: quando uma está aberta, a outra fica só com o pionés
+    const twin = (h.id === 'penthouse' && (z < 17.2 || (holding && s.id === 'museu'))) || (h.id === 'museu' && holding && s.id === 'penthouse');
+    const bare = introOp > .05 || (twin && !active);
+    const n = h.id === 'museu' ? (z < 10.5 ? 5 : z < 14.8 ? 4 : 0) : 0;
+    // em cima da foto aérea da vila o pionés fica a meio do ecrã: o cartão abre ao lado, não por cima
+    // o lado escolhe-se uma vez, quando o cartão abre, e fica até ele acabar de sair: se mudasse a meio,
+    // o cartão saltava de sítio (ou aparecia por cima do pionés enquanto desvanece, já na viagem seguinte)
+    if (active && !m.wasActive) m.side = cam.aerial === 'vila' && !narrow() ? (viewPt(curView, map.project(h.ll)).x > innerWidth * .55 ? 'l' : 'r') : '';
+    m.wasActive = active;
+    const side = m.side || '';
+    // telemóvel: o pionés pode estar fora do meio (TOWN_SPOT), mas o cartão fica sempre centrado no ecrã
+    // (só se atualiza com o cartão aberto: ao fechar fica onde estava, sem saltar)
+    if (active && narrow()) set('cdx-' + h.id, Math.round(innerWidth / 2 - viewPt(curView, map.project(h.ll)).x), v => m.el.style.setProperty('--cdx', v + 'px'));
+    const st = [hidden, active, bare, n, side].join();
+    if (st !== m.state) {
+      m.state = st;
+      m.el.classList.toggle('side-l', side === 'l'); m.el.classList.toggle('side-r', side === 'r');
+      m.el.classList.toggle('hidden', hidden); m.el.classList.toggle('active', active);
+      m.el.classList.toggle('bare', bare); m.el.classList.toggle('grouped', n > 0);
+      if (n) m.badge.textContent = n === 5 ? '5 casas' : '4 casas em Vouzela';
+    }
+  });
+
+  // conta-quilómetros e escala
+  let dist = 0;
+  if (s.id === 'fim') dist = HOUSES[5].dist;
+  else if (hIdx >= 0) dist = holding ? s.house.dist : lerp(hIdx > 0 ? HOUSES[hIdx - 1].dist : 0, s.house.dist, legT);
+  set('odo', fmt(dist).join(), () => { const [v, u] = fmt(dist); $('#odo').innerHTML = `${v}<span>${u}</span>`; });
+  const mpp = 40075016.686 * Math.cos(cam.center[1] * Math.PI / 180) / (512 * 2 ** cam.zoom);
+  let nice = 1; for (let p = 1; p < 1e7; p *= 10) for (const k of [1, 2, 5]) if (k * p <= 120 * mpp) nice = k * p;
+  set('scale', nice, () => { $('#scaletxt').textContent = nice >= 1000 ? nice / 1000 + ' km' : nice + ' m'; });
+  set('scalebar', (nice / mpp).toFixed(0), v => { $('#scalebar').style.width = v + 'px'; });
+
+  // legenda da viagem e "faltam"
+  const cap = !holding && s.caption && t > .15 && t < .9 ? s.caption : '';
+  set('cap', cap, v => { if (v) $('#caption').textContent = v; $('#caption').classList.toggle('on', !!v); });
+  const nx = holding && s.id !== 'fim' && !inHero && (s.id !== 'vila' || ip > .95) ? nextText(s) : '';
+  set('next', nx, v => { if (v) $('#nexttxt').innerHTML = v; $('#next').classList.toggle('on', !!v); });
+
+  // régua
+  const reached = hIdx >= 0 ? (holding || legT > .95 ? hIdx : hIdx - 1) : (s.id === 'fim' ? 5 : -1);
+  set('ruler', reached + '|' + s.id, () => rulerBtns.forEach((b, i) => { b.classList.toggle('passed', i <= reached); b.classList.toggle('on', i === reached && s.id !== 'fim'); }));
+  const prog = hIdx >= 0 ? (holding ? hIdx : hIdx - 1 + legT) : (s.id === 'fim' ? 5 : 0);
+  $('.ruler .fill').style.transform = `scaleY(${clamp(prog / 5).toFixed(4)})`;
+  const chrome = e.i === 0 || (s.id === 'fim' && holding) ? '0' : '1';
+  set('chrome', chrome, v => { $('.hud').style.opacity = v; $('.ruler').style.opacity = v; });
+  const fimOn = s.id === 'fim' && holding;
+  set('outro', fimOn, v => { if (v) placeFim(); $('#outro').classList.toggle('on', v); document.documentElement.classList.toggle('fim', v); fimMesa(v); for (const l of ['route', 'sea']) if (map.getLayer(l)) map.setLayoutProperty(l, 'visibility', v ? 'none' : 'visible'); });
+  if (fimOn) drawFim();
+
+  // linhas: troços feitos e o que está a crescer
+  const liveK = !holding && hIdx >= 1 ? hIdx : -1;
+  const done = s.id === 'fim' ? 5 : hIdx >= 0 ? (holding ? hIdx : hIdx - 1) : 0;
+  updateRoutes(done, liveK, liveK > 0 ? legT : 0);
+}
+
+// Enquanto o visitante está no hero (o mapa está tapado pela foto), a câmara faz as viagens longas às escondidas
+// para os mosaicos ficarem em cache: a viagem da Aido Santo até Alvor deixa de mostrar o mapa em branco.
+// Pára logo que o visitante começa a descer, e a câmara volta ao sítio.
+const pf = { on: false };
+async function prefetchLegs() {
+  pf.on = true;
+  const stop = () => !pf.on;
+  const pts = [];
+  for (const id of ['aido', 'philips', 'fim']) {
+    const i = sceneOf(id);
+    for (let k = 1; k <= 12; k++) pts.push(legs[i](k / 12));
+  }
+  for (const c of pts) {
+    if (stop()) break;
+    map.jumpTo({ center: c.center, zoom: c.zoom, pitch: c.pitch, bearing: c.bearing,
+      padding: { top: Math.max(c.pad, 0) * VH(), bottom: Math.max(-c.pad, 0) * VH(), left: Math.max(c.padX, 0) * innerWidth, right: Math.max(-c.padX, 0) * innerWidth } });
+    await new Promise(r => { const to = setTimeout(r, 2500); map.once('idle', () => { clearTimeout(to); r(); }); });
+  }
+  pf.on = false; frame.camKey = null; dirty = true;
+}
+
+map.on('load', () => {
+  // o fundo (background-pattern) não pede a imagem sozinho: carrega já as que o estilo usa
+  for (const k of new Set([P.landPattern, P.waterPattern, P.woodPattern, P.bldPattern].filter(Boolean))) if (!map.hasImage(k)) map.addImage(k, PATTERN_FNS[k](), { pixelRatio: 2 });
+  ready = true; setRoutes(); build();
+  target = cur = mid = clamp(scrollY / maxScroll) * TOTAL; dirty = true;
+  mapLoaded();
+});
+let mapLoaded; const mapReady = new Promise(r => (mapLoaded = r));
+let lastW = innerWidth;
+addEventListener('resize', () => {
+  const h = $('#hprobe').offsetHeight || innerHeight;
+  if (innerWidth === lastW && h === STABLE_H) return;  // só a barra do browser mexeu: nada muda
+  lastW = innerWidth; STABLE_H = h;
+  if (ready) build();
+});
+build();
+if (AERIAL_ON) (async () => {
+  const img = hero.img;
+  if (!img.complete) await new Promise(r => { img.addEventListener('load', r, { once: true }); img.addEventListener('error', r, { once: true }); setTimeout(r, 4000); });
+  await Promise.race([loadVoo(), new Promise(r => setTimeout(r, 8000))]);
+  await loadAerials(['vila']);
+  await loadAerials();
+  await mapReady;
+  if (cur < HERO_U * .3) prefetchLegs();
+})();
+else { hero.img.closest('picture').querySelectorAll('source').forEach(s => s.remove()); hero.img.src = 'fotos/hero-casa-museu.jpg'; }
+requestAnimationFrame(frame);
+window.__casas = { map, get cur() { return cur; }, get target() { return target; }, set target(v) { cancelAnimationFrame(snap.anim); snap.anim = 0; target = v; }, get timeline() { return timeline; }, get TOTAL() { return TOTAL; }, get maxScroll() { return maxScroll; }, SCENES, markers, scrollForScene, sceneOf, HERO_U };
+</script>
+</body>
+</html>

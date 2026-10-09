@@ -1,0 +1,1188 @@
+{
+  "schema_version": "1.0",
+  "manifesto": {
+    "slug": "penthouse",
+    "revisao": "2026-09-25",
+    "prontidao": "com_limitacoes",
+    "notas": "Dossiê do Penthouse - Low Cost (AL 64058, Vouzela), uma das cinco casas do mesmo casal, tratada como casa separada (ver ../como-se-ligam.md). Primeira recolha a 2026-09-25. Limitações: morada e andar com duas versões; apartamento de 110 m² por confirmar; fotos antigas; 39 das 67 reviews só com nota."
+  },
+  "entidades": [
+    {
+      "id": "CASA-PENTHOUSE",
+      "tipo": "casa",
+      "nome": "Penthouse - Low Cost — três quartos num último andar no centro de Vouzela"
+    },
+    {
+      "id": "QT-PH-TORRE",
+      "tipo": "tipo_quarto",
+      "nome": "Quarto Duplo com Casa de Banho Privativa (18 m², quarto Torre)",
+      "pai_id": "CASA-PENTHOUSE"
+    },
+    {
+      "id": "QT-PH-SMACARIO",
+      "tipo": "tipo_quarto",
+      "nome": "Quarto Triplo com Casa de Banho Privativa (20 m², quarto S. Macário)",
+      "pai_id": "CASA-PENTHOUSE"
+    },
+    {
+      "id": "QT-PH-CASTELO",
+      "tipo": "tipo_quarto",
+      "nome": "Quarto Duplo ou Twin com Vista da Cidade (22 m², quarto Castelo)",
+      "pai_id": "CASA-PENTHOUSE"
+    },
+    {
+      "id": "UN-PH-APARTAMENTO",
+      "tipo": "unidade",
+      "nome": "Apartamento com 2 Quartos (110 m²), por confirmar",
+      "pai_id": "CASA-PENTHOUSE"
+    },
+    {
+      "id": "ESP-PH-VISTA",
+      "tipo": "espaco",
+      "nome": "Janelas corridas e vista sobre a vila",
+      "pai_id": "CASA-PENTHOUSE"
+    },
+    {
+      "id": "TAR-PH-TORRE-2110",
+      "tipo": "tarifa",
+      "nome": "Quarto Duplo, 21–23/10/2026, 2 adultos",
+      "pai_id": "QT-PH-TORRE"
+    },
+    {
+      "id": "TAR-PH-SMACARIO-2110",
+      "tipo": "tarifa",
+      "nome": "Quarto Triplo, 21–23/10/2026, 2 adultos",
+      "pai_id": "QT-PH-SMACARIO"
+    },
+    {
+      "id": "TAR-PH-CASTELO-2110",
+      "tipo": "tarifa",
+      "nome": "Quarto Duplo ou Twin, 21–23/10/2026, 2 adultos",
+      "pai_id": "QT-PH-CASTELO"
+    },
+    {
+      "id": "CANAL-BK-PH",
+      "tipo": "canal",
+      "nome": "Booking — Penthouse - Low Cost",
+      "pai_id": "CASA-PENTHOUSE"
+    },
+    {
+      "id": "CANAL-GG-PH",
+      "tipo": "canal",
+      "nome": "Google — Penthouse - Low Cost",
+      "pai_id": "CASA-PENTHOUSE"
+    },
+    {
+      "id": "CANAL-AB-PH",
+      "tipo": "canal",
+      "nome": "Airbnb — Penthouse Lowcost",
+      "pai_id": "CASA-PENTHOUSE"
+    }
+  ],
+  "evidencias": [
+    {
+      "id": "EV-RNT-PH",
+      "origem": "registo_publico",
+      "entidade_ids": [
+        "CASA-PENTHOUSE"
+      ],
+      "local": "https://rnt.turismodeportugal.pt/RNT/RNAL.aspx?nr=64058",
+      "recolhido_em": "2026-09-25",
+      "bloco": "ficha RNAL 64058/AL",
+      "excerto": "CASA MUSEU LOW COST; registado 2018-02-07; aberto 2018-02-08; Apartamento; 10 utentes, 3 quartos, 5 camas; Rua Comendador Correia Oliveira 19, 3 Esq., 3670-238 Vouzela; António José ferreira Carvalho; CA Seguros 03420022 até 2026-04-18",
+      "atualidade": "Registo público; confirmado em 2026-09-25."
+    },
+    {
+      "id": "EV-SITE-PH",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-PENTHOUSE",
+        "ESP-PH-VISTA",
+        "QT-PH-TORRE",
+        "QT-PH-SMACARIO",
+        "QT-PH-CASTELO"
+      ],
+      "local": "https://www.casamuseu.com/penthouse.php",
+      "recolhido_em": "2026-09-25",
+      "bloco": "bloco \"A Casa\"",
+      "excerto": "A Penthouse - Low cost situa-se no centro de Vouzela, é uma opção low cost ao Hotel Casa Museu. Dispõe de três quartos num 4º andar (sem elevador). […] A Penthouse é um miradouro 360º sobre a vila de Vouzela",
+      "atualidade": "Página sem data; site © 2008–2026."
+    },
+    {
+      "id": "EV-SITE-PH-PRECOS",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-PENTHOUSE"
+      ],
+      "local": "https://www.casamuseu.com/penthouse.php",
+      "recolhido_em": "2026-09-25",
+      "bloco": "bloco \"PREÇOS\"",
+      "excerto": "Vista Torre 30,00 € - 45,00 €; 3ª pessoa 15,00 €",
+      "atualidade": "Sem data. Histórico."
+    },
+    {
+      "id": "EV-SITE-PH-EN",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-PENTHOUSE"
+      ],
+      "local": "https://www.casamuseu.com/_en/penthouse.php",
+      "recolhido_em": "2026-09-25",
+      "bloco": "The House",
+      "excerto": "We are 20 meters away from the Hotel on a 4th floor (with no escalator)."
+    },
+    {
+      "id": "EV-VV-PH",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-PENTHOUSE"
+      ],
+      "local": "https://web.archive.org/web/20260513220229/https://www.visitvouzela.com/penthouse",
+      "recolhido_em": "2026-09-25",
+      "bloco": "página Penthouse",
+      "excerto": "Situada num quarto andar a 20 metros do centro histórico de Vouzela. […] Casa de banho privativa (sem porta) Frigorifico, Chaleira e Micro-ondas […] Este alojamento low-cost não tem opção de pequeno-almoço",
+      "publicado_em": "cópia do Web Archive de 2026-05-13"
+    },
+    {
+      "id": "EV-VV-PH-QUARTOS",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-PENTHOUSE"
+      ],
+      "local": "https://web.archive.org/web/20260212123808/https://www.visitvouzela.com/penthousequartos",
+      "recolhido_em": "2026-09-25",
+      "bloco": "página Penthouse Quartos",
+      "excerto": "Penthouse Low-Cost 2525/AL Alojamento dedicado a ciclistas na vila de Vouzela.",
+      "publicado_em": "cópia do Web Archive de 2026-02-12",
+      "atualidade": "Número e texto trocados com o BIKEINN."
+    },
+    {
+      "id": "EV-VV-CHECKIN",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-PENTHOUSE"
+      ],
+      "local": "https://web.archive.org/web/20260606020519/https://www.visitvouzela.com/",
+      "recolhido_em": "2026-09-25",
+      "bloco": "página inicial, bloco Localização",
+      "excerto": "Onde poderá fazer o Check-in para os outros Alojamentos Locais como As Penthouse Low-Cost, Casa das Ameias ou BIKEINN.",
+      "publicado_em": "cópia do Web Archive de 2026-06-06"
+    },
+    {
+      "id": "EV-BK-PH",
+      "origem": "plataforma",
+      "entidade_ids": [
+        "CASA-PENTHOUSE",
+        "CANAL-BK-PH"
+      ],
+      "local": "https://www.booking.com/hotel/pt/penthouse-low-cost.pt-pt.html",
+      "recolhido_em": "2026-09-25",
+      "bloco": "regras, informações importantes, principais comodidades",
+      "excerto": "Check-in Das 15:00 às 22:00 (informar hora de chegada); Check-out Das 08:00 às 11:00; Cama extra € 25; Não existem berços; Animais: não admitidos; Métodos de pagamento aceites: Dinheiro; a propriedade está localizada no 4º piso e não há elevador; Licença número: 64058/AL; Estacionamento gratuito"
+    },
+    {
+      "id": "EV-BK-PH-HOST",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-PENTHOUSE"
+      ],
+      "local": "https://www.booking.com/hotel/pt/penthouse-low-cost.pt-pt.html",
+      "recolhido_em": "2026-09-25",
+      "bloco": "Informação do alojamento",
+      "excerto": "Este alojamento com três quartos num terceiro andar (sem elevador) tem uma vista soberba sobre a Vila de Vouzela e sobre a Montanha."
+    },
+    {
+      "id": "EV-BK-PH-QA",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-PENTHOUSE",
+        "UN-PH-APARTAMENTO"
+      ],
+      "local": "https://www.booking.com/hotel/pt/penthouse-low-cost.pt-pt.html",
+      "recolhido_em": "2026-09-25",
+      "bloco": "perguntas e respostas",
+      "excerto": "3 suites\"PENTHOUSE\" e parte baixo Apartamento Low cost. […] Nas penthouse não temos berços.",
+      "publicado_em": "2021-08"
+    },
+    {
+      "id": "EV-BK-PH-QUARTOS",
+      "origem": "casa",
+      "entidade_ids": [
+        "QT-PH-TORRE",
+        "QT-PH-SMACARIO",
+        "QT-PH-CASTELO",
+        "UN-PH-APARTAMENTO"
+      ],
+      "local": "https://www.booking.com/hotel/pt/penthouse-low-cost.pt-pt.html",
+      "recolhido_em": "2026-09-25",
+      "bloco": "dados de cada tipo",
+      "excerto": "Quarto Duplo 18 m² 1 cama de casal grande; Quarto Triplo 20 m² 3 camas; Quarto Duplo ou Twin com Vista da Cidade 22 m² 3 camas; Apartamento com 2 Quartos 110 m² (sem fotos)"
+    },
+    {
+      "id": "EV-BK-PH-TARIFA",
+      "origem": "plataforma",
+      "entidade_ids": [
+        "TAR-PH-TORRE-2110",
+        "TAR-PH-SMACARIO-2110",
+        "TAR-PH-CASTELO-2110"
+      ],
+      "local": "https://www.booking.com/hotel/pt/penthouse-low-cost.pt-pt.html?checkin=2026-10-21&checkout=2026-10-23&group_adults=2",
+      "recolhido_em": "2026-09-25",
+      "bloco": "tabela de disponibilidade",
+      "excerto": "Quarto Duplo € 110; Quarto Triplo € 118; Quarto Duplo ou Twin € 118; Cancelamento gratuito antes de 18 de outubro de 2026; Resta-nos 1",
+      "atualidade": "Pesquisa de 2026-09-25 para 21–23/10/2026, 2 adultos."
+    },
+    {
+      "id": "EV-BK-PH-METRICA",
+      "origem": "plataforma",
+      "entidade_ids": [
+        "CANAL-BK-PH"
+      ],
+      "local": "https://www.booking.com/hotel/pt/penthouse-low-cost.pt-pt.html",
+      "recolhido_em": "2026-09-25",
+      "bloco": "pontuação",
+      "excerto": "9,0 Soberbo · 67 comentários; Localização 9,6; Funcionários 9,6; Limpeza 9,6; Wi-Fi 7,5"
+    },
+    {
+      "id": "EV-GG-PH",
+      "origem": "plataforma",
+      "entidade_ids": [
+        "CASA-PENTHOUSE",
+        "CANAL-GG-PH"
+      ],
+      "local": "Google Places API, place ChIJtZU3H8hBIw0RAHAZsS1FGCY",
+      "recolhido_em": "2026-09-25",
+      "bloco": "ficha",
+      "excerto": "rating 4.3; userRatingCount 8; Praça Moraes de Carvalho nº1, 3670-231 Vouzela; 232 771 514"
+    },
+    {
+      "id": "EV-AB-PH",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-PENTHOUSE",
+        "CANAL-AB-PH"
+      ],
+      "local": "https://www.airbnb.pt/rooms/601851160568908210",
+      "recolhido_em": "2026-09-25",
+      "bloco": "descrição, comodidades",
+      "excerto": "Três Suites com wc privado no centro de Vouzela […] 3 quartos · 7 camas · Casa de banho partilhada; Dados do registo 64058/AL"
+    },
+    {
+      "id": "EV-FOTOS-PLACAS",
+      "origem": "casa",
+      "entidade_ids": [
+        "QT-PH-TORRE",
+        "QT-PH-SMACARIO"
+      ],
+      "local": "marketing/fotos.md",
+      "recolhido_em": "2026-09-25",
+      "bloco": "interior/quarto-31.jpg e interior/quarto-29.jpg",
+      "excerto": "placas TORRE e S.MACÁRIO nas portas, nas galerias do Quarto Duplo e do Quarto Triplo do Booking"
+    },
+    {
+      "id": "EV-REV-PH-LOCAL",
+      "origem": "hospede",
+      "entidade_ids": [
+        "CASA-PENTHOUSE"
+      ],
+      "local": "reviews.md",
+      "recolhido_em": "2026-09-25",
+      "bloco": "pontos-fortes.md, ponto 1",
+      "excerto": "19 de 30 reviews com texto",
+      "atualidade": "Última prova julho de 2026."
+    },
+    {
+      "id": "EV-REV-PH-DONOS",
+      "origem": "hospede",
+      "entidade_ids": [
+        "CASA-PENTHOUSE"
+      ],
+      "local": "reviews.md",
+      "recolhido_em": "2026-09-25",
+      "bloco": "pontos-fortes.md, ponto 2",
+      "excerto": "15 de 30 reviews com texto",
+      "atualidade": "Última prova agosto de 2026."
+    },
+    {
+      "id": "EV-REV-PH-CONFORTO",
+      "origem": "hospede",
+      "entidade_ids": [
+        "CASA-PENTHOUSE"
+      ],
+      "local": "reviews.md",
+      "recolhido_em": "2026-09-25",
+      "bloco": "pontos-fortes.md, ponto 3",
+      "excerto": "14 de 30 reviews com texto",
+      "atualidade": "Última prova julho de 2026."
+    },
+    {
+      "id": "EV-REV-PH-VISTA",
+      "origem": "hospede",
+      "entidade_ids": [
+        "CASA-PENTHOUSE",
+        "ESP-PH-VISTA"
+      ],
+      "local": "reviews.md",
+      "recolhido_em": "2026-09-25",
+      "bloco": "pontos-fortes.md, ponto 4",
+      "excerto": "B-006, B-041, B-048",
+      "atualidade": "Última prova julho de 2026."
+    },
+    {
+      "id": "EV-REV-PH-ESCADAS",
+      "origem": "hospede",
+      "entidade_ids": [
+        "CASA-PENTHOUSE"
+      ],
+      "local": "reviews.md",
+      "recolhido_em": "2026-09-25",
+      "bloco": "pontos-fortes.md, atrito",
+      "excerto": "12 de 30 reviews com texto",
+      "atualidade": "Última prova agosto de 2026."
+    },
+    {
+      "id": "EV-RNT-GRUPO",
+      "origem": "registo_publico",
+      "entidade_ids": [
+        "CASA-PENTHOUSE"
+      ],
+      "local": "https://rnt.turismodeportugal.pt/",
+      "recolhido_em": "2026-09-25",
+      "bloco": "RNAL 35686, RNET 1238, RNAL 64058, RNAL 25507, RNET 9990",
+      "excerto": "António José Ferreira de Carvalho titular de 35686, 1238, 64058 e 25507; Maria Celeste Silva Coutinho Carvalho titular de 9990",
+      "atualidade": "Confirmado a 2026-09-25."
+    }
+  ],
+  "afirmacoes": [
+    {
+      "id": "AFIR-PH-TIPO",
+      "entidade_id": "CASA-PENTHOUSE",
+      "texto": "O Penthouse - Low Cost é um Alojamento Local (RNAL 64058/AL) no centro de Vouzela.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "registo_publico",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-RNT-PH",
+        "EV-BK-PH",
+        "EV-SITE-PH"
+      ]
+    },
+    {
+      "id": "AFIR-PH-REGISTO",
+      "entidade_id": "CASA-PENTHOUSE",
+      "texto": "Registo RNAL 64058/AL.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "registo_publico",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-RNT-PH",
+        "EV-BK-PH",
+        "EV-AB-PH"
+      ]
+    },
+    {
+      "id": "AFIR-PH-LOWCOST",
+      "entidade_id": "CASA-PENTHOUSE",
+      "texto": "É a opção económica da Casa Museu, a 20 metros dela.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-SITE-PH",
+        "EV-SITE-PH-EN",
+        "EV-VV-PH"
+      ]
+    },
+    {
+      "id": "AFIR-PH-DONOS",
+      "entidade_id": "CASA-PENTHOUSE",
+      "texto": "É dos donos da Casa Museu, António José e Celeste Carvalho.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "registo_publico",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-RNT-PH",
+        "EV-BK-PH-QA"
+      ]
+    },
+    {
+      "id": "AFIR-PH-QUARTOS",
+      "entidade_id": "CASA-PENTHOUSE",
+      "texto": "Três quartos com nome pela vista: Torre (cama de casal), S. Macário e Castelo (3 camas cada).",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-SITE-PH",
+        "EV-VV-PH",
+        "EV-BK-PH-HOST"
+      ]
+    },
+    {
+      "id": "AFIR-PH-TIPOS-NOMES",
+      "entidade_id": "CASA-PENTHOUSE",
+      "texto": "O quarto Torre é o Quarto Duplo do Booking, o S. Macário o Quarto Triplo e o Castelo o Quarto Duplo ou Twin com Vista da Cidade.",
+      "natureza": "inferencia",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-FOTOS-PLACAS",
+        "EV-BK-PH-QUARTOS"
+      ],
+      "condicao": "Dedução pelas placas nas fotos e pelas camas; confirmar com o dono."
+    },
+    {
+      "id": "AFIR-PH-EQUIPAMENTO",
+      "entidade_id": "CASA-PENTHOUSE",
+      "texto": "Os quartos têm casa de banho privativa, ar condicionado, TV, internet, frigorífico, chaleira e micro-ondas; toalhas, champô, sabonete e secador.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-VV-PH",
+        "EV-BK-PH-QUARTOS"
+      ]
+    },
+    {
+      "id": "AFIR-PH-WC-ABERTA",
+      "entidade_id": "CASA-PENTHOUSE",
+      "texto": "A casa de banho é privativa mas não tem porta para o quarto.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-VV-PH"
+      ]
+    },
+    {
+      "id": "AFIR-PH-ESCADAS",
+      "entidade_id": "CASA-PENTHOUSE",
+      "texto": "Fica num último andar sem elevador (cerca de 75 degraus).",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-SITE-PH",
+        "EV-BK-PH",
+        "EV-REV-PH-ESCADAS"
+      ],
+      "condicao": "A casa diz 3.º ou 4.º andar; o número de degraus vem de um hóspede (B-008). Dizer \"sem elevador\" sem fixar o andar até o dono confirmar."
+    },
+    {
+      "id": "AFIR-PH-VISTA",
+      "entidade_id": "ESP-PH-VISTA",
+      "texto": "Vista para a vila, a Torre de Vilharigues, a Senhora do Castelo e a serra de São Macário.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-SITE-PH",
+        "EV-VV-PH",
+        "EV-BK-PH-HOST",
+        "EV-REV-PH-VISTA"
+      ]
+    },
+    {
+      "id": "AFIR-PH-MIRADOURO",
+      "entidade_id": "ESP-PH-VISTA",
+      "texto": "A casa chama-lhe \"um miradouro 360º sobre a vila de Vouzela\".",
+      "natureza": "promessa_subjetiva",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "citar",
+      "evidencia_ids": [
+        "EV-SITE-PH"
+      ]
+    },
+    {
+      "id": "AFIR-PH-SEM-PA",
+      "entidade_id": "CASA-PENTHOUSE",
+      "texto": "Não tem pequeno-almoço; há cafés e restaurantes ao lado.",
+      "natureza": "facto",
+      "categoria": "politica",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-VV-PH"
+      ]
+    },
+    {
+      "id": "AFIR-PH-CHECKIN",
+      "entidade_id": "CASA-PENTHOUSE",
+      "texto": "O check-in faz-se na Casa Museu; avisar a hora de chegada.",
+      "natureza": "facto",
+      "categoria": "politica",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-VV-CHECKIN",
+        "EV-BK-PH"
+      ],
+      "condicao": "Confirmar com o dono."
+    },
+    {
+      "id": "AFIR-PH-HORARIOS",
+      "entidade_id": "CASA-PENTHOUSE",
+      "texto": "Check-in das 15:00 às 22:00; check-out das 08:00 às 11:00.",
+      "natureza": "facto",
+      "categoria": "politica",
+      "origem": "plataforma",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-BK-PH"
+      ],
+      "condicao": "Horário do Booking; confirmar."
+    },
+    {
+      "id": "AFIR-PH-CRIANCAS",
+      "entidade_id": "CASA-PENTHOUSE",
+      "texto": "Crianças bem-vindas; sem berços; cama extra 25 € por noite; sem animais.",
+      "natureza": "facto",
+      "categoria": "politica",
+      "origem": "plataforma",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-BK-PH",
+        "EV-BK-PH-QA"
+      ],
+      "condicao": "Regras do Booking; confirmar."
+    },
+    {
+      "id": "AFIR-PH-PAGAMENTO",
+      "entidade_id": "CASA-PENTHOUSE",
+      "texto": "Pagamento em dinheiro.",
+      "natureza": "facto",
+      "categoria": "politica",
+      "origem": "plataforma",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-BK-PH"
+      ],
+      "condicao": "Dito pelo Booking; confirmar com o dono antes de publicar."
+    },
+    {
+      "id": "AFIR-PH-MORADA",
+      "entidade_id": "CASA-PENTHOUSE",
+      "texto": "Morada: Praça Morais de Carvalho nº1, 3670-231 Vouzela.",
+      "natureza": "facto",
+      "categoria": "contacto",
+      "origem": "plataforma",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-BK-PH",
+        "EV-GG-PH"
+      ],
+      "condicao": "O RNT diz Rua Comendador Correia Oliveira, 19, 3.º Esq., 3670-238; confirmar qual usar."
+    },
+    {
+      "id": "AFIR-PH-CONTACTOS",
+      "entidade_id": "CASA-PENTHOUSE",
+      "texto": "Contactos: 232 771 514, 966 059 265, info@casamuseu.com.",
+      "natureza": "facto",
+      "categoria": "contacto",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-SITE-PH",
+        "EV-GG-PH",
+        "EV-RNT-PH"
+      ],
+      "condicao": "Confirmar que números pôr no site."
+    },
+    {
+      "id": "AFIR-PH-ESTACIONAMENTO",
+      "entidade_id": "CASA-PENTHOUSE",
+      "texto": "Estacionamento gratuito.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "plataforma",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-BK-PH",
+        "EV-AB-PH"
+      ],
+      "condicao": "Nenhum hóspede o refere; confirmar onde fica antes de publicar."
+    },
+    {
+      "id": "AFIR-PH-GRUPO",
+      "entidade_id": "CASA-PENTHOUSE",
+      "texto": "Faz parte de um grupo de cinco casas do mesmo casal: Casa Museu, Casa Aido Santo, Casa das Ameias e Penthouse em Vouzela e Oliveira de Frades, e o Philip's Flat em Alvor.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "registo_publico",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-RNT-GRUPO"
+      ]
+    },
+    {
+      "id": "AFIR-PH-TARIFA-TORRE",
+      "entidade_id": "TAR-PH-TORRE-2110",
+      "texto": "Quarto Duplo: 110 € por 2 noites, cancelamento gratuito até 18/10/2026.",
+      "natureza": "facto",
+      "categoria": "tarifa",
+      "origem": "plataforma",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-BK-PH-TARIFA"
+      ],
+      "condicao": "Preço de uma pesquisa; rever antes de cada base.",
+      "ambito": {
+        "entidade": "TAR-PH-TORRE-2110",
+        "datas": "2026-10-21/2026-10-23",
+        "ocupacao": "2 adultos",
+        "pesquisado_em": "2026-09-25"
+      }
+    },
+    {
+      "id": "AFIR-PH-TARIFA-SMACARIO",
+      "entidade_id": "TAR-PH-SMACARIO-2110",
+      "texto": "Quarto Triplo: 118 € por 2 noites.",
+      "natureza": "facto",
+      "categoria": "tarifa",
+      "origem": "plataforma",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-BK-PH-TARIFA"
+      ],
+      "condicao": "Preço de uma pesquisa; rever antes de cada base.",
+      "ambito": {
+        "entidade": "TAR-PH-SMACARIO-2110",
+        "datas": "2026-10-21/2026-10-23",
+        "ocupacao": "2 adultos",
+        "pesquisado_em": "2026-09-25"
+      }
+    },
+    {
+      "id": "AFIR-PH-TARIFA-CASTELO",
+      "entidade_id": "TAR-PH-CASTELO-2110",
+      "texto": "Quarto Duplo ou Twin com Vista da Cidade: 118 € por 2 noites.",
+      "natureza": "facto",
+      "categoria": "tarifa",
+      "origem": "plataforma",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-BK-PH-TARIFA"
+      ],
+      "condicao": "Preço de uma pesquisa; rever antes de cada base.",
+      "ambito": {
+        "entidade": "TAR-PH-CASTELO-2110",
+        "datas": "2026-10-21/2026-10-23",
+        "ocupacao": "2 adultos",
+        "pesquisado_em": "2026-09-25"
+      }
+    },
+    {
+      "id": "AFIR-PH-PRECOS-SITE",
+      "entidade_id": "CASA-PENTHOUSE",
+      "texto": "Quartos de 30 a 45 €, 3.ª pessoa 15 €.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "historico",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-SITE-PH-PRECOS"
+      ],
+      "ambito": {
+        "fonte": "site antigo, sem data"
+      },
+      "atualidade": "Sem data."
+    },
+    {
+      "id": "AFIR-PH-APARTAMENTO",
+      "entidade_id": "UN-PH-APARTAMENTO",
+      "texto": "Há também um apartamento de 110 m² com dois quartos, lareira e cozinha.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "desconhecido",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-BK-PH-QUARTOS",
+        "EV-BK-PH-QA"
+      ],
+      "atualidade": "Só nos dados do Booking, sem fotos nem disponibilidade; confirmar."
+    },
+    {
+      "id": "AFIR-PH-2525",
+      "entidade_id": "CASA-PENTHOUSE",
+      "texto": "Registo 2525/AL.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "conflitante",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-VV-PH-QUARTOS",
+        "EV-RNT-PH"
+      ],
+      "atualidade": "Erro do site: 2525/AL é um AL de Lisboa; o registo certo é 64058/AL."
+    },
+    {
+      "id": "AFIR-PH-NOTA-BK",
+      "entidade_id": "CANAL-BK-PH",
+      "texto": "Nota 9,0 em 10 no Booking, com 67 comentários; localização 9,6.",
+      "natureza": "metrica",
+      "categoria": "avaliacao",
+      "origem": "plataforma",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-BK-PH-METRICA"
+      ],
+      "condicao": "Mostrar com fonte, escala e data (setembro de 2026)."
+    },
+    {
+      "id": "AFIR-PH-NOTA-GG",
+      "entidade_id": "CANAL-GG-PH",
+      "texto": "Nota 4,3 em 5 no Google, com 8 avaliações.",
+      "natureza": "metrica",
+      "categoria": "avaliacao",
+      "origem": "plataforma",
+      "estado": "confirmado",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-GG-PH"
+      ],
+      "atualidade": "Amostra pequena (8)."
+    },
+    {
+      "id": "AFIR-PH-TESTEMUNHO-LOCAL",
+      "entidade_id": "CASA-PENTHOUSE",
+      "texto": "Os hóspedes dizem que fica no centro, com tudo a pé.",
+      "natureza": "testemunho",
+      "categoria": "avaliacao",
+      "origem": "hospede",
+      "estado": "confirmado",
+      "uso": "citar",
+      "evidencia_ids": [
+        "EV-REV-PH-LOCAL"
+      ]
+    },
+    {
+      "id": "AFIR-PH-TESTEMUNHO-DONOS",
+      "entidade_id": "CASA-PENTHOUSE",
+      "texto": "Os hóspedes elogiam a simpatia e a rapidez dos donos.",
+      "natureza": "testemunho",
+      "categoria": "avaliacao",
+      "origem": "hospede",
+      "estado": "confirmado",
+      "uso": "citar",
+      "evidencia_ids": [
+        "EV-REV-PH-DONOS"
+      ]
+    },
+    {
+      "id": "AFIR-PH-TESTEMUNHO-CONFORTO",
+      "entidade_id": "CASA-PENTHOUSE",
+      "texto": "Os hóspedes dizem que é limpo, confortável e barato.",
+      "natureza": "testemunho",
+      "categoria": "avaliacao",
+      "origem": "hospede",
+      "estado": "confirmado",
+      "uso": "citar",
+      "evidencia_ids": [
+        "EV-REV-PH-CONFORTO"
+      ]
+    }
+  ],
+  "citacoes": [
+    {
+      "id": "CIT-PH-TUDO-PERTO",
+      "review_id": "B-029",
+      "texto_original": "Estadia muito confortável, tudo muito bem limpo, localização no centro, café, mercadinho, tudo perto.",
+      "autor": "Vieira",
+      "plataforma": "Booking",
+      "data": "2025-08-15",
+      "lingua": "pt"
+    },
+    {
+      "id": "CIT-PH-SEM-CARRO",
+      "review_id": "B-028",
+      "texto_original": "Localização central, podendo deixar o carro e ir a pé visitar o centro.",
+      "autor": "Ana",
+      "plataforma": "Booking",
+      "data": "2025-08-18",
+      "lingua": "pt"
+    },
+    {
+      "id": "CIT-PH-ACOLHIMENTO",
+      "review_id": "B-048",
+      "texto_original": "Les propriétaires sont à l'écoute et leur accueil est chaleureux et bienveillant.",
+      "autor": "Rutilio",
+      "plataforma": "Booking",
+      "data": "2024-12-30",
+      "lingua": "fr",
+      "traducao": "Os proprietários estão atentos e o acolhimento é caloroso e cuidadoso."
+    },
+    {
+      "id": "CIT-PH-VISTA",
+      "review_id": "B-048",
+      "texto_original": "La vue est exceptionnelle de jours comme de nuit.",
+      "autor": "Rutilio",
+      "plataforma": "Booking",
+      "data": "2024-12-30",
+      "lingua": "fr",
+      "traducao": "A vista é excecional de dia e de noite."
+    },
+    {
+      "id": "CIT-PH-AMAVEIS",
+      "review_id": "B-064",
+      "texto_original": "Proprietários e funcionários excecionalmente amáveis e prestáveis.",
+      "autor": "João",
+      "plataforma": "Booking",
+      "data": "2023-11-28",
+      "lingua": "pt"
+    },
+    {
+      "id": "CIT-PH-LIMPO",
+      "review_id": "B-041",
+      "texto_original": "Kind hosts, very clean and comfortable accommodation, great location.",
+      "autor": "Wanda",
+      "plataforma": "Booking",
+      "data": "2025-04-19",
+      "lingua": "en",
+      "traducao": "Anfitriões simpáticos, alojamento muito limpo e confortável, ótima localização."
+    },
+    {
+      "id": "CIT-PH-PRECO",
+      "review_id": "B-064",
+      "texto_original": "Preço muito em conta para uma estadia de duas noites, marcada com pouca antecedência!",
+      "autor": "João",
+      "plataforma": "Booking",
+      "data": "2023-11-28",
+      "lingua": "pt"
+    },
+    {
+      "id": "CIT-PH-FORMA",
+      "review_id": "B-007",
+      "texto_original": "subir até ao quarto andar, mas até é bom para manter a forma",
+      "autor": "Roger",
+      "plataforma": "Booking",
+      "data": "2026-07-23",
+      "lingua": "pt"
+    }
+  ],
+  "ativos": [
+    {
+      "id": "ATV-PH-VISTA-05",
+      "caminho": "marketing/fotos/exterior/vista-05.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 2250
+      },
+      "assunto": "Telhados da vila e o viaduto ferroviário, vistos da janela",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou."
+      ],
+      "entidade_confirmada": "ESP-PH-VISTA"
+    },
+    {
+      "id": "ATV-PH-VISTA-04",
+      "caminho": "marketing/fotos/exterior/vista-04.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 2250
+      },
+      "assunto": "Telhados e o monte da Senhora do Castelo",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou."
+      ],
+      "entidade_confirmada": "ESP-PH-VISTA"
+    },
+    {
+      "id": "ATV-PH-VISTA-01",
+      "caminho": "marketing/fotos/exterior/vista-01.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 2250
+      },
+      "assunto": "A vila e a serra com nuvens",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou."
+      ],
+      "entidade_confirmada": "ESP-PH-VISTA"
+    },
+    {
+      "id": "ATV-PH-VISTA-08",
+      "caminho": "marketing/fotos/exterior/vista-08.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 2250
+      },
+      "assunto": "Telhados, vale e viaduto",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou."
+      ],
+      "entidade_confirmada": "ESP-PH-VISTA"
+    },
+    {
+      "id": "ATV-PH-QUARTO-01",
+      "caminho": "marketing/fotos/interior/quarto-01.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 2250
+      },
+      "assunto": "Quarto duplo com cabeceira de madeira e janela corrida",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou."
+      ]
+    },
+    {
+      "id": "ATV-PH-QUARTO-31",
+      "caminho": "marketing/fotos/interior/quarto-31.jpg",
+      "dimensoes": {
+        "largura": 3264,
+        "altura": 2448
+      },
+      "assunto": "Quarto Torre, com a placa na porta",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou."
+      ],
+      "entidade_confirmada": "QT-PH-TORRE"
+    },
+    {
+      "id": "ATV-PH-QUARTO-29",
+      "caminho": "marketing/fotos/interior/quarto-29.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 2250
+      },
+      "assunto": "Quarto S. Macário, com a placa na porta",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou."
+      ],
+      "entidade_confirmada": "QT-PH-SMACARIO"
+    },
+    {
+      "id": "ATV-PH-QUARTO-05",
+      "caminho": "marketing/fotos/interior/quarto-05.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 1536
+      },
+      "assunto": "Quarto triplo em panorâmica com a janela corrida",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou."
+      ]
+    },
+    {
+      "id": "ATV-PH-QUARTO-20",
+      "caminho": "marketing/fotos/interior/quarto-20.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 2250
+      },
+      "assunto": "Mesa, chaleira e micro-ondas no quarto",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou."
+      ]
+    }
+  ],
+  "decisoes": [
+    {
+      "id": "DEC-CINCO-DOSSIES",
+      "estado": "ativa",
+      "efeito": "informativo",
+      "texto": "O utilizador pediu cinco dossiês separados, um por casa, com o mesmo peso e sem superiorizar nenhuma: \"quero que refaças o dossiè, nao eliminando o que já existe, para incluir a informaçao das 5 casas. nao superiorizes. […] faz como se fossem casas separadas.\" O BIKEINN fica de fora por agora. O Penthouse, antes fora do âmbito (2026-09-24), entra com o mesmo peso.",
+      "decidido_em": "2026-09-25",
+      "fonte": "utilizador (Diogo), mensagem de 2026-09-25",
+      "afetados": [
+        "CASA-PENTHOUSE"
+      ]
+    },
+    {
+      "id": "DEC-FOTOS-POR-AUTORIZAR",
+      "estado": "ativa",
+      "efeito": "informativo",
+      "texto": "Todas as fotografias foram publicadas pela própria casa, mas o dono ainda não autorizou o uso no site definitivo. Utilizáveis na versão de demonstração.",
+      "decidido_em": "2026-09-25",
+      "fonte": "regra da skill; sem contacto com o dono",
+      "afetados": [
+        "ATV-PH-VISTA-05",
+        "ATV-PH-VISTA-04",
+        "ATV-PH-VISTA-01",
+        "ATV-PH-VISTA-08",
+        "ATV-PH-QUARTO-01",
+        "ATV-PH-QUARTO-31",
+        "ATV-PH-QUARTO-29",
+        "ATV-PH-QUARTO-05",
+        "ATV-PH-QUARTO-20"
+      ]
+    }
+  ],
+  "cobertura": [
+    {
+      "id": "COB-IDENTIDADE",
+      "fonte": "RNT, Booking, Google, Airbnb, site antigo, Visit Vouzela",
+      "material": "identidade",
+      "estado": "completo_no_universo_observado",
+      "superficie": "nome, registo, titular, telefone e email cruzados; morada com duas versões"
+    },
+    {
+      "id": "COB-RNT",
+      "fonte": "Registo Nacional de Turismo",
+      "material": "compliance",
+      "estado": "completo_no_universo_observado",
+      "superficie": "RNAL 64058 (e 2525, para desfazer o erro do site)",
+      "observado": 2,
+      "recolhido": 2
+    },
+    {
+      "id": "COB-SITE",
+      "fonte": "casamuseu.com",
+      "material": "textos",
+      "estado": "completo_no_universo_observado",
+      "superficie": "página Penthouse PT e EN",
+      "observado": 2,
+      "recolhido": 2
+    },
+    {
+      "id": "COB-SITE-FOTOS",
+      "fonte": "casamuseu.com",
+      "material": "fotos",
+      "estado": "completo_no_universo_observado",
+      "superficie": "galeria da página",
+      "observado": 11,
+      "recolhido": 10,
+      "limitacao": "1 igual a outra maior."
+    },
+    {
+      "id": "COB-VV",
+      "fonte": "visitvouzela.com (Web Archive)",
+      "material": "textos",
+      "estado": "completo_no_universo_observado",
+      "superficie": "/penthouse e /penthousequartos",
+      "observado": 2,
+      "recolhido": 2
+    },
+    {
+      "id": "COB-VV-FOTOS",
+      "fonte": "visitvouzela.com (Web Archive)",
+      "material": "fotos",
+      "estado": "completo_no_universo_observado",
+      "superficie": "2 páginas",
+      "observado": 16,
+      "recolhido": 6,
+      "limitacao": "Logótipos do rodapé (no dossiê da Casa das Ameias) e fotos iguais às do Booking."
+    },
+    {
+      "id": "COB-BK-REVIEWS",
+      "fonte": "Booking — Penthouse - Low Cost",
+      "material": "reviews",
+      "estado": "completo_no_universo_observado",
+      "superficie": "7 páginas, mais recentes primeiro",
+      "observado": 67,
+      "recolhido": 67
+    },
+    {
+      "id": "COB-BK-FOTOS",
+      "fonte": "Booking — Penthouse - Low Cost",
+      "material": "fotos",
+      "estado": "completo_no_universo_observado",
+      "superficie": "galeria completa \"1 / 55\"",
+      "observado": 55,
+      "recolhido": 49,
+      "limitacao": "6 iguais a versões maiores do Visit Vouzela."
+    },
+    {
+      "id": "COB-BK-QUARTOS",
+      "fonte": "Booking — Penthouse - Low Cost",
+      "material": "quartos",
+      "estado": "parcial",
+      "superficie": "1 pesquisa (21–23/10/2026, 2 adultos)",
+      "observado": 4,
+      "recolhido": 4,
+      "limitacao": "O Apartamento com 2 Quartos não apareceu na tabela e não tem fotos."
+    },
+    {
+      "id": "COB-GG",
+      "fonte": "Google Maps — Penthouse - Low Cost",
+      "material": "reviews",
+      "estado": "parcial",
+      "superficie": "Places API (New), campo reviews",
+      "observado": 8,
+      "recolhido": 5,
+      "limitacao": "A lista de críticas não é servida sem sessão."
+    },
+    {
+      "id": "COB-AB",
+      "fonte": "Airbnb — Penthouse Lowcost",
+      "material": "reviews",
+      "estado": "completo_no_universo_observado",
+      "superficie": "página do anúncio",
+      "observado": 0,
+      "recolhido": 0
+    },
+    {
+      "id": "COB-AB-FOTOS",
+      "fonte": "Airbnb — Penthouse Lowcost",
+      "material": "fotos",
+      "estado": "completo_no_universo_observado",
+      "superficie": "fotos do anúncio",
+      "observado": 47,
+      "recolhido": 5,
+      "limitacao": "42 iguais às do Booking, maiores."
+    },
+    {
+      "id": "COB-TA",
+      "fonte": "TripAdvisor",
+      "material": "reviews",
+      "estado": "nao_encontrado",
+      "superficie": "pesquisa por nome",
+      "limitacao": "Sem ficha encontrada."
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+# Normaliza tudo para LF no repositorio. Sem isto, num checkout Windows
+# o Git converte para CRLF e cada ficheiro aparece integralmente alterado
+# no primeiro diff, escondendo as mudancas reais.
+* text=auto eol=lf
+
+# Binarios que o Git nao deve tocar.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.pdf binary

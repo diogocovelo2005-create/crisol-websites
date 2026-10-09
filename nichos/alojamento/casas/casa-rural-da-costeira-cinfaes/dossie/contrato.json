@@ -1,0 +1,3624 @@
+{
+  "schema_version": "1.0",
+  "manifesto": {
+    "slug": "casa-rural-da-costeira-cinfaes",
+    "revisao": "2026-10-07",
+    "prontidao": "com_limitacoes",
+    "notas": "Identidade confirmada (RNET 4967, NIPC 510778445, telefone em 5 canais, mesma casa nas fotos). Tipo: Casa de Campo (TER), não Alojamento Local; concelho Cinfães. Limitações: Booking retirado (sem quartos nem ~28 reviews); número de quartos (5 ou 6), camas, capacidade e casas de banho em conflito; jacúzi, pequeno-almoço e refeições sem prova atual; nome «Quinta da Costeira» só em citação; reserva online só no Airbnb e contactos diretos a confirmar com o dono."
+  },
+  "entidades": [
+    {
+      "id": "CASA-COSTEIRA",
+      "tipo": "casa",
+      "nome": "Casa Rural da Costeira (RNET 4967), Calçada de Medados 158, Cinfães"
+    },
+    {
+      "id": "UN-CASA-INTEIRA",
+      "tipo": "unidade",
+      "nome": "A casa inteira, como se vende no Airbnb (rooms/2768412)",
+      "pai_id": "CASA-COSTEIRA"
+    },
+    {
+      "id": "TQ-QUADRUPLO",
+      "tipo": "tipo_quarto",
+      "nome": "Quarto quádruplo (só no texto do Airbnb)",
+      "pai_id": "CASA-COSTEIRA"
+    },
+    {
+      "id": "TQ-FAMILIAR",
+      "tipo": "tipo_quarto",
+      "nome": "Quarto familiar superior (só no Instagram de 2019)",
+      "pai_id": "CASA-COSTEIRA"
+    },
+    {
+      "id": "ESP-PISCINA",
+      "tipo": "espaco",
+      "nome": "Piscina exterior",
+      "pai_id": "CASA-COSTEIRA"
+    },
+    {
+      "id": "ESP-JACUZZI",
+      "tipo": "espaco",
+      "nome": "Jacúzi em recinto de madeira e vidro",
+      "pai_id": "CASA-COSTEIRA"
+    },
+    {
+      "id": "ESP-CHURRASCO",
+      "tipo": "espaco",
+      "nome": "Zona de churrasco com forno a lenha e cozinha exterior",
+      "pai_id": "CASA-COSTEIRA"
+    },
+    {
+      "id": "ESP-JOGOS",
+      "tipo": "espaco",
+      "nome": "Zona coberta de bilhar e matraquilhos",
+      "pai_id": "CASA-COSTEIRA"
+    },
+    {
+      "id": "ESP-SALA",
+      "tipo": "espaco",
+      "nome": "Sala de estar e de jantar com lareira",
+      "pai_id": "CASA-COSTEIRA"
+    },
+    {
+      "id": "ESP-COZINHA",
+      "tipo": "espaco",
+      "nome": "Cozinha",
+      "pai_id": "CASA-COSTEIRA"
+    },
+    {
+      "id": "ESP-QUARTOS",
+      "tipo": "espaco",
+      "nome": "Quartos (número em conflito)",
+      "pai_id": "CASA-COSTEIRA"
+    },
+    {
+      "id": "ESP-PATIO",
+      "tipo": "espaco",
+      "nome": "Pátio empedrado, alpendre e fachada",
+      "pai_id": "CASA-COSTEIRA"
+    },
+    {
+      "id": "ESP-QUINTA",
+      "tipo": "espaco",
+      "nome": "Horta, cerejal, vinha, árvores de fruto e galinheiro",
+      "pai_id": "CASA-COSTEIRA"
+    },
+    {
+      "id": "TAR-AIRBNB-NOV",
+      "tipo": "tarifa",
+      "nome": "Preço Airbnb observado, 13–15/11/2026, 2 adultos",
+      "pai_id": "UN-CASA-INTEIRA"
+    },
+    {
+      "id": "CANAL-AIRBNB",
+      "tipo": "canal",
+      "nome": "Airbnb rooms/2768412"
+    },
+    {
+      "id": "CANAL-GOOGLE",
+      "tipo": "canal",
+      "nome": "Google Maps"
+    },
+    {
+      "id": "CANAL-TRIPADVISOR",
+      "tipo": "canal",
+      "nome": "Tripadvisor d8443793 (não reclamado)"
+    },
+    {
+      "id": "CANAL-BOOKING",
+      "tipo": "canal",
+      "nome": "Booking (ficha retirada)"
+    },
+    {
+      "id": "CANAL-INSTAGRAM",
+      "tipo": "canal",
+      "nome": "Instagram @casaruralcosteira"
+    },
+    {
+      "id": "CANAL-FACEBOOK",
+      "tipo": "canal",
+      "nome": "Facebook CasaRuraldaCosteira"
+    },
+    {
+      "id": "CANAL-DIRETO",
+      "tipo": "canal",
+      "nome": "Contacto direto: telefone, WhatsApp, email"
+    },
+    {
+      "id": "REG-TAROUQUELA",
+      "tipo": "espaco",
+      "nome": "Região: Igreja de Santa Maria Maior de Tarouquela"
+    },
+    {
+      "id": "REG-BESTANCA",
+      "tipo": "espaco",
+      "nome": "Região: Vale do Bestança e Ponte de Covelas"
+    },
+    {
+      "id": "REG-DOURO",
+      "tipo": "espaco",
+      "nome": "Região: o Douro em Porto Antigo e a barragem do Carrapatelo"
+    },
+    {
+      "id": "REG-MONTEMURO",
+      "tipo": "espaco",
+      "nome": "Região: Miradouro das Portas de Montemuro"
+    },
+    {
+      "id": "REG-PAIVA",
+      "tipo": "espaco",
+      "nome": "Região: Passadiços do Paiva"
+    },
+    {
+      "id": "REG-REMEDIOS",
+      "tipo": "espaco",
+      "nome": "Região: Santuário de Nossa Senhora dos Remédios (Lamego)"
+    }
+  ],
+  "evidencias": [
+    {
+      "id": "EV-RNT",
+      "origem": "registo_publico",
+      "entidade_ids": [
+        "CASA-COSTEIRA"
+      ],
+      "local": "https://rnt.turismodeportugal.pt/RNT/Pesquisa_ET.aspx (pesquisa por NIPC 510778445); marketing/provas/rnt-4967-2026-10-07.png; compliance.md",
+      "recolhido_em": "2026-10-07",
+      "bloco": "ficha RNET nº 4967",
+      "excerto": "Empreendimento de Turismo no Espaço Rural | Casa de Campo; CASA RURAL DA COSTEIRA; Calçada de Medados, 158, 4690-055 Cinfães, Viseu; marca comercial Casa Rural da Costeira; 5 quartos, 10 camas; abertura 2013; não encerra; piscina exterior; SPA / Centro de bem-estar (capacidade aprox.: 12); entidade 510778445 CASA RURAL DA COSTEIRA LDA",
+      "publicado_em": "registado em 2014-11-13; última classificação 2017-03-17",
+      "atualidade": "relido a 2026-10-07 na captura; dado oficial estável"
+    },
+    {
+      "id": "EV-RNAL",
+      "origem": "registo_publico",
+      "entidade_ids": [
+        "CASA-COSTEIRA"
+      ],
+      "local": "https://rnt.turismodeportugal.pt/RNT/Pesquisa_AL.aspx; marketing/provas/rnal-pesquisa-costeira-2026-10-07.png",
+      "recolhido_em": "2026-10-07",
+      "bloco": "pesquisa RNAL «Costeira»",
+      "excerto": "7 registos, nenhum em Cinfães"
+    },
+    {
+      "id": "EV-AB-TITULO",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-COSTEIRA",
+        "UN-CASA-INTEIRA",
+        "CANAL-AIRBNB"
+      ],
+      "local": "https://www.airbnb.pt/rooms/2768412; marketing/textos.md; quartos.md",
+      "recolhido_em": "2026-10-07",
+      "bloco": "título e cabeçalho do anúncio",
+      "excerto": "Casa Rural da Costeira · Alojamento inteiro: moradia em Cinfães · 12 pessoas · 6 quartos · 7 camas · 7 casas de banho",
+      "atualidade": "anúncio ativo a 2026-10-07"
+    },
+    {
+      "id": "EV-AB-DESC",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-COSTEIRA"
+      ],
+      "local": "https://www.airbnb.pt/rooms/2768412; marketing/textos.md, Airbnb «Sobre este espaço»",
+      "recolhido_em": "2026-10-07",
+      "bloco": "parágrafo de abertura",
+      "excerto": "A Quinta da Costeira é uma Casa de Campo em Cinfães, que se destaca pela sua paisagem deslumbrante sobre o rio Douro e pela extensa propriedade coberta de vinhas. Descrita pelo silêncio, contemplação e harmonia com a natureza.",
+      "atualidade": "texto igual ao do site de 2013; continua publicado em 2026"
+    },
+    {
+      "id": "EV-AB-ESPACO",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-COSTEIRA",
+        "TQ-QUADRUPLO",
+        "ESP-CHURRASCO",
+        "ESP-SALA",
+        "ESP-JACUZZI",
+        "ESP-QUINTA",
+        "ESP-COZINHA"
+      ],
+      "local": "https://www.airbnb.pt/rooms/2768412; marketing/textos.md, Airbnb «O espaço»",
+      "recolhido_em": "2026-10-07",
+      "bloco": "«O espaço»",
+      "excerto": "quartos com aquecimento central … casa de banho privativa, excepto o quarto quádruplo que possui uma casa de banho partilhada … apanhar legumes no jardim ou obter ovos do galinheiro … forno a lenha … salão comum com sofás junto à lareira … banheira de hidromassagem … Aeroporto Internacional do Porto fica a 80 Km e o Rio Douro encontra-se a 8 minutos de carro … centro Cinfães, situado a 1,5 km",
+      "atualidade": "autoria em dúvida: estrutura do texto gerado pelo Booking (marketing/textos.md)"
+    },
+    {
+      "id": "EV-AB-ACESSO",
+      "origem": "casa",
+      "entidade_ids": [
+        "UN-CASA-INTEIRA",
+        "ESP-JACUZZI",
+        "ESP-QUINTA"
+      ],
+      "local": "https://www.airbnb.pt/rooms/2768412; marketing/textos.md, «Acesso dos viajantes»",
+      "recolhido_em": "2026-10-07",
+      "bloco": "«Acesso dos viajantes»",
+      "excerto": "Usufruto total da casa. (Piscina, Wi-Fi, Jacuzzi (custo extra), possibilidade de colher frutas e legumes da propriedade) Cozinha tradicional Portuguesa."
+    },
+    {
+      "id": "EV-AB-COMOD",
+      "origem": "casa",
+      "entidade_ids": [
+        "UN-CASA-INTEIRA",
+        "ESP-PISCINA",
+        "ESP-CHURRASCO",
+        "ESP-SALA",
+        "ESP-PATIO"
+      ],
+      "local": "https://www.airbnb.pt/rooms/2768412; factos.md, «Comodidades»",
+      "recolhido_em": "2026-10-07",
+      "bloco": "40 comodidades",
+      "excerto": "piscina privada; lareira interior a lenha; aquecimento; Wi-Fi; cozinha; cozinha ao ar livre; grelha de churrasco; pátio privado; estacionamento gratuito; animais permitidos; sem ar condicionado; sem detetor de fumo; piscina/jacúzi sem portão ou fechadura",
+      "atualidade": "anúncio ativo a 2026-10-07"
+    },
+    {
+      "id": "EV-AB-REGRAS",
+      "origem": "casa",
+      "entidade_ids": [
+        "UN-CASA-INTEIRA"
+      ],
+      "local": "https://www.airbnb.pt/rooms/2768412; factos.md, «Horários e regras»",
+      "recolhido_em": "2026-10-07",
+      "bloco": "regras da casa",
+      "excerto": "Check-in flexível; check-out até às 11:00; máximo de 12 hóspedes; animais permitidos"
+    },
+    {
+      "id": "EV-AB-ANFITRIAO",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-COSTEIRA",
+        "CANAL-AIRBNB"
+      ],
+      "local": "https://www.airbnb.pt/rooms/2768412; marketing/textos.md, «Perfil do anfitrião»; compliance.md",
+      "recolhido_em": "2026-10-07",
+      "bloco": "perfil do anfitrião e bloco legal da empresa",
+      "excerto": "Tiago · Idiomas: Inglês, Português e Espanhol · Vive em: Porto · 12 anos de hospedagem; Casa rural da costeira unipessoal Lda, NIPC 510778445, +351 914 797 673"
+    },
+    {
+      "id": "EV-AB-PRECO",
+      "origem": "plataforma",
+      "entidade_ids": [
+        "TAR-AIRBNB-NOV"
+      ],
+      "local": "https://www.airbnb.pt/rooms/2768412 (pesquisa 13–15/11/2026, 2 adultos); factos.md",
+      "recolhido_em": "2026-10-07",
+      "bloco": "preço total e política de cancelamento da pesquisa",
+      "excerto": "822 € no total por 2 noites; reembolso integral até 8 de novembro às 15:00",
+      "atualidade": "observação de uma pesquisa; rever antes de cada base"
+    },
+    {
+      "id": "EV-AB-NOTA",
+      "origem": "plataforma",
+      "entidade_ids": [
+        "CANAL-AIRBNB"
+      ],
+      "local": "https://www.airbnb.pt/rooms/2768412; canais.md; reviews.md",
+      "recolhido_em": "2026-10-07",
+      "bloco": "nota e contagem",
+      "excerto": "4,88 em 25 avaliações; subnotas limpeza 4,6, precisão 4,9, check-in 4,7, comunicação 4,9, localização 4,6, qualidade-preço 4,6"
+    },
+    {
+      "id": "EV-AB-FOTOS",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-COSTEIRA",
+        "ESP-PISCINA",
+        "ESP-JOGOS",
+        "ESP-PATIO",
+        "ESP-SALA",
+        "ESP-COZINHA",
+        "ESP-QUARTOS",
+        "ESP-JACUZZI"
+      ],
+      "local": "https://www.airbnb.pt/rooms/2768412; marketing/fotos.md",
+      "recolhido_em": "2026-10-07",
+      "bloco": "galeria (44 fotos, 39 únicas)",
+      "excerto": "piscina, bilhar e matraquilhos, pátio, alpendre, sala, cozinha, Quartos 1 a 6, recinto do jacúzi",
+      "atualidade": "data das fotos desconhecida; A-002 (julho de 2026) diz «Tudo como nas fotos»"
+    },
+    {
+      "id": "EV-GOOGLE",
+      "origem": "plataforma",
+      "entidade_ids": [
+        "CANAL-GOOGLE",
+        "CASA-COSTEIRA"
+      ],
+      "local": "https://www.google.com/maps/place/Casa+Rural+da+Costeira/@41.0826035,-8.0981623,17z; canais.md; reviews.md",
+      "recolhido_em": "2026-10-07",
+      "bloco": "ficha e críticas",
+      "excerto": "4,8 em 49 críticas; Cç. de Medados, 4690-055 Cinfães; +351 914 797 673; «Hotel de 3 estrelas»; comodidades «restaurante», «centro de fitness»"
+    },
+    {
+      "id": "EV-TRIP",
+      "origem": "plataforma",
+      "entidade_ids": [
+        "CANAL-TRIPADVISOR"
+      ],
+      "local": "https://www.tripadvisor.com/Hotel_Review-g642202-d8443793; canais.md; reviews.md",
+      "recolhido_em": "2026-10-07",
+      "bloco": "ficha não reclamada",
+      "excerto": "4,8 em 8 reviews; a mais recente de julho de 2020; 5 quartos",
+      "atualidade": "sem reviews desde 2020"
+    },
+    {
+      "id": "EV-BOOKING",
+      "origem": "plataforma",
+      "entidade_ids": [
+        "CANAL-BOOKING"
+      ],
+      "local": "https://www.booking.com/hotel/pt/casa-rural-da-costeira.en-gb.html; canais.md",
+      "recolhido_em": "2026-10-07",
+      "bloco": "ficha retirada",
+      "excerto": "redireciona para a lista de Cinfães (closed_msg); resumo de pesquisa não verificado: 9,6 em 28 reviews, «não está a aceitar reservas»"
+    },
+    {
+      "id": "EV-INSTA",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-COSTEIRA",
+        "CANAL-INSTAGRAM",
+        "ESP-JOGOS",
+        "ESP-CHURRASCO",
+        "ESP-JACUZZI",
+        "TQ-FAMILIAR"
+      ],
+      "local": "https://www.instagram.com/casaruralcosteira/; marketing/textos.md",
+      "recolhido_em": "2026-10-07",
+      "bloco": "bio e 12 posts (2017–2023)",
+      "excerto": "bio: Silence, contemplation and harmony with nature. / Booking:reservas@quintadacosteira.pt / +351 914 797 673; 2023-05-14: área de lazer com matraquilhos e bilhar, área de churrasco equipada com fogão e forno a lenha, piscina e jacuzzi; 2023-05-14: Pequeno almoço servido.; 2019-04-10: Quarto familiar superior … até 4 pessoas",
+      "publicado_em": "2017-04-18 a 2023-05-18",
+      "atualidade": "última publicação visível sem sessão: 2023-05-18"
+    },
+    {
+      "id": "EV-FACEBOOK",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-COSTEIRA",
+        "CANAL-FACEBOOK",
+        "CANAL-DIRETO"
+      ],
+      "local": "https://www.facebook.com/CasaRuraldaCosteira/; canais.md; marketing/textos.md",
+      "recolhido_em": "2026-10-07",
+      "bloco": "apresentação e contactos",
+      "excerto": "Casa de Campo localizada na vila de Cinfães; casaruraldacosteira@gmail.com; +351 914 797 673"
+    },
+    {
+      "id": "EV-LINKTREE",
+      "origem": "casa",
+      "entidade_ids": [
+        "CANAL-DIRETO",
+        "CANAL-BOOKING"
+      ],
+      "local": "https://linktr.ee/casaruraldacosteira; canais.md",
+      "recolhido_em": "2026-10-07",
+      "bloco": "ligações",
+      "excerto": "Booking; Fale conosco no Whatsapp (wa.me/351914035365)",
+      "publicado_em": "conta criada em maio de 2023"
+    },
+    {
+      "id": "EV-ROTA-CASA",
+      "origem": "terceiro",
+      "entidade_ids": [
+        "CASA-COSTEIRA",
+        "CANAL-DIRETO"
+      ],
+      "local": "https://rotadoromanico.com/en/Experiences/where-to-sleep/casa-rural-da-costeira; canais.md",
+      "recolhido_em": "2026-10-07",
+      "bloco": "listagem «Onde dormir»",
+      "excerto": "Calçada de Medados 158; +351 914 797 673; 255 563 096; casaruraldacosteira@gmail.com; geral@quintadacosteira.pt; GPS 41.0826035, -8.0981623"
+    },
+    {
+      "id": "EV-SITE2013",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-COSTEIRA",
+        "ESP-QUARTOS",
+        "ESP-QUINTA",
+        "ESP-PISCINA",
+        "ESP-JACUZZI"
+      ],
+      "local": "https://web.archive.org/web/2013/http://quintadacosteira.pt/; marketing/textos.md",
+      "recolhido_em": "2026-10-07",
+      "bloco": "site próprio, versão de 2013-11-08",
+      "excerto": "Quinta da Costeira, a sua Casa de Campo no Douro; A Casa principal da Quinta foi recuperada em 2006, preservando a traça original; os 6 Quartos … 5 dos Quartos dispõem de casa de banho completa; Cerejal e Horta Biológica; 48 Km de Lamego",
+      "publicado_em": "2013-11-08",
+      "atualidade": "antigo (13 anos); domínio extinto"
+    },
+    {
+      "id": "EV-DNS",
+      "origem": "terceiro",
+      "entidade_ids": [
+        "CANAL-DIRETO"
+      ],
+      "local": "fontes.md, conflito 5; canais.md",
+      "recolhido_em": "2026-10-07",
+      "bloco": "resolução DNS de quintadacosteira.pt e casadacosteira.com",
+      "excerto": "DNS inexistente para os dois domínios a 2026-10-07"
+    },
+    {
+      "id": "EV-REVIEWS",
+      "origem": "hospede",
+      "entidade_ids": [
+        "CASA-COSTEIRA",
+        "UN-CASA-INTEIRA"
+      ],
+      "local": "reviews.md (A-001 a A-025, G-001 a G-049, T-001 a T-008); pontos-fortes.md",
+      "recolhido_em": "2026-10-07",
+      "bloco": "82 reviews, 52 com texto",
+      "excerto": "contagens e citações em pontos-fortes.md",
+      "publicado_em": "2015 a 2026-08",
+      "atualidade": "testemunhos datados; não provam o estado atual de um serviço"
+    },
+    {
+      "id": "EV-REV-JACUZZI",
+      "origem": "hospede",
+      "entidade_ids": [
+        "ESP-JACUZZI"
+      ],
+      "local": "reviews.md, A-005 e T-003; pontos-fortes.md, atrito 2",
+      "recolhido_em": "2026-10-07",
+      "bloco": "reviews",
+      "excerto": "A-005 (agosto de 2024): Le jacuzzi n'était malheureusement pas fonctionnel; T-003 (2018): The hot tub was closed",
+      "publicado_em": "2018 e 2024"
+    },
+    {
+      "id": "EV-REV-REFEICOES",
+      "origem": "hospede",
+      "entidade_ids": [
+        "CASA-COSTEIRA"
+      ],
+      "local": "reviews.md; pontos-fortes.md, ponto 7",
+      "recolhido_em": "2026-10-07",
+      "bloco": "reviews sobre pequeno-almoço e refeições",
+      "excerto": "pequeno-almoço/pão: última prova de hóspede 2020 (A-013); refeições do anfitrião: A-004, A-006 (2024), A-008 (2023); staff nomeado em 2016–2018",
+      "publicado_em": "2016 a 2024-08",
+      "atualidade": "antigo"
+    },
+    {
+      "id": "EV-REV-ACESSO",
+      "origem": "hospede",
+      "entidade_ids": [
+        "CASA-COSTEIRA"
+      ],
+      "local": "reviews.md, A-008, T-006, T-008; pontos-fortes.md, atrito 1",
+      "recolhido_em": "2026-10-07",
+      "bloco": "reviews",
+      "excerto": "GPS manda por estrada muito estreita; melhoria de acessos nos 500m á casa; caminhos muito estreitos",
+      "publicado_em": "2015, 2016, 2023"
+    },
+    {
+      "id": "EV-REG-OSRM",
+      "origem": "terceiro",
+      "entidade_ids": [
+        "REG-TAROUQUELA",
+        "REG-BESTANCA",
+        "REG-DOURO",
+        "REG-MONTEMURO",
+        "REG-PAIVA",
+        "REG-REMEDIOS"
+      ],
+      "local": "regiao/regiao.md, «Como foi calculado o tempo de carro»",
+      "recolhido_em": "2026-10-07",
+      "bloco": "rotas OSRM (perfil carro, sem trânsito) a partir de 41.0826035, -8.0981623",
+      "excerto": "Tarouquela 14 min/14,0 km; Ponte de Covelas 12 min/8,7 km; Porto Antigo 10 min/9,0 km; Carrapatelo 8 min/6,0 km; Portas de Montemuro 22 min/22,1 km; Passadiços (Espiunca) 32 min/24,8 km; Remédios 58 min/62,9 km",
+      "atualidade": "calculado a 2026-10-07; estimativa de gabinete"
+    },
+    {
+      "id": "EV-REG-TAROUQUELA",
+      "origem": "terceiro",
+      "entidade_ids": [
+        "REG-TAROUQUELA"
+      ],
+      "local": "https://rotadoromanico.com/en/Monuments/church-of-saint-mary-major-of-tarouquela/; regiao/regiao.md §1",
+      "recolhido_em": "2026-10-07",
+      "bloco": "ficha do monumento",
+      "excerto": "fundada no século XII; templo atual do século XIII; Monumento Nacional em 1945; os «cães de Tarouquela» no portal; Capela de São João, gótica, 1481–1495; visita por marcação (visitas@rotadoromanico.pt, +351 255 810 706); sem acessibilidade para mobilidade reduzida"
+    },
+    {
+      "id": "EV-REG-BESTANCA",
+      "origem": "terceiro",
+      "entidade_ids": [
+        "REG-BESTANCA"
+      ],
+      "local": "https://www.rotadoromanico.com/documents/944/Bestanca-Percursos.pdf e https://www.rotadoromanico.com/en/Experiences/what-to-see-and-do/bridge-of-covelas/; regiao/regiao.md §2",
+      "recolhido_em": "2026-10-07",
+      "bloco": "folheto e ficha",
+      "excerto": "percurso circular de 6,7 km, cerca de 2h35, +236 m; Rota do Vale 18,8 km, cerca de 5h; «um dos rios mais limpos da Europa»; Ponte de Covelas: 1762 (página) vs «ponte Romana» (folheto)"
+    },
+    {
+      "id": "EV-REG-DOURO",
+      "origem": "terceiro",
+      "entidade_ids": [
+        "REG-DOURO"
+      ],
+      "local": "https://www.rotadoromanico.com/en/Experiences/what-to-see-and-do/carrapatelo-dam/ e https://www.portoenorte.pt/pt/o-que-fazer/cais-de-porto-antigo/ (só resumo de pesquisa); regiao/regiao.md §3",
+      "recolhido_em": "2026-10-07",
+      "bloco": "fichas",
+      "excerto": "barragem iniciada em 1965, inaugurada a 18 de junho de 1972; primeiro aproveitamento hidroelétrico do troço nacional do Douro; uma das maiores eclusas da Europa, 35 m de desnível; cais de Porto Antigo: só o resumo do motor de pesquisa"
+    },
+    {
+      "id": "EV-REG-MONTEMURO",
+      "origem": "terceiro",
+      "entidade_ids": [
+        "REG-MONTEMURO"
+      ],
+      "local": "https://www.rotadoromanico.com/en/Experiences/what-to-see-and-do/belvedere-of-the-montemuro-mountain-portas-de-montemuro/; regiao/regiao.md §4",
+      "recolhido_em": "2026-10-07",
+      "bloco": "ficha",
+      "excerto": "1220 m de altitude, junto à Capela do Senhor do Amparo; granito que passa a xisto; Rede Natura 2000; Talegre 1382 m (site da casa 2013) vs 1381 m (resumo)"
+    },
+    {
+      "id": "EV-REG-PAIVA",
+      "origem": "terceiro",
+      "entidade_ids": [
+        "REG-PAIVA"
+      ],
+      "local": "https://passadicosdopaiva.pt/en; regiao/regiao.md §5",
+      "recolhido_em": "2026-10-07",
+      "bloco": "site do município de Arouca",
+      "excerto": "cerca de 8 km (8,7 km noutras páginas); 2h30; difícil; três praias fluviais e cinco geossítios do Arouca Geopark; reserva antecipada; entre o nascer e o pôr do sol"
+    },
+    {
+      "id": "EV-REG-REMEDIOS",
+      "origem": "terceiro",
+      "entidade_ids": [
+        "REG-REMEDIOS"
+      ],
+      "local": "https://www.cm-lamego.pt/... e http://www.monumentos.gov.pt/site/app_pagesuser/sipa.aspx?id=3737; regiao/regiao.md §6",
+      "recolhido_em": "2026-10-07",
+      "bloco": "fichas do município e do SIPA",
+      "excerto": "primeira ermida de 1361; primeira pedra do santuário 1750; escadaria iniciada em 1777; barroco em granito, obra atribuída a Nicolau Nasoni; Imóvel de Interesse Público; «Romaria de Portugal»; 500 degraus (SIPA) vs 686 (outros)"
+    },
+    {
+      "id": "EV-REG-COMMONS",
+      "origem": "terceiro",
+      "entidade_ids": [
+        "REG-TAROUQUELA",
+        "REG-BESTANCA",
+        "REG-DOURO",
+        "REG-MONTEMURO",
+        "REG-PAIVA",
+        "REG-REMEDIOS"
+      ],
+      "local": "API do Wikimedia Commons (imageinfo/extmetadata), consultada a 2026-10-07; marketing/fotos.md, «Região»",
+      "recolhido_em": "2026-10-07",
+      "bloco": "licenças das 6 fotos",
+      "excerto": "Tarouquela CC BY 2.0 (Pedro from Maia); Bestança CC BY-SA 2.0 (Vitor Oliveira, marca de água na imagem); Porto Antigo CC BY-SA 4.0 (ManuelFBorges); Montemuro CC BY-SA 3.0 (C.felix); Paiva CC BY-SA 4.0 (Joseolgon); Remédios CC BY-SA 3.0 (Celso Pinto de Carvalho); AttributionRequired true em todas"
+    }
+  ],
+  "afirmacoes": [
+    {
+      "id": "AF-NOME",
+      "entidade_id": "CASA-COSTEIRA",
+      "texto": "O nome da casa é Casa Rural da Costeira.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "registo_publico",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-RNT",
+        "EV-AB-TITULO",
+        "EV-FACEBOOK",
+        "EV-INSTA"
+      ],
+      "atualidade": "marca comercial no RNET e nome atual em todos os canais ativos"
+    },
+    {
+      "id": "AF-NOME-QUINTA",
+      "entidade_id": "CASA-COSTEIRA",
+      "texto": "A casa chama-se Quinta da Costeira.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "conflitante",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-AB-DESC",
+        "EV-SITE2013",
+        "EV-RNT"
+      ],
+      "atualidade": "nome usado pela casa no parágrafo de apresentação (desde 2013) e em posts; não é a marca comercial registada. Pode aparecer só dentro de uma citação literal da casa, nunca como nome no site, até o dono dizer qual a marca atual."
+    },
+    {
+      "id": "AF-TIPO",
+      "entidade_id": "CASA-COSTEIRA",
+      "texto": "A Casa Rural da Costeira é uma Casa de Campo, empreendimento de Turismo no Espaço Rural registado no RNET com o nº 4967.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "registo_publico",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-RNT"
+      ],
+      "atualidade": "RNT consultado a 2026-10-07"
+    },
+    {
+      "id": "AF-TIPO-AL",
+      "entidade_id": "CASA-COSTEIRA",
+      "texto": "A casa é um Alojamento Local.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "registo_publico",
+      "estado": "conflitante",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-RNT",
+        "EV-RNAL"
+      ],
+      "atualidade": "falso: é RNET (TER), não RNAL; nenhum registo AL em Cinfães com este nome"
+    },
+    {
+      "id": "AF-TIPO-HOTEL",
+      "entidade_id": "CASA-COSTEIRA",
+      "texto": "A casa é um hotel de 3 estrelas.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "plataforma",
+      "estado": "conflitante",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-GOOGLE",
+        "EV-RNT"
+      ],
+      "atualidade": "categoria genérica do Google; o RNET não dá estrelas a esta casa de campo. Também não usar «Turismo rural 5 estrelas» (A-018)."
+    },
+    {
+      "id": "AF-MORADA",
+      "entidade_id": "CASA-COSTEIRA",
+      "texto": "A casa fica na Calçada de Medados, 158, 4690-055 Cinfães, distrito de Viseu.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "registo_publico",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-RNT",
+        "EV-ROTA-CASA",
+        "EV-GOOGLE"
+      ]
+    },
+    {
+      "id": "AF-HISTORIA",
+      "entidade_id": "CASA-COSTEIRA",
+      "texto": "A casa principal foi recuperada em 2006, preservando a traça original, e o empreendimento abriu em 2013.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-SITE2013",
+        "EV-RNT"
+      ],
+      "condicao": "2006 é a data dada pela própria casa (site de 2013); 2013 é o ano de abertura do RNET. Escrever «segundo a casa» para 2006; não inventar história familiar.",
+      "atualidade": "facto histórico; não envelhece"
+    },
+    {
+      "id": "AF-ABERTO-ANO",
+      "entidade_id": "CASA-COSTEIRA",
+      "texto": "A casa funciona todo o ano.",
+      "natureza": "facto",
+      "categoria": "politica",
+      "origem": "registo_publico",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-RNT"
+      ],
+      "ambito": {
+        "fonte": "RNET, 2026-10-07"
+      },
+      "condicao": "O RNET diz «Não encerra este ano»; confirmar com o dono antes do site definitivo e não prometer datas."
+    },
+    {
+      "id": "AF-CASA-INTEIRA",
+      "entidade_id": "UN-CASA-INTEIRA",
+      "texto": "No Airbnb a casa é reservada inteira por um só grupo, com uso de toda a casa, piscina e Wi-Fi.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-AB-TITULO",
+        "EV-AB-ACESSO"
+      ],
+      "ambito": {
+        "canal": "Airbnb",
+        "unidade": "casa inteira"
+      },
+      "condicao": "Âmbito Airbnb. Não dizer que é sempre assim noutros canais: o texto «O espaço» fala de cozinha partilhada e de um quarto quádruplo, à maneira de uma venda por quartos."
+    },
+    {
+      "id": "AF-QUARTOS-N",
+      "entidade_id": "ESP-QUARTOS",
+      "texto": "A casa tem 6 quartos.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "conflitante",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-AB-TITULO",
+        "EV-SITE2013",
+        "EV-RNT",
+        "EV-TRIP"
+      ],
+      "atualidade": "6 (Airbnb, site 2013, A-011) contra 5 (RNET, Tripadvisor). Não dar número de quartos até o dono confirmar."
+    },
+    {
+      "id": "AF-CAMAS-N",
+      "entidade_id": "ESP-QUARTOS",
+      "texto": "A casa tem 7 camas (Airbnb) ou 10 camas (RNET).",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "conflitante",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-AB-TITULO",
+        "EV-RNT"
+      ]
+    },
+    {
+      "id": "AF-CAPACIDADE",
+      "entidade_id": "UN-CASA-INTEIRA",
+      "texto": "A casa recebe até 12 pessoas.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "conflitante",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-AB-TITULO",
+        "EV-AB-REGRAS",
+        "EV-RNT"
+      ],
+      "atualidade": "12 é o máximo do anúncio do Airbnb; o RNET fixa 5 quartos e 10 camas (capacidade é da competência da Câmara). Usar «casa para grupos grandes e famílias» sem número até o dono confirmar."
+    },
+    {
+      "id": "AF-WC",
+      "entidade_id": "ESP-QUARTOS",
+      "texto": "Todos os quartos têm casa de banho privativa.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "conflitante",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-AB-ESPACO",
+        "EV-SITE2013",
+        "EV-AB-TITULO"
+      ],
+      "atualidade": "reviews dizem todos; o Airbnb diz que o quádruplo tem casa de banho partilhada; o site de 2013 diz 5 em 6"
+    },
+    {
+      "id": "AF-QUADRUPLO",
+      "entidade_id": "TQ-QUADRUPLO",
+      "texto": "Há um quarto quádruplo com casa de banho partilhada.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "desconhecido",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-AB-ESPACO"
+      ],
+      "atualidade": "uma menção, bloco de autoria duvidosa; sem foto atribuída"
+    },
+    {
+      "id": "AF-FAMILIAR",
+      "entidade_id": "TQ-FAMILIAR",
+      "texto": "Há um quarto familiar superior com sala privativa, para até 4 pessoas.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "historico",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-INSTA"
+      ],
+      "atualidade": "uma menção, Instagram de 2019"
+    },
+    {
+      "id": "AF-SOTAO",
+      "entidade_id": "ESP-QUARTOS",
+      "texto": "Um dos quartos fica no sótão, com tecto de madeira e duas camas individuais de ferro.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-AB-FOTOS",
+        "EV-INSTA"
+      ],
+      "condicao": "Só descrever o que as fotos do Airbnb (Quarto 3) mostram; não dizer que é o quádruplo nem dar o número de camas da casa."
+    },
+    {
+      "id": "AF-QUARTOS-ESTILO",
+      "entidade_id": "ESP-QUARTOS",
+      "texto": "Os quartos têm camas de ferro forjado, madeiras e paredes de granito ou em tons de terra, distribuídos pelos dois pisos.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-AB-FOTOS",
+        "EV-AB-ESPACO",
+        "EV-SITE2013"
+      ]
+    },
+    {
+      "id": "AF-BERCO",
+      "entidade_id": "ESP-QUARTOS",
+      "texto": "Há berço disponível.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-AB-FOTOS",
+        "EV-REVIEWS"
+      ],
+      "condicao": "Berços visíveis nas fotos dos Quartos 2 e 5 e confirmados por A-002 (julho de 2026); escrever «berço a pedido» e confirmar com o dono quantos."
+    },
+    {
+      "id": "AF-PISCINA",
+      "entidade_id": "ESP-PISCINA",
+      "texto": "A casa tem piscina exterior com trampolim e espreguiçadeiras.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "registo_publico",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-RNT",
+        "EV-AB-COMOD",
+        "EV-AB-FOTOS"
+      ],
+      "atualidade": "RNET e anúncio ativo 2026; última review que a descreve agosto de 2024"
+    },
+    {
+      "id": "AF-PISCINA-SEGURA",
+      "entidade_id": "ESP-PISCINA",
+      "texto": "A piscina é segura para crianças.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "conflitante",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-AB-COMOD"
+      ],
+      "atualidade": "o Airbnb declara «piscina/jacúzi sem portão ou fechadura»"
+    },
+    {
+      "id": "AF-PISCINA-POUCAS",
+      "entidade_id": "ESP-PISCINA",
+      "texto": "É um dos poucos espaços com piscina na região.",
+      "natureza": "promessa_subjetiva",
+      "categoria": "geral",
+      "origem": "plataforma",
+      "estado": "desconhecido",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-AB-TITULO"
+      ],
+      "atualidade": "destaque gerado pelo Airbnb, não é voz da casa"
+    },
+    {
+      "id": "AF-JACUZZI",
+      "entidade_id": "ESP-JACUZZI",
+      "texto": "A casa tem um jacúzi voltado para as encostas do Douro, num recinto de madeira e vidro.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "conflitante",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-AB-ESPACO",
+        "EV-AB-ACESSO",
+        "EV-REV-JACUZZI",
+        "EV-INSTA"
+      ],
+      "atualidade": "a casa anuncia-o (custo extra) mas a última prova é «pas fonctionnel» (A-005, agosto de 2024) e em 2018 estava fechado (T-003). Não mostrar nem prometer até o dono confirmar que funciona e em que condições."
+    },
+    {
+      "id": "AF-SPA",
+      "entidade_id": "ESP-JACUZZI",
+      "texto": "A casa tem SPA / centro de bem-estar.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "registo_publico",
+      "estado": "conflitante",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-RNT",
+        "EV-REV-JACUZZI"
+      ],
+      "atualidade": "o RNET regista «SPA / Centro de bem-estar»; provavelmente o jacúzi; mesmo bloqueio"
+    },
+    {
+      "id": "AF-GOOGLE-EXTRAS",
+      "entidade_id": "CASA-COSTEIRA",
+      "texto": "A casa tem restaurante e centro de fitness.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "plataforma",
+      "estado": "desconhecido",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-GOOGLE"
+      ],
+      "atualidade": "só o Google; nenhuma fonte da casa"
+    },
+    {
+      "id": "AF-CHURRASCO",
+      "entidade_id": "ESP-CHURRASCO",
+      "texto": "No exterior há churrasqueira, forno a lenha e fogão, com mesa para comer ao ar livre.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-AB-COMOD",
+        "EV-AB-ESPACO",
+        "EV-INSTA",
+        "EV-SITE2013"
+      ],
+      "atualidade": "anúncio ativo 2026 (grelha, cozinha ao ar livre, refeições ao ar livre); Instagram 2023"
+    },
+    {
+      "id": "AF-JOGOS",
+      "entidade_id": "ESP-JOGOS",
+      "texto": "Há uma zona coberta com mesa de bilhar e matraquilhos.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-AB-FOTOS",
+        "EV-INSTA"
+      ],
+      "condicao": "Provado pelas fotos do anúncio ativo e pelo Instagram de 2023; a última review é de ~2022 (G-019). Confirmar com o dono antes do site definitivo."
+    },
+    {
+      "id": "AF-SALA",
+      "entidade_id": "ESP-SALA",
+      "texto": "A sala de estar e de jantar tem lareira a lenha, sofás e uma mesa grande de madeira.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-AB-COMOD",
+        "EV-AB-FOTOS",
+        "EV-SITE2013"
+      ]
+    },
+    {
+      "id": "AF-COZINHA",
+      "entidade_id": "ESP-COZINHA",
+      "texto": "A cozinha está equipada com fogão, forno, micro-ondas, frigorífico, máquina de lavar loiça e máquina de café.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-AB-COMOD"
+      ]
+    },
+    {
+      "id": "AF-AQUECIMENTO",
+      "entidade_id": "CASA-COSTEIRA",
+      "texto": "A casa tem aquecimento.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-AB-COMOD",
+        "EV-AB-ESPACO"
+      ],
+      "atualidade": "«aquecimento» nas comodidades de 2026; o piso radiante só aparece em A-011 (citar, não afirmar)"
+    },
+    {
+      "id": "AF-AC",
+      "entidade_id": "CASA-COSTEIRA",
+      "texto": "A casa não tem ar condicionado.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-AB-COMOD",
+        "EV-REVIEWS"
+      ],
+      "condicao": "Só em informação prática, se o site a tiver; nunca sugerir climatização. A-002 (julho de 2026) diz que a casa manteve uma temperatura agradável num fim de semana de calor (citar, não afirmar)."
+    },
+    {
+      "id": "AF-PATIO",
+      "entidade_id": "ESP-PATIO",
+      "texto": "A casa de granito tem um pátio empedrado com fonte, sofás de exterior e um alpendre com rede.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-AB-FOTOS",
+        "EV-AB-COMOD"
+      ]
+    },
+    {
+      "id": "AF-WIFI-ESTAC",
+      "entidade_id": "CASA-COSTEIRA",
+      "texto": "Wi-Fi e estacionamento gratuito na propriedade.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-AB-COMOD"
+      ]
+    },
+    {
+      "id": "AF-COLHER",
+      "entidade_id": "ESP-QUINTA",
+      "texto": "Os hóspedes podem colher fruta e legumes da propriedade.",
+      "natureza": "promessa_subjetiva",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "citar",
+      "evidencia_ids": [
+        "EV-AB-ACESSO",
+        "EV-SITE2013",
+        "EV-INSTA"
+      ],
+      "condicao": "Citar a casa à letra («possibilidade de colher frutas e legumes da propriedade», Airbnb). É sazonal; sem prova recente de hóspede (A-011, 2021). Não prometer o que há em cada época."
+    },
+    {
+      "id": "AF-GALINHEIRO",
+      "entidade_id": "ESP-QUINTA",
+      "texto": "Há galinheiro e os hóspedes podem levar ovos.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "desconhecido",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-AB-ESPACO",
+        "EV-INSTA"
+      ],
+      "atualidade": "só no bloco de autoria duvidosa e num post de 2019; sem foto nem review"
+    },
+    {
+      "id": "AF-VINHAS",
+      "entidade_id": "ESP-QUINTA",
+      "texto": "A propriedade é extensa e coberta de vinhas.",
+      "natureza": "promessa_subjetiva",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "citar",
+      "evidencia_ids": [
+        "EV-AB-DESC",
+        "EV-SITE2013"
+      ],
+      "condicao": "Só dentro da citação da casa; as fotos mostram pouca vinha (só uma pequena do Instagram)."
+    },
+    {
+      "id": "AF-PONEI",
+      "entidade_id": "ESP-QUINTA",
+      "texto": "Há um pónei e animais para as crianças.",
+      "natureza": "testemunho",
+      "categoria": "geral",
+      "origem": "hospede",
+      "estado": "historico",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-REVIEWS"
+      ],
+      "atualidade": "uma menção, A-018, 2017"
+    },
+    {
+      "id": "AF-PEQALMOCO",
+      "entidade_id": "CASA-COSTEIRA",
+      "texto": "A casa serve pequeno-almoço.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "historico",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-INSTA",
+        "EV-REV-REFEICOES",
+        "EV-AB-COMOD"
+      ],
+      "atualidade": "última prova de hóspede 2020 (pão fresco, A-013); casa no Instagram em maio de 2023; o Airbnb atual não o lista. Por confirmar com o dono."
+    },
+    {
+      "id": "AF-REFEICOES",
+      "entidade_id": "CASA-COSTEIRA",
+      "texto": "O anfitrião prepara refeições a pedido.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "hospede",
+      "estado": "historico",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-REV-REFEICOES",
+        "EV-AB-ACESSO"
+      ],
+      "atualidade": "A-004, A-006 (2024), A-008 (2023): há mais de 2 anos; o «Cozinha tradicional Portuguesa» do Airbnb não diz se é serviço. Por confirmar com o dono; até lá, nem citar estas reviews no site."
+    },
+    {
+      "id": "AF-STAFF",
+      "entidade_id": "CASA-COSTEIRA",
+      "texto": "Uma senhora da casa serve o pequeno-almoço e cozinha (D. Isabel, Sra. Expedita, D. Lina).",
+      "natureza": "testemunho",
+      "categoria": "geral",
+      "origem": "hospede",
+      "estado": "historico",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-REV-REFEICOES"
+      ],
+      "atualidade": "2016–2018; nomes de terceiros; não usar"
+    },
+    {
+      "id": "AF-LIMPEZA-EST",
+      "entidade_id": "CASA-COSTEIRA",
+      "texto": "Há limpeza disponível durante a estadia.",
+      "natureza": "facto",
+      "categoria": "politica",
+      "origem": "casa",
+      "estado": "desconhecido",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-AB-COMOD",
+        "EV-REVIEWS"
+      ],
+      "atualidade": "comodidade do Airbnb sem condições; T-008 (2015) diz o contrário. Por confirmar."
+    },
+    {
+      "id": "AF-ANFITRIAO",
+      "entidade_id": "CASA-COSTEIRA",
+      "texto": "O anfitrião é o Tiago, que fala português, inglês e espanhol.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-AB-ANFITRIAO",
+        "EV-REVIEWS"
+      ],
+      "condicao": "Perfil do Airbnb e reviews de 2019 a 2026. Não prometer que recebe em pessoa em todas as estadias (vive no Porto); confirmar com o dono como quer aparecer.",
+      "atualidade": "última prova julho e agosto de 2026"
+    },
+    {
+      "id": "AF-HORARIOS",
+      "entidade_id": "UN-CASA-INTEIRA",
+      "texto": "Check-in flexível e check-out até às 11:00.",
+      "natureza": "facto",
+      "categoria": "politica",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-AB-REGRAS"
+      ],
+      "ambito": {
+        "canal": "Airbnb",
+        "data": "2026-10-07"
+      },
+      "condicao": "Regra do anúncio do Airbnb a 2026-10-07; confirmar com o dono para reservas diretas."
+    },
+    {
+      "id": "AF-ANIMAIS",
+      "entidade_id": "UN-CASA-INTEIRA",
+      "texto": "Animais de estimação são aceites.",
+      "natureza": "facto",
+      "categoria": "politica",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-AB-REGRAS",
+        "EV-TRIP"
+      ],
+      "ambito": {
+        "canal": "Airbnb",
+        "data": "2026-10-07"
+      },
+      "condicao": "Regra do Airbnb; sem condições escritas (taxa, número, espaços). Confirmar com o dono."
+    },
+    {
+      "id": "AF-CANCEL",
+      "entidade_id": "TAR-AIRBNB-NOV",
+      "texto": "Reembolso integral até 8 de novembro às 15:00 para uma estadia de 13 a 15 de novembro de 2026.",
+      "natureza": "facto",
+      "categoria": "politica",
+      "origem": "plataforma",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-AB-PRECO"
+      ],
+      "ambito": {
+        "canal": "Airbnb",
+        "datas": "13–15/11/2026",
+        "ocupacao": "2 adultos"
+      },
+      "condicao": "Política aplicada a essas datas no Airbnb; não é regra geral da casa."
+    },
+    {
+      "id": "AF-PRECO",
+      "entidade_id": "TAR-AIRBNB-NOV",
+      "texto": "822 € no total por 2 noites, de 13 a 15 de novembro de 2026, 2 adultos, no Airbnb.",
+      "natureza": "facto",
+      "categoria": "tarifa",
+      "origem": "plataforma",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-AB-PRECO"
+      ],
+      "ambito": {
+        "canal": "Airbnb",
+        "datas": "13–15/11/2026",
+        "ocupacao": "2 adultos"
+      },
+      "condicao": "Uma observação de pesquisa com as taxas do Airbnb; não publicar como preço da casa."
+    },
+    {
+      "id": "AF-TELEFONE",
+      "entidade_id": "CANAL-DIRETO",
+      "texto": "Telefone: +351 914 797 673.",
+      "natureza": "facto",
+      "categoria": "contacto",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-AB-ANFITRIAO",
+        "EV-FACEBOOK",
+        "EV-INSTA",
+        "EV-GOOGLE",
+        "EV-ROTA-CASA"
+      ],
+      "atualidade": "o mesmo em todos os canais ativos a 2026-10-07"
+    },
+    {
+      "id": "AF-WHATSAPP",
+      "entidade_id": "CANAL-DIRETO",
+      "texto": "WhatsApp: +351 914 035 365.",
+      "natureza": "facto",
+      "categoria": "contacto",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-LINKTREE",
+        "EV-SITE2013"
+      ],
+      "condicao": "Só no Linktree (2023) e no site de 2013; confirmar com o dono que continua ativo antes de publicar."
+    },
+    {
+      "id": "AF-EMAIL",
+      "entidade_id": "CANAL-DIRETO",
+      "texto": "Email: casaruraldacosteira@gmail.com.",
+      "natureza": "facto",
+      "categoria": "contacto",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-FACEBOOK",
+        "EV-ROTA-CASA"
+      ],
+      "condicao": "Confirmar com o dono que é o email de reservas antes de publicar."
+    },
+    {
+      "id": "AF-EMAIL-DOMINIO",
+      "entidade_id": "CANAL-DIRETO",
+      "texto": "Emails geral@ e reservas@quintadacosteira.pt e o site quintadacosteira.pt ou casadacosteira.com.",
+      "natureza": "facto",
+      "categoria": "contacto",
+      "origem": "casa",
+      "estado": "historico",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-DNS",
+        "EV-RNT",
+        "EV-INSTA"
+      ],
+      "atualidade": "domínios sem DNS a 2026-10-07"
+    },
+    {
+      "id": "AF-OUTROS-TEL",
+      "entidade_id": "CANAL-DIRETO",
+      "texto": "Telefones 255 563 096 e 965 390 027 / 965 390 025.",
+      "natureza": "facto",
+      "categoria": "contacto",
+      "origem": "casa",
+      "estado": "conflitante",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-RNT",
+        "EV-SITE2013",
+        "EV-ROTA-CASA"
+      ],
+      "atualidade": "fixo só em fontes antigas ou de terceiros; o telemóvel difere no último dígito entre RNET e site 2013"
+    },
+    {
+      "id": "AF-RESERVA-AIRBNB",
+      "entidade_id": "CANAL-AIRBNB",
+      "texto": "Reservas online no Airbnb (rooms/2768412).",
+      "natureza": "facto",
+      "categoria": "contacto",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-AB-TITULO"
+      ],
+      "ambito": {
+        "canal": "Airbnb"
+      },
+      "condicao": "Único motor de reservas ativo encontrado a 2026-10-07; confirmar com o dono se quer reservas diretas pelo site."
+    },
+    {
+      "id": "AF-BOOKING",
+      "entidade_id": "CANAL-BOOKING",
+      "texto": "A casa reserva-se no Booking.",
+      "natureza": "facto",
+      "categoria": "contacto",
+      "origem": "casa",
+      "estado": "historico",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-BOOKING",
+        "EV-LINKTREE",
+        "EV-INSTA"
+      ],
+      "atualidade": "ficha retirada; o Instagram e o Linktree ainda apontam para lá"
+    },
+    {
+      "id": "AF-NOTA-AIRBNB",
+      "entidade_id": "CANAL-AIRBNB",
+      "texto": "4,88 em 5 no Airbnb, com 25 avaliações.",
+      "natureza": "metrica",
+      "categoria": "avaliacao",
+      "origem": "plataforma",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-AB-NOTA"
+      ],
+      "ambito": {
+        "canal": "Airbnb",
+        "data": "2026-10-07"
+      },
+      "condicao": "Indicar a plataforma e a data (outubro de 2026); rever antes de publicar."
+    },
+    {
+      "id": "AF-NOTA-GOOGLE",
+      "entidade_id": "CANAL-GOOGLE",
+      "texto": "4,8 em 5 no Google, com 49 críticas.",
+      "natureza": "metrica",
+      "categoria": "avaliacao",
+      "origem": "plataforma",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-GOOGLE"
+      ],
+      "ambito": {
+        "canal": "Google Maps",
+        "data": "2026-10-07"
+      },
+      "condicao": "Indicar a plataforma e a data (outubro de 2026); rever antes de publicar."
+    },
+    {
+      "id": "AF-NOTA-TRIP",
+      "entidade_id": "CANAL-TRIPADVISOR",
+      "texto": "4,8 em 5 no Tripadvisor, com 8 reviews.",
+      "natureza": "metrica",
+      "categoria": "avaliacao",
+      "origem": "plataforma",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-TRIP"
+      ],
+      "ambito": {
+        "canal": "Tripadvisor",
+        "data": "2026-10-07"
+      },
+      "condicao": "A review mais recente é de julho de 2020: só com essa data, ou não usar."
+    },
+    {
+      "id": "AF-NOTA-BOOKING",
+      "entidade_id": "CANAL-BOOKING",
+      "texto": "9,6 em 10 no Booking, com 28 reviews.",
+      "natureza": "metrica",
+      "categoria": "avaliacao",
+      "origem": "plataforma",
+      "estado": "desconhecido",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-BOOKING"
+      ],
+      "atualidade": "resumo de pesquisa não verificado; ficha retirada"
+    },
+    {
+      "id": "AF-DIST-DOURO",
+      "entidade_id": "CASA-COSTEIRA",
+      "texto": "O rio Douro fica a cerca de 8 a 10 minutos de carro.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-AB-ESPACO",
+        "EV-REG-OSRM"
+      ],
+      "ambito": {
+        "origem": "coordenadas da casa",
+        "metodo": "Airbnb e OSRM"
+      },
+      "condicao": "Escrever «cerca de»; a casa diz 8 min e o OSRM dá 8 min (Carrapatelo) a 10 min (Porto Antigo)."
+    },
+    {
+      "id": "AF-DIST-VILA",
+      "entidade_id": "CASA-COSTEIRA",
+      "texto": "O centro de Cinfães, com restaurantes, fica a cerca de 1,5 km.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-AB-ESPACO",
+        "EV-REVIEWS"
+      ],
+      "ambito": {
+        "fonte": "Airbnb"
+      },
+      "condicao": "Distância dada pelo texto do Airbnb (autoria em dúvida), não verificada por rota; escrever «cerca de» e confirmar com o dono. A-005 diz restaurantes a menos de 10 min."
+    },
+    {
+      "id": "AF-DIST-AEROPORTO",
+      "entidade_id": "CASA-COSTEIRA",
+      "texto": "O Aeroporto do Porto fica a cerca de 80 km.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-AB-ESPACO",
+        "EV-SITE2013"
+      ],
+      "condicao": "80 km (Airbnb) ou 82 km (site 2013): escrever «cerca de 80 km», sem tempo de viagem."
+    },
+    {
+      "id": "AF-DIST-LAMEGO",
+      "entidade_id": "CASA-COSTEIRA",
+      "texto": "Lamego fica a 48 km.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "conflitante",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-SITE2013",
+        "EV-REG-OSRM"
+      ],
+      "atualidade": "48 km (site 2013) contra 62,9 km por estrada até ao santuário (OSRM)"
+    },
+    {
+      "id": "AF-ACESSO-FACIL",
+      "entidade_id": "CASA-COSTEIRA",
+      "texto": "A casa tem acesso fácil.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "hospede",
+      "estado": "conflitante",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-REV-ACESSO"
+      ],
+      "atualidade": "três reviews (2015, 2016, 2023) falam de acessos estreitos e de não seguir o GPS. Pedir ao dono as indicações de chegada."
+    },
+    {
+      "id": "AF-T-GRUPOS",
+      "entidade_id": "CASA-COSTEIRA",
+      "texto": "Hóspedes descrevem a casa como ideal para famílias grandes e grupos de amigos, das crianças aos avós.",
+      "natureza": "testemunho",
+      "categoria": "avaliacao",
+      "origem": "hospede",
+      "estado": "confirmado",
+      "uso": "citar",
+      "evidencia_ids": [
+        "EV-REVIEWS"
+      ],
+      "condicao": "15 reviews em 3 plataformas, 2015–2026; sempre como citação com autor e data.",
+      "atualidade": "última prova agosto de 2026"
+    },
+    {
+      "id": "AF-T-EXTERIOR",
+      "entidade_id": "CASA-COSTEIRA",
+      "texto": "Hóspedes elogiam o exterior: piscina, churrasco, bilhar e recantos verdes.",
+      "natureza": "testemunho",
+      "categoria": "avaliacao",
+      "origem": "hospede",
+      "estado": "confirmado",
+      "uso": "citar",
+      "evidencia_ids": [
+        "EV-REVIEWS"
+      ],
+      "condicao": "18 reviews, 2016–2024. Não escolher citações que falem do jacúzi.",
+      "atualidade": "última review agosto de 2024"
+    },
+    {
+      "id": "AF-T-ANFITRIAO",
+      "entidade_id": "CASA-COSTEIRA",
+      "texto": "Hóspedes descrevem o anfitrião como sempre disponível e com boas dicas.",
+      "natureza": "testemunho",
+      "categoria": "avaliacao",
+      "origem": "hospede",
+      "estado": "confirmado",
+      "uso": "citar",
+      "evidencia_ids": [
+        "EV-REVIEWS"
+      ],
+      "condicao": "Só citações do Tiago (2019–2026); nunca as dos pais nem do pessoal de 2016–2018.",
+      "atualidade": "última prova agosto de 2026"
+    },
+    {
+      "id": "AF-T-VISTA",
+      "entidade_id": "CASA-COSTEIRA",
+      "texto": "Hóspedes elogiam a vista aberta sobre o vale.",
+      "natureza": "testemunho",
+      "categoria": "avaliacao",
+      "origem": "hospede",
+      "estado": "confirmado",
+      "uso": "citar",
+      "evidencia_ids": [
+        "EV-REVIEWS",
+        "EV-AB-DESC"
+      ],
+      "condicao": "Vista do vale e das encostas; não prometer vista do rio nem vista de todos os quartos (nenhuma foto o mostra).",
+      "atualidade": "última review agosto de 2024; destaques do Google até 2026"
+    },
+    {
+      "id": "AF-T-SOSSEGO",
+      "entidade_id": "CASA-COSTEIRA",
+      "texto": "Hóspedes descrevem um sítio sossegado para descansar.",
+      "natureza": "testemunho",
+      "categoria": "avaliacao",
+      "origem": "hospede",
+      "estado": "confirmado",
+      "uso": "citar",
+      "evidencia_ids": [
+        "EV-REVIEWS",
+        "EV-AB-DESC"
+      ],
+      "condicao": "Não afirmar «silêncio absoluto»: A-008 (2023) refere cães dos vizinhos à noite.",
+      "atualidade": "última review agosto de 2025"
+    },
+    {
+      "id": "AF-T-CASA",
+      "entidade_id": "CASA-COSTEIRA",
+      "texto": "Hóspedes descrevem a casa como acolhedora, quente no inverno e mais bonita do que nas fotos.",
+      "natureza": "testemunho",
+      "categoria": "avaliacao",
+      "origem": "hospede",
+      "estado": "confirmado",
+      "uso": "citar",
+      "evidencia_ids": [
+        "EV-REVIEWS"
+      ],
+      "condicao": "Citar com autor e data; o piso radiante é uma menção (A-011).",
+      "atualidade": "última prova julho de 2026"
+    },
+    {
+      "id": "AF-PROMESSA-SILENCIO",
+      "entidade_id": "CASA-COSTEIRA",
+      "texto": "A casa descreve-se pelo silêncio, contemplação e harmonia com a natureza, com paisagem sobre o Douro.",
+      "natureza": "promessa_subjetiva",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "citar",
+      "evidencia_ids": [
+        "EV-AB-DESC",
+        "EV-INSTA",
+        "EV-SITE2013"
+      ],
+      "condicao": "Frase da casa repetida em todos os canais desde 2013: pode ser citada como voz da casa ou orientar o tom. Se a citação incluir «Quinta da Costeira», manter literal; não a converter em promessa de vista do rio a partir dos quartos."
+    },
+    {
+      "id": "AF-INSP-ESTACOES",
+      "entidade_id": "CASA-COSTEIRA",
+      "texto": "A casa mostra-se na primavera (cerejeiras em flor) e no verão (dias longos, piscina).",
+      "natureza": "inferencia",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "inspiracao_editorial",
+      "evidencia_ids": [
+        "EV-INSTA",
+        "EV-SITE2013"
+      ],
+      "condicao": "Só tom e composição; não há fotos de inverno nem de noite e não se inventa programa sazonal."
+    },
+    {
+      "id": "AR-TAROUQUELA-DIST",
+      "entidade_id": "REG-TAROUQUELA",
+      "texto": "Igreja de Santa Maria Maior de Tarouquela, românica, a cerca de 14 km (14 min) de carro.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "terceiro",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-REG-OSRM"
+      ],
+      "ambito": {
+        "origem": "coordenadas da casa",
+        "metodo": "OSRM"
+      },
+      "condicao": "Distância e tempo de carro aproximados (OSRM, sem trânsito, 2026-10-07, a partir das coordenadas da casa); escrever «cerca de»."
+    },
+    {
+      "id": "AR-TAROUQUELA-1",
+      "entidade_id": "REG-TAROUQUELA",
+      "texto": "Fundada no século XII, com o templo atual do século XIII e escultura românica; Monumento Nacional desde 1945; no portal, os «cães de Tarouquela», que a tradição diz afastar o mal.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "terceiro",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-REG-TAROUQUELA"
+      ],
+      "ambito": {
+        "fonte": "Rota do Românico"
+      },
+      "condicao": "Fonte: Rota do Românico. Os cães só como tradição («diz a tradição»)."
+    },
+    {
+      "id": "AR-TAROUQUELA-2",
+      "entidade_id": "REG-TAROUQUELA",
+      "texto": "Visita ao interior só por marcação; sem acessibilidade para mobilidade reduzida.",
+      "natureza": "facto",
+      "categoria": "politica",
+      "origem": "terceiro",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-REG-TAROUQUELA"
+      ],
+      "ambito": {
+        "fonte": "Rota do Românico, 2026-10-07"
+      },
+      "condicao": "Dizer «visita por marcação» e remeter para a Rota do Românico; sem horários."
+    },
+    {
+      "id": "AR-BESTANCA-DIST",
+      "entidade_id": "REG-BESTANCA",
+      "texto": "Vale do Bestança e Ponte de Covelas, percursos a pé, a cerca de 9 km (12 min) de carro.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "terceiro",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-REG-OSRM"
+      ],
+      "ambito": {
+        "origem": "coordenadas da casa",
+        "metodo": "OSRM"
+      },
+      "condicao": "Distância e tempo de carro aproximados (OSRM, sem trânsito, 2026-10-07, a partir das coordenadas da casa); escrever «cerca de»."
+    },
+    {
+      "id": "AR-BESTANCA-1",
+      "entidade_id": "REG-BESTANCA",
+      "texto": "Percurso circular de cerca de 6,7 km (cerca de 2h35) ao longo do rio, por Vila de Muros, Covelas e Vale Verde; a Rota do Vale tem cerca de 18,8 km.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "terceiro",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-REG-BESTANCA"
+      ],
+      "ambito": {
+        "fonte": "Rota do Românico"
+      },
+      "condicao": "Fonte: folheto da Rota do Românico; «cerca de» nas distâncias e tempos."
+    },
+    {
+      "id": "AR-BESTANCA-2",
+      "entidade_id": "REG-BESTANCA",
+      "texto": "O Bestança é «um dos rios mais limpos da Europa».",
+      "natureza": "promessa_subjetiva",
+      "categoria": "geral",
+      "origem": "terceiro",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-REG-BESTANCA"
+      ],
+      "ambito": {
+        "fonte": "Rota do Românico"
+      },
+      "condicao": "Só entre aspas e atribuído à Rota do Românico. Nunca «o rio menos poluído da Europa» (site da casa, 2013)."
+    },
+    {
+      "id": "AR-BESTANCA-3",
+      "entidade_id": "REG-BESTANCA",
+      "texto": "O Bestança é o rio menos poluído da Europa.",
+      "natureza": "promessa_subjetiva",
+      "categoria": "geral",
+      "origem": "terceiro",
+      "estado": "desconhecido",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-SITE2013",
+        "EV-REG-BESTANCA"
+      ],
+      "atualidade": "afirmação do site da casa de 2013, sem fonte oficial"
+    },
+    {
+      "id": "AR-COVELAS-DATA",
+      "entidade_id": "REG-BESTANCA",
+      "texto": "A Ponte de Covelas é romana / de 1762.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "terceiro",
+      "estado": "conflitante",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-REG-BESTANCA"
+      ],
+      "atualidade": "a mesma fonte dá as duas versões; não pôr data nem «romana»"
+    },
+    {
+      "id": "AR-DOURO-DIST",
+      "entidade_id": "REG-DOURO",
+      "texto": "O Douro em Porto Antigo e a barragem do Carrapatelo, a cerca de 6 a 9 km (8 a 10 min) de carro.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "terceiro",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-REG-OSRM",
+        "EV-AB-ESPACO"
+      ],
+      "ambito": {
+        "origem": "coordenadas da casa",
+        "metodo": "OSRM"
+      },
+      "condicao": "Distância e tempo de carro aproximados (OSRM, sem trânsito, 2026-10-07, a partir das coordenadas da casa); escrever «cerca de»."
+    },
+    {
+      "id": "AR-DOURO-1",
+      "entidade_id": "REG-DOURO",
+      "texto": "A barragem do Carrapatelo, inaugurada em 1972, foi o primeiro aproveitamento hidroelétrico do troço nacional do Douro e tem uma das maiores eclusas da Europa, com 35 m de desnível.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "terceiro",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-REG-DOURO"
+      ],
+      "ambito": {
+        "fonte": "Rota do Românico"
+      },
+      "condicao": "Fonte: Rota do Românico; sem horários de passagem de barcos."
+    },
+    {
+      "id": "AR-DOURO-2",
+      "entidade_id": "REG-DOURO",
+      "texto": "O cais de Porto Antigo tem embarque, parque de merendas, estacionamento, hotel, restaurante e café.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "terceiro",
+      "estado": "desconhecido",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-REG-DOURO"
+      ],
+      "atualidade": "só o resumo de um motor de pesquisa; a página não abriu"
+    },
+    {
+      "id": "AR-MONTEMURO-DIST",
+      "entidade_id": "REG-MONTEMURO",
+      "texto": "Miradouro das Portas de Montemuro, na serra, a cerca de 22 km (22 min) de carro, por estrada de serra.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "terceiro",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-REG-OSRM"
+      ],
+      "ambito": {
+        "origem": "coordenadas da casa",
+        "metodo": "OSRM"
+      },
+      "condicao": "Distância e tempo de carro aproximados (OSRM, sem trânsito, 2026-10-07, a partir das coordenadas da casa); escrever «cerca de»."
+    },
+    {
+      "id": "AR-MONTEMURO-1",
+      "entidade_id": "REG-MONTEMURO",
+      "texto": "Miradouro a 1220 m de altitude, junto à Capela do Senhor do Amparo, numa zona da Rede Natura 2000; é aqui que nasce o Bestança.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "terceiro",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-REG-MONTEMURO",
+        "EV-REG-BESTANCA"
+      ],
+      "ambito": {
+        "fonte": "Rota do Românico"
+      },
+      "condicao": "Fonte: Rota do Românico. A altitude do Pico do Talegre não se usa (1381 vs 1382 m)."
+    },
+    {
+      "id": "AR-TALEGRE",
+      "entidade_id": "REG-MONTEMURO",
+      "texto": "O Pico do Talegre tem 1382 m.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "terceiro",
+      "estado": "conflitante",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-REG-MONTEMURO",
+        "EV-SITE2013"
+      ],
+      "atualidade": "1382 m (site da casa 2013) vs 1381 m (resumo)"
+    },
+    {
+      "id": "AR-PAIVA-DIST",
+      "entidade_id": "REG-PAIVA",
+      "texto": "Passadiços do Paiva (entrada de Espiunca, Arouca), a cerca de 25 km (32 min) de carro.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "terceiro",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-REG-OSRM"
+      ],
+      "ambito": {
+        "origem": "coordenadas da casa",
+        "metodo": "OSRM"
+      },
+      "condicao": "Distância e tempo de carro aproximados (OSRM, sem trânsito, 2026-10-07, a partir das coordenadas da casa); escrever «cerca de»."
+    },
+    {
+      "id": "AR-PAIVA-1",
+      "entidade_id": "REG-PAIVA",
+      "texto": "Passadiço de madeira ao longo do rio Paiva, de dificuldade elevada, que passa por praias fluviais e geossítios do Arouca Geopark.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "terceiro",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-REG-PAIVA"
+      ],
+      "ambito": {
+        "fonte": "passadicosdopaiva.pt"
+      },
+      "condicao": "Fonte: município de Arouca. Sem extensão exata (8 vs 8,7 km), sem horários, sem preços."
+    },
+    {
+      "id": "AR-PAIVA-2",
+      "entidade_id": "REG-PAIVA",
+      "texto": "Os Passadiços exigem reserva antecipada e só se percorrem entre o nascer e o pôr do sol; têm 8 km.",
+      "natureza": "facto",
+      "categoria": "politica",
+      "origem": "terceiro",
+      "estado": "conflitante",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-REG-PAIVA"
+      ],
+      "atualidade": "regra de acesso por confirmar no dia; extensão em conflito no mesmo domínio. Pode-se dizer «consultar o site oficial antes de ir»."
+    },
+    {
+      "id": "AR-REMEDIOS-DIST",
+      "entidade_id": "REG-REMEDIOS",
+      "texto": "Santuário de Nossa Senhora dos Remédios, em Lamego, a cerca de 63 km (cerca de 1 hora) de carro.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "terceiro",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-REG-OSRM"
+      ],
+      "ambito": {
+        "origem": "coordenadas da casa",
+        "metodo": "OSRM"
+      },
+      "condicao": "Distância e tempo de carro aproximados (OSRM, sem trânsito, 2026-10-07, a partir das coordenadas da casa); escrever «cerca de». Não usar os 48 km do site da casa."
+    },
+    {
+      "id": "AR-REMEDIOS-1",
+      "entidade_id": "REG-REMEDIOS",
+      "texto": "Santuário barroco em granito, com a primeira pedra de 1750 e a escadaria começada em 1777, classificado como Imóvel de Interesse Público; as festas são conhecidas como a «Romaria de Portugal».",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "terceiro",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-REG-REMEDIOS"
+      ],
+      "ambito": {
+        "fonte": "município de Lamego e SIPA"
+      },
+      "condicao": "Fontes: município de Lamego e SIPA. Nasoni só como «atribuído». Sem número de degraus nem datas das festas."
+    },
+    {
+      "id": "AR-REMEDIOS-DEGRAUS",
+      "entidade_id": "REG-REMEDIOS",
+      "texto": "A escadaria tem 686 degraus.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "terceiro",
+      "estado": "conflitante",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-REG-REMEDIOS"
+      ],
+      "atualidade": "500 (SIPA) vs 686 (outros)"
+    }
+  ],
+  "citacoes": [
+    {
+      "id": "CIT-01",
+      "review_id": "A-023",
+      "texto_original": "Para 12 adultos e 5 crianças pequenas esta casa tem tudo.",
+      "autor": "Manuel",
+      "plataforma": "Airbnb",
+      "data": "2017-05",
+      "lingua": "pt"
+    },
+    {
+      "id": "CIT-02",
+      "review_id": "A-010",
+      "texto_original": "From the youngest ones to my grandparents they all loved the house, especially the outdoors area.",
+      "autor": "Eva",
+      "plataforma": "Airbnb",
+      "data": "2022-04",
+      "lingua": "en",
+      "traducao": "Dos mais novos aos meus avós, todos adoraram a casa, sobretudo o espaço lá fora. [tradução]"
+    },
+    {
+      "id": "CIT-03",
+      "review_id": "A-020",
+      "texto_original": "Logement de qualité, ou chacun y trouve son intimité.",
+      "autor": "Christophe",
+      "plataforma": "Airbnb",
+      "data": "2017-08",
+      "lingua": "fr",
+      "traducao": "Alojamento de qualidade, onde cada um encontra a sua intimidade. [tradução]"
+    },
+    {
+      "id": "CIT-04",
+      "review_id": "A-001",
+      "texto_original": "Um lugar perfeito para passar um fim de semana ou mesmo uma semana com amigos!",
+      "autor": "Sara",
+      "plataforma": "Airbnb",
+      "data": "2026-08",
+      "lingua": "pt"
+    },
+    {
+      "id": "CIT-05",
+      "review_id": "A-024",
+      "texto_original": "Great landscape with a very very nice barbecue where we did all the meals , great pool and some games to play like snooker.",
+      "autor": "Nelson Benjamim",
+      "plataforma": "Airbnb",
+      "data": "2016-07",
+      "lingua": "en",
+      "traducao": "Paisagem ótima, com um churrasco muito, muito bom onde fizemos todas as refeições, uma ótima piscina e jogos como bilhar. [tradução]"
+    },
+    {
+      "id": "CIT-06",
+      "review_id": "A-012",
+      "texto_original": "un extérieur parfait : piscine, verdure , salons de jardin, recoins multiples , billard",
+      "autor": "Nathalie",
+      "plataforma": "Airbnb",
+      "data": "2021-08",
+      "lingua": "fr",
+      "traducao": "um exterior perfeito: piscina, verde, mobília de jardim, muitos recantos, bilhar [tradução]"
+    },
+    {
+      "id": "CIT-07",
+      "review_id": "A-011",
+      "texto_original": "A área externa também é muito boa, com churrasqueira, forno a lenha, mesa de sinuca, e uma grande área verde, com pés de frutas.",
+      "autor": "Tarsila",
+      "plataforma": "Airbnb",
+      "data": "2021-12",
+      "lingua": "pt-BR"
+    },
+    {
+      "id": "CIT-08",
+      "review_id": "A-002",
+      "texto_original": "Tiago nos recebeu muito bem e deu todas as instruções sobre a casa e arredores.",
+      "autor": "Carolina",
+      "plataforma": "Airbnb",
+      "data": "2026-07",
+      "lingua": "pt-BR"
+    },
+    {
+      "id": "CIT-09",
+      "review_id": "A-001",
+      "texto_original": "Ótimas condições com um anfitrião incrível que esteve sempre disponível!",
+      "autor": "Sara",
+      "plataforma": "Airbnb",
+      "data": "2026-08",
+      "lingua": "pt"
+    },
+    {
+      "id": "CIT-10",
+      "review_id": "T-001",
+      "texto_original": "Tiago no pudo ser mejor anfitrión, se preocupó en todo momento por que estuviésemos cómodos y no nos faltara de nada",
+      "autor": "Irene C",
+      "plataforma": "Tripadvisor",
+      "data": "2020-07",
+      "lingua": "es",
+      "traducao": "O Tiago não podia ter sido melhor anfitrião; preocupou-se a toda a hora com o nosso conforto e que não nos faltasse nada [tradução]"
+    },
+    {
+      "id": "CIT-11",
+      "review_id": "A-006",
+      "texto_original": "Tiago nous a fournit d'excellent conseil pour les visites à faire dans la vallée du Douro.",
+      "autor": "Roland",
+      "plataforma": "Airbnb",
+      "data": "2024-05",
+      "lingua": "fr",
+      "traducao": "O Tiago deu-nos excelentes conselhos para as visitas a fazer no vale do Douro. [tradução]"
+    },
+    {
+      "id": "CIT-12",
+      "review_id": "A-005",
+      "texto_original": "une vue complètement dégagée sur la vallée et un très bel espace extérieur",
+      "autor": "Yvonne",
+      "plataforma": "Airbnb",
+      "data": "2024-08",
+      "lingua": "fr",
+      "traducao": "uma vista completamente desafogada sobre o vale e um espaço exterior muito bonito [tradução]"
+    },
+    {
+      "id": "CIT-13",
+      "review_id": "T-002",
+      "texto_original": "Such an amazing beautiful charming place with a breathtaking view!",
+      "autor": "Fatima E",
+      "plataforma": "Tripadvisor",
+      "data": "2019-06",
+      "lingua": "en",
+      "traducao": "Um sítio tão bonito e encantador, com uma vista de cortar a respiração! [tradução]"
+    },
+    {
+      "id": "CIT-14",
+      "review_id": "A-017",
+      "texto_original": "We were there for a short rest, and it did the trick... we left completely relaxed.",
+      "autor": "Natalia",
+      "plataforma": "Airbnb",
+      "data": "2017-09",
+      "lingua": "en",
+      "traducao": "Fomos para um descanso curto e resultou… saímos completamente relaxados. [tradução]"
+    },
+    {
+      "id": "CIT-15",
+      "review_id": "A-014",
+      "texto_original": "num espaço acolhedor onde impera o sossego.",
+      "autor": "D",
+      "plataforma": "Airbnb",
+      "data": "2019-11",
+      "lingua": "pt"
+    },
+    {
+      "id": "CIT-16",
+      "review_id": "A-003",
+      "texto_original": "Je recommande fortement ce logement pour la tranquillité et ça proximité.",
+      "autor": "NL Peinture Et Décoration",
+      "plataforma": "Airbnb",
+      "data": "2025-08",
+      "lingua": "fr",
+      "traducao": "Recomendo muito este alojamento pela tranquilidade e pela proximidade. [tradução]"
+    },
+    {
+      "id": "CIT-17",
+      "review_id": "A-019",
+      "texto_original": "La casa es aún más bonita que en las fotos. Un lujo.",
+      "autor": "Judit",
+      "plataforma": "Airbnb",
+      "data": "2017-08",
+      "lingua": "es",
+      "traducao": "A casa é ainda mais bonita do que nas fotos. Um luxo. [tradução]"
+    },
+    {
+      "id": "CIT-18",
+      "review_id": "A-011",
+      "texto_original": "é uma casa muito bem aquecida e confortável no inverno.",
+      "autor": "Tarsila",
+      "plataforma": "Airbnb",
+      "data": "2021-12",
+      "lingua": "pt-BR"
+    },
+    {
+      "id": "CIT-19",
+      "review_id": "A-002",
+      "texto_original": "Pegamos um fim de semana de muito calor, mas a casa manteve uma temperatura agradável. Tudo como nas fotos.",
+      "autor": "Carolina",
+      "plataforma": "Airbnb",
+      "data": "2026-07",
+      "lingua": "pt-BR"
+    },
+    {
+      "id": "CIT-20",
+      "review_id": "A-019",
+      "texto_original": "Una casa perfecta en un sitio perfecto.",
+      "autor": "Judit",
+      "plataforma": "Airbnb",
+      "data": "2017-08",
+      "lingua": "es",
+      "traducao": "Uma casa perfeita num sítio perfeito. [tradução]"
+    },
+    {
+      "id": "CIT-21",
+      "review_id": "T-001",
+      "texto_original": "Hemos encontrado esta casa de casualidad y no pudimos tener más suerte.",
+      "autor": "Irene C",
+      "plataforma": "Tripadvisor",
+      "data": "2020-07",
+      "lingua": "es",
+      "traducao": "Encontrámos esta casa por acaso e não podíamos ter tido mais sorte. [tradução]"
+    },
+    {
+      "id": "CIT-22",
+      "review_id": "A-002",
+      "texto_original": "até o berço para o bebê estava arrumado",
+      "autor": "Carolina",
+      "plataforma": "Airbnb",
+      "data": "2026-07",
+      "lingua": "pt-BR"
+    },
+    {
+      "id": "CIT-23",
+      "review_id": "G-026",
+      "texto_original": "Excellent location for a group of friends to relax or a peaceful get away.",
+      "autor": "Sean DS",
+      "plataforma": "Google",
+      "data": "~2021",
+      "lingua": "en",
+      "traducao": "Excelente sítio para um grupo de amigos descansar ou para uma escapadinha tranquila. [tradução]"
+    }
+  ],
+  "ativos": [
+    {
+      "id": "AT-interior_cozinha-01",
+      "caminho": "marketing/fotos/interior/cozinha-01.jpg",
+      "dimensoes": {
+        "largura": 2560,
+        "altura": 1706
+      },
+      "assunto": "cozinha: Cozinha rústica: bancada de granito, fogão, forno, janela",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Grande angular e cores muito saturadas (HDR): não sugerir espaços maiores do que a descrição sustenta. Data das fotos desconhecida."
+      ]
+    },
+    {
+      "id": "AT-interior_cozinha-02",
+      "caminho": "marketing/fotos/interior/cozinha-02.jpg",
+      "dimensoes": {
+        "largura": 2560,
+        "altura": 1707
+      },
+      "assunto": "cozinha: Cozinha em corredor: armários de madeira, fogão de 4 bicos, exaustor",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Grande angular e cores muito saturadas (HDR): não sugerir espaços maiores do que a descrição sustenta. Data das fotos desconhecida."
+      ]
+    },
+    {
+      "id": "AT-interior_cozinha-03",
+      "caminho": "marketing/fotos/interior/cozinha-03.jpg",
+      "dimensoes": {
+        "largura": 274,
+        "altura": 206
+      },
+      "assunto": "cozinha: Cozinha equipada (frigorífico, fogão, máquinas de café)",
+      "publicador": "casa",
+      "uso": "restrito",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Foto do site de 2013 (274×206), antiga: pode não mostrar o estado atual (colchas, mobília). Só como apoio pequeno ou referência para pedir ao dono."
+      ]
+    },
+    {
+      "id": "AT-interior_detalhe-01",
+      "caminho": "marketing/fotos/interior/detalhe-01.jpg",
+      "dimensoes": {
+        "largura": 2560,
+        "altura": 1706
+      },
+      "assunto": "detalhe: Corredor do piso superior com janelas corridas e tecto de madeira",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Grande angular e cores muito saturadas (HDR): não sugerir espaços maiores do que a descrição sustenta. Data das fotos desconhecida."
+      ]
+    },
+    {
+      "id": "AT-interior_detalhe-02",
+      "caminho": "marketing/fotos/interior/detalhe-02.jpg",
+      "dimensoes": {
+        "largura": 2560,
+        "altura": 1707
+      },
+      "assunto": "detalhe: Galeria envidraçada do piso superior, guarda em ferro forjado",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Grande angular e cores muito saturadas (HDR): não sugerir espaços maiores do que a descrição sustenta. Data das fotos desconhecida."
+      ]
+    },
+    {
+      "id": "AT-interior_detalhe-03",
+      "caminho": "marketing/fotos/interior/detalhe-03.jpg",
+      "dimensoes": {
+        "largura": 720,
+        "altura": 540
+      },
+      "assunto": "detalhe: Sala/quarto com espelho, cadeira de flores e vista para o corredor",
+      "publicador": "casa",
+      "uso": "restrito",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Foto do site de 2013 (720×540), antiga: pode não mostrar o estado atual (colchas, mobília). Só como apoio pequeno ou referência para pedir ao dono."
+      ]
+    },
+    {
+      "id": "AT-interior_detalhe-04",
+      "caminho": "marketing/fotos/interior/detalhe-04.jpg",
+      "dimensoes": {
+        "largura": 720,
+        "altura": 540
+      },
+      "assunto": "detalhe: Aparador de madeira com pratos e cerâmica, vasos",
+      "publicador": "casa",
+      "uso": "restrito",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Foto do site de 2013 (720×540), antiga: pode não mostrar o estado atual (colchas, mobília). Só como apoio pequeno ou referência para pedir ao dono."
+      ]
+    },
+    {
+      "id": "AT-interior_detalhe-05",
+      "caminho": "marketing/fotos/interior/detalhe-05.jpg",
+      "dimensoes": {
+        "largura": 528,
+        "altura": 684
+      },
+      "assunto": "detalhe: Armário alto de madeira e bilha de cobre contra a parede de granito (vertical)",
+      "publicador": "casa",
+      "uso": "restrito",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Foto do site de 2013 (528×684), antiga: pode não mostrar o estado atual (colchas, mobília). Só como apoio pequeno ou referência para pedir ao dono."
+      ]
+    },
+    {
+      "id": "AT-interior_detalhe-06",
+      "caminho": "marketing/fotos/interior/detalhe-06.jpg",
+      "dimensoes": {
+        "largura": 528,
+        "altura": 684
+      },
+      "assunto": "detalhe: Lareira de granito com prato de cerâmica (vertical)",
+      "publicador": "casa",
+      "uso": "restrito",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Foto do site de 2013 (528×684), antiga: pode não mostrar o estado atual (colchas, mobília). Só como apoio pequeno ou referência para pedir ao dono."
+      ]
+    },
+    {
+      "id": "AT-interior_quarto-01",
+      "caminho": "marketing/fotos/interior/quarto-01.jpg",
+      "dimensoes": {
+        "largura": 2560,
+        "altura": 1707
+      },
+      "assunto": "quarto: Cama de casal em ferro forjado, parede de granito, cómoda",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Grande angular e cores muito saturadas (HDR): não sugerir espaços maiores do que a descrição sustenta. Data das fotos desconhecida.",
+        "O grupo «Quarto N» do Airbnb não liga a foto a um tipo de quarto; não a apresentar como o quádruplo nem como o familiar superior."
+      ]
+    },
+    {
+      "id": "AT-interior_quarto-02",
+      "caminho": "marketing/fotos/interior/quarto-02.jpg",
+      "dimensoes": {
+        "largura": 2560,
+        "altura": 1707
+      },
+      "assunto": "quarto: Cama de casal em ferro forjado, parede de granito, dois candeeiros",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Grande angular e cores muito saturadas (HDR): não sugerir espaços maiores do que a descrição sustenta. Data das fotos desconhecida.",
+        "O grupo «Quarto N» do Airbnb não liga a foto a um tipo de quarto; não a apresentar como o quádruplo nem como o familiar superior."
+      ]
+    },
+    {
+      "id": "AT-interior_quarto-03",
+      "caminho": "marketing/fotos/interior/quarto-03.jpg",
+      "dimensoes": {
+        "largura": 2560,
+        "altura": 1706
+      },
+      "assunto": "quarto: Cama de casal em ferro e berço branco, janela com portadas, parede cor de laranja",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Grande angular e cores muito saturadas (HDR): não sugerir espaços maiores do que a descrição sustenta. Data das fotos desconhecida.",
+        "O grupo «Quarto N» do Airbnb não liga a foto a um tipo de quarto; não a apresentar como o quádruplo nem como o familiar superior."
+      ]
+    },
+    {
+      "id": "AT-interior_quarto-04",
+      "caminho": "marketing/fotos/interior/quarto-04.jpg",
+      "dimensoes": {
+        "largura": 2560,
+        "altura": 1707
+      },
+      "assunto": "quarto: Cama de casal em ferro, quadro na parede, toalhas dobradas",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Grande angular e cores muito saturadas (HDR): não sugerir espaços maiores do que a descrição sustenta. Data das fotos desconhecida.",
+        "O grupo «Quarto N» do Airbnb não liga a foto a um tipo de quarto; não a apresentar como o quádruplo nem como o familiar superior."
+      ]
+    },
+    {
+      "id": "AT-interior_quarto-05",
+      "caminho": "marketing/fotos/interior/quarto-05.jpg",
+      "dimensoes": {
+        "largura": 2560,
+        "altura": 1706
+      },
+      "assunto": "quarto: Quarto sob o telhado (sótão) com tecto de madeira; duas camas individuais em ferro com colcha às riscas",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Grande angular e cores muito saturadas (HDR): não sugerir espaços maiores do que a descrição sustenta. Data das fotos desconhecida.",
+        "O grupo «Quarto N» do Airbnb não liga a foto a um tipo de quarto; não a apresentar como o quádruplo nem como o familiar superior."
+      ]
+    },
+    {
+      "id": "AT-interior_quarto-06",
+      "caminho": "marketing/fotos/interior/quarto-06.jpg",
+      "dimensoes": {
+        "largura": 2560,
+        "altura": 1706
+      },
+      "assunto": "quarto: O mesmo quarto de sótão visto de outro ângulo, com a guarda da escada",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Grande angular e cores muito saturadas (HDR): não sugerir espaços maiores do que a descrição sustenta. Data das fotos desconhecida.",
+        "O grupo «Quarto N» do Airbnb não liga a foto a um tipo de quarto; não a apresentar como o quádruplo nem como o familiar superior."
+      ]
+    },
+    {
+      "id": "AT-interior_quarto-07",
+      "caminho": "marketing/fotos/interior/quarto-07.jpg",
+      "dimensoes": {
+        "largura": 2560,
+        "altura": 1707
+      },
+      "assunto": "quarto: Cama de casal em ferro, parede de granito, quadro",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Grande angular e cores muito saturadas (HDR): não sugerir espaços maiores do que a descrição sustenta. Data das fotos desconhecida.",
+        "O grupo «Quarto N» do Airbnb não liga a foto a um tipo de quarto; não a apresentar como o quádruplo nem como o familiar superior."
+      ]
+    },
+    {
+      "id": "AT-interior_quarto-08",
+      "caminho": "marketing/fotos/interior/quarto-08.jpg",
+      "dimensoes": {
+        "largura": 2560,
+        "altura": 1706
+      },
+      "assunto": "quarto: Cama de casal com toalhas, berço branco, janela com portadas",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Grande angular e cores muito saturadas (HDR): não sugerir espaços maiores do que a descrição sustenta. Data das fotos desconhecida.",
+        "O grupo «Quarto N» do Airbnb não liga a foto a um tipo de quarto; não a apresentar como o quádruplo nem como o familiar superior."
+      ]
+    },
+    {
+      "id": "AT-interior_quarto-09",
+      "caminho": "marketing/fotos/interior/quarto-09.jpg",
+      "dimensoes": {
+        "largura": 2560,
+        "altura": 1707
+      },
+      "assunto": "quarto: Cama de casal em ferro, janela com portadas, parede cor de laranja",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Grande angular e cores muito saturadas (HDR): não sugerir espaços maiores do que a descrição sustenta. Data das fotos desconhecida.",
+        "O grupo «Quarto N» do Airbnb não liga a foto a um tipo de quarto; não a apresentar como o quádruplo nem como o familiar superior."
+      ]
+    },
+    {
+      "id": "AT-interior_quarto-10",
+      "caminho": "marketing/fotos/interior/quarto-10.jpg",
+      "dimensoes": {
+        "largura": 720,
+        "altura": 540
+      },
+      "assunto": "quarto: Cama de casal em ferro, parede de granito, dois candeeiros",
+      "publicador": "casa",
+      "uso": "restrito",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Foto do site de 2013 (720×540), antiga: pode não mostrar o estado atual (colchas, mobília). Só como apoio pequeno ou referência para pedir ao dono."
+      ]
+    },
+    {
+      "id": "AT-interior_quarto-11",
+      "caminho": "marketing/fotos/interior/quarto-11.jpg",
+      "dimensoes": {
+        "largura": 720,
+        "altura": 540
+      },
+      "assunto": "quarto: Cama de casal com toalhas, quadro, parede cor de laranja",
+      "publicador": "casa",
+      "uso": "restrito",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Foto do site de 2013 (720×540), antiga: pode não mostrar o estado atual (colchas, mobília). Só como apoio pequeno ou referência para pedir ao dono."
+      ]
+    },
+    {
+      "id": "AT-interior_quarto-12",
+      "caminho": "marketing/fotos/interior/quarto-12.jpg",
+      "dimensoes": {
+        "largura": 720,
+        "altura": 540
+      },
+      "assunto": "quarto: Cama de ferro com colcha de quadrados coloridos, parede de granito",
+      "publicador": "casa",
+      "uso": "restrito",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Foto do site de 2013 (720×540), antiga: pode não mostrar o estado atual (colchas, mobília). Só como apoio pequeno ou referência para pedir ao dono."
+      ]
+    },
+    {
+      "id": "AT-interior_quarto-13",
+      "caminho": "marketing/fotos/interior/quarto-13.jpg",
+      "dimensoes": {
+        "largura": 720,
+        "altura": 540
+      },
+      "assunto": "quarto: Cama com toalhas e naperon, porta de madeira, parede de granito",
+      "publicador": "casa",
+      "uso": "restrito",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Foto do site de 2013 (720×540), antiga: pode não mostrar o estado atual (colchas, mobília). Só como apoio pequeno ou referência para pedir ao dono."
+      ]
+    },
+    {
+      "id": "AT-interior_quarto-14",
+      "caminho": "marketing/fotos/interior/quarto-14.jpg",
+      "dimensoes": {
+        "largura": 720,
+        "altura": 540
+      },
+      "assunto": "quarto: Cama de casal com toalhas e janela com portadas",
+      "publicador": "casa",
+      "uso": "restrito",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Foto do site de 2013 (720×540), antiga: pode não mostrar o estado atual (colchas, mobília). Só como apoio pequeno ou referência para pedir ao dono."
+      ]
+    },
+    {
+      "id": "AT-interior_refeicoes-01",
+      "caminho": "marketing/fotos/interior/refeicoes-01.jpg",
+      "dimensoes": {
+        "largura": 2560,
+        "altura": 1707
+      },
+      "assunto": "refeicoes: Sala ampla com mesa de madeira ao fundo, lareira e portas envidraçadas",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Grande angular e cores muito saturadas (HDR): não sugerir espaços maiores do que a descrição sustenta. Data das fotos desconhecida."
+      ]
+    },
+    {
+      "id": "AT-interior_refeicoes-02",
+      "caminho": "marketing/fotos/interior/refeicoes-02.jpg",
+      "dimensoes": {
+        "largura": 2560,
+        "altura": 1707
+      },
+      "assunto": "refeicoes: Sala de jantar: mesa e oito cadeiras de madeira, parede de granito, espelho",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Grande angular e cores muito saturadas (HDR): não sugerir espaços maiores do que a descrição sustenta. Data das fotos desconhecida."
+      ]
+    },
+    {
+      "id": "AT-interior_refeicoes-03",
+      "caminho": "marketing/fotos/interior/refeicoes-03.jpg",
+      "dimensoes": {
+        "largura": 512,
+        "altura": 640
+      },
+      "assunto": "refeicoes: Mesa posta para o pequeno-almoço: pão, sumo, manteiga, café",
+      "publicador": "casa",
+      "uso": "restrito",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Miniatura do Instagram (512×640): só para apoio em tamanho pequeno ou como referência a pedir ao dono.",
+        "Mesa de pequeno-almoço: o serviço está por confirmar; não usar para sugerir pequeno-almoço incluído."
+      ]
+    },
+    {
+      "id": "AT-interior_refeicoes-04",
+      "caminho": "marketing/fotos/interior/refeicoes-04.jpg",
+      "dimensoes": {
+        "largura": 720,
+        "altura": 540
+      },
+      "assunto": "refeicoes: Mesa de jantar escura com castiçais e flores secas",
+      "publicador": "casa",
+      "uso": "restrito",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Foto do site de 2013 (720×540), antiga: pode não mostrar o estado atual (colchas, mobília). Só como apoio pequeno ou referência para pedir ao dono."
+      ]
+    },
+    {
+      "id": "AT-interior_sala-01",
+      "caminho": "marketing/fotos/interior/sala-01.jpg",
+      "dimensoes": {
+        "largura": 2560,
+        "altura": 1707
+      },
+      "assunto": "sala: Sala de estar: cadeirões forrados a bege, estante, TV, janelas de madeira",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Grande angular e cores muito saturadas (HDR): não sugerir espaços maiores do que a descrição sustenta. Data das fotos desconhecida."
+      ]
+    },
+    {
+      "id": "AT-interior_sala-02",
+      "caminho": "marketing/fotos/interior/sala-02.jpg",
+      "dimensoes": {
+        "largura": 2560,
+        "altura": 1705
+      },
+      "assunto": "sala: Sofá bege diante de uma tapeçaria, parede de granito",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Grande angular e cores muito saturadas (HDR): não sugerir espaços maiores do que a descrição sustenta. Data das fotos desconhecida."
+      ]
+    },
+    {
+      "id": "AT-interior_sala-03",
+      "caminho": "marketing/fotos/interior/sala-03.jpg",
+      "dimensoes": {
+        "largura": 2560,
+        "altura": 1705
+      },
+      "assunto": "sala: Sala em plano aberto com tecto de vigas; mesa de refeição à direita",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Grande angular e cores muito saturadas (HDR): não sugerir espaços maiores do que a descrição sustenta. Data das fotos desconhecida."
+      ]
+    },
+    {
+      "id": "AT-interior_sala-04",
+      "caminho": "marketing/fotos/interior/sala-04.jpg",
+      "dimensoes": {
+        "largura": 2560,
+        "altura": 1707
+      },
+      "assunto": "sala: Patamar do piso superior com cadeirão preto, mesa redonda e guarda de madeira",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Grande angular e cores muito saturadas (HDR): não sugerir espaços maiores do que a descrição sustenta. Data das fotos desconhecida."
+      ]
+    },
+    {
+      "id": "AT-interior_sala-05",
+      "caminho": "marketing/fotos/interior/sala-05.jpg",
+      "dimensoes": {
+        "largura": 533,
+        "altura": 355
+      },
+      "assunto": "sala: Salão com lareira de canto, sofá claro, vigas e candeeiro de ferro",
+      "publicador": "casa",
+      "uso": "restrito",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Miniatura do Instagram (533×355): só para apoio em tamanho pequeno ou como referência a pedir ao dono."
+      ]
+    },
+    {
+      "id": "AT-interior_sala-06",
+      "caminho": "marketing/fotos/interior/sala-06.jpg",
+      "dimensoes": {
+        "largura": 720,
+        "altura": 540
+      },
+      "assunto": "sala: Sala/refeições em plano aberto, tecto de vigas, TV",
+      "publicador": "casa",
+      "uso": "restrito",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Foto do site de 2013 (720×540), antiga: pode não mostrar o estado atual (colchas, mobília). Só como apoio pequeno ou referência para pedir ao dono."
+      ]
+    },
+    {
+      "id": "AT-interior_sala-07",
+      "caminho": "marketing/fotos/interior/sala-07.jpg",
+      "dimensoes": {
+        "largura": 720,
+        "altura": 540
+      },
+      "assunto": "sala: Sofá bege em frente a uma parede de granito",
+      "publicador": "casa",
+      "uso": "restrito",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Foto do site de 2013 (720×540), antiga: pode não mostrar o estado atual (colchas, mobília). Só como apoio pequeno ou referência para pedir ao dono."
+      ]
+    },
+    {
+      "id": "AT-interior_sala-08",
+      "caminho": "marketing/fotos/interior/sala-08.jpg",
+      "dimensoes": {
+        "largura": 720,
+        "altura": 540
+      },
+      "assunto": "sala: Salão com cadeirão, estante e TV",
+      "publicador": "casa",
+      "uso": "restrito",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Foto do site de 2013 (720×540), antiga: pode não mostrar o estado atual (colchas, mobília). Só como apoio pequeno ou referência para pedir ao dono."
+      ]
+    },
+    {
+      "id": "AT-interior_sala-09",
+      "caminho": "marketing/fotos/interior/sala-09.jpg",
+      "dimensoes": {
+        "largura": 720,
+        "altura": 540
+      },
+      "assunto": "sala: Lareira de canto em granito e TV",
+      "publicador": "casa",
+      "uso": "restrito",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Foto do site de 2013 (720×540), antiga: pode não mostrar o estado atual (colchas, mobília). Só como apoio pequeno ou referência para pedir ao dono."
+      ]
+    },
+    {
+      "id": "AT-exterior_churrasqueira-01",
+      "caminho": "marketing/fotos/exterior/churrasqueira-01.jpg",
+      "dimensoes": {
+        "largura": 274,
+        "altura": 206
+      },
+      "assunto": "churrasqueira: Zona coberta do barbecue com rede e mesa de piquenique",
+      "publicador": "casa",
+      "uso": "restrito",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Foto do site de 2013 (274×206), antiga: pode não mostrar o estado atual (colchas, mobília). Só como apoio pequeno ou referência para pedir ao dono."
+      ]
+    },
+    {
+      "id": "AT-exterior_churrasqueira-02",
+      "caminho": "marketing/fotos/exterior/churrasqueira-02.jpg",
+      "dimensoes": {
+        "largura": 720,
+        "altura": 540
+      },
+      "assunto": "churrasqueira: Alpendre do barbecue com forno a lenha, rede de descanso e pátio",
+      "publicador": "casa",
+      "uso": "restrito",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Foto do site de 2013 (720×540), antiga: pode não mostrar o estado atual (colchas, mobília). Só como apoio pequeno ou referência para pedir ao dono."
+      ]
+    },
+    {
+      "id": "AT-exterior_fachada-01",
+      "caminho": "marketing/fotos/exterior/fachada-01.jpg",
+      "dimensoes": {
+        "largura": 2560,
+        "altura": 1707
+      },
+      "assunto": "fachada: Casa de pedra vista de lado, com a torre de revestimento escuro e floreiras",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Grande angular e cores muito saturadas (HDR): não sugerir espaços maiores do que a descrição sustenta. Data das fotos desconhecida."
+      ]
+    },
+    {
+      "id": "AT-exterior_fachada-02",
+      "caminho": "marketing/fotos/exterior/fachada-02.jpg",
+      "dimensoes": {
+        "largura": 2560,
+        "altura": 1707
+      },
+      "assunto": "fachada: Fachada principal em granito com alpendre, rede de descanso e pátio empedrado; palmeira à esquerda",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Grande angular e cores muito saturadas (HDR): não sugerir espaços maiores do que a descrição sustenta. Data das fotos desconhecida."
+      ]
+    },
+    {
+      "id": "AT-exterior_fachada-03",
+      "caminho": "marketing/fotos/exterior/fachada-03.jpg",
+      "dimensoes": {
+        "largura": 2560,
+        "altura": 1707
+      },
+      "assunto": "fachada: Fachada em ângulo com o pátio empedrado e um arbusto em flor",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Grande angular e cores muito saturadas (HDR): não sugerir espaços maiores do que a descrição sustenta. Data das fotos desconhecida."
+      ]
+    },
+    {
+      "id": "AT-exterior_fachada-04",
+      "caminho": "marketing/fotos/exterior/fachada-04.jpg",
+      "dimensoes": {
+        "largura": 2560,
+        "altura": 1707
+      },
+      "assunto": "fachada: Pátio empedrado com sofás de exterior, fonte de pedra, a casa e a torre",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Grande angular e cores muito saturadas (HDR): não sugerir espaços maiores do que a descrição sustenta. Data das fotos desconhecida."
+      ]
+    },
+    {
+      "id": "AT-exterior_fachada-05",
+      "caminho": "marketing/fotos/exterior/fachada-05.jpg",
+      "dimensoes": {
+        "largura": 2560,
+        "altura": 3839
+      },
+      "assunto": "fachada: Pátio e a torre da casa (vertical)",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Grande angular e cores muito saturadas (HDR): não sugerir espaços maiores do que a descrição sustenta. Data das fotos desconhecida."
+      ]
+    },
+    {
+      "id": "AT-exterior_fachada-06",
+      "caminho": "marketing/fotos/exterior/fachada-06.jpg",
+      "dimensoes": {
+        "largura": 2560,
+        "altura": 1707
+      },
+      "assunto": "fachada: Alpendre com rede e mobiliário de exterior sob o piso superior",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Grande angular e cores muito saturadas (HDR): não sugerir espaços maiores do que a descrição sustenta. Data das fotos desconhecida."
+      ]
+    },
+    {
+      "id": "AT-exterior_fachada-07",
+      "caminho": "marketing/fotos/exterior/fachada-07.jpg",
+      "dimensoes": {
+        "largura": 640,
+        "altura": 360
+      },
+      "assunto": "fachada: A casa de pedra vista de baixo, entre o muro e a vegetação",
+      "publicador": "casa",
+      "uso": "restrito",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Miniatura do Instagram (640×360): só para apoio em tamanho pequeno ou como referência a pedir ao dono."
+      ]
+    },
+    {
+      "id": "AT-exterior_fachada-08",
+      "caminho": "marketing/fotos/exterior/fachada-08.jpg",
+      "dimensoes": {
+        "largura": 720,
+        "altura": 540
+      },
+      "assunto": "fachada: Casa com portão de ferro e uma camélia em flor, ao pôr do sol",
+      "publicador": "casa",
+      "uso": "restrito",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Foto do site de 2013 (720×540), antiga: pode não mostrar o estado atual (colchas, mobília). Só como apoio pequeno ou referência para pedir ao dono."
+      ]
+    },
+    {
+      "id": "AT-exterior_fachada-09",
+      "caminho": "marketing/fotos/exterior/fachada-09.jpg",
+      "dimensoes": {
+        "largura": 720,
+        "altura": 540
+      },
+      "assunto": "fachada: A casa de pedra entre ramos de cerejeira em flor",
+      "publicador": "casa",
+      "uso": "restrito",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Foto do site de 2013 (720×540), antiga: pode não mostrar o estado atual (colchas, mobília). Só como apoio pequeno ou referência para pedir ao dono."
+      ]
+    },
+    {
+      "id": "AT-exterior_fachada-10",
+      "caminho": "marketing/fotos/exterior/fachada-10.jpg",
+      "dimensoes": {
+        "largura": 720,
+        "altura": 540
+      },
+      "assunto": "fachada: Casa de telhado vermelho com alpendre e rede",
+      "publicador": "casa",
+      "uso": "restrito",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Foto do site de 2013 (720×540), antiga: pode não mostrar o estado atual (colchas, mobília). Só como apoio pequeno ou referência para pedir ao dono."
+      ]
+    },
+    {
+      "id": "AT-exterior_fachada-11",
+      "caminho": "marketing/fotos/exterior/fachada-11.jpg",
+      "dimensoes": {
+        "largura": 720,
+        "altura": 540
+      },
+      "assunto": "fachada: A torre da casa entre cerejeiras em flor",
+      "publicador": "casa",
+      "uso": "restrito",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Foto do site de 2013 (720×540), antiga: pode não mostrar o estado atual (colchas, mobília). Só como apoio pequeno ou referência para pedir ao dono."
+      ]
+    },
+    {
+      "id": "AT-exterior_fachada-12",
+      "caminho": "marketing/fotos/exterior/fachada-12.jpg",
+      "dimensoes": {
+        "largura": 720,
+        "altura": 540
+      },
+      "assunto": "fachada: A torre da casa, a escada de pedra e a piscina",
+      "publicador": "casa",
+      "uso": "restrito",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Foto do site de 2013 (720×540), antiga: pode não mostrar o estado atual (colchas, mobília). Só como apoio pequeno ou referência para pedir ao dono."
+      ]
+    },
+    {
+      "id": "AT-exterior_jacuzzi-01",
+      "caminho": "marketing/fotos/exterior/jacuzzi-01.jpg",
+      "dimensoes": {
+        "largura": 2560,
+        "altura": 1707
+      },
+      "assunto": "jacuzzi: Jacuzzi num recinto de vidro com a legenda «Casa Rural da Costeira» na cobertura",
+      "publicador": "casa",
+      "uso": "restrito",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Grande angular e cores muito saturadas (HDR): não sugerir espaços maiores do que a descrição sustenta. Data das fotos desconhecida.",
+        "Mostra o jacúzi, cujo funcionamento atual está por confirmar (A-005, 2024: não funcional): não usar até o dono confirmar.",
+        "Tem o texto «Casa Rural da Costeira» na vidraça: não sobrepor outro texto."
+      ],
+      "entidade_confirmada": "ESP-JACUZZI"
+    },
+    {
+      "id": "AT-exterior_jacuzzi-02",
+      "caminho": "marketing/fotos/exterior/jacuzzi-02.jpg",
+      "dimensoes": {
+        "largura": 719,
+        "altura": 538
+      },
+      "assunto": "jacuzzi: Barraca de madeira com o jacuzzi por baixo do telhado",
+      "publicador": "casa",
+      "uso": "restrito",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Foto do site de 2013 (719×538), antiga: pode não mostrar o estado atual (colchas, mobília). Só como apoio pequeno ou referência para pedir ao dono.",
+        "Mostra o jacúzi, cujo funcionamento atual está por confirmar (A-005, 2024: não funcional): não usar até o dono confirmar."
+      ],
+      "entidade_confirmada": "ESP-JACUZZI"
+    },
+    {
+      "id": "AT-exterior_jardim-01",
+      "caminho": "marketing/fotos/exterior/jardim-01.jpg",
+      "dimensoes": {
+        "largura": 2560,
+        "altura": 3839
+      },
+      "assunto": "jardim: Caminho empedrado ao longo da casa, entre plantas (vertical)",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Grande angular e cores muito saturadas (HDR): não sugerir espaços maiores do que a descrição sustenta. Data das fotos desconhecida."
+      ]
+    },
+    {
+      "id": "AT-exterior_jardim-02",
+      "caminho": "marketing/fotos/exterior/jardim-02.jpg",
+      "dimensoes": {
+        "largura": 640,
+        "altura": 360
+      },
+      "assunto": "jardim: Couves e plantas da horta contra o céu",
+      "publicador": "casa",
+      "uso": "restrito",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Miniatura do Instagram (640×360): só para apoio em tamanho pequeno ou como referência a pedir ao dono."
+      ]
+    },
+    {
+      "id": "AT-exterior_jardim-03",
+      "caminho": "marketing/fotos/exterior/jardim-03.jpg",
+      "dimensoes": {
+        "largura": 640,
+        "altura": 360
+      },
+      "assunto": "jardim: Cerejeira em flor contra o sol",
+      "publicador": "casa",
+      "uso": "restrito",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Miniatura do Instagram (640×360): só para apoio em tamanho pequeno ou como referência a pedir ao dono."
+      ]
+    },
+    {
+      "id": "AT-exterior_jardim-04",
+      "caminho": "marketing/fotos/exterior/jardim-04.jpg",
+      "dimensoes": {
+        "largura": 720,
+        "altura": 540
+      },
+      "assunto": "jardim: Barraca de madeira, grade e pátio empedrado",
+      "publicador": "casa",
+      "uso": "restrito",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Foto do site de 2013 (720×540), antiga: pode não mostrar o estado atual (colchas, mobília). Só como apoio pequeno ou referência para pedir ao dono."
+      ]
+    },
+    {
+      "id": "AT-exterior_jardim-05",
+      "caminho": "marketing/fotos/exterior/jardim-05.jpg",
+      "dimensoes": {
+        "largura": 720,
+        "altura": 540
+      },
+      "assunto": "jardim: Cerejal em flor",
+      "publicador": "casa",
+      "uso": "restrito",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Foto do site de 2013 (720×540), antiga: pode não mostrar o estado atual (colchas, mobília). Só como apoio pequeno ou referência para pedir ao dono."
+      ]
+    },
+    {
+      "id": "AT-exterior_jardim-06",
+      "caminho": "marketing/fotos/exterior/jardim-06.jpg",
+      "dimensoes": {
+        "largura": 720,
+        "altura": 540
+      },
+      "assunto": "jardim: Ramos de cerejeira em flor contra o céu",
+      "publicador": "casa",
+      "uso": "restrito",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Foto do site de 2013 (720×540), antiga: pode não mostrar o estado atual (colchas, mobília). Só como apoio pequeno ou referência para pedir ao dono."
+      ]
+    },
+    {
+      "id": "AT-exterior_jardim-07",
+      "caminho": "marketing/fotos/exterior/jardim-07.jpg",
+      "dimensoes": {
+        "largura": 720,
+        "altura": 540
+      },
+      "assunto": "jardim: Cerejal em flor sobre relva",
+      "publicador": "casa",
+      "uso": "restrito",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Foto do site de 2013 (720×540), antiga: pode não mostrar o estado atual (colchas, mobília). Só como apoio pequeno ou referência para pedir ao dono."
+      ]
+    },
+    {
+      "id": "AT-exterior_jardim-08",
+      "caminho": "marketing/fotos/exterior/jardim-08.jpg",
+      "dimensoes": {
+        "largura": 720,
+        "altura": 540
+      },
+      "assunto": "jardim: Terreno com vinha/pomar em início de rebentação, contraluz",
+      "publicador": "casa",
+      "uso": "restrito",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Foto do site de 2013 (720×540), antiga: pode não mostrar o estado atual (colchas, mobília). Só como apoio pequeno ou referência para pedir ao dono."
+      ]
+    },
+    {
+      "id": "AT-exterior_jogos-01",
+      "caminho": "marketing/fotos/exterior/jogos-01.jpg",
+      "dimensoes": {
+        "largura": 2560,
+        "altura": 1707
+      },
+      "assunto": "jogos: Zona coberta com mesa de bilhar, matraquilhos e duas cadeiras de braços, relva sintética",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Grande angular e cores muito saturadas (HDR): não sugerir espaços maiores do que a descrição sustenta. Data das fotos desconhecida."
+      ],
+      "entidade_confirmada": "ESP-JOGOS"
+    },
+    {
+      "id": "AT-exterior_jogos-02",
+      "caminho": "marketing/fotos/exterior/jogos-02.jpg",
+      "dimensoes": {
+        "largura": 2560,
+        "altura": 3839
+      },
+      "assunto": "jogos: Mesa de bilhar e matraquilhos (vertical)",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Grande angular e cores muito saturadas (HDR): não sugerir espaços maiores do que a descrição sustenta. Data das fotos desconhecida."
+      ],
+      "entidade_confirmada": "ESP-JOGOS"
+    },
+    {
+      "id": "AT-exterior_piscina-01",
+      "caminho": "marketing/fotos/exterior/piscina-01.jpg",
+      "dimensoes": {
+        "largura": 2560,
+        "altura": 1707
+      },
+      "assunto": "piscina: Piscina com a casa de pedra, escadas e o barbecue coberto ao fundo; mata à volta",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Grande angular e cores muito saturadas (HDR): não sugerir espaços maiores do que a descrição sustenta. Data das fotos desconhecida."
+      ],
+      "entidade_confirmada": "ESP-PISCINA"
+    },
+    {
+      "id": "AT-exterior_piscina-02",
+      "caminho": "marketing/fotos/exterior/piscina-02.jpg",
+      "dimensoes": {
+        "largura": 2560,
+        "altura": 3839
+      },
+      "assunto": "piscina: Piscina e casa ao fundo (versão vertical da imagem 1)",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Grande angular e cores muito saturadas (HDR): não sugerir espaços maiores do que a descrição sustenta. Data das fotos desconhecida."
+      ],
+      "entidade_confirmada": "ESP-PISCINA"
+    },
+    {
+      "id": "AT-exterior_piscina-03",
+      "caminho": "marketing/fotos/exterior/piscina-03.jpg",
+      "dimensoes": {
+        "largura": 2560,
+        "altura": 1707
+      },
+      "assunto": "piscina: Piscina vista de canto, a casa e o barbecue no plano de trás",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Grande angular e cores muito saturadas (HDR): não sugerir espaços maiores do que a descrição sustenta. Data das fotos desconhecida."
+      ],
+      "entidade_confirmada": "ESP-PISCINA"
+    },
+    {
+      "id": "AT-exterior_piscina-04",
+      "caminho": "marketing/fotos/exterior/piscina-04.jpg",
+      "dimensoes": {
+        "largura": 2560,
+        "altura": 1707
+      },
+      "assunto": "piscina: Piscina em primeiro plano e a casa de pedra (torre) por cima do muro",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Grande angular e cores muito saturadas (HDR): não sugerir espaços maiores do que a descrição sustenta. Data das fotos desconhecida."
+      ],
+      "entidade_confirmada": "ESP-PISCINA"
+    },
+    {
+      "id": "AT-exterior_piscina-05",
+      "caminho": "marketing/fotos/exterior/piscina-05.jpg",
+      "dimensoes": {
+        "largura": 2560,
+        "altura": 1707
+      },
+      "assunto": "piscina: Piscina com trampolim, espreguiçadeiras e a casa à esquerda",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Grande angular e cores muito saturadas (HDR): não sugerir espaços maiores do que a descrição sustenta. Data das fotos desconhecida."
+      ],
+      "entidade_confirmada": "ESP-PISCINA"
+    },
+    {
+      "id": "AT-exterior_piscina-06",
+      "caminho": "marketing/fotos/exterior/piscina-06.jpg",
+      "dimensoes": {
+        "largura": 2560,
+        "altura": 1707
+      },
+      "assunto": "piscina: Piscina comprida com trampolim; a casa à esquerda e a encosta ao fundo",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Grande angular e cores muito saturadas (HDR): não sugerir espaços maiores do que a descrição sustenta. Data das fotos desconhecida."
+      ],
+      "entidade_confirmada": "ESP-PISCINA"
+    },
+    {
+      "id": "AT-exterior_piscina-07",
+      "caminho": "marketing/fotos/exterior/piscina-07.jpg",
+      "dimensoes": {
+        "largura": 2560,
+        "altura": 1707
+      },
+      "assunto": "piscina: Piscina e a vista de encosta; o recinto do jacuzzi à direita",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Grande angular e cores muito saturadas (HDR): não sugerir espaços maiores do que a descrição sustenta. Data das fotos desconhecida.",
+        "O recinto do jacúzi aparece em fundo: usar pela piscina e pela vista, sem legendar nem destacar o jacúzi."
+      ],
+      "entidade_confirmada": "ESP-PISCINA"
+    },
+    {
+      "id": "AT-exterior_piscina-08",
+      "caminho": "marketing/fotos/exterior/piscina-08.jpg",
+      "dimensoes": {
+        "largura": 2560,
+        "altura": 1707
+      },
+      "assunto": "piscina: Espreguiçadeiras junto à piscina; o jacuzzi ao fundo e a encosta do Douro",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Grande angular e cores muito saturadas (HDR): não sugerir espaços maiores do que a descrição sustenta. Data das fotos desconhecida.",
+        "O recinto do jacúzi aparece em fundo: usar pela piscina e pela vista, sem legendar nem destacar o jacúzi."
+      ],
+      "entidade_confirmada": "ESP-PISCINA"
+    },
+    {
+      "id": "AT-exterior_piscina-09",
+      "caminho": "marketing/fotos/exterior/piscina-09.jpg",
+      "dimensoes": {
+        "largura": 2560,
+        "altura": 3839
+      },
+      "assunto": "piscina: Zona da piscina com espreguiçadeiras (vertical)",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Grande angular e cores muito saturadas (HDR): não sugerir espaços maiores do que a descrição sustenta. Data das fotos desconhecida."
+      ],
+      "entidade_confirmada": "ESP-PISCINA"
+    },
+    {
+      "id": "AT-exterior_piscina-10",
+      "caminho": "marketing/fotos/exterior/piscina-10.jpg",
+      "dimensoes": {
+        "largura": 2560,
+        "altura": 3839
+      },
+      "assunto": "piscina: Caminho empedrado que desce até à piscina (vertical)",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Grande angular e cores muito saturadas (HDR): não sugerir espaços maiores do que a descrição sustenta. Data das fotos desconhecida."
+      ],
+      "entidade_confirmada": "ESP-PISCINA"
+    },
+    {
+      "id": "AT-exterior_piscina-11",
+      "caminho": "marketing/fotos/exterior/piscina-11.jpg",
+      "dimensoes": {
+        "largura": 720,
+        "altura": 540
+      },
+      "assunto": "piscina: Piscina com o caminho empedrado e o barbecue ao fundo",
+      "publicador": "casa",
+      "uso": "restrito",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Foto do site de 2013 (720×540), antiga: pode não mostrar o estado atual (colchas, mobília). Só como apoio pequeno ou referência para pedir ao dono."
+      ],
+      "entidade_confirmada": "ESP-PISCINA"
+    },
+    {
+      "id": "AT-exterior_piscina-12",
+      "caminho": "marketing/fotos/exterior/piscina-12.jpg",
+      "dimensoes": {
+        "largura": 720,
+        "altura": 540
+      },
+      "assunto": "piscina: Piscina e o bordo do jacuzzi em primeiro plano",
+      "publicador": "casa",
+      "uso": "restrito",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Foto do site de 2013 (720×540), antiga: pode não mostrar o estado atual (colchas, mobília). Só como apoio pequeno ou referência para pedir ao dono.",
+        "O recinto do jacúzi aparece em fundo: usar pela piscina e pela vista, sem legendar nem destacar o jacúzi."
+      ],
+      "entidade_confirmada": "ESP-PISCINA"
+    },
+    {
+      "id": "AT-exterior_vista-01",
+      "caminho": "marketing/fotos/exterior/vista-01.jpg",
+      "dimensoes": {
+        "largura": 512,
+        "altura": 640
+      },
+      "assunto": "vista: Mesa e cadeiras de ferro num terraço com a vinha e a encosta ao fundo",
+      "publicador": "casa",
+      "uso": "restrito",
+      "restricoes": [
+        "Fotografia publicada pela casa; confirmar com o dono a permissão de uso antes do site definitivo.",
+        "Miniatura do Instagram (512×640): só para apoio em tamanho pequeno ou como referência a pedir ao dono."
+      ]
+    },
+    {
+      "id": "AT-regiao_regiao-01",
+      "caminho": "marketing/fotos/regiao/regiao-01.jpg",
+      "dimensoes": {
+        "largura": 3696,
+        "altura": 2448
+      },
+      "assunto": "Igreja de Santa Maria Maior de Tarouquela: Igreja românica de Tarouquela vista do adro, com a torre sineira e o miradouro à esquerda",
+      "publicador": "terceiro",
+      "entidade_confirmada": "REG-TAROUQUELA",
+      "uso": "restrito",
+      "restricoes": [
+        "Crédito obrigatório junto da foto ou num bloco de créditos ligado a ela: «Foto: Pedro from Maia (Porto), Portugal / Wikimedia Commons, «Igreja de Santa Maria Maior de Tarouquela I (36411616644)», CC BY 2.0», com ligação à licença e à página https://commons.wikimedia.org/wiki/File:Igreja_de_Santa_Maria_Maior_de_Tarouquela_I_(36411616644).jpg.",
+        "Foto de terceiros: nunca a apresentar como da casa nem sugerir que é a vista da casa.",
+        "Sem recorte, sem texto por cima e sem filtros: qualquer alteração é obra derivada e tem de ser indicada no crédito."
+      ]
+    },
+    {
+      "id": "AT-regiao_regiao-02",
+      "caminho": "marketing/fotos/regiao/regiao-02.jpg",
+      "dimensoes": {
+        "largura": 2048,
+        "altura": 1365
+      },
+      "assunto": "Vale e Foz do Bestança: O vale do Douro na foz do Bestança, com o viaduto, a povoação e as encostas",
+      "publicador": "terceiro",
+      "entidade_confirmada": "REG-BESTANCA",
+      "uso": "restrito",
+      "restricoes": [
+        "Crédito obrigatório junto da foto ou num bloco de créditos ligado a ela: «Foto: Vitor Oliveira from Torres Vedras, PORTUGAL / Wikimedia Commons, «Foz do Rio Bestança - Portugal (52345064659)», CC BY-SA 2.0», com ligação à licença e à página https://commons.wikimedia.org/wiki/File:Foz_do_Rio_Bestan%C3%A7a_-_Portugal_(52345064659).jpg.",
+        "Foto de terceiros: nunca a apresentar como da casa nem sugerir que é a vista da casa.",
+        "Sem recorte, sem texto por cima e sem filtros: qualquer alteração é obra derivada e tem de ser indicada no crédito e fica sob a mesma licença CC BY-SA (ShareAlike).",
+        "Tem a marca de água do autor no canto inferior esquerdo («Vitor Oliveira | Portuguese_eyes»): manter intacta e visível; não recortar a zona. Mostra o Douro na foz do Bestança (com o viaduto ferroviário), não o interior do vale: legendar como «foz do Bestança»."
+      ]
+    },
+    {
+      "id": "AT-regiao_regiao-03",
+      "caminho": "marketing/fotos/regiao/regiao-03.jpg",
+      "dimensoes": {
+        "largura": 4032,
+        "altura": 3024
+      },
+      "assunto": "Douro em Porto Antigo: O Douro em Porto Antigo, com a ponte, o cais e as casas à beira-rio",
+      "publicador": "terceiro",
+      "entidade_confirmada": "REG-DOURO",
+      "uso": "restrito",
+      "restricoes": [
+        "Crédito obrigatório junto da foto ou num bloco de créditos ligado a ela: «Foto: ManuelFBorges / Wikimedia Commons, «Porto Antigo - Cinfães», CC BY-SA 4.0», com ligação à licença e à página https://commons.wikimedia.org/wiki/File:Porto_Antigo_-_Cinf%C3%A3es.jpg.",
+        "Foto de terceiros: nunca a apresentar como da casa nem sugerir que é a vista da casa.",
+        "Sem recorte, sem texto por cima e sem filtros: qualquer alteração é obra derivada e tem de ser indicada no crédito e fica sob a mesma licença CC BY-SA (ShareAlike)."
+      ]
+    },
+    {
+      "id": "AT-regiao_regiao-04",
+      "caminho": "marketing/fotos/regiao/regiao-04.jpg",
+      "dimensoes": {
+        "largura": 4752,
+        "altura": 3168
+      },
+      "assunto": "Serra de Montemuro: Base da Serra de Montemuro (Cinfães): socalcos verdes e encosta em cores de outono",
+      "publicador": "terceiro",
+      "entidade_confirmada": "REG-MONTEMURO",
+      "uso": "restrito",
+      "restricoes": [
+        "Crédito obrigatório junto da foto ou num bloco de créditos ligado a ela: «Foto: C.felix / Wikimedia Commons, «IMG montemuro», CC BY-SA 3.0», com ligação à licença e à página https://commons.wikimedia.org/wiki/File:IMG_montemuro.JPG.",
+        "Foto de terceiros: nunca a apresentar como da casa nem sugerir que é a vista da casa.",
+        "Sem recorte, sem texto por cima e sem filtros: qualquer alteração é obra derivada e tem de ser indicada no crédito e fica sob a mesma licença CC BY-SA (ShareAlike).",
+        "Mostra a encosta da Serra de Montemuro, não o miradouro das Portas de Montemuro: legendar como «Serra de Montemuro»."
+      ]
+    },
+    {
+      "id": "AT-regiao_regiao-05",
+      "caminho": "marketing/fotos/regiao/regiao-05.jpg",
+      "dimensoes": {
+        "largura": 4288,
+        "altura": 2848
+      },
+      "assunto": "Passadiços do Paiva: Passadiço de madeira sobre o rio Paiva, entre rochas e vegetação",
+      "publicador": "terceiro",
+      "entidade_confirmada": "REG-PAIVA",
+      "uso": "restrito",
+      "restricoes": [
+        "Crédito obrigatório junto da foto ou num bloco de créditos ligado a ela: «Foto: Joseolgon / Wikimedia Commons, «Passadiço do Paiva (10)», CC BY-SA 4.0», com ligação à licença e à página https://commons.wikimedia.org/wiki/File:Passadi%C3%A7o_do_Paiva_(10).JPG.",
+        "Foto de terceiros: nunca a apresentar como da casa nem sugerir que é a vista da casa.",
+        "Sem recorte, sem texto por cima e sem filtros: qualquer alteração é obra derivada e tem de ser indicada no crédito e fica sob a mesma licença CC BY-SA (ShareAlike).",
+        "Há visitantes ao longe no passadiço; foto de 2015."
+      ]
+    },
+    {
+      "id": "AT-regiao_regiao-06",
+      "caminho": "marketing/fotos/regiao/regiao-06.jpg",
+      "dimensoes": {
+        "largura": 2048,
+        "altura": 1536
+      },
+      "assunto": "Santuário de Nossa Senhora dos Remédios (Lamego): Escadaria e santuário de Nossa Senhora dos Remédios, em Lamego",
+      "publicador": "terceiro",
+      "entidade_confirmada": "REG-REMEDIOS",
+      "uso": "restrito",
+      "restricoes": [
+        "Crédito obrigatório junto da foto ou num bloco de créditos ligado a ela: «Foto: Celso Pinto de Carvalho / Wikimedia Commons, «Santuário Lamego», CC BY-SA 3.0», com ligação à licença e à página https://commons.wikimedia.org/wiki/File:Santu%C3%A1rio_Lamego.jpg.",
+        "Foto de terceiros: nunca a apresentar como da casa nem sugerir que é a vista da casa.",
+        "Sem recorte, sem texto por cima e sem filtros: qualquer alteração é obra derivada e tem de ser indicada no crédito e fica sob a mesma licença CC BY-SA (ShareAlike).",
+        "Foto de 2010; não usar para o número de degraus."
+      ]
+    }
+  ],
+  "decisoes": [],
+  "cobertura": [
+    {
+      "id": "COB-IDENT",
+      "fonte": "RNT, Airbnb, Google, Tripadvisor, Rota do Românico, Instagram, Facebook, site 2013",
+      "material": "identidade",
+      "estado": "completo_no_universo_observado",
+      "superficie": "RNET por NIPC e por nome; RNAL por «Costeira»",
+      "limitacao": "Identidade reconfirmada no juízo: RNET 4967 (captura), NIPC igual no Airbnb, telefone igual em 5 canais, mesma casa nas fotos de todas as fontes."
+    },
+    {
+      "id": "COB-REV-AIRBNB",
+      "fonte": "Airbnb",
+      "material": "reviews",
+      "estado": "completo_no_universo_observado",
+      "superficie": "janela «Mostrar as 25 avaliações», original sem tradução",
+      "observado": 25,
+      "recolhido": 25
+    },
+    {
+      "id": "COB-REV-GOOGLE",
+      "fonte": "Google Maps",
+      "material": "reviews",
+      "estado": "completo_no_universo_observado",
+      "superficie": "separador Críticas, ordenado por mais recentes",
+      "observado": 49,
+      "recolhido": 49,
+      "limitacao": "30 só com estrelas; 8 importadas do Tripadvisor contadas como T-; datas relativas («há N anos»)."
+    },
+    {
+      "id": "COB-REV-TRIP",
+      "fonte": "Tripadvisor",
+      "material": "reviews",
+      "estado": "completo_no_universo_observado",
+      "superficie": "versões .com/.pt/.fr/.es, texto original",
+      "observado": 8,
+      "recolhido": 8,
+      "limitacao": "A mais recente é de 2020; 3 pedidas pela casa através do Tripadvisor."
+    },
+    {
+      "id": "COB-REV-BOOKING",
+      "fonte": "Booking",
+      "material": "reviews",
+      "estado": "bloqueado",
+      "superficie": "ficha e /reviews/ em 5 línguas",
+      "limitacao": "Ficha retirada (redireciona); Web Archive indisponível durante a recolha. Um resumo não verificado fala de 28 reviews: é a maior lacuna."
+    },
+    {
+      "id": "COB-REV-FACEBOOK",
+      "fonte": "Facebook",
+      "material": "reviews",
+      "estado": "bloqueado",
+      "limitacao": "«2 críticas, sem classificação», não visíveis sem sessão."
+    },
+    {
+      "id": "COB-QUARTOS",
+      "fonte": "Booking (fonte principal), Airbnb, RNET, Instagram, site 2013",
+      "material": "quartos",
+      "estado": "parcial",
+      "limitacao": "Sem tabela de tipos do Booking: sem m², camas por quarto nem descrições; número de quartos e casas de banho em conflito."
+    },
+    {
+      "id": "COB-TEXTOS",
+      "fonte": "Airbnb, site 2013, Instagram, Facebook, Linktree, Rota do Românico",
+      "material": "textos",
+      "estado": "parcial",
+      "limitacao": "Instagram e Facebook sem sessão (12 posts, 1 publicação); site próprio extinto; Booking e Google sem texto da casa."
+    },
+    {
+      "id": "COB-FOTOS-AIRBNB",
+      "fonte": "Airbnb",
+      "material": "fotos",
+      "estado": "completo_no_universo_observado",
+      "superficie": "galeria completa (14 grupos)",
+      "observado": 44,
+      "recolhido": 39,
+      "limitacao": "5 repetidas dentro da galeria."
+    },
+    {
+      "id": "COB-FOTOS-SITE",
+      "fonte": "Site 2013 (Web Archive)",
+      "material": "fotos",
+      "estado": "parcial",
+      "superficie": "páginas início e Os Espaços",
+      "observado": 39,
+      "recolhido": 30,
+      "limitacao": "Fotos de 2013, ≤720 px; 2 não arquivadas; 2 do slider sem autor confirmado."
+    },
+    {
+      "id": "COB-FOTOS-INSTA",
+      "fonte": "Instagram",
+      "material": "fotos",
+      "estado": "parcial",
+      "superficie": "12 posts públicos",
+      "observado": 12,
+      "recolhido": 6,
+      "limitacao": "Miniaturas ≤640 px; carrosséis não abertos; 6 eram cópias do Airbnb."
+    },
+    {
+      "id": "COB-FOTOS-OUTRAS",
+      "fonte": "Google Maps, Tripadvisor, Facebook, Booking",
+      "material": "fotos",
+      "estado": "nao_aplicavel",
+      "limitacao": "Sem fotos com autoria da casa confirmada (Google sem «Do proprietário», Tripadvisor só viajantes, Facebook exige sessão, Booking retirado)."
+    },
+    {
+      "id": "COB-CANAIS",
+      "fonte": "Airbnb, Google, Tripadvisor, Booking, Instagram, Facebook, Linktree, Rota do Românico, domínios",
+      "material": "canais",
+      "estado": "completo_no_universo_observado",
+      "limitacao": "Único motor de reservas ativo: Airbnb. Domínios próprios sem DNS; casa-rural-da-costeira.com.es atrás do Cloudflare e não confirmado."
+    },
+    {
+      "id": "COB-COMPLIANCE",
+      "fonte": "RNT, Airbnb",
+      "material": "compliance",
+      "estado": "parcial",
+      "limitacao": "RNET confirmado; livro de reclamações, seguro e placa não encontrados publicamente."
+    },
+    {
+      "id": "COB-FACTOS",
+      "fonte": "Airbnb, RNET, site 2013, reviews; regiao/regiao.md",
+      "material": "factos",
+      "estado": "parcial",
+      "limitacao": "Estado atual de jacúzi, pequeno-almoço, refeições, galinheiro e limpeza durante a estadia por confirmar com o dono; região: falta vinho e tradições."
+    }
+  ]
+}

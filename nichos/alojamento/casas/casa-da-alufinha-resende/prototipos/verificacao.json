@@ -1,0 +1,40 @@
+{
+  "a": {
+    "ok": true,
+    "falhas": [],
+    "avisos": [],
+    "medidas": {
+      "ecrasConteudo": 8.84,
+      "scrollPreso": 0,
+      "ecrasTotal": 8.84,
+      "sequenciasPresas": [],
+      "revelacoes": {}
+    }
+  },
+  "b": {
+    "ok": true,
+    "falhas": [],
+    "avisos": [],
+    "medidas": {
+      "ecrasConteudo": 9.04,
+      "scrollPreso": 0,
+      "ecrasTotal": 9.04,
+      "sequenciasPresas": [],
+      "revelacoes": {}
+    }
+  },
+  "c": {
+    "ok": true,
+    "falhas": [],
+    "avisos": [
+      "1 parágrafos com letra abaixo de 15 px"
+    ],
+    "medidas": {
+      "ecrasConteudo": 11.3,
+      "scrollPreso": 0,
+      "ecrasTotal": 11.3,
+      "sequenciasPresas": [],
+      "revelacoes": {}
+    }
+  }
+}

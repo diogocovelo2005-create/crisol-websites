@@ -1,0 +1,55 @@
+{
+  "nicho": "canalização",
+  "sub_oficios": [
+    "canalizações de águas e esgotos",
+    "desentupimentos e fossas",
+    "aquecimento, esquentadores e caldeiras"
+  ],
+  "places_types": ["plumber"],
+  "tem_tipos_diretos": true,
+  "termos": {
+    "formal": [
+      "canalizador",
+      "canalizações",
+      "empresa de canalizações",
+      "instalações sanitárias",
+      "redes de águas e esgotos",
+      "instalador de gás",
+      "técnico de aquecimento central"
+    ],
+    "coloquial": [
+      "arranjo de canos",
+      "mestre de canalizações",
+      "homem dos canos"
+    ],
+    "regional": [
+      "picheleiro",
+      "latoeiro"
+    ],
+    "servico": [
+      "desentupimento",
+      "desobstrução de esgotos",
+      "fuga de água",
+      "deteção de fugas de água",
+      "substituição de tubagens",
+      "reparação de torneiras",
+      "reparação de autoclismo",
+      "instalação de esquentador",
+      "assistência a esquentadores",
+      "reparação de caldeira",
+      "instalação de termoacumulador",
+      "limpeza de fossas",
+      "esvaziamento de fossas sépticas",
+      "furos de água"
+    ],
+    "adjacente": [
+      "climatização",
+      "aquecimento central",
+      "painéis solares térmicos",
+      "manutenção de piscinas",
+      "energias renováveis instalação",
+      "assistência técnica a eletrodomésticos"
+    ]
+  },
+  "notas": "Sub-ofícios pelo teste do leigo: quem tem um esgoto entupido liga a uma empresa de desentupimentos, não ao canalizador que lhe montou a casa de banho, e quem tem a caldeira avariada procura assistência da marca. São três mercados com empresas diferentes.\n\nRegional é o registo mais fino aqui: 'picheleiro' é vivo em Lisboa e no sul, 'latoeiro' sobrevive no interior norte com o sentido antigo de quem trabalha chapa e canos. Não inventei mais nenhum — o resto do país usa 'canalizador' e acrescentar variantes fabricadas gastaria uma passagem por toda a grelha para devolver zero.\n\nO registo 'serviço' é de longe o maior porque é onde o cliente escreve o problema em vez da profissão, e é aí que o Text Search encontra as empresas cujo nome não diz nada ('Silva & Irmãos Lda') mas cujo perfil menciona desentupimentos.\n\nO tipo 'plumber' existe e é aceite como includedTypes, mas cobre mal o mercado português: uma pesquisa Nearby por plumber no centro de Viseu devolveu 1 resultado, contra 10 do Text Search por 'canalizador' no distrito inteiro. Os tipos ajudam, o Text Search é que carrega a cobertura."
+}

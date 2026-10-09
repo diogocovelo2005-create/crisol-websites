@@ -1,0 +1,1375 @@
+{
+  "modelo": "claude-haiku",
+  "atualizado": "2026-10-02T16:55:40.528Z",
+  "fotos": [
+    {
+      "id": "ATIVO-exterior_fachada-01",
+      "assunto": "Fachada principal de pedra com piscina no primeiro plano, palmeira grande no centro do enquadramento, relva e caminho de lajes.",
+      "onde_esta_o_assunto": "Casa no terço superior direito e centro; piscina com água azul no terço esquerdo/inferior; palmeira no centro.",
+      "ponto_focal": {
+        "x": 55,
+        "y": 45
+      },
+      "zona_segura": "Casa e acesso principal devem estar sempre visíveis; piscina no canto inferior não pode desaparecer.",
+      "luz": {
+        "tipo": "sol alto e duro",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Fachada frontal da casa de pedra, piscina, jardim",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#87CEEB",
+        "#7CB342",
+        "#A1887F",
+        "#FFFFFF",
+        "#2E7D32"
+      ],
+      "desejo": 4,
+      "caminho": "marketing/fotos/exterior/fachada-01.jpg",
+      "bytes": 857073,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-exterior_fachada-02",
+      "assunto": "Fachada de pedra com rosas vermelhas e flores laranja em vasos, piscina turquesa no lado direito, caminho de lajes, sebes verdes.",
+      "onde_esta_o_assunto": "Casa no terço superior; flores vermelhas no terço esquerdo/centro; piscina no canto inferior direito.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 40
+      },
+      "zona_segura": "Fachada central deve estar sempre visível; piscina deve manter tamanho reconhecível.",
+      "luz": {
+        "tipo": "sol alto e duro",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Fachada com jardim florido, piscina",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#87CEEB",
+        "#C41E3A",
+        "#F4A460",
+        "#7CB342",
+        "#B8A89A"
+      ],
+      "desejo": 5,
+      "caminho": "marketing/fotos/exterior/fachada-02.jpg",
+      "bytes": 814539,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-exterior_fachada-03",
+      "assunto": "Lateral da casa com edifício anexo degradado em pedra, vista panorâmica das colinas ao fundo, caminho de lajes, sebes.",
+      "onde_esta_o_assunto": "Casa moderna à esquerda; anexo antigo no centro; colinas ao fundo; vista sobre o vale.",
+      "ponto_focal": {
+        "x": 45,
+        "y": 50
+      },
+      "zona_segura": "Casa e anexo devem ser reconhecíveis; vista para as colinas deve estar presente.",
+      "luz": {
+        "tipo": "sol lateral",
+        "hora_aparente": "tarde"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Lateral da casa, anexo, vista do vale",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#87CEEB",
+        "#A1887F",
+        "#7CB342",
+        "#6B8E23",
+        "#D3D3D3"
+      ],
+      "desejo": 3,
+      "caminho": "marketing/fotos/exterior/fachada-03.jpg",
+      "bytes": 724957,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-exterior_fachada-04",
+      "assunto": "Entrada da casa com escadas de acesso de pedra, sebes verdes nas laterais, piscina visível à esquerda, estacionamento, colinas ao fundo.",
+      "onde_esta_o_assunto": "Escadas no centro/terço direito; sebes e portão no terço esquerdo; piscina no canto inferior esquerdo.",
+      "ponto_focal": {
+        "x": 60,
+        "y": 45
+      },
+      "zona_segura": "Escadas de entrada devem ser sempre visíveis; portão não pode desaparecer.",
+      "luz": {
+        "tipo": "sol lateral duro",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Entrada com escadas, portão, acesso à casa",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#87CEEB",
+        "#A1887F",
+        "#7CB342",
+        "#D2B48C",
+        "#2E7D32"
+      ],
+      "desejo": 4,
+      "caminho": "marketing/fotos/exterior/fachada-04.jpg",
+      "bytes": 742666,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-exterior_fachada-05",
+      "assunto": "Fachada de pedra com telhado em telha cerâmica laranja, palmeiras na lateral, estacionamento com carro estacionado, colinas e céu azul ao fundo.",
+      "onde_esta_o_assunto": "Casa no centro/terço direito; carro e estacionamento no centro; colinas visíveis ao fundo.",
+      "ponto_focal": {
+        "x": 55,
+        "y": 50
+      },
+      "zona_segura": "Casa deve estar totalmente visível; estacionamento e acesso não devem desaparecer.",
+      "luz": {
+        "tipo": "sol alto e duro",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Fachada com telhado, estacionamento, acesso",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#87CEEB",
+        "#C65C3B",
+        "#A1887F",
+        "#7CB342",
+        "#FFFFFF"
+      ],
+      "desejo": 3,
+      "caminho": "marketing/fotos/exterior/fachada-05.jpg",
+      "bytes": 799941,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-exterior_jardim-01",
+      "assunto": "Deck de madeira com pérgola cinzenta, sofás azuis, mesa, guarda-sol cinzento, piscina visível ao fundo, relva verde, sebes.",
+      "onde_esta_o_assunto": "Pérgola e mobiliário no terço superior; sofás azuis no centro esquerdo; relva e piscina ao fundo.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 45
+      },
+      "zona_segura": "Mobiliário de exterior deve estar sempre visível; pérgola não pode ser cortada.",
+      "luz": {
+        "tipo": "sol duro",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Zona de estar exterior, pérgola, móveis de exterior",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#87CEEB",
+        "#8B7355",
+        "#4A90E2",
+        "#7CB342",
+        "#FFFFFF"
+      ],
+      "desejo": 5,
+      "caminho": "marketing/fotos/exterior/jardim-01.jpg",
+      "bytes": 891570,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-exterior_jardim-02",
+      "assunto": "Deck de madeira alongado com pérgola de metal cinzento com vimes branco, mesa e cadeiras de rattan, jardim paisagístico com flores e sebes.",
+      "onde_esta_o_assunto": "Pérgola com mobiliário no terço central; jardim e sebes nas laterais; vista das colinas ao fundo.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 50
+      },
+      "zona_segura": "Pérgola e mobiliário devem ser sempre visíveis; vista paisagística não pode desaparecer.",
+      "luz": {
+        "tipo": "sol lateral difuso",
+        "hora_aparente": "tarde"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Zona de estar com pérgola, mobiliário exterior, vista do vale",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#87CEEB",
+        "#8B7355",
+        "#7CB342",
+        "#CCCCCC",
+        "#556B2F"
+      ],
+      "desejo": 5,
+      "caminho": "marketing/fotos/exterior/jardim-02.jpg",
+      "bytes": 883254,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-exterior_jardim-03",
+      "assunto": "Pátio de lajes de pedra com churrasqueira de alvenaria em tijolo vermelho com telhado em terracota, trepadeira florida (flores vermelhas), sebes verdes.",
+      "onde_esta_o_assunto": "Churrasqueira no terço direito; lajes no primeiro plano; flores vermelhas no terço superior; colinas ao fundo.",
+      "ponto_focal": {
+        "x": 65,
+        "y": 55
+      },
+      "zona_segura": "Churrasqueira deve estar totalmente visível; trepadeira com flores não pode desaparecer.",
+      "luz": {
+        "tipo": "sol duro",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 4,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Churrasqueira exterior, pátio, área de convívio",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#87CEEB",
+        "#C65C3B",
+        "#A1887F",
+        "#C41E3A",
+        "#7CB342"
+      ],
+      "desejo": 4,
+      "caminho": "marketing/fotos/exterior/jardim-03.jpg",
+      "bytes": 634382,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-exterior_jardim-04",
+      "assunto": "Deck de madeira com pérgola cinzenta, guarda-sol no centro, mesa e cadeiras de rattan, limoeiro em vaso no centro, relva e sebes.",
+      "onde_esta_o_assunto": "Pérgola e mobiliário no centro/terço superior; limoeiro em vaso no centro; vista para as colinas ao fundo.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 45
+      },
+      "zona_segura": "Pérgola, mobiliário e limoeiro devem ser sempre visíveis.",
+      "luz": {
+        "tipo": "sol duro",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Zona de estar exterior com pérgola, mobiliário, decoração",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#87CEEB",
+        "#8B7355",
+        "#CCCCCC",
+        "#7CB342",
+        "#90EE90"
+      ],
+      "desejo": 5,
+      "caminho": "marketing/fotos/exterior/jardim-04.jpg",
+      "bytes": 847227,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-exterior_piscina-01",
+      "assunto": "Piscina turquesa rodeada de relva verde, palmeira no primeiro plano, pérgola de madeira ao fundo, sebes, vista das colinas.",
+      "onde_esta_o_assunto": "Piscina no centro/inferior; palmeira no terço esquerdo; pérgola ao fundo; colinas visíveis.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 60
+      },
+      "zona_segura": "Piscina deve estar totalmente visível; palmeira deve ser reconhecível.",
+      "luz": {
+        "tipo": "sol alto e duro",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Piscina, zona de lazer, paisagem exterior",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#40E0D0",
+        "#7CB342",
+        "#90EE90",
+        "#87CEEB",
+        "#A1887F"
+      ],
+      "desejo": 5,
+      "caminho": "marketing/fotos/exterior/piscina-01.jpg",
+      "bytes": 758593,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-exterior_piscina-02",
+      "assunto": "Piscina turquesa com a fachada de pedra da casa ao fundo, relva verde nas laterais, caminho de acesso, sebes e árvores.",
+      "onde_esta_o_assunto": "Piscina no primeiro plano/centro; casa no fundo/terço superior; relva nas laterais.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 70
+      },
+      "zona_segura": "Piscina deve ser totalmente visível; casa deve ser reconhecível ao fundo.",
+      "luz": {
+        "tipo": "sol lateral",
+        "hora_aparente": "tarde"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Piscina com vista para a casa",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#40E0D0",
+        "#A1887F",
+        "#7CB342",
+        "#FFFFFF",
+        "#87CEEB"
+      ],
+      "desejo": 4,
+      "caminho": "marketing/fotos/exterior/piscina-02.jpg",
+      "bytes": 761726,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-exterior_piscina-03",
+      "assunto": "Piscina rectangular turquesa, relva verde, pérgola de madeira ao fundo com vimes, sebes altas, vista panorâmica das colinas.",
+      "onde_esta_o_assunto": "Piscina no primeiro plano; pérgola no terço superior ao fundo; colinas ao horizonte.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 65
+      },
+      "zona_segura": "Piscina deve estar totalmente visível; pérgola deve ser reconhecível.",
+      "luz": {
+        "tipo": "sol alto e duro",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Piscina, zona de lazer, paisagem",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#40E0D0",
+        "#7CB342",
+        "#8B7355",
+        "#87CEEB",
+        "#D3D3D3"
+      ],
+      "desejo": 4,
+      "caminho": "marketing/fotos/exterior/piscina-03.jpg",
+      "bytes": 936786,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-exterior_piscina-04",
+      "assunto": "Piscina turquesa com vista para as colinas do Douro, palmeiras no primeiro plano à direita, churrasqueira ao fundo direito, sebes altas.",
+      "onde_esta_o_assunto": "Piscina no centro/primeiro plano; palmeira à direita; churrasqueira e colinas ao fundo.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 65
+      },
+      "zona_segura": "Piscina deve estar totalmente visível; paisagem das colinas deve ser reconhecível.",
+      "luz": {
+        "tipo": "sol alto e duro",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 5
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Piscina, vista panorâmica do vale",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#40E0D0",
+        "#7CB342",
+        "#FFD700",
+        "#87CEEB",
+        "#8B7355"
+      ],
+      "desejo": 5,
+      "caminho": "marketing/fotos/exterior/piscina-04.jpg",
+      "bytes": 663821,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-exterior_piscina-05",
+      "assunto": "Piscina rectangular turquesa com relva verde nas laterais, árvores e sebes, casa de pedra e churrasqueira ao fundo, vista das colinas.",
+      "onde_esta_o_assunto": "Piscina no primeiro plano/centro; casa e churrasqueira no fundo; colinas ao horizonte.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 65
+      },
+      "zona_segura": "Piscina deve ser totalmente visível; casa deve ser reconhecível ao fundo.",
+      "luz": {
+        "tipo": "sol alto",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Piscina, vista para a casa",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#40E0D0",
+        "#7CB342",
+        "#A1887F",
+        "#87CEEB",
+        "#90EE90"
+      ],
+      "desejo": 4,
+      "caminho": "marketing/fotos/exterior/piscina-05.jpg",
+      "bytes": 592887,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-exterior_piscina-06",
+      "assunto": "Piscina com relva verde e sebes, pátio de lajes, vista de toda a zona de lazer do lado da piscina, árvores e estruturas de sombra.",
+      "onde_esta_o_assunto": "Piscina no primeiro plano; pátio de lajes no centro; sebes e árvores nas laterais.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 60
+      },
+      "zona_segura": "Piscina deve estar totalmente visível; estruturas de sombra devem ser reconhecíveis.",
+      "luz": {
+        "tipo": "sol duro",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Piscina, zona de lazer completa",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#40E0D0",
+        "#7CB342",
+        "#D3D3D3",
+        "#87CEEB",
+        "#A1887F"
+      ],
+      "desejo": 4,
+      "caminho": "marketing/fotos/exterior/piscina-06.jpg",
+      "bytes": 655385,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-exterior_vista-01",
+      "assunto": "Vista do deck com sofás de exterior azuis, guarda-sol, trilho de relva verde, colinas e vinhedos ao fundo, céu azul.",
+      "onde_esta_o_assunto": "Sofás e guarda-sol no primeiro plano; relva e colinas no fundo.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 45
+      },
+      "zona_segura": "Vista das colinas deve estar sempre presente; sofás devem ser reconhecíveis.",
+      "luz": {
+        "tipo": "sol lateral",
+        "hora_aparente": "tarde"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Vista panorâmica do vale, zona de estar",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#87CEEB",
+        "#7CB342",
+        "#4A90E2",
+        "#FFD700",
+        "#A1887F"
+      ],
+      "desejo": 5,
+      "caminho": "marketing/fotos/exterior/vista-01.jpg",
+      "bytes": 670470,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-exterior_vista-02",
+      "assunto": "Vista panorâmica sobre as colinas, vinhas e vale do Douro, floresta e casas dispersas ao longe, céu azul.",
+      "onde_esta_o_assunto": "Vale e colinas ocupam todo o enquadramento; céu no terço superior.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 50
+      },
+      "zona_segura": "Paisagem panorâmica deve estar sempre visível; detalhes do vale e floresta devem ser reconhecíveis.",
+      "luz": {
+        "tipo": "luz natural nítida",
+        "hora_aparente": "tarde"
+      },
+      "qualidade": {
+        "nitidez": 5,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 5
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Vista panorâmica do vale do Douro",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#87CEEB",
+        "#6B8E23",
+        "#7CB342",
+        "#8B7355",
+        "#D2B48C"
+      ],
+      "desejo": 5,
+      "caminho": "marketing/fotos/exterior/vista-02.jpg",
+      "bytes": 726909,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-exterior_vista-03",
+      "assunto": "Vista sobre o vale e colinas com casas dispersas ao longe, árvores e floresta em primeiro plano, céu azul com poucas nuvens.",
+      "onde_esta_o_assunto": "Vale no centro; colinas ao fundo; vegetação em primeiro plano nas laterais.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 50
+      },
+      "zona_segura": "Paisagem panorâmica deve estar sempre visível; casas ao longe devem ser reconhecíveis.",
+      "luz": {
+        "tipo": "luz natural clara",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Vista panorâmica do vale",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#87CEEB",
+        "#7CB342",
+        "#6B8E23",
+        "#A1887F",
+        "#FFFFFF"
+      ],
+      "desejo": 4,
+      "caminho": "marketing/fotos/exterior/vista-03.jpg",
+      "bytes": 683454,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-interior_casa-de-banho-01",
+      "assunto": "Casa de banho com mosaico de vidro dourado, lavatório branco sobre móvel de madeira, espelho, duche ao fundo, toalhas brancas.",
+      "onde_esta_o_assunto": "Lavatório e espelho no centro esquerdo; duche no fundo; mosaico nas paredes.",
+      "ponto_focal": {
+        "x": 40,
+        "y": 50
+      },
+      "zona_segura": "Lavatório e espelho devem estar sempre visíveis; duche não pode desaparecer.",
+      "luz": {
+        "tipo": "luz de janela suave com lâmpada",
+        "hora_aparente": "indeterminada"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 4,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Casa de banho com duche",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#D4AF37",
+        "#FFFFFF",
+        "#8B7355",
+        "#87CEEB",
+        "#D3D3D3"
+      ],
+      "desejo": 3,
+      "caminho": "marketing/fotos/interior/casa-de-banho-01.jpg",
+      "bytes": 730103,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-interior_casa-de-banho-02",
+      "assunto": "Casa de banho com mosaico de vidro dourado, lavatório branco sobre móvel de madeira, duche com vidro à direita, toalhas brancas.",
+      "onde_esta_o_assunto": "Lavatório no centro esquerdo; duche com vidro à direita; mosaico nas paredes.",
+      "ponto_focal": {
+        "x": 45,
+        "y": 50
+      },
+      "zona_segura": "Lavatório e duche devem estar sempre visíveis.",
+      "luz": {
+        "tipo": "luz de janela suave",
+        "hora_aparente": "indeterminada"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 4,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Casa de banho com duche de vidro",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#D4AF37",
+        "#FFFFFF",
+        "#8B7355",
+        "#CCCCCC",
+        "#D3D3D3"
+      ],
+      "desejo": 3,
+      "caminho": "marketing/fotos/interior/casa-de-banho-02.jpg",
+      "bytes": 554021,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-interior_cozinha-01",
+      "assunto": "Cozinha com piso em mosaico granito, armários de madeira escura, fogão preto, frigorífico preto, mesa de refeições de madeira, paredes de granito.",
+      "onde_esta_o_assunto": "Armários de madeira no terço superior direito; mesa no centro; fogão e frigorífico nas laterais.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 40
+      },
+      "zona_segura": "Cozinha deve estar totalmente visível; mesa de refeições não pode desaparecer.",
+      "luz": {
+        "tipo": "luz artificial",
+        "hora_aparente": "indeterminada"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 4,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Cozinha com mesa de refeições",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#8B7355",
+        "#000000",
+        "#D2B48C",
+        "#A1887F",
+        "#8B4513"
+      ],
+      "desejo": 3,
+      "caminho": "marketing/fotos/interior/cozinha-01.jpg",
+      "bytes": 416705,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-interior_detalhe-01",
+      "assunto": "Corredor com decoração: esculturas em preto na mesa, moldura de metal com círculo vazio, guarda com quadros, portas de madeira, iluminação de teto.",
+      "onde_esta_o_assunto": "Mesa com decoração no centro inferior; moldura circular na parede à esquerda; portas abertas ao fundo.",
+      "ponto_focal": {
+        "x": 35,
+        "y": 40
+      },
+      "zona_segura": "Decoração e moldura devem ser reconhecíveis; portas não podem desaparecer.",
+      "luz": {
+        "tipo": "luz artificial",
+        "hora_aparente": "indeterminada"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Corredor, decoração interior",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#FFFFFF",
+        "#8B7355",
+        "#000000",
+        "#D2B48C",
+        "#808080"
+      ],
+      "desejo": 2,
+      "caminho": "marketing/fotos/interior/detalhe-01.jpg",
+      "bytes": 327302,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-interior_quarto-01",
+      "assunto": "Quarto com duas camas individuais brancas com almofadas cinzentas, cabeceira cinzenta, janela com vista para o vale, iluminação de teto.",
+      "onde_esta_o_assunto": "Duas camas no centro; janela com vista ao fundo direito; pendente de teto branco.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 45
+      },
+      "zona_segura": "Camas devem estar totalmente visíveis; janela deve ser reconhecível.",
+      "luz": {
+        "tipo": "luz de janela suave",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Quarto com duas camas individuais",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#FFFFFF",
+        "#CCCCCC",
+        "#8B7355",
+        "#87CEEB",
+        "#D3D3D3"
+      ],
+      "desejo": 4,
+      "caminho": "marketing/fotos/interior/quarto-01.jpg",
+      "bytes": 251020,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-interior_quarto-02",
+      "assunto": "Quarto de casal com cama escura, almofadas brancas, espelho de pé, quadro de paisagem na parede, janela, iluminação de teto.",
+      "onde_esta_o_assunto": "Cama de casal no centro; espelho no terço direito; quadro na parede; janela ao fundo.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 50
+      },
+      "zona_segura": "Cama deve estar totalmente visível; espelho e quadro devem ser reconhecíveis.",
+      "luz": {
+        "tipo": "luz de janela suave",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Quarto de casal com decoração",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#FFFFFF",
+        "#8B4513",
+        "#D2B48C",
+        "#87CEEB",
+        "#808080"
+      ],
+      "desejo": 4,
+      "caminho": "marketing/fotos/interior/quarto-02.jpg",
+      "bytes": 221127,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-interior_quarto-03",
+      "assunto": "Quarto de casal com cama branca, espelho preto na parede, janela com cortinas bege, candeeiro no rodapé esquerdo, piso em madeira.",
+      "onde_esta_o_assunto": "Cama no centro esquerdo; espelho no terço direito; janela ao fundo.",
+      "ponto_focal": {
+        "x": 45,
+        "y": 50
+      },
+      "zona_segura": "Cama deve estar totalmente visível; janela com vista deve ser reconhecível.",
+      "luz": {
+        "tipo": "luz de janela suave",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Quarto de casal com espelho",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#FFFFFF",
+        "#8B4513",
+        "#D2B48C",
+        "#808080",
+        "#87CEEB"
+      ],
+      "desejo": 4,
+      "caminho": "marketing/fotos/interior/quarto-03.jpg",
+      "bytes": 251289,
+      "largura": 3000,
+      "altura": 2002
+    },
+    {
+      "id": "ATIVO-interior_quarto-04",
+      "assunto": "Quarto de casal com cama escura, almofadas brancas, quadro de paisagem acima, candeeiro de pedestal amarelo, piso em madeira.",
+      "onde_esta_o_assunto": "Cama no centro; quadro acima; candeeiro no terço esquerdo; porta aberta ao fundo.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 45
+      },
+      "zona_segura": "Cama deve estar totalmente visível; quadro e decoração devem ser reconhecíveis.",
+      "luz": {
+        "tipo": "luz artificial",
+        "hora_aparente": "indeterminada"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Quarto de casal com decoração e acesso",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#FFFFFF",
+        "#8B4513",
+        "#FFD700",
+        "#8B7355",
+        "#D2B48C"
+      ],
+      "desejo": 4,
+      "caminho": "marketing/fotos/interior/quarto-04.jpg",
+      "bytes": 213241,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-interior_quarto-05",
+      "assunto": "Quarto com duas camas individuais brancas, decoração colorida acima, cabide de madeira com roupas, janela com vista para árvores, piso em madeira.",
+      "onde_esta_o_assunto": "Duas camas no centro; cabide à direita; janela ao fundo.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 45
+      },
+      "zona_segura": "Camas devem estar totalmente visíveis; janela com vista devem ser reconhecíveis.",
+      "luz": {
+        "tipo": "luz de janela suave",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Quarto com duas camas individuais, vista para o jardim",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#FFFFFF",
+        "#8B7355",
+        "#D2B48C",
+        "#87CEEB",
+        "#7CB342"
+      ],
+      "desejo": 4,
+      "caminho": "marketing/fotos/interior/quarto-05.jpg",
+      "bytes": 203073,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-interior_quarto-06",
+      "assunto": "Quarto com cama branca com decoração colorida acima, cabide de madeira, porta aberta para o corredor, janela ao fundo, piso em madeira.",
+      "onde_esta_o_assunto": "Cama no centro; cabide à esquerda; porta ao fundo direito; janela ao fundo.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 50
+      },
+      "zona_segura": "Cama deve estar totalmente visível; decoração e cabide devem ser reconhecíveis.",
+      "luz": {
+        "tipo": "luz de janela suave",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Quarto com decoração e acesso",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#FFFFFF",
+        "#8B7355",
+        "#D2B48C",
+        "#87CEEB",
+        "#CCCCCC"
+      ],
+      "desejo": 3,
+      "caminho": "marketing/fotos/interior/quarto-06.jpg",
+      "bytes": 289310,
+      "largura": 3000,
+      "altura": 2002
+    },
+    {
+      "id": "ATIVO-interior_quarto-07",
+      "assunto": "Quarto de casal com cama escura, candeeiro de pendente branco, janela ao fundo com vista, cortinas beges, piso em madeira, decoração minimalista.",
+      "onde_esta_o_assunto": "Cama no centro esquerdo; pendente de teto; janela ao fundo.",
+      "ponto_focal": {
+        "x": 45,
+        "y": 50
+      },
+      "zona_segura": "Cama deve estar totalmente visível; janela com vista deve ser reconhecível.",
+      "luz": {
+        "tipo": "luz de janela suave",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Quarto de casal com vista",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#FFFFFF",
+        "#8B4513",
+        "#D2B48C",
+        "#87CEEB",
+        "#F5F5F5"
+      ],
+      "desejo": 4,
+      "caminho": "marketing/fotos/interior/quarto-07.jpg",
+      "bytes": 218491,
+      "largura": 2999,
+      "altura": 1997
+    },
+    {
+      "id": "ATIVO-interior_quarto-08",
+      "assunto": "Quarto de casal com cama em madeira escura, almofadas brancas, candeeiro de pendente vermelho, janela com vista para as colinas, piso em madeira.",
+      "onde_esta_o_assunto": "Cama no centro; candeeiro vermelho acima; janela ao fundo.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 45
+      },
+      "zona_segura": "Cama deve estar totalmente visível; vista pela janela deve ser reconhecível.",
+      "luz": {
+        "tipo": "luz de janela suave com pendente vermelho",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Quarto de casal com decoração vermelha",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#FFFFFF",
+        "#8B4513",
+        "#C41E3A",
+        "#87CEEB",
+        "#D2B48C"
+      ],
+      "desejo": 4,
+      "caminho": "marketing/fotos/interior/quarto-08.jpg",
+      "bytes": 219726,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-interior_quarto-09",
+      "assunto": "Quarto de casal com cama em madeira escura, almofadas brancas, espelho de corpo inteiro em moldura de madeira, janela com vista para as colinas.",
+      "onde_esta_o_assunto": "Cama à esquerda; espelho grande à direita; janela ao fundo com vista.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 50
+      },
+      "zona_segura": "Cama e espelho devem estar totalmente visíveis; vista pela janela deve ser reconhecível.",
+      "luz": {
+        "tipo": "luz de janela suave",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Quarto de casal com espelho",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#FFFFFF",
+        "#8B4513",
+        "#D2B48C",
+        "#87CEEB",
+        "#F5F5F5"
+      ],
+      "desejo": 4,
+      "caminho": "marketing/fotos/interior/quarto-09.jpg",
+      "bytes": 246755,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-interior_quarto-10",
+      "assunto": "Quarto de casal com cama em madeira escura com cabeceira, almofadas brancas, cómoda de madeira à esquerda, candeeiro vermelho, piso em madeira.",
+      "onde_esta_o_assunto": "Cama no centro direito; cómoda à esquerda; candeeiro no terço esquerdo inferior.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 50
+      },
+      "zona_segura": "Cama deve estar totalmente visível; móveis devem ser reconhecíveis.",
+      "luz": {
+        "tipo": "luz artificial com pendente vermelho",
+        "hora_aparente": "indeterminada"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 4,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Quarto de casal com móveis",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#FFFFFF",
+        "#8B4513",
+        "#C41E3A",
+        "#D2B48C",
+        "#8B7355"
+      ],
+      "desejo": 3,
+      "caminho": "marketing/fotos/interior/quarto-10.jpg",
+      "bytes": 191142,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-interior_refeicoes-01",
+      "assunto": "Zona de refeições com mesa de madeira, cadeiras de madeira, churrasqueira interior em alvenaria vermelha com vidro, porta envidraçada com vista para o exterior.",
+      "onde_esta_o_assunto": "Mesa e cadeiras no primeiro plano; churrasqueira à esquerda; porta aberta ao fundo.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 50
+      },
+      "zona_segura": "Mesa e cadeiras devem estar visíveis; churrasqueira não pode desaparecer.",
+      "luz": {
+        "tipo": "luz natural pela porta envidraçada",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Zona de refeições com churrasqueira interior",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#D2B48C",
+        "#C65C3B",
+        "#8B7355",
+        "#87CEEB",
+        "#FFFFFF"
+      ],
+      "desejo": 4,
+      "caminho": "marketing/fotos/interior/refeicoes-01.jpg",
+      "bytes": 417662,
+      "largura": 2999,
+      "altura": 1999
+    },
+    {
+      "id": "ATIVO-interior_sala-01",
+      "assunto": "Sala com parede de pedra, mobiliário de madeira, TV na parede, sofás vermelhos de rattan, pendentes decorativos, acesso para o exterior, piso em terracota.",
+      "onde_esta_o_assunto": "Sofás vermelhos nas laterais; TV no centro da parede de pedra; pendentes acima; janelas com vista ao fundo.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 45
+      },
+      "zona_segura": "Sofás e TV devem estar totalmente visíveis; parede de pedra deve ser reconhecível.",
+      "luz": {
+        "tipo": "luz natural pela janela",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Sala de estar com parede de pedra, TV, sofás",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#A1887F",
+        "#C41E3A",
+        "#8B7355",
+        "#D2B48C",
+        "#87CEEB"
+      ],
+      "desejo": 5,
+      "caminho": "marketing/fotos/interior/sala-01.jpg",
+      "bytes": 483941,
+      "largura": 3000,
+      "altura": 2002
+    },
+    {
+      "id": "ATIVO-interior_sala-02",
+      "assunto": "Sala com parede de pedra, lareira, mobiliário de madeira, sofás vermelhos, pendente decorativo, grande janela com vista para o vale, piso em terracota.",
+      "onde_esta_o_assunto": "Sofás vermelhos em primeiro plano; lareira à esquerda; janela grande ao fundo com vista panorâmica.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 50
+      },
+      "zona_segura": "Sofás e janela devem estar totalmente visíveis; vista do vale deve ser reconhecível.",
+      "luz": {
+        "tipo": "luz natural pela janela grande",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 5
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Sala de estar com lareira, sofás e vista panorâmica",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#A1887F",
+        "#C41E3A",
+        "#8B7355",
+        "#D2B48C",
+        "#87CEEB"
+      ],
+      "desejo": 5,
+      "caminho": "marketing/fotos/interior/sala-02.jpg",
+      "bytes": 408575,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-interior_sala-03",
+      "assunto": "Sala com parede em tons creme e bege, sofás vermelhos, mesa de centro branca, parede de pedra ao fundo com lareira, janela grande com vista para o vale.",
+      "onde_esta_o_assunto": "Sofás vermelhos nas laterais; mesa de centro branco no meio; grande janela ao fundo com vista panorâmica.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 45
+      },
+      "zona_segura": "Sofás e janela devem estar totalmente visíveis; vista panorâmica deve ser reconhecível.",
+      "luz": {
+        "tipo": "luz natural pela janela grande",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 5
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Sala de estar com sofás, mesa e vista do vale",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#F5F5DC",
+        "#C41E3A",
+        "#D2B48C",
+        "#87CEEB",
+        "#8B7355"
+      ],
+      "desejo": 5,
+      "caminho": "marketing/fotos/interior/sala-03.jpg",
+      "bytes": 449569,
+      "largura": 3000,
+      "altura": 2000
+    },
+    {
+      "id": "ATIVO-interior_sala-04",
+      "assunto": "Sala com parede de pedra, sofás vermelhos nas laterais, mesa de centro com objetos decorativos, cadeira suspensa no canto, grande janela com vista para as colinas.",
+      "onde_esta_o_assunto": "Sofás vermelhos nas laterais; mesa de centro no meio; cadeira suspensa à esquerda; grande janela ao fundo com vista panorâmica.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 50
+      },
+      "zona_segura": "Sofás e janela devem estar totalmente visíveis; vista panorâmica deve ser reconhecível.",
+      "luz": {
+        "tipo": "luz natural pela janela grande",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 5
+      },
+      "largura_maxima_px": 3000,
+      "mostra": "Sala de estar com sofás, cadeira suspensa e vista panorâmica",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#A1887F",
+        "#C41E3A",
+        "#D2B48C",
+        "#87CEEB",
+        "#8B7355"
+      ],
+      "desejo": 5,
+      "caminho": "marketing/fotos/interior/sala-04.jpg",
+      "bytes": 374870,
+      "largura": 3000,
+      "altura": 2000
+    }
+  ]
+}

@@ -1,0 +1,252 @@
+{
+  "passos": [
+    {
+      "data": "2026-09-28T18:08:25.356Z",
+      "passo": "descrever-fotos",
+      "modelo": "gemini-3.8-flash",
+      "fotos": 6,
+      "dolares": 0.0142
+    },
+    {
+      "data": "2026-09-28T18:08:38.070Z",
+      "passo": "descrever-fotos",
+      "modelo": "gemini-3.8-flash",
+      "fotos": 6,
+      "dolares": 0.0142
+    },
+    {
+      "data": "2026-09-28T18:08:54.593Z",
+      "passo": "descrever-fotos",
+      "modelo": "gemini-3.8-flash",
+      "fotos": 6,
+      "dolares": 0.0141
+    },
+    {
+      "data": "2026-09-28T18:09:07.772Z",
+      "passo": "descrever-fotos",
+      "modelo": "gemini-3.8-flash",
+      "fotos": 6,
+      "dolares": 0.0136
+    },
+    {
+      "data": "2026-09-28T18:09:22.295Z",
+      "passo": "descrever-fotos",
+      "modelo": "gemini-3.8-flash",
+      "fotos": 6,
+      "dolares": 0.0145
+    },
+    {
+      "data": "2026-09-28T18:09:32.002Z",
+      "passo": "descrever-fotos",
+      "modelo": "gemini-3.8-flash",
+      "fotos": 5,
+      "dolares": 0.0116
+    },
+    {
+      "data": "2026-09-28T18:12:13.748Z",
+      "passo": "planear",
+      "modelo": "gemini-3.1-pro-preview",
+      "dolares": 0.111,
+      "tokens": {
+        "entrada": 33776,
+        "em_cache": 0,
+        "saida": 1147,
+        "pensamento": 2475,
+        "pesquisas": 0,
+        "dolares": 0.111
+      },
+      "pesquisas": []
+    },
+    {
+      "data": "2026-09-28T18:15:53.606Z",
+      "passo": "base a",
+      "modelo": "gemini-3.1-pro-preview",
+      "dolares": 0.1936,
+      "pesquisas": [],
+      "urls": [],
+      "corrigido": false
+    },
+    {
+      "data": "2026-09-28T18:15:53.608Z",
+      "passo": "base b",
+      "modelo": "gemini-3.1-pro-preview",
+      "dolares": 0.1804,
+      "pesquisas": [],
+      "urls": [],
+      "corrigido": false
+    },
+    {
+      "data": "2026-09-28T18:15:53.610Z",
+      "passo": "base c",
+      "modelo": "gemini-3.1-pro-preview",
+      "dolares": 0.2432,
+      "pesquisas": [],
+      "urls": [],
+      "corrigido": false
+    },
+    {
+      "data": "2026-09-28T22:52:54.895Z",
+      "passo": "planear",
+      "modelo": "gemini-3.1-pro-preview",
+      "dolares": 0.0942,
+      "tokens": {
+        "entrada": 25618,
+        "em_cache": 0,
+        "saida": 1253,
+        "pensamento": 2327,
+        "pesquisas": 0,
+        "dolares": 0.0942
+      },
+      "pesquisas": []
+    },
+    {
+      "data": "2026-09-28T22:55:49.589Z",
+      "passo": "base a",
+      "modelo": "gemini-3.1-pro-preview",
+      "dolares": 0.1073,
+      "tokens": [
+        {
+          "entrada": 26142,
+          "em_cache": 20819,
+          "saida": 5992,
+          "pensamento": 1715,
+          "pesquisas": 0,
+          "dolares": 0.1073
+        }
+      ],
+      "pesquisas": [],
+      "urls": [],
+      "corrigido": false
+    },
+    {
+      "data": "2026-09-28T22:55:49.591Z",
+      "passo": "base b",
+      "modelo": "gemini-3.1-pro-preview",
+      "dolares": 0.1397,
+      "tokens": [
+        {
+          "entrada": 26161,
+          "em_cache": 20819,
+          "saida": 6495,
+          "pensamento": 3907,
+          "pesquisas": 0,
+          "dolares": 0.1397
+        }
+      ],
+      "pesquisas": [],
+      "urls": [],
+      "corrigido": false
+    },
+    {
+      "data": "2026-09-28T22:55:49.593Z",
+      "passo": "base c",
+      "modelo": "gemini-3.1-pro-preview",
+      "dolares": 0.1629,
+      "tokens": [
+        {
+          "entrada": 26142,
+          "em_cache": 0,
+          "saida": 6803,
+          "pensamento": 2415,
+          "pesquisas": 0,
+          "dolares": 0.1629
+        }
+      ],
+      "pesquisas": [],
+      "urls": [],
+      "corrigido": false
+    },
+    {
+      "data": "2026-09-29T00:22:41.307Z",
+      "passo": "planear",
+      "modelo": "gemini-3.1-pro-preview",
+      "dolares": 0.1162,
+      "tokens": {
+        "entrada": 27980,
+        "em_cache": 0,
+        "saida": 1548,
+        "pensamento": 3468,
+        "pesquisas": 0,
+        "dolares": 0.1162
+      },
+      "pesquisas": []
+    },
+    {
+      "data": "2026-09-29T00:26:19.822Z",
+      "passo": "base a",
+      "modelo": "gemini-3.1-pro-preview",
+      "dolares": 0.2127,
+      "tokens": [
+        {
+          "entrada": 28139,
+          "em_cache": 0,
+          "saida": 7776,
+          "pensamento": 5261,
+          "pesquisas": 0,
+          "dolares": 0.2127
+        }
+      ],
+      "pesquisas": [],
+      "urls": [],
+      "corrigido": false
+    },
+    {
+      "data": "2026-09-29T00:26:19.824Z",
+      "passo": "base b",
+      "modelo": "gemini-3.1-pro-preview",
+      "dolares": 0.2799,
+      "tokens": [
+        {
+          "entrada": 28159,
+          "em_cache": 0,
+          "saida": 7117,
+          "pensamento": 11515,
+          "pesquisas": 0,
+          "dolares": 0.2799
+        }
+      ],
+      "pesquisas": [],
+      "urls": [],
+      "corrigido": false
+    },
+    {
+      "data": "2026-09-29T00:26:19.825Z",
+      "passo": "base c",
+      "modelo": "gemini-3.1-pro-preview",
+      "dolares": 0.1754,
+      "tokens": [
+        {
+          "entrada": 28151,
+          "em_cache": 24982,
+          "saida": 6686,
+          "pensamento": 6986,
+          "pesquisas": 0,
+          "dolares": 0.1754
+        }
+      ],
+      "pesquisas": [],
+      "urls": [],
+      "corrigido": false
+    },
+    {
+      "data": "2026-09-29T00:32:57.662Z",
+      "passo": "base c",
+      "modelo": "gemini-3.1-pro-preview",
+      "dolares": 0.2167,
+      "tokens": [
+        {
+          "entrada": 28151,
+          "em_cache": 0,
+          "saida": 6399,
+          "pensamento": 6971,
+          "pesquisas": 0,
+          "dolares": 0.2167
+        }
+      ],
+      "pesquisas": [],
+      "urls": [],
+      "corrigido": false
+    }
+  ],
+  "total_dolares": 2.3154
+}

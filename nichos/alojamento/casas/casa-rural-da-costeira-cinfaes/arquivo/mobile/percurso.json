@@ -1,0 +1,341 @@
+{
+  "url": "http://localhost:3500",
+  "data": "2026-10-08T11:25:56.262Z",
+  "reduzido": false,
+  "dispositivos": [
+    {
+      "nome": "tel-320",
+      "motor": "chromium",
+      "largura": 320,
+      "altura": 568,
+      "tipo": "telemovel",
+      "alturaPagina": 13598,
+      "ecras": 23.9,
+      "problemas": [
+        {
+          "tipo": "texto-fora-do-ecra",
+          "seletor": "figure.m-0.snap-start > div > figcaption.grid.pt-4 > p.m-0",
+          "texto": "Um deles fica no sótão, debaixo do tecto de madeir",
+          "y": 6234,
+          "px": 111,
+          "detalhe": "texto 111px fora do ecrã",
+          "captura": "tel-320-texto-fora-do-ecra-01.png"
+        },
+        {
+          "tipo": "texto-fora-do-ecra",
+          "seletor": "figure.m-0.snap-start > div > figcaption.grid.pt-4 > span.rotulo",
+          "texto": "TONS DE TERRA",
+          "y": 6208,
+          "px": 292,
+          "detalhe": "texto 292px fora do ecrã",
+          "captura": "tel-320-texto-fora-do-ecra-02.png"
+        },
+        {
+          "tipo": "texto-fora-do-ecra",
+          "seletor": "figure.m-0.snap-start > div > figcaption.grid.pt-4 > p.m-0",
+          "texto": "Para os mais pequenos, há berço a pedido.",
+          "y": 6234,
+          "px": 368,
+          "detalhe": "texto 368px fora do ecrã",
+          "captura": "tel-320-texto-fora-do-ecra-03.png"
+        }
+      ]
+    },
+    {
+      "nome": "tel-360",
+      "motor": "chromium",
+      "largura": 360,
+      "altura": 780,
+      "tipo": "telemovel",
+      "alturaPagina": 14397,
+      "ecras": 18.5,
+      "problemas": [
+        {
+          "tipo": "texto-fora-do-ecra",
+          "seletor": "figure.m-0.snap-start > div > figcaption.grid.pt-4 > p.m-0",
+          "texto": "Um deles fica no sótão, debaixo do tecto de madeir",
+          "y": 7182,
+          "px": 169,
+          "detalhe": "texto 169px fora do ecrã"
+        },
+        {
+          "tipo": "texto-fora-do-ecra",
+          "seletor": "figure.m-0.snap-start > div > figcaption.grid.pt-4 > span.rotulo",
+          "texto": "TONS DE TERRA",
+          "y": 7157,
+          "px": 317,
+          "detalhe": "texto 317px fora do ecrã",
+          "captura": "tel-360-texto-fora-do-ecra-04.png"
+        },
+        {
+          "tipo": "texto-fora-do-ecra",
+          "seletor": "figure.m-0.snap-start > div > figcaption.grid.pt-4 > p.m-0",
+          "texto": "Para os mais pequenos, há berço a pedido.",
+          "y": 7183,
+          "px": 442,
+          "detalhe": "texto 442px fora do ecrã"
+        }
+      ]
+    },
+    {
+      "nome": "tel-375",
+      "motor": "chromium",
+      "largura": 375,
+      "altura": 667,
+      "tipo": "telemovel",
+      "alturaPagina": 13901,
+      "ecras": 20.8,
+      "problemas": [
+        {
+          "tipo": "texto-fora-do-ecra",
+          "seletor": "figure.m-0.snap-start > div > figcaption.grid.pt-4 > p.m-0",
+          "texto": "Um deles fica no sótão, debaixo do tecto de madeir",
+          "y": 6658,
+          "px": 190,
+          "detalhe": "texto 190px fora do ecrã"
+        },
+        {
+          "tipo": "texto-fora-do-ecra",
+          "seletor": "figure.m-0.snap-start > div > figcaption.grid.pt-4 > span.rotulo",
+          "texto": "TONS DE TERRA",
+          "y": 6632,
+          "px": 327,
+          "detalhe": "texto 327px fora do ecrã"
+        },
+        {
+          "tipo": "texto-fora-do-ecra",
+          "seletor": "figure.m-0.snap-start > div > figcaption.grid.pt-4 > p.m-0",
+          "texto": "Para os mais pequenos, há berço a pedido.",
+          "y": 6658,
+          "px": 466,
+          "detalhe": "texto 466px fora do ecrã"
+        }
+      ]
+    },
+    {
+      "nome": "tel-390",
+      "motor": "chromium",
+      "largura": 390,
+      "altura": 844,
+      "tipo": "telemovel",
+      "alturaPagina": 14649,
+      "ecras": 17.4,
+      "problemas": [
+        {
+          "tipo": "texto-fora-do-ecra",
+          "seletor": "figure.m-0.snap-start > div > figcaption.grid.pt-4 > p.m-0",
+          "texto": "Um deles fica no sótão, debaixo do tecto de madeir",
+          "y": 7470,
+          "px": 188,
+          "detalhe": "texto 188px fora do ecrã"
+        },
+        {
+          "tipo": "texto-fora-do-ecra",
+          "seletor": "figure.m-0.snap-start > div > figcaption.grid.pt-4 > span.rotulo",
+          "texto": "TONS DE TERRA",
+          "y": 7444,
+          "px": 336,
+          "detalhe": "texto 336px fora do ecrã"
+        },
+        {
+          "tipo": "texto-fora-do-ecra",
+          "seletor": "figure.m-0.snap-start > div > figcaption.grid.pt-4 > p.m-0",
+          "texto": "Para os mais pequenos, há berço a pedido.",
+          "y": 7470,
+          "px": 475,
+          "detalhe": "texto 475px fora do ecrã"
+        }
+      ]
+    },
+    {
+      "nome": "tel-414",
+      "motor": "chromium",
+      "largura": 414,
+      "altura": 896,
+      "tipo": "telemovel",
+      "alturaPagina": 14918,
+      "ecras": 16.6,
+      "problemas": [
+        {
+          "tipo": "texto-fora-do-ecra",
+          "seletor": "figure.m-0.snap-start > div > figcaption.grid.pt-4 > p.m-0",
+          "texto": "Um deles fica no sótão, debaixo do tecto de madeir",
+          "y": 7709,
+          "px": 183,
+          "detalhe": "texto 183px fora do ecrã"
+        },
+        {
+          "tipo": "texto-fora-do-ecra",
+          "seletor": "figure.m-0.snap-start > div > figcaption.grid.pt-4 > span.rotulo",
+          "texto": "TONS DE TERRA",
+          "y": 7683,
+          "px": 352,
+          "detalhe": "texto 352px fora do ecrã"
+        },
+        {
+          "tipo": "texto-fora-do-ecra",
+          "seletor": "figure.m-0.snap-start > div > figcaption.grid.pt-4 > p.m-0",
+          "texto": "Para os mais pequenos, há berço a pedido.",
+          "y": 7709,
+          "px": 491,
+          "detalhe": "texto 491px fora do ecrã"
+        }
+      ]
+    },
+    {
+      "nome": "tel-430",
+      "motor": "chromium",
+      "largura": 430,
+      "altura": 932,
+      "tipo": "telemovel",
+      "alturaPagina": 15140,
+      "ecras": 16.2,
+      "problemas": [
+        {
+          "tipo": "texto-fora-do-ecra",
+          "seletor": "figure.m-0.snap-start > div > figcaption.grid.pt-4 > p.m-0",
+          "texto": "Um deles fica no sótão, debaixo do tecto de madeir",
+          "y": 7926,
+          "px": 224,
+          "detalhe": "texto 224px fora do ecrã"
+        },
+        {
+          "tipo": "texto-fora-do-ecra",
+          "seletor": "figure.m-0.snap-start > div > figcaption.grid.pt-4 > span.rotulo",
+          "texto": "TONS DE TERRA",
+          "y": 7900,
+          "px": 362,
+          "detalhe": "texto 362px fora do ecrã"
+        },
+        {
+          "tipo": "texto-fora-do-ecra",
+          "seletor": "figure.m-0.snap-start > div > figcaption.grid.pt-4 > p.m-0",
+          "texto": "Para os mais pequenos, há berço a pedido.",
+          "y": 7926,
+          "px": 501,
+          "detalhe": "texto 501px fora do ecrã"
+        }
+      ]
+    },
+    {
+      "nome": "tel-h-667",
+      "motor": "chromium",
+      "largura": 667,
+      "altura": 375,
+      "tipo": "telemovel",
+      "alturaPagina": 13860,
+      "ecras": 37,
+      "problemas": [
+        {
+          "tipo": "texto-fora-do-ecra",
+          "seletor": "figure.m-0.snap-start > div > figcaption.grid.pt-4 > span.rotulo",
+          "texto": "TONS DE TERRA",
+          "y": 6430,
+          "px": 514,
+          "detalhe": "texto 514px fora do ecrã"
+        },
+        {
+          "tipo": "texto-fora-do-ecra",
+          "seletor": "figure.m-0.snap-start > div > figcaption.grid.pt-4 > p.m-0",
+          "texto": "Um deles fica no sótão, debaixo do tecto de madeir",
+          "y": 6455,
+          "px": 181,
+          "detalhe": "texto 181px fora do ecrã"
+        },
+        {
+          "tipo": "texto-fora-do-ecra",
+          "seletor": "figure.m-0.snap-start > div > figcaption.grid.pt-4 > p.m-0",
+          "texto": "Para os mais pequenos, há berço a pedido.",
+          "y": 6455,
+          "px": 652,
+          "detalhe": "texto 652px fora do ecrã"
+        }
+      ]
+    },
+    {
+      "nome": "tel-h-844",
+      "motor": "chromium",
+      "largura": 844,
+      "altura": 390,
+      "tipo": "telemovel",
+      "alturaPagina": 14105,
+      "ecras": 36.2,
+      "problemas": []
+    },
+    {
+      "nome": "tel-h-932",
+      "motor": "chromium",
+      "largura": 932,
+      "altura": 430,
+      "tipo": "telemovel",
+      "alturaPagina": 14662,
+      "ecras": 34.1,
+      "problemas": []
+    },
+    {
+      "nome": "tablet-768",
+      "motor": "chromium",
+      "largura": 768,
+      "altura": 1024,
+      "tipo": "tablet",
+      "alturaPagina": 15314,
+      "ecras": 15,
+      "problemas": []
+    },
+    {
+      "nome": "tablet-820",
+      "motor": "chromium",
+      "largura": 820,
+      "altura": 1180,
+      "tipo": "tablet",
+      "alturaPagina": 16303,
+      "ecras": 13.8,
+      "problemas": []
+    },
+    {
+      "nome": "tablet-h-1024",
+      "motor": "chromium",
+      "largura": 1024,
+      "altura": 768,
+      "tipo": "tablet",
+      "alturaPagina": 10691,
+      "ecras": 13.9,
+      "problemas": []
+    },
+    {
+      "nome": "pc-1280",
+      "motor": "chromium",
+      "largura": 1280,
+      "altura": 800,
+      "tipo": "computador",
+      "alturaPagina": 11302,
+      "ecras": 14.1,
+      "problemas": []
+    },
+    {
+      "nome": "pc-1440",
+      "motor": "chromium",
+      "largura": 1440,
+      "altura": 900,
+      "tipo": "computador",
+      "alturaPagina": 12171,
+      "ecras": 13.5,
+      "problemas": []
+    },
+    {
+      "nome": "pc-1920",
+      "motor": "chromium",
+      "largura": 1920,
+      "altura": 1080,
+      "tipo": "computador",
+      "alturaPagina": 13845,
+      "ecras": 12.8,
+      "problemas": []
+    }
+  ],
+  "avisos": [],
+  "resumo": {
+    "texto-fora-do-ecra": 21
+  },
+  "ok": false
+}

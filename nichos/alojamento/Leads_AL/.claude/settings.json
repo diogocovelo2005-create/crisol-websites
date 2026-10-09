@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node ferramentas/rnal.js:*)",
+      "Bash(node ferramentas/juntar.js:*)",
+      "Bash(node hero.js:*)",
+      "Bash(curl:*)",
+      "Bash(nslookup:*)",
+      "WebSearch",
+      "WebFetch"
+    ]
+  }
+}

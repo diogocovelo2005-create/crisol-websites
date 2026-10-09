@@ -1,0 +1,745 @@
+{
+  "schema_version": "1.0",
+  "manifesto": {
+    "slug": "philips-flat",
+    "revisao": "2026-09-25",
+    "prontidao": "com_limitacoes",
+    "notas": "Dossiê do Philip's Flat (AL 25507, Alvor, Portimão), uma das cinco casas do mesmo casal, tratada como casa separada (ver ../como-se-ligam.md). Primeira recolha a 2026-09-25. Limitações: capacidade no RNT (2 pessoas) diferente da anunciada (4); evidência fraca e antiga (6 reviews, até 2023); fotos de 2013–2016; sem preço."
+  },
+  "entidades": [
+    {
+      "id": "CASA-PHILIPS-FLAT",
+      "tipo": "casa",
+      "nome": "Philip's Flat — apartamento em Alvor, Portimão"
+    },
+    {
+      "id": "UN-PF-APARTAMENTO",
+      "tipo": "unidade",
+      "nome": "Apartamento inteiro, 2 quartos, 95 m²",
+      "pai_id": "CASA-PHILIPS-FLAT"
+    },
+    {
+      "id": "ESP-PF-VARANDA",
+      "tipo": "espaco",
+      "nome": "Varanda com vista para o mar e a ria",
+      "pai_id": "CASA-PHILIPS-FLAT"
+    },
+    {
+      "id": "ESP-PF-PISCINA",
+      "tipo": "espaco",
+      "nome": "Piscina do condomínio",
+      "pai_id": "CASA-PHILIPS-FLAT"
+    },
+    {
+      "id": "CANAL-AB-PF",
+      "tipo": "canal",
+      "nome": "Airbnb — Philips Flat Alvor",
+      "pai_id": "CASA-PHILIPS-FLAT"
+    },
+    {
+      "id": "CANAL-GG-PF",
+      "tipo": "canal",
+      "nome": "Google — Philip's Flat",
+      "pai_id": "CASA-PHILIPS-FLAT"
+    }
+  ],
+  "evidencias": [
+    {
+      "id": "EV-RNT-PF",
+      "origem": "registo_publico",
+      "entidade_ids": [
+        "CASA-PHILIPS-FLAT",
+        "UN-PF-APARTAMENTO"
+      ],
+      "local": "https://rnt.turismodeportugal.pt/RNT/RNAL.aspx?nr=25507",
+      "recolhido_em": "2026-09-25",
+      "bloco": "ficha RNAL 25507/AL",
+      "excerto": "PHILIPS FLAT; registado 2016-03-07; aberto 2015-08-01; Apartamento; 2 utentes, 1 quarto, 1 cama; Quinta da Praia - Alvor, Bloco 6, 2º F, 8500-086 Alvor; Portimão; António José Ferreira Carvalho; CA Seguros 03420022 até 2026-04-18",
+      "atualidade": "Registo público; confirmado em 2026-09-25."
+    },
+    {
+      "id": "EV-SITE-PF",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-PHILIPS-FLAT",
+        "UN-PF-APARTAMENTO",
+        "ESP-PF-VARANDA"
+      ],
+      "local": "https://www.casamuseu.com/philipsflat.php",
+      "recolhido_em": "2026-09-25",
+      "bloco": "texto da página",
+      "excerto": "Apartamento em condomínio fechado com 95m2. Consiste em 2 quartos […] varanda com vista para o mar e para a Ria de Alvor. Totalmente equipado e a 3 minutos a pé da praia. Com garagem na cave e acesso ao apartamento por elevador ou escadas. […] (2º piso). PREÇOS Sob Consulta",
+      "atualidade": "Página sem data; site © 2008–2026."
+    },
+    {
+      "id": "EV-VV-PF",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-PHILIPS-FLAT",
+        "ESP-PF-VARANDA",
+        "ESP-PF-PISCINA"
+      ],
+      "local": "https://web.archive.org/web/20260411151240/https://www.visitvouzela.com/alvor",
+      "recolhido_em": "2026-09-25",
+      "bloco": "página Philip's Flat",
+      "excerto": "Dois Quartos Duplos um com WC privativo, Cozinha, Garagem, Wi-Fi, TV com 200 canais e Ar condicionado. […] condominio fechado com acesso a piscina e dois lugares de garagem […] Na varanda do Philip's Flat ve a Ria de Alvor á direita e o mar em frente",
+      "publicado_em": "cópia do Web Archive de 2026-04-11"
+    },
+    {
+      "id": "EV-AB-PF",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-PHILIPS-FLAT",
+        "UN-PF-APARTAMENTO",
+        "CANAL-AB-PF"
+      ],
+      "local": "https://www.airbnb.pt/rooms/11904418",
+      "recolhido_em": "2026-09-25",
+      "bloco": "descrição, o espaço, regras da casa, comodidades",
+      "excerto": "Dentro de um condomínio fechado tem 95 m² com 2 quartos […] Check-in após as 16:00; Check-out até às 10:00; Máximo de 4 hóspedes; Dados do registo 25507/AL; Quarto 1 cama queen, Quarto 2 cama de casal"
+    },
+    {
+      "id": "EV-AB-PF-METRICA",
+      "origem": "plataforma",
+      "entidade_ids": [
+        "CANAL-AB-PF"
+      ],
+      "local": "https://www.airbnb.pt/rooms/11904418",
+      "recolhido_em": "2026-09-25",
+      "bloco": "pontuação",
+      "excerto": "5,0 · 6 avaliações; qualidade-preço 4,3; localização 5,0"
+    },
+    {
+      "id": "EV-GG-PF",
+      "origem": "plataforma",
+      "entidade_ids": [
+        "CASA-PHILIPS-FLAT",
+        "CANAL-GG-PF"
+      ],
+      "local": "Google Places API, place ChIJc1bLxNMvGw0RuWPZk-c8mUc",
+      "recolhido_em": "2026-09-25",
+      "bloco": "ficha",
+      "excerto": "Philip's Flat; Condominio Vila da Praia, 8500-013 Alvor; rating 5; userRatingCount 3; 232 771 514"
+    },
+    {
+      "id": "EV-REV-PF-VARANDA",
+      "origem": "hospede",
+      "entidade_ids": [
+        "CASA-PHILIPS-FLAT",
+        "ESP-PF-VARANDA"
+      ],
+      "local": "reviews.md",
+      "recolhido_em": "2026-09-25",
+      "bloco": "pontos-fortes.md, ponto 1",
+      "excerto": "5 de 6 reviews com texto",
+      "atualidade": "Última prova agosto de 2023."
+    },
+    {
+      "id": "EV-REV-PF-LOCAL",
+      "origem": "hospede",
+      "entidade_ids": [
+        "CASA-PHILIPS-FLAT"
+      ],
+      "local": "reviews.md",
+      "recolhido_em": "2026-09-25",
+      "bloco": "pontos-fortes.md, ponto 2",
+      "excerto": "5 de 6 reviews com texto",
+      "atualidade": "Última prova agosto de 2023."
+    },
+    {
+      "id": "EV-REV-PF-PISCINA",
+      "origem": "hospede",
+      "entidade_ids": [
+        "CASA-PHILIPS-FLAT",
+        "ESP-PF-PISCINA"
+      ],
+      "local": "reviews.md",
+      "recolhido_em": "2026-09-25",
+      "bloco": "pontos-fortes.md, ponto 3",
+      "excerto": "3 de 6 reviews com texto",
+      "atualidade": "Última prova agosto de 2023."
+    },
+    {
+      "id": "EV-REV-PF-RECECAO",
+      "origem": "hospede",
+      "entidade_ids": [
+        "CASA-PHILIPS-FLAT"
+      ],
+      "local": "reviews.md",
+      "recolhido_em": "2026-09-25",
+      "bloco": "pontos-fortes.md, momentos",
+      "excerto": "A-001 (Paula), A-004 (David e Paula)",
+      "atualidade": "2017 e 2023."
+    },
+    {
+      "id": "EV-RNT-GRUPO",
+      "origem": "registo_publico",
+      "entidade_ids": [
+        "CASA-PHILIPS-FLAT"
+      ],
+      "local": "https://rnt.turismodeportugal.pt/",
+      "recolhido_em": "2026-09-25",
+      "bloco": "RNAL 35686, RNET 1238, RNAL 64058, RNAL 25507, RNET 9990",
+      "excerto": "António José Ferreira de Carvalho titular de 35686, 1238, 64058 e 25507; Maria Celeste Silva Coutinho Carvalho titular de 9990",
+      "atualidade": "Confirmado a 2026-09-25."
+    }
+  ],
+  "afirmacoes": [
+    {
+      "id": "AFIR-PF-TIPO",
+      "entidade_id": "CASA-PHILIPS-FLAT",
+      "texto": "O Philip's Flat é um Alojamento Local (RNAL 25507/AL) em Alvor, concelho de Portimão.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "registo_publico",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-RNT-PF",
+        "EV-AB-PF"
+      ]
+    },
+    {
+      "id": "AFIR-PF-REGISTO",
+      "entidade_id": "CASA-PHILIPS-FLAT",
+      "texto": "Registo RNAL 25507/AL.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "registo_publico",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-RNT-PF",
+        "EV-AB-PF",
+        "EV-SITE-PF"
+      ]
+    },
+    {
+      "id": "AFIR-PF-APARTAMENTO",
+      "entidade_id": "UN-PF-APARTAMENTO",
+      "texto": "Apartamento de 95 m² num condomínio fechado, com 2 quartos, 2 casas de banho, cozinha e sala.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-SITE-PF",
+        "EV-AB-PF",
+        "EV-VV-PF"
+      ]
+    },
+    {
+      "id": "AFIR-PF-VARANDA",
+      "entidade_id": "ESP-PF-VARANDA",
+      "texto": "Varanda com vista para o mar e para a Ria de Alvor.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-SITE-PF",
+        "EV-VV-PF",
+        "EV-REV-PF-VARANDA"
+      ]
+    },
+    {
+      "id": "AFIR-PF-PISCINA",
+      "entidade_id": "ESP-PF-PISCINA",
+      "texto": "O condomínio tem piscina.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-VV-PF",
+        "EV-AB-PF",
+        "EV-REV-PF-PISCINA"
+      ]
+    },
+    {
+      "id": "AFIR-PF-ANDAR",
+      "entidade_id": "CASA-PHILIPS-FLAT",
+      "texto": "Último andar (2.º piso), com elevador; garagem na cave.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-SITE-PF",
+        "EV-VV-PF"
+      ]
+    },
+    {
+      "id": "AFIR-PF-EQUIPAMENTO",
+      "entidade_id": "CASA-PHILIPS-FLAT",
+      "texto": "Ar condicionado, Wi-Fi, TV por cabo, cozinha equipada e máquina de lavar roupa.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-VV-PF",
+        "EV-AB-PF"
+      ]
+    },
+    {
+      "id": "AFIR-PF-PRAIA",
+      "entidade_id": "CASA-PHILIPS-FLAT",
+      "texto": "A praia e o centro de Alvor ficam a poucos minutos a pé.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-SITE-PF",
+        "EV-REV-PF-LOCAL"
+      ],
+      "condicao": "A casa diz \"3 minutos\" e \"100 metros\"; o Airbnb 700 m; hóspedes 5 a 10 minutos. Não usar números."
+    },
+    {
+      "id": "AFIR-PF-CAPACIDADE",
+      "entidade_id": "UN-PF-APARTAMENTO",
+      "texto": "Até 4 hóspedes (cama queen e cama de casal).",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "plataforma",
+      "estado": "conflitante",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-AB-PF",
+        "EV-RNT-PF"
+      ],
+      "atualidade": "O RNT regista 2 utentes, 1 quarto e 1 cama; confirmar antes de anunciar 4."
+    },
+    {
+      "id": "AFIR-PF-HORARIOS",
+      "entidade_id": "CASA-PHILIPS-FLAT",
+      "texto": "Check-in após as 16:00; check-out até às 10:00.",
+      "natureza": "facto",
+      "categoria": "politica",
+      "origem": "plataforma",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-AB-PF"
+      ],
+      "condicao": "Regras do Airbnb; confirmar."
+    },
+    {
+      "id": "AFIR-PF-RECECAO",
+      "entidade_id": "CASA-PHILIPS-FLAT",
+      "texto": "A receção em Alvor é feita por uma pessoa local (Paula).",
+      "natureza": "testemunho",
+      "categoria": "geral",
+      "origem": "hospede",
+      "estado": "confirmado",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-REV-PF-RECECAO"
+      ],
+      "atualidade": "Duas reviews (2017, 2023); confirmar quem recebe hoje."
+    },
+    {
+      "id": "AFIR-PF-CONTACTOS",
+      "entidade_id": "CASA-PHILIPS-FLAT",
+      "texto": "Contactos: 232 771 514, 966 059 265, info@casamuseu.com.",
+      "natureza": "facto",
+      "categoria": "contacto",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-SITE-PF",
+        "EV-GG-PF",
+        "EV-RNT-PF"
+      ],
+      "condicao": "São os da Casa Museu, em Vouzela; confirmar que contacto pôr para Alvor."
+    },
+    {
+      "id": "AFIR-PF-MORADA",
+      "entidade_id": "CASA-PHILIPS-FLAT",
+      "texto": "Condomínio na Quinta da Praia, Alvor.",
+      "natureza": "facto",
+      "categoria": "contacto",
+      "origem": "registo_publico",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-RNT-PF",
+        "EV-GG-PF"
+      ],
+      "condicao": "A Google chama-lhe \"Vila da Praia\"; confirmar o nome do condomínio e a morada."
+    },
+    {
+      "id": "AFIR-PF-GRUPO",
+      "entidade_id": "CASA-PHILIPS-FLAT",
+      "texto": "Faz parte de um grupo de cinco casas do mesmo casal, com sede em Vouzela: Casa Museu, Casa Aido Santo, Casa das Ameias, Penthouse e o Philip's Flat.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "registo_publico",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-RNT-GRUPO"
+      ]
+    },
+    {
+      "id": "AFIR-PF-PRECO",
+      "entidade_id": "CASA-PHILIPS-FLAT",
+      "texto": "Preço sob consulta.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "historico",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-SITE-PF"
+      ],
+      "atualidade": "Página sem data; nenhum preço visto."
+    },
+    {
+      "id": "AFIR-PF-NOTA-AB",
+      "entidade_id": "CANAL-AB-PF",
+      "texto": "Nota 5,0 em 5 no Airbnb, com 6 avaliações.",
+      "natureza": "metrica",
+      "categoria": "avaliacao",
+      "origem": "plataforma",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-AB-PF-METRICA"
+      ],
+      "condicao": "Mostrar com fonte, escala e data; as avaliações são de 2016 a 2023."
+    },
+    {
+      "id": "AFIR-PF-TESTEMUNHO-VARANDA",
+      "entidade_id": "CASA-PHILIPS-FLAT",
+      "texto": "Os hóspedes falam da vista do mar da varanda e do pôr-do-sol.",
+      "natureza": "testemunho",
+      "categoria": "avaliacao",
+      "origem": "hospede",
+      "estado": "confirmado",
+      "uso": "citar",
+      "evidencia_ids": [
+        "EV-REV-PF-VARANDA"
+      ]
+    },
+    {
+      "id": "AFIR-PF-TESTEMUNHO-LOCAL",
+      "entidade_id": "CASA-PHILIPS-FLAT",
+      "texto": "Os hóspedes dizem que a praia e a vila ficam a pé.",
+      "natureza": "testemunho",
+      "categoria": "avaliacao",
+      "origem": "hospede",
+      "estado": "confirmado",
+      "uso": "citar",
+      "evidencia_ids": [
+        "EV-REV-PF-LOCAL"
+      ]
+    },
+    {
+      "id": "AFIR-PF-TESTEMUNHO-PISCINA",
+      "entidade_id": "CASA-PHILIPS-FLAT",
+      "texto": "Os hóspedes elogiam a piscina do condomínio.",
+      "natureza": "testemunho",
+      "categoria": "avaliacao",
+      "origem": "hospede",
+      "estado": "confirmado",
+      "uso": "citar",
+      "evidencia_ids": [
+        "EV-REV-PF-PISCINA"
+      ]
+    }
+  ],
+  "citacoes": [
+    {
+      "id": "CIT-PF-PORDOSOL",
+      "review_id": "A-001",
+      "texto_original": "I especially liked watching the sun set while sat on the balcony.",
+      "autor": "Daniel",
+      "plataforma": "Airbnb",
+      "data": "2023-08",
+      "lingua": "en",
+      "traducao": "Gostei sobretudo de ver o pôr-do-sol sentado na varanda."
+    },
+    {
+      "id": "CIT-PF-VISTA",
+      "review_id": "A-005",
+      "texto_original": "Fantastic sea views from the balcony.",
+      "autor": "Justin",
+      "plataforma": "Airbnb",
+      "data": "2017-06",
+      "lingua": "en",
+      "traducao": "Vista fantástica do mar a partir da varanda."
+    },
+    {
+      "id": "CIT-PF-A-PE",
+      "review_id": "A-001",
+      "texto_original": "The apartment is in a good location for both the town and the beach. Both easily walkable.",
+      "autor": "Daniel",
+      "plataforma": "Airbnb",
+      "data": "2023-08",
+      "lingua": "en",
+      "traducao": "O apartamento está bem localizado para a vila e para a praia. Ambas a pé."
+    },
+    {
+      "id": "CIT-PF-PISCINA",
+      "review_id": "A-001",
+      "texto_original": "The pool is fantastic. A good size and not too busy.",
+      "autor": "Daniel",
+      "plataforma": "Airbnb",
+      "data": "2023-08",
+      "lingua": "en",
+      "traducao": "A piscina é fantástica. Grande e sem muita gente."
+    },
+    {
+      "id": "CIT-PF-EQUIPADO",
+      "review_id": "A-002",
+      "texto_original": "Apartamento muito bem equipado, com lugar de garagem, amplo, bem mobilado, com ar condicionado e uma varanda sobre uma bela paisagem.",
+      "autor": "Marco",
+      "plataforma": "Airbnb",
+      "data": "2022-08",
+      "lingua": "pt"
+    },
+    {
+      "id": "CIT-PF-FAMILIA",
+      "review_id": "A-001",
+      "texto_original": "Alvor is stunning, an ideal family location.",
+      "autor": "Daniel",
+      "plataforma": "Airbnb",
+      "data": "2023-08",
+      "lingua": "en",
+      "traducao": "Alvor é deslumbrante, um sítio ideal para famílias."
+    }
+  ],
+  "ativos": [
+    {
+      "id": "ATV-PF-VARANDA-05",
+      "caminho": "marketing/fotos/interior/varanda-05.jpg",
+      "dimensoes": {
+        "largura": 3264,
+        "altura": 1836
+      },
+      "assunto": "Varanda com vista para as dunas",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou.",
+        "Fotos de 2013–2016: confirmar com o dono se o apartamento ainda está assim."
+      ],
+      "entidade_confirmada": "ESP-PF-VARANDA"
+    },
+    {
+      "id": "ATV-PF-VARANDA-01",
+      "caminho": "marketing/fotos/interior/varanda-01.jpg",
+      "dimensoes": {
+        "largura": 1200,
+        "altura": 900
+      },
+      "assunto": "Varanda com mesa e cadeiras, dunas e mar ao fundo",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou.",
+        "Fotos de 2013–2016: confirmar com o dono se o apartamento ainda está assim."
+      ],
+      "entidade_confirmada": "ESP-PF-VARANDA"
+    },
+    {
+      "id": "ATV-PF-VISTA-03",
+      "caminho": "marketing/fotos/exterior/vista-03.jpg",
+      "dimensoes": {
+        "largura": 3264,
+        "altura": 1836
+      },
+      "assunto": "Palmeira e dunas vistas da janela",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou.",
+        "Fotos de 2013–2016: confirmar com o dono se o apartamento ainda está assim."
+      ]
+    },
+    {
+      "id": "ATV-PF-PISCINA-04",
+      "caminho": "marketing/fotos/exterior/piscina-04.jpg",
+      "dimensoes": {
+        "largura": 3264,
+        "altura": 2448
+      },
+      "assunto": "Piscina do condomínio com palmeiras",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou.",
+        "Fotos de 2013–2016: confirmar com o dono se o apartamento ainda está assim."
+      ],
+      "entidade_confirmada": "ESP-PF-PISCINA"
+    },
+    {
+      "id": "ATV-PF-SALA-04",
+      "caminho": "marketing/fotos/interior/sala-04.jpg",
+      "dimensoes": {
+        "largura": 3264,
+        "altura": 1836
+      },
+      "assunto": "Sala de estar e jantar",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou.",
+        "Fotos de 2013–2016: confirmar com o dono se o apartamento ainda está assim."
+      ]
+    },
+    {
+      "id": "ATV-PF-COZINHA-02",
+      "caminho": "marketing/fotos/interior/cozinha-02.jpg",
+      "dimensoes": {
+        "largura": 3264,
+        "altura": 1836
+      },
+      "assunto": "Cozinha com fogão e bancada de granito",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou.",
+        "Fotos de 2013–2016: confirmar com o dono se o apartamento ainda está assim."
+      ]
+    }
+  ],
+  "decisoes": [
+    {
+      "id": "DEC-CINCO-DOSSIES",
+      "estado": "ativa",
+      "efeito": "informativo",
+      "texto": "O utilizador pediu cinco dossiês separados, um por casa, com o mesmo peso e sem superiorizar nenhuma: \"quero que refaças o dossiè, nao eliminando o que já existe, para incluir a informaçao das 5 casas. nao superiorizes. […] faz como se fossem casas separadas.\" O BIKEINN fica de fora por agora. O Philip's Flat, antes fora do âmbito (2026-09-24), entra com o mesmo peso.",
+      "decidido_em": "2026-09-25",
+      "fonte": "utilizador (Diogo), mensagem de 2026-09-25",
+      "afetados": [
+        "CASA-PHILIPS-FLAT"
+      ]
+    },
+    {
+      "id": "DEC-FOTOS-POR-AUTORIZAR",
+      "estado": "ativa",
+      "efeito": "informativo",
+      "texto": "Todas as fotografias foram publicadas pela própria casa, mas o dono ainda não autorizou o uso no site definitivo. Utilizáveis na versão de demonstração.",
+      "decidido_em": "2026-09-25",
+      "fonte": "regra da skill; sem contacto com o dono",
+      "afetados": [
+        "ATV-PF-VARANDA-05",
+        "ATV-PF-VARANDA-01",
+        "ATV-PF-VISTA-03",
+        "ATV-PF-PISCINA-04",
+        "ATV-PF-SALA-04",
+        "ATV-PF-COZINHA-02"
+      ]
+    }
+  ],
+  "cobertura": [
+    {
+      "id": "COB-IDENTIDADE",
+      "fonte": "RNT, Airbnb, Google, site antigo, Visit Vouzela",
+      "material": "identidade",
+      "estado": "completo_no_universo_observado",
+      "superficie": "nome, registo, titular e contactos cruzados; nome do condomínio com duas versões"
+    },
+    {
+      "id": "COB-RNT",
+      "fonte": "Registo Nacional de Turismo",
+      "material": "compliance",
+      "estado": "completo_no_universo_observado",
+      "superficie": "RNAL 25507",
+      "observado": 1,
+      "recolhido": 1
+    },
+    {
+      "id": "COB-SITE",
+      "fonte": "casamuseu.com",
+      "material": "textos",
+      "estado": "completo_no_universo_observado",
+      "superficie": "página Philips Flat PT e EN",
+      "observado": 2,
+      "recolhido": 2
+    },
+    {
+      "id": "COB-SITE-FOTOS",
+      "fonte": "casamuseu.com",
+      "material": "fotos",
+      "estado": "completo_no_universo_observado",
+      "superficie": "galeria da página",
+      "observado": 27,
+      "recolhido": 27
+    },
+    {
+      "id": "COB-VV",
+      "fonte": "visitvouzela.com (Web Archive)",
+      "material": "textos",
+      "estado": "completo_no_universo_observado",
+      "superficie": "página /alvor",
+      "observado": 1,
+      "recolhido": 1
+    },
+    {
+      "id": "COB-VV-FOTOS",
+      "fonte": "visitvouzela.com (Web Archive)",
+      "material": "fotos",
+      "estado": "completo_no_universo_observado",
+      "superficie": "página /alvor",
+      "observado": 39,
+      "recolhido": 30,
+      "limitacao": "1 ícone de interface e os logótipos do rodapé (no dossiê da Casa das Ameias)."
+    },
+    {
+      "id": "COB-AB",
+      "fonte": "Airbnb — Philips Flat Alvor",
+      "material": "reviews",
+      "estado": "completo_no_universo_observado",
+      "superficie": "avaliações do anúncio, tradução desligada",
+      "observado": 6,
+      "recolhido": 6
+    },
+    {
+      "id": "COB-AB-FOTOS",
+      "fonte": "Airbnb — Philips Flat Alvor",
+      "material": "fotos",
+      "estado": "completo_no_universo_observado",
+      "superficie": "fotos do anúncio",
+      "observado": 33,
+      "recolhido": 14,
+      "limitacao": "19 iguais às do Visit Vouzela, maiores."
+    },
+    {
+      "id": "COB-GG",
+      "fonte": "Google Maps — Philip's Flat",
+      "material": "reviews",
+      "estado": "completo_no_universo_observado",
+      "superficie": "Places API (New), campo reviews",
+      "observado": 3,
+      "recolhido": 3,
+      "limitacao": "As 3 são só estrelas."
+    },
+    {
+      "id": "COB-BK",
+      "fonte": "Booking",
+      "material": "canais",
+      "estado": "nao_encontrado",
+      "superficie": "URL philips-flat e pesquisa por nome",
+      "limitacao": "404 e pesquisa sem resultados."
+    },
+    {
+      "id": "COB-QUARTOS",
+      "fonte": "Airbnb — Philips Flat Alvor",
+      "material": "quartos",
+      "estado": "parcial",
+      "superficie": "página do anúncio, sem datas",
+      "limitacao": "Sem preço: não se pesquisaram datas."
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+[
+  {
+    "letra": "a",
+    "nome": "Granito e sebe",
+    "ideia": "A pedra cinzenta da casa e o verde-escuro das sebes: painéis de musgo alternados com osso, fotos em colunas editoriais.",
+    "cor": "Família pedra e verde do exterior (fachadas, sebes, relva): verde-musgo profundo como fundo escuro, cinza-pedra quente e osso como claros; acento oliva. Hex de fotos.md: #6B8E23, #A1887F, #D2B48C.",
+    "formato": "Colunas editoriais assimétricas: texto numa coluna estreita, fotos noutra, desencontradas em altura; cantos retos com moldura fina clara nas fotos dentro dos painéis escuros.",
+    "ritmo": "Alternância regular escuro/claro secção a secção; secções arejadas, com o momento forte (os dias lá fora) mais cheio, em grupo de três a quatro fotos desencontradas.",
+    "apresentacao": "Citações centradas em itálico serifado sobre o musgo, nome em caixa alta pequena; quartos como lista de pares rótulo/valor; contactos numa linha discreta de rótulos."
+  },
+  {
+    "letra": "b",
+    "nome": "Terracota da sala",
+    "ideia": "O chão de barro, os sofás vermelhos e a madeira escura de dentro de casa: castanho-café e creme, fotos grandes ao lado de painéis de texto.",
+    "cor": "Família quente do interior (piso de terracota, sofás vermelhos, madeira escura, churrasqueira de tijolo): castanho-café como escuro, creme quente como claro, acento ferrugem/terracota só nos botões. Hex de fotos.md: #8B4513, #C65C3B, #D2B48C.",
+    "formato": "Painéis de cor inteiros: foto grande sangrada até à margem de um lado e painel de texto da mesma altura do outro, trocando de lado; pouca moldura.",
+    "ritmo": "Blocos largos e mais lentos: menos secções visíveis de cada vez, cada uma com uma foto dominante; uma secção curta de respiro (só uma frase) entre os blocos fortes.",
+    "apresentacao": "Citações grandes, uma de cada vez, em serifa de corpo grande; a sequência do dia lá fora como linha com pequenos ícones de traço; quartos como cartões de foto pequena com legenda curta."
+  },
+  {
+    "letra": "c",
+    "nome": "Vale ao longe",
+    "ideia": "O azul-acinzentado das encostas ao fundo e o verde do vale: fundos claros de pedra e um escuro de sombra de árvore, fotos em colagem sobreposta.",
+    "cor": "Família do vale e do céu à distância (vista-02, vista-01, piscina-04), com o verde e azul baixados para tons de bruma: claro osso/pedra, escuro verde-sombra quase negro, acento azul-ardósia apagado. Hex de fotos.md: #87CEEB, #7CB342, #8B7355 (dessaturados).",
+    "formato": "Fotos a sangrar de ponta a ponta nas pausas (o vale, a piscina) e pequenas colagens sobrepostas com moldura clara nas secções de casa e quartos; texto centrado em colunas estreitas.",
+    "ritmo": "Mais contrastado: secções muito arejadas de texto curto intercaladas com fotos inteiras; dominam os fundos claros e o escuro aparece só duas ou três vezes.",
+    "apresentacao": "Citações como pequena coleção em duas colunas com nota e plataforma em caixa alta; factos como pares rótulo/valor numa tabela discreta; contactos em bloco final escuro com botões retangulares de contorno."
+  }
+]

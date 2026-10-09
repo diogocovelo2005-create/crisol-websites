@@ -1,0 +1,1603 @@
+{
+  "schema_version": "1.0",
+  "manifesto": {
+    "slug": "casa-das-ameias",
+    "revisao": "2026-09-25",
+    "prontidao": "com_limitacoes",
+    "notas": "Dossiê da Casa das Ameias (Turismo de Habitação RNET 9990, Vouzela), uma das cinco casas do mesmo casal, tratada como casa separada (ver ../como-se-ligam.md). Primeira recolha a 2026-09-25. Limitações: sem preços (nenhuma disponibilidade no Booking); nomes das suites sem ligação aos tipos do Booking; Google parcial; review B-011 provavelmente de outra casa."
+  },
+  "entidades": [
+    {
+      "id": "CASA-DAS-AMEIAS",
+      "tipo": "casa",
+      "nome": "Casa das Ameias — Turismo de Habitação na Praça da República, Vouzela"
+    },
+    {
+      "id": "QT-AM-MONTANHA-45",
+      "tipo": "tipo_quarto",
+      "nome": "Suite com Vista da Montanha (45 m², 1.º piso)",
+      "pai_id": "CASA-DAS-AMEIAS"
+    },
+    {
+      "id": "QT-AM-MONTANHA-36",
+      "tipo": "tipo_quarto",
+      "nome": "Suite com Vista da Montanha (36 m², rés-do-chão)",
+      "pai_id": "CASA-DAS-AMEIAS"
+    },
+    {
+      "id": "QT-AM-JUNIOR",
+      "tipo": "tipo_quarto",
+      "nome": "Suite Júnior com Vista Jardim (50 m², cama de casal)",
+      "pai_id": "CASA-DAS-AMEIAS"
+    },
+    {
+      "id": "QT-AM-JUNIOR-TWIN",
+      "tipo": "tipo_quarto",
+      "nome": "Suite Júnior com Vista Jardim (50 m², twin)",
+      "pai_id": "CASA-DAS-AMEIAS"
+    },
+    {
+      "id": "QT-AM-QUEEN",
+      "tipo": "tipo_quarto",
+      "nome": "Suite Queen Deluxe (65 m²)",
+      "pai_id": "CASA-DAS-AMEIAS"
+    },
+    {
+      "id": "QT-AM-DELUXE",
+      "tipo": "tipo_quarto",
+      "nome": "Suite Deluxe (75 m²)",
+      "pai_id": "CASA-DAS-AMEIAS"
+    },
+    {
+      "id": "ESP-AM-PISCINA",
+      "tipo": "espaco",
+      "nome": "Piscina exterior (\"sunset pool\") com deque",
+      "pai_id": "CASA-DAS-AMEIAS"
+    },
+    {
+      "id": "ESP-AM-CAPELA",
+      "tipo": "espaco",
+      "nome": "Capela de São João Batista",
+      "pai_id": "CASA-DAS-AMEIAS"
+    },
+    {
+      "id": "ESP-AM-MUSEU",
+      "tipo": "espaco",
+      "nome": "Museu do Pastel de Vouzela",
+      "pai_id": "CASA-DAS-AMEIAS"
+    },
+    {
+      "id": "ESP-AM-ADEGA",
+      "tipo": "espaco",
+      "nome": "Adega Fernando Pessoa",
+      "pai_id": "CASA-DAS-AMEIAS"
+    },
+    {
+      "id": "ESP-AM-PALA",
+      "tipo": "espaco",
+      "nome": "A pala e o terraço",
+      "pai_id": "CASA-DAS-AMEIAS"
+    },
+    {
+      "id": "ESP-AM-COZINHA",
+      "tipo": "espaco",
+      "nome": "Cozinha temática",
+      "pai_id": "CASA-DAS-AMEIAS"
+    },
+    {
+      "id": "ESP-AM-SALA",
+      "tipo": "espaco",
+      "nome": "Salas comuns",
+      "pai_id": "CASA-DAS-AMEIAS"
+    },
+    {
+      "id": "ESP-AM-REFEICOES",
+      "tipo": "espaco",
+      "nome": "Sala de jantar / pequeno-almoço",
+      "pai_id": "CASA-DAS-AMEIAS"
+    },
+    {
+      "id": "ESP-AM-PARTE-NOVA",
+      "tipo": "espaco",
+      "nome": "Parte nova e jardim",
+      "pai_id": "CASA-DAS-AMEIAS"
+    },
+    {
+      "id": "CANAL-BK-AM",
+      "tipo": "canal",
+      "nome": "Booking — Casa das Ameias",
+      "pai_id": "CASA-DAS-AMEIAS"
+    },
+    {
+      "id": "CANAL-GG-AM",
+      "tipo": "canal",
+      "nome": "Google — Casa das Ameias",
+      "pai_id": "CASA-DAS-AMEIAS"
+    },
+    {
+      "id": "CANAL-AB-AM",
+      "tipo": "canal",
+      "nome": "Airbnb — CASTELO MEDIEVAL",
+      "pai_id": "CASA-DAS-AMEIAS"
+    }
+  ],
+  "evidencias": [
+    {
+      "id": "EV-RNT-AM",
+      "origem": "registo_publico",
+      "entidade_ids": [
+        "CASA-DAS-AMEIAS"
+      ],
+      "local": "https://rnt.turismodeportugal.pt/RNT/RNET.aspx?nr=9990",
+      "recolhido_em": "2026-09-25",
+      "bloco": "ficha RNET 9990",
+      "excerto": "EMPREENDIMENTO DE TURISMO DE HABITAÇÃO; CASA DAS AMEIAS; Rua Teles Loureiro e Rua Mouzinho de Albuquerque 3670-231 VOUZELA; 966059265; info@casamuseu.com; Imóvel Classificado de interesse Local; Classificado em projeto; 8 suites; 16; Maria Celeste Silva Coutinho Carvalho; abertura 2022; piscina exterior; sala de reuniões (capacidade: 30)",
+      "atualidade": "Registo público; confirmado em 2026-09-25."
+    },
+    {
+      "id": "EV-VV-AM",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-DAS-AMEIAS",
+        "ESP-AM-CAPELA",
+        "ESP-AM-MUSEU",
+        "ESP-AM-ADEGA",
+        "ESP-AM-PALA",
+        "ESP-AM-COZINHA",
+        "ESP-AM-PISCINA"
+      ],
+      "local": "https://web.archive.org/web/20260519100440/https://www.visitvouzela.com/ameias",
+      "recolhido_em": "2026-09-25",
+      "bloco": "página Casa das Ameias",
+      "excerto": "Casa quinhentista transformada em Turismo de Habitação ideal para relaxar. […] Na parte de baixo fica o Museu do Pastel de Vouzela […] Inserida na casa existe a Capela de São João Batista […] sunset pool",
+      "publicado_em": "cópia do Web Archive de 2026-05-19",
+      "atualidade": "Site da casa (© 2024), hoje em baixo; cópia de maio de 2026."
+    },
+    {
+      "id": "EV-VV-AM-QUARTOS",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-DAS-AMEIAS"
+      ],
+      "local": "https://web.archive.org/web/20260513230227/https://www.visitvouzela.com/ameiasquartos",
+      "recolhido_em": "2026-09-25",
+      "bloco": "página Casa Ameias Quartos",
+      "excerto": "Quarto D. Carlota; Quarto Rainha D. Amélia — Quarto com banheira e chuveiro. Cortinas em Burel e capacidade para 2 a 3 pessoas; Quarto XX, XIX, XVI, XVI, XVIII, XXI — Quartos na Parte nova junto è piscina com vista para a Montanha",
+      "publicado_em": "cópia do Web Archive de 2026-05-13"
+    },
+    {
+      "id": "EV-VV-AM-C2020",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-DAS-AMEIAS"
+      ],
+      "local": "https://web.archive.org/web/20260513220917/https://www.visitvouzela.com/centro-2020-ameias",
+      "recolhido_em": "2026-09-25",
+      "bloco": "página CENTRO 2020 Ameias",
+      "excerto": "CENTRO-04-3827-FEDER-001583; Maria Celeste da Silva Coutinho Carvalho; 2018-05-18 a 2021-05-31; custo elegível 94.007,61 EUR; FEDER 56.404,57 EUR",
+      "publicado_em": "cópia do Web Archive de 2026-05-13"
+    },
+    {
+      "id": "EV-VV-CHECKIN",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-DAS-AMEIAS"
+      ],
+      "local": "https://web.archive.org/web/20260606020519/https://www.visitvouzela.com/",
+      "recolhido_em": "2026-09-25",
+      "bloco": "página inicial, bloco Localização",
+      "excerto": "Onde poderá fazer o Check-in para os outros Alojamentos Locais como As Penthouse Low-Cost, Casa das Ameias ou BIKEINN.",
+      "publicado_em": "cópia do Web Archive de 2026-06-06"
+    },
+    {
+      "id": "EV-BK-AM",
+      "origem": "plataforma",
+      "entidade_ids": [
+        "CASA-DAS-AMEIAS",
+        "CANAL-BK-AM",
+        "ESP-AM-PISCINA"
+      ],
+      "local": "https://www.booking.com/hotel/pt/casa-das-ameias-vouzela.pt-pt.html",
+      "recolhido_em": "2026-09-25",
+      "bloco": "regras da propriedade, principais comodidades, informações importantes",
+      "excerto": "Check-in Das 15:00 às 20:00; Check-out Das 08:00 às 11:00; Crianças com mais de 3 anos são bem-vindas; Berço € 15; Cama extra € 55; Animais de estimação: não admitidos; Licença número: 9990; Piscina exterior; Estacionamento privado gratuito disponível no local; Bar; Excecional pequeno-almoço"
+    },
+    {
+      "id": "EV-BK-AM-HOST",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-DAS-AMEIAS"
+      ],
+      "local": "https://www.booking.com/hotel/pt/casa-das-ameias-vouzela.pt-pt.html",
+      "recolhido_em": "2026-09-25",
+      "bloco": "Gerido por / Informação do alojamento / Informação da área circundante",
+      "excerto": "Gerido por Maria Celeste e António Carvalho […] Casal de Vouzela antiquários à 30 anos. A Casa das Ameias é uma casa quinhentista com um quadro de fundo para as Montanhas Mágicas no coração da Vila Medieval de Vouzela."
+    },
+    {
+      "id": "EV-BK-AM-QA",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-DAS-AMEIAS"
+      ],
+      "local": "https://www.booking.com/hotel/pt/casa-das-ameias-vouzela.pt-pt.html",
+      "recolhido_em": "2026-09-25",
+      "bloco": "perguntas e respostas",
+      "excerto": "A piscina está disponível para todos os hóspedes, este é um hotel bootique com 8 quartos e espreguiçadeiras. / Se alugar a casa na totalidade o espaço não é partilhado.",
+      "publicado_em": "2024-04-01"
+    },
+    {
+      "id": "EV-BK-AM-QUARTOS",
+      "origem": "casa",
+      "entidade_ids": [
+        "QT-AM-MONTANHA-45",
+        "QT-AM-MONTANHA-36",
+        "QT-AM-JUNIOR",
+        "QT-AM-JUNIOR-TWIN",
+        "QT-AM-QUEEN",
+        "QT-AM-DELUXE"
+      ],
+      "local": "https://www.booking.com/hotel/pt/casa-das-ameias-vouzela.pt-pt.html",
+      "recolhido_em": "2026-09-25",
+      "bloco": "dados de cada tipo de suite (nome, m², piso, camas, descrição, comodidades)",
+      "excerto": "Suite com Vista da Montanha 45 m² e 36 m²; Suite Júnior com Vista Jardim 50 m² (cama de casal e twin); Suite Queen Deluxe 65 m² com banheira e sofá-cama; Suite Deluxe 75 m²"
+    },
+    {
+      "id": "EV-BK-AM-DISP",
+      "origem": "plataforma",
+      "entidade_ids": [
+        "CASA-DAS-AMEIAS"
+      ],
+      "local": "https://www.booking.com/hotel/pt/casa-das-ameias-vouzela.pt-pt.html?checkin=2026-10-21&checkout=2026-10-23&group_adults=2",
+      "recolhido_em": "2026-09-25",
+      "bloco": "tabela de disponibilidade, 6 pesquisas",
+      "excerto": "Não temos disponibilidade entre qua., 21 de out. de 2026 e sex., 23 de out. de 2026 (e 11–13/11, 2–4/12/2026, 13–15/01, 10–12/02, 10–12/03/2027)",
+      "atualidade": "Pesquisas de 2026-09-25."
+    },
+    {
+      "id": "EV-BK-AM-METRICA",
+      "origem": "plataforma",
+      "entidade_ids": [
+        "CANAL-BK-AM"
+      ],
+      "local": "https://www.booking.com/hotel/pt/casa-das-ameias-vouzela.pt-pt.html",
+      "recolhido_em": "2026-09-25",
+      "bloco": "pontuação",
+      "excerto": "9,5 Excecional · 59 comentários; Funcionários 10; Limpeza 9,9; Localização 9,6"
+    },
+    {
+      "id": "EV-GG-AM",
+      "origem": "plataforma",
+      "entidade_ids": [
+        "CASA-DAS-AMEIAS",
+        "CANAL-GG-AM"
+      ],
+      "local": "Google Places API, place ChIJSclUQrVBIw0Rg2INOWg4suY",
+      "recolhido_em": "2026-09-25",
+      "bloco": "ficha",
+      "excerto": "rating 5; userRatingCount 23; R. Teles Loureiro, 3670-261 Vouzela; 232 771 514; http://www.casadasameias.pt/"
+    },
+    {
+      "id": "EV-AB-AM",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-DAS-AMEIAS",
+        "CANAL-AB-AM"
+      ],
+      "local": "https://www.airbnb.pt/rooms/601844182539851861",
+      "recolhido_em": "2026-09-25",
+      "bloco": "descrição, dados do registo, comodidades",
+      "excerto": "Casa Medieval no centro do villa de Vouzela com piscina e quartos com vista para montanhas magicas. […] Dados do registo 9990; Mais de 16 viajantes · 8 quartos · 20 camas · 15 casas de banho; Carregador para veículo elétrico; Pequeno almoço incluído"
+    },
+    {
+      "id": "EV-IG-AM",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-DAS-AMEIAS"
+      ],
+      "local": "https://www.instagram.com/casadasameias/",
+      "recolhido_em": "2026-09-25",
+      "bloco": "bio",
+      "excerto": "Casa quinhentista no centro de Vouzela / Turismo de Habitação com piscina / Visite também a @casamuseu e @casaaidosanto"
+    },
+    {
+      "id": "EV-REV-AM-ANFITRIOES",
+      "origem": "hospede",
+      "entidade_ids": [
+        "CASA-DAS-AMEIAS"
+      ],
+      "local": "reviews.md",
+      "recolhido_em": "2026-09-25",
+      "bloco": "pontos-fortes.md, ponto 1",
+      "excerto": "42 de 52 reviews com texto",
+      "atualidade": "Última prova B-001, setembro de 2026."
+    },
+    {
+      "id": "EV-REV-AM-CASA",
+      "origem": "hospede",
+      "entidade_ids": [
+        "CASA-DAS-AMEIAS",
+        "ESP-AM-SALA",
+        "ESP-AM-PARTE-NOVA"
+      ],
+      "local": "reviews.md",
+      "recolhido_em": "2026-09-25",
+      "bloco": "pontos-fortes.md, ponto 2",
+      "excerto": "34 de 52 reviews com texto",
+      "atualidade": "Última prova B-003, setembro de 2026."
+    },
+    {
+      "id": "EV-REV-AM-PA",
+      "origem": "hospede",
+      "entidade_ids": [
+        "CASA-DAS-AMEIAS",
+        "ESP-AM-REFEICOES"
+      ],
+      "local": "reviews.md",
+      "recolhido_em": "2026-09-25",
+      "bloco": "pontos-fortes.md, ponto 3",
+      "excerto": "25 de 52 reviews com texto",
+      "atualidade": "Última prova B-003, setembro de 2026."
+    },
+    {
+      "id": "EV-REV-AM-SUITES",
+      "origem": "hospede",
+      "entidade_ids": [
+        "CASA-DAS-AMEIAS"
+      ],
+      "local": "reviews.md",
+      "recolhido_em": "2026-09-25",
+      "bloco": "pontos-fortes.md, ponto 4",
+      "excerto": "17 de 52 reviews com texto",
+      "atualidade": "Última prova B-001, setembro de 2026."
+    },
+    {
+      "id": "EV-REV-AM-PISCINA",
+      "origem": "hospede",
+      "entidade_ids": [
+        "CASA-DAS-AMEIAS",
+        "ESP-AM-PISCINA"
+      ],
+      "local": "reviews.md",
+      "recolhido_em": "2026-09-25",
+      "bloco": "pontos-fortes.md, ponto 5",
+      "excerto": "15 de 52 reviews com texto",
+      "atualidade": "Última prova B-004, setembro de 2026."
+    },
+    {
+      "id": "EV-REV-AM-LOCAL",
+      "origem": "hospede",
+      "entidade_ids": [
+        "CASA-DAS-AMEIAS"
+      ],
+      "local": "reviews.md",
+      "recolhido_em": "2026-09-25",
+      "bloco": "pontos-fortes.md, ponto 6",
+      "excerto": "13 de 52 reviews com texto",
+      "atualidade": "Última prova junho de 2026."
+    },
+    {
+      "id": "EV-REV-AM-CAPELA",
+      "origem": "hospede",
+      "entidade_ids": [
+        "CASA-DAS-AMEIAS",
+        "ESP-AM-CAPELA"
+      ],
+      "local": "reviews.md",
+      "recolhido_em": "2026-09-25",
+      "bloco": "pontos-fortes.md, detalhes",
+      "excerto": "B-013, B-015, B-022, B-026",
+      "atualidade": "2025 e 2026."
+    },
+    {
+      "id": "EV-REV-AM-GARAGEM",
+      "origem": "hospede",
+      "entidade_ids": [
+        "CASA-DAS-AMEIAS"
+      ],
+      "local": "reviews.md",
+      "recolhido_em": "2026-09-25",
+      "bloco": "factos.md, estacionamento",
+      "excerto": "B-022 (garagem coberta com carregador), B-045 (Garagem incluída com acesso directo)",
+      "atualidade": "2024 e 2025."
+    },
+    {
+      "id": "EV-REV-AM-B002",
+      "origem": "hospede",
+      "entidade_ids": [
+        "CASA-DAS-AMEIAS"
+      ],
+      "local": "reviews.md",
+      "recolhido_em": "2026-09-25",
+      "bloco": "pontos-fortes.md, atrito",
+      "excerto": "B-002: O proprietário foi extremamente rude e desagradavel",
+      "atualidade": "21 de setembro de 2026; sem resposta da casa."
+    },
+    {
+      "id": "EV-RNT-GRUPO",
+      "origem": "registo_publico",
+      "entidade_ids": [
+        "CASA-DAS-AMEIAS"
+      ],
+      "local": "https://rnt.turismodeportugal.pt/",
+      "recolhido_em": "2026-09-25",
+      "bloco": "RNAL 35686, RNET 1238, RNAL 64058, RNAL 25507, RNET 9990",
+      "excerto": "António José Ferreira de Carvalho titular de 35686, 1238, 64058 e 25507; Maria Celeste Silva Coutinho Carvalho titular de 9990",
+      "atualidade": "Confirmado a 2026-09-25."
+    }
+  ],
+  "afirmacoes": [
+    {
+      "id": "AFIR-AM-TIPO",
+      "entidade_id": "CASA-DAS-AMEIAS",
+      "texto": "A Casa das Ameias é um empreendimento de Turismo de Habitação (RNET 9990) no centro de Vouzela.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "registo_publico",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-RNT-AM",
+        "EV-BK-AM",
+        "EV-IG-AM"
+      ]
+    },
+    {
+      "id": "AFIR-AM-REGISTO",
+      "entidade_id": "CASA-DAS-AMEIAS",
+      "texto": "Registo RNET 9990.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "registo_publico",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-RNT-AM",
+        "EV-BK-AM",
+        "EV-AB-AM"
+      ]
+    },
+    {
+      "id": "AFIR-AM-CLASSIFICADO",
+      "entidade_id": "CASA-DAS-AMEIAS",
+      "texto": "O edifício é imóvel classificado de interesse local.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "registo_publico",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-RNT-AM"
+      ]
+    },
+    {
+      "id": "AFIR-AM-DONOS",
+      "entidade_id": "CASA-DAS-AMEIAS",
+      "texto": "A Casa das Ameias é de Maria Celeste Carvalho e é gerida por ela e pelo marido, António, antiquários de Vouzela.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "registo_publico",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-RNT-AM",
+        "EV-BK-AM-HOST"
+      ]
+    },
+    {
+      "id": "AFIR-AM-QUINHENTISTA",
+      "entidade_id": "CASA-DAS-AMEIAS",
+      "texto": "Casa quinhentista na Praça da República de Vouzela, reconhecível pelas ameias no topo.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-VV-AM",
+        "EV-BK-AM-HOST",
+        "EV-IG-AM"
+      ],
+      "condicao": "A casa diz \"quinhentista\" em três canais, mas também \"ameias do Séc. XV\" e \"Casa Medieval\"; usar \"quinhentista\" e confirmar com a dona antes de datar."
+    },
+    {
+      "id": "AFIR-AM-RESTAURO",
+      "entidade_id": "CASA-DAS-AMEIAS",
+      "texto": "Esteve em ruínas vários anos e foi reabilitada pelo arquiteto Álvaro Pereira, juntando o granito das ruínas ao betão branco; renovada desde 2021.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-VV-AM",
+        "EV-VV-AM-C2020"
+      ]
+    },
+    {
+      "id": "AFIR-AM-DUAS-PARTES",
+      "entidade_id": "CASA-DAS-AMEIAS",
+      "texto": "Tem uma parte antiga, sobre as ruínas, e uma parte nova com a piscina e quartos junto à capela.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-VV-AM",
+        "EV-VV-AM-QUARTOS"
+      ]
+    },
+    {
+      "id": "AFIR-AM-HISTORIA",
+      "entidade_id": "CASA-DAS-AMEIAS",
+      "texto": "A casa pertenceu à família Homem Telles; a última dona, D. Ana Carlota Telles de Almeida Castelo Branco, era amiga da Rainha D. Amélia, que lá passou férias.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-VV-AM"
+      ],
+      "condicao": "História contada pela casa; citar como a casa a conta (\"segundo a história da casa\")."
+    },
+    {
+      "id": "AFIR-AM-SUITES",
+      "entidade_id": "CASA-DAS-AMEIAS",
+      "texto": "Oito suites, para 16 pessoas.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "registo_publico",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-RNT-AM",
+        "EV-BK-AM-QA",
+        "EV-VV-AM-QUARTOS"
+      ]
+    },
+    {
+      "id": "AFIR-AM-TIPOS",
+      "entidade_id": "CASA-DAS-AMEIAS",
+      "texto": "Suites de 36 a 75 m², todas com sala de estar e quarto separados e casa de banho privativa.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-BK-AM-QUARTOS"
+      ],
+      "condicao": "Seis tipos do anúncio do Booking a 2026-09-25; não se sabe quantas suites há de cada tipo."
+    },
+    {
+      "id": "AFIR-AM-NOMES",
+      "entidade_id": "CASA-DAS-AMEIAS",
+      "texto": "As suites têm nomes: D. Carlota e Rainha D. Amélia na parte antiga; XX, XIX, XVI, XVIII e XXI na parte nova.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-VV-AM-QUARTOS"
+      ],
+      "condicao": "O \"XVI\" aparece duas vezes; não se sabe que nome corresponde a que tipo do Booking."
+    },
+    {
+      "id": "AFIR-AM-BANHEIRA",
+      "entidade_id": "CASA-DAS-AMEIAS",
+      "texto": "O quarto Rainha D. Amélia tem uma banheira dentro do quarto.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-VV-AM",
+        "EV-VV-AM-QUARTOS"
+      ]
+    },
+    {
+      "id": "AFIR-AM-PISCINA",
+      "entidade_id": "ESP-AM-PISCINA",
+      "texto": "Piscina exterior com vista para a vila e as serras.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "registo_publico",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-RNT-AM",
+        "EV-BK-AM",
+        "EV-VV-AM",
+        "EV-REV-AM-PISCINA"
+      ]
+    },
+    {
+      "id": "AFIR-AM-CAPELA",
+      "entidade_id": "ESP-AM-CAPELA",
+      "texto": "A casa tem uma capela, a Capela de São João Batista, com o brasão da família Almeida.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-VV-AM",
+        "EV-REV-AM-CAPELA"
+      ]
+    },
+    {
+      "id": "AFIR-AM-MUSEU",
+      "entidade_id": "ESP-AM-MUSEU",
+      "texto": "No piso de baixo fica o Museu do Pastel de Vouzela.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-VV-AM",
+        "EV-BK-AM-HOST"
+      ],
+      "condicao": "Confirmar horário e se o museu é visitável por quem não está hospedado."
+    },
+    {
+      "id": "AFIR-AM-ADEGA",
+      "entidade_id": "ESP-AM-ADEGA",
+      "texto": "Tem uma adega dedicada a Fernando Pessoa, integrada na rota dos vinhos de Lafões.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-VV-AM"
+      ]
+    },
+    {
+      "id": "AFIR-AM-PORTAS",
+      "entidade_id": "CASA-DAS-AMEIAS",
+      "texto": "As portas originais da casa estão expostas no \"Museu das Portas\", com um mural de Bob Targino.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-VV-AM",
+        "EV-BK-AM-HOST"
+      ],
+      "condicao": "Sem fotografia que o mostre; confirmar antes de destacar."
+    },
+    {
+      "id": "AFIR-AM-COZINHA",
+      "entidade_id": "ESP-AM-COZINHA",
+      "texto": "Cozinha temática com ilha.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-VV-AM"
+      ]
+    },
+    {
+      "id": "AFIR-AM-GARAGEM",
+      "entidade_id": "CASA-DAS-AMEIAS",
+      "texto": "Garagem privada gratuita no local.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "plataforma",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-BK-AM",
+        "EV-REV-AM-GARAGEM",
+        "EV-AB-AM"
+      ],
+      "condicao": "Confirmar número de lugares e o carregador para carro elétrico."
+    },
+    {
+      "id": "AFIR-AM-SALA-REUNIOES",
+      "entidade_id": "CASA-DAS-AMEIAS",
+      "texto": "Sala de reuniões para 30 pessoas.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "registo_publico",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-RNT-AM",
+        "EV-VV-AM-C2020"
+      ],
+      "condicao": "Confirmar como se aluga para eventos."
+    },
+    {
+      "id": "AFIR-AM-HORARIOS",
+      "entidade_id": "CASA-DAS-AMEIAS",
+      "texto": "Check-in das 15:00 às 20:00; check-out das 08:00 às 11:00.",
+      "natureza": "facto",
+      "categoria": "politica",
+      "origem": "plataforma",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-BK-AM"
+      ],
+      "condicao": "Horário do Booking; confirmar com a dona."
+    },
+    {
+      "id": "AFIR-AM-CRIANCAS",
+      "entidade_id": "CASA-DAS-AMEIAS",
+      "texto": "Crianças a partir dos 3 anos; berço 15 € por noite; cama extra 55 € por pessoa e noite; sem animais.",
+      "natureza": "facto",
+      "categoria": "politica",
+      "origem": "plataforma",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-BK-AM"
+      ],
+      "condicao": "Regras do Booking; confirmar antes de publicar."
+    },
+    {
+      "id": "AFIR-AM-CHECKIN-CM",
+      "entidade_id": "CASA-DAS-AMEIAS",
+      "texto": "O check-in faz-se na Casa Museu, a 150 m.",
+      "natureza": "facto",
+      "categoria": "politica",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-VV-CHECKIN"
+      ],
+      "condicao": "Dito no site de 2024 (cópia de 2026); confirmar se ainda é assim."
+    },
+    {
+      "id": "AFIR-AM-CONTACTOS",
+      "entidade_id": "CASA-DAS-AMEIAS",
+      "texto": "Contactos: 966 059 265, 232 771 514, info@casamuseu.com, info@casadasameias.pt.",
+      "natureza": "facto",
+      "categoria": "contacto",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-RNT-AM",
+        "EV-GG-AM",
+        "EV-VV-AM"
+      ],
+      "condicao": "Confirmar com a dona que email e telefone pôr no site."
+    },
+    {
+      "id": "AFIR-AM-GRUPO",
+      "entidade_id": "CASA-DAS-AMEIAS",
+      "texto": "Faz parte de um grupo de cinco casas do mesmo casal: Casa Museu, Casa Aido Santo, Casa das Ameias e Penthouse em Vouzela e Oliveira de Frades, e o Philip's Flat em Alvor.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "registo_publico",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-RNT-GRUPO",
+        "EV-IG-AM"
+      ]
+    },
+    {
+      "id": "AFIR-AM-PA",
+      "entidade_id": "CASA-DAS-AMEIAS",
+      "texto": "Pequeno-almoço caseiro e regional, que os hóspedes elogiam muito.",
+      "natureza": "testemunho",
+      "categoria": "avaliacao",
+      "origem": "hospede",
+      "estado": "confirmado",
+      "uso": "citar",
+      "evidencia_ids": [
+        "EV-REV-AM-PA",
+        "EV-BK-AM"
+      ]
+    },
+    {
+      "id": "AFIR-AM-PA-INCLUIDO",
+      "entidade_id": "CASA-DAS-AMEIAS",
+      "texto": "O pequeno-almoço está incluído no preço.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "plataforma",
+      "estado": "desconhecido",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-AB-AM",
+        "EV-BK-AM-DISP"
+      ],
+      "atualidade": "O Airbnb diz \"Pequeno almoço incluído\"; no Booking não se viu nenhuma tarifa."
+    },
+    {
+      "id": "AFIR-AM-TERAPIAS",
+      "entidade_id": "CASA-DAS-AMEIAS",
+      "texto": "Terapias e massagens por marcação (drenagem linfática, massagens, reflexologia, taças tibetanas).",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "desconhecido",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-VV-AM"
+      ],
+      "atualidade": "Só no site, sem preço nem prova de que se façam."
+    },
+    {
+      "id": "AFIR-AM-CASA-INTEIRA",
+      "entidade_id": "CASA-DAS-AMEIAS",
+      "texto": "A casa aluga-se inteira a grupos.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "desconhecido",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-BK-AM-QA"
+      ],
+      "atualidade": "Uma resposta da dona em 2024, sem tarifa nem outra prova."
+    },
+    {
+      "id": "AFIR-AM-SECULO-XV",
+      "entidade_id": "CASA-DAS-AMEIAS",
+      "texto": "A casa é do século XV.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "conflitante",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-VV-AM",
+        "EV-AB-AM"
+      ],
+      "atualidade": "A casa diz \"quinhentista\" (séc. XVI), \"ameias do Séc. XV\" e \"Casa Medieval\"."
+    },
+    {
+      "id": "AFIR-AM-DISP",
+      "entidade_id": "CASA-DAS-AMEIAS",
+      "texto": "Sem disponibilidade no Booking em nenhuma das seis datas pesquisadas entre outubro de 2026 e março de 2027.",
+      "natureza": "facto",
+      "categoria": "disponibilidade",
+      "origem": "plataforma",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-BK-AM-DISP"
+      ],
+      "condicao": "Resultado de pesquisas de 2026-09-25; não publicar, serve para perguntar à dona.",
+      "ambito": {
+        "entidade": "CASA-DAS-AMEIAS",
+        "datas": "2026-10-21/2027-03-12",
+        "ocupacao": "2 adultos",
+        "pesquisado_em": "2026-09-25"
+      }
+    },
+    {
+      "id": "AFIR-AM-NOTA-BK",
+      "entidade_id": "CANAL-BK-AM",
+      "texto": "Nota 9,5 em 10 no Booking, com 59 comentários; 10 em 10 para os funcionários.",
+      "natureza": "metrica",
+      "categoria": "avaliacao",
+      "origem": "plataforma",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-BK-AM-METRICA"
+      ],
+      "condicao": "Mostrar com fonte, escala e data (setembro de 2026)."
+    },
+    {
+      "id": "AFIR-AM-NOTA-GG",
+      "entidade_id": "CANAL-GG-AM",
+      "texto": "Nota 5,0 em 5 no Google, com 23 avaliações.",
+      "natureza": "metrica",
+      "categoria": "avaliacao",
+      "origem": "plataforma",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-GG-AM"
+      ],
+      "condicao": "Mostrar com fonte, escala e data (setembro de 2026)."
+    },
+    {
+      "id": "AFIR-AM-TESTEMUNHO-ANFITRIOES",
+      "entidade_id": "CASA-DAS-AMEIAS",
+      "texto": "Os hóspedes dizem que a Celeste, o António e a equipa os recebem como família.",
+      "natureza": "testemunho",
+      "categoria": "avaliacao",
+      "origem": "hospede",
+      "estado": "confirmado",
+      "uso": "citar",
+      "evidencia_ids": [
+        "EV-REV-AM-ANFITRIOES"
+      ]
+    },
+    {
+      "id": "AFIR-AM-TESTEMUNHO-CASA",
+      "entidade_id": "CASA-DAS-AMEIAS",
+      "texto": "Os hóspedes elogiam a mistura de antigo e moderno, o restauro e a decoração.",
+      "natureza": "testemunho",
+      "categoria": "avaliacao",
+      "origem": "hospede",
+      "estado": "confirmado",
+      "uso": "citar",
+      "evidencia_ids": [
+        "EV-REV-AM-CASA"
+      ]
+    },
+    {
+      "id": "AFIR-AM-TESTEMUNHO-SUITES",
+      "entidade_id": "CASA-DAS-AMEIAS",
+      "texto": "Os hóspedes dizem que as suites são amplas, confortáveis e impecavelmente limpas.",
+      "natureza": "testemunho",
+      "categoria": "avaliacao",
+      "origem": "hospede",
+      "estado": "confirmado",
+      "uso": "citar",
+      "evidencia_ids": [
+        "EV-REV-AM-SUITES"
+      ]
+    },
+    {
+      "id": "AFIR-AM-TESTEMUNHO-PISCINA",
+      "entidade_id": "CASA-DAS-AMEIAS",
+      "texto": "Os hóspedes falam da piscina e das vistas para a vila e as serras.",
+      "natureza": "testemunho",
+      "categoria": "avaliacao",
+      "origem": "hospede",
+      "estado": "confirmado",
+      "uso": "citar",
+      "evidencia_ids": [
+        "EV-REV-AM-PISCINA"
+      ]
+    },
+    {
+      "id": "AFIR-AM-TESTEMUNHO-LOCAL",
+      "entidade_id": "CASA-DAS-AMEIAS",
+      "texto": "Os hóspedes dizem que é central e boa base para a região.",
+      "natureza": "testemunho",
+      "categoria": "avaliacao",
+      "origem": "hospede",
+      "estado": "confirmado",
+      "uso": "citar",
+      "evidencia_ids": [
+        "EV-REV-AM-LOCAL"
+      ]
+    },
+    {
+      "id": "AFIR-AM-ATRITO-B002",
+      "entidade_id": "CASA-DAS-AMEIAS",
+      "texto": "Uma hóspede (setembro de 2026) queixou-se de o proprietário ter sido rude por causa de uma convidada na piscina.",
+      "natureza": "testemunho",
+      "categoria": "avaliacao",
+      "origem": "hospede",
+      "estado": "confirmado",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-REV-AM-B002"
+      ],
+      "atualidade": "Serve para pôr a regra da piscina nas informações práticas; não é conteúdo para o site."
+    },
+    {
+      "id": "AFIR-AM-CLEANSAFE",
+      "entidade_id": "CASA-DAS-AMEIAS",
+      "texto": "Selo Clean & Safe.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "historico",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-VV-AM"
+      ],
+      "atualidade": "Programa da pandemia; a casa abriu em 2022."
+    }
+  ],
+  "citacoes": [
+    {
+      "id": "CIT-AM-FAMILIA",
+      "review_id": "B-015",
+      "texto_original": "Celeste and Antonio treat you as if you were part of the family.",
+      "autor": "Dulce",
+      "plataforma": "Booking",
+      "data": "2026-06-30",
+      "lingua": "en",
+      "traducao": "A Celeste e o António tratam-nos como se fôssemos da família."
+    },
+    {
+      "id": "CIT-AM-MEIA-NOITE",
+      "review_id": "B-015",
+      "texto_original": "The owner, Antonio came personally drove us at midnight.",
+      "autor": "Dulce",
+      "plataforma": "Booking",
+      "data": "2026-06-30",
+      "lingua": "en",
+      "traducao": "O dono, o António, veio pessoalmente buscar-nos de carro à meia-noite."
+    },
+    {
+      "id": "CIT-AM-APRECO",
+      "review_id": "B-008",
+      "texto_original": "Uma palavra especial de apreço pela simpatia e cuidado do Sr. António Carvalho e da Sra. Maria Celeste.",
+      "autor": "Raquel",
+      "plataforma": "Booking",
+      "data": "2026-08-16",
+      "lingua": "pt"
+    },
+    {
+      "id": "CIT-AM-HOSPITALIDADE",
+      "review_id": "B-003",
+      "texto_original": "Highly recommended. One of those places you must stay at to feel the real Portuguese hospitality.",
+      "autor": "Levy",
+      "plataforma": "Booking",
+      "data": "2026-09-20",
+      "lingua": "en",
+      "traducao": "Recomendo muito. Um daqueles sítios onde é preciso ficar para sentir a verdadeira hospitalidade portuguesa."
+    },
+    {
+      "id": "CIT-AM-DESIGN",
+      "review_id": "B-051",
+      "texto_original": "The property is worthy of a design prize.",
+      "autor": "Kirsten",
+      "plataforma": "Booking",
+      "data": "2024-06-05",
+      "lingua": "en",
+      "traducao": "A propriedade merece um prémio de design."
+    },
+    {
+      "id": "CIT-AM-ALMA",
+      "review_id": "B-025",
+      "texto_original": "Les hôtes ont redonné vie à une maison du XVI avec des matériaux modernes tout en gardant l'âme de la maison.",
+      "autor": "Frédéric",
+      "plataforma": "Booking",
+      "data": "2025-09-06",
+      "lingua": "fr",
+      "traducao": "Os donos devolveram a vida a uma casa do século XVI com materiais modernos, sem lhe tirar a alma."
+    },
+    {
+      "id": "CIT-AM-REQUINTE",
+      "review_id": "B-048",
+      "texto_original": "A casa das Ameias é um misto de requinte e história, renovada e construída com muito bom gosto",
+      "autor": "Ricardo",
+      "plataforma": "Booking",
+      "data": "2024-07-01",
+      "lingua": "pt"
+    },
+    {
+      "id": "CIT-AM-PA-MELHOR",
+      "review_id": "B-004",
+      "texto_original": "das wirklich beste Frühstück in ganz Portugal",
+      "autor": "Susanne",
+      "plataforma": "Booking",
+      "data": "2026-09-08",
+      "lingua": "de",
+      "traducao": "o melhor pequeno-almoço de todo o Portugal"
+    },
+    {
+      "id": "CIT-AM-PA-CASEIRO",
+      "review_id": "B-051",
+      "texto_original": "The breakfast was incredibly yummy with homemade cake, jam, granola, eggs cooked to your liking",
+      "autor": "Kirsten",
+      "plataforma": "Booking",
+      "data": "2024-06-05",
+      "lingua": "en",
+      "traducao": "O pequeno-almoço era delicioso, com bolo caseiro, compota, granola, ovos ao nosso gosto"
+    },
+    {
+      "id": "CIT-AM-PA-ARVORES",
+      "review_id": "G-003",
+      "texto_original": "O pequeno almoço é excelente, com os produtos tradicionais e as frutas das próprias árvores",
+      "autor": "Carina Conduto",
+      "plataforma": "Google",
+      "data": "2022-09-03",
+      "lingua": "pt"
+    },
+    {
+      "id": "CIT-AM-SUITE",
+      "review_id": "B-014",
+      "texto_original": "La habitación muy amplia ,cama cómoda, baño perfecto , todo limpio y con buen gusto.",
+      "autor": "Hernan",
+      "plataforma": "Booking",
+      "data": "2026-07-01",
+      "lingua": "es",
+      "traducao": "O quarto muito amplo, cama confortável, casa de banho perfeita, tudo limpo e com bom gosto."
+    },
+    {
+      "id": "CIT-AM-PISCINA",
+      "review_id": "B-054",
+      "texto_original": "The pool was lovely with views of Vouzela and the surrounding mountains.",
+      "autor": "Belinda",
+      "plataforma": "Booking",
+      "data": "2024-05-01",
+      "lingua": "en",
+      "traducao": "A piscina era linda, com vista para Vouzela e as montanhas à volta."
+    },
+    {
+      "id": "CIT-AM-FIGOS",
+      "review_id": "B-022",
+      "texto_original": "you can sip coffee with mountain views and pick figs straight from the tree.",
+      "autor": "Roman",
+      "plataforma": "Booking",
+      "data": "2025-10-01",
+      "lingua": "en",
+      "traducao": "pode-se tomar café com vista para a serra e colher figos da árvore."
+    },
+    {
+      "id": "CIT-AM-CAPELA",
+      "review_id": "B-026",
+      "texto_original": "It even has its own small chapel!",
+      "autor": "Pia",
+      "plataforma": "Booking",
+      "data": "2025-08-23",
+      "lingua": "en",
+      "traducao": "Tem até uma pequena capela!"
+    },
+    {
+      "id": "CIT-AM-MELHORES-PT",
+      "review_id": "B-048",
+      "texto_original": "Dos melhores alojamentos que já visitámos em Portugal!",
+      "autor": "Ricardo",
+      "plataforma": "Booking",
+      "data": "2024-07-01",
+      "lingua": "pt"
+    },
+    {
+      "id": "CIT-AM-CENTRAL",
+      "review_id": "B-060",
+      "texto_original": "Da centralidade do local e das vistas incríveis.",
+      "autor": "Alexandre",
+      "plataforma": "Booking",
+      "data": "2023-10-08",
+      "lingua": "pt"
+    }
+  ],
+  "ativos": [
+    {
+      "id": "ATV-AM-PISCINA-05",
+      "caminho": "marketing/fotos/exterior/piscina-05.jpg",
+      "dimensoes": {
+        "largura": 5979,
+        "altura": 3986
+      },
+      "assunto": "Piscina com deque de madeira e a serra ao fundo, de dia",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou."
+      ],
+      "entidade_confirmada": "ESP-AM-PISCINA"
+    },
+    {
+      "id": "ATV-AM-PISCINA-04",
+      "caminho": "marketing/fotos/exterior/piscina-04.jpg",
+      "dimensoes": {
+        "largura": 5979,
+        "altura": 3986
+      },
+      "assunto": "Piscina com deque ao lado do rochedo, de dia",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou."
+      ],
+      "entidade_confirmada": "ESP-AM-PISCINA"
+    },
+    {
+      "id": "ATV-AM-PARTE-NOVA-03",
+      "caminho": "marketing/fotos/exterior/parte-nova-03.jpg",
+      "dimensoes": {
+        "largura": 5974,
+        "altura": 3983
+      },
+      "assunto": "Edifício novo de madeira e jardim, com a vila e a serra",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou."
+      ],
+      "entidade_confirmada": "ESP-AM-PARTE-NOVA"
+    },
+    {
+      "id": "ATV-AM-FACHADA-01",
+      "caminho": "marketing/fotos/exterior/fachada-01.jpg",
+      "dimensoes": {
+        "largura": 1200,
+        "altura": 900
+      },
+      "assunto": "Fachada de granito com ameias iluminada à noite",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou."
+      ]
+    },
+    {
+      "id": "ATV-AM-FACHADA-04",
+      "caminho": "marketing/fotos/exterior/fachada-04.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 4000
+      },
+      "assunto": "Porta ogival de granito com o nome da casa",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou."
+      ]
+    },
+    {
+      "id": "ATV-AM-PALA-04",
+      "caminho": "marketing/fotos/exterior/pala-04.jpg",
+      "dimensoes": {
+        "largura": 1400,
+        "altura": 1000
+      },
+      "assunto": "A pala e o terraço envidraçado ao entardecer",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou."
+      ],
+      "entidade_confirmada": "ESP-AM-PALA"
+    },
+    {
+      "id": "ATV-AM-CAPELA-04",
+      "caminho": "marketing/fotos/interior/capela-04.jpg",
+      "dimensoes": {
+        "largura": 5978,
+        "altura": 3985
+      },
+      "assunto": "Capela com passadeira vermelha, cadeirais e altar de talha dourada",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou."
+      ],
+      "entidade_confirmada": "ESP-AM-CAPELA"
+    },
+    {
+      "id": "ATV-AM-CAPELA-02",
+      "caminho": "marketing/fotos/interior/capela-02.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 2000
+      },
+      "assunto": "Altar de talha dourada da capela com o Cristo",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou."
+      ],
+      "entidade_confirmada": "ESP-AM-CAPELA"
+    },
+    {
+      "id": "ATV-AM-MUSEU-03",
+      "caminho": "marketing/fotos/interior/museu-03.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 1964
+      },
+      "assunto": "Museu do Pastel: trajes de época, mapa e armário antigo",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou."
+      ],
+      "entidade_confirmada": "ESP-AM-MUSEU"
+    },
+    {
+      "id": "ATV-AM-MUSEU-01",
+      "caminho": "marketing/fotos/interior/museu-01.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 1964
+      },
+      "assunto": "Museu do Pastel: capas negras, trajes e retratos antigos",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou."
+      ],
+      "entidade_confirmada": "ESP-AM-MUSEU"
+    },
+    {
+      "id": "ATV-AM-ADEGA-01",
+      "caminho": "marketing/fotos/interior/adega-01.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 2000
+      },
+      "assunto": "Adega com parede de granito, garrafeira e vitrines antigas",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou."
+      ],
+      "entidade_confirmada": "ESP-AM-ADEGA"
+    },
+    {
+      "id": "ATV-AM-COZINHA-01",
+      "caminho": "marketing/fotos/interior/cozinha-01.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 2250
+      },
+      "assunto": "Cozinha com ilha branca, parede de granito e tachos de cobre",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou."
+      ],
+      "entidade_confirmada": "ESP-AM-COZINHA"
+    },
+    {
+      "id": "ATV-AM-SALA-01",
+      "caminho": "marketing/fotos/interior/sala-01.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 2000
+      },
+      "assunto": "Sala com sofá curvo, granito e talha dourada",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou."
+      ],
+      "entidade_confirmada": "ESP-AM-SALA"
+    },
+    {
+      "id": "ATV-AM-REFEICOES-02",
+      "caminho": "marketing/fotos/interior/refeicoes-02.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 2000
+      },
+      "assunto": "Sala de jantar com mesa comprida posta e cadeiras antigas",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou."
+      ],
+      "entidade_confirmada": "ESP-AM-REFEICOES"
+    },
+    {
+      "id": "ATV-AM-QUARTO-12",
+      "caminho": "marketing/fotos/interior/quarto-12.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 2000
+      },
+      "assunto": "Quarto com banheira antiga de pés dentro do quarto e espelho dourado",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou."
+      ]
+    },
+    {
+      "id": "ATV-AM-QUARTO-41",
+      "caminho": "marketing/fotos/interior/quarto-41.jpg",
+      "dimensoes": {
+        "largura": 5979,
+        "altura": 3986
+      },
+      "assunto": "Quarto com teto de madeira, janela grande e a serra",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou."
+      ]
+    },
+    {
+      "id": "ATV-AM-QUARTO-43",
+      "caminho": "marketing/fotos/interior/quarto-43.jpg",
+      "dimensoes": {
+        "largura": 5979,
+        "altura": 3986
+      },
+      "assunto": "Quarto com teto de madeira e janela para a serra",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou."
+      ]
+    },
+    {
+      "id": "ATV-AM-HISTORIA-01",
+      "caminho": "marketing/fotos/interior/historia-01.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 1897
+      },
+      "assunto": "Postal antigo da Praça da República com a casa em ruínas",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou."
+      ]
+    },
+    {
+      "id": "ATV-AM-HISTORIA-02",
+      "caminho": "marketing/fotos/interior/historia-02.jpg",
+      "dimensoes": {
+        "largura": 9000,
+        "altura": 5001
+      },
+      "assunto": "Desenho do projeto do arquiteto Álvaro Pereira",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou."
+      ]
+    }
+  ],
+  "decisoes": [
+    {
+      "id": "DEC-CINCO-DOSSIES",
+      "estado": "ativa",
+      "efeito": "informativo",
+      "texto": "O utilizador pediu cinco dossiês separados, um por casa, com o mesmo peso e sem superiorizar nenhuma: \"quero que refaças o dossiè, nao eliminando o que já existe, para incluir a informaçao das 5 casas. nao superiorizes. […] faz como se fossem casas separadas.\" O BIKEINN fica de fora por agora. A Casa das Ameias, antes fora do âmbito (2026-09-24), entra com o mesmo peso.",
+      "decidido_em": "2026-09-25",
+      "fonte": "utilizador (Diogo), mensagem de 2026-09-25",
+      "afetados": [
+        "CASA-DAS-AMEIAS"
+      ]
+    },
+    {
+      "id": "DEC-FOTOS-POR-AUTORIZAR",
+      "estado": "ativa",
+      "efeito": "informativo",
+      "texto": "Todas as fotografias foram publicadas pela própria casa, mas o dono ainda não autorizou o uso no site definitivo. Utilizáveis na versão de demonstração.",
+      "decidido_em": "2026-09-25",
+      "fonte": "regra da skill; sem contacto com o dono",
+      "afetados": [
+        "ATV-AM-PISCINA-05",
+        "ATV-AM-PISCINA-04",
+        "ATV-AM-PARTE-NOVA-03",
+        "ATV-AM-FACHADA-01",
+        "ATV-AM-FACHADA-04",
+        "ATV-AM-PALA-04",
+        "ATV-AM-CAPELA-04",
+        "ATV-AM-CAPELA-02",
+        "ATV-AM-MUSEU-03",
+        "ATV-AM-MUSEU-01",
+        "ATV-AM-ADEGA-01",
+        "ATV-AM-COZINHA-01",
+        "ATV-AM-SALA-01",
+        "ATV-AM-REFEICOES-02",
+        "ATV-AM-QUARTO-12",
+        "ATV-AM-QUARTO-41",
+        "ATV-AM-QUARTO-43",
+        "ATV-AM-HISTORIA-01",
+        "ATV-AM-HISTORIA-02"
+      ]
+    }
+  ],
+  "cobertura": [
+    {
+      "id": "COB-IDENTIDADE",
+      "fonte": "RNT, Booking, Google, Airbnb, Visit Vouzela, Instagram",
+      "material": "identidade",
+      "estado": "completo_no_universo_observado",
+      "superficie": "nome, morada, telefone, email, registo e titular cruzados"
+    },
+    {
+      "id": "COB-RNT",
+      "fonte": "Registo Nacional de Turismo",
+      "material": "compliance",
+      "estado": "completo_no_universo_observado",
+      "superficie": "RNET 9990",
+      "observado": 1,
+      "recolhido": 1
+    },
+    {
+      "id": "COB-VV",
+      "fonte": "visitvouzela.com (Web Archive)",
+      "material": "textos",
+      "estado": "completo_no_universo_observado",
+      "superficie": "páginas /ameias, /ameiasquartos, /centro-2020-ameias",
+      "observado": 3,
+      "recolhido": 3,
+      "limitacao": "O site está em baixo; os \"VER MAIS\" não têm página própria no arquivo."
+    },
+    {
+      "id": "COB-VV-FOTOS",
+      "fonte": "visitvouzela.com (Web Archive)",
+      "material": "fotos",
+      "estado": "completo_no_universo_observado",
+      "superficie": "3 páginas",
+      "observado": 48,
+      "recolhido": 43,
+      "limitacao": "4 imagens de interface ou genéricas deixadas de fora; 1 igual a outra maior."
+    },
+    {
+      "id": "COB-BK-REVIEWS",
+      "fonte": "Booking — Casa das Ameias",
+      "material": "reviews",
+      "estado": "completo_no_universo_observado",
+      "superficie": "6 páginas de comentários, mais recentes primeiro",
+      "observado": 60,
+      "recolhido": 60
+    },
+    {
+      "id": "COB-BK-FOTOS",
+      "fonte": "Booking — Casa das Ameias",
+      "material": "fotos",
+      "estado": "completo_no_universo_observado",
+      "superficie": "galeria completa \"1 / 104\"",
+      "observado": 104,
+      "recolhido": 97,
+      "limitacao": "7 iguais a versões maiores do Visit Vouzela."
+    },
+    {
+      "id": "COB-BK-QUARTOS",
+      "fonte": "Booking — Casa das Ameias",
+      "material": "quartos",
+      "estado": "parcial",
+      "superficie": "6 pesquisas de datas (out. 2026 a mar. 2027, 2 adultos)",
+      "observado": 6,
+      "recolhido": 6,
+      "limitacao": "Nenhuma disponibilidade: dados dos tipos lidos do anúncio, sem tarifa."
+    },
+    {
+      "id": "COB-GG",
+      "fonte": "Google Maps — Casa das Ameias",
+      "material": "reviews",
+      "estado": "parcial",
+      "superficie": "Places API (New), campo reviews",
+      "observado": 23,
+      "recolhido": 5,
+      "limitacao": "A lista de críticas não é servida sem sessão."
+    },
+    {
+      "id": "COB-AB",
+      "fonte": "Airbnb — CASTELO MEDIEVAL",
+      "material": "reviews",
+      "estado": "completo_no_universo_observado",
+      "superficie": "página do anúncio",
+      "observado": 0,
+      "recolhido": 0
+    },
+    {
+      "id": "COB-AB-FOTOS",
+      "fonte": "Airbnb — CASTELO MEDIEVAL",
+      "material": "fotos",
+      "estado": "completo_no_universo_observado",
+      "superficie": "fotos do anúncio",
+      "observado": 83,
+      "recolhido": 23,
+      "limitacao": "60 iguais às do Booking, maiores."
+    },
+    {
+      "id": "COB-IG",
+      "fonte": "Instagram — @casadasameias",
+      "material": "textos",
+      "estado": "parcial",
+      "superficie": "bio e datas das 18 publicações",
+      "limitacao": "Legendas pedem sessão."
+    },
+    {
+      "id": "COB-FB",
+      "fonte": "Facebook — casadasameias",
+      "material": "textos",
+      "estado": "bloqueado",
+      "superficie": "link do site",
+      "limitacao": "Não aberto; as páginas do grupo pedem sessão."
+    },
+    {
+      "id": "COB-TA",
+      "fonte": "TripAdvisor",
+      "material": "reviews",
+      "estado": "nao_encontrado",
+      "superficie": "pesquisa por nome",
+      "limitacao": "Sem ficha encontrada."
+    }
+  ]
+}

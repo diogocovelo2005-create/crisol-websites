@@ -1,0 +1,6 @@
+# dados de leads (telefones de terceiros) e chaves: nunca para o Git
+data/
+capturas/
+heros/
+.env
+*.lnk

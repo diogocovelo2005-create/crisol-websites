@@ -1,0 +1,35 @@
+# Dependencias
+node_modules/
+
+# Build e cache
+.next/
+out/
+build/
+*.tsbuildinfo
+next-env.d.ts
+
+# Segredos
+.env
+.env.*
+!.env.example
+
+# Plataformas (a ligacao a Vercel fica no disco de cada site, nao no repo)
+.vercel/
+
+# Artefactos de execucao: regeneraveis
+.playwright-mcp/
+.shots/
+screenshots/
+inspecao/
+inspecao-prod/
+*.log
+
+# Fotos em bruto: vem do dossie de cada casa e regeneram-se com tools/imagens.mjs
+.imagens-bruto/
+
+# Pessoal
+.claude/settings.local.json
+
+# Sistema
+.DS_Store
+Thumbs.db

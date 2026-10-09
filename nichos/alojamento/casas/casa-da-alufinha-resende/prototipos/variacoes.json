@@ -1,0 +1,29 @@
+[
+  {
+    "letra": "a",
+    "nome": "Colagem",
+    "ideia": "Um caderno de viagem: serifa clássica em itálico, fotos em colagem desfasada ao lado do texto e uma faixa larga com o título ao centro.",
+    "cor": "Papel creme quente, quase-preto de granito, acento areia; a faixa escura é a da sala (#F4EFE7, #241E18, #D8C2A2, #7A2E26).",
+    "formato": "Cormorant Garamond nos títulos com meia-frase em itálico, Raleway no corpo. Blocos texto + colagem, foto a sobrepor-se a um bloco de cor.",
+    "ritmo": "Médio e ondulado: colagens densas seguidas de faixas largas de uma foto só.",
+    "apresentacao": "Lá fora como colagem de quatro fotos de alturas diferentes; quartos com a foto grande a morder um bloco de pedra; região em lista de duas colunas."
+  },
+  {
+    "letra": "b",
+    "nome": "Estúdio",
+    "ideia": "Uma página de arquitetura: grotesca leve e grande, grelhas de três com legendas em versaletes e blocos divididos ao meio.",
+    "cor": "Cinza-granito claro e frio, texto grafite, acento água da piscina (#ECEBE6, #1F2320, #9AC1C0, #3B412E).",
+    "formato": "Archivo só, do leve ao médio; o acento dos títulos é a segunda metade num tom mais claro. Linhas finas, grelha à vista.",
+    "ritmo": "Regular e calmo: cada secção é uma faixa de altura parecida, separada por uma linha fina.",
+    "apresentacao": "Lá fora em grelha de quatro com legendas; casa por dentro em bloco dividido foto/texto; região como cinco projetos em grelha; reservar como rodapé limpo em colunas."
+  },
+  {
+    "letra": "c",
+    "nome": "Planos",
+    "ideia": "Uma sequência de cinema: fotos a sangrar umas atrás das outras, Bodoni grande em itálico e pausas escuras só de texto.",
+    "cor": "Fundo escuro de granito-oliva com papel de pedra clara nas pausas, acento rosado da madeira vermelha (#211F19, #ECE5DA, #E2CCC4, #8A2F27).",
+    "formato": "Libre Bodoni grande, itálico nas meias-frases, Public Sans no corpo. Texto pousado sobre a parte escura das fotos ou numa coluna estreita ao lado.",
+    "ritmo": "Lento com cortes: planos largos de ecrã quase inteiro, cortados por faixas curtas de uma frase.",
+    "apresentacao": "Lá fora como quatro planos alternados esquerda/direita; quartos em tira horizontal de três; região numerada com linhas finas e fotos pequenas; reservar numa faixa escura final com o número enorme."
+  }
+]

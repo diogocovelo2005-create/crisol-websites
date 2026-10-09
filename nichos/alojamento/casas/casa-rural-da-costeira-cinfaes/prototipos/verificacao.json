@@ -1,0 +1,48 @@
+{
+  "a": {
+    "ok": false,
+    "falhas": [
+      "números que não estão no brief: 0"
+    ],
+    "avisos": [
+      "numeração de secções (01, 07, 02, 03, 04, 05, 06): confirma que não parece um contador genérico"
+    ],
+    "medidas": {
+      "ecrasConteudo": 12.94,
+      "scrollPreso": 0,
+      "ecrasTotal": 12.94,
+      "sequenciasPresas": [],
+      "revelacoes": {}
+    }
+  },
+  "b": {
+    "ok": false,
+    "falhas": [
+      "números que não estão no brief: 0"
+    ],
+    "avisos": [],
+    "medidas": {
+      "ecrasConteudo": 12.89,
+      "scrollPreso": 0,
+      "ecrasTotal": 12.89,
+      "sequenciasPresas": [],
+      "revelacoes": {}
+    }
+  },
+  "c": {
+    "ok": false,
+    "falhas": [
+      "números que não estão no brief: 0"
+    ],
+    "avisos": [
+      "1 parágrafos com letra abaixo de 15 px"
+    ],
+    "medidas": {
+      "ecrasConteudo": 11.89,
+      "scrollPreso": 0,
+      "ecrasTotal": 11.89,
+      "sequenciasPresas": [],
+      "revelacoes": {}
+    }
+  }
+}

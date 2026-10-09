@@ -1,0 +1,535 @@
+{
+  "versao_validador": "1.0.0",
+  "dossie": "dossie",
+  "resultado": "aprovado",
+  "erros": [],
+  "avisos": [],
+  "verificacoes": [
+    "ficheiros_obrigatorios",
+    "reviews_e_citacoes",
+    "quartos",
+    "pontos_fortes",
+    "fotos",
+    "contrato"
+  ],
+  "impressao_digital": {
+    "sha256": "03cdb62e8353362f69fc47fbfb9b03229da27eb451c5ce4e3174e9619ce07276",
+    "ficheiros": [
+      {
+        "caminho": "canais.md",
+        "bytes": 3653,
+        "sha256": "ca77cb055abce8c1e9668079ffa1be8e35781764f7757b7ec6a82b91edfc5294"
+      },
+      {
+        "caminho": "compliance.md",
+        "bytes": 3659,
+        "sha256": "8159a2c3bfe661149bf46fcbd181438145b77845dcac4e5a661f8fa1e8b18adf"
+      },
+      {
+        "caminho": "contrato.json",
+        "bytes": 142454,
+        "sha256": "81d594c20252f4a53c3bd35876a3912e99a6bd05d2276ec73350c60373ff5cd5"
+      },
+      {
+        "caminho": "descricao-al.md",
+        "bytes": 6265,
+        "sha256": "32167a2c693e21c76c3dca4d12293f1f1a2ecb2374322c8fdc7bdfd883a57781"
+      },
+      {
+        "caminho": "dono.md",
+        "bytes": 1518,
+        "sha256": "e77ab0df80ae44c7ecbcb5ed08927456f6a6dac14d41f9bfa8a7a8058973fa66"
+      },
+      {
+        "caminho": "factos.md",
+        "bytes": 14685,
+        "sha256": "21e4bdb7c683e37ab3bc717bbf6f3ab6cb9a9bbe1ce48eab1f48616b45078173"
+      },
+      {
+        "caminho": "fontes.md",
+        "bytes": 12947,
+        "sha256": "86555e8c535e234cab117b3f9ac7d217f18072ebdfa8291e22425d1ff7a32853"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/churrasqueira-01.jpg",
+        "bytes": 33767,
+        "sha256": "cb0b9cdbbb98aac0883daeb1f5436a83fa14f1412b1d5cb34d8cef6d4d6a4c7d"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/churrasqueira-02.jpg",
+        "bytes": 104971,
+        "sha256": "15c1ef9351123072d9ce0e476e77068ec18f426aafdaa200e49748966e9153de"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/fachada-01.jpg",
+        "bytes": 280859,
+        "sha256": "616b68bcf742b5d465b02204d3fa3dd4478e987b56e44f616ddb2f0eac13005f"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/fachada-02.jpg",
+        "bytes": 731269,
+        "sha256": "6f6d2592ee08b0144da8884a23689f0b74c760de81e26d1a18fef2e07a039711"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/fachada-03.jpg",
+        "bytes": 624186,
+        "sha256": "29e057ae15c5f4069e6b766fbf9e47103d9501d760cbbb91faf12f4fbb0dd2b5"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/fachada-04.jpg",
+        "bytes": 536033,
+        "sha256": "f6a13449c026a96d83ed2d66c98afbbc4a470e821e2da5b1eec1a70c4bca7263"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/fachada-05.jpg",
+        "bytes": 886337,
+        "sha256": "6f36fde50401851d157c4028f40b7bd10e2fb539f4d42678c3da894b413a38e0"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/fachada-06.jpg",
+        "bytes": 700391,
+        "sha256": "7641747936512302d6f406e34ea6fa7d41cae9b78f1a3f12ce0f41dfcc455257"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/fachada-07.jpg",
+        "bytes": 40204,
+        "sha256": "3123cae1a2ef6149a2e127fed952775f17f6cdf3233319b2f6deabdb42201a03"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/fachada-08.jpg",
+        "bytes": 87299,
+        "sha256": "87f653f79cb1bfa83fc6f686a8405b825501a6bab9215da640da983b2d1e95cc"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/fachada-09.jpg",
+        "bytes": 101604,
+        "sha256": "4b2160364ceba1598da83877c3de1a2f1f1db0a428d222dd0743bd72ea359ba6"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/fachada-10.jpg",
+        "bytes": 294543,
+        "sha256": "8a9b3cf47db86b60422446dbdb027ea3842460dee2170501b4970ce3a6b193df"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/fachada-11.jpg",
+        "bytes": 71699,
+        "sha256": "e1cd78b769a836aa34e6f68843bd344cfa69cf2b8a0e835cae040696b1bfcb29"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/fachada-12.jpg",
+        "bytes": 101369,
+        "sha256": "4a6110c87a08d68f8e3e27190bfda3a453ee2de30e5c12c5294d1cd39f705e21"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/jacuzzi-01.jpg",
+        "bytes": 332049,
+        "sha256": "943299252e44e706df3ab376c0ed8b72d94452c1f2052adfc2e530a49e10ab21"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/jacuzzi-02.jpg",
+        "bytes": 103138,
+        "sha256": "157dfc476b472dbcb79ab5e57de72ac11efdf88d45473660707957a8a8ea55c5"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/jardim-01.jpg",
+        "bytes": 908289,
+        "sha256": "4e1515f1174e3a39685313dfc670f071e632ec7eeeba6e03a33571dcd50b6500"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/jardim-02.jpg",
+        "bytes": 73782,
+        "sha256": "59c07ddd70ea7f23989687af3f1f236d654cba27440016b74cbbe35c2d626cd7"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/jardim-03.jpg",
+        "bytes": 79447,
+        "sha256": "e31a814ed39cde93bb31a29154fb1fecd3f89aa4adc77bbb61f31635ab7923ec"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/jardim-04.jpg",
+        "bytes": 115055,
+        "sha256": "4d8df70caeebd88149b9073f3dbd93e59f0df8440f666bc73ca66dba8cc5a061"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/jardim-05.jpg",
+        "bytes": 237933,
+        "sha256": "5ba58a4cf71b52af5ea6243597d989992de7e7539840988852663d86f9f40d39"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/jardim-06.jpg",
+        "bytes": 202311,
+        "sha256": "ed688124b79451d664e585e902e1165cc1f832150b1c10f3a8c44c298d2fc23e"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/jardim-07.jpg",
+        "bytes": 172604,
+        "sha256": "e526f167a16d2c501ab020960845257067b8081680f52fc3a03f825d9ea3403c"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/jardim-08.jpg",
+        "bytes": 105770,
+        "sha256": "d6697559cfa2c3bc1929ba74e1d35a7d80bbabf7f24fd3ad7a3149f9fe8f066b"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/jogos-01.jpg",
+        "bytes": 475286,
+        "sha256": "71969866b3ce302926d637a31aed5a8f76a5063813092847cbe1ad654fafab8f"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/jogos-02.jpg",
+        "bytes": 837923,
+        "sha256": "dfca4ba30ff2360e3681c6a10d8f17ee2599afbd46530723ffdab4788c31a9b0"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/piscina-01.jpg",
+        "bytes": 360825,
+        "sha256": "bcfbebdb6472a9babb0441076f9eacf6968d7c0962fd3c83e50c00d68d99cfff"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/piscina-02.jpg",
+        "bytes": 736229,
+        "sha256": "f08268c2f85b5d8d1a49e90b60e816d1ec2b3198da17dce5e7688efbd79ca339"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/piscina-03.jpg",
+        "bytes": 364333,
+        "sha256": "333fedd136e016616690ba5092d550213aad02e9e5187d695413f5fe33494bba"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/piscina-04.jpg",
+        "bytes": 594163,
+        "sha256": "1d7250083d68713c2409db7332502e52c9cb897d020bebfbf8c5dc8bc737860b"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/piscina-05.jpg",
+        "bytes": 599699,
+        "sha256": "67133205a3564e6bdf414634401382e71f55819d3771174075c82e972aaa3cb6"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/piscina-06.jpg",
+        "bytes": 235888,
+        "sha256": "9a2436000353f42818b4f273a740f0dba9a123a5ee595177870589690f21f6f6"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/piscina-07.jpg",
+        "bytes": 267259,
+        "sha256": "4e5b98147349db7b73f0bbdab21aba77410ee7ff4788356cc07c7cfd990b13b1"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/piscina-08.jpg",
+        "bytes": 361981,
+        "sha256": "22b6f1c7cb619751b69ec5bc1837fc01be33f9a60c67e769a38177cb40a80889"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/piscina-09.jpg",
+        "bytes": 759739,
+        "sha256": "885d343db2e3cbd2edecf630d58cdc3120abbd3b160e1eb8616b60503d0baaaa"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/piscina-10.jpg",
+        "bytes": 600201,
+        "sha256": "9a588a61f97720fc93ca94399178d40afebb5abcfbfa91ea10db09fad65af12e"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/piscina-11.jpg",
+        "bytes": 105597,
+        "sha256": "4d2b1105465ae3398e28f155dd064877c1b6bcabbbfb03f2c73ba0ec8500421b"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/piscina-12.jpg",
+        "bytes": 105738,
+        "sha256": "adaa9d277d74f983e52744c51ad6ea61b8020b86a29b4522a43b17a5d6a83c7c"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/vista-01.jpg",
+        "bytes": 66844,
+        "sha256": "b3ab3051091cc5da80f311484c6facd24fd7ee3b51fed08286dc0a0bc7e61465"
+      },
+      {
+        "caminho": "marketing/fotos/interior/cozinha-01.jpg",
+        "bytes": 360803,
+        "sha256": "f1e1f19d075317b4dcb323ed4cbafdac2a1ab41677f1c4adc52d8b9c30e120fd"
+      },
+      {
+        "caminho": "marketing/fotos/interior/cozinha-02.jpg",
+        "bytes": 331482,
+        "sha256": "8bcc7efc0bb8da102d1df2d985d4819496f2e4ccc47490ae3e6f1fb51b16e1fa"
+      },
+      {
+        "caminho": "marketing/fotos/interior/cozinha-03.jpg",
+        "bytes": 32397,
+        "sha256": "3d44856576b419ce8651c351f86102cc43a29f5a34a5bd0bee9ff58de7dae69b"
+      },
+      {
+        "caminho": "marketing/fotos/interior/detalhe-01.jpg",
+        "bytes": 356391,
+        "sha256": "f93580ca62f769aa83cf0e3504e5a09600ffd186b51b2a3e9185d51707cb36de"
+      },
+      {
+        "caminho": "marketing/fotos/interior/detalhe-02.jpg",
+        "bytes": 347663,
+        "sha256": "609addc75e68f29c796b281a249a2d0edb2e01b39365d5705c849c7434d699f3"
+      },
+      {
+        "caminho": "marketing/fotos/interior/detalhe-03.jpg",
+        "bytes": 78433,
+        "sha256": "4b1c749f2509d33f6d2fca7f4a23b19a2e54bacf68615137273ca84223da1bc0"
+      },
+      {
+        "caminho": "marketing/fotos/interior/detalhe-04.jpg",
+        "bytes": 111568,
+        "sha256": "f87092755847948f38212590bd91d63c1a112069fcb9ce1640786bada6237981"
+      },
+      {
+        "caminho": "marketing/fotos/interior/detalhe-05.jpg",
+        "bytes": 107263,
+        "sha256": "d76b8823dfc7725c52102917f88af8430e0d6227d5e05ba47fbb247c687b9a5b"
+      },
+      {
+        "caminho": "marketing/fotos/interior/detalhe-06.jpg",
+        "bytes": 115554,
+        "sha256": "2a8b11e0bcfe9051c463101c661891532001ccca58b8bf8eed35245d2c91dda9"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-01.jpg",
+        "bytes": 389441,
+        "sha256": "5d2f8edee53b9d55035cd04c42491016e033887332d8dd3f70f36b9357b80e55"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-02.jpg",
+        "bytes": 409623,
+        "sha256": "31383b052fbfab5ff38138222f5b4acc6066375d493b73a681b12b4e14d63c76"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-03.jpg",
+        "bytes": 189488,
+        "sha256": "81f20f5a981082a2c98b03c487743bac13419e3c1b0aa12a234b78600d79ee7d"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-04.jpg",
+        "bytes": 203914,
+        "sha256": "11bd9759d04cc268879597a9975910dc72482a4c5a25630e210b89a859b11302"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-05.jpg",
+        "bytes": 308805,
+        "sha256": "7f0a0d80bd539bb37d3dd6e328b8c058f6f515e7c4828492b3d8befcc7c67746"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-06.jpg",
+        "bytes": 334508,
+        "sha256": "4d23f548b23d5fcc5e5e60ea92aaacb45525341e518873d9709362bcd9a422e1"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-07.jpg",
+        "bytes": 242476,
+        "sha256": "dbd5fcb30f91ee4147b16a5b3c3f85b4f12ed5b61f39893f529cc455ce68fce8"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-08.jpg",
+        "bytes": 194454,
+        "sha256": "7ea91ed0d536588ecf4b31dbb8a41662d928382e1bf53d54bbba8d2adbf08052"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-09.jpg",
+        "bytes": 220774,
+        "sha256": "7f7fa42e94ff21da8c16faca042537cca1202bd70e435971991df45054dd3ad5"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-10.jpg",
+        "bytes": 100696,
+        "sha256": "2207e6ff26d293903f7ece37a229eb58d10e76b62c80134ca20802d2b05f93df"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-11.jpg",
+        "bytes": 87120,
+        "sha256": "aec15a428c47c814e0603d0fec65148a291b88d1c8260c916576a17d4bfd0e30"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-12.jpg",
+        "bytes": 110315,
+        "sha256": "8ea1cfe82c80354c8662ef96b4283c88ddb4084da2249481991c2d12f3b5822c"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-13.jpg",
+        "bytes": 89751,
+        "sha256": "6bc38c3ff93b2968656310b47b52f527252a6ed98f70416a88ea3c9e7a6026ec"
+      },
+      {
+        "caminho": "marketing/fotos/interior/quarto-14.jpg",
+        "bytes": 77068,
+        "sha256": "33cc5aa5517d58cad3f2bb9811c7c44a53438459a2c120d127dd725c303dd4e3"
+      },
+      {
+        "caminho": "marketing/fotos/interior/refeicoes-01.jpg",
+        "bytes": 351907,
+        "sha256": "3a345b6ba94ecc6d2aebd1a4d064270e076acb2c49060a18360ef741d4c2db6a"
+      },
+      {
+        "caminho": "marketing/fotos/interior/refeicoes-02.jpg",
+        "bytes": 371747,
+        "sha256": "8e80a7e24ff6279396a5d69000ccb0894dc417b4b2ec54a964ca3eb98a8571a6"
+      },
+      {
+        "caminho": "marketing/fotos/interior/refeicoes-03.jpg",
+        "bytes": 61276,
+        "sha256": "75ac46a902f97d022f7807766480899030df12c0b174b49c3f65368665895602"
+      },
+      {
+        "caminho": "marketing/fotos/interior/refeicoes-04.jpg",
+        "bytes": 98920,
+        "sha256": "9a8942b68561868a438f4d53828414bf2230c9a461245b3828d96c4b20be0c8c"
+      },
+      {
+        "caminho": "marketing/fotos/interior/sala-01.jpg",
+        "bytes": 328592,
+        "sha256": "e2ab40da6bcd31f07cb3bf7e7c991989915984aad80b810e4147d10f84921b84"
+      },
+      {
+        "caminho": "marketing/fotos/interior/sala-02.jpg",
+        "bytes": 306615,
+        "sha256": "98d6eff5d3b177da1989a7c379de4b0e0115b5aceeaf9db1fdd5e3fd2bfd0841"
+      },
+      {
+        "caminho": "marketing/fotos/interior/sala-03.jpg",
+        "bytes": 317596,
+        "sha256": "de43fcebc9bb0e4fc0d13d668859003de7ec721acde103a4b88b0a811ac76ff8"
+      },
+      {
+        "caminho": "marketing/fotos/interior/sala-04.jpg",
+        "bytes": 218324,
+        "sha256": "7fc739b659776bbdfe88b0d034cc9a824339b04bbee57d16f113acbed28915e5"
+      },
+      {
+        "caminho": "marketing/fotos/interior/sala-05.jpg",
+        "bytes": 46104,
+        "sha256": "32a76ab5929721c6bc101a01e5c3cc9fffd717294922b4bc37f809654f7fecba"
+      },
+      {
+        "caminho": "marketing/fotos/interior/sala-06.jpg",
+        "bytes": 96744,
+        "sha256": "ecd9cabad4e55e9f87a0f8ef0fd528281da184cbe6e273155f71f57d31508d58"
+      },
+      {
+        "caminho": "marketing/fotos/interior/sala-07.jpg",
+        "bytes": 91852,
+        "sha256": "9e8e5f56a5869ead8154334efaad4d8415099f50fc144d72acfdbf09203780ab"
+      },
+      {
+        "caminho": "marketing/fotos/interior/sala-08.jpg",
+        "bytes": 84550,
+        "sha256": "a4e27177b0b6d5e31a6a275df3a7a65b5dd14e15cd075c2c7012e3c05cce0c70"
+      },
+      {
+        "caminho": "marketing/fotos/interior/sala-09.jpg",
+        "bytes": 91449,
+        "sha256": "71d895e7564ce075862283d988a79f82491f0a6392b7f467e64456dcc7e8c80a"
+      },
+      {
+        "caminho": "marketing/fotos/regiao/regiao-01.jpg",
+        "bytes": 3889736,
+        "sha256": "7a80710664524f6514781a22f326c33e78862a264b8f59633d8eca3de6933101"
+      },
+      {
+        "caminho": "marketing/fotos/regiao/regiao-02.jpg",
+        "bytes": 2455358,
+        "sha256": "3d700b93247e3802ecc0f4fc31e5abc5458833ce69717a7040ee00ea31955763"
+      },
+      {
+        "caminho": "marketing/fotos/regiao/regiao-03.jpg",
+        "bytes": 6359516,
+        "sha256": "ff7217656faa634dd39f1f677a29f7ddbb6c4f66fa082d8568c821a9f55e416d"
+      },
+      {
+        "caminho": "marketing/fotos/regiao/regiao-04.jpg",
+        "bytes": 9186779,
+        "sha256": "771055240de44cf64df2528f2273f8180d806669a569f8fd37d95996b8f39b21"
+      },
+      {
+        "caminho": "marketing/fotos/regiao/regiao-05.jpg",
+        "bytes": 3150884,
+        "sha256": "c313bdc267e705186e98df410229564ae457ee637a61b67054ce4844aaa6901e"
+      },
+      {
+        "caminho": "marketing/fotos/regiao/regiao-06.jpg",
+        "bytes": 559932,
+        "sha256": "85ac5adf108cee3f118cbe7d198ed1e0f1bbc19d4947939c9adc73d6b5cf1531"
+      },
+      {
+        "caminho": "marketing/fotos.md",
+        "bytes": 38015,
+        "sha256": "a878f018663f92f0bd0685a90cbd463f225430068ff3486416d773c7e6e73a17"
+      },
+      {
+        "caminho": "marketing/provas/facebook-pagina-2026-10-07.png",
+        "bytes": 715137,
+        "sha256": "7ea29a21ba381f311e910a0f9a8f2f588bf0467cac0a22470c87635adf3ef9d3"
+      },
+      {
+        "caminho": "marketing/provas/googlemaps-ficha-2026-10-07.png",
+        "bytes": 528427,
+        "sha256": "cff703067504a8f69519afeed6da85a510aec3ff6f7bbfc775db75c890d4f839"
+      },
+      {
+        "caminho": "marketing/provas/instagram-perfil-2026-10-07.png",
+        "bytes": 719821,
+        "sha256": "013fad4bec5f2d83b97f6994bd17e96dc85c1139033e77544a928c7b999f4609"
+      },
+      {
+        "caminho": "marketing/provas/rnal-pesquisa-costeira-2026-10-07.png",
+        "bytes": 354832,
+        "sha256": "de83ce584acc52d3eaf3051ab195a1b73549eb1c3e557eda0c85e2bfd88c38e0"
+      },
+      {
+        "caminho": "marketing/provas/rnt-4967-2026-10-07.png",
+        "bytes": 203437,
+        "sha256": "6333585e5abea814d0521a6a611eb34adc7db5c67ecddd36a530f7f3f8783617"
+      },
+      {
+        "caminho": "marketing/provas/rnt-pesquisa-nipc-2026-10-07.png",
+        "bytes": 621589,
+        "sha256": "40a3cf88e062491d5da478d021cfa112a3319a56476fa0eeb2522ab63bcc6400"
+      },
+      {
+        "caminho": "marketing/textos.md",
+        "bytes": 19996,
+        "sha256": "ae35ca83add2743df650fe2d83821f816675e052bf85079951696392f68637f7"
+      },
+      {
+        "caminho": "pontos-fortes.md",
+        "bytes": 32630,
+        "sha256": "15787dbc7c29160bb853d5d026c32a7b77122bac3d07d127bc7ec85df026b031"
+      },
+      {
+        "caminho": "quartos.md",
+        "bytes": 6406,
+        "sha256": "e86e8ee1aea81639993ac2c4ced9607ddd57ce1d5308b0c0ed8ca31301c7fe5f"
+      },
+      {
+        "caminho": "RECOLHA.md",
+        "bytes": 12067,
+        "sha256": "b1fc6d35d3b0e17b53109f434507c39dc86cbfdf02938ae0e3b52b44a5d0b421"
+      },
+      {
+        "caminho": "regiao/regiao.md",
+        "bytes": 14274,
+        "sha256": "40dd2bdafdbec907566d1be06f046694fe36991eacb7b93129f5846e0cd31595"
+      },
+      {
+        "caminho": "resumo.md",
+        "bytes": 11479,
+        "sha256": "1952f061157f97473e06b70715c965afd05233de8c5c4f3e6cea420306714a7a"
+      },
+      {
+        "caminho": "reviews.md",
+        "bytes": 37752,
+        "sha256": "3c229b52e717a0e329be6e738bbe4528ae8d3e97a63263b7e4b789e899eb4e04"
+      },
+      {
+        "caminho": "site-pronto.md",
+        "bytes": 24802,
+        "sha256": "6da097f86ecb1c2052a0b019b3bc37919117d0b0aa061981f29c22b85f26d0f6"
+      }
+    ]
+  }
+}

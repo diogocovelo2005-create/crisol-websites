@@ -1,0 +1,23 @@
+{
+  "a": {
+    "ok": true,
+    "falhas": [],
+    "avisos": [
+      "citação do brief não mostrada: \"a vista da casa e do jardim é soberba.…\""
+    ]
+  },
+  "b": {
+    "ok": true,
+    "falhas": [],
+    "avisos": [
+      "citação do brief não mostrada: \"a vista da casa e do jardim é soberba.…\""
+    ]
+  },
+  "c": {
+    "ok": true,
+    "falhas": [],
+    "avisos": [
+      "citação do brief não mostrada: \"a vista da casa e do jardim é soberba.…\""
+    ]
+  }
+}

@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Protótipos</title>
+<style>
+  :root { --fundo: #f4f3ef; --texto: #1c1c1a; --suave: #5d5c57; --linha: #d9d7cf; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 16px/1.5 system-ui, sans-serif; background: var(--fundo); color: var(--texto); }
+  main { max-width: 1200px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { font-size: 20px; margin: 0 0 8px; }
+  .nota { margin: 0 0 24px; color: var(--suave); font-size: 14px; }
+  .grelha { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+  .cartao { background: #fff; border: 1px solid var(--linha); border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 8px; }
+  .vista { display: block; position: relative; aspect-ratio: 1440 / 900; overflow: hidden; border-radius: 4px; background: var(--linha); margin-bottom: 8px; }
+  .vista iframe { position: absolute; top: 0; left: 0; width: 1440px; height: 900px; border: 0; transform-origin: 0 0; pointer-events: none; }
+  .letra { margin: 0; font-weight: 700; font-size: 28px; }
+  h2 { margin: 0; font-size: 17px; }
+  .resumo { margin: 0; color: var(--suave); font-size: 14px; flex: 1; }
+  .estado { margin: 0; font-size: 13px; color: var(--suave); }
+  .acoes { display: flex; gap: 8px; }
+  .acoes a, .acoes button { font: inherit; font-size: 14px; padding: 8px 14px; border-radius: 6px; border: 1px solid var(--texto); background: var(--texto); color: #fff; text-decoration: none; cursor: pointer; }
+  .acoes button { background: transparent; color: var(--texto); }
+  .rondas { margin-top: 24px; font-size: 14px; color: var(--suave); }
+  .rondas a { color: var(--texto); }
+  dialog { padding: 0; border: none; border-radius: 12px; background: #111; }
+  dialog iframe { display: block; width: 390px; height: min(844px, 90vh); border: 0; background: #fff; }
+  dialog form { text-align: right; }
+  dialog button { margin: 6px; font: inherit; font-size: 13px; }
+  h2.bloco { font-size: 17px; margin: 40px 0 12px; }
+  .decides { background: #fff; border: 1px solid var(--linha); border-radius: 8px; padding: 16px 20px; margin: 0 0 24px; }
+  .decides ul { margin: 6px 0 0; padding-left: 20px; font-size: 14px; color: var(--suave); }
+  .decides strong { color: var(--texto); }
+  .guiao { list-style: none; margin: 0; padding: 0; max-width: 720px; border-top: 1px solid var(--linha); }
+  .guiao li { display: flex; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--linha); }
+  .guiao .num { font-weight: 700; min-width: 1.6em; }
+  .guiao p { margin: 0; }
+  .momento strong { font-size: 15px; }
+  .tipo { display: inline-block; margin-left: 6px; padding: 1px 8px; border: 1px solid var(--linha); border-radius: 99px; font-size: 12px; color: var(--suave); font-weight: 400; }
+  .descobre { font-size: 14px; }
+  .pergunta { font-size: 14px; color: var(--suave); font-style: italic; }
+  .seccao-fotos { margin: 0 0 20px; }
+  .seccao-fotos h3 { font-size: 15px; margin: 0 0 8px; }
+  .minis { display: flex; flex-wrap: wrap; gap: 10px; }
+  .mini { margin: 0; width: 150px; }
+  .mini img, .mini .falta { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 4px; background: var(--linha); }
+  .mini .falta { display: grid; place-items: center; font-size: 12px; color: var(--suave); }
+  .mini figcaption { font-size: 12px; color: var(--suave); margin-top: 4px; word-break: break-all; }
+  .primeiro .mini { width: min(100%, 480px); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Três protótipos. Abre cada um, percorre até ao fim e escolhe.</h1>
+  <p class="nota">Estáticos de propósito: aqui escolhe-se a estética. O primeiro ecrã é o formato fixo e entra no site final; o movimento vem depois da escolha.</p>
+  <div class="decides">
+    <strong>O que decides aqui</strong>
+    <ul>
+      <li><strong>A estética:</strong> A, B ou C (ou partes de cada uma).</li>
+      <li><strong>O percurso:</strong> o guião, momento a momento; muda a ordem ou corta o que não puxa o seguinte.</li>
+      <li><strong>As fotos de cada secção:</strong> a do primeiro ecrã e as outras; troca as que não te convencem.</li>
+    </ul>
+  </div>
+  <div class="grelha">
+    <article class="cartao">
+      <a class="vista" href="a.html" target="_blank" rel="noopener" aria-label="Abrir o protótipo A"><iframe src="a.html" title="Primeiro ecrã do protótipo A" loading="lazy" tabindex="-1" scrolling="no"></iframe></a>
+      <p class="letra">A</p>
+      <h2>Colagem</h2>
+      <p class="resumo">Um caderno de viagem: serifa clássica em itálico, fotos em colagem desfasada ao lado do texto e uma faixa larga com o título ao centro.</p>
+      <p class="estado">Passou na verificação automática.</p>
+      <div class="acoes">
+        <a href="a.html" target="_blank" rel="noopener">Abrir</a>
+        <button type="button" data-telemovel="a.html">Ver em telemóvel</button>
+      </div>
+    </article>
+    <article class="cartao">
+      <a class="vista" href="b.html" target="_blank" rel="noopener" aria-label="Abrir o protótipo B"><iframe src="b.html" title="Primeiro ecrã do protótipo B" loading="lazy" tabindex="-1" scrolling="no"></iframe></a>
+      <p class="letra">B</p>
+      <h2>Estúdio</h2>
+      <p class="resumo">Uma página de arquitetura: grotesca leve e grande, grelhas de três com legendas em versaletes e blocos divididos ao meio.</p>
+      <p class="estado">Passou na verificação automática.</p>
+      <div class="acoes">
+        <a href="b.html" target="_blank" rel="noopener">Abrir</a>
+        <button type="button" data-telemovel="b.html">Ver em telemóvel</button>
+      </div>
+    </article>
+    <article class="cartao">
+      <a class="vista" href="c.html" target="_blank" rel="noopener" aria-label="Abrir o protótipo C"><iframe src="c.html" title="Primeiro ecrã do protótipo C" loading="lazy" tabindex="-1" scrolling="no"></iframe></a>
+      <p class="letra">C</p>
+      <h2>Planos</h2>
+      <p class="resumo">Uma sequência de cinema: fotos a sangrar umas atrás das outras, Bodoni grande em itálico e pausas escuras só de texto.</p>
+      <p class="estado">Passou na verificação automática.</p>
+      <div class="acoes">
+        <a href="c.html" target="_blank" rel="noopener">Abrir</a>
+        <button type="button" data-telemovel="c.html">Ver em telemóvel</button>
+      </div>
+    </article>
+  </div>
+  
+  <h2 class="bloco">O guião</h2>
+  <ol class="guiao">
+      <li><span class="num">1</span><div><p class="momento"><strong>A chegada</strong> <span class="tipo">plano largo</span></p><p class="descobre">a casa de granito na encosta, a piscina por baixo, os socalcos e o Douro ao fundo</p><p class="pergunta">→ e cá fora, como se passa o dia?</p></div></li>
+      <li><span class="num">2</span><div><p class="momento"><strong>Lá fora</strong> <span class="tipo">sequência</span></p><p class="descobre">a piscina, a pérgola sobre os socalcos, a rede, a cozinha com churrasqueira: um dia inteiro sem sair</p><p class="pergunta">→ e quando o sol aperta, como é lá dentro?</p></div></li>
+      <li><span class="num">3</span><div><p class="momento"><strong>Por dentro</strong> <span class="tipo">pausa</span></p><p class="descobre">granito e pinho, a sala grande, a cozinha equipada, o conforto de todos os dias</p><p class="pergunta">→ e quando o dia acaba, onde se dorme?</p></div></li>
+      <li><span class="num">4</span><div><p class="momento"><strong>Os quartos</strong> <span class="tipo">pormenor</span></p><p class="descobre">três quartos e três casas de banho, janelas de madeira vermelha, o que há para os mais pequenos</p><p class="pergunta">→ e de manhã, o que há lá em baixo?</p></div></li>
+      <li><span class="num">5</span><div><p class="momento"><strong>À volta</strong> <span class="tipo">sequência</span></p><p class="descobre">o Douro e Porto de Rei logo abaixo, a Rota dos Cerejais, Barrô, o Museu do Douro, os Remédios, do mais perto ao mais longe</p><p class="pergunta">→ e quem já lá esteve, o que diz?</p></div></li>
+      <li><span class="num">6</span><div><p class="momento"><strong>Quem lá esteve</strong> <span class="tipo">pausa</span></p><p class="descobre">as notas das plataformas e três vozes de hóspedes</p><p class="pergunta">→ então, como se fica com ela?</p></div></li>
+      <li><span class="num">7</span><div><p class="momento"><strong>Reservar</strong> <span class="tipo">fecho</span></p><p class="descobre">um telefonema para perguntar pelas datas, ou o Booking, o Airbnb e o Vrbo</p></div></li>
+    </ol>
+  <h2 class="bloco">As fotos de cada secção</h2>
+  
+      <section class="seccao-fotos primeiro">
+        <h3>1. A casa inteira, a piscina e o Douro, só para vocês <span class="tipo">primeiro ecrã</span></h3>
+        <div class="minis"><figure class="mini"><a href="fotos/vista-02.jpg" target="_blank" rel="noopener"><img src="fotos/vista-02.jpg" alt="" loading="lazy"></a><figcaption>vista-02.jpg</figcaption></figure></div>
+      </section>
+      <section class="seccao-fotos">
+        <h3>2. O dia passa-se cá fora</h3>
+        <div class="minis"><figure class="mini"><a href="fotos/piscina-04.jpg" target="_blank" rel="noopener"><img src="fotos/piscina-04.jpg" alt="" loading="lazy"></a><figcaption>piscina-04.jpg</figcaption></figure><figure class="mini"><a href="fotos/vista-01.jpg" target="_blank" rel="noopener"><img src="fotos/vista-01.jpg" alt="" loading="lazy"></a><figcaption>vista-01.jpg</figcaption></figure><figure class="mini"><a href="fotos/detalhe-01.jpg" target="_blank" rel="noopener"><img src="fotos/detalhe-01.jpg" alt="" loading="lazy"></a><figcaption>detalhe-01.jpg</figcaption></figure><figure class="mini"><a href="fotos/cozinha-01.jpg" target="_blank" rel="noopener"><img src="fotos/cozinha-01.jpg" alt="" loading="lazy"></a><figcaption>cozinha-01.jpg</figcaption></figure></div>
+      </section>
+      <section class="seccao-fotos">
+        <h3>3. Quando o sol aperta, entra-se na pedra</h3>
+        <div class="minis"><figure class="mini"><a href="fotos/sala-03.jpg" target="_blank" rel="noopener"><img src="fotos/sala-03.jpg" alt="" loading="lazy"></a><figcaption>sala-03.jpg</figcaption></figure><figure class="mini"><a href="fotos/cozinha-02.jpg" target="_blank" rel="noopener"><img src="fotos/cozinha-02.jpg" alt="" loading="lazy"></a><figcaption>cozinha-02.jpg</figcaption></figure></div>
+      </section>
+      <section class="seccao-fotos">
+        <h3>4. Para dormir, três quartos e três casas de banho</h3>
+        <div class="minis"><figure class="mini"><a href="fotos/quarto-08.jpg" target="_blank" rel="noopener"><img src="fotos/quarto-08.jpg" alt="" loading="lazy"></a><figcaption>quarto-08.jpg</figcaption></figure><figure class="mini"><a href="fotos/quarto-03.jpg" target="_blank" rel="noopener"><img src="fotos/quarto-03.jpg" alt="" loading="lazy"></a><figcaption>quarto-03.jpg</figcaption></figure><figure class="mini"><a href="fotos/quarto-06.jpg" target="_blank" rel="noopener"><img src="fotos/quarto-06.jpg" alt="" loading="lazy"></a><figcaption>quarto-06.jpg</figcaption></figure></div>
+      </section>
+      <section class="seccao-fotos">
+        <h3>5. Lá em baixo corre o Douro, e à volta há mais</h3>
+        <div class="minis"><figure class="mini"><a href="fotos/vista-03.jpg" target="_blank" rel="noopener"><img src="fotos/vista-03.jpg" alt="" loading="lazy"></a><figcaption>vista-03.jpg</figcaption></figure><figure class="mini"><a href="fotos/regiao-rota-dos-cerejais.jpg" target="_blank" rel="noopener"><img src="fotos/regiao-rota-dos-cerejais.jpg" alt="" loading="lazy"></a><figcaption>regiao-rota-dos-cerejais.jpg</figcaption></figure><figure class="mini"><a href="fotos/regiao-barro.jpg" target="_blank" rel="noopener"><img src="fotos/regiao-barro.jpg" alt="" loading="lazy"></a><figcaption>regiao-barro.jpg</figcaption></figure><figure class="mini"><a href="fotos/regiao-museu-do-douro.jpg" target="_blank" rel="noopener"><img src="fotos/regiao-museu-do-douro.jpg" alt="" loading="lazy"></a><figcaption>regiao-museu-do-douro.jpg</figcaption></figure><figure class="mini"><a href="fotos/regiao-remedios.jpg" target="_blank" rel="noopener"><img src="fotos/regiao-remedios.jpg" alt="" loading="lazy"></a><figcaption>regiao-remedios.jpg</figcaption></figure></div>
+      </section>
+      <section class="seccao-fotos">
+        <h3>6. Quem lá esteve deu nota máxima</h3>
+        <div class="minis"><figure class="mini"><a href="fotos/piscina-03.jpg" target="_blank" rel="noopener"><img src="fotos/piscina-03.jpg" alt="" loading="lazy"></a><figcaption>piscina-03.jpg</figcaption></figure></div>
+      </section>
+      <section class="seccao-fotos">
+        <h3>7. Falta só escolher as datas</h3>
+        <div class="minis"><figure class="mini"><a href="fotos/fachada-02.jpg" target="_blank" rel="noopener"><img src="fotos/fachada-02.jpg" alt="" loading="lazy"></a><figcaption>fachada-02.jpg</figcaption></figure></div>
+      </section>
+</main>
+<dialog id="telemovel"><form method="dialog"><button>Fechar</button></form><iframe title="Pré-visualização em telemóvel"></iframe></dialog>
+<script>
+  const dialogo = document.getElementById('telemovel');
+  const moldura = dialogo.querySelector('iframe');
+  document.querySelectorAll('[data-telemovel]').forEach((b) => b.addEventListener('click', () => { moldura.src = b.dataset.telemovel; dialogo.showModal(); }));
+  dialogo.addEventListener('close', () => { moldura.src = 'about:blank'; });
+  // As miniaturas: o protótipo a 1440×900, encolhido à largura do cartão.
+  const escalar = () => document.querySelectorAll('.vista').forEach((v) => { v.querySelector('iframe').style.transform = 'scale(' + v.clientWidth / 1440 + ')'; });
+  addEventListener('resize', escalar);
+  escalar();
+</script>
+</body>
+</html>

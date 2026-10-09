@@ -1,0 +1,38 @@
+[
+  {
+    "letra": "a",
+    "nome": "Senhorial Rústico",
+    "ideia": "Foca-se no peso da história e no requinte rural de granito. A página transmite a sensação de um refúgio clássico e intemporal, onde a cantaria e a capela ganham destaque através de uma apresentação tradicional e estruturada.",
+    "composicao": "Layout assente em grelhas rígidas com linhas divisórias finas a separar secções. Alternância clássica entre blocos de texto alinhados e fotografias soltas, criando uma leitura ritmada e formal ao longo da história.",
+    "primeiro_ecra": "A fotografia da piscina e torre ocupa o ecrã inteiro (full-bleed), ligeiramente escurecida, com o título principal centrado numa tipografia clássica com serifa grande a sobrepor-se à imagem.",
+    "tipografia": "Playfair Display para os títulos (serifa elegante e imponente) e Lato para o corpo do texto (limpa e neutra).",
+    "cor": "Fundo creme (#F4F1EA), texto em verde carvão/granito escuro (#2C3525) e acentos (botões, linhas) em terracota (#8C4E28) inspirado nos telhados.",
+    "movimento": "Discreto, focado em pequenos detalhes. Fade-ins lentos no texto e um leve efeito parallax nas fotografias maiores para dar profundidade ao vale, sem distrair da leitura.",
+    "inspiracao": "Inspiração 1 (Bitterroot Bunkhouse), adotando a sobreposição de texto grande em serifa sobre imagens escuras e a arrumação rigorosa com separadores de linha finos.",
+    "evitar": "Tornar a página excessivamente sombria ou pesada, perdendo a luz natural das fotografias de exterior e o verde envolvente da quinta."
+  },
+  {
+    "letra": "b",
+    "nome": "Acolhimento Suave",
+    "ideia": "Sublinha o conforto do ambiente 'casa de família' e a paz idílica do local. A história flui sem interrupções bruscas, convidando a um deslizar orgânico por uma quinta verdejante e acolhedora.",
+    "composicao": "Elementos visuais contidos em blocos com cantos marcadamente arredondados (estilo pílula). As secções e fotografias sobrepõem-se ligeiramente umas às outras, quebrando as linhas retas e criando um fluxo contínuo.",
+    "primeiro_ecra": "A fotografia não toca nas bordas do ecrã; está contida num grande 'cartão' de cantos redondos. O título flutua por cima numa mistura de serifa clássica com palavras em itálico, dando um toque romântico.",
+    "tipografia": "Cormorant Garamond para títulos (usando generosamente o itálico para palavras-chave) e Montserrat para o corpo de texto.",
+    "cor": "Fundo bege quente (#EAE6DF), texto em tom azeitona escuro (#3A4737) e acentos em verde sálvia/relva (#7A8D4F).",
+    "movimento": "Suave e contínuo. Elementos flutuam de baixo para cima à medida que se faz o scroll, e as fotografias revelam-se desmascarando a partir do centro com bordas arredondadas.",
+    "inspiracao": "Inspiração 2 (Grape & Gold), absorvendo as máscaras de imagem arredondadas, os tons terra/azeitona calmantes e o uso requintado de itálicos nos títulos.",
+    "evitar": "Fazer o site parecer excessivamente informal ou infantil devido ao excesso de formas redondas; a tipografia tem de garantir o peso senhorial e adulto."
+  },
+  {
+    "letra": "c",
+    "nome": "Santuário Contemporâneo",
+    "ideia": "Contrasta a arquitetura secular da casa com um envelope digital altamente limpo e moderno. Destaca a escala da propriedade, ideal para o público de grupos inteiros que procura uma experiência premium.",
+    "composicao": "A página vive dentro de um 'cartão' central contido, que flutua sobre um fundo exterior liso ou ligeiramente texturado. Organização em blocos modulares assimétricos, onde as fotos da casa alinham milimetricamente com os textos.",
+    "primeiro_ecra": "Menu e contactos no topo organizados numa barra minimalista. Abaixo, a fotografia principal assume um enquadramento largo, com texto limpo ao lado ou por cima num layout que tira partido de imenso espaço negativo.",
+    "tipografia": "DM Serif Display nos títulos grandes e Inter no corpo de texto (altamente legível, geométrica e contemporânea).",
+    "cor": "Fundo exterior areia escuro (#D5CFC4), fundo interior do conteúdo quase branco (#FAF9F6), texto em carvão neutro (#1A1A1A) e acento em laranja suave (#C75E38).",
+    "movimento": "Nítido e sofisticado. Scroll horizontal para a galeria de quartos ou pormenores, e entrada dos blocos de texto/foto como recortes geométricos suaves.",
+    "inspiracao": "Inspiração 3 (Elegant & Comfort), indo buscar o conceito do 'canvas' central flutuante que não ocupa a largura toda, o minimalismo e a estruturação em módulos de informação.",
+    "evitar": "Tornar-se demasiado frio, corporativo ou impessoal; as fotografias do granito e da natureza devem ser as protagonistas para aquecer o rigor minimalista."
+  }
+]

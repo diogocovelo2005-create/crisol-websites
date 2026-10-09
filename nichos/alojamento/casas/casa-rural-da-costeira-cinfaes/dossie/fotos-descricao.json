@@ -1,0 +1,1412 @@
+{
+  "modelo": "claude-haiku",
+  "atualizado": "2026-10-07T20:36:09.116Z",
+  "fotos": [
+    {
+      "id": "AT-interior_cozinha-01",
+      "assunto": "Cozinha com bancada de granito cinzento e fogão a gás. Janela com moldura de madeira escura, teto em vigas de madeira aparentes.",
+      "onde_esta_o_assunto": "Bancada ocupa a metade esquerda; fogão e forno negros ao fundo-centro; janela com paisagem exterior à esquerda.",
+      "ponto_focal": {
+        "x": 45,
+        "y": 50
+      },
+      "zona_segura": "Bancada de granito e fogão devem estar visíveis em qualquer recorte; janela não pode desaparecer completamente.",
+      "luz": {
+        "tipo": "luz natural de janela suave",
+        "hora_aparente": "manhã"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 2560,
+      "mostra": "Cozinha com bancada de granito, fogão a gás de 4 bicos, forno, armários de madeira, janela",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#5D3518",
+        "#1F1209",
+        "#AB6B43",
+        "#CDAE98",
+        "#6D819B"
+      ],
+      "desejo": 4,
+      "caminho": "marketing/fotos/interior/cozinha-01.jpg",
+      "bytes": 360803,
+      "largura": 2560,
+      "altura": 1706
+    },
+    {
+      "id": "AT-interior_cozinha-02",
+      "assunto": "Cozinha em planta linear mostrando bancada com fogão de 4 bicos, exaustor, armários de madeira e vidro. Janelas no fundo.",
+      "onde_esta_o_assunto": "Cozinha estende-se ao longo do corredor; fogão ocupa o terço direito do espaço; armários de armazenamento à esquerda.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 55
+      },
+      "zona_segura": "Fogão e bancada precisam estar visíveis; a profundidade do espaço deve ser mantida em recortes verticais.",
+      "luz": {
+        "tipo": "luz natural de janelas",
+        "hora_aparente": "manhã"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 2560,
+      "mostra": "Cozinha vista de corredor, armários de madeira, fogão a gás, exaustor, janelas envidraçadas",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#5D3419",
+        "#C28963",
+        "#905E3D",
+        "#201308",
+        "#D0B8A7"
+      ],
+      "desejo": 4,
+      "caminho": "marketing/fotos/interior/cozinha-02.jpg",
+      "bytes": 331482,
+      "largura": 2560,
+      "altura": 1707
+    },
+    {
+      "id": "AT-interior_detalhe-01",
+      "assunto": "Corredor do piso superior com parede amarelo-laranja, janelas corridas com moldura de madeira escura, teto com vigas. Guarda de ferro forjado.",
+      "onde_esta_o_assunto": "Corredor estende-se para o fundo da imagem; janelas ocupam a esquerda; guarda de ferro forjado entre vidro e vazio.",
+      "ponto_focal": {
+        "x": 30,
+        "y": 35
+      },
+      "zona_segura": "Janelas e cor da parede devem ser visíveis; a profundidade do corredor não pode ser completamente perdida.",
+      "luz": {
+        "tipo": "luz de fim de tarde dura através das janelas",
+        "hora_aparente": "fim de tarde"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 2560,
+      "mostra": "Corredor do piso superior com janelas corridas, parede em tons quentes, teto de vigas de madeira, guarda de ferro forjado",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#E3AD7C",
+        "#D88C23",
+        "#481D08",
+        "#894A25",
+        "#D8D5D8"
+      ],
+      "desejo": 3,
+      "caminho": "marketing/fotos/interior/detalhe-01.jpg",
+      "bytes": 356391,
+      "largura": 2560,
+      "altura": 1706
+    },
+    {
+      "id": "AT-interior_detalhe-02",
+      "assunto": "Galeria envidraçada do piso superior com parede cor de laranja-mostarda, teto com vigas escuras de madeira. Guarda de ferro forjado com pormenores.",
+      "onde_esta_o_assunto": "Galeria preenchendo toda a imagem; parede laranja ao fundo; janelas à direita; guarda em primeiro plano.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 40
+      },
+      "zona_segura": "Parede de cor quente e guarda de ferro devem ser visíveis; teto de vigas não pode desaparecer em recortes.",
+      "luz": {
+        "tipo": "luz natural dura criando sombras nítidas",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 2560,
+      "mostra": "Galeria envidraçada com parede em tons quentes, teto de vigas de madeira, guarda de ferro forjado",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#361A0E",
+        "#C9521C",
+        "#873918",
+        "#9A9184",
+        "#CED3CA"
+      ],
+      "desejo": 3,
+      "caminho": "marketing/fotos/interior/detalhe-02.jpg",
+      "bytes": 347663,
+      "largura": 2560,
+      "altura": 1707
+    },
+    {
+      "id": "AT-interior_quarto-01",
+      "assunto": "Quarto com cama de casal em ferro forjado preto, parede de granito cinzento. Cómoda de madeira ao lado, candeeiros de latão.",
+      "onde_esta_o_assunto": "Cama ocupa o centro; parede de granito preenchendo o fundo; cómoda à direita; dois candeeiros flanqueando a cama.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 50
+      },
+      "zona_segura": "Cama e granito devem estar totalmente visíveis; a cómoda não pode ser cortada em recortes verticais.",
+      "luz": {
+        "tipo": "luz natural suave de janelas laterais",
+        "hora_aparente": "manhã"
+      },
+      "qualidade": {
+        "nitidez": 5,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 5
+      },
+      "largura_maxima_px": 2560,
+      "mostra": "Quarto com cama de casal em ferro forjado, parede de granito, cómoda, candeeiros, piso de barro",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#5B381D",
+        "#826044",
+        "#271709",
+        "#AD9287",
+        "#D3CACB"
+      ],
+      "desejo": 4,
+      "caminho": "marketing/fotos/interior/quarto-01.jpg",
+      "bytes": 389441,
+      "largura": 2560,
+      "altura": 1707
+    },
+    {
+      "id": "AT-interior_quarto-02",
+      "assunto": "Quarto com cama de casal em ferro forjado preto, parede de granito. Candeeiros de latão nos dois lados da cabeceira, teto com vigas de madeira.",
+      "onde_esta_o_assunto": "Cama no centro; parede de granito ao fundo; candeeiros de latão equilibrados nos dois lados; teto com vigas visível acima.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 55
+      },
+      "zona_segura": "Cama e parede de granito centrais; candeeiros devem ser visíveis em ambos os lados em qualquer recorte.",
+      "luz": {
+        "tipo": "luz suave de interior com flash ligeiro",
+        "hora_aparente": "indeterminada"
+      },
+      "qualidade": {
+        "nitidez": 5,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 5
+      },
+      "largura_maxima_px": 2560,
+      "mostra": "Quarto com cama de casal em ferro forjado, parede de granito, candeeiros de latão, teto de vigas de madeira",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#573415",
+        "#7A5732",
+        "#B3A2A9",
+        "#1F1407",
+        "#987D68"
+      ],
+      "desejo": 4,
+      "caminho": "marketing/fotos/interior/quarto-02.jpg",
+      "bytes": 409623,
+      "largura": 2560,
+      "altura": 1707
+    },
+    {
+      "id": "AT-interior_quarto-03",
+      "assunto": "Quarto com parede amarelo-laranja vivo, cama de casal em ferro forjado, berço branco para criança. Duas janelas com portadas de madeira escura.",
+      "onde_esta_o_assunto": "Cama de casal ocupa o centro-esquerda; berço junto à cabeceira; duas janelas nos lados da parede; parede laranja domina o enquadramento.",
+      "ponto_focal": {
+        "x": 45,
+        "y": 55
+      },
+      "zona_segura": "Cama, berço e cor da parede devem estar visíveis; janelas não podem desaparecer completamente em recortes verticais.",
+      "luz": {
+        "tipo": "luz artificial do candelabro",
+        "hora_aparente": "indeterminada"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 2560,
+      "mostra": "Quarto com cama de casal em ferro forjado, berço branco, parede laranja, duas janelas com portadas",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#71330C",
+        "#A35007",
+        "#371405",
+        "#B5A2A8",
+        "#9E6B4B"
+      ],
+      "desejo": 3,
+      "caminho": "marketing/fotos/interior/quarto-03.jpg",
+      "bytes": 189488,
+      "largura": 2560,
+      "altura": 1706
+    },
+    {
+      "id": "AT-interior_quarto-04",
+      "assunto": "Quarto com parede laranja-mostarda, cama de casal em ferro forjado branco com toalhas dobradas. Quadro na parede, porta de madeira, candelabro dourado.",
+      "onde_esta_o_assunto": "Cama ocupa o centro; parede laranja preenchendo o fundo; quadro sobre a cabeceira; candelabro no teto.",
+      "ponto_focal": {
+        "x": 55,
+        "y": 50
+      },
+      "zona_segura": "Cama e parede devem estar visíveis; a profundidade do quarto em recortes verticais não pode ser perdida.",
+      "luz": {
+        "tipo": "luz artificial do candelabro",
+        "hora_aparente": "indeterminada"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 2560,
+      "mostra": "Quarto com cama de casal em ferro forjado branco, parede laranja, quadro, porta, candelabro",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#B75C06",
+        "#3B1404",
+        "#843609",
+        "#C2A9AD",
+        "#DB8419"
+      ],
+      "desejo": 3,
+      "caminho": "marketing/fotos/interior/quarto-04.jpg",
+      "bytes": 203914,
+      "largura": 2560,
+      "altura": 1707
+    },
+    {
+      "id": "AT-interior_quarto-05",
+      "assunto": "Quarto sob o telhado (sótão) com duas camas individuais em ferro branco, colchas às riscas vermelhas e laranja. Teto com vigas de madeira em ângulo.",
+      "onde_esta_o_assunto": "Duas camas em ferro branco com colchas coloridas ocupam os terços esquerdo e direito; teto inclinado com vigas domina acima; piso com padrão abaixo.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 45
+      },
+      "zona_segura": "Ambas as camas e as colchas devem estar visíveis; o telhado inclinado e estrutura não podem desaparecer.",
+      "luz": {
+        "tipo": "luz artificial do candelabro criando sombras",
+        "hora_aparente": "indeterminada"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 2560,
+      "mostra": "Quarto de sótão com duas camas individuais em ferro branco, colchas às riscas, teto com vigas inclinadas",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#3B0D04",
+        "#6D260B",
+        "#BE7F26",
+        "#B69479",
+        "#88554C"
+      ],
+      "desejo": 3,
+      "caminho": "marketing/fotos/interior/quarto-05.jpg",
+      "bytes": 308805,
+      "largura": 2560,
+      "altura": 1706
+    },
+    {
+      "id": "AT-interior_quarto-06",
+      "assunto": "Quarto de sótão visto de outro ângulo, mostrando as duas camas individuais em ferro branco com colchas às riscas. Porta de madeira e estrutura do telhado.",
+      "onde_esta_o_assunto": "Camas em ferro branco com colchas estão em primeiro e segundo plano; porta de madeira à esquerda; teto inclinado acima; guarda de escada visível.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 50
+      },
+      "zona_segura": "Camas e colchas centrais; porta e teto devem estar visíveis em qualquer recorte.",
+      "luz": {
+        "tipo": "luz artificial do candelabro",
+        "hora_aparente": "indeterminada"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 2560,
+      "mostra": "Quarto de sótão com duas camas individuais em ferro branco, colchas às riscas, teto inclinado, porta",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#370C02",
+        "#6F2C11",
+        "#BE770F",
+        "#BA9673",
+        "#895E51"
+      ],
+      "desejo": 3,
+      "caminho": "marketing/fotos/interior/quarto-06.jpg",
+      "bytes": 334508,
+      "largura": 2560,
+      "altura": 1706
+    },
+    {
+      "id": "AT-interior_quarto-07",
+      "assunto": "Quarto com parede laranja e parede de granito cinzento. Cama de casal em ferro forjado, candelabro dourado, quadro na parede.",
+      "onde_esta_o_assunto": "Cama ocupa o centro; parede de granito ao fundo; parede laranja no lado esquerdo; candelabro no teto.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 55
+      },
+      "zona_segura": "Cama e granito centrais; paredes de cores diferentes devem ser mantidas em recortes.",
+      "luz": {
+        "tipo": "luz artificial suave de candelabro",
+        "hora_aparente": "indeterminada"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 2560,
+      "mostra": "Quarto com cama de casal em ferro forjado, parede laranja e granito, candelabro, quadro",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#482C11",
+        "#723C05",
+        "#211003",
+        "#685544",
+        "#A89F9F"
+      ],
+      "desejo": 3,
+      "caminho": "marketing/fotos/interior/quarto-07.jpg",
+      "bytes": 242476,
+      "largura": 2560,
+      "altura": 1707
+    },
+    {
+      "id": "AT-interior_quarto-08",
+      "assunto": "Quarto com parede laranja, cama de casal em ferro forjado com lençol branco, berço branco ao lado. Janela com portadas e candelabro.",
+      "onde_esta_o_assunto": "Cama de casal e berço ocupam o centro; parede laranja preenchendo o fundo; janela com portadas abertas mostrando luz exterior; teto com vigas visível.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 55
+      },
+      "zona_segura": "Cama, berço e janela devem estar visíveis em qualquer recorte; cor da parede não pode desaparecer.",
+      "luz": {
+        "tipo": "luz natural de janela combinada com artificial",
+        "hora_aparente": "manhã"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 2560,
+      "mostra": "Quarto com cama de casal em ferro forjado, berço branco, parede laranja, janela com portadas",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#874410",
+        "#C36A0F",
+        "#461C08",
+        "#AE7D58",
+        "#C6B2B7"
+      ],
+      "desejo": 3,
+      "caminho": "marketing/fotos/interior/quarto-08.jpg",
+      "bytes": 194454,
+      "largura": 2560,
+      "altura": 1706
+    },
+    {
+      "id": "AT-interior_quarto-09",
+      "assunto": "Quarto com parede laranja, cama de casal em ferro forjado preto. Janela com portadas de madeira escura mostrando paisagem exterior. Quadro floral na parede, candelabro no teto.",
+      "onde_esta_o_assunto": "Cama ocupa o centro; parede laranja preenchendo o fundo; janela à esquerda; quadro floral sobre a cama.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 55
+      },
+      "zona_segura": "Cama e parede devem estar visíveis; janela com paisagem não pode desaparecer em recortes verticais.",
+      "luz": {
+        "tipo": "luz natural de janela e artificial de candelabro",
+        "hora_aparente": "manhã"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 2560,
+      "mostra": "Quarto com cama de casal em ferro forjado, parede laranja, janela com portadas, quadro, candelabro",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#411D11",
+        "#C2580B",
+        "#8F3909",
+        "#928890",
+        "#E1DED6"
+      ],
+      "desejo": 3,
+      "caminho": "marketing/fotos/interior/quarto-09.jpg",
+      "bytes": 220774,
+      "largura": 2560,
+      "altura": 1707
+    },
+    {
+      "id": "AT-interior_refeicoes-01",
+      "assunto": "Sala ampla com teto em vigas de madeira aparentes, parede laranja e parede de granito. Mesinha com plantas, estante, portas envidraçadas, candelabro dourado.",
+      "onde_esta_o_assunto": "Sala expandida visível em profundidade; estante e móvel à esquerda; mesinha com plantas no centro; portas envidraçadas ao fundo; parede laranja ocupando lado direito.",
+      "ponto_focal": {
+        "x": 35,
+        "y": 45
+      },
+      "zona_segura": "A profundidade da sala deve ser mantida em recortes; estante e portas não podem desaparecer completamente.",
+      "luz": {
+        "tipo": "luz natural forte através das portas e janelas",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 2560,
+      "mostra": "Sala ampla com estante, mesinha com plantas, portas envidraçadas, teto de vigas, parede laranja e granito",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#321E0D",
+        "#654020",
+        "#896B57",
+        "#A99D8C",
+        "#B87716"
+      ],
+      "desejo": 4,
+      "caminho": "marketing/fotos/interior/refeicoes-01.jpg",
+      "bytes": 351907,
+      "largura": 2560,
+      "altura": 1707
+    },
+    {
+      "id": "AT-interior_refeicoes-02",
+      "assunto": "Sala de jantar com mesa de madeira escura e cadeiras de madeira. Parede com granito à esquerda, parede laranja-amarela à direita. Espelho sobre granito, candelabro ferro forjado.",
+      "onde_esta_o_assunto": "Mesa de jantar com cadeiras ocupa o centro; parede de granito à esquerda com espelho; parede amarela à direita; candelabro acima.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 55
+      },
+      "zona_segura": "Mesa e cadeiras centrais; parede de granito e espelho devem estar visíveis em recortes verticais.",
+      "luz": {
+        "tipo": "luz artificial do candelabro, quente",
+        "hora_aparente": "indeterminada"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 2560,
+      "mostra": "Sala de jantar com mesa de madeira escura, cadeiras, parede de granito, espelho, candelabro",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#251A11",
+        "#614323",
+        "#907855",
+        "#B68212",
+        "#C9BAA6"
+      ],
+      "desejo": 4,
+      "caminho": "marketing/fotos/interior/refeicoes-02.jpg",
+      "bytes": 371747,
+      "largura": 2560,
+      "altura": 1707
+    },
+    {
+      "id": "AT-interior_sala-01",
+      "assunto": "Sala de estar com dois cadeirões estofados em bege claro. Estante de livros ao fundo, teto com vigas de madeira. Parede laranja e parede de granito. Candelabro ferro forjado.",
+      "onde_esta_o_assunto": "Dois cadeirões ocupam os lados esquerdo e direito; estante ao fundo-centro; teto com vigas acima; parede granito e laranja visíveis.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 50
+      },
+      "zona_segura": "Ambos os cadeirões e a profundidade da sala devem ser visíveis em qualquer recorte.",
+      "luz": {
+        "tipo": "luz artificial quente de candelabro",
+        "hora_aparente": "indeterminada"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 2560,
+      "mostra": "Sala de estar com dois cadeirões em bege, estante, teto de vigas, parede laranja e granito, candelabro",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#61371F",
+        "#231C1E",
+        "#735A4C",
+        "#998B7C",
+        "#C9C9C9"
+      ],
+      "desejo": 4,
+      "caminho": "marketing/fotos/interior/sala-01.jpg",
+      "bytes": 328592,
+      "largura": 2560,
+      "altura": 1707
+    },
+    {
+      "id": "AT-interior_sala-02",
+      "assunto": "Sala com sofá bege e cadeira bege. Parede com relevo decorativo (tapeçaria) ao fundo. Parede de granito. Candelabro ferro forjado, piso de barro.",
+      "onde_esta_o_assunto": "Sofá e cadeira ocupam o primeiro plano; parede com relevo decorativo ao fundo; parede de granito à esquerda; candelabro acima.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 45
+      },
+      "zona_segura": "Sofá e relevo decorativo devem estar visíveis; profundidade não pode ser perdida em recortes.",
+      "luz": {
+        "tipo": "luz artificial quente de candelabro e natural de abertura",
+        "hora_aparente": "tarde"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 2560,
+      "mostra": "Sala com sofá e cadeira em bege, parede com relevo decorativo, parede de granito, candelabro",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#603C1C",
+        "#7D7365",
+        "#26180E",
+        "#AA6516",
+        "#B9AFA0"
+      ],
+      "desejo": 4,
+      "caminho": "marketing/fotos/interior/sala-02.jpg",
+      "bytes": 306615,
+      "largura": 2560,
+      "altura": 1705
+    },
+    {
+      "id": "AT-interior_sala-03",
+      "assunto": "Sala em plano aberto com teto em vigas de madeira, parede amarela. Duas portas envidraçadas de madeira à direita. Mesa de refeição à direita, estante à esquerda. Candelabro ferro forjado.",
+      "onde_esta_o_assunto": "Espaço aberto mostrando múltiplas áreas: estante à esquerda, portas envidraçadas e mesa de refeição à direita; teto com vigas acima; piso de barro.",
+      "ponto_focal": {
+        "x": 55,
+        "y": 50
+      },
+      "zona_segura": "Portas e mesa de refeição devem estar visíveis; a conexão entre as duas áreas não pode ser perdida.",
+      "luz": {
+        "tipo": "luz natural forte através das portas envidraçadas",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 2560,
+      "mostra": "Sala em plano aberto com estante, portas envidraçadas, mesa de refeição, teto de vigas, parede amarela",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#603A17",
+        "#2A1806",
+        "#9E6A21",
+        "#A1846C",
+        "#D3C0A4"
+      ],
+      "desejo": 4,
+      "caminho": "marketing/fotos/interior/sala-03.jpg",
+      "bytes": 317596,
+      "largura": 2560,
+      "altura": 1705
+    },
+    {
+      "id": "AT-interior_sala-04",
+      "assunto": "Patamar do piso superior com cadeirão preto, mesa redonda com toalha branca. Teto com vigas estruturais em ângulo, parede laranja. Duas janelas com portadas de madeira vermelha.",
+      "onde_esta_o_assunto": "Cadeirão e mesa redonda no centro; teto estrutural em ângulo acima; janelas nos lados; parede laranja preenchendo o espaço.",
+      "ponto_focal": {
+        "x": 45,
+        "y": 50
+      },
+      "zona_segura": "Cadeirão, mesa e teto estrutural devem estar visíveis em qualquer recorte.",
+      "luz": {
+        "tipo": "luz artificial quente do candelabro",
+        "hora_aparente": "indeterminada"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 2560,
+      "mostra": "Patamar do piso superior com cadeirão, mesa redonda, teto estrutural em vigas, janelas com portadas",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#281509",
+        "#5D331D",
+        "#8D440E",
+        "#96897E",
+        "#C4680D"
+      ],
+      "desejo": 3,
+      "caminho": "marketing/fotos/interior/sala-04.jpg",
+      "bytes": 218324,
+      "largura": 2560,
+      "altura": 1707
+    },
+    {
+      "id": "AT-exterior_fachada-01",
+      "assunto": "Casa de pedra vista de lado, com a torre de revestimento escuro e floreiras nas janelas. Estrutura de dois andares com telhado de telhas vermelhas. Mata ao fundo.",
+      "onde_esta_o_assunto": "Torre com revestimento escuro no terço esquerdo; corpo principal da casa no centro e direita; floreiras nas janelas; vegetação ao fundo; céu azul acima.",
+      "ponto_focal": {
+        "x": 30,
+        "y": 45
+      },
+      "zona_segura": "Torre e casa devem estar totalmente visíveis; mata não pode desaparecer completamente.",
+      "luz": {
+        "tipo": "sol alto criando sombras claras",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 5,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 5
+      },
+      "largura_maxima_px": 2560,
+      "mostra": "Fachada lateral da casa de pedra com torre, floreiras, telhado, mata ao fundo",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#CAE5FD",
+        "#273424",
+        "#B3B7B9",
+        "#7B8282",
+        "#525C4E"
+      ],
+      "desejo": 4,
+      "caminho": "marketing/fotos/exterior/fachada-01.jpg",
+      "bytes": 280859,
+      "largura": 2560,
+      "altura": 1707
+    },
+    {
+      "id": "AT-exterior_fachada-02",
+      "assunto": "Fachada principal em granito com alpendre coberto. Pátio empedrado em primeiro plano. Palmeira à esquerda, rede de descanso sob o alpendre. Portas e janelas de madeira, telhado de telhas vermelhas.",
+      "onde_esta_o_assunto": "Pátio empedrado ocupa o primeiro plano; alpendre e fachada no fundo; palmeira à esquerda; rede de descanso visível sob o alpendre.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 45
+      },
+      "zona_segura": "Fachada, pátio e alpendre devem estar visíveis; palmeira não pode desaparecer em recortes verticais.",
+      "luz": {
+        "tipo": "sol alto iluminando pátio",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 5,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 5
+      },
+      "largura_maxima_px": 2560,
+      "mostra": "Fachada principal com alpendre, pátio empedrado, rede de descanso, palmeira, telhado",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#5D605C",
+        "#EAEEF4",
+        "#272C23",
+        "#9C9479",
+        "#C3BFB5"
+      ],
+      "desejo": 5,
+      "caminho": "marketing/fotos/exterior/fachada-02.jpg",
+      "bytes": 731269,
+      "largura": 2560,
+      "altura": 1707
+    },
+    {
+      "id": "AT-exterior_fachada-03",
+      "assunto": "Fachada em ângulo com pátio empedrado, arbustos em flor lilás/roxo. Casa de pedra, telhado de telhas vermelhas. Porta de entrada de madeira. Encosta com vegetação ao fundo.",
+      "onde_esta_o_assunto": "Arbustos em flor roxo no terço direito; fachada de pedra ocupando o centro e esquerda; pátio empedrado no primeiro plano; encosta ao fundo.",
+      "ponto_focal": {
+        "x": 40,
+        "y": 50
+      },
+      "zona_segura": "Casa, arbustos floridos e pátio devem estar visíveis; encosta não pode desaparecer completamente.",
+      "luz": {
+        "tipo": "sol da tarde criando sombras nítidas",
+        "hora_aparente": "tarde"
+      },
+      "qualidade": {
+        "nitidez": 5,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 5
+      },
+      "largura_maxima_px": 2560,
+      "mostra": "Fachada em ângulo com pátio, arbustos em flor, casa de pedra, telhado, porta de entrada",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#2B3826",
+        "#E5ECF4",
+        "#666E69",
+        "#C6C1B3",
+        "#A1A46E"
+      ],
+      "desejo": 4,
+      "caminho": "marketing/fotos/exterior/fachada-03.jpg",
+      "bytes": 624186,
+      "largura": 2560,
+      "altura": 1707
+    },
+    {
+      "id": "AT-exterior_fachada-04",
+      "assunto": "Pátio empedrado com sofás de exterior brancos/cinzentos. Fonte de pedra no centro do pátio. Casa de pedra ao fundo e a torre à direita. Telhado com telhas vermelhas, mata ao fundo.",
+      "onde_esta_o_assunto": "Pátio empedrado preenchendo o primeiro plano; sofás de exterior nos lados; fonte de pedra no centro; casa e torre ao fundo; mata envolvendo o espaço.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 55
+      },
+      "zona_segura": "Sofás, fonte e casa devem estar visíveis em qualquer recorte; pátio não pode ser completamente cortado.",
+      "luz": {
+        "tipo": "sol da tarde moderado",
+        "hora_aparente": "tarde"
+      },
+      "qualidade": {
+        "nitidez": 5,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 5
+      },
+      "largura_maxima_px": 2560,
+      "mostra": "Pátio com sofás de exterior, fonte de pedra, casa e torre ao fundo, telhado, mata",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#88827C",
+        "#F1F6FA",
+        "#615E55",
+        "#2B2D1F",
+        "#B1AB9C"
+      ],
+      "desejo": 5,
+      "caminho": "marketing/fotos/exterior/fachada-04.jpg",
+      "bytes": 536033,
+      "largura": 2560,
+      "altura": 1707
+    },
+    {
+      "id": "AT-exterior_fachada-05",
+      "assunto": "Pátio e a torre da casa em formato vertical. Telhado com telhas vermelhas, estrutura de pedra. Céu azul claro. Vegetação envolvendo a propriedade.",
+      "onde_esta_o_assunto": "Torre occupying o terço superior direito; pátio e estrutura da casa preenchendo o centro e esquerda; vegetação nos lados; céu azul acima.",
+      "ponto_focal": {
+        "x": 65,
+        "y": 35
+      },
+      "zona_segura": "Torre deve estar completamente visível no topo; pátio e casa devem estar centrados em qualquer recorte.",
+      "luz": {
+        "tipo": "sol criando sombras moderadas",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 5,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 5
+      },
+      "largura_maxima_px": 2560,
+      "mostra": "Pátio, torre da casa, telhado, estrutura de pedra, vegetação (formato vertical)",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#E2EEFA",
+        "#858482",
+        "#686763",
+        "#2A2C23",
+        "#AAA79F"
+      ],
+      "desejo": 4,
+      "caminho": "marketing/fotos/exterior/fachada-05.jpg",
+      "bytes": 886337,
+      "largura": 2560,
+      "altura": 3839
+    },
+    {
+      "id": "AT-exterior_fachada-06",
+      "assunto": "Alpendre com rede de descanso e mobiliário de exterior sob o piso superior. Casa de pedra ao fundo com telhado de telhas vermelhas. Flores em vasos.",
+      "onde_esta_o_assunto": "Rede de descanso no centro-esquerda; mobiliário de exterior sob o alpendre; fachada e telhado ao fundo; flores nos lados.",
+      "ponto_focal": {
+        "x": 45,
+        "y": 50
+      },
+      "zona_segura": "Rede e alpendre devem estar visíveis; casa ao fundo não pode desaparecer em recortes verticais.",
+      "luz": {
+        "tipo": "sol da tarde criando sombras moderadas do alpendre",
+        "hora_aparente": "tarde"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 2560,
+      "mostra": "Alpendre com rede de descanso, mobiliário de exterior, casa de pedra ao fundo, telhado",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#D5F1FD",
+        "#948B8B",
+        "#232B25",
+        "#545D56",
+        "#C3C6C8"
+      ],
+      "desejo": 4,
+      "caminho": "marketing/fotos/exterior/fachada-06.jpg",
+      "bytes": 700391,
+      "largura": 2560,
+      "altura": 1707
+    },
+    {
+      "id": "AT-exterior_jardim-01",
+      "assunto": "Caminho empedrado ao longo da casa, entre plantas. Parede de pedra à esquerda. Lanterna de ferro forjado. Arbustos com flores brancas. Formato vertical.",
+      "onde_esta_o_assunto": "Caminho empedrado estendendo-se para o fundo; parede de pedra à esquerda; arbustos com flores brancas à direita; lanterna de ferro no topo.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 60
+      },
+      "zona_segura": "Caminho central deve estar visível em qualquer recorte; parede e plantas devem ser mantidas em recortes horizontais.",
+      "luz": {
+        "tipo": "luz natural suave de fim de dia",
+        "hora_aparente": "fim de tarde"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 2560,
+      "mostra": "Caminho empedrado, parede de pedra, arbustos com flores brancas, lanterna (formato vertical)",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#2A3823",
+        "#7A8080",
+        "#E5F5FD",
+        "#556156",
+        "#B9BAB5"
+      ],
+      "desejo": 3,
+      "caminho": "marketing/fotos/exterior/jardim-01.jpg",
+      "bytes": 908289,
+      "largura": 2560,
+      "altura": 3839
+    },
+    {
+      "id": "AT-exterior_jogos-01",
+      "assunto": "Zona coberta com mesa de bilhar, matraquilhos e duas cadeiras de braços. Relva sintética verde. Parede de pedra ao fundo.",
+      "onde_esta_o_assunto": "Mesa de bilhar ocupando o centro; matraquilhos ao fundo à direita; cadeiras de braços nos lados; relva sintética preenchendo o espaço; parede de pedra ao fundo.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 50
+      },
+      "zona_segura": "Mesa de bilhar e matraquilhos devem estar totalmente visíveis; relva e parede não podem desaparecer.",
+      "luz": {
+        "tipo": "luz artificial do espaço coberto",
+        "hora_aparente": "indeterminada"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 2560,
+      "mostra": "Zona de jogos coberta com mesa de bilhar, matraquilhos, cadeiras, relva sintética, parede de pedra",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#1C1D18",
+        "#454E32",
+        "#A59C8D",
+        "#78745B",
+        "#E5E3DD"
+      ],
+      "desejo": 4,
+      "caminho": "marketing/fotos/exterior/jogos-01.jpg",
+      "bytes": 475286,
+      "largura": 2560,
+      "altura": 1707
+    },
+    {
+      "id": "AT-exterior_jogos-02",
+      "assunto": "Mesa de bilhar em primeiro plano, matraquilhos ao fundo, cadeiras de madeira. Relva sintética verde. Parede de pedra. Espaço coberto com teto escuro. Formato vertical.",
+      "onde_esta_o_assunto": "Mesa de bilhar preenchendo o primeiro plano; matraquilhos visível acima; cadeiras nos lados; relva sintética; parede de pedra ao fundo.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 50
+      },
+      "zona_segura": "Mesa de bilhar deve estar visível em qualquer recorte; matraquilhos e parede devem ser mantidos em recortes horizontais.",
+      "luz": {
+        "tipo": "luz artificial do espaço coberto",
+        "hora_aparente": "indeterminada"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 2560,
+      "mostra": "Mesa de bilhar, matraquilhos, cadeiras, relva sintética, parede de pedra, teto escuro (formato vertical)",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#201B0B",
+        "#6DA27C",
+        "#5F8052",
+        "#514A33",
+        "#C9C1B1"
+      ],
+      "desejo": 4,
+      "caminho": "marketing/fotos/exterior/jogos-02.jpg",
+      "bytes": 837923,
+      "largura": 2560,
+      "altura": 3839
+    },
+    {
+      "id": "AT-exterior_piscina-01",
+      "assunto": "Piscina com água azul, escadas e barbecue coberto ao fundo. Casa de pedra ao fundo à direita. Mata envolvendo o espaço. Laje de concreto ao redor.",
+      "onde_esta_o_assunto": "Piscina ocupando o primeiro plano com água azul; escadas visíveis na lateral; barbecue coberto ao fundo-centro; mata envolvendo os lados; casa ao fundo-direita.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 40
+      },
+      "zona_segura": "Piscina central deve estar totalmente visível; barbecue e mata não podem desaparecer em recortes verticais.",
+      "luz": {
+        "tipo": "sol da manhã criando reflexos claros na água",
+        "hora_aparente": "manhã"
+      },
+      "qualidade": {
+        "nitidez": 5,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 5
+      },
+      "largura_maxima_px": 2560,
+      "mostra": "Piscina com escadas, barbecue coberto, casa de pedra ao fundo, mata, laje de concreto",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#616B70",
+        "#9EA4A5",
+        "#E6F4FD",
+        "#BDD7F7",
+        "#31342C"
+      ],
+      "desejo": 5,
+      "caminho": "marketing/fotos/exterior/piscina-01.jpg",
+      "bytes": 360825,
+      "largura": 2560,
+      "altura": 1707
+    },
+    {
+      "id": "AT-exterior_piscina-02",
+      "assunto": "Piscina e casa ao fundo em formato vertical. Água azul, laje de concreto, barbecue coberto e mata envolvendo. Céu azul claro.",
+      "onde_esta_o_assunto": "Piscina ocupando a metade inferior; laje e casa ao fundo no centro; mata nos lados; céu azul na parte superior; barbecue coberto visível ao fundo.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 60
+      },
+      "zona_segura": "Piscina deve estar visível em qualquer recorte; casa e mata não podem desaparecer em recortes horizontais.",
+      "luz": {
+        "tipo": "sol da manhã criando reflexos na água",
+        "hora_aparente": "manhã"
+      },
+      "qualidade": {
+        "nitidez": 5,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 5
+      },
+      "largura_maxima_px": 2560,
+      "mostra": "Piscina, barbecue coberto, casa ao fundo, mata, laje de concreto, céu azul (formato vertical)",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#6B757D",
+        "#B8D7FC",
+        "#E4F3FE",
+        "#A5AFB7",
+        "#393D36"
+      ],
+      "desejo": 5,
+      "caminho": "marketing/fotos/exterior/piscina-02.jpg",
+      "bytes": 736229,
+      "largura": 2560,
+      "altura": 3839
+    },
+    {
+      "id": "AT-exterior_piscina-03",
+      "assunto": "Piscina vista de canto, a casa e o barbecue no plano de trás. Parede de pedra ao lado da piscina. Espreguiçadeiras verdes.",
+      "onde_esta_o_assunto": "Piscina ocupando o primeiro plano; parede de pedra à esquerda; casa de pedra e barbecue ao fundo-centro; espreguiçadeiras verdes nos lados.",
+      "ponto_focal": {
+        "x": 45,
+        "y": 40
+      },
+      "zona_segura": "Piscina central deve estar visível em qualquer recorte; barbecue não pode desaparecer em recortes verticais.",
+      "luz": {
+        "tipo": "sol da manhã criando reflexos na água",
+        "hora_aparente": "manhã"
+      },
+      "qualidade": {
+        "nitidez": 5,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 5
+      },
+      "largura_maxima_px": 2560,
+      "mostra": "Piscina vista de canto, parede de pedra, barbecue, casa ao fundo, espreguiçadeiras",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#737C84",
+        "#A2AEB7",
+        "#F0F7FE",
+        "#D1DDEF",
+        "#363831"
+      ],
+      "desejo": 5,
+      "caminho": "marketing/fotos/exterior/piscina-03.jpg",
+      "bytes": 364333,
+      "largura": 2560,
+      "altura": 1707
+    },
+    {
+      "id": "AT-exterior_piscina-04",
+      "assunto": "Piscina em primeiro plano e a casa de pedra (torre) por cima do muro. Espreguiçadeiras nos lados. Muro de contenção de pedra.",
+      "onde_esta_o_assunto": "Piscina no primeiro plano com água azul; muro de contenção visível; casa e torre ao fundo acima do muro; espreguiçadeiras nos lados.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 35
+      },
+      "zona_segura": "Piscina deve estar totalmente visível; casa e torre não podem desaparecer em recortes verticais.",
+      "luz": {
+        "tipo": "sol da tarde moderado",
+        "hora_aparente": "tarde"
+      },
+      "qualidade": {
+        "nitidez": 5,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 5
+      },
+      "largura_maxima_px": 2560,
+      "mostra": "Piscina, muro de contenção, casa e torre ao fundo, espreguiçadeiras, laje",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#D9EEF8",
+        "#9CA2A7",
+        "#656A68",
+        "#2C2E26",
+        "#368DC9"
+      ],
+      "desejo": 5,
+      "caminho": "marketing/fotos/exterior/piscina-04.jpg",
+      "bytes": 594163,
+      "largura": 2560,
+      "altura": 1707
+    },
+    {
+      "id": "AT-exterior_piscina-05",
+      "assunto": "Piscina com trampolim, espreguiçadeiras e a casa à esquerda. Laje de concreto ao redor. Encosta com mata ao fundo.",
+      "onde_esta_o_assunto": "Piscina com trampolim ocupando o primeiro e segundo plano; espreguiçadeiras nos lados; casa à esquerda; encosta ao fundo.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 45
+      },
+      "zona_segura": "Piscina e trampolim devem estar visíveis em qualquer recorte; casa não pode desaparecer completamente.",
+      "luz": {
+        "tipo": "sol claro da manhã ou meio-dia",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 5,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 5
+      },
+      "largura_maxima_px": 2560,
+      "mostra": "Piscina com trampolim, espreguiçadeiras, casa à esquerda, encosta ao fundo",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#F3FAFD",
+        "#818380",
+        "#ADBAC4",
+        "#4D9BD7",
+        "#37392E"
+      ],
+      "desejo": 5,
+      "caminho": "marketing/fotos/exterior/piscina-05.jpg",
+      "bytes": 599699,
+      "largura": 2560,
+      "altura": 1707
+    },
+    {
+      "id": "AT-exterior_piscina-06",
+      "assunto": "Piscina comprida com trampolim; a casa à esquerda e a encosta ao fundo. Espreguiçadeira branca visível. Barbecue coberto ao fundo.",
+      "onde_esta_o_assunto": "Piscina alongada ocupando o primeiro plano; trampolim visível; casa à esquerda; barbecue coberto ao fundo-centro; encosta com vegetação ao fundo.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 50
+      },
+      "zona_segura": "Piscina deve estar totalmente visível em qualquer recorte; casa e barbecue não podem desaparecer.",
+      "luz": {
+        "tipo": "sol da tarde criando sombras moderadas",
+        "hora_aparente": "tarde"
+      },
+      "qualidade": {
+        "nitidez": 5,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 5
+      },
+      "largura_maxima_px": 2560,
+      "mostra": "Piscina com trampolim, casa à esquerda, barbecue coberto, encosta ao fundo",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#D7E5FC",
+        "#A2B4CC",
+        "#447FC0",
+        "#33443C",
+        "#7E817E"
+      ],
+      "desejo": 5,
+      "caminho": "marketing/fotos/exterior/piscina-06.jpg",
+      "bytes": 235888,
+      "largura": 2560,
+      "altura": 1707
+    },
+    {
+      "id": "AT-exterior_piscina-07",
+      "assunto": "Piscina e a vista de encosta; o recinto do jacuzzi à direita. JACÚZI AVARIADO DESDE 2024 - NÃO MOSTRAR EM DESTAQUE.",
+      "onde_esta_o_assunto": "Piscina no primeiro plano; encosta com mata ao fundo; jacuzzi recinto à direita (visível mas avariado).",
+      "ponto_focal": {
+        "x": 40,
+        "y": 50
+      },
+      "zona_segura": "Piscina central; jacuzzi deve ser facilmente removível em edição de imagem.",
+      "luz": {
+        "tipo": "sol da tarde",
+        "hora_aparente": "tarde"
+      },
+      "qualidade": {
+        "nitidez": 5,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 2560,
+      "mostra": "Piscina, vista de encosta (CONTÉM JACÚZI AVARIADO À DIREITA - NÃO USAR COMO DESTAQUE)",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#9BBFF4",
+        "#DFEDFD",
+        "#4881BB",
+        "#2A3636",
+        "#CBB66F"
+      ],
+      "desejo": 4,
+      "caminho": "marketing/fotos/exterior/piscina-07.jpg",
+      "bytes": 267259,
+      "largura": 2560,
+      "altura": 1707
+    },
+    {
+      "id": "AT-exterior_piscina-08",
+      "assunto": "Espreguiçadeiras junto à piscina; o jacuzzi ao fundo e a encosta do Douro. JACÚZI AVARIADO DESDE 2024 - NÃO MOSTRAR EM DESTAQUE.",
+      "onde_esta_o_assunto": "Espreguiçadeiras em primeiro plano; piscina no segundo plano; jacuzzi e encosta do Douro ao fundo (visível mas avariado).",
+      "ponto_focal": {
+        "x": 50,
+        "y": 40
+      },
+      "zona_segura": "Espreguiçadeiras e piscina; jacuzzi deve ser facilmente removível em edição de imagem.",
+      "luz": {
+        "tipo": "sol da tarde moderado",
+        "hora_aparente": "tarde"
+      },
+      "qualidade": {
+        "nitidez": 5,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 2560,
+      "mostra": "Espreguiçadeiras, piscina, vista de encosta do Douro (CONTÉM JACÚZI AVARIADO AO FUNDO - NÃO USAR COMO DESTAQUE)",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#ACC7F9",
+        "#5F6764",
+        "#D8E7FD",
+        "#293929",
+        "#989F8C"
+      ],
+      "desejo": 4,
+      "caminho": "marketing/fotos/exterior/piscina-08.jpg",
+      "bytes": 361981,
+      "largura": 2560,
+      "altura": 1707
+    },
+    {
+      "id": "AT-exterior_piscina-09",
+      "assunto": "Zona da piscina com espreguiçadeiras, barbecue coberto e encosta. Piscina no primeiro plano, espreguiçadeiras verdes à esquerda. Formato vertical.",
+      "onde_esta_o_assunto": "Piscina ocupando a metade inferior; espreguiçadeiras à esquerda; barbecue coberto e encosta ao fundo; céu azul acima.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 50
+      },
+      "zona_segura": "Piscina deve estar visível em qualquer recorte; encosta não pode desaparecer em recortes horizontais.",
+      "luz": {
+        "tipo": "sol da tarde",
+        "hora_aparente": "tarde"
+      },
+      "qualidade": {
+        "nitidez": 5,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 5
+      },
+      "largura_maxima_px": 2560,
+      "mostra": "Piscina, espreguiçadeiras verdes, barbecue, encosta, céu azul (formato vertical)",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#6E7473",
+        "#2E372E",
+        "#88B7F3",
+        "#ADD5F9",
+        "#E5F4F5"
+      ],
+      "desejo": 5,
+      "caminho": "marketing/fotos/exterior/piscina-09.jpg",
+      "bytes": 759739,
+      "largura": 2560,
+      "altura": 3839
+    },
+    {
+      "id": "AT-exterior_piscina-10",
+      "assunto": "Caminho empedrado que desce até à piscina. Piscina no primeiro plano, muro de contenção à direita com trepadeiras. Formato vertical.",
+      "onde_esta_o_assunto": "Caminho empedrado descendendo no primeiro plano; piscina ao fundo-esquerda; muro com plantas/flores vermelhas à direita; estruturas ao fundo.",
+      "ponto_focal": {
+        "x": 50,
+        "y": 60
+      },
+      "zona_segura": "Caminho central deve estar visível em qualquer recorte; piscina não pode desaparecer em recortes horizontais.",
+      "luz": {
+        "tipo": "sol da tarde criando sombras nítidas",
+        "hora_aparente": "tarde"
+      },
+      "qualidade": {
+        "nitidez": 5,
+        "ruido": 5,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 5
+      },
+      "largura_maxima_px": 2560,
+      "mostra": "Caminho empedrado descendente, piscina, muro de contenção com trepadeiras, estruturas (formato vertical)",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#6D7273",
+        "#B2DAFA",
+        "#959BA0",
+        "#E5F8FE",
+        "#3B4736"
+      ],
+      "desejo": 4,
+      "caminho": "marketing/fotos/exterior/piscina-10.jpg",
+      "bytes": 600201,
+      "largura": 2560,
+      "altura": 3839
+    }
+  ]
+}

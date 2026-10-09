@@ -1,0 +1,17 @@
+{
+  "a": {
+    "ok": true,
+    "falhas": [],
+    "avisos": []
+  },
+  "b": {
+    "ok": true,
+    "falhas": [],
+    "avisos": []
+  },
+  "c": {
+    "ok": true,
+    "falhas": [],
+    "avisos": []
+  }
+}

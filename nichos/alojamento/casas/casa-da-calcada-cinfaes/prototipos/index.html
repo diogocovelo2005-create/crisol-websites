@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Protótipos</title>
+<style>
+  :root { --fundo: #f4f3ef; --texto: #1c1c1a; --suave: #5d5c57; --linha: #d9d7cf; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 16px/1.5 system-ui, sans-serif; background: var(--fundo); color: var(--texto); }
+  main { max-width: 1200px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { font-size: 20px; margin: 0 0 8px; }
+  .nota { margin: 0 0 24px; color: var(--suave); font-size: 14px; }
+  .grelha { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .cartao { background: #fff; border: 1px solid var(--linha); border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 8px; }
+  .letra { margin: 0; font-weight: 700; font-size: 28px; }
+  h2 { margin: 0; font-size: 17px; }
+  .resumo { margin: 0; color: var(--suave); font-size: 14px; flex: 1; }
+  .estado { margin: 0; font-size: 13px; color: var(--suave); }
+  .acoes { display: flex; gap: 8px; }
+  .acoes a, .acoes button { font: inherit; font-size: 14px; padding: 8px 14px; border-radius: 6px; border: 1px solid var(--texto); background: var(--texto); color: #fff; text-decoration: none; cursor: pointer; }
+  .acoes button { background: transparent; color: var(--texto); }
+  .rondas { margin-top: 24px; font-size: 14px; color: var(--suave); }
+  .rondas a { color: var(--texto); }
+  dialog { padding: 0; border: none; border-radius: 12px; background: #111; }
+  dialog iframe { display: block; width: 390px; height: min(844px, 90vh); border: 0; background: #fff; }
+  dialog form { text-align: right; }
+  dialog button { margin: 6px; font: inherit; font-size: 13px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Três protótipos. Abre cada um, percorre até ao fim e escolhe.</h1>
+  <p class="nota">Estáticos de propósito: aqui escolhe-se a estética. O primeiro ecrã é o formato fixo e entra no site final; o movimento vem depois da escolha.</p>
+  <div class="grelha">
+    <article class="cartao">
+      <p class="letra">A</p>
+      <h2>Granito</h2>
+      <p class="resumo">A pedra da casa: fundo de pedra clara, uma faixa escura de granito, colagens de fotos e filetes finos.</p>
+      <p class="estado">Passou na verificação automática.</p>
+      <div class="acoes">
+        <a href="a.html" target="_blank" rel="noopener">Abrir</a>
+        <button type="button" data-telemovel="a.html">Ver em telemóvel</button>
+      </div>
+    </article>
+    <article class="cartao">
+      <p class="letra">B</p>
+      <h2>Verde da quinta</h2>
+      <p class="resumo">Os jardins: painéis de verde fundo que alternam com o creme, fotos de cantos arredondados, texto e foto lado a lado.</p>
+      <p class="estado">Passou na verificação automática.</p>
+      <div class="acoes">
+        <a href="b.html" target="_blank" rel="noopener">Abrir</a>
+        <button type="button" data-telemovel="b.html">Ver em telemóvel</button>
+      </div>
+    </article>
+    <article class="cartao">
+      <p class="letra">C</p>
+      <h2>Telhados</h2>
+      <p class="resumo">Os telhados e a luz de verão: fundo cinzento-bege, faixas de foto a toda a largura, números grandes e uma faixa escura para as opiniões.</p>
+      <p class="estado">Passou na verificação automática.</p>
+      <div class="acoes">
+        <a href="c.html" target="_blank" rel="noopener">Abrir</a>
+        <button type="button" data-telemovel="c.html">Ver em telemóvel</button>
+      </div>
+    </article>
+  </div>
+  <p class="rondas">Rondas anteriores: <a href="anteriores/ronda-1/a.html" target="_blank" rel="noopener">1A</a> <a href="anteriores/ronda-1/b.html" target="_blank" rel="noopener">1B</a> <a href="anteriores/ronda-1/c.html" target="_blank" rel="noopener">1C</a> · <a href="anteriores/ronda-2/a.html" target="_blank" rel="noopener">2A</a> <a href="anteriores/ronda-2/b.html" target="_blank" rel="noopener">2B</a> <a href="anteriores/ronda-2/c.html" target="_blank" rel="noopener">2C</a></p>
+</main>
+<dialog id="telemovel"><form method="dialog"><button>Fechar</button></form><iframe title="Pré-visualização em telemóvel"></iframe></dialog>
+<script>
+  const dialogo = document.getElementById('telemovel');
+  const moldura = dialogo.querySelector('iframe');
+  document.querySelectorAll('[data-telemovel]').forEach((b) => b.addEventListener('click', () => { moldura.src = b.dataset.telemovel; dialogo.showModal(); }));
+  dialogo.addEventListener('close', () => { moldura.src = 'about:blank'; });
+</script>
+</body>
+</html>

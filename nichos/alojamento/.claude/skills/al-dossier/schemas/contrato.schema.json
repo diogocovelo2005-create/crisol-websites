@@ -1,0 +1,148 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://crisol.local/alojamento/al-dossier/contrato-1.0.schema.json",
+  "title": "Contrato do dossiê de alojamento",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "manifesto", "entidades", "evidencias", "afirmacoes", "citacoes", "ativos", "decisoes", "cobertura"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "manifesto": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["slug", "revisao", "prontidao"],
+      "properties": {
+        "slug": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
+        "revisao": {"type": "string", "format": "date"},
+        "prontidao": {"enum": ["pronto_para_base", "com_limitacoes", "bloqueado"]},
+        "notas": {"type": "string"}
+      }
+    },
+    "entidades": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/entidade"}},
+    "evidencias": {"type": "array", "items": {"$ref": "#/$defs/evidencia"}},
+    "afirmacoes": {"type": "array", "items": {"$ref": "#/$defs/afirmacao"}},
+    "citacoes": {"type": "array", "items": {"$ref": "#/$defs/citacao"}},
+    "ativos": {"type": "array", "items": {"$ref": "#/$defs/ativo"}},
+    "decisoes": {"type": "array", "items": {"$ref": "#/$defs/decisao"}},
+    "cobertura": {"type": "array", "items": {"$ref": "#/$defs/cobertura"}}
+  },
+  "$defs": {
+    "id": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]*-[A-Za-z0-9_-]+$"},
+    "origem": {"enum": ["casa", "dono", "hospede", "plataforma", "registo_publico", "terceiro"]},
+    "entidade": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "tipo", "nome"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "tipo": {"enum": ["casa", "unidade", "tipo_quarto", "espaco", "tarifa", "canal"]},
+        "nome": {"type": "string", "minLength": 1},
+        "pai_id": {"$ref": "#/$defs/id"}
+      }
+    },
+    "evidencia": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "origem", "entidade_ids", "local", "recolhido_em"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "origem": {"$ref": "#/$defs/origem"},
+        "entidade_ids": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/id"}},
+        "local": {"type": "string", "minLength": 1},
+        "bloco": {"type": "string"},
+        "excerto": {"type": "string"},
+        "recolhido_em": {"type": "string", "format": "date"},
+        "publicado_em": {"type": "string"},
+        "atualidade": {"type": "string"}
+      }
+    },
+    "afirmacao": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "entidade_id", "texto", "natureza", "categoria", "origem", "estado", "uso", "evidencia_ids"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "entidade_id": {"$ref": "#/$defs/id"},
+        "texto": {"type": "string", "minLength": 1},
+        "natureza": {"enum": ["facto", "testemunho", "promessa_subjetiva", "metrica", "inferencia"]},
+        "categoria": {"enum": ["geral", "inventario", "disponibilidade", "tarifa", "politica", "contacto", "avaliacao"]},
+        "origem": {"$ref": "#/$defs/origem"},
+        "estado": {"enum": ["confirmado", "conflitante", "desconhecido", "historico", "substituido", "retirado"]},
+        "uso": {"enum": ["afirmar", "afirmar_com_condicao", "citar", "inspiracao_editorial", "nao_usar"]},
+        "evidencia_ids": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/id"}},
+        "ambito": {"type": "object"},
+        "condicao": {"type": "string"},
+        "atualidade": {"type": "string"}
+      }
+    },
+    "citacao": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "review_id", "texto_original", "autor", "plataforma", "lingua"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "review_id": {"type": "string", "pattern": "^[A-Z]-[0-9]{2,4}$"},
+        "texto_original": {"type": "string", "minLength": 1},
+        "traducao": {"type": "string"},
+        "autor": {"type": "string", "minLength": 1},
+        "plataforma": {"type": "string", "minLength": 1},
+        "data": {"type": "string"},
+        "lingua": {"type": "string", "minLength": 2}
+      }
+    },
+    "ativo": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "caminho", "dimensoes", "assunto", "publicador", "uso", "restricoes"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "caminho": {"type": "string", "minLength": 1},
+        "dimensoes": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["largura", "altura"],
+          "properties": {
+            "largura": {"type": "integer", "minimum": 1},
+            "altura": {"type": "integer", "minimum": 1}
+          }
+        },
+        "assunto": {"type": "string", "minLength": 1},
+        "publicador": {"$ref": "#/$defs/origem"},
+        "entidade_confirmada": {"$ref": "#/$defs/id"},
+        "uso": {"enum": ["utilizavel", "restrito", "nao_usar"]},
+        "restricoes": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "derivado_de": {"$ref": "#/$defs/id"}
+      }
+    },
+    "decisao": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "estado", "efeito", "texto", "decidido_em", "afetados"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "estado": {"enum": ["ativa", "substituida"]},
+        "efeito": {"enum": ["bloquear_uso", "autorizar_uso", "informativo"]},
+        "texto": {"type": "string", "minLength": 1},
+        "decidido_em": {"type": "string", "format": "date"},
+        "fonte": {"type": "string"},
+        "afetados": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/id"}},
+        "substituida_por": {"$ref": "#/$defs/id"}
+      }
+    },
+    "cobertura": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "fonte", "material", "estado"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "fonte": {"type": "string", "minLength": 1},
+        "material": {"enum": ["identidade", "factos", "reviews", "quartos", "textos", "fotos", "canais", "compliance"]},
+        "estado": {"enum": ["completo_no_universo_observado", "parcial", "bloqueado", "nao_encontrado", "nao_aplicavel"]},
+        "superficie": {"type": "string"},
+        "observado": {"type": "integer", "minimum": 0},
+        "recolhido": {"type": "integer", "minimum": 0},
+        "limitacao": {"type": "string"}
+      }
+    }
+  }
+}

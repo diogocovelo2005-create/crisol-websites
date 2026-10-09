@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0",
+  "manifesto": {
+    "slug": "casa-de-fatauncos-vouzela",
+    "revisao": "2026-09-21",
+    "prontidao": "com_limitacoes",
+    "notas": "Migração do dossiê legado. As unidades, a morada e a programação musical não têm confirmação suficiente para afirmação geral."
+  },
+  "entidades": [
+    {"id": "CASA-FAT", "tipo": "casa", "nome": "Casa de Fataunços"},
+    {"id": "TIPO-FAT-DUPLO", "tipo": "tipo_quarto", "nome": "Quarto Duplo", "pai_id": "CASA-FAT"},
+    {"id": "TIPO-FAT-VILLA", "tipo": "tipo_quarto", "nome": "Villa com 2 Quartos", "pai_id": "CASA-FAT"},
+    {"id": "ESPACO-FAT-JARDIM", "tipo": "espaco", "nome": "Jardim", "pai_id": "CASA-FAT"},
+    {"id": "ESPACO-FAT-SALOES", "tipo": "espaco", "nome": "Salões", "pai_id": "CASA-FAT"}
+  ],
+  "evidencias": [
+    {"id": "EVID-FAT-RNT", "origem": "registo_publico", "entidade_ids": ["CASA-FAT"], "local": "compliance.md, Registo", "bloco": "RNET 5352", "recolhido_em": "2026-09-17", "atualidade": "Registo público consultado na recolha."},
+    {"id": "EVID-FAT-SITE", "origem": "casa", "entidade_ids": ["CASA-FAT", "ESPACO-FAT-JARDIM", "ESPACO-FAT-SALOES"], "local": "descricao-al.md, Como a casa se apresenta e A promessa", "bloco": "Site da casa", "recolhido_em": "2026-09-17", "atualidade": "O site é a voz da casa; serviços temporários requerem confirmação atual."},
+    {"id": "EVID-FAT-BOOKING", "origem": "plataforma", "entidade_ids": ["CASA-FAT", "TIPO-FAT-DUPLO", "TIPO-FAT-VILLA"], "local": "factos.md, Unidades e capacidade; Horários e políticas", "bloco": "Booking", "recolhido_em": "2026-09-17", "atualidade": "Tipos, tarifas e políticas observados devem ser revistos antes de publicar."},
+    {"id": "EVID-FAT-DONO", "origem": "dono", "entidade_ids": ["CASA-FAT"], "local": "dono.md, Pedido recebido", "recolhido_em": "2026-09-17", "atualidade": "Restrição de imagens ativa até nova instrução."},
+    {"id": "EVID-FAT-B002", "origem": "hospede", "entidade_ids": ["CASA-FAT"], "local": "reviews.md, B-002", "recolhido_em": "2026-09-21", "publicado_em": "2026-09-07"},
+    {"id": "EVID-FAT-B014", "origem": "hospede", "entidade_ids": ["CASA-FAT"], "local": "reviews.md, B-014", "recolhido_em": "2026-09-21", "publicado_em": "2026-06-14"},
+    {"id": "EVID-FAT-FOTOS", "origem": "dono", "entidade_ids": ["CASA-FAT", "ESPACO-FAT-JARDIM"], "local": "marketing/fotos.md, Fontes e Exterior", "bloco": "Fotos enviadas pelo dono", "recolhido_em": "2026-09-17"}
+  ],
+  "afirmacoes": [
+    {"id": "AFIR-FAT-TIPO", "entidade_id": "CASA-FAT", "texto": "A Casa de Fataunços é um empreendimento de Turismo de Habitação registado no RNET sob o número 5352.", "natureza": "facto", "categoria": "geral", "origem": "registo_publico", "estado": "confirmado", "uso": "afirmar", "evidencia_ids": ["EVID-FAT-RNT"]},
+    {"id": "AFIR-FAT-VOUZELA", "entidade_id": "CASA-FAT", "texto": "A casa pertence ao concelho de Vouzela.", "natureza": "facto", "categoria": "geral", "origem": "registo_publico", "estado": "confirmado", "uso": "afirmar", "evidencia_ids": ["EVID-FAT-RNT"]},
+    {"id": "AFIR-FAT-SECULO", "entidade_id": "CASA-FAT", "texto": "A casa apresenta-se como um solar do século XVIII.", "natureza": "facto", "categoria": "geral", "origem": "casa", "estado": "confirmado", "uso": "afirmar", "evidencia_ids": ["EVID-FAT-SITE"]},
+    {"id": "AFIR-FAT-JARDINS", "entidade_id": "ESPACO-FAT-JARDIM", "texto": "A casa publica jardins e espaços de lazer como parte da estadia.", "natureza": "facto", "categoria": "geral", "origem": "casa", "estado": "confirmado", "uso": "afirmar", "evidencia_ids": ["EVID-FAT-SITE", "EVID-FAT-FOTOS"]},
+    {"id": "AFIR-FAT-PISCINA", "entidade_id": "CASA-FAT", "texto": "A piscina foi indicada no Booking como aberta de 1 de junho a 30 de setembro.", "natureza": "facto", "categoria": "politica", "origem": "plataforma", "estado": "confirmado", "uso": "afirmar_com_condicao", "evidencia_ids": ["EVID-FAT-BOOKING"], "ambito": {"canal": "Booking", "recolhido_em": "2026-09-17"}, "condicao": "Confirmar as datas da época antes de publicar ou aceitar reserva."},
+    {"id": "AFIR-FAT-QUARTOS-BOOKING", "entidade_id": "CASA-FAT", "texto": "O Booking observava Quarto Duplo, Individual, Twin Superior, Twin Standard, Triplo, Familiar e Villa com 2 Quartos.", "natureza": "facto", "categoria": "inventario", "origem": "plataforma", "estado": "confirmado", "uso": "afirmar_com_condicao", "evidencia_ids": ["EVID-FAT-BOOKING"], "ambito": {"canal": "Booking", "recolhido_em": "2026-09-17"}, "condicao": "Descrever como tipos observados no Booking; não deduzir o número total de quartos nem equivalências com os nomes do site."},
+    {"id": "AFIR-FAT-MORADA", "entidade_id": "CASA-FAT", "texto": "A casa tem uma morada postal única confirmada.", "natureza": "facto", "categoria": "contacto", "origem": "plataforma", "estado": "conflitante", "uso": "nao_usar", "evidencia_ids": ["EVID-FAT-RNT", "EVID-FAT-BOOKING", "EVID-FAT-SITE"]},
+    {"id": "AFIR-FAT-TOTAL-QUARTOS", "entidade_id": "CASA-FAT", "texto": "A casa tem um total único de quartos confirmado.", "natureza": "facto", "categoria": "inventario", "origem": "casa", "estado": "conflitante", "uso": "nao_usar", "evidencia_ids": ["EVID-FAT-SITE", "EVID-FAT-BOOKING", "EVID-FAT-RNT"]},
+    {"id": "AFIR-FAT-CONCERTOS", "entidade_id": "ESPACO-FAT-SALOES", "texto": "O proprietário dá concertos didáticos atualmente na casa.", "natureza": "facto", "categoria": "geral", "origem": "casa", "estado": "historico", "uso": "nao_usar", "evidencia_ids": ["EVID-FAT-SITE"], "atualidade": "Menções no texto legado e eventos de 2016 não confirmam programação atual."},
+    {"id": "AFIR-FAT-ORIGINAIS", "entidade_id": "CASA-FAT", "texto": "As ampliações de fotografias são originais recuperados.", "natureza": "facto", "categoria": "geral", "origem": "dono", "estado": "desconhecido", "uso": "nao_usar", "evidencia_ids": ["EVID-FAT-DONO"]}
+  ],
+  "citacoes": [
+    {"id": "CIT-FAT-SOLAR", "review_id": "B-002", "texto_original": "É um solar lindo e bem preservado. Os jardins estão muito bem cuidados e as zonas de lazer são excelentes.", "autor": "Helga", "plataforma": "Booking", "data": "2026-09-07", "lingua": "pt"},
+    {"id": "CIT-FAT-ESTADIA", "review_id": "B-014", "texto_original": "Tudo! Adorei ficar aqui. Foi uma experiência incrível em todos os aspectos.", "autor": "Inês", "plataforma": "Booking", "data": "2026-06-14", "lingua": "pt"}
+  ],
+  "ativos": [
+    {"id": "ATIVO-FAT-FACHADA", "caminho": "marketing/fotos/exterior/exterior-02.jpg", "dimensoes": {"largura": 4032, "altura": 2918}, "assunto": "Porta principal do solar com rosas", "publicador": "dono", "entidade_confirmada": "CASA-FAT", "uso": "utilizavel", "restricoes": ["Foto enviada pelo dono; não a associar a tarifa ou quarto."]},
+    {"id": "ATIVO-FAT-QUARTO-MIMOSA", "caminho": "marketing/fotos/interior/quarto-03.jpg", "dimensoes": {"largura": 4080, "altura": 3072}, "assunto": "Quarto Mimosa", "publicador": "dono", "uso": "restrito", "restricoes": ["O dono autorizou a foto do quarto Mimosa, mas a equivalência com o tipo Quarto Duplo do Booking não foi confirmada; usar apenas como quarto Mimosa."]}
+  ],
+  "decisoes": [
+    {"id": "DEC-FAT-FOTOS", "estado": "ativa", "efeito": "bloquear_uso", "texto": "Não apresentar ampliações derivadas como originais recuperados; respeitar a retirada de fotos antigas com colchas e da fotografia de jardim com duas espreguiçadeiras verdes.", "decidido_em": "2026-09-17", "fonte": "email do dono registado em dono.md", "afetados": ["AFIR-FAT-ORIGINAIS", "ATIVO-FAT-QUARTO-MIMOSA"]},
+    {"id": "DEC-FAT-PIANOS", "estado": "ativa", "efeito": "bloquear_uso", "texto": "Não prometer concertos ou programação musical atual a partir de menções históricas aos pianos.", "decidido_em": "2026-09-21", "fonte": "migração Lote D, baseada em descricao-al.md e pontos-fortes.md", "afetados": ["AFIR-FAT-CONCERTOS"]},
+    {"id": "DEC-FAT-IDENTIDADE", "estado": "ativa", "efeito": "bloquear_uso", "texto": "Não publicar uma morada única nem um total de quartos sem reconciliação das fontes.", "decidido_em": "2026-09-21", "fonte": "migração Lote D, baseada em factos.md", "afetados": ["AFIR-FAT-MORADA", "AFIR-FAT-TOTAL-QUARTOS"]}
+  ],
+  "cobertura": [
+    {"id": "COB-FAT-IDENTIDADE", "fonte": "RNT, site, Booking, Airbnb", "material": "identidade", "estado": "parcial", "superficie": "Nome, tipo, concelho, morada e unidades", "observado": 4, "recolhido": 4, "limitacao": "Morada e número total de quartos divergem entre fontes."},
+    {"id": "COB-FAT-REVIEWS", "fonte": "Booking, Google, TripAdvisor e Airbnb", "material": "reviews", "estado": "parcial", "superficie": "293 títulos normalizados nesta migração", "observado": 293, "recolhido": 293, "limitacao": "O legado conservava mais texto do que a lista normalizada; esta migração não substitui uma recolha nova."},
+    {"id": "COB-FAT-QUARTOS", "fonte": "Booking e site", "material": "quartos", "estado": "parcial", "superficie": "Tipos Booking e nomes publicados", "limitacao": "Fichas incompletas e equivalência entre nomes/tipos por confirmar."},
+    {"id": "COB-FAT-FOTOS", "fonte": "Site e dono", "material": "fotos", "estado": "parcial", "superficie": "Índice local e fotos autorizadas", "limitacao": "Booking e Airbnb foram removidos por pedido do dono; ampliações não são originais recuperados."},
+    {"id": "COB-FAT-CANAIS", "fonte": "Booking", "material": "canais", "estado": "bloqueado", "superficie": "Detalhe atual de Booking", "limitacao": "A migração usa a recolha de 2026-09-17; confirmar antes de publicar disponibilidade, política ou tarifa."}
+  ]
+}

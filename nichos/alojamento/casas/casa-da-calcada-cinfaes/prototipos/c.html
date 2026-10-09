@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Casa da Calçada · protótipo c · Telhados</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pedra:#F1EBE3;        /* fundo claro, a pedra ao sol */
+  --pedra-2:#E7DED2;      /* faixa clara alternada */
+  --tinta:#2B211C;        /* texto escuro quente */
+  --tinta-2:#5A4B42;      /* texto secundário */
+  --telha:#8E5A45;        /* terracota dos telhados, dessaturada, para painel */
+  --telha-viva:#A4492A;   /* terracota escura para rótulos em fundo claro */
+  --telha-clara:#DE9668;  /* telha ao sol, só sobre escuro */
+  --granito:#9D978C;      /* filetes */
+  --escuro:#2A1E19;       /* faixa das opiniões */
+  --sobre-escuro:#F3ECE4;
+  --serif:'Instrument Serif', Georgia, serif;
+  --sans:'Barlow', system-ui, sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--pedra)}
+body{background:var(--pedra);color:var(--tinta);font-family:var(--sans);font-size:17px;line-height:1.6;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+
+.rotulo{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--telha-viva)}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(48px,7vw,104px);line-height:.92;letter-spacing:-.01em;text-transform:uppercase}
+h2 em{font-style:italic;text-transform:none;color:var(--telha-viva)}
+
+/* faixa do nome */
+.nome{display:flex;justify-content:space-between;align-items:baseline;padding:18px clamp(16px,4vw,56px);border-bottom:1px solid var(--granito)}
+.nome strong{font-family:var(--serif);font-weight:400;font-size:30px;letter-spacing:.04em;text-transform:uppercase}
+.nome a{font-size:13px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;color:var(--telha-viva)}
+
+/* foto a toda a largura */
+.largura{width:100%;height:clamp(300px,64vh,620px);object-fit:cover}
+
+/* 2. A casa: título grande à esquerda, coluna estreita à direita */
+.casa{display:grid;grid-template-columns:1fr minmax(0,420px);gap:clamp(32px,6vw,120px);padding:clamp(56px,8vw,112px) clamp(16px,6vw,96px);align-items:start}
+.casa h2{margin-top:18px}
+.casa .coluna p+p{margin-top:18px}
+.casa .coluna p:first-child::first-letter{font-family:var(--serif);font-size:64px;float:left;line-height:.8;margin:6px 10px 0 0;color:var(--telha-viva)}
+.casa .onde{padding-top:18px;border-top:1px solid var(--granito);color:var(--tinta-2)}
+
+/* 3. A capela: faixa clara alternada, foto pequena e citações em escada */
+.capela{background:var(--pedra-2)}
+.capela-corpo{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:clamp(32px,5vw,80px);padding:clamp(56px,7vw,96px) clamp(16px,6vw,96px)}
+.capela-corpo .lado h2{margin:18px 0 22px}
+.capela-corpo .lado p{max-width:32ch}
+.capela-corpo .lado figure{margin-top:36px}
+.capela-corpo .lado img{width:100%;max-width:360px;aspect-ratio:3/2;object-fit:cover;object-position:30% 42%}
+.citas{display:flex;flex-direction:column;gap:44px;justify-content:center}
+.citas blockquote{max-width:620px;padding-left:28px;border-left:2px solid var(--telha)}
+.citas blockquote:nth-child(2){margin-left:auto}
+.citas q{display:block;font-family:var(--serif);font-size:clamp(26px,2.6vw,36px);line-height:1.18;quotes:"“" "”"}
+.citas .trad{margin-top:10px;color:var(--tinta-2);font-size:16px}
+.citas cite{display:block;margin-top:12px;font-style:normal;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--telha-viva)}
+
+/* 4. Os quartos: o momento forte, painel de telha com números grandes */
+.quartos{background:var(--telha);color:var(--sobre-escuro);padding:clamp(56px,7vw,104px) clamp(16px,6vw,96px)}
+.quartos .rotulo{color:var(--sobre-escuro);opacity:.85}
+.quartos-topo{display:grid;grid-template-columns:1fr minmax(0,440px);gap:40px;align-items:end;padding-bottom:40px;border-bottom:1px solid rgba(243,236,228,.45)}
+.quartos-topo h2{margin-top:18px}
+.grandes{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin:48px 0 8px}
+.num{font-family:var(--serif);font-size:clamp(120px,16vw,240px);line-height:.8;letter-spacing:-.03em}
+.grandes .leg{display:block;margin-top:14px;font-size:13px;font-weight:600;letter-spacing:.22em;text-transform:uppercase}
+.tipos{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:48px;border-top:1px solid rgba(243,236,228,.45)}
+.tipos li{list-style:none;padding:24px 24px 8px 0}
+.tipos li+li{padding-left:24px;border-left:1px solid rgba(243,236,228,.45)}
+.tipos .n{font-family:var(--serif);font-size:72px;line-height:1;color:var(--sobre-escuro)}
+.tipos h3{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;margin:8px 0 10px}
+.tipos p{font-size:16px;line-height:1.5}
+.quartos-fotos{display:grid;grid-template-columns:7fr 5fr;gap:24px;margin-top:56px;align-items:end}
+.quartos-fotos img{width:100%;object-fit:cover}
+.quartos-fotos .a{aspect-ratio:3/2;max-width:760px;object-position:35% 85%}
+.quartos-fotos .b{aspect-ratio:4/5;max-width:540px;object-position:51% 64%}
+.pa{margin-top:32px;font-family:var(--serif);font-size:clamp(26px,2.4vw,34px);font-style:italic}
+
+/* 5. Dentro e fora: foto larga, texto curto sobreposto a uma coluna, fila de espaços */
+.fora-texto{display:grid;grid-template-columns:minmax(0,380px) minmax(0,420px) 1fr;gap:clamp(24px,4vw,64px);padding:clamp(56px,7vw,96px) clamp(16px,6vw,96px) 40px;align-items:start}
+.fora-texto h2{margin-top:18px}
+.fora-texto p+p{margin-top:16px}
+.fora-texto blockquote{align-self:end;font-family:var(--serif);font-size:24px;line-height:1.25}
+.fora-texto blockquote cite{display:block;margin-top:12px;font-family:var(--sans);font-style:normal;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--telha-viva)}
+.fila{display:grid;grid-template-columns:repeat(3,1fr);gap:0;padding:0 clamp(16px,6vw,96px) clamp(56px,7vw,96px)}
+.fila figure{border-top:1px solid var(--granito);padding:20px 20px 0 0}
+.fila figure+figure{padding-left:20px;border-left:1px solid var(--granito)}
+.fila img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.fila figcaption{margin-top:14px;font-size:16px;line-height:1.5;color:var(--tinta-2)}
+.fila figcaption b{display:block;margin-bottom:4px;font-size:13px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--telha-viva)}
+
+/* 6. A casa inteira: faixa estreita, título a correr, citação grande */
+.inteira{display:grid;grid-template-columns:auto 1fr;gap:clamp(32px,6vw,120px);align-items:center;margin:0 clamp(16px,6vw,96px);padding:clamp(48px,6vw,80px) 0;border-top:1px solid var(--granito)}
+.inteira h2{font-size:clamp(44px,5.4vw,80px)}
+.inteira .facto{margin-top:18px;max-width:30ch}
+.inteira blockquote q{display:block;font-family:var(--serif);font-style:italic;font-size:clamp(28px,3vw,42px);line-height:1.15;quotes:"“" "”"}
+.inteira .trad{margin-top:12px;color:var(--tinta-2);font-size:16px;max-width:60ch}
+.inteira cite{display:block;margin-top:12px;font-style:normal;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--telha-viva)}
+
+/* 7. Quem já ficou: faixa escura */
+.ficou{background:var(--escuro);color:var(--sobre-escuro);padding:clamp(56px,7vw,104px) clamp(16px,6vw,96px)}
+.ficou .rotulo{color:var(--telha-clara)}
+.ficou-topo{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;padding-bottom:40px;border-bottom:1px solid rgba(243,236,228,.25)}
+.ficou-topo h2{margin-top:18px}
+.ficou-topo h2 em{color:var(--telha-clara)}
+.notas{display:flex;gap:56px}
+.notas .num{font-size:clamp(88px,9vw,136px);color:var(--telha-clara)}
+.notas p{margin-top:10px;font-size:16px;max-width:24ch;color:#D9CFC5}
+.opinioes{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:0}
+.opinioes blockquote{padding:36px 28px 0 0}
+.opinioes blockquote+blockquote{padding-left:28px;border-left:1px solid rgba(243,236,228,.25)}
+.opinioes q{display:block;font-family:var(--serif);font-size:25px;line-height:1.2;quotes:"“" "”"}
+.opinioes .trad{margin-top:12px;font-size:16px;color:#D9CFC5}
+.opinioes cite{display:block;margin-top:16px;font-style:normal;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--telha-clara)}
+
+/* 8. Consultar disponibilidade */
+.aerea{width:100%;aspect-ratio:1600/633;object-fit:cover;object-position:60% 45%}
+.contacto{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:clamp(32px,5vw,80px);padding:clamp(56px,7vw,96px) clamp(16px,6vw,96px)}
+.contacto h2{margin:18px 0 22px;font-size:clamp(44px,5.4vw,80px)}
+.contacto .intro{max-width:34ch}
+.linhas{list-style:none;border-top:1px solid var(--granito)}
+.linhas li{border-bottom:1px solid var(--granito)}
+.linhas a{display:flex;justify-content:space-between;gap:16px;padding:18px 0;text-decoration:none;font-family:var(--serif);font-size:30px;line-height:1.1}
+.linhas a span{align-self:center;font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--telha-viva)}
+.linhas a:hover{color:var(--telha-viva)}
+.pratico p+p{margin-top:16px}
+.pratico .rotulo{display:block;margin-bottom:6px}
+.pratico .reg{margin-top:28px;padding-top:16px;border-top:1px solid var(--granito);font-size:16px;color:var(--tinta-2)}
+
+/* telemóvel */
+@media (max-width:900px){
+  .casa,.capela-corpo,.quartos-topo,.fora-texto,.inteira,.contacto,.ficou-topo{grid-template-columns:1fr;display:grid}
+  .grandes{margin-top:36px}
+  .tipos{grid-template-columns:1fr 1fr}
+  .tipos li,.tipos li+li{padding:20px 12px 8px 0;border-left:0}
+  .tipos li:nth-child(even){padding-left:16px;border-left:1px solid rgba(243,236,228,.45)}
+  .quartos-fotos{grid-template-columns:1fr}
+  .quartos-fotos .b{aspect-ratio:3/2}
+  .fila{grid-template-columns:1fr}
+  .fila figure+figure{padding-left:0;border-left:0;margin-top:24px}
+  .opinioes{grid-template-columns:1fr}
+  .opinioes blockquote+blockquote{padding-left:0;border-left:0;border-top:1px solid rgba(243,236,228,.25);margin-top:28px}
+  .notas{gap:32px}
+  .citas blockquote:nth-child(2){margin-left:0}
+  .aerea{aspect-ratio:4/3}
+  .nome strong{font-size:24px}
+  .nome a{display:none}
+}
+</style>
+</head>
+<body>
+
+<header class="nome">
+  <strong>Casa da Calçada</strong>
+  <a href="#disponibilidade">Consultar disponibilidade ›</a>
+</header>
+
+<!-- 2. A casa -->
+<section aria-labelledby="t-casa">
+  <img class="largura" src="fotos/capela-05.jpg" alt="A torre sineira e os edifícios de cantaria de granito, com arbustos floridos em primeiro plano" style="object-position:55% 25%">
+  <div class="casa">
+    <div>
+      <p class="rotulo">A casa</p>
+      <h2 id="t-casa">História<br>e <em>Requinte</em></h2>
+    </div>
+    <div class="coluna">
+      <p>A casa começou como construção rural em granito, cresceu no século XVIII até à forma que tem hoje, e foi depois adaptada pelo Monsenhor António Pinto d'Abreu para servir de colónia de férias de verão aos alunos e professores do colégio Vasco da Gama, de Lisboa.</p>
+      <p>O arquiteto António Couto d'Abreu desenhou então a capela e a varanda de acesso, acrescentadas à empena leste, que passou a ser a entrada.</p>
+      <p>A cantaria foi executada à mão, com técnicas e materiais da região.</p>
+      <p class="onde">Fica na encosta virada a norte, junto à E.N. 222, a cerca de 6 km de Cinfães e 10 km de Resende.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 3. A capela -->
+<section class="capela" aria-labelledby="t-capela">
+  <img class="largura" src="fotos/capela-06.jpg" alt="Os telhados da casa, com a torre sineira e a torre ameada ao fundo, por cima de uma sebe" style="object-position:81% 42%">
+  <div class="capela-corpo">
+    <div class="lado">
+      <p class="rotulo">Só nesta casa</p>
+      <h2 id="t-capela">A <em>capela</em></h2>
+      <p>A quinta tem capela própria, reconstruída, com torre sineira e vitrais.</p>
+      <figure>
+        <img src="fotos/capela-interior-01.jpg" alt="O interior da capela, com o altar de pedra e os bancos de madeira">
+      </figure>
+    </div>
+    <div class="citas">
+      <blockquote>
+        <q>Absolutely beautiful property, lovely setting and a beautiful conversion of an old church.</q>
+        <p class="trad">Propriedade absolutamente linda, enquadramento adorável e uma bela conversão de uma igreja antiga.</p>
+        <cite>James · Booking</cite>
+      </blockquote>
+      <blockquote>
+        <q>Mohli jsme projít cely dům a kapli.</q>
+        <p class="trad">Pudemos percorrer a casa inteira e a capela.</p>
+        <cite>Cyrany · Booking</cite>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- 4. Os quartos: o momento forte -->
+<section class="quartos" aria-labelledby="t-quartos">
+  <div class="quartos-topo">
+    <div>
+      <p class="rotulo">Onde se dorme</p>
+      <h2 id="t-quartos">Os quartos</h2>
+    </div>
+    <p>A casa tem 10 quartos e 20 camas: 8 quartos na casa principal e 2 na casa de pedra junto à piscina.</p>
+  </div>
+
+  <div class="grandes" aria-hidden="true">
+    <div><span class="num">10</span><span class="leg">quartos</span></div>
+    <div><span class="num">20</span><span class="leg">camas</span></div>
+  </div>
+
+  <ul class="tipos">
+    <li><span class="n">2</span><h3>Suites</h3><p>Há 2 suites com cama de casal e casa de banho privativa, no primeiro andar da casa principal.</p></li>
+    <li><span class="n">6</span><h3>Quartos duplos</h3><p>Há 6 quartos duplos com duas camas de solteiro e casa de banho privativa.</p></li>
+    <li><span class="n">4</span><h3>Águas-furtadas</h3><p>Quatro dos quartos ficam no segundo andar, com ar condicionado, tectos panorâmicos e claraboias viradas ao vale.</p></li>
+    <li><span class="n">2</span><h3>Casa de pedra</h3><p>Junto à piscina há uma casa de pedra independente com 2 quartos duplos com ar condicionado, casa de banho, sala com kitchenette e varanda.</p></li>
+  </ul>
+
+  <div class="quartos-fotos">
+    <img class="a" src="fotos/quarto-casal-01.jpg" alt="Quarto de paredes de pedra pintadas de branco, com cama de casal e duas janelas">
+    <img class="b" src="fotos/quarto-aguas-furtadas-02.jpg" alt="Quarto das águas-furtadas, com teto inclinado de madeira e claraboias">
+  </div>
+  <p class="pa">Todas as estadias incluem o pequeno-almoço.</p>
+</section>
+
+<!-- 5. Dentro e fora -->
+<section aria-labelledby="t-fora">
+  <img class="largura" src="fotos/piscina-torre-02.jpg" alt="A piscina com a torre da capela e os telhados ao fundo" style="object-position:62% 32%">
+  <div class="fora-texto">
+    <div>
+      <p class="rotulo">Os dias na quinta</p>
+      <h2 id="t-fora">Dentro<br><em>e fora</em></h2>
+    </div>
+    <div>
+      <p>A quinta tem piscina exterior com balneários de apoio.</p>
+      <p>Tem court de ténis, que serve também de campo de futebol.</p>
+    </div>
+    <blockquote>
+      “O que mais gostei foi a envolvencia em que o alojamento se encontra, com espaços verdes e generosos, ideal para momentos de descanso.”
+      <cite>Maria · Booking</cite>
+    </blockquote>
+  </div>
+  <div class="fila">
+    <figure>
+      <img src="fotos/glicinias-alameda-01.jpg" alt="Caminho de calçada sob a pérgula, ao longo do muro de granito" style="object-position:48% 60%">
+      <figcaption><b>Fora</b>Tem jardins, patamares panorâmicos com vista sobre a propriedade e sobre o rio Douro, hortas e árvores de fruto.</figcaption>
+    </figure>
+    <figure>
+      <img src="fotos/bilhar-01.jpg" alt="Sala de jogos com mesa de bilhar e parede de cantaria" style="object-position:68% 66%">
+      <figcaption><b>Dentro</b>Dentro, os hóspedes têm à disposição salas de estar e de jantar com lareira, salão de jogos com bilhar, salão para jantares e cozinha equipada.</figcaption>
+    </figure>
+    <figure>
+      <img src="fotos/mesa-posta-01.jpg" alt="Mesa de jantar posta numa sala de paredes de granito" style="object-position:68% 66%">
+      <figcaption><b>A cozinha</b>A cozinha industrial com forno a lenha está ao dispor dos hóspedes.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- 6. A casa inteira -->
+<section class="inteira" aria-labelledby="t-inteira">
+  <div>
+    <p class="rotulo">Para um grupo</p>
+    <h2 id="t-inteira">A casa<br><em>inteira</em></h2>
+    <p class="facto">A casa principal pode ser reservada inteira, para um grupo.</p>
+  </div>
+  <blockquote>
+    <q>I could easily imagine a whole big extended family staying here for a wedding or reunion or group retreat.</q>
+    <p class="trad">Conseguia bem imaginar uma família grande inteira aqui para um casamento, um reencontro ou um retiro de grupo.</p>
+    <cite>Ann Meyer · Google Maps</cite>
+  </blockquote>
+</section>
+
+<!-- 7. Quem já ficou -->
+<section class="ficou" aria-labelledby="t-ficou">
+  <div class="ficou-topo">
+    <div>
+      <p class="rotulo">Opiniões</p>
+      <h2 id="t-ficou">Quem já <em>ficou</em></h2>
+    </div>
+    <div class="notas">
+      <div><span class="num">8,8</span><p>Booking: 8,8 em 10, em 46 comentários (lido a 22 de setembro de 2026).</p></div>
+      <div><span class="num">4,4</span><p>Google Maps: 4,4 em 5, em 152 críticas (lido a 22 de setembro de 2026).</p></div>
+    </div>
+  </div>
+  <div class="opinioes">
+    <blockquote>
+      <q>Muito bem recebido pela anfitriã. Senti-me em casa.</q>
+      <cite>Luis · Booking</cite>
+    </blockquote>
+    <blockquote>
+      <q>É um local calmo e muito sossegado, ideal para descansar e desligar do mundo.</q>
+      <cite>Johnny Lino · Google Maps</cite>
+    </blockquote>
+    <blockquote>
+      <q>You feel like at your rich grand-parents home.</q>
+      <p class="trad">Sente-se como na casa dos seus avós ricos.</p>
+      <cite>Marc L. · Google Maps</cite>
+    </blockquote>
+    <blockquote>
+      <q>Very caring and welcoming staff. They met me at a late check-in, left a late breakfast, were always in touch</q>
+      <p class="trad">Pessoal muito atencioso e acolhedor. Receberam-me num check-in tardio, deixaram um pequeno-almoço para mais tarde, estiveram sempre em contacto.</p>
+      <cite>Ilya · Booking</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- 8. Consultar disponibilidade -->
+<section id="disponibilidade" aria-labelledby="t-disp">
+  <img class="aerea" src="fotos/aerea-01.jpg" alt="Vista aérea da quinta: o court de ténis, a piscina, a capela com a torre e a casa principal">
+  <div class="contacto">
+    <div>
+      <p class="rotulo">Reservas</p>
+      <h2 id="t-disp">Consultar <em>disponibilidade</em></h2>
+      <p class="intro">A reserva faz-se por contacto direto: a casa responde a confirmar a disponibilidade.</p>
+    </div>
+    <ul class="linhas">
+      <li><a href="tel:+351936345815">+351 936 345 815 <span>Telemóvel</span></a></li>
+      <li><a href="tel:+351932476339">+351 932 476 339 <span>Telemóvel</span></a></li>
+      <li><a href="mailto:geral@casacalcada.com">geral@casacalcada.com <span>Email</span></a></li>
+    </ul>
+    <div class="pratico">
+      <p><span class="rotulo">Morada</span>Lugar da Calçada, Oliveira do Douro, 4690 Cinfães.</p>
+      <p><span class="rotulo">Horários</span>Check-in das 15:00 às 20:00. Check-out até às 12:00.</p>
+      <p>Não são admitidos animais de estimação.</p>
+      <p class="reg">Registo 1375</p>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

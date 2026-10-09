@@ -1,0 +1,211 @@
+[
+  {
+    "ficheiro": "vista-02.jpg",
+    "ativo": "ATIVO-exterior_vista-02",
+    "primeiro_ecra": true,
+    "largura_no_ecra": 1440,
+    "metodo": "original",
+    "nota": "",
+    "jpg": "vista-02.jpg",
+    "largura": 2400,
+    "altura": 1600
+  },
+  {
+    "ficheiro": "piscina-04.jpg",
+    "ativo": "ATIVO-exterior_piscina-04",
+    "primeiro_ecra": false,
+    "largura_no_ecra": 1440,
+    "metodo": "original",
+    "nota": "",
+    "jpg": "piscina-04.jpg",
+    "largura": 2400,
+    "altura": 1600
+  },
+  {
+    "ficheiro": "vista-01.jpg",
+    "ativo": "ATIVO-exterior_vista-01",
+    "primeiro_ecra": false,
+    "largura_no_ecra": 960,
+    "metodo": "original",
+    "nota": "",
+    "jpg": "vista-01.jpg",
+    "largura": 2400,
+    "altura": 1600
+  },
+  {
+    "ficheiro": "detalhe-01.jpg",
+    "ativo": "ATIVO-exterior_detalhe-01",
+    "primeiro_ecra": false,
+    "largura_no_ecra": 960,
+    "metodo": "original",
+    "nota": "",
+    "jpg": "detalhe-01.jpg",
+    "largura": 2400,
+    "altura": 1600
+  },
+  {
+    "ficheiro": "cozinha-01.jpg",
+    "ativo": "ATIVO-exterior_cozinha-01",
+    "primeiro_ecra": false,
+    "largura_no_ecra": 720,
+    "metodo": "original",
+    "nota": "",
+    "jpg": "cozinha-01.jpg",
+    "largura": 2400,
+    "altura": 1600
+  },
+  {
+    "ficheiro": "sala-03.jpg",
+    "ativo": "ATIVO-interior_sala-03",
+    "primeiro_ecra": false,
+    "largura_no_ecra": 1440,
+    "metodo": "original",
+    "nota": "",
+    "jpg": "sala-03.jpg",
+    "largura": 2400,
+    "altura": 1600
+  },
+  {
+    "ficheiro": "cozinha-02.jpg",
+    "ativo": "ATIVO-interior_cozinha-02",
+    "primeiro_ecra": false,
+    "largura_no_ecra": 376,
+    "metodo": "original",
+    "nota": "",
+    "jpg": "cozinha-02.jpg",
+    "largura": 2400,
+    "altura": 1597
+  },
+  {
+    "ficheiro": "quarto-08.jpg",
+    "ativo": "ATIVO-interior_quarto-08",
+    "primeiro_ecra": false,
+    "largura_no_ecra": 652,
+    "metodo": "original",
+    "nota": "",
+    "jpg": "quarto-08.jpg",
+    "largura": 2400,
+    "altura": 1600
+  },
+  {
+    "ficheiro": "quarto-03.jpg",
+    "ativo": "ATIVO-interior_quarto-03",
+    "primeiro_ecra": false,
+    "largura_no_ecra": 384,
+    "metodo": "original",
+    "nota": "",
+    "jpg": "quarto-03.jpg",
+    "largura": 2400,
+    "altura": 1597
+  },
+  {
+    "ficheiro": "vista-03.jpg",
+    "ativo": "ATIVO-exterior_vista-03",
+    "primeiro_ecra": false,
+    "largura_no_ecra": 1440,
+    "metodo": "original",
+    "nota": "",
+    "jpg": "vista-03.jpg",
+    "largura": 2400,
+    "altura": 1600
+  },
+  {
+    "ficheiro": "regiao-rota-dos-cerejais.jpg",
+    "ativo": "ATIVO-regiao_rota-dos-cerejais",
+    "primeiro_ecra": false,
+    "largura_no_ecra": 286,
+    "metodo": "original",
+    "nota": "",
+    "jpg": "regiao-rota-dos-cerejais.jpg",
+    "largura": 2400,
+    "altura": 1546
+  },
+  {
+    "ficheiro": "regiao-barro.jpg",
+    "ativo": "ATIVO-regiao_barro",
+    "primeiro_ecra": false,
+    "largura_no_ecra": 286,
+    "metodo": "original",
+    "nota": "",
+    "jpg": "regiao-barro.jpg",
+    "largura": 2400,
+    "altura": 1600
+  },
+  {
+    "ficheiro": "regiao-museu-do-douro.jpg",
+    "ativo": "ATIVO-regiao_museu-do-douro",
+    "primeiro_ecra": false,
+    "largura_no_ecra": 286,
+    "metodo": "original",
+    "nota": "",
+    "jpg": "regiao-museu-do-douro.jpg",
+    "largura": 2400,
+    "altura": 1600
+  },
+  {
+    "ficheiro": "regiao-remedios.jpg",
+    "ativo": "ATIVO-regiao_remedios",
+    "primeiro_ecra": false,
+    "largura_no_ecra": 286,
+    "metodo": "original",
+    "nota": "",
+    "jpg": "regiao-remedios.jpg",
+    "largura": 2048,
+    "altura": 1536
+  },
+  {
+    "ficheiro": "piscina-03.jpg",
+    "ativo": "ATIVO-exterior_piscina-03",
+    "primeiro_ecra": false,
+    "largura_no_ecra": 1440,
+    "metodo": "original",
+    "nota": "",
+    "jpg": "piscina-03.jpg",
+    "largura": 2400,
+    "altura": 1600
+  },
+  {
+    "ficheiro": "fachada-02.jpg",
+    "ativo": "ATIVO-exterior_fachada-02",
+    "primeiro_ecra": false,
+    "largura_no_ecra": 1440,
+    "metodo": "real-esrgan",
+    "nota": "",
+    "jpg": "fachada-02.jpg",
+    "largura": 2400,
+    "altura": 2400
+  },
+  {
+    "ficheiro": "quarto-01.jpg",
+    "ativo": "ATIVO-interior_quarto-01",
+    "primeiro_ecra": false,
+    "largura_no_ecra": 960,
+    "metodo": "original",
+    "nota": "",
+    "jpg": "quarto-01.jpg",
+    "largura": 2400,
+    "altura": 1600
+  },
+  {
+    "ficheiro": "quarto-07.jpg",
+    "ativo": "ATIVO-interior_quarto-07",
+    "primeiro_ecra": false,
+    "largura_no_ecra": 560,
+    "metodo": "original",
+    "nota": "",
+    "jpg": "quarto-07.jpg",
+    "largura": 2400,
+    "altura": 1600
+  },
+  {
+    "ficheiro": "sala-02.jpg",
+    "ativo": "ATIVO-interior_sala-02",
+    "primeiro_ecra": false,
+    "largura_no_ecra": 640,
+    "metodo": "original",
+    "nota": "",
+    "jpg": "sala-02.jpg",
+    "largura": 2400,
+    "altura": 1597
+  }
+]

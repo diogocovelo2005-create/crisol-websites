@@ -1,0 +1,7 @@
+* text=auto eol=lf
+
+# Skills de terceiros: guardar byte a byte, sem normalizar fins de linha.
+# A ui-ux-pro-max valida os seus dados por SHA-256 e o skills-lock.json
+# fixa hashes dos SKILL.md. Normalizar CRLF para LF mudava os bytes num
+# clone limpo e partia as duas verificacoes.
+.claude/skills/** -text

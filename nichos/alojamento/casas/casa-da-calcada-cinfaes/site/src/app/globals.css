@@ -1,0 +1,168 @@
+@import "tailwindcss";
+
+/*
+  Casa da Calcada - Turismo de Habitacao, Oliveira do Douro, Cinfaes.
+
+  Design read: redesign (overhaul) de um site de turismo de habitacao, para
+  casais e grupos que reservam uma noite no Douro, com linguagem editorial
+  de arquivo, sobre Tailwind v4 + EB Garamond + Geist e movimento contido.
+
+  Dials: DESIGN_VARIANCE 7, MOTION_INTENSITY 4, VISUAL_DENSITY 3.
+  MOTION 4 quer dizer entradas e transicoes em transform e opacity, e
+  nenhum scroll preso. Nao ha uma unica seccao que prenda a pagina, e
+  nenhuma animacao corta, tapa ou revela parte de uma fotografia: o
+  material desta casa nao passa dos 1620 px e e o unico argumento visual.
+
+  Cor. A cor dominante medida nas fotografias e o granito, cinzento neutro
+  (rgb 184,184,184). A paleta e por isso ardosia fria mais um unico acento
+  de terracota, que e a telha e os portoes vermelhos da capela. Nao se usa
+  a familia creme-mais-latao-mais-expresso: e o que sai por defeito em
+  qualquer pagina de casa de campo e aqui seria falso, porque esta casa e
+  de pedra cinzenta.
+
+  Forma: tudo recto. Raio 0 em fotografias, cartoes, botoes e campos. Um
+  so sistema, sem excepcoes.
+*/
+
+:root {
+  --p-papel: #efeff0;
+  --p-papel-2: #e5e5e7;
+  --p-cartao: #f7f7f8;
+  --p-tinta: #141618;
+  --p-tinta-2: #585f66;
+  --p-escuro: #1a1d20;
+  --p-escuro-2: #141618;
+  --p-acento: #b4432a;
+  --p-acento-forte: #8c2f18;
+  --p-claro: #f2f2f3;
+  --p-preto: #0e1012;
+  --p-linha: rgba(20, 22, 24, 0.16);
+  --p-linha-clara: rgba(242, 242, 243, 0.22);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --p-papel: #16191c;
+    --p-papel-2: #1d2125;
+    --p-cartao: #1d2125;
+    --p-tinta: #eceef0;
+    --p-tinta-2: #9aa3ab;
+    --p-escuro: #0e1012;
+    --p-escuro-2: #0b0d0f;
+    --p-acento: #e07a5c;
+    --p-acento-forte: #e8917a;
+    --p-claro: #eceef0;
+    --p-preto: #0b0d0f;
+    --p-linha: rgba(236, 238, 240, 0.16);
+    --p-linha-clara: rgba(236, 238, 240, 0.22);
+  }
+}
+
+@theme inline {
+  /* os nomes vem do molde; os valores seguem os tokens acima e viram
+     sozinhos em modo escuro */
+  --color-linho: var(--p-papel);
+  --color-linho-escuro: var(--p-papel-2);
+  --color-cartao: var(--p-cartao);
+
+  --color-tinta: var(--p-tinta);
+  --color-tinta-medio: var(--p-tinta-2);
+
+  --color-floresta: var(--p-escuro);
+  --color-floresta-fundo: var(--p-escuro-2);
+
+  --color-ouro: var(--p-acento);
+  --color-ouro-escuro: var(--p-acento-forte);
+
+  --color-osso: var(--p-claro);
+  --color-noite: var(--p-preto);
+
+  --color-linha: var(--p-linha);
+  --color-linha-clara: var(--p-linha-clara);
+
+  --font-display: var(--fonte-display), 'Times New Roman', serif;
+  --font-corpo: var(--fonte-corpo), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-media: 0px;
+  --radius-botao: 0px;
+}
+
+@layer base {
+  html {
+    background-color: var(--p-papel);
+    color-scheme: light dark;
+  }
+
+  body {
+    font-family: var(--font-corpo);
+    background-color: var(--p-papel);
+    color: var(--p-tinta);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.012em;
+    line-height: 1.06;
+  }
+
+  /* O italico dos titulos e da mesma familia. Com descendentes (y g j p q)
+     precisa de folga em baixo, senao corta. */
+  h1 em, h2 em, h3 em {
+    font-style: italic;
+    line-height: 1.1;
+    padding-bottom: 0.08em;
+  }
+
+  ::selection {
+    background: var(--p-acento);
+    color: var(--p-claro);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--p-acento-forte);
+    outline-offset: 3px;
+  }
+}
+
+@layer utilities {
+  /* Rotulo pequeno em maiusculas. Racionado: a skill de desenho limita-o a
+     um por cada tres seccoes, senao a pagina ganha o mesmo ritmo de
+     qualquer pagina gerada. */
+  .versalete {
+    font-family: var(--font-corpo);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+  }
+
+  /* A legenda por baixo de cada fotografia. Funcional, a dizer o que se
+     esta a ver, nunca por cima da imagem. */
+  .legenda {
+    font-family: var(--font-corpo);
+    font-size: 0.8rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--p-tinta-2);
+  }
+
+  .sem-barra::-webkit-scrollbar {
+    display: none;
+  }
+  .sem-barra {
+    scrollbar-width: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

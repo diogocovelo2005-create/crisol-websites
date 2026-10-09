@@ -1,0 +1,1075 @@
+{
+  "versao_validador": "1.0.0",
+  "dossie": "dossie",
+  "resultado": "aprovado",
+  "erros": [],
+  "avisos": [],
+  "verificacoes": [
+    "ficheiros_obrigatorios",
+    "reviews_e_citacoes",
+    "quartos",
+    "pontos_fortes",
+    "fotos",
+    "contrato"
+  ],
+  "impressao_digital": {
+    "sha256": "d0fec5ee2fd6dcf83c12ddaca61834b5f109549ece44926087580104d41dc52c",
+    "ficheiros": [
+      {
+        "caminho": "canais.md",
+        "bytes": 5035,
+        "sha256": "8d3601b83f6b028002c4c73f1ac32b242593fad453427dcd6f594ec4e0f1656b"
+      },
+      {
+        "caminho": "compliance.md",
+        "bytes": 3296,
+        "sha256": "20f973c7e18ccdfa27711db76cc96eaee25542300a330bb6caa35f700cb744e9"
+      },
+      {
+        "caminho": "contrato.json",
+        "bytes": 86569,
+        "sha256": "4524375eafc8e89623845bfbfbe671e62ebaa82f18459130c84c0f1b8afc845c"
+      },
+      {
+        "caminho": "descricao-al.md",
+        "bytes": 8111,
+        "sha256": "eb040f9415c9428cfe4423a4010c94b1f9849096a4fef9b781806f77404bceb0"
+      },
+      {
+        "caminho": "dono.md",
+        "bytes": 2371,
+        "sha256": "eeb8bb2b36795c702aa9919eb60b2b1f50a6b00ac9e843d0ff99d326bf45300e"
+      },
+      {
+        "caminho": "factos.md",
+        "bytes": 15639,
+        "sha256": "c90a2dfd1c71ea43e1628c142b9efc51d9a7c8224c05df2596e0f8fe07b0e34c"
+      },
+      {
+        "caminho": "fontes.md",
+        "bytes": 11370,
+        "sha256": "0106a2adf0e84c773f56aaad1e77f7789153a865e5e29258fe001a72754c77a0"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/exterior/alpendre-01.jpg",
+        "bytes": 317232,
+        "sha256": "0b8041eba92d8192e29ba1b5d9805022b8e7516603299cafd4aa29a72f05f2ed"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/exterior/alpendre-02.jpg",
+        "bytes": 71517,
+        "sha256": "d9a1160e2394a09d90621c4277fe8b671b39452549741b3c707625c64401f5bf"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/exterior/alpendre-03.jpg",
+        "bytes": 2827505,
+        "sha256": "45a9170d02fb003227c035a414766d7bc81e837fe2bdf120510cbb5623147977"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/exterior/detalhe-01.jpg",
+        "bytes": 748173,
+        "sha256": "f32b51f4bc27964ef4fa838c70952451af04f34036409dad66311e07035f9ebe"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/exterior/detalhe-02.jpg",
+        "bytes": 634949,
+        "sha256": "f5afc1891fb67f2677a46d06d1ea18e616ffa3a876d3c27839a4a4919f7690b8"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/exterior/detalhe-03.jpg",
+        "bytes": 5337683,
+        "sha256": "89eefe9888a3eeb1106c80873f3b0aaff23f7d247070b99fed9865021b6444c7"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/exterior/detalhe-04.jpg",
+        "bytes": 4362752,
+        "sha256": "534c5c3945189e958a3cb8d1e771ea516c576698dec26530a47274a06ca969c0"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/exterior/detalhe-05.jpg",
+        "bytes": 2696239,
+        "sha256": "f0506c2370c0f723ac5dd10219e56f34b00cc98bf84fb75f4ef544be3de1da4c"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/exterior/fachada-01.jpg",
+        "bytes": 843696,
+        "sha256": "54a3af2f65167066567a18007a4811af553c68ada7513a17463da27e793d1558"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/exterior/fachada-02.jpg",
+        "bytes": 82597,
+        "sha256": "a54b40759db0c8c34af9ea958dd6fec0c54e92568c2a6a756d6fa1db5337a443"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/exterior/fachada-03.jpg",
+        "bytes": 156009,
+        "sha256": "102854d97580c723b968ab77e99dd3d8278b7993488d074ffc2e7600253abd43"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/exterior/jardim-01.jpg",
+        "bytes": 608091,
+        "sha256": "826a9da0c317a4d4df0f9f69c23277af7cf559c3f0182bfd229cfde198bf558d"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/exterior/jardim-02.jpg",
+        "bytes": 846001,
+        "sha256": "7ffe0c2f3bd01232e3bae00492ec3a1ba199f0ac02f3ebf596c3e24a22893dfd"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/exterior/jardim-03.jpg",
+        "bytes": 665250,
+        "sha256": "aa1a5cff21e15ce87d8f6215137c57de93623b651eee78afba45b0c0ea02258e"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/exterior/jardim-04.jpg",
+        "bytes": 386299,
+        "sha256": "eb15bbb91318a0af2830e97b3c650c14f48912ecd574d0056ef31209f3774913"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/exterior/jardim-05.jpg",
+        "bytes": 820969,
+        "sha256": "3feec27c21e737ad3c6306e774499c36115f2a7a4e2c5f1dab49945841e6cb89"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/exterior/jardim-06.jpg",
+        "bytes": 448962,
+        "sha256": "76de532be82b30097db59e60ea94ed66c367fc0a8c1496ad09af12eb1b63f494"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/exterior/jardim-07.jpg",
+        "bytes": 695761,
+        "sha256": "0f7d4035da3034e867b818b2cf700e78db66608d728822f99470711afbb733ed"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/exterior/jardim-08.jpg",
+        "bytes": 116019,
+        "sha256": "72cb2f59dbf3c5815d1008dcda48200e08f467d791985ceba44b103ce2a94547"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/exterior/jardim-09.jpg",
+        "bytes": 755085,
+        "sha256": "786d72f74b359ca984889711cbcf27858cb7f8b7e84fd92e2de2e1b968b69e9c"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/exterior/jardim-10.jpg",
+        "bytes": 3984926,
+        "sha256": "a8d8370762ada74b0680a0f9d6b67e38d9d2e10ce431a7551fe9e5c92268ef65"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/exterior/patio-01.jpg",
+        "bytes": 59570,
+        "sha256": "350b1a8e9efe8b6c965f521ef7c3394de444345f0e9e6ee8a98340f11c957752"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/exterior/patio-02.jpg",
+        "bytes": 844330,
+        "sha256": "e042aced106c678ab4e6720a015f397f2c399216e800f867af40149e62d6f320"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/exterior/patio-03.jpg",
+        "bytes": 206126,
+        "sha256": "bb801580ab8091abec79a2bf1009ad2de1fde070c774d6f2e6f90f28e0c4edb6"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/exterior/patio-04.jpg",
+        "bytes": 508630,
+        "sha256": "0813328a351ce7a0a1459789e8ade2f32732578e82e5d31a592b4a299f755270"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/exterior/patio-05.jpg",
+        "bytes": 82827,
+        "sha256": "b4c78aa7f557892289c4245e9f5da11a034eef1c791cdf48b649f32dcc3e63e6"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/exterior/patio-06.jpg",
+        "bytes": 57690,
+        "sha256": "9c189da0fa5125cfe8f0bf817fe0acff46437d308aa5a473b105eefa6308e776"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/exterior/patio-07.jpg",
+        "bytes": 104688,
+        "sha256": "80bac79726c7159691b7009da04963657655dc41122bed14468c1e96af8ff85b"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/exterior/patio-08.jpg",
+        "bytes": 979628,
+        "sha256": "cc21ddea74558dc052ba67a8cb8a826fb7b67de83ca0a51913e20273cb83fbb2"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/exterior/patio-09.jpg",
+        "bytes": 144327,
+        "sha256": "833550f30a7c7fe41c411dda6a31305f41a06611498b40c42e54bbdcdd4d811e"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/exterior/patio-10.jpg",
+        "bytes": 10174,
+        "sha256": "8fd730165643c9c249d273321a1c9f8d9f4956ae6a33df4713afa7163efa46ef"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/exterior/patio-11.jpg",
+        "bytes": 6401924,
+        "sha256": "7abe2ac846d9f78be7c326d3dc53745c44cb9d950dc6dabad3e8c05338c8da2c"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/exterior/patio-12.jpg",
+        "bytes": 6683390,
+        "sha256": "0a1236b383abc8666b0bd209484b3bf70bdfc7e88b738468ad54e4ed297751af"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/exterior/patio-13.jpg",
+        "bytes": 5173841,
+        "sha256": "581cace5ea17f83588e17d697c61785039365fa628e3b3274e916bdf431c9dc0"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/exterior/patio-14.jpg",
+        "bytes": 2014899,
+        "sha256": "02791a300fd37c99986e1e3c19fd849e8a7d63b580de4de59c0e5958a7df64ac"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/exterior/piscina-01.jpg",
+        "bytes": 234539,
+        "sha256": "beec92fe1d96351ca8daaf1729b0430454324a1c34095c5575c8424eb8aa4fda"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/exterior/piscina-02.jpg",
+        "bytes": 321068,
+        "sha256": "2813b34ca3b2247b8ffda7180a90663b0212cebc7e8dc7e6499186f624a3bbe1"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/exterior/piscina-03.jpg",
+        "bytes": 427692,
+        "sha256": "0dfa322861bcc96e72dc6d0e201d00834f3ffb9a5db77649cf2232a63cfb39ad"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/exterior/piscina-04.jpg",
+        "bytes": 65289,
+        "sha256": "47ad712db38a6a79738319d80bd31096c56c3ca592337b669573ad67093d55b0"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/exterior/piscina-05.jpg",
+        "bytes": 339603,
+        "sha256": "9ee9241e848c29a7a3c8b654ab7d337cc3c57d3597f062c36a2ae7d56cc4eef6"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/exterior/piscina-06.jpg",
+        "bytes": 208235,
+        "sha256": "0e9ce3fc955b2cb0b08edf0fa0df18e337e7bbcebc901cecf9136dd07b29f9f0"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/exterior/piscina-07.jpg",
+        "bytes": 2744001,
+        "sha256": "1d07c2037e99d20a2eec857ac47aa7b2901b34533f132090c75cfe565575416a"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/exterior/piscina-08.jpg",
+        "bytes": 970622,
+        "sha256": "cf793034f19071f5fd0637cb20033ed69a5003f428789ed6fecd96fde2ebcb18"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/exterior/vista-01.jpg",
+        "bytes": 673376,
+        "sha256": "703a2fae4ca677730f1634d343ba7d06a6b8d04a80fed009c880fa3e1bc0e33a"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/exterior/vista-02.jpg",
+        "bytes": 371037,
+        "sha256": "b92b0466f19eeb6d7974e44dde540f661cf8df0a18b7b7a655d061682d550403"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/exterior/vista-03.jpg",
+        "bytes": 377405,
+        "sha256": "00abcf4eaf590b04fecca18de55ef8f86e2bf71c66706a988223d13f28a471a6"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/exterior/vista-04.jpg",
+        "bytes": 1133963,
+        "sha256": "f8d600b5f1be37c2f04fd3bf69b3929f8fd0483f0fc8055607dda9034524624e"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/exterior/vista-05.jpg",
+        "bytes": 943211,
+        "sha256": "2980ee5b2f86a9c769ecdf6c9254b19661484695acdf4a5d0ed4c4876184b166"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/interior/adega-01.jpg",
+        "bytes": 280351,
+        "sha256": "2a600c39d675e7357d8d3a9f3fb41eff65a0aab6d10e29b4ba8ebd831a9c5777"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/interior/adega-02.jpg",
+        "bytes": 92327,
+        "sha256": "2c63f286426c42dfd3f4ea333fa5395c8bdb698670221f43640ce4053d040495"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/interior/bilhar-01.jpg",
+        "bytes": 1686435,
+        "sha256": "d968ff5b25d185108b52b456da243b474dc1d927fcf79090a5ac95b7f677cac8"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/interior/casa-de-banho-01.jpg",
+        "bytes": 101841,
+        "sha256": "2c5f72c405641a8a9fe007b0a38f3723cdbb5827335831d2edcb19dd205bc9f7"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/interior/corredor-01.jpg",
+        "bytes": 105981,
+        "sha256": "9efad4688a463f9cb87cca943035df2d9148f8b4fcbdcd4a44b2982242732f93"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/interior/corredor-02.jpg",
+        "bytes": 381185,
+        "sha256": "c7dd2490a5463a1e1ef1d7dcce2aba0519c4eccfcffa2e38dab6ada3cc9bcb0e"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/interior/corredor-03.jpg",
+        "bytes": 6540806,
+        "sha256": "87ef5b0ee86e5ff3a039964c19c4f5c977990511640528ae6e90ef55d6ceaaca"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/interior/quarto-01.jpg",
+        "bytes": 363594,
+        "sha256": "0507150e2afd2b38a623953036b0505f7464d9cf9e0d0107dc8db1ef538f5fd6"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/interior/quarto-02.jpg",
+        "bytes": 106057,
+        "sha256": "ae5f3740591a4b03a457f3495db67081067b29e0ac137dc1748f48b02acc9dbb"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/interior/quarto-03.jpg",
+        "bytes": 7021714,
+        "sha256": "29886d8721b5d63fabc4fe639bd644f8220d9377a8f8f1327b43b92399ee14a7"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/interior/quarto-04.jpg",
+        "bytes": 6357695,
+        "sha256": "6983814e777eab1b57928278d8151e23d9f7065306f2bea330d4166a74b8eb2a"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/interior/quarto-05.jpg",
+        "bytes": 214320,
+        "sha256": "5bfeed1e18a08cc55782184ea78ca34ff762f980cf8158ab49a98fc59710ab50"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/interior/refeicoes-01.jpg",
+        "bytes": 204002,
+        "sha256": "9cdbe5ef3199c766ed0605b236c4c2f1af41dcf212ac2451158cb03b1f55f7a7"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/interior/sala-01.jpg",
+        "bytes": 105821,
+        "sha256": "4df35563027bf320f0e9e5d19fc582cff70ef8b17ea4e2182dbf17ba4387016d"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/interior/sala-02.jpg",
+        "bytes": 103164,
+        "sha256": "2e96a6f42979bb16d0f600a9480db41fa4923647bdee6dfdc08f5d8609c00a5b"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/interior/sala-03.jpg",
+        "bytes": 7660751,
+        "sha256": "c1ce015e6aaaca2e0f1e80cd450cf041915ac7383da934e07e1d3b448762db7c"
+      },
+      {
+        "caminho": "marketing/fotos/aido-santo/interior/sala-04.jpg",
+        "bytes": 7022836,
+        "sha256": "747c58b6c8894b45d0ee548cb36842cac67b271fffa809691d58d7012e4e27bf"
+      },
+      {
+        "caminho": "marketing/fotos/capa.jpg",
+        "bytes": 3048225,
+        "sha256": "e9aa7113bd9cc1459751f5ceffc3aa50bb4075863f90fd0b4d4cf993cb7bd7b6"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/exterior/fachada-01.jpg",
+        "bytes": 117185,
+        "sha256": "587b76051294080f26a85b0ef75a1b4c54b0cb9e5fca1e880fee46d476964e07"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/exterior/fachada-02.jpg",
+        "bytes": 134459,
+        "sha256": "2e3f88ab654b05da1af7a0001be16af9e1650eb0ce89f241afecb98dc7343ddc"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/exterior/fachada-03.jpg",
+        "bytes": 1766497,
+        "sha256": "497dc7cf808f06c634bef65e1e62ff40ab5e3b1547624d6e756322fc0b8a66bb"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/adega-01.jpg",
+        "bytes": 431255,
+        "sha256": "0374b2e0005aeca2c5b999f20f5caa1f4fc485e224d3bde7ca93e60befcdfa4b"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/casa-de-banho-01.jpg",
+        "bytes": 266944,
+        "sha256": "5b81fcc70eb5d298f77242f2b360d1be69a35c508ff4653b6a253615c9c6bc1d"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/casa-de-banho-02.jpg",
+        "bytes": 363546,
+        "sha256": "72bdc7d609b10827ac0f22113dea03d1f60926065dffb7b7265d9f16f2b7d7f1"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/casa-de-banho-03.jpg",
+        "bytes": 298567,
+        "sha256": "9b51a86376c643315ff946c1eb3dd753d5a8fee0fbe9bc786a253de3ad8d536b"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/casa-de-banho-04.jpg",
+        "bytes": 328838,
+        "sha256": "60e56ede2c501b974cf96761ac2a8829dc57eed54ab0c82af0bb46ad9e91ffa6"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/casa-de-banho-05.jpg",
+        "bytes": 272492,
+        "sha256": "56b5cf37486711323db3157b1141c436abf9deaaa722c5f1c8270548fe3b5c94"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/casa-de-banho-06.jpg",
+        "bytes": 317449,
+        "sha256": "b65aaf0d493316f402fd679c89aa094b21ca31f616c4a8722640f05a1044725b"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/casa-de-banho-07.jpg",
+        "bytes": 357723,
+        "sha256": "2affc5a897ba0c93e645f22aed85442fd4a4d9384a9a202843f37cb43c0a9a59"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/casa-de-banho-08.jpg",
+        "bytes": 254995,
+        "sha256": "d0747dac03e594716b47a5b822d454d0f7537e0bfc1be7c71f5953f862594b9c"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/casa-de-banho-09.jpg",
+        "bytes": 284345,
+        "sha256": "3e36759fb50f3e421514a2c3954b6654d9ccc8038cbebfc971711fc8f23aa0a1"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/casa-de-banho-10.jpg",
+        "bytes": 114055,
+        "sha256": "df76bffa8066ba617abf6cafe26a65dac38f180f26392bd19dc60498c59f4cb6"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/detalhe-01.jpg",
+        "bytes": 317982,
+        "sha256": "6718ee01eef75e0e956e88a827332f75e61d61a6c15b593afe84a7c1483a5efb"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/detalhe-02.jpg",
+        "bytes": 510360,
+        "sha256": "e5e577418f3170df6a4c15fc4d3288d8a31ed29721fc685bb20bf8a8957d1b27"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/detalhe-03.jpg",
+        "bytes": 477708,
+        "sha256": "d0fc9942dc00efcf52c040f54b15a5d5d6ec9bf4c1a8f2214b2aac1af30e5aac"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/detalhe-04.jpg",
+        "bytes": 352802,
+        "sha256": "da59c31ffd13ff601ea0fdfb710779ef6bcd8030e7c9cf6bfe7c6a1a6586bf11"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/detalhe-05.jpg",
+        "bytes": 245340,
+        "sha256": "9c7796089049e806cc6e2b18bb0db1fffeddb24c541db14765e415d86686371f"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/detalhe-06.jpg",
+        "bytes": 224071,
+        "sha256": "28fad3cf4a7e5be2a31b8e2cdaf2da89b10aa7d030c8fbeca9d63e51cf188152"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/detalhe-07.jpg",
+        "bytes": 334147,
+        "sha256": "90b2694d84babbdaab242a4d06c91345b851b7d46f1444678ff7d357e4257a73"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/detalhe-08.jpg",
+        "bytes": 258720,
+        "sha256": "3d070eb5dce777e155b9f15898e97bddde11cc19a80ba2cce9bb39075285c1bf"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/detalhe-09.jpg",
+        "bytes": 77814,
+        "sha256": "74975b845f28f7564a6758520718bb036fdf2bb9e27fba048ab9c76b7abbe70a"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/detalhe-10.jpg",
+        "bytes": 76480,
+        "sha256": "8a415b104cb831284a957ec10becc849af61599e3a06281149e67fae7d978e7d"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/detalhe-11.jpg",
+        "bytes": 6158735,
+        "sha256": "35d957433f08989cc8cccbaa6710b943df353fb741b82b7998c5454f77c44de8"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/detalhe-12.jpg",
+        "bytes": 6092502,
+        "sha256": "56d4538936bd322aa51530db26fb3122df7be53e1737c85dee1bfb84210f1b92"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/detalhe-13.jpg",
+        "bytes": 4240896,
+        "sha256": "8d09f6b98c52ca770f34461c0f2f8857b4881cbad19e89c22d051f1222980fb9"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/quarto-01.jpg",
+        "bytes": 502805,
+        "sha256": "cb8cdd2240d11a88ee5d411702042b64fb704c8772c46abf47166bb66611e94f"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/quarto-02.jpg",
+        "bytes": 239229,
+        "sha256": "63a15cf2c857b4c03466e95b066d4c438efe50774977869868953667043dd3d3"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/quarto-03.jpg",
+        "bytes": 257877,
+        "sha256": "b55a026955db5c90dd45a2f6d4681002aafc81ee7d8d021eecb2b2a50446cfba"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/quarto-04.jpg",
+        "bytes": 238879,
+        "sha256": "ac84393c70ea59133f2a2b4f624895ef4b55b3a5dc1469f40b340b79b38622c2"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/quarto-05.jpg",
+        "bytes": 304005,
+        "sha256": "c1b71db2298a8dedf016ec44629731443de92c1ef2c658b1f14fe219fa6d87d5"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/quarto-06.jpg",
+        "bytes": 221323,
+        "sha256": "7dfcc054553bc5a8b9b156e07ca99e9b96b3a30dc1e4e4e725bb14d819744e5a"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/quarto-07.jpg",
+        "bytes": 195407,
+        "sha256": "a5918d4ad9dd0989f5af2ba52746359277fb01805af34c24a4b797a9b9f4f833"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/quarto-08.jpg",
+        "bytes": 186723,
+        "sha256": "3249b442ac407094c5e66983e215c49852e54ea620ed7eec981766c0a19d86fb"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/quarto-09.jpg",
+        "bytes": 255033,
+        "sha256": "522cf9d37b8bc60a0c4b43ee59bb52b88201c2f6dd8f1dd48c19f12014f4534e"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/quarto-10.jpg",
+        "bytes": 293534,
+        "sha256": "77d4243b97a7dcb8b56fe1dff4aab9ae6ee381c0fec5261b8c4e57a91328652a"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/quarto-11.jpg",
+        "bytes": 389158,
+        "sha256": "30ec83ecd1c20eb9320d921f9f88b64e9a8043493c52898d2bcd3ae3b81d2bf9"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/quarto-12.jpg",
+        "bytes": 257371,
+        "sha256": "3d973f2e370d1db157777bf4604cec30041f708e7bb5a643bfa239e1c5ae5efd"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/quarto-13.jpg",
+        "bytes": 206958,
+        "sha256": "691d76380b8555c65922726a1b93c38c0225988b85177cf2363b18c7c6236f00"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/quarto-14.jpg",
+        "bytes": 214725,
+        "sha256": "3e4a19930510edff91277c43a677d60956d4e64658e058e0d71ce8fabf3a34f7"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/quarto-15.jpg",
+        "bytes": 208713,
+        "sha256": "e716ce0490069d7062f7cadee89c6ec8e3c803d7f2867ab3347ebaf47fa8c92c"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/quarto-16.jpg",
+        "bytes": 268802,
+        "sha256": "1ed454ae406e77399b298e28bffc3b86c7f51f33d7210659135aab404ebb23cd"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/quarto-17.jpg",
+        "bytes": 301466,
+        "sha256": "3b2ab98e80595f632536dc67a06697a1d01aa185ea835416418511948924fe14"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/quarto-18.jpg",
+        "bytes": 213487,
+        "sha256": "48d77d2a841abd92f84efbe67e797a55992c38958b1f256b17b1bf49c4a367ec"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/quarto-19.jpg",
+        "bytes": 139885,
+        "sha256": "b71fc07432a4231c37779e6f973d3f1f6b2950cc446a289d9aefd346e5549a61"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/quarto-20.jpg",
+        "bytes": 104204,
+        "sha256": "91b59aebf851c97a3c69c32dc9aedba5f6f967097c58611313b9071013f223b2"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/quarto-21.jpg",
+        "bytes": 56988,
+        "sha256": "022cef5f39059ce48ccd15b5b1d8fcd230b9ba892bf8a7417406af3ba16dc2d3"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/quarto-22.jpg",
+        "bytes": 5504648,
+        "sha256": "fbd5ecfb1f5dd1aaa7b6c3ef24e88b730d5b83f53f5858a87753ccb7b2e46516"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/quarto-23.jpg",
+        "bytes": 5350892,
+        "sha256": "46e64dcc1a4f49f5e70f59fcde01b7f6ad0c1aac88467a2bf1103ddf935f5a6f"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/quarto-24.jpg",
+        "bytes": 4195337,
+        "sha256": "5b9a600764678563e3a4b3b955c41a03e94c85b1323486d74370e2a3b85aa93b"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/quarto-25.jpg",
+        "bytes": 1127302,
+        "sha256": "f0f723717fbf6e523116d79b9c44f1d25b4ce827ce2826f76446c98ee55a069a"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/rececao-01.jpg",
+        "bytes": 255033,
+        "sha256": "af7c7b3f300dccc59f04c91b9b61ee57a680c77cf4921f6a00da8ac58b5da67f"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/rececao-02.jpg",
+        "bytes": 535314,
+        "sha256": "ca96f06337fdf73e7b3a9484bb62a4d477411cc076775d80f45586a0b22aa474"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/rececao-03.jpg",
+        "bytes": 354808,
+        "sha256": "b30368d392731bda342e87345adf35c92a3bcd1b41558d814e958a93dd83a16d"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/rececao-04.jpg",
+        "bytes": 358974,
+        "sha256": "a1d519d09030172e1ea1cc8a4d41adfbf0674da56f8a32595c3ae364f524dc14"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/rececao-05.jpg",
+        "bytes": 324365,
+        "sha256": "0fc7317d8f88c18cf41a4453921a4d47d0112312195649de768d7555cc04f430"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/rececao-06.jpg",
+        "bytes": 115551,
+        "sha256": "f259600d53c22ed47eaa916ef6ca06657d35b093e76034670400182f0d72ba7b"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/rececao-07.jpg",
+        "bytes": 81390,
+        "sha256": "7dd759a4796161a77a17924179a9e54d8eff5994847bc5c5cf90313032353132"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/rececao-08.jpg",
+        "bytes": 92842,
+        "sha256": "42eb642d289dfbcff794fbedeaf94791056ab975702b658854502c457f0b5787"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/rececao-09.jpg",
+        "bytes": 3048225,
+        "sha256": "e9aa7113bd9cc1459751f5ceffc3aa50bb4075863f90fd0b4d4cf993cb7bd7b6"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/refeicoes-01.jpg",
+        "bytes": 248919,
+        "sha256": "aaf15bfaffd9de25e1ed00791a9627848275bc179f2d9c3b543e9ab0488c4ccf"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/refeicoes-02.jpg",
+        "bytes": 347889,
+        "sha256": "651ee8f96b65f0286e31ec3046231bf7ab22b98d97ef02f294aa5ab3286132d1"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/refeicoes-03.jpg",
+        "bytes": 91546,
+        "sha256": "a364af3de312cd6d57bb88a31707243fc5cbda71568f0443c1cba38d008ce3e3"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/refeicoes-04.jpg",
+        "bytes": 131227,
+        "sha256": "49fdc812db1d5fdc4617fb4db769b4975b39e9c363ce851a57b509f8e93b5ec4"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/refeicoes-05.jpg",
+        "bytes": 1860481,
+        "sha256": "99f8698a839648b83367d75b6293ad0cd86fbaf5aa60755e86453206eb374aca"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/sala-01.jpg",
+        "bytes": 276132,
+        "sha256": "a1348f17b2098b1209706432d549264de160a5e3117eba54696407c170783a55"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/sala-02.jpg",
+        "bytes": 660387,
+        "sha256": "c03c4daa6a13d12467df2d99ddc3b7d5ed9e6e5bfcbb550207fe147ff02a27fc"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/sala-03.jpg",
+        "bytes": 208168,
+        "sha256": "2a03043faac7fc093184ab72f910e3f2054be5883ce8df34e83d310f429c9f77"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/sala-04.jpg",
+        "bytes": 254505,
+        "sha256": "4b920797ee9cdd45d2a62cd7ebc7f69e62e8effa26b41084d8d660b57883c1da"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/interior/sala-05.jpg",
+        "bytes": 145355,
+        "sha256": "f2e4aecea926ca522219bbc6007b71c023f001555f550f7eb152028c7bcd2b80"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/mesa/mesa-01.jpg",
+        "bytes": 397199,
+        "sha256": "05b94f84e51865f60d405b0c571be36504b17b14e2a5ee41783ab16fd606887a"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/mesa/mesa-02.jpg",
+        "bytes": 518192,
+        "sha256": "5a8af6ae082a2a7958b527c0fe1d56e6dca6bc45a286cbc4940742d80e0948ba"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/mesa/mesa-03.jpg",
+        "bytes": 296137,
+        "sha256": "4dfb2f8e1e48288b7e7b6771c050a500940a85fde68397f4b374568854c64e26"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/mesa/mesa-04.jpg",
+        "bytes": 93327,
+        "sha256": "1166b5dd60868baad3fcec479bc13b6796ad4312b8c8160851eefe07ff71ec0d"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/mesa/mesa-05.jpg",
+        "bytes": 92184,
+        "sha256": "c6f4226c0f5038582094a388aa01527713fe459eef6cfeaff5ceac6cd57cbcb4"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/mesa/mesa-06.jpg",
+        "bytes": 5677969,
+        "sha256": "ed978504ea6a10c7dbb9b5287fdd32aa630e3a1a535108759276c2dcc3c12bef"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/mesa/mesa-07.jpg",
+        "bytes": 3579904,
+        "sha256": "a85d69faaab1e2000789d6a8e719ae81dfa95b155649663f4d778d4fafd26687"
+      },
+      {
+        "caminho": "marketing/fotos/casa-museu/mesa/mesa-08.jpg",
+        "bytes": 3090432,
+        "sha256": "d1bbafc83ed0bd34b65f79364e5a007525f54156796ff4330ba8daec95292466"
+      },
+      {
+        "caminho": "marketing/fotos/marca/marca-01.png",
+        "bytes": 74492,
+        "sha256": "5735cb484ee04c488ffbcdc57dc1a56a5ff83ea4a00f5732cbcc84618b6768b2"
+      },
+      {
+        "caminho": "marketing/fotos/marca/marca-02.png",
+        "bytes": 15537,
+        "sha256": "fa82edcf0c0a799252c1a3ea396bc1c0fd8c2eeae04cd4552d144d97d6f9c434"
+      },
+      {
+        "caminho": "marketing/fotos/marca/marca-03.png",
+        "bytes": 321049,
+        "sha256": "26044f40cb84fb11bff14283feb19bad3acbe792fcbfc2f6fa7c34f8e5ffd43d"
+      },
+      {
+        "caminho": "marketing/fotos/marca/marca-04.png",
+        "bytes": 97798,
+        "sha256": "1e8cc9ff3053ba5bdd72e218970edc8ef8f5e5f293db20ad0b43fc57ab0d16a5"
+      },
+      {
+        "caminho": "marketing/fotos/marca/marca-05.png",
+        "bytes": 176018,
+        "sha256": "23d48fd18bafeaca516eed032bbcbd588fd5632a9b203c350a2ed58c52e1a3d5"
+      },
+      {
+        "caminho": "marketing/fotos/marca/marca-06.png",
+        "bytes": 91245,
+        "sha256": "09b85678d7a27633c7dcfc1e0bdc425ed5a637cd1e8714fe1f988fd401e3a6cd"
+      },
+      {
+        "caminho": "marketing/fotos/marca/marca-07.png",
+        "bytes": 280873,
+        "sha256": "6c544162fb0c26819caa326438e264996961876c0525ca75f679e7ad34ec8673"
+      },
+      {
+        "caminho": "marketing/fotos/marca/marca-08.png",
+        "bytes": 216353,
+        "sha256": "462d45fd0b924012edcb4e976f3d8c079e9588148c1ea6a06f1995fe172281b9"
+      },
+      {
+        "caminho": "marketing/fotos/marca/marca-09.png",
+        "bytes": 7178,
+        "sha256": "d04d86b4d93056439f5a8d3a1ea28cae23e9350fc14b78c66c2c27dd64bddd5a"
+      },
+      {
+        "caminho": "marketing/fotos/regiao/regiao-01.jpg",
+        "bytes": 227181,
+        "sha256": "3ddd5418668f5d7b643c545436210e5bb87816837e453f5a2fb5073ff6d96fa0"
+      },
+      {
+        "caminho": "marketing/fotos/regiao/regiao-02.jpg",
+        "bytes": 340160,
+        "sha256": "5b75e71538cff8bfba3a79c465762454d1afb3c3dc500198a9032fa08d368a2f"
+      },
+      {
+        "caminho": "marketing/fotos/regiao/regiao-03.jpg",
+        "bytes": 359613,
+        "sha256": "558f71ddf090ebb8dafe893e37a96b65ada4b94cae6ae3cf767ce9db0b158c0f"
+      },
+      {
+        "caminho": "marketing/fotos/regiao/regiao-04.jpg",
+        "bytes": 315608,
+        "sha256": "d9970396e6351f57a9e34d36ed67e8d4350b37533ab45ef6c305c518e4d42c10"
+      },
+      {
+        "caminho": "marketing/fotos/regiao/regiao-05.jpg",
+        "bytes": 494429,
+        "sha256": "2f3d67a7cfc25ef9d39d56f8d5b046595b8c752bdd300c96ed674b710487a810"
+      },
+      {
+        "caminho": "marketing/fotos/regiao/regiao-06.jpg",
+        "bytes": 597150,
+        "sha256": "f2abde8f1afaf09c4099531cc7fe8b45c2cd00b34fb70b7864fdfa85dfd0496d"
+      },
+      {
+        "caminho": "marketing/fotos/regiao/regiao-07.jpg",
+        "bytes": 557780,
+        "sha256": "157be073fc1e964ca4f2919f26fcf67eada341852cd7805538f3275c12a1b598"
+      },
+      {
+        "caminho": "marketing/fotos/regiao/regiao-08.jpg",
+        "bytes": 3479211,
+        "sha256": "7265128f3893dde30ba7b6b88f184d0a2fbfd6076a4363aa7f907b0e8a5ac901"
+      },
+      {
+        "caminho": "marketing/fotos/regiao/regiao-09.jpg",
+        "bytes": 7646119,
+        "sha256": "5f6cd910b035d406d0508fafa4cd2ae96e293f13918c917d37afd4c534c8ad4f"
+      },
+      {
+        "caminho": "marketing/fotos/regiao/regiao-10.jpg",
+        "bytes": 1567330,
+        "sha256": "a7eb2878f745672bc41be797abad00d1e686e50115112c957c5e7214149e3386"
+      },
+      {
+        "caminho": "marketing/fotos/regiao/regiao-11.jpg",
+        "bytes": 1256572,
+        "sha256": "f3cffeb21df3cd3403b9711d63cd3362dcba8df51dd1ec3c9474c7e3c497843e"
+      },
+      {
+        "caminho": "marketing/fotos/regiao/regiao-12.jpg",
+        "bytes": 1384125,
+        "sha256": "e57ff60e1d702bc9515c39b55ab201b157431e98beac3c22901c4f6c8ac4263e"
+      },
+      {
+        "caminho": "marketing/fotos/regiao/regiao-13.jpg",
+        "bytes": 3392439,
+        "sha256": "ec478fa92ee19565ca688e5854c5cfc6f4df952a27e8cc0e8a46362a2ac3dc60"
+      },
+      {
+        "caminho": "marketing/fotos/regiao/regiao-14.jpg",
+        "bytes": 3411479,
+        "sha256": "dbf5c4d66d17a0d027a123b7d45a059dd9867fad54bf15b2b36e9acafc303701"
+      },
+      {
+        "caminho": "marketing/fotos/regiao/regiao-15.jpg",
+        "bytes": 3949082,
+        "sha256": "338a5c2e8227ec04a405a7d051700a0f1a3d2f2c77c96feff2a38777b07e09b8"
+      },
+      {
+        "caminho": "marketing/fotos/regiao/regiao-16.jpg",
+        "bytes": 3849960,
+        "sha256": "38f4100d80e6346397a0551a66c62fe6629cb97b48173f80ac2b78d9c9864882"
+      },
+      {
+        "caminho": "marketing/fotos/regiao/regiao-17.jpg",
+        "bytes": 1827473,
+        "sha256": "221618498b80ee02f887f850c20c50e6cf722d351debde4cf3fb008d9738a237"
+      },
+      {
+        "caminho": "marketing/fotos/regiao/regiao-18.jpg",
+        "bytes": 3471086,
+        "sha256": "128c76a80b051139f5abfd362e04fe3bea6b49a5a9e96bd2415e4c81c195ff3a"
+      },
+      {
+        "caminho": "marketing/fotos/regiao/regiao-19.jpg",
+        "bytes": 790222,
+        "sha256": "afe7c2edd01aeae8d49b3b71e779cfb203f7d6477568ff5e4fe217573af6af9e"
+      },
+      {
+        "caminho": "marketing/fotos/regiao/regiao-20.jpg",
+        "bytes": 4729616,
+        "sha256": "6bcc5531aab8154883a4b58a4609027b35a42e10bb985b98e67219ba5fbce56d"
+      },
+      {
+        "caminho": "marketing/fotos/regiao/regiao-21.jpg",
+        "bytes": 421857,
+        "sha256": "5461ce54a03d555e0c2efdf39d0208370b72b6574d22a593a4856a86434bfaeb"
+      },
+      {
+        "caminho": "marketing/fotos/regiao/regiao-22.jpg",
+        "bytes": 3637218,
+        "sha256": "7b8063fca465cd3d3e94f2e8f4c95d9161d24bc21bf603f60de6c8f5fd21958d"
+      },
+      {
+        "caminho": "marketing/fotos/regiao/regiao-23.jpg",
+        "bytes": 1912541,
+        "sha256": "6214b274fedac6654e9ac50d5673bce53aaeef5f9188a1377b9b93d3142dd42f"
+      },
+      {
+        "caminho": "marketing/fotos/regiao/regiao-24.jpg",
+        "bytes": 1566108,
+        "sha256": "02660f9bdbcbd2ce1256e35b7c471aeee91884f21d7ef5f2d1417b3d7ad0371c"
+      },
+      {
+        "caminho": "marketing/fotos/regiao/regiao-25.jpg",
+        "bytes": 1366051,
+        "sha256": "12b5f5190dde7add49a9b967e6cfa9ebf23890f005c108ba93c1c09a388bdd27"
+      },
+      {
+        "caminho": "marketing/fotos/regiao/regiao-26.jpg",
+        "bytes": 4906096,
+        "sha256": "1a0ae4653f28497ae2605984170b4429edfb78ca1d1c33840130e35560d2fd6d"
+      },
+      {
+        "caminho": "marketing/fotos/regiao/regiao-27.png",
+        "bytes": 5175025,
+        "sha256": "9f480a194940f9a961bafc942c477fc6da734db1b08b99c6a4e97936fbded4bf"
+      },
+      {
+        "caminho": "marketing/fotos/regiao/regiao-28.jpg",
+        "bytes": 3192494,
+        "sha256": "be38e677fb0bd0b5fcde22b20a1a91458e5c87e40734b3346bbd4596e89859a4"
+      },
+      {
+        "caminho": "marketing/fotos/regiao/regiao-29.jpg",
+        "bytes": 1267021,
+        "sha256": "f07db47d7fb4fe1e9b0f270341a78dc2d85cb8f12defe22a72e5554a3004bbbf"
+      },
+      {
+        "caminho": "marketing/fotos/regiao/regiao-30.jpg",
+        "bytes": 433322,
+        "sha256": "83c80686ed13bf5a1b7a6c6acdbd2d2195d21ed1acd1ff2f8ccbe9abb75174f7"
+      },
+      {
+        "caminho": "marketing/fotos/regiao/regiao-31.png",
+        "bytes": 4847895,
+        "sha256": "bbbbad8ada0e129fc0b910bcb2b30f17566031873656c9c197004b52cd3f3020"
+      },
+      {
+        "caminho": "marketing/fotos/rota/rota-01.jpg",
+        "bytes": 146310,
+        "sha256": "fb8007083d63ce1e260cc647623711feec5b5e04d8b5031d5bdcb6585d267896"
+      },
+      {
+        "caminho": "marketing/fotos/rota/rota-02.jpg",
+        "bytes": 16443,
+        "sha256": "cfba72712ecd18e5cd372e1204edd12647bf6fbd2fa3e39e21a082fc74c8fabf"
+      },
+      {
+        "caminho": "marketing/fotos/rota/rota-03.jpg",
+        "bytes": 49658,
+        "sha256": "29ad4b038078ed5bf25b3d42e08aed089638e2cf7ceecea5e4dc453e2656e4a8"
+      },
+      {
+        "caminho": "marketing/fotos/rota/rota-04.jpg",
+        "bytes": 75523,
+        "sha256": "91e8873d3b5be591cd916624dbe6ba92c2a6bff3060c5cf8c006332ba33ec320"
+      },
+      {
+        "caminho": "marketing/fotos/rota/rota-05.jpg",
+        "bytes": 93595,
+        "sha256": "250454e9bf8d2855061fbd539b791effd4dec4bb91deb5f6b1021f044627e2e8"
+      },
+      {
+        "caminho": "marketing/fotos/rota/rota-06.jpg",
+        "bytes": 71863,
+        "sha256": "7077ce0b3e39d6d252cd417a5c29ac60678b645764ce9cecd696572b94b15f72"
+      },
+      {
+        "caminho": "marketing/fotos/rota/rota-07.jpg",
+        "bytes": 54631,
+        "sha256": "367f1ee3a4ce1c63d30db139527794291890de63d9d8f9f4c1b8156b1dec006d"
+      },
+      {
+        "caminho": "marketing/fotos/rota/rota-08.jpg",
+        "bytes": 3917824,
+        "sha256": "fdcdee8848a5f6c5f1b472cd104f575de3259f44f28539a95047c20894166cfa"
+      },
+      {
+        "caminho": "marketing/fotos/rota/rota-09.jpg",
+        "bytes": 7797110,
+        "sha256": "2cdd76fd910f13bbf552d5d8b4551bf9e421ce6f202c180400ba45487c65fe9c"
+      },
+      {
+        "caminho": "marketing/fotos/rota/rota-10.png",
+        "bytes": 350944,
+        "sha256": "c37c7c0f4ec5333014232759606872b5fe3bdd859aa2297d3d4c892d9e66339c"
+      },
+      {
+        "caminho": "marketing/fotos/rota/rota-11.jpg",
+        "bytes": 677833,
+        "sha256": "ecb13e36fd6c053e310ebac9998931733bfe5ab3b1e7e7253d62c428c666664f"
+      },
+      {
+        "caminho": "marketing/fotos/rota/rota-12.jpg",
+        "bytes": 1137937,
+        "sha256": "dad27be182cb1d159ba2a15928fc325c5a4a13c73b3aad889ad7be81ada02185"
+      },
+      {
+        "caminho": "marketing/fotos.md",
+        "bytes": 64247,
+        "sha256": "954739ddcdb0bac47b06b30451dd325231923dfbeffb2609f696ca9e67567a0a"
+      },
+      {
+        "caminho": "marketing/textos.md",
+        "bytes": 29704,
+        "sha256": "e00fae596ac0c1314085ba320c56bc14a791d797523440b4e55952e0e2cbde78"
+      },
+      {
+        "caminho": "pontos-fortes.md",
+        "bytes": 39178,
+        "sha256": "4c2b70d54cd1d588fb48f4fa860a35857ebeaf9d08cf9561d82f72437caec970"
+      },
+      {
+        "caminho": "quartos.md",
+        "bytes": 10214,
+        "sha256": "9fc6a75b9bfa0d0f03fcd717af0d4ae88da594a9db189904ca9f46a2d948c751"
+      },
+      {
+        "caminho": "resumo.md",
+        "bytes": 12681,
+        "sha256": "792ad20a0b46f9ffcff71945549ab66ba352b7d5929cbe578b3ffbf2d83ef892"
+      },
+      {
+        "caminho": "reviews.md",
+        "bytes": 84552,
+        "sha256": "b85bd97b2fa2f4d72aa367a952263c93b7cbef9ccf4593e603479c4346f69d0c"
+      },
+      {
+        "caminho": "site-pronto.md",
+        "bytes": 19159,
+        "sha256": "060bdb3baa840a3d625c1e824bc44b45bcb28a10915bdc7e74e8c135f4a4e511"
+      }
+    ]
+  }
+}

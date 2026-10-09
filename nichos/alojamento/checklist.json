@@ -1,0 +1,16 @@
+{
+  "_leia": "A checklist básica de cada projeto de alojamento no painel (oficina/painel). 'auto' = o painel marca sozinho quando encontra a prova. 'sugestao' = o próximo passo que o painel propõe quando este fica feito (ele aceita ou não). Os passos acrescentados à mão num projeto não vêm daqui.",
+  "passos": [
+    { "chave": "dossie",       "fase": 1, "texto": "Dossiê feito",          "auto": "dossie",   "sugestao": { "texto": "Montar o site da base", "dias": 1 } },
+    { "chave": "site-base",    "fase": 1, "texto": "Site da base feito",    "auto": "site",     "sugestao": { "texto": "Pôr a base no ar", "dias": 0 } },
+    { "chave": "base-no-ar",   "fase": 1, "texto": "Base no ar",            "auto": "deploy",   "sugestao": { "texto": "Enviar a base por email", "dias": 0 } },
+    { "chave": "email",        "fase": 2, "texto": "Email enviado",                             "sugestao": { "texto": "Enviar proposta", "dias": 1 }, "estado": "base enviada" },
+    { "chave": "proposta",     "fase": 3, "texto": "Proposta enviada",      "auto": "proposta", "sugestao": { "texto": "Ligar a confirmar a proposta", "dias": 3 } },
+    { "chave": "resposta",     "fase": 3, "texto": "Resposta do cliente",                       "sugestao": { "texto": "Marcar chamada de feedback", "dias": 1 } },
+    { "chave": "feedback",     "fase": 3, "texto": "Chamada de feedback",                       "sugestao": { "texto": "Pedir fotos e textos ao cliente", "dias": 1 } },
+    { "chave": "site-completo","fase": 4, "texto": "Site completo feito",                       "sugestao": { "texto": "Enviar ao cliente para aprovar", "dias": 0 }, "estado": "site acabado" },
+    { "chave": "aprovado",     "fase": 4, "texto": "Cliente aprovou",                           "sugestao": { "texto": "Publicar no domínio", "dias": 1 } },
+    { "chave": "publicado",    "fase": 5, "texto": "Publicado no domínio",  "auto": "dominio",  "sugestao": { "texto": "Cobrar", "dias": 0 }, "estado": "publicado" },
+    { "chave": "pago",         "fase": 5, "texto": "Pago",                                      "sugestao": { "texto": "Pedir testemunho", "dias": 7 }, "estado": "pago" }
+  ]
+}

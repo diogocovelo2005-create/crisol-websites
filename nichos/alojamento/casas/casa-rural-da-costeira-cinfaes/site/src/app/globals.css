@@ -1,0 +1,223 @@
+@import "tailwindcss";
+
+/*
+  A pele do protótipo B «Mato»: papel cinza-esverdeado, tinta verde-quase-
+  -preta, o líquen da pedra como acento e faixas de mato escuro. Os nomes
+  são papéis, usados pelo primeiro ecrã, pelo cabeçalho e pelo rodapé:
+
+  linho       o fundo da pagina        tinta     o texto
+  cartao      fundos claros elevados   floresta  os paineis escuros e o rodape
+  ouro        o acento (o botao)       osso      texto sobre foto ou escuro
+  noite       o veu do primeiro ecra   linha     os filetes
+  musgo       a segunda faixa escura   liquen    acento legivel sobre o escuro
+*/
+
+@theme {
+  /* papel cinza-esverdeado */
+  --color-linho: #e4e7df;
+  --color-linho-escuro: #d8dcd2;
+  --color-cartao: #eef0e8;
+
+  /* tinta verde-quase-preta; cinza para o texto secundario (5.7:1 no papel) */
+  --color-tinta: #1d231d;
+  --color-tinta-medio: #4f5a50;
+
+  /* mato: faixas escuras, contacto, rodape */
+  --color-floresta: #2e372e;
+  --color-floresta-fundo: #222a23;
+  --color-musgo: #33443c;
+
+  /* o liquen da pedra: o botao (texto escuro por cima, 5:1). Sobre o
+     escuro, o texto de acento e o liquen claro. */
+  --color-ouro: #9c9479;
+  --color-ouro-escuro: #7d765e;
+  --color-liquen: #bdb59a;
+
+  --color-osso: #eef0e8;
+  --color-noite: #1a211b;
+
+  --color-linha: rgba(29, 35, 29, 0.16);
+  --color-linha-clara: rgba(238, 240, 232, 0.18);
+
+  --font-display: var(--fonte-display), 'Times New Roman', serif;
+  --font-corpo: var(--fonte-corpo), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-media: 2px;
+  --radius-botao: 2px;
+}
+
+@layer base {
+  html {
+    background-color: var(--color-linho);
+    color-scheme: light;
+  }
+
+  body {
+    font-family: var(--font-corpo);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    background-color: var(--color-linho);
+    color: var(--color-tinta);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* A serifa do B (Instrument Serif) so tem um peso, e os titulos vao em
+     maiusculas, com o italico em minusculas. */
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.005em;
+    line-height: 1.08;
+    text-wrap: balance;
+  }
+
+  h1 { text-transform: uppercase; }
+  h1 em, h2 em, h3 em { text-transform: none; letter-spacing: 0; }
+
+  a { text-underline-offset: 4px; }
+
+  /* O italico dos titulos e da mesma familia. Com descendentes (y g j p)
+     precisa de folga em baixo, senao corta. */
+  h1 em, h2 em, h3 em {
+    font-style: italic;
+    padding-bottom: 0.06em;
+  }
+
+  ::selection {
+    background: var(--color-floresta);
+    color: var(--color-osso);
+  }
+
+  /* O anel de foco tem a cor do texto: contrasta sempre com o fundo onde
+     esta (o liquen no papel ficava abaixo de 3:1). */
+  :focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  /* As vozes comuns do B. */
+  .rotulo {
+    margin: 0;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--color-tinta-medio);
+  }
+
+  /* Titulos das seccoes: um pouco mais pequenos do que no B (cerca de 80%),
+     a pedido do Diogo. Cada seccao afina o tamanho com --titulo. */
+  .titulo {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: var(--titulo, clamp(2.6rem, 6.8vw, 6.8rem));
+    line-height: 0.92;
+    letter-spacing: -0.005em;
+    text-transform: uppercase;
+  }
+
+  .passagem {
+    margin: 0;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.5rem;
+    line-height: 1.3;
+    color: var(--color-tinta-medio);
+  }
+
+  .citacao-cite {
+    display: block;
+    margin-top: 28px;
+    font-style: normal;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+  }
+
+  .moldura {
+    max-width: 1440px;
+    margin-inline: auto;
+    padding-inline: 24px;
+  }
+  @media (min-width: 768px) {
+    .moldura { padding-inline: 40px; }
+  }
+}
+
+@layer utilities {
+  /* Versaletes das referencias: pequenos, espacados, em maiusculas. */
+  .versalete {
+    font-family: var(--font-corpo);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  /* Veu do hero: so escurece onde esta o texto, em cima e a esquerda (o
+     texto do primeiro ecra fica alinhado em cima). A fotografia fica com
+     a luz dela no resto. */
+  .veu-hero {
+    background:
+      linear-gradient(180deg, rgba(26, 33, 27, 0.46) 0%, rgba(26, 33, 27, 0.3) 45%, rgba(26, 33, 27, 0.12) 80%, rgba(26, 33, 27, 0) 94%),
+      linear-gradient(90deg, rgba(26, 33, 27, 0.55) 0%, rgba(26, 33, 27, 0.4) 34%, rgba(26, 33, 27, 0.12) 52%, rgba(26, 33, 27, 0) 66%);
+  }
+
+  /* No telemovel o texto ocupa a largura toda e fica por cima da casa:
+     o veu passa a cobrir tudo, mais leve em cima e em baixo. */
+  @media (max-width: 767px) {
+    .veu-hero {
+      background: linear-gradient(
+        to bottom,
+        rgba(26, 33, 27, 0.45) 0%,
+        rgba(26, 33, 27, 0.5) 45%,
+        rgba(26, 33, 27, 0.3) 100%
+      );
+    }
+  }
+
+  /* A entrada do texto do primeiro ecrã: sobe 20px e aparece (0,9s, com o
+     atraso de cada linha em --atraso). Em CSS e não no Motion: assim começa
+     no primeiro desenho do ecrã, sem esperar que o JavaScript arranque. Com
+     o Motion o título ficava a opacidade 0 até à hidratação (7s de LCP num
+     telemóvel lento). */
+  .entrada-hero {
+    animation: entrada-hero 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) var(--atraso, 0s) backwards;
+  }
+
+  .sem-barra::-webkit-scrollbar {
+    display: none;
+  }
+  .sem-barra {
+    scrollbar-width: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* sem isto o atraso ficava e o texto aparecia aos solavancos */
+  .entrada-hero { animation: none !important; }
+}
+
+@keyframes entrada-hero {
+  /* 0,001 e nao 0: a olho e igual, mas o Chrome conta o titulo como pintado
+     logo no primeiro desenho (a 0 so contava depois do JavaScript) */
+  from { opacity: 0.001; transform: translateY(20px); }
+}
+
+/* Altura mínima do primeiro ecrã preso; em ecrãs muito baixos (telemóvel na
+   horizontal) deixa de forçar mais do que o ecrã, senão o texto e os botões
+   ficavam por baixo da dobra, inalcançáveis. */
+:root { --hmin: 560px; }
+@media (max-height: 559px) { :root { --hmin: 0px; } }

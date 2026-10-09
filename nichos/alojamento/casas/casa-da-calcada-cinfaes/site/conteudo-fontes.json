@@ -1,0 +1,502 @@
+{
+  "schema_version": "1.0",
+  "estado": "pronto",
+  "contrato": {
+    "slug": "casa-da-calcada-cinfaes",
+    "revisao": "2026-09-22",
+    "impressao_digital_sha256": "da329c16fc1f0a804de23950dae5890c92055b4928ff66407e1aab1aa6f1bd7a"
+  },
+  "campos": [
+    {
+      "destino": "src/lib/casa.ts#casa.nome",
+      "tipo": "factual",
+      "fontes": [
+        "AFIR-TIPOLOGIA"
+      ]
+    },
+    {
+      "destino": "src/lib/casa.ts#casa.tipo",
+      "tipo": "factual",
+      "fontes": [
+        "AFIR-TIPOLOGIA"
+      ]
+    },
+    {
+      "destino": "src/lib/casa.ts#casa.hero.etiqueta",
+      "tipo": "factual",
+      "fontes": [
+        "AFIR-TIPOLOGIA",
+        "AFIR-LOCALIZACAO"
+      ]
+    },
+    {
+      "destino": "src/lib/casa.ts#casa.hero.titulo",
+      "tipo": "editorial",
+      "fontes": [
+        "AFIR-CAPELA",
+        "AFIR-TIPOLOGIA"
+      ]
+    },
+    {
+      "destino": "src/lib/casa.ts#casa.hero.texto",
+      "tipo": "factual",
+      "fontes": [
+        "AFIR-CAPACIDADE",
+        "AFIR-PISCINA",
+        "AFIR-TENIS",
+        "AFIR-LOCALIZACAO"
+      ]
+    },
+    {
+      "destino": "src/lib/casa.ts#casa.pilares[0]",
+      "tipo": "factual",
+      "fontes": [
+        "AFIR-CAPACIDADE",
+        "AFIR-SUITES",
+        "AFIR-TWIN",
+        "AFIR-APARTAMENTO"
+      ]
+    },
+    {
+      "destino": "src/lib/casa.ts#casa.pilares[1]",
+      "tipo": "factual",
+      "fontes": [
+        "AFIR-PA-INCLUIDO"
+      ]
+    },
+    {
+      "destino": "src/lib/casa.ts#casa.pilares[2]",
+      "tipo": "factual",
+      "fontes": [
+        "AFIR-PISCINA",
+        "AFIR-TENIS",
+        "AFIR-JARDINS"
+      ]
+    },
+    {
+      "destino": "src/lib/casa.ts#casa.pilares[3]",
+      "tipo": "factual",
+      "fontes": [
+        "AFIR-CAPELA"
+      ]
+    },
+    {
+      "destino": "src/lib/casa.ts#casa.atmosfera.etiqueta",
+      "tipo": "editorial",
+      "fontes": [
+        "AFIR-TIPOLOGIA"
+      ]
+    },
+    {
+      "destino": "src/lib/casa.ts#casa.atmosfera.titulo",
+      "tipo": "editorial",
+      "fontes": [
+        "AFIR-CAPACIDADE"
+      ]
+    },
+    {
+      "destino": "src/lib/casa.ts#casa.atmosfera.texto",
+      "tipo": "factual",
+      "fontes": [
+        "AFIR-HISTORIA",
+        "AFIR-CAPELA",
+        "AFIR-TIPOLOGIA",
+        "AFIR-CAPACIDADE",
+        "AFIR-SUITES",
+        "AFIR-TWIN",
+        "AFIR-APARTAMENTO",
+        "AFIR-ESPACOS-COMUNS",
+        "AFIR-COZINHA"
+      ]
+    },
+    {
+      "destino": "src/lib/casa.ts#casa.atmosfera.alt",
+      "tipo": "factual",
+      "fontes": [
+        "AFIR-SUITES"
+      ]
+    },
+    {
+      "destino": "src/lib/casa.ts#casa.atmosfera.voz",
+      "tipo": "factual",
+      "fontes": [
+        "AFIR-LOCALIZACAO"
+      ]
+    },
+    {
+      "destino": "src/lib/casa.ts#casa.atmosfera.quem",
+      "tipo": "editorial",
+      "fontes": [
+        "AFIR-LOCALIZACAO"
+      ]
+    },
+    {
+      "destino": "src/lib/casa.ts#casa.pico.titulo",
+      "tipo": "editorial",
+      "fontes": [
+        "AFIR-PA-INCLUIDO",
+        "AFIR-JARDINS"
+      ]
+    },
+    {
+      "destino": "src/lib/casa.ts#casa.pico.intro",
+      "tipo": "factual",
+      "fontes": [
+        "AFIR-ESPACOS-COMUNS",
+        "AFIR-COZINHA"
+      ]
+    },
+    {
+      "destino": "src/lib/casa.ts#casa.pico.momentos[0]",
+      "tipo": "factual",
+      "fontes": [
+        "AFIR-SUITES",
+        "AFIR-TWIN",
+        "AFIR-AGUAS-FURTADAS"
+      ]
+    },
+    {
+      "destino": "src/lib/casa.ts#casa.pico.momentos[1]",
+      "tipo": "factual",
+      "fontes": [
+        "AFIR-PISCINA",
+        "AFIR-TENIS"
+      ]
+    },
+    {
+      "destino": "src/lib/casa.ts#casa.pico.momentos[2]",
+      "tipo": "factual",
+      "fontes": [
+        "AFIR-PA-INCLUIDO",
+        "AFIR-ESPACOS-COMUNS",
+        "AFIR-COZINHA"
+      ]
+    },
+    {
+      "destino": "src/lib/casa.ts#casa.pico.momentos[3]",
+      "tipo": "factual",
+      "fontes": [
+        "AFIR-JARDINS",
+        "AFIR-TENIS",
+        "AFIR-LOCALIZACAO"
+      ]
+    },
+    {
+      "destino": "src/lib/casa.ts#casa.visita.intro",
+      "tipo": "factual",
+      "fontes": [
+        "AFIR-CAPACIDADE",
+        "AFIR-ESPACOS-COMUNS",
+        "AFIR-COZINHA"
+      ]
+    },
+    {
+      "destino": "src/lib/casa.ts#casa.visita.espacos[0]",
+      "tipo": "factual",
+      "fontes": [
+        "AFIR-CAPELA"
+      ]
+    },
+    {
+      "destino": "src/lib/casa.ts#casa.visita.espacos[1]",
+      "tipo": "factual",
+      "fontes": [
+        "AFIR-AGUAS-FURTADAS"
+      ]
+    },
+    {
+      "destino": "src/lib/casa.ts#casa.visita.espacos[2]",
+      "tipo": "factual",
+      "fontes": [
+        "AFIR-ESPACOS-COMUNS"
+      ]
+    },
+    {
+      "destino": "src/lib/casa.ts#casa.visita.espacos[3]",
+      "tipo": "factual",
+      "fontes": [
+        "AFIR-TENIS",
+        "AFIR-PISCINA",
+        "AFIR-JARDINS",
+        "AFIR-CAPELA",
+        "AFIR-LOCALIZACAO"
+      ]
+    },
+    {
+      "destino": "src/lib/casa.ts#casa.visita.espacos[4]",
+      "tipo": "factual",
+      "fontes": [
+        "AFIR-JARDINS"
+      ]
+    },
+    {
+      "destino": "src/lib/casa.ts#casa.visita.espacos[5]",
+      "tipo": "factual",
+      "fontes": [
+        "AFIR-APARTAMENTO"
+      ]
+    },
+    {
+      "destino": "src/lib/casa.ts#casa.reviews.avaliacao",
+      "tipo": "factual",
+      "fontes": [
+        "AFIR-NOTA-BOOKING"
+      ]
+    },
+    {
+      "destino": "src/lib/casa.ts#casa.reviews.citacoes[0]",
+      "tipo": "citacao",
+      "fontes": [
+        "CIT-CASTELO-RAMIRO"
+      ]
+    },
+    {
+      "destino": "src/lib/casa.ts#casa.reviews.citacoes[1]",
+      "tipo": "citacao",
+      "fontes": [
+        "CIT-SOSSEGO-JOHNNY"
+      ]
+    },
+    {
+      "destino": "src/lib/casa.ts#casa.reviews.citacoes[2]",
+      "tipo": "citacao",
+      "fontes": [
+        "CIT-ENCANTADA"
+      ]
+    },
+    {
+      "destino": "src/lib/casa.ts#casa.reviews.citacoes[3]",
+      "tipo": "citacao",
+      "fontes": [
+        "CIT-ENVOLVENCIA"
+      ]
+    },
+    {
+      "destino": "src/lib/casa.ts#casa.reviews.citacoes[4]",
+      "tipo": "citacao",
+      "fontes": [
+        "CIT-EM-CASA-2"
+      ]
+    },
+    {
+      "destino": "src/lib/casa.ts#casa.fecho.titulo",
+      "tipo": "editorial",
+      "fontes": [
+        "AFIR-COMO-RESERVAR"
+      ]
+    },
+    {
+      "destino": "src/lib/casa.ts#casa.fecho.texto",
+      "tipo": "factual",
+      "fontes": [
+        "AFIR-COMO-RESERVAR",
+        "AFIR-CONTACTO"
+      ]
+    },
+    {
+      "destino": "src/lib/casa.ts#casa.acoes[0]",
+      "tipo": "factual",
+      "fontes": [
+        "AFIR-CONTACTO"
+      ]
+    },
+    {
+      "destino": "src/lib/casa.ts#casa.acoes[1]",
+      "tipo": "factual",
+      "fontes": [
+        "AFIR-CONTACTO",
+        "AFIR-COMO-RESERVAR"
+      ]
+    },
+    {
+      "destino": "src/lib/casa.ts#casa.contacto.telefone",
+      "tipo": "factual",
+      "fontes": [
+        "AFIR-CONTACTO"
+      ]
+    },
+    {
+      "destino": "src/lib/casa.ts#casa.contacto.email",
+      "tipo": "factual",
+      "fontes": [
+        "AFIR-CONTACTO"
+      ]
+    },
+    {
+      "destino": "src/lib/casa.ts#casa.contacto.morada",
+      "tipo": "factual",
+      "fontes": [
+        "AFIR-MORADA"
+      ]
+    },
+    {
+      "destino": "src/lib/casa.ts#casa.contacto.registo",
+      "tipo": "factual",
+      "fontes": [
+        "AFIR-REGISTO"
+      ]
+    },
+    {
+      "destino": "src/lib/casa.ts#casa.contacto.mapa",
+      "tipo": "factual",
+      "fontes": [
+        "AFIR-LOCALIZACAO"
+      ]
+    },
+    {
+      "destino": "src/lib/casa.ts#casa.atmosfera.quartos",
+      "tipo": "factual",
+      "fontes": [
+        "AFIR-TWIN"
+      ]
+    }
+  ],
+  "ativos": [
+    {
+      "destino": "public/fotos/hero-piscina-torre-01.jpg",
+      "ativo_id": "ATV-PISCINA-02"
+    },
+    {
+      "destino": "public/fotos/espaco-capela.jpg",
+      "ativo_id": "ATV-CAPELA-05"
+    },
+    {
+      "destino": "public/fotos/espaco-bilhar.jpg",
+      "ativo_id": "ATV-BILHAR"
+    },
+    {
+      "destino": "public/fotos/espaco-glicinias.jpg",
+      "ativo_id": "ATV-GLICINIAS-01"
+    },
+    {
+      "destino": "public/fotos/espaco-anexo.jpg",
+      "ativo_id": "ATV-APARTAMENTO"
+    },
+    {
+      "destino": "public/fotos/fecho-aerea.jpg",
+      "ativo_id": "ATV-AEREA"
+    },
+    {
+      "destino": "public/fotos/a-casa-telhado-ameias.jpg",
+      "ativo_id": "ATV-TELHADO-AMEIAS"
+    },
+    {
+      "destino": "public/fotos/experiencia-2.jpg",
+      "ativo_id": "ATV-PISCINA-03"
+    },
+    {
+      "destino": "public/fotos/experiencia-refeicoes.jpg",
+      "ativo_id": "ATV-MESA-POSTA"
+    },
+    {
+      "destino": "public/fotos/a-casa-quarto-1.jpg",
+      "ativo_id": "ATV-TWIN-02"
+    },
+    {
+      "destino": "public/fotos/a-casa-quarto-2.jpg",
+      "ativo_id": "ATV-TWIN-07"
+    },
+    {
+      "destino": "public/fotos/experiencia-4-redor.jpg",
+      "ativo_id": "ATV-JARDIM-CAPELA"
+    },
+    {
+      "destino": "public/fotos/espaco-jardim.jpg",
+      "ativo_id": "ATV-JARDIM-CAPELA-03"
+    },
+    {
+      "destino": "public/fotos/espaco-tanque.jpg",
+      "ativo_id": "ATV-TANQUE-03"
+    },
+    {
+      "destino": "public/fotos/experiencia-1-quarto.jpg",
+      "ativo_id": "ATV-SUITE"
+    }
+  ],
+  "omissoes": [
+    {
+      "id": "AFIR-TARIFAS",
+      "motivo": "Os precos do site do cliente nao tem data nem epoca e o site esta parado desde 2010. A base nao mostra precos ate o dono dar a tabela atual."
+    },
+    {
+      "id": "AFIR-PROGRAMAS",
+      "motivo": "Decisao DEC-PROGRAMAS-ANTIGOS: os programas citam colheitas de 2008 e precos sem data."
+    },
+    {
+      "id": "AFIR-EVENTOS",
+      "motivo": "Inspiracao editorial apenas. A casa oferece casamentos e batizados num site parado desde 2010; a base nao cria o servico. O argumento da casa para grupos fica dito pelos espacos (salao para jantares, cozinha industrial), que sao factos confirmados."
+    },
+    {
+      "id": "AFIR-CASA-INTEIRA",
+      "motivo": "Deixado de fora desta versao: vender a casa inteira e o argumento com mais valor por noite, mas nao ha fotografia da casa montada para um grupo nem preco, e o numero de 16 pessoas vem da tabela do Booking e nao da casa. Fica para a proposta, com o dono."
+    },
+    {
+      "id": "AFIR-CASA-SO-PARA-SI",
+      "motivo": "Conflito ativo: cinco hospedes contam que estavam sozinhos na casa e um sexto descreve o mesmo como desconforto. Nao e promessa que a base possa fazer."
+    },
+    {
+      "id": "AFIR-RECECAO",
+      "motivo": "Conflito ativo: quatro reviews entre 2023 e 2026 descrevem chegar e nao encontrar ninguem. O fecho diz que a casa combina a chegada, que e o que ela propria declara."
+    },
+    {
+      "id": "AFIR-PISCINA-ESTADO",
+      "motivo": "Conflito ativo sobre a manutencao da piscina. A base mostra a piscina, que e facto, e nao promete o estado da agua."
+    },
+    {
+      "id": "AFIR-PA-QUALIDADE",
+      "motivo": "Conflito ativo: cinco elogios e quatro criticas ao pequeno-almoco entre 2018 e 2026. A base diz que esta incluido e nao o descreve."
+    },
+    {
+      "id": "AFIR-BAR",
+      "motivo": "Conflito ativo: a casa anuncia bar, uma review de agosto de 2026 diz que estava fechado. O bar nao aparece na base."
+    },
+    {
+      "id": "AFIR-APARTAMENTO-COZINHA",
+      "motivo": "Conflito ativo: a casa diz kitchenette equipada, duas reviews dizem que falta o basico para cozinhar. A base lista a kitchenette no inventario da unidade, como a casa a lista, sem prometer que esta equipada para cozinhar."
+    },
+    {
+      "id": "AFIR-INDIVIDUAL",
+      "motivo": "O Quarto Individual que o Booking vende nao consta da descricao do site nem do registo."
+    },
+    {
+      "id": "AFIR-HORARIOS",
+      "motivo": "Check-in e check-out ficaram fora da base: sao regras declaradas ao Booking e por confirmar com o dono, e a pagina nao tem seccao de informacoes praticas."
+    },
+    {
+      "id": "AFIR-ANIMAIS",
+      "motivo": "Mesma razao dos horarios: regra do Booking por confirmar, sem seccao onde entrar."
+    },
+    {
+      "id": "AFIR-DEPOSITO",
+      "motivo": "Vale so para reservas pelo Booking e a base encaminha para contacto direto."
+    },
+    {
+      "id": "AFIR-NOTA-GOOGLE",
+      "motivo": "So a nota do Booking entra: duas notas em escalas diferentes lado a lado confundem, e a do Booking tem as 46 reviews todas recolhidas."
+    },
+    {
+      "id": "AFIR-PAINEIS",
+      "motivo": "Texto da casa anterior a 2010 sobre os 18 paineis fotovoltaicos, sem confirmacao posterior. Bom argumento a recuperar depois de falar com o dono."
+    },
+    {
+      "id": "AFIR-DESDE-2006",
+      "motivo": "A data so aparece em portais de terceiros; nenhuma fonte da casa a confirma."
+    },
+    {
+      "id": "AFIR-CAPELA-VISITA",
+      "motivo": "Dois hospedes contam que percorreram a casa e a capela, mas nenhum canal da casa o promete. Nao entra como promessa; a citacao do Ramiro, que fala de percorrer o interior, esta nas opinioes."
+    },
+    {
+      "id": "AFIR-ACOLHIMENTO",
+      "motivo": "O ponto forte com a nota mais alta do Booking (Funcionarios 9,4) nao tem uma unica fotografia com pessoas em todo o material publico, e a casa nao assume quem recebe. Fica dito pelas citacoes, nao por uma seccao propria."
+    },
+    {
+      "id": "ATV-BAR",
+      "motivo": "Ativo restrito: mostrar o balcao sugeria um servico de bar que esta em conflito."
+    },
+    {
+      "id": "ATV-SALAO-EVENTOS",
+      "motivo": "Ativo restrito: o salao montado com tela de projecao sugeria um servico de eventos por confirmar."
+    }
+  ]
+}

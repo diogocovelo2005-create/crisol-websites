@@ -1,0 +1,200 @@
+@import "tailwindcss";
+
+/*
+  A pele de C (osso, verde-sombra, ardósia), com mais cor: os tons vêm das
+  fotografias da casa. O verde das sebes, o azul-petróleo da piscina à
+  sombra, o barro do chão e dos sofás da sala.
+
+  linho       o fundo da página (osso)     tinta     o texto (verde-sombra)
+  cartao      a moldura das fotos          floresta  os painéis escuros e o rodapé
+  ouro        o acento: barro, nos botões  osso      texto sobre foto ou escuro
+  noite       o véu do primeiro ecrã       linha     os filetes
+
+  Fundos de secção: salvia (lá fora), pedra (a casa por dentro), sebe e
+  piscina (painéis de cor viva, texto creme). Texto secundário sobre eles:
+  folha. Itálicos dos títulos: barro no claro, barro-claro no escuro.
+*/
+
+@theme {
+  --color-linho: #ece7dc;
+  --color-linho-escuro: #ded6c6;
+  --color-cartao: #f7f4ee;
+
+  --color-tinta: #1e2a22;
+  --color-tinta-medio: #46575f;
+
+  --color-floresta: #1e2d24;
+  --color-floresta-fundo: #17221b;
+
+  --color-ouro: #a3482a;
+  --color-ouro-escuro: #873a20;
+
+  --color-barro: #a3482a;
+  --color-barro-claro: #ebc6a6;
+
+  --color-salvia: #dbe2cd;
+  --color-pedra: #eadac7;
+  --color-sebe: #3d5a35;
+  --color-piscina: #2c5e68;
+  --color-folha: #d0dac2;
+
+  --color-osso: #f7f4ee;
+  --color-creme: #eee8dc;
+  --color-noite: #111612;
+
+  --color-ardosia: #46575f;
+  --color-ardosia-claro: #b3c2c6;
+
+  --color-linha: rgba(30, 42, 34, 0.16);
+  --color-linha-clara: rgba(238, 232, 220, 0.22);
+
+  --font-display: var(--fonte-display), Georgia, serif;
+  --font-corpo: var(--fonte-corpo), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-media: 0px;
+  --radius-botao: 0px;
+}
+
+@layer base {
+  html {
+    background-color: var(--color-linho);
+    color-scheme: light;
+  }
+
+  body {
+    font-family: var(--font-corpo);
+    background-color: var(--color-linho);
+    color: var(--color-tinta);
+    font-size: 1rem;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  @media (min-width: 768px) {
+    body {
+      font-size: 1.0625rem;
+    }
+  }
+
+  /* Fraunces com o eixo SOFT a meio: serifa com carácter, cantos de
+     pedra gasta. Peso regular, nunca negrito. */
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-variation-settings: 'SOFT' 50;
+    letter-spacing: -0.015em;
+    line-height: 1.08;
+    text-wrap: balance;
+  }
+
+  h3 {
+    letter-spacing: -0.005em;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* O italico dos titulos e da mesma familia. Com descendentes (y g j p)
+     precisa de folga em baixo, senao corta. */
+  h1 em, h2 em, h3 em {
+    font-style: italic;
+    padding-bottom: 0.06em;
+  }
+
+  html {
+    scrollbar-color: var(--color-ardosia) var(--color-linho);
+    caret-color: var(--color-ardosia);
+  }
+
+  ::selection {
+    background: var(--color-floresta);
+    color: var(--color-osso);
+  }
+
+  /* currentColor: o anel tem o contraste do texto, no claro e no escuro */
+  :focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+  }
+
+  /* as âncoras não ficam debaixo do cabeçalho fixo */
+  section[id] {
+    scroll-margin-top: 5rem;
+  }
+}
+
+@layer utilities {
+  /* Versaletes das referencias: pequenos, espacados, em maiusculas. */
+  .versalete {
+    font-family: var(--font-corpo);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+
+  /* Véu do primeiro ecrã: só onde está o texto, em cima à esquerda.
+     O céu e a relva ficam com a luz deles no resto. */
+  .veu-hero {
+    background:
+      linear-gradient(180deg, rgba(17, 22, 18, 0.46) 0%, rgba(17, 22, 18, 0.3) 45%, rgba(17, 22, 18, 0.12) 80%, rgba(17, 22, 18, 0) 94%),
+      linear-gradient(90deg, rgba(17, 22, 18, 0.55) 0%, rgba(17, 22, 18, 0.4) 34%, rgba(17, 22, 18, 0.12) 52%, rgba(17, 22, 18, 0) 66%);
+  }
+
+  /* No telemóvel o texto ocupa a largura toda: o véu desce mais. */
+  @media (max-width: 767px) {
+    .veu-hero {
+      background: linear-gradient(
+        to bottom,
+        rgba(17, 22, 18, 0.58) 0%,
+        rgba(17, 22, 18, 0.5) 50%,
+        rgba(17, 22, 18, 0.32) 78%,
+        rgba(17, 22, 18, 0.15) 100%
+      );
+    }
+  }
+
+  /* Os títulos de secção de C: Newsreader leve, grandes. */
+  .titulo-seccao {
+    font-size: clamp(2.5rem, 5.4vw, 4.5rem);
+    line-height: 1.04;
+  }
+
+  /* A moldura de C: um passe-partout claro à volta das fotos. */
+  .moldura {
+    border: 6px solid var(--color-cartao);
+    box-shadow: 0 1px 3px rgba(28, 35, 30, 0.12), 0 12px 30px -18px rgba(28, 35, 30, 0.35);
+  }
+  @media (min-width: 768px) {
+    .moldura {
+      border-width: 10px;
+    }
+  }
+
+  /* As vozes dos hóspedes: Newsreader em itálico leve. */
+  .voz {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 300;
+    font-variation-settings: 'SOFT' 100;
+  }
+
+  .sem-barra::-webkit-scrollbar {
+    display: none;
+  }
+  .sem-barra {
+    scrollbar-width: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

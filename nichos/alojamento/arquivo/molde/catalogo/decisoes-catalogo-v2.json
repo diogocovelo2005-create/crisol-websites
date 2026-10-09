@@ -1,0 +1,35 @@
+{
+  "versao": 2,
+  "criadoEm": "2026-09-20",
+  "origem": "decisoes-catalogo.json",
+  "resumo": {
+    "mantidosAprovados": ["H1", "PI1", "A3", "E1", "E2", "E3", "E4", "F1", "F4"],
+    "revistosParaNovaAvaliacao": ["H2", "H3", "H4", "PI3", "A1", "P5", "E5", "O3", "F2", "F3"],
+    "removidos": ["PI2", "A2", "O2"]
+  },
+  "decisoes": {
+    "H1": { "estado": "aprovado", "nota": "Base preferida mantida." },
+    "H2": { "estado": "por-avaliar", "nota": "Novo: nome monumental que encolhe e assenta no cabeçalho, inspirado na Lumière." },
+    "H3": { "estado": "por-avaliar", "nota": "Revisto: uma fotografia enquadrada expande com o scroll." },
+    "H4": { "estado": "por-avaliar", "nota": "Revisto: uma fotografia com texto ao centro abre suavemente para a secção seguinte." },
+    "PI1": { "estado": "aprovado", "nota": "" },
+    "PI3": { "estado": "por-avaliar", "nota": "Revisto: secção e cartões mais baixos." },
+    "A1": { "estado": "por-avaliar", "nota": "Revisto: espaço editorial para casa, história e região." },
+    "A3": { "estado": "aprovado", "nota": "" },
+    "P1": { "estado": "por-avaliar", "nota": "" },
+    "P2": { "estado": "por-avaliar", "nota": "" },
+    "P4": { "estado": "por-avaliar", "nota": "" },
+    "P5": { "estado": "por-avaliar", "nota": "Revisto: livro maior, fundo claro e fotografias maiores." },
+    "E1": { "estado": "aprovado", "nota": "" },
+    "E2": { "estado": "aprovado", "nota": "Revisto: depois da primeira passagem fica livre e usa setas." },
+    "E3": { "estado": "aprovado", "nota": "" },
+    "E4": { "estado": "aprovado", "nota": "" },
+    "E5": { "estado": "por-avaliar", "nota": "Revisto: depois da primeira passagem fica livre e usa setas." },
+    "O1": { "estado": "por-avaliar", "nota": "" },
+    "O3": { "estado": "por-avaliar", "nota": "Revisto: várias avaliações, avanço automático de 4 segundos e setas." },
+    "F1": { "estado": "aprovado", "nota": "" },
+    "F2": { "estado": "por-avaliar", "nota": "Revisto: portão de madeira neutro e mais realista." },
+    "F3": { "estado": "por-avaliar", "nota": "Revisto: várias avaliações, avanço automático de 4 segundos e setas." },
+    "F4": { "estado": "aprovado", "nota": "" }
+  }
+}

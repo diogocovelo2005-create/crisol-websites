@@ -1,0 +1,637 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa da Calçada</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-sand: #D4C5B9;
+            --bg-offwhite: #F7F5F0;
+            --text-dark: #3E2C22;
+            
+            --font-title: 'Fraunces', serif;
+            --font-body: 'Jost', sans-serif;
+            
+            --nav-height: 0px;
+            --container-padding: 2rem;
+            --max-w: 1440px;
+        }
+
+        @media (min-width: 1024px) {
+            :root {
+                --container-padding: 4rem;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html.lenis, html.lenis body {
+            height: auto;
+        }
+
+        .lenis.lenis-smooth {
+            scroll-behavior: auto !important;
+        }
+
+        .lenis.lenis-smooth [data-lenis-prevent] {
+            overscroll-behavior: contain;
+        }
+
+        .lenis.lenis-stopped {
+            overflow: hidden;
+        }
+
+        .lenis.lenis-smooth iframe {
+            pointer-events: none;
+        }
+
+        body {
+            background-color: var(--bg-offwhite);
+            color: var(--text-dark);
+            font-family: var(--font-body);
+            font-size: 1.125rem;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-align: left; /* Regra estrita: evitar elementos centrados */
+        }
+
+        /* Tipografia */
+        h1, h2, h3 {
+            font-family: var(--font-title);
+            font-weight: 500;
+            color: var(--text-dark);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 6vw, 5.5rem);
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            max-width: 65ch;
+        }
+
+        ul {
+            list-style-type: none;
+            margin-bottom: 2rem;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+            max-width: 65ch;
+        }
+
+        ul li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.6em;
+            width: 0.5rem;
+            height: 1px;
+            background-color: var(--text-dark);
+        }
+
+        a {
+            color: inherit;
+        }
+
+        blockquote {
+            margin: 2.5rem 0;
+            padding: 2rem;
+            background: rgba(255,255,255,0.3);
+            border-left: 4px solid var(--text-dark);
+            font-family: var(--font-title);
+            font-size: 1.25rem;
+            line-height: 1.4;
+            max-width: 65ch;
+        }
+
+        .translation {
+            display: block;
+            margin-top: 1rem;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-style: normal;
+            opacity: 0.8;
+        }
+
+        .quote-author {
+            display: block;
+            margin-top: 1rem;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--text-dark);
+            color: var(--bg-offwhite);
+            padding: 1.25rem 2.5rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 500;
+            font-size: 0.875rem;
+            margin-top: 2rem;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #221712;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Cores de Fundo Utilitárias */
+        .bg-sand { background-color: var(--bg-sand); }
+        .bg-offwhite { background-color: var(--bg-offwhite); }
+
+        /* --- Layouts Estruturais --- */
+
+        /* 1. Hero (Primeiro Ecrã) */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .hero-content {
+            flex: 1;
+            padding: calc(var(--container-padding) * 2) var(--container-padding);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: var(--bg-sand);
+        }
+
+        .hero-media {
+            height: 60vh;
+            width: 100%;
+        }
+
+        .hero-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media (min-width: 1024px) {
+            .hero {
+                flex-direction: row;
+                height: 100vh;
+            }
+            .hero-content {
+                width: 50%;
+                padding-left: max(var(--container-padding), calc((100vw - var(--max-w)) / 2 + var(--container-padding)));
+                padding-right: var(--container-padding);
+            }
+            .hero-media {
+                width: 50%;
+                height: 100vh;
+            }
+        }
+
+        /* 2. Faixa Horizontal (História, Reservas) */
+        .horizontal-band {
+            padding: calc(var(--container-padding) * 2) 0;
+        }
+
+        .band-text {
+            padding: 0 var(--container-padding);
+            max-width: var(--max-w);
+            margin: 0 auto;
+        }
+
+        /* Scroll Horizontal de Cartões (Usado na secção da História) */
+        .hz-scroll-container {
+            margin-top: 4rem;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .hz-scroll-track {
+            display: flex;
+            gap: 2rem;
+            padding: 0 var(--container-padding);
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none; /* Firefox */
+        }
+        
+        .hz-scroll-track::-webkit-scrollbar {
+            display: none; /* Safari/Chrome */
+        }
+
+        .hz-card {
+            flex: 0 0 85%;
+            scroll-snap-align: start;
+        }
+
+        @media (min-width: 768px) {
+            .hz-card { flex: 0 0 50%; }
+        }
+        @media (min-width: 1024px) {
+            .hz-card { flex: 0 0 35%; }
+            .hz-scroll-track {
+                padding-left: max(var(--container-padding), calc((100vw - var(--max-w)) / 2 + var(--container-padding)));
+                padding-right: max(var(--container-padding), calc((100vw - var(--max-w)) / 2 + var(--container-padding)));
+            }
+        }
+
+        /* 3. Split Screen Tátil (Quartos, Capela, Quinta) */
+        .split-section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .split-text {
+            padding: calc(var(--container-padding) * 2) var(--container-padding);
+        }
+
+        .split-media {
+            padding: 0 var(--container-padding) calc(var(--container-padding) * 2);
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        @media (min-width: 1024px) {
+            .split-section {
+                flex-direction: row;
+                align-items: flex-start;
+                position: relative;
+            }
+
+            .split-text {
+                width: 50%;
+                position: sticky;
+                top: 0;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding-left: max(var(--container-padding), calc((100vw - var(--max-w)) / 2 + var(--container-padding)));
+                padding-right: var(--container-padding);
+            }
+
+            .split-media {
+                width: 50%;
+                padding: calc(var(--container-padding) * 2) var(--container-padding);
+                padding-right: max(var(--container-padding), calc((100vw - var(--max-w)) / 2 + var(--container-padding)));
+                gap: 4rem;
+            }
+        }
+
+        /* O "Cartão Tátil" para as imagens */
+        .photo-card {
+            background-color: var(--bg-offwhite);
+            padding: 1rem;
+            width: 100%;
+        }
+        
+        .bg-offwhite .photo-card {
+            background-color: var(--bg-sand);
+        }
+
+        .photo-card img {
+            width: 100%;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+        }
+
+        @media (min-width: 1024px) {
+            .photo-card { padding: 1.5rem; }
+        }
+
+        /* Variantes de rácio para diferentes secções */
+        .ratio-landscape img { aspect-ratio: 4/3; }
+        .ratio-square img { aspect-ratio: 1/1; }
+
+        /* Grid de Reviews */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .review-box {
+            background-color: var(--bg-offwhite);
+            padding: 2rem;
+        }
+
+        .review-box blockquote {
+            background: none;
+            padding: 0;
+            margin: 0;
+            border: none;
+            font-size: 1.125rem;
+        }
+
+        @media (min-width: 768px) {
+            .reviews-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .notes-list {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--text-dark);
+        }
+
+        /* Footer Banner */
+        .footer-banner {
+            width: 100%;
+            height: 60vh;
+            margin-top: 4rem;
+        }
+        
+        .footer-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Ajustes de Redução de Movimento */
+        @media (prefers-reduced-motion: reduce) {
+            .split-text { position: static; height: auto; }
+            .hz-scroll-track { overflow-x: auto; scroll-snap-type: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Primeiro ecrã -->
+    <section class="hero bg-sand">
+        <div class="hero-content">
+            <h1>Casa da Calçada</h1>
+            <p>Turismo de Habitação em Oliveira do Douro, Cinfães, com a fachada virada para o rio Douro.</p>
+            <div>
+                <a href="#reservar" class="btn">Consultar disponibilidade</a>
+            </div>
+        </div>
+        <div class="hero-media">
+            <img src="../../fotos/piscina-torre-01.jpg" style="object-position: 71% 38%;" alt="Piscina da casa com vista para a torre e o vale">
+        </div>
+    </section>
+
+    <!-- 2. A casa -->
+    <section class="horizontal-band bg-offwhite">
+        <div class="band-text">
+            <h2>História e Requinte</h2>
+            <p>A casa começou como construção rural em granito, cresceu no século XVIII até à forma que tem hoje, e foi depois adaptada pelo Monsenhor António Pinto d'Abreu para servir de colónia de férias de verão aos alunos e professores do colégio Vasco da Gama, de Lisboa.</p>
+            <p>O arquiteto António Couto d'Abreu desenhou então a capela e a varanda de acesso, acrescentadas à empena leste, que passou a ser a entrada.</p>
+            <p>A cantaria foi executada à mão, com técnicas e materiais da região.</p>
+            <p>Fica na encosta virada a norte, junto à E.N. 222, a cerca de 6 km de Cinfães e 10 km de Resende.</p>
+        </div>
+        
+        <div class="hz-scroll-container">
+            <div class="hz-scroll-track">
+                <div class="hz-card">
+                    <div class="photo-card ratio-landscape">
+                        <img src="../../fotos/capela-05.jpg" style="object-position: 55% 25%;" alt="Cantaria de granito e torre sineira">
+                    </div>
+                </div>
+                <div class="hz-card">
+                    <div class="photo-card ratio-landscape">
+                        <img src="../../fotos/telhado-ameias-01.jpg" style="object-position: 82% 23%;" alt="Varanda e fachada com torre ameiada">
+                    </div>
+                </div>
+                <div class="hz-card">
+                    <div class="photo-card ratio-landscape">
+                        <img src="../../fotos/patio-torre-01.jpg" style="object-position: 62% 10%;" alt="Pátio interior e fachada de cantaria">
+                    </div>
+                </div>
+                <div class="hz-card">
+                    <div class="photo-card ratio-landscape">
+                        <img src="../../fotos/corredor-pedra-01.jpg" style="object-position: 51% 68%;" alt="Corredor em pedra no interior">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. A capela -->
+    <section class="split-section bg-sand">
+        <div class="split-text">
+            <h2>A capela</h2>
+            <p>A quinta tem capela própria, reconstruída, com torre sineira e vitrais.</p>
+            
+            <blockquote>
+                "Absolutely beautiful property, lovely setting and a beautiful conversion of an old church."
+                <span class="translation">Tradução: Propriedade absolutamente linda, enquadramento adorável e uma bela conversão de uma igreja antiga.</span>
+                <cite class="quote-author">James, Booking</cite>
+            </blockquote>
+
+            <blockquote>
+                "Mohli jsme projít cely dům a kapli."
+                <span class="translation">Tradução: Pudemos percorrer a casa inteira e a capela.</span>
+                <cite class="quote-author">Cyrany, Booking</cite>
+            </blockquote>
+        </div>
+        <div class="split-media">
+            <div class="photo-card">
+                <img src="../../fotos/capela-06.jpg" style="object-position: 81% 42%;" alt="Vista da torre sineira e telhados">
+            </div>
+            <div class="photo-card">
+                <img src="../../fotos/jardim-capela-01.jpg" style="object-position: 80% 55%;" alt="Fachada da capela e relvado">
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Os quartos -->
+    <section class="split-section bg-offwhite">
+        <div class="split-text">
+            <h2>Os quartos</h2>
+            <p>A casa tem 10 quartos e 20 camas: 8 quartos na casa principal e 2 na casa de pedra junto à piscina.</p>
+            
+            <ul>
+                <li><strong>Suites:</strong> há 2 suites com cama de casal e casa de banho privativa, no primeiro andar da casa principal.</li>
+                <li><strong>Quartos duplos:</strong> há 6 quartos duplos com duas camas de solteiro e casa de banho privativa.</li>
+                <li><strong>Águas-furtadas:</strong> quatro dos quartos ficam no segundo andar, com ar condicionado, tectos panorâmicos e claraboias viradas ao vale.</li>
+                <li><strong>Casa de pedra:</strong> junto à piscina há uma casa de pedra independente com 2 quartos duplos com ar condicionado, casa de banho, sala com kitchenette e varanda.</li>
+            </ul>
+
+            <p>Todas as estadias incluem o pequeno-almoço.</p>
+        </div>
+        <div class="split-media">
+            <div class="photo-card">
+                <img src="../../fotos/quarto-casal-01.jpg" style="object-position: 35% 85%;" alt="Quarto com paredes em pedra pintada de branco">
+            </div>
+            <div class="photo-card">
+                <img src="../../fotos/quarto-aguas-furtadas-02.jpg" style="object-position: 51% 64%;" alt="Quarto nas águas-furtadas com claraboias">
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. A quinta, dentro e fora -->
+    <section class="split-section bg-sand">
+        <div class="split-text">
+            <h2>Dentro e fora</h2>
+            <p>A quinta tem piscina exterior com balneários de apoio.</p>
+            <p>Tem court de ténis, que serve também de campo de futebol.</p>
+            <p>Tem jardins, patamares panorâmicos com vista sobre a propriedade e sobre o rio Douro, hortas e árvores de fruto.</p>
+            <p>Dentro, os hóspedes têm à disposição salas de estar e de jantar com lareira, salão de jogos com bilhar, salão para jantares e cozinha equipada. A cozinha industrial com forno a lenha está ao dispor dos hóspedes.</p>
+            
+            <blockquote>
+                "O que mais gostei foi a envolvencia em que o alojamento se encontra, com espaços verdes e generosos, ideal para momentos de descanso."
+                <cite class="quote-author">Maria, Booking</cite>
+            </blockquote>
+        </div>
+        <div class="split-media">
+            <div class="photo-card ratio-square">
+                <img src="../../fotos/piscina-torre-02.jpg" style="object-position: 62% 32%;" alt="Piscina com a torre da capela ao fundo">
+            </div>
+            <div class="photo-card ratio-square">
+                <img src="../../fotos/glicinias-alameda-01.jpg" style="object-position: 48% 60%;" alt="Caminho pedonal em calçada ladeado por pérgula e muro de pedra">
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. A casa inteira -->
+    <section class="horizontal-band bg-offwhite">
+        <div class="band-text">
+            <h2>A casa inteira</h2>
+            <p>A casa principal pode ser reservada inteira, para um grupo.</p>
+            
+            <blockquote>
+                "I could easily imagine a whole big extended family staying here for a wedding or reunion or group retreat."
+                <span class="translation">Tradução: Conseguia bem imaginar uma família grande inteira aqui para um casamento, um reencontro ou um retiro de grupo.</span>
+                <cite class="quote-author">Ann Meyer, Google Maps</cite>
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- 7. Quem já ficou -->
+    <section class="horizontal-band bg-sand">
+        <div class="band-text">
+            <h2>Quem já ficou</h2>
+            
+            <div class="reviews-grid">
+                <div class="review-box">
+                    <blockquote>
+                        "Muito bem recebido pela anfitriã. Senti-me em casa."
+                        <cite class="quote-author">Luis, Booking</cite>
+                    </blockquote>
+                </div>
+                <div class="review-box">
+                    <blockquote>
+                        "É um local calmo e muito sossegado, ideal para descansar e desligar do mundo."
+                        <cite class="quote-author">Johnny Lino, Google Maps</cite>
+                    </blockquote>
+                </div>
+                <div class="review-box">
+                    <blockquote>
+                        "You feel like at your rich grand-parents home."
+                        <span class="translation">Tradução: Sente-se como na casa dos seus avós ricos.</span>
+                        <cite class="quote-author">Marc L., Google Maps</cite>
+                    </blockquote>
+                </div>
+                <div class="review-box">
+                    <blockquote>
+                        "Very caring and welcoming staff. They met me at a late check-in, left a late breakfast, were always in touch"
+                        <span class="translation">Tradução: Pessoal muito atencioso e acolhedor. Receberam-me num check-in tardio, deixaram um pequeno-almoço para mais tarde, estiveram sempre em contacto.</span>
+                        <cite class="quote-author">Ilya, Booking</cite>
+                    </blockquote>
+                </div>
+            </div>
+
+            <div class="notes-list">
+                <ul>
+                    <li>Booking: 8,8 em 10, em 46 comentários (lido a 22 de setembro de 2026).</li>
+                    <li>Google Maps: 4,4 em 5, em 152 críticas (lido a 22 de setembro de 2026).</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Consultar disponibilidade -->
+    <section id="reservar" class="horizontal-band bg-offwhite" style="padding-bottom: 0;">
+        <div class="band-text">
+            <h2>Consultar disponibilidade</h2>
+            <p>A reserva faz-se por contacto direto: a casa responde a confirmar a disponibilidade.</p>
+            
+            <ul>
+                <li>Telemóvel: <a href="tel:+351936345815">+351 936 345 815</a></li>
+                <li>Telemóvel: <a href="tel:+351932476339">+351 932 476 339</a></li>
+                <li>Email: <a href="mailto:geral@casacalcada.com">geral@casacalcada.com</a></li>
+            </ul>
+
+            <p>Morada: Lugar da Calçada, Oliveira do Douro, 4690 Cinfães.</p>
+            <p>Check-in das 15:00 às 20:00. Check-out até às 12:00.</p>
+            <p>Não são admitidos animais de estimação.</p>
+            <p>Registo 1375</p>
+        </div>
+        
+        <div class="footer-banner">
+            <img src="../../fotos/aerea-01.jpg" style="object-position: 60% 45%;" alt="Vista aérea panorâmica da quinta e instalações">
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Inicializar Lenis para scroll suave (enfatiza a tática e estrutura dos cartões)
+            if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+                const lenis = new Lenis({
+                    duration: 1.2,
+                    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                    direction: 'vertical',
+                    gestureDirection: 'vertical',
+                    smooth: true,
+                    mouseMultiplier: 1,
+                    smoothTouch: false,
+                    touchMultiplier: 2,
+                    infinite: false,
+                });
+
+                function raf(time) {
+                    lenis.raf(time);
+                    requestAnimationFrame(raf);
+                }
+
+                requestAnimationFrame(raf);
+            }
+        });
+    </script>
+</body>
+</html>

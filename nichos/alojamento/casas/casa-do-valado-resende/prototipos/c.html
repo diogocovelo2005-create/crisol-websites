@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Casa do Valado · Protótipo C</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&family=Mulish:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --osso: #ECE9E1;
+    --moldura: #F7F5F0;
+    --sombra: #1C231E;
+    --ardosia: #4F5E66;
+    --ardosia-claro: #A9B6BC;
+    --creme: #E8E4DA;
+    --serif: "Newsreader", Georgia, serif;
+    --sans: "Mulish", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    background: var(--osso);
+    color: var(--sombra);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+  img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  a { color: inherit; }
+
+  .rotulo {
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--ardosia);
+  }
+  h2 {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: clamp(38px, 5vw, 64px);
+    line-height: 1.08;
+    letter-spacing: -.01em;
+  }
+  h2 em { font-style: italic; }
+  blockquote p {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 300;
+  }
+  .trad {
+    font-size: 16px;
+    color: var(--ardosia);
+    margin-top: 10px;
+  }
+  cite {
+    display: block;
+    font-style: normal;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--ardosia);
+    margin-top: 14px;
+  }
+
+  /* faixa */
+  .faixa {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 18px clamp(20px, 5vw, 64px);
+    border-bottom: 1px solid rgba(28,35,30,.14);
+  }
+  .faixa strong {
+    font-family: var(--serif); font-weight: 400; font-size: 26px; letter-spacing: .01em;
+  }
+
+  /* pausas a sangrar */
+  .sangra { width: 100%; height: min(86vh, 780px); overflow: hidden; }
+  .sangra.baixa { height: min(72vh, 680px); }
+
+  /* 2. vale */
+  .vale-texto {
+    max-width: 620px; margin: 0 auto; text-align: center;
+    padding: 120px 24px 140px;
+  }
+  .vale-texto .frase {
+    font-family: var(--serif); font-weight: 300;
+    font-size: clamp(28px, 3.2vw, 40px); line-height: 1.25;
+  }
+  .vale-texto blockquote { margin-top: 64px; }
+  .vale-texto blockquote p { font-size: 22px; line-height: 1.45; }
+
+  /* 3. lá fora */
+  .fora {
+    display: grid; grid-template-columns: 1.15fr 1fr; gap: 80px;
+    max-width: 1280px; margin: 0 auto; padding: 40px clamp(20px, 5vw, 64px) 150px;
+    align-items: center;
+  }
+  .colagem { position: relative; aspect-ratio: 1 / 1.05; }
+  .colagem figure {
+    position: absolute; overflow: hidden;
+    border: 10px solid var(--moldura);
+    box-shadow: 0 1px 3px rgba(28,35,30,.12);
+  }
+  .fora .c1 { left: 0; top: 14%; width: 74%; aspect-ratio: 3/2; z-index: 1; }
+  .fora .c2 { right: 0; top: 0; width: 46%; aspect-ratio: 4/5; z-index: 2; }
+  .fora .c3 { left: 18%; bottom: 0; width: 52%; aspect-ratio: 3/2; z-index: 3; }
+  .fora-texto { max-width: 420px; text-align: center; margin: 0 auto; }
+  .fora-texto h2 { margin: 14px 0 56px; }
+  .momento + .momento { margin-top: 52px; }
+  .momento h3 {
+    font-family: var(--serif); font-weight: 400; font-size: 26px; margin-bottom: 8px;
+  }
+  .momento blockquote { margin-top: 18px; }
+  .momento blockquote p { font-size: 20px; line-height: 1.45; }
+
+  /* faixa escura com a voz do jardim */
+  .jardim-voz {
+    background: var(--sombra); color: var(--creme);
+    text-align: center; padding: 110px 24px;
+  }
+  .jardim-voz blockquote { max-width: 760px; margin: 0 auto; }
+  .jardim-voz blockquote p { font-size: clamp(24px, 2.6vw, 32px); line-height: 1.4; }
+  .jardim-voz .trad, .jardim-voz cite { color: var(--ardosia-claro); }
+
+  /* 4. casa de pedra */
+  .casa { padding: 150px clamp(20px, 5vw, 64px) 140px; }
+  .casa-cabeca { max-width: 560px; margin: 0 auto; text-align: center; }
+  .casa-cabeca h2 { margin: 14px 0 28px; }
+  .casa-colagem {
+    position: relative; max-width: 1120px; margin: 90px auto 0;
+    aspect-ratio: 16 / 8.2;
+  }
+  .casa .k1 { left: 14%; top: 6%; width: 64%; aspect-ratio: 3/2; z-index: 2; }
+  .casa .k2 { left: 0; bottom: 0; width: 30%; aspect-ratio: 4/3; z-index: 3; }
+  .casa .k3 { right: 0; top: 0; width: 30%; aspect-ratio: 3/4; z-index: 1; }
+  .casa .k4 { right: 4%; bottom: 0; width: 26%; aspect-ratio: 3/2; z-index: 3; }
+  .casa-colunas {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 72px;
+    max-width: 880px; margin: 100px auto 0;
+  }
+  .casa-colunas p + p { margin-top: 16px; }
+  .casa-colunas blockquote {
+    border-left: 1px solid var(--ardosia); padding-left: 28px; align-self: start;
+  }
+  .casa-colunas blockquote p { font-size: 23px; line-height: 1.4; }
+
+  /* 5. quartos */
+  .quartos {
+    display: grid; grid-template-columns: 360px 1fr; gap: 90px;
+    max-width: 1180px; margin: 0 auto;
+    padding: 40px clamp(20px, 5vw, 64px) 150px; align-items: center;
+  }
+  .quartos h2 { margin: 14px 0 24px; }
+  .quartos-colagem { position: relative; height: 470px; }
+  .quartos .q1 { left: 0; top: 0; width: 46%; aspect-ratio: 3/2; z-index: 1; }
+  .quartos .q2 { left: 27%; top: 26%; width: 46%; aspect-ratio: 3/2; z-index: 2; }
+  .quartos .q3 { right: 0; top: 52%; width: 46%; aspect-ratio: 3/2; z-index: 3; }
+
+  /* 6. quem recebe */
+  .recebe { background: var(--sombra); color: var(--creme); padding: 140px clamp(20px, 5vw, 64px); }
+  .recebe .rotulo, .recebe cite, .recebe .trad { color: var(--ardosia-claro); }
+  .recebe-cabeca { text-align: center; max-width: 640px; margin: 0 auto 90px; }
+  .recebe-cabeca h2 { margin-top: 14px; }
+  .colecao {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 72px 96px;
+    max-width: 980px; margin: 0 auto;
+  }
+  .colecao blockquote { border-top: 1px solid rgba(232,228,218,.22); padding-top: 28px; }
+  .colecao blockquote p { font-size: 24px; line-height: 1.4; }
+  .colecao .larga { grid-column: 1 / -1; max-width: 700px; justify-self: center; text-align: center; }
+  .notas {
+    max-width: 720px; margin: 100px auto 0; border-collapse: collapse; width: 100%;
+    font-size: 16px;
+  }
+  .notas th, .notas td {
+    text-align: left; vertical-align: top; padding: 14px 0;
+    border-bottom: 1px solid rgba(232,228,218,.16);
+  }
+  .notas th {
+    width: 150px; font-size: 12px; font-weight: 600; letter-spacing: .2em;
+    text-transform: uppercase; color: var(--ardosia-claro); padding-top: 18px;
+  }
+
+  /* 7. onde fica */
+  .onde {
+    max-width: 1100px; margin: 0 auto;
+    padding: 150px clamp(20px, 5vw, 64px) 140px;
+    display: grid; grid-template-columns: 1fr 1.25fr; gap: 90px; align-items: start;
+  }
+  .onde h2 { margin-top: 14px; }
+  .factos { width: 100%; border-collapse: collapse; }
+  .factos th, .factos td {
+    text-align: left; vertical-align: top; padding: 16px 0;
+    border-bottom: 1px solid rgba(28,35,30,.14);
+  }
+  .factos tr:first-child th, .factos tr:first-child td { border-top: 1px solid rgba(28,35,30,.14); }
+  .factos th {
+    width: 160px; font-size: 12px; font-weight: 600; letter-spacing: .2em;
+    text-transform: uppercase; color: var(--ardosia); padding-top: 20px;
+  }
+  .onde-vozes { grid-column: 1 / -1; max-width: 600px; margin: 30px auto 0; text-align: center; }
+  .onde-vozes blockquote + blockquote { margin-top: 48px; }
+  .onde-vozes blockquote p { font-size: 22px; line-height: 1.45; }
+
+  /* 8. reservar */
+  .reservar {
+    background: var(--sombra); color: var(--creme);
+    padding: 140px clamp(20px, 5vw, 64px) 70px; text-align: center;
+  }
+  .reservar .rotulo { color: var(--ardosia-claro); }
+  .reservar h2 { margin: 14px 0 24px; }
+  .reservar .intro { max-width: 560px; margin: 0 auto; }
+  .botoes { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin: 44px 0 60px; }
+  .botao {
+    display: inline-block; padding: 15px 28px; min-height: 48px;
+    border: 1px solid var(--creme); color: var(--creme); text-decoration: none;
+    font-size: 12px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase;
+  }
+  .botao:hover { background: var(--creme); color: var(--sombra); }
+  .botao.cheio { background: var(--creme); color: var(--sombra); }
+  .botao.cheio:hover { background: transparent; color: var(--creme); }
+  .contactos {
+    display: flex; justify-content: center; gap: 48px; flex-wrap: wrap;
+    font-family: var(--serif); font-size: 24px; font-weight: 300;
+  }
+  .contactos a { text-decoration: none; border-bottom: 1px solid rgba(232,228,218,.35); }
+  .contactos a:hover { border-color: var(--creme); }
+  .regras {
+    list-style: none; max-width: 560px; margin: 80px auto 0;
+    border-top: 1px solid rgba(232,228,218,.18);
+  }
+  .regras li { padding: 13px 0; border-bottom: 1px solid rgba(232,228,218,.18); }
+  .registo { margin-top: 90px; font-size: 13px; letter-spacing: .08em; color: var(--ardosia-claro); }
+
+  @media (max-width: 900px) {
+    body { font-size: 16px; }
+    .faixa strong { font-size: 21px; }
+    .sangra, .sangra.baixa { height: 62vh; }
+    .vale-texto { padding: 80px 22px 90px; }
+    .fora, .quartos, .onde { grid-template-columns: 1fr; gap: 56px; padding-bottom: 100px; }
+    .colagem { aspect-ratio: auto; height: 360px; }
+    .fora .c1 { width: 82%; top: 16%; }
+    .fora .c2 { width: 46%; }
+    .fora .c3 { width: 60%; left: 12%; }
+    .colagem figure { border-width: 6px; }
+    .casa { padding: 100px 22px; }
+    .casa-colagem { aspect-ratio: auto; height: 420px; margin-top: 56px; }
+    .casa .k1 { left: 0; top: 18%; width: 86%; }
+    .casa .k2 { width: 46%; }
+    .casa .k3 { width: 34%; }
+    .casa .k4 { width: 44%; right: 0; }
+    .casa-colunas { grid-template-columns: 1fr; gap: 40px; margin-top: 64px; }
+    .quartos-colagem { height: 300px; }
+    .quartos .q1, .quartos .q2, .quartos .q3 { width: 58%; }
+    .quartos .q2 { left: 21%; }
+    .recebe, .reservar { padding: 100px 22px 60px; }
+    .colecao { grid-template-columns: 1fr; gap: 48px; }
+    .colecao blockquote p { font-size: 21px; }
+    .notas th, .factos th { width: 110px; padding-right: 12px; }
+    .onde { padding: 100px 22px; }
+    .contactos { flex-direction: column; gap: 14px; font-size: 21px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="faixa">
+  <strong>Casa do Valado</strong>
+  <span class="rotulo">Resende</span>
+</header>
+
+<!-- 2. O vale -->
+<section aria-label="O vale">
+  <div class="sangra">
+    <img src="fotos/vista-02.jpg" alt="O vale e as serras" style="object-position: 50% 50%">
+  </div>
+  <div class="vale-texto">
+    <p class="frase">Vista aberta sobre o vale, as encostas e as serras em redor.</p>
+    <blockquote>
+      <p lang="de">"Das Haus ist toll gelegen mit fantastischem Ausblick und tolle Gärten."</p>
+      <p class="trad">A casa está muito bem situada, com uma vista fantástica e jardins ótimos.</p>
+      <cite>Anja · Booking</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- 3. Os dias lá fora -->
+<section class="fora" aria-labelledby="t-fora">
+  <div class="colagem">
+    <figure class="c1"><img src="fotos/piscina-01.jpg" alt="A piscina rodeada de relva" style="object-position: 50% 60%"></figure>
+    <figure class="c2"><img src="fotos/jardim-01.jpg" alt="O deck com pérgola" style="object-position: 50% 45%"></figure>
+    <figure class="c3"><img src="fotos/jardim-03.jpg" alt="A churrasqueira coberta junto ao pátio" style="object-position: 65% 55%"></figure>
+  </div>
+  <div class="fora-texto">
+    <span class="rotulo">Os dias lá fora</span>
+    <h2 id="t-fora">Lá fora, <em>o dia todo</em></h2>
+    <div class="momento">
+      <h3>A piscina</h3>
+      <p>Piscina privada ao ar livre, rodeada de relva e com pátio de lajes.</p>
+      <blockquote>
+        <p lang="en">"the pool area was very beautiful with great views of the valley"</p>
+        <cite>Richard · Booking</cite>
+      </blockquote>
+    </div>
+    <div class="momento">
+      <h3>O deck</h3>
+      <p>No jardim, um deck de madeira com pérgola, virado ao vale.</p>
+      <blockquote>
+        <p>"Espaço exterior com óptima paisagem e um deck muito bom para fazer refeições."</p>
+        <cite>Nuno Besteiro · Google</cite>
+      </blockquote>
+    </div>
+    <div class="momento">
+      <h3>A churrasqueira</h3>
+      <p>Uma churrasqueira exterior coberta, junto ao pátio.</p>
+      <blockquote>
+        <p>"Churrasco  foram feitos, banhos de sol tomados"</p>
+        <cite>Helena Maria Sampaio De Castro Henriques · Google</cite>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<div class="sangra baixa">
+  <img src="fotos/piscina-02.jpg" alt="A piscina com a casa de pedra ao fundo" style="object-position: 50% 70%">
+</div>
+<aside class="jardim-voz">
+  <blockquote>
+    <p lang="nl">"De tuin is mooi aangelegd met veel groen, ideaal om uren te zonnen of een goed boek te lezen."</p>
+    <p class="trad">O jardim está bem arranjado, com muito verde, ideal para apanhar sol horas a fio ou ler um bom livro.</p>
+    <cite>Basma · Booking</cite>
+  </blockquote>
+</aside>
+
+<!-- 4. A casa de pedra -->
+<section class="casa" aria-labelledby="t-casa">
+  <div class="casa-cabeca">
+    <span class="rotulo">A casa de pedra</span>
+    <h2 id="t-casa">Por dentro, <em>pedra</em></h2>
+    <p>Uma casa de granito, com as paredes de pedra à vista na sala e na cozinha, e um anexo de pedra antigo ao lado.</p>
+  </div>
+  <div class="casa-colagem colagem">
+    <figure class="k1"><img src="fotos/sala-02.jpg" alt="A sala com lareira de pedra e janela grande sobre o vale" style="object-position: 50% 50%"></figure>
+    <figure class="k2"><img src="fotos/fachada-02.jpg" alt="A fachada de granito com rosas" style="object-position: 50% 40%"></figure>
+    <figure class="k3"><img src="fotos/sala-01.jpg" alt="A parede de pedra da sala" style="object-position: 50% 45%"></figure>
+    <figure class="k4"><img src="fotos/refeicoes-01.jpg" alt="A mesa de refeições e a churrasqueira interior de tijolo" style="object-position: 50% 50%"></figure>
+  </div>
+  <div class="casa-colunas">
+    <div>
+      <p>Na sala, uma lareira de pedra e uma janela grande sobre o vale.</p>
+      <p>A cozinha tem máquina de lavar loiça, forno, micro-ondas, torradeira, chaleira e máquina de café, e a mesa de refeições fica junto a uma churrasqueira interior de tijolo. Há Wi-Fi gratuito, ar condicionado, televisão e máquina de lavar roupa.</p>
+    </div>
+    <blockquote>
+      <p lang="nl">"Huis staat in orde zoals op de fotos, geen verborgen gebreken."</p>
+      <p class="trad">A casa está em ordem, tal como nas fotos, sem defeitos escondidos.</p>
+      <cite>Kris Van de Spiegle · Google</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- 5. Os quartos -->
+<section class="quartos" aria-labelledby="t-quartos">
+  <div>
+    <span class="rotulo">Os quartos</span>
+    <h2 id="t-quartos">Três quartos</h2>
+    <p>A casa tem três quartos e uma casa de banho. Dois quartos com cama de casal e um quarto com duas camas individuais. Roupa de cama e toalhas incluídas. Berço e cadeira alta de bebé gratuitos, mediante pedido.</p>
+  </div>
+  <div class="quartos-colagem colagem">
+    <figure class="q1"><img src="fotos/quarto-02.jpg" alt="Quarto com cama de casal" style="object-position: 50% 50%"></figure>
+    <figure class="q2"><img src="fotos/quarto-08.jpg" alt="Quarto com cama de casal e janela para as encostas" style="object-position: 50% 45%"></figure>
+    <figure class="q3"><img src="fotos/quarto-01.jpg" alt="Quarto com duas camas individuais" style="object-position: 50% 45%"></figure>
+  </div>
+</section>
+
+<div class="sangra">
+  <img src="fotos/vista-01.jpg" alt="O deck virado ao vale e às encostas" style="object-position: 50% 45%">
+</div>
+
+<!-- 6. Quem recebe -->
+<section class="recebe" aria-labelledby="t-recebe">
+  <div class="recebe-cabeca">
+    <span class="rotulo">Quem recebe</span>
+    <h2 id="t-recebe">Nas palavras de <em>quem ficou</em></h2>
+  </div>
+  <div class="colecao">
+    <blockquote>
+      <p>"O proprietário Manuel é muito simpático e prestável. Orientou-nos no espaço, na vila e aconselhou-nos vários locais."</p>
+      <cite>Catarina · Booking</cite>
+    </blockquote>
+    <blockquote>
+      <p>"proprietário incrível e incansável na disponibilidade"</p>
+      <cite>Luis · Booking</cite>
+    </blockquote>
+    <blockquote class="larga">
+      <p lang="nl">"Hier ben je echt op vakantie met een super vriendelijke gastheer die klaar staat om elk probleem op te lossen die er niet zijn"</p>
+      <p class="trad">Aqui está-se mesmo de férias, com um anfitrião super simpático, pronto a resolver qualquer problema que não existe.</p>
+      <cite>Kris Van de Spiegle · Google</cite>
+    </blockquote>
+  </div>
+  <table class="notas">
+    <tr><th scope="row">Booking</th><td>9,2 em 10, com 11 avaliações (outubro de 2026)</td></tr>
+    <tr><th scope="row">No Booking</th><td>Com base nas mesmas 11 avaliações: Funcionários 10, Localização 9,8, Limpeza 9,7</td></tr>
+    <tr><th scope="row">Google</th><td>4,7 em 5, com 15 avaliações (outubro de 2026)</td></tr>
+  </table>
+</section>
+
+<!-- 7. Onde fica -->
+<section class="onde" aria-labelledby="t-onde">
+  <div>
+    <span class="rotulo">Onde fica</span>
+    <h2 id="t-onde">Perto da vila, <em>longe do barulho</em></h2>
+  </div>
+  <table class="factos">
+    <tr><th scope="row">Morada</th><td>Rua Valado 321, Resende</td></tr>
+    <tr><th scope="row">A vila</th><td>A poucos minutos de carro do centro de Resende, onde há supermercados e restaurantes.</td></tr>
+    <tr><th scope="row">A região</th><td>Fica na região do Vale do Douro; a vista é para o vale e as serras, não para o rio.</td></tr>
+    <tr><th scope="row">Carro</th><td>Estacionamento gratuito dentro da propriedade.</td></tr>
+  </table>
+  <div class="onde-vozes">
+    <blockquote>
+      <p>"Local calmo e bastante isolado mas simultaneamente muito próximo do centro de Resende e de fácil acesso."</p>
+      <cite>Joana · Booking</cite>
+    </blockquote>
+    <blockquote>
+      <p lang="en">"it was well located for wine tasting trips also close to grocery stores"</p>
+      <cite>Richard · Booking</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- 8. Reservar e contactos -->
+<footer class="reservar" aria-labelledby="t-reservar">
+  <span class="rotulo">Reservar e contactos</span>
+  <h2 id="t-reservar">Reservar</h2>
+  <p class="intro">Reserva pelo Booking ou pelo Airbnb.</p>
+  <div class="botoes">
+    <a class="botao cheio" href="https://www.booking.com/hotel/pt/casa-do-valado-resende.pt-pt.html">Ver disponibilidade · Booking</a>
+    <span class="botao">Airbnb</span>
+  </div>
+  <p class="rotulo" style="margin-bottom:16px">Para perguntas</p>
+  <div class="contactos">
+    <a href="tel:+351911505394">911 505 394</a>
+    <a href="mailto:wearecasadovalado@gmail.com">wearecasadovalado@gmail.com</a>
+  </div>
+  <ul class="regras">
+    <li>Check-in a partir das 15:00.</li>
+    <li>Estadias longas são possíveis.</li>
+    <li>Nas reservas pelo Booking e pelo Airbnb, não são permitidos animais.</li>
+    <li>Não é permitido fumar dentro de casa.</li>
+  </ul>
+  <p class="registo">Alojamento Local, modalidade Moradia, registo RNAL 88302/AL.</p>
+</footer>
+
+</body>
+</html>

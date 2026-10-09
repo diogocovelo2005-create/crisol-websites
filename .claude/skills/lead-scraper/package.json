@@ -1,0 +1,24 @@
+{
+  "name": "lead-scraper",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Pipeline de prospecao de leads B2B: descoberta via Google Places API (New), auditoria de websites com Playwright, e nota de necessidade de website 0-5 no Supabase.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "grid": "node scripts/gen-grid.js",
+    "keywords": "node scripts/validate-keywords.js",
+    "cost": "node scripts/estimate-cost.js",
+    "discover": "node scripts/discover.js",
+    "audit": "node scripts/audit.js",
+    "browser": "playwright install chromium"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.112.4",
+    "dotenv": "^17.4.2",
+    "pg": "^8.23.0",
+    "playwright": "^1.62.1"
+  }
+}

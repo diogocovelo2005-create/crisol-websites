@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "manifesto": {
+    "slug": "casa-exemplo",
+    "revisao": "2026-09-21",
+    "prontidao": "com_limitacoes",
+    "notas": "Exemplo mínimo; não usar como prova de uma casa real."
+  },
+  "entidades": [
+    {"id": "CASA-1", "tipo": "casa", "nome": "Casa Exemplo"}
+  ],
+  "evidencias": [
+    {
+      "id": "EVID-1",
+      "origem": "casa",
+      "entidade_ids": ["CASA-1"],
+      "local": "descricao-al.md, secção Instalações",
+      "recolhido_em": "2026-09-21"
+    }
+  ],
+  "afirmacoes": [
+    {
+      "id": "AFIR-1",
+      "entidade_id": "CASA-1",
+      "texto": "A casa tem jardim.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": ["EVID-1"]
+    }
+  ],
+  "citacoes": [],
+  "ativos": [],
+  "decisoes": [],
+  "cobertura": [
+    {
+      "id": "COB-1",
+      "fonte": "anúncio da casa",
+      "material": "factos",
+      "estado": "parcial",
+      "limitacao": "Ainda não foram recolhidas reviews."
+    }
+  ]
+}

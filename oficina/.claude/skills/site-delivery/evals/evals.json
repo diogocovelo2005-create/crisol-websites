@@ -1,0 +1,14 @@
+{
+  "skill_name": "site-delivery",
+  "evals": [
+    { "id": 0, "name": "redesign-com-email-no-dominio",
+      "prompt": "o meu tio advogado tem um site de 2011 em advogadoxpto.pt, quero refazer-lho todo. já tenho o design pensado",
+      "expected_output": "Deteta migração; pergunta domínio/alojamento/email antes de tudo; corre crawl + dns-snapshot; identifica profissão regulada; avisa sobre MX." },
+    { "id": 1, "name": "site-novo-sem-legado",
+      "prompt": "vou lançar um site novo para uma quinta de turismo rural, domínio comprado ontem, ainda sem nada",
+      "expected_output": "Salta migração e redirects; mantém compliance, preflight e handover." },
+    { "id": 2, "name": "pedido-isolado-dns",
+      "prompt": "como é que aponto o dominio do cliente para o vercel?",
+      "expected_output": "Dispara na mesma; exige dns-snapshot primeiro; pergunta se há email; recomenda A/CNAME em vez de trocar nameservers." }
+  ]
+}

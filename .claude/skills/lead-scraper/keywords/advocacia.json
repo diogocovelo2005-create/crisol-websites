@@ -1,0 +1,68 @@
+{
+  "nicho": "advocacia",
+  "sub_oficios": [
+    "advocacia geral e contencioso",
+    "direito da família e sucessões",
+    "direito do trabalho",
+    "direito penal",
+    "imobiliário, insolvências e cobranças"
+  ],
+  "places_types": [
+    "lawyer"
+  ],
+  "tem_tipos_diretos": true,
+  "termos": {
+    "formal": [
+      "advogado",
+      "sociedade de advogados",
+      "escritório de advogados",
+      "consultoria jurídica",
+      "assessoria jurídica",
+      "gabinete jurídico",
+      "solicitador",
+      "agente de execução"
+    ],
+    "coloquial": [
+      "advocacia",
+      "escritório de advocacia",
+      "causídico"
+    ],
+    "regional": [],
+    "servico": [
+      "divórcio",
+      "processo de divórcio",
+      "partilha de heranças",
+      "regulação das responsabilidades parentais",
+      "pensão de alimentos",
+      "despedimento",
+      "acidente de trabalho",
+      "acidentes de viação",
+      "indemnização",
+      "insolvência",
+      "cobrança de dívidas",
+      "crédito malparado",
+      "contrato de arrendamento",
+      "despejo",
+      "defesa criminal",
+      "direito penal",
+      "direito do trabalho",
+      "direito da família",
+      "direito imobiliário",
+      "testamento",
+      "usucapião",
+      "constituição de empresas",
+      "contencioso",
+      "execução fiscal"
+    ],
+    "adjacente": [
+      "solicitadoria",
+      "cartório notarial",
+      "notário",
+      "contabilidade e fiscalidade",
+      "consultor fiscal",
+      "mediação de conflitos",
+      "perito avaliador"
+    ]
+  },
+  "notas": "Sub-ofícios pelo teste do leigo: quem se está a divorciar não liga ao escritório que trata de insolvências, e quem foi despedido procura quem faça laboral. São cinco mercados com escritórios diferentes, ainda que muitos advogados generalistas cubram vários.\n\nO registo REGIONAL está VAZIO de propósito, e não por esquecimento. A terminologia jurídica portuguesa é normalizada pela Ordem dos Advogados e não tem variantes vivas por zona do país: um advogado é advogado em Bragança e em Faro. 'Causídico' é o único sinónimo com alguma vida, e é de registo elevado e não regional, por isso está em coloquial. Inventar aqui variantes gastaria uma passagem pela grelha inteira para devolver zero.\n\nO registo SERVIÇO é o maior porque é onde o cliente escreve o problema — 'divórcio', 'despedimento', 'partilha de heranças' — em vez da profissão. É aí que se encontram os escritórios cujo nome é só o apelido do sócio e não diz nada sobre o que fazem.\n\nADJACENTE inclui solicitadores, agentes de execução e notários, que em Portugal são profissões distintas da advocacia mas partilham clientes e aparecem nas mesmas pesquisas. Contabilistas entram porque muitas sociedades pequenas partilham escritório com eles.\n\nO tipo 'lawyer' existe e é aceite. Experimentei 'notary_public' e a API rejeitou-o com 400: existe como valor devolvido mas não como filtro, tal como o 'general_contractor'. Notários ficam cobertos pelos termos do registo adjacente."
+}

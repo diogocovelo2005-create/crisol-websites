@@ -1,0 +1,1460 @@
+{
+  "schema_version": "1.0",
+  "manifesto": {
+    "slug": "bikeinn",
+    "revisao": "2026-09-25",
+    "prontidao": "com_limitacoes",
+    "notas": "Dossiê do BIKEINN (AL 117909, Vouzela), sexta casa ligada ao grupo, com outro titular (Filipe Carvalho), tratada como casa separada (ver ../como-se-ligam.md). Primeira recolha a 2026-09-25. Limitações: o Booking não aceita reservas e os sites estão em baixo (contacto direto confirmado: 964 322 654, info@bikeinn.pt); sem preços; capacidade com três versões; fotos de 2021."
+  },
+  "entidades": [
+    {
+      "id": "CASA-BIKEINN",
+      "tipo": "casa",
+      "nome": "BIKEINN — alojamento para ciclistas no centro de Vouzela"
+    },
+    {
+      "id": "QT-BI-DUPLO",
+      "tipo": "tipo_quarto",
+      "nome": "Quarto Duplo (1 cama de casal; provavelmente a Camisola Branca)",
+      "pai_id": "CASA-BIKEINN"
+    },
+    {
+      "id": "QT-BI-TRIPLO",
+      "tipo": "tipo_quarto",
+      "nome": "Quarto Triplo com Vista Montanha (provavelmente a Camisola Rosa)",
+      "pai_id": "CASA-BIKEINN"
+    },
+    {
+      "id": "UN-BI-APARTAMENTO",
+      "tipo": "unidade",
+      "nome": "Apartamento com 2 Quartos (um piso: twin + casal, cozinha)",
+      "pai_id": "CASA-BIKEINN"
+    },
+    {
+      "id": "UN-BI-CASA",
+      "tipo": "unidade",
+      "nome": "Casa com 5 Quartos (a casa inteira, até 12 pessoas)",
+      "pai_id": "CASA-BIKEINN"
+    },
+    {
+      "id": "ESP-BI-TERRACO",
+      "tipo": "espaco",
+      "nome": "Terraço com vista para a serra",
+      "pai_id": "CASA-BIKEINN"
+    },
+    {
+      "id": "ESP-BI-COZINHAS",
+      "tipo": "espaco",
+      "nome": "Cozinhas (uma por piso e a do triplo)",
+      "pai_id": "CASA-BIKEINN"
+    },
+    {
+      "id": "ESP-BI-BICICLETAS",
+      "tipo": "espaco",
+      "nome": "Arrumo de bicicletas no rés-do-chão",
+      "pai_id": "CASA-BIKEINN"
+    },
+    {
+      "id": "CANAL-BK-BI",
+      "tipo": "canal",
+      "nome": "Booking — BIKEINN",
+      "pai_id": "CASA-BIKEINN"
+    },
+    {
+      "id": "CANAL-GG-BI",
+      "tipo": "canal",
+      "nome": "Google — BIKEINN",
+      "pai_id": "CASA-BIKEINN"
+    }
+  ],
+  "evidencias": [
+    {
+      "id": "EV-RNT-BI",
+      "origem": "registo_publico",
+      "entidade_ids": [
+        "CASA-BIKEINN"
+      ],
+      "local": "https://rnt.turismodeportugal.pt/RNT/RNAL.aspx?nr=117909",
+      "recolhido_em": "2026-09-25",
+      "bloco": "ficha RNAL 117909/AL",
+      "excerto": "BIKEINN; registado 2021-07-06; aberto 2021-07-09; Estabelecimento de hospedagem; 20 utentes, 5 quartos, 20 camas; Rua Mouzinho de Albuquerque 37, 3670-258 Vouzela; Filipe Miguel Ferreira Coutinho Carvalho (NIF 217652581); CA Seguros 03421424 até 2026-04-21",
+      "atualidade": "Registo público; confirmado em 2026-09-25."
+    },
+    {
+      "id": "EV-VV-BI",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-BIKEINN",
+        "ESP-BI-COZINHAS",
+        "ESP-BI-BICICLETAS"
+      ],
+      "local": "https://web.archive.org/web/20260606013836/https://www.visitvouzela.com/bikeinn",
+      "recolhido_em": "2026-09-25",
+      "bloco": "página BIKEINN",
+      "excerto": "Alojamento dedicado a ciclistas na vila de Vouzela. Com todas as condições para receber ciclistas em lazer. Local para guardar bicicletas e loja de Bicicletas a 15 metros do BIKEINN. Situado a poucos metros da Ciclovia que liga Aveiro a Vilar Formoso. […] Quartos bike friendly, com suporte para bicicletas com cadeado. […] Todos os quartos tem cozinha com frigorifico com gelo para por no bidão, máquina de lavar loiça, máquina de café Nespresso.",
+      "publicado_em": "cópia do Web Archive de 2026-06-06"
+    },
+    {
+      "id": "EV-VV-BI-QUARTOS",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-BIKEINN",
+        "QT-BI-DUPLO",
+        "QT-BI-TRIPLO"
+      ],
+      "local": "https://web.archive.org/web/20260212120944/https://www.visitvouzela.com/bikeinnquartos",
+      "recolhido_em": "2026-09-25",
+      "bloco": "página Quartos",
+      "excerto": "Quarto Duplo Cama Casal CAMISOLA BRANCA; Quarto Twin Duas Camas CAMISOLA AMARELA; CAMISOLA VERDE; CAMISOLA AZUL; Quarto Triplo CAMISOLA ROSA",
+      "publicado_em": "cópia do Web Archive de 2026-02-12"
+    },
+    {
+      "id": "EV-VV-BI-QUARTOS-EN",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-BIKEINN"
+      ],
+      "local": "https://web.archive.org/web/20260606005315/https://www.visitvouzela.com/bikeinnquartos?lang=en",
+      "recolhido_em": "2026-09-25",
+      "bloco": "página Quartos (EN)",
+      "excerto": "6 rooms available - Yellow, Blue, White, Pink, Green and Black shirt",
+      "publicado_em": "cópia do Web Archive de 2026-06-06",
+      "atualidade": "Versão inglesa desatualizada: lista cinco quartos."
+    },
+    {
+      "id": "EV-VV-BI-EN",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-BIKEINN"
+      ],
+      "local": "https://web.archive.org/web/20260312052238/https://www.visitvouzela.com/bikeinn?lang=en",
+      "recolhido_em": "2026-09-25",
+      "bloco": "página BIKEINN (EN)",
+      "excerto": "The owners of Casa Museu, both antique dealers for 30 years, built this building 10 years ago […] Bike Vantage",
+      "publicado_em": "cópia do Web Archive de 2026-03-12",
+      "atualidade": "Texto da Casa Museu colado por engano; loja Bike Vantage por confirmar."
+    },
+    {
+      "id": "EV-VV-BI-2020",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-BIKEINN"
+      ],
+      "local": "https://web.archive.org/web/20260312035430/https://www.visitvouzela.com/2020bikeinn",
+      "recolhido_em": "2026-09-25",
+      "bloco": "ficha Centro 2020",
+      "excerto": "ALOJAMENTO BTT PARQUE NATURAL; CENTRO-04-3827-FEDER-000198; FILIPE MIGUEL FERREIRA COUTINHO CARVALHO; 11/01/2019 a 11/01/2021; Rua Mouzinho de Albuquerque, nº 37 e 39",
+      "publicado_em": "cópia do Web Archive de 2026-03-12"
+    },
+    {
+      "id": "EV-VV-CHECKIN",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-BIKEINN"
+      ],
+      "local": "https://web.archive.org/web/20260606020519/https://www.visitvouzela.com/",
+      "recolhido_em": "2026-09-25",
+      "bloco": "página inicial, bloco Localização",
+      "excerto": "Onde poderá fazer o Check-in para os outros Alojamentos Locais como As Penthouse Low-Cost, Casa das Ameias ou BIKEINN.",
+      "publicado_em": "cópia do Web Archive de 2026-06-06"
+    },
+    {
+      "id": "EV-BK-BI",
+      "origem": "plataforma",
+      "entidade_ids": [
+        "CASA-BIKEINN",
+        "CANAL-BK-BI"
+      ],
+      "local": "https://www.booking.com/hotel/pt/bikeinn.pt-pt.html",
+      "recolhido_em": "2026-09-25",
+      "bloco": "regras, informações importantes, principais comodidades",
+      "excerto": "Check-in Das 14:00 às 21:00; Check-out Das 08:00 às 12:00; berços e camas extra não disponíveis; Animais: não admitidos; Não é permitido fumar; Licença número: 117909/AL; Estacionamento gratuito; Apenas numerário"
+    },
+    {
+      "id": "EV-BK-BI-FECHADO",
+      "origem": "plataforma",
+      "entidade_ids": [
+        "CANAL-BK-BI"
+      ],
+      "local": "https://www.booking.com/hotel/pt/bikeinn.pt-pt.html?checkin=2026-10-21&checkout=2026-10-23&group_adults=2",
+      "recolhido_em": "2026-09-25",
+      "bloco": "aviso no topo da página",
+      "excerto": "Lamentamos mas este alojamento não está a receber reservas no nosso website de momento.",
+      "atualidade": "Visto a 2026-09-25, com e sem datas."
+    },
+    {
+      "id": "EV-BK-BI-HOST",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-BIKEINN",
+        "ESP-BI-BICICLETAS"
+      ],
+      "local": "https://www.booking.com/hotel/pt/bikeinn.pt-pt.html",
+      "recolhido_em": "2026-09-25",
+      "bloco": "Gerido por Filipe Carvalho — Informação do alojamento",
+      "excerto": "Alojamento Bike Friendly com vista para a montanha. Temos lugar para guardar as Bicicletas ou disponibilidade para alugar bicicletas perto do alojamento. […] 1 alojamento gerido"
+    },
+    {
+      "id": "EV-BK-BI-QA",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-BIKEINN",
+        "ESP-BI-COZINHAS",
+        "ESP-BI-BICICLETAS",
+        "QT-BI-TRIPLO",
+        "UN-BI-CASA"
+      ],
+      "local": "https://www.booking.com/hotel/pt/bikeinn.pt-pt.html",
+      "recolhido_em": "2026-09-25",
+      "bloco": "perguntas e respostas",
+      "excerto": "Cada piso possui dois quartos (casa de banho individual para cada um) e a cozinha é partilhada. […] Pode guardar no Rés-do-chão […] De momento não temos [pequeno-almoço] […] O quarto triplo tem varanda 10m2 […] Qualquer quarto poderá passar a ter cama de casal […] A nossa capacidade de momento só permite 5 casais",
+      "publicado_em": "2021-08 a 2024-06"
+    },
+    {
+      "id": "EV-BK-BI-QUARTOS",
+      "origem": "plataforma",
+      "entidade_ids": [
+        "QT-BI-DUPLO",
+        "QT-BI-TRIPLO",
+        "UN-BI-APARTAMENTO",
+        "UN-BI-CASA"
+      ],
+      "local": "https://www.booking.com/hotel/pt/bikeinn.pt-pt.html",
+      "recolhido_em": "2026-09-25",
+      "bloco": "dados de cada tipo",
+      "excerto": "Quarto Duplo 18 m² 1 cama de casal; Quarto Triplo com Vista Montanha 85 m² 1 individual + 1 casal, terraço; Apartamento com 2 Quartos 18 m² twin + casal, 4 pessoas; Casa com 5 Quartos 250 m², 5 casas de banho, 12 pessoas"
+    },
+    {
+      "id": "EV-BK-BI-METRICA",
+      "origem": "plataforma",
+      "entidade_ids": [
+        "CANAL-BK-BI"
+      ],
+      "local": "https://www.booking.com/hotel/pt/bikeinn.pt-pt.html",
+      "recolhido_em": "2026-09-25",
+      "bloco": "pontuação",
+      "excerto": "9,4 Soberbo · 52 comentários; Funcionários 9,8; Comodidades 10; Limpeza 9,8; Conforto 9,5; Qualidade/Preço 9,2; Localização 9,1"
+    },
+    {
+      "id": "EV-BK-BI-LEGAL",
+      "origem": "plataforma",
+      "entidade_ids": [
+        "CASA-BIKEINN"
+      ],
+      "local": "https://www.booking.com/hotel/pt/bikeinn.pt-pt.html",
+      "recolhido_em": "2026-09-25",
+      "bloco": "Informação legal — detalhes do anfitrião",
+      "excerto": "Filipe Miguel Ferreira Coutinho Carvalho; rua Conselheiro Morais de Carvalho n.º1, 3670-231 VOUZELA; info@bikeinn.pt; +351964322654"
+    },
+    {
+      "id": "EV-GG-BI",
+      "origem": "plataforma",
+      "entidade_ids": [
+        "CASA-BIKEINN",
+        "CANAL-GG-BI"
+      ],
+      "local": "Google Places API, place ChIJTaBaqq5BIw0Rnk1RHRjZeRc",
+      "recolhido_em": "2026-09-25",
+      "bloco": "ficha",
+      "excerto": "BIKEINN; R. Mouzinho de Albuquerque N°37, 3670-258 Vouzela; 964 322 654; rating 4.7; userRatingCount 31; OPERATIONAL"
+    },
+    {
+      "id": "EV-FB-BI",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-BIKEINN"
+      ],
+      "local": "https://www.facebook.com/BikeInnVouzela/",
+      "recolhido_em": "2026-09-25",
+      "bloco": "Apresentação",
+      "excerto": "Alojamento situado em Vouzela dedicado a ciclistas e bicicletas. Rua Mouzinho de Albuquerque, Nº37 964 322 654 info@bikeinn.pt",
+      "atualidade": "Página sem publicações próprias desde 2022."
+    },
+    {
+      "id": "EV-IG-BI",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-BIKEINN"
+      ],
+      "local": "https://www.instagram.com/bike.inn/",
+      "recolhido_em": "2026-09-25",
+      "bloco": "bio",
+      "excerto": "BIKE!NN Alojamento Local Bike friendly in Vouzela",
+      "atualidade": "Última publicação 2023-08-18."
+    },
+    {
+      "id": "EV-TA-BI",
+      "origem": "plataforma",
+      "entidade_ids": [
+        "CASA-BIKEINN"
+      ],
+      "local": "https://www.tripadvisor.pt/Hotel_Review-g6932165-d25639933-Reviews-Bikeinn-Vouzela_Viseu_District_Northern_Portugal.html",
+      "recolhido_em": "2026-09-25",
+      "bloco": "ficha",
+      "excerto": "Ainda não existem avaliações para esta propriedade. INTERVALO DE PREÇOS 86 € - 103 €"
+    },
+    {
+      "id": "EV-FOTOS-PLACAS",
+      "origem": "casa",
+      "entidade_ids": [
+        "QT-BI-DUPLO"
+      ],
+      "local": "marketing/fotos.md",
+      "recolhido_em": "2026-09-25",
+      "bloco": "interior/quarto-16.jpg, quarto-25.jpg, quarto-27.jpg, quarto-10.jpg",
+      "excerto": "porta-chaves da camisola branca e a mesma cama de casal com as janelas antigas"
+    },
+    {
+      "id": "EV-REV-BI-ANFITRIAO",
+      "origem": "hospede",
+      "entidade_ids": [
+        "CASA-BIKEINN"
+      ],
+      "local": "reviews.md",
+      "recolhido_em": "2026-09-25",
+      "bloco": "pontos-fortes.md, ponto 1",
+      "excerto": "15 de 32 reviews com texto",
+      "atualidade": "Última prova setembro de 2026."
+    },
+    {
+      "id": "EV-REV-BI-LIMPEZA",
+      "origem": "hospede",
+      "entidade_ids": [
+        "CASA-BIKEINN"
+      ],
+      "local": "reviews.md",
+      "recolhido_em": "2026-09-25",
+      "bloco": "pontos-fortes.md, ponto 2",
+      "excerto": "13 de 32 reviews com texto",
+      "atualidade": "Última prova setembro de 2026."
+    },
+    {
+      "id": "EV-REV-BI-EQUIPADO",
+      "origem": "hospede",
+      "entidade_ids": [
+        "CASA-BIKEINN",
+        "ESP-BI-COZINHAS"
+      ],
+      "local": "reviews.md",
+      "recolhido_em": "2026-09-25",
+      "bloco": "pontos-fortes.md, ponto 3",
+      "excerto": "12 de 32 reviews com texto",
+      "atualidade": "Última prova junho de 2026."
+    },
+    {
+      "id": "EV-REV-BI-VISTA",
+      "origem": "hospede",
+      "entidade_ids": [
+        "CASA-BIKEINN",
+        "ESP-BI-TERRACO"
+      ],
+      "local": "reviews.md",
+      "recolhido_em": "2026-09-25",
+      "bloco": "pontos-fortes.md, ponto 4",
+      "excerto": "11 de 32 reviews com texto",
+      "atualidade": "Última prova outubro de 2025."
+    },
+    {
+      "id": "EV-REV-BI-DECORACAO",
+      "origem": "hospede",
+      "entidade_ids": [
+        "CASA-BIKEINN"
+      ],
+      "local": "reviews.md",
+      "recolhido_em": "2026-09-25",
+      "bloco": "pontos-fortes.md, ponto 6",
+      "excerto": "8 de 32 reviews com texto",
+      "atualidade": "Última prova outubro de 2025."
+    },
+    {
+      "id": "EV-REV-BI-BICICLETAS",
+      "origem": "hospede",
+      "entidade_ids": [
+        "CASA-BIKEINN",
+        "ESP-BI-BICICLETAS"
+      ],
+      "local": "reviews.md",
+      "recolhido_em": "2026-09-25",
+      "bloco": "pontos-fortes.md, ponto 8",
+      "excerto": "B-006, B-048, G-003",
+      "atualidade": "Última prova junho de 2026."
+    },
+    {
+      "id": "EV-RNT-GRUPO",
+      "origem": "registo_publico",
+      "entidade_ids": [
+        "CASA-BIKEINN"
+      ],
+      "local": "https://rnt.turismodeportugal.pt/",
+      "recolhido_em": "2026-09-25",
+      "bloco": "RNAL 35686, RNET 1238, RNAL 64058, RNAL 25507, RNET 9990, RNAL 117909",
+      "excerto": "António José Ferreira de Carvalho titular de 35686, 1238, 64058 e 25507; Maria Celeste Silva Coutinho Carvalho titular de 9990; Filipe Miguel Ferreira Coutinho Carvalho titular de 117909",
+      "atualidade": "Confirmado a 2026-09-25."
+    }
+  ],
+  "afirmacoes": [
+    {
+      "id": "AFIR-BI-TIPO",
+      "entidade_id": "CASA-BIKEINN",
+      "texto": "O BIKEINN é um Alojamento Local (RNAL 117909/AL), estabelecimento de hospedagem, no centro de Vouzela.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "registo_publico",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-RNT-BI",
+        "EV-BK-BI",
+        "EV-VV-BI"
+      ]
+    },
+    {
+      "id": "AFIR-BI-REGISTO",
+      "entidade_id": "CASA-BIKEINN",
+      "texto": "Registo RNAL 117909/AL.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "registo_publico",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-RNT-BI",
+        "EV-BK-BI",
+        "EV-VV-BI"
+      ]
+    },
+    {
+      "id": "AFIR-BI-CICLISTAS",
+      "entidade_id": "CASA-BIKEINN",
+      "texto": "Alojamento pensado para ciclistas, com lugar para guardar as bicicletas.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-VV-BI",
+        "EV-BK-BI-HOST",
+        "EV-BK-BI-QA",
+        "EV-FB-BI",
+        "EV-REV-BI-BICICLETAS"
+      ]
+    },
+    {
+      "id": "AFIR-BI-ECOPISTA",
+      "entidade_id": "CASA-BIKEINN",
+      "texto": "A ecopista do Vale do Vouga começa a poucos metros da casa.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-VV-BI",
+        "EV-REV-BI-BICICLETAS"
+      ]
+    },
+    {
+      "id": "AFIR-BI-QUARTOS",
+      "entidade_id": "CASA-BIKEINN",
+      "texto": "Cinco quartos com o nome das camisolas do ciclismo: Branca (cama de casal), Amarela, Verde e Azul (twin) e Rosa (triplo), todos com casa de banho privativa.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-VV-BI-QUARTOS",
+        "EV-RNT-BI",
+        "EV-BK-BI-QA"
+      ]
+    },
+    {
+      "id": "AFIR-BI-TIPOS-NOMES",
+      "entidade_id": "CASA-BIKEINN",
+      "texto": "A Camisola Branca é o Quarto Duplo do Booking e a Camisola Rosa o Quarto Triplo; os pisos com dois quartos vendem-se como Apartamento com 2 Quartos.",
+      "natureza": "inferencia",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-FOTOS-PLACAS",
+        "EV-BK-BI-QUARTOS",
+        "EV-BK-BI-QA"
+      ],
+      "condicao": "Dedução pelas camas, pelas fotos e pelas respostas do anfitrião; confirmar com o dono."
+    },
+    {
+      "id": "AFIR-BI-EQUIPAMENTO",
+      "entidade_id": "CASA-BIKEINN",
+      "texto": "Quartos com casa de banho privativa, ar condicionado, TV e internet.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-VV-BI",
+        "EV-BK-BI-QUARTOS"
+      ]
+    },
+    {
+      "id": "AFIR-BI-COZINHAS",
+      "entidade_id": "ESP-BI-COZINHAS",
+      "texto": "Cozinha equipada em cada piso (Nespresso, frigorífico, máquina de lavar loiça, forno, placa, torradeira, chaleira); o quarto triplo tem cozinha própria.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-VV-BI",
+        "EV-BK-BI-QA",
+        "EV-REV-BI-EQUIPADO"
+      ]
+    },
+    {
+      "id": "AFIR-BI-COZINHA-CADA-QUARTO",
+      "entidade_id": "ESP-BI-COZINHAS",
+      "texto": "Todos os quartos têm cozinha.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "conflitante",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-VV-BI",
+        "EV-BK-BI-QA"
+      ],
+      "atualidade": "O site diz \"todos os quartos\"; o anfitrião diz que a cozinha é partilhada por piso. Usar \"cozinha em cada piso\"."
+    },
+    {
+      "id": "AFIR-BI-GELO",
+      "entidade_id": "CASA-BIKEINN",
+      "texto": "Frigorífico com gelo para o bidão e suporte com cadeado para a bicicleta.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-VV-BI"
+      ],
+      "condicao": "Só o site o diz; nenhum hóspede o refere. Confirmar com o dono."
+    },
+    {
+      "id": "AFIR-BI-TRIPLO-TERRACO",
+      "entidade_id": "QT-BI-TRIPLO",
+      "texto": "O quarto triplo tem terraço com vista para a serra.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-BK-BI-QA",
+        "EV-BK-BI-QUARTOS"
+      ]
+    },
+    {
+      "id": "AFIR-BI-VISTA",
+      "entidade_id": "ESP-BI-TERRACO",
+      "texto": "Vários quartos têm vista para a serra de São Macário.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-VV-BI",
+        "EV-BK-BI-HOST",
+        "EV-REV-BI-VISTA"
+      ]
+    },
+    {
+      "id": "AFIR-BI-CASAL",
+      "entidade_id": "CASA-BIKEINN",
+      "texto": "Qualquer quarto pode ter cama de casal se se pedir ao reservar.",
+      "natureza": "facto",
+      "categoria": "politica",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-BK-BI-QA"
+      ],
+      "condicao": "Resposta de 2023; confirmar."
+    },
+    {
+      "id": "AFIR-BI-SEM-PA",
+      "entidade_id": "CASA-BIKEINN",
+      "texto": "Não serve pequeno-almoço; há cozinha e cafés perto.",
+      "natureza": "facto",
+      "categoria": "politica",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-BK-BI-QA"
+      ],
+      "condicao": "\"De momento não temos\" (2022); confirmar."
+    },
+    {
+      "id": "AFIR-BI-CASA-INTEIRA",
+      "entidade_id": "UN-BI-CASA",
+      "texto": "Pode alugar-se a casa inteira para grupos, até 12 pessoas.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "plataforma",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-BK-BI-QUARTOS",
+        "EV-BK-BI-QA"
+      ],
+      "condicao": "O RNT dá 20 utentes; confirmar a capacidade real com o dono antes de publicar um número."
+    },
+    {
+      "id": "AFIR-BI-CAPACIDADE-RNT",
+      "entidade_id": "CASA-BIKEINN",
+      "texto": "Capacidade de 20 pessoas.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "registo_publico",
+      "estado": "conflitante",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-RNT-BI",
+        "EV-BK-BI-QUARTOS"
+      ],
+      "atualidade": "RNT 20; Booking 12; camas descritas 11–13."
+    },
+    {
+      "id": "AFIR-BI-SEIS-QUARTOS",
+      "entidade_id": "CASA-BIKEINN",
+      "texto": "Seis quartos, com uma camisola preta.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "conflitante",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-VV-BI-QUARTOS-EN",
+        "EV-RNT-BI"
+      ],
+      "atualidade": "Só na versão inglesa do site; o RNT e a versão portuguesa dizem 5."
+    },
+    {
+      "id": "AFIR-BI-AREAS",
+      "entidade_id": "CASA-BIKEINN",
+      "texto": "Triplo de 85 m² e apartamento de 18 m².",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "plataforma",
+      "estado": "conflitante",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-BK-BI-QUARTOS"
+      ],
+      "atualidade": "Áreas incoerentes nos dados do Booking."
+    },
+    {
+      "id": "AFIR-BI-HORARIOS",
+      "entidade_id": "CASA-BIKEINN",
+      "texto": "Check-in das 14:00 às 21:00; check-out das 08:00 às 12:00.",
+      "natureza": "facto",
+      "categoria": "politica",
+      "origem": "plataforma",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-BK-BI"
+      ],
+      "condicao": "Horário do Booking; confirmar."
+    },
+    {
+      "id": "AFIR-BI-REGRAS",
+      "entidade_id": "CASA-BIKEINN",
+      "texto": "Crianças bem-vindas; sem berços nem camas extra; sem animais; não se fuma; sem festas.",
+      "natureza": "facto",
+      "categoria": "politica",
+      "origem": "plataforma",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-BK-BI"
+      ],
+      "condicao": "Regras do Booking; confirmar."
+    },
+    {
+      "id": "AFIR-BI-CHECKIN-CM",
+      "entidade_id": "CASA-BIKEINN",
+      "texto": "O check-in pode fazer-se na Casa Museu.",
+      "natureza": "facto",
+      "categoria": "politica",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-VV-CHECKIN"
+      ],
+      "condicao": "Dito no site do grupo; os hóspedes contam que o Filipe os recebeu. Confirmar como funciona."
+    },
+    {
+      "id": "AFIR-BI-ESTACIONAMENTO",
+      "entidade_id": "CASA-BIKEINN",
+      "texto": "Estacionamento gratuito.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "plataforma",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-BK-BI"
+      ],
+      "condicao": "Só o Booking o diz; confirmar onde fica."
+    },
+    {
+      "id": "AFIR-BI-ALUGUER",
+      "entidade_id": "CASA-BIKEINN",
+      "texto": "Aluguer de bicicletas perto do alojamento.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-BK-BI-HOST",
+        "EV-VV-BI-EN"
+      ],
+      "condicao": "A loja (Bike Vantage) só aparece na versão inglesa antiga; confirmar que ainda aluga."
+    },
+    {
+      "id": "AFIR-BI-PAGAMENTO",
+      "entidade_id": "CASA-BIKEINN",
+      "texto": "Pagamento só em numerário.",
+      "natureza": "facto",
+      "categoria": "politica",
+      "origem": "plataforma",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-BK-BI"
+      ],
+      "condicao": "Dito pelo Booking; confirmar com o dono."
+    },
+    {
+      "id": "AFIR-BI-MORADA",
+      "entidade_id": "CASA-BIKEINN",
+      "texto": "Rua Mouzinho de Albuquerque, 37, 3670-258 Vouzela.",
+      "natureza": "facto",
+      "categoria": "contacto",
+      "origem": "registo_publico",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-RNT-BI",
+        "EV-GG-BI",
+        "EV-FB-BI"
+      ]
+    },
+    {
+      "id": "AFIR-BI-CONTACTOS",
+      "entidade_id": "CASA-BIKEINN",
+      "texto": "Contactos: 964 322 654, info@bikeinn.pt.",
+      "natureza": "facto",
+      "categoria": "contacto",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-BK-BI-LEGAL",
+        "EV-GG-BI",
+        "EV-FB-BI",
+        "EV-VV-BI"
+      ],
+      "condicao": "Confirmar que continuam ativos (o Booking não aceita reservas)."
+    },
+    {
+      "id": "AFIR-BI-ANFITRIAO",
+      "entidade_id": "CASA-BIKEINN",
+      "texto": "O anfitrião é o Filipe Carvalho, titular do alojamento.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "registo_publico",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-RNT-BI",
+        "EV-BK-BI-HOST",
+        "EV-REV-BI-ANFITRIAO"
+      ],
+      "condicao": "Confirmar com o Filipe se quer o nome no site."
+    },
+    {
+      "id": "AFIR-BI-GRUPO",
+      "entidade_id": "CASA-BIKEINN",
+      "texto": "Está no site do grupo Visit Vouzela, ao lado das casas dos donos da Casa Museu.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-VV-BI",
+        "EV-VV-CHECKIN",
+        "EV-RNT-GRUPO"
+      ],
+      "condicao": "O titular é outro (Filipe Carvalho); confirmar com a família como apresentar a ligação."
+    },
+    {
+      "id": "AFIR-BI-CENTRO2020",
+      "entidade_id": "CASA-BIKEINN",
+      "texto": "Projeto cofinanciado pelo Centro 2020 (FEDER), CENTRO-04-3827-FEDER-000198.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-VV-BI-2020"
+      ]
+    },
+    {
+      "id": "AFIR-BI-FEDER-VALOR",
+      "entidade_id": "CASA-BIKEINN",
+      "texto": "Apoio FEDER de 97.220,63 €.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "conflitante",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-VV-BI-2020"
+      ],
+      "atualidade": "A mesma página dá 67.417,53 € e 97.220,63 €."
+    },
+    {
+      "id": "AFIR-BI-BOOKING-FECHADO",
+      "entidade_id": "CANAL-BK-BI",
+      "texto": "O Booking não está a aceitar reservas.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "plataforma",
+      "estado": "confirmado",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-BK-BI-FECHADO"
+      ],
+      "atualidade": "Visto a 2026-09-25; é informação para o dono, não para o site."
+    },
+    {
+      "id": "AFIR-BI-PRECO-TA",
+      "entidade_id": "CASA-BIKEINN",
+      "texto": "Entre 86 e 103 € por noite.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "plataforma",
+      "estado": "desconhecido",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-TA-BI"
+      ],
+      "atualidade": "Intervalo de parceiros do TripAdvisor, sem data nem fonte da casa."
+    },
+    {
+      "id": "AFIR-BI-TEXTO-CM-EN",
+      "entidade_id": "CASA-BIKEINN",
+      "texto": "Os donos, antiquários há 30 anos, construíram o edifício há 10 anos.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "conflitante",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-VV-BI-EN"
+      ],
+      "atualidade": "Texto da Casa Museu colado na página inglesa do BIKEINN."
+    },
+    {
+      "id": "AFIR-BI-NOTA-BK",
+      "entidade_id": "CANAL-BK-BI",
+      "texto": "Nota 9,4 em 10 no Booking, com 52 comentários; limpeza 9,8, funcionários 9,8.",
+      "natureza": "metrica",
+      "categoria": "avaliacao",
+      "origem": "plataforma",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-BK-BI-METRICA"
+      ],
+      "condicao": "Mostrar com fonte, escala e data (setembro de 2026)."
+    },
+    {
+      "id": "AFIR-BI-NOTA-GG",
+      "entidade_id": "CANAL-GG-BI",
+      "texto": "Nota 4,7 em 5 no Google, com 31 avaliações.",
+      "natureza": "metrica",
+      "categoria": "avaliacao",
+      "origem": "plataforma",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-GG-BI"
+      ],
+      "condicao": "Mostrar com fonte, escala e data (setembro de 2026)."
+    },
+    {
+      "id": "AFIR-BI-TESTEMUNHO-ANFITRIAO",
+      "entidade_id": "CASA-BIKEINN",
+      "texto": "Os hóspedes elogiam o Filipe: simpático, disponível, prestável.",
+      "natureza": "testemunho",
+      "categoria": "avaliacao",
+      "origem": "hospede",
+      "estado": "confirmado",
+      "uso": "citar",
+      "evidencia_ids": [
+        "EV-REV-BI-ANFITRIAO"
+      ]
+    },
+    {
+      "id": "AFIR-BI-TESTEMUNHO-LIMPEZA",
+      "entidade_id": "CASA-BIKEINN",
+      "texto": "Os hóspedes dizem que é muito limpo.",
+      "natureza": "testemunho",
+      "categoria": "avaliacao",
+      "origem": "hospede",
+      "estado": "confirmado",
+      "uso": "citar",
+      "evidencia_ids": [
+        "EV-REV-BI-LIMPEZA"
+      ]
+    },
+    {
+      "id": "AFIR-BI-TESTEMUNHO-EQUIPADO",
+      "entidade_id": "CASA-BIKEINN",
+      "texto": "Os hóspedes elogiam a cozinha e o equipamento.",
+      "natureza": "testemunho",
+      "categoria": "avaliacao",
+      "origem": "hospede",
+      "estado": "confirmado",
+      "uso": "citar",
+      "evidencia_ids": [
+        "EV-REV-BI-EQUIPADO"
+      ]
+    },
+    {
+      "id": "AFIR-BI-TESTEMUNHO-VISTA",
+      "entidade_id": "ESP-BI-TERRACO",
+      "texto": "Os hóspedes falam da vista da serra, da cama, da sala e do terraço.",
+      "natureza": "testemunho",
+      "categoria": "avaliacao",
+      "origem": "hospede",
+      "estado": "confirmado",
+      "uso": "citar",
+      "evidencia_ids": [
+        "EV-REV-BI-VISTA"
+      ]
+    },
+    {
+      "id": "AFIR-BI-TESTEMUNHO-DECORACAO",
+      "entidade_id": "CASA-BIKEINN",
+      "texto": "Os hóspedes elogiam a decoração, o granito e o branco.",
+      "natureza": "testemunho",
+      "categoria": "avaliacao",
+      "origem": "hospede",
+      "estado": "confirmado",
+      "uso": "citar",
+      "evidencia_ids": [
+        "EV-REV-BI-DECORACAO"
+      ]
+    },
+    {
+      "id": "AFIR-BI-TOM-CICLISMO",
+      "entidade_id": "CASA-BIKEINN",
+      "texto": "Tom de clube de ciclismo: camisolas, subidas épicas, ecopista, gelo para o bidão.",
+      "natureza": "promessa_subjetiva",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "inspiracao_editorial",
+      "evidencia_ids": [
+        "EV-VV-BI",
+        "EV-VV-BI-QUARTOS"
+      ]
+    }
+  ],
+  "citacoes": [
+    {
+      "id": "CIT-BI-FILIPE",
+      "review_id": "B-033",
+      "texto_original": "O Filipe foi super prestável e simpático!",
+      "autor": "Kat",
+      "plataforma": "Booking",
+      "data": "2024-07-08",
+      "lingua": "pt"
+    },
+    {
+      "id": "CIT-BI-DISPONIVEL",
+      "review_id": "B-032",
+      "texto_original": "Friendly staff, readily available and explaining what is happening in the surroundings.",
+      "autor": "Arjen",
+      "plataforma": "Booking",
+      "data": "2024-07-09",
+      "lingua": "en",
+      "traducao": "Equipa simpática, sempre disponível e a explicar o que se passa pela zona."
+    },
+    {
+      "id": "CIT-BI-SR-FILIPE",
+      "review_id": "G-005",
+      "texto_original": "O Sr Filipe muito profissional, muito simpático e sempre disponível.",
+      "autor": "Miguel Leitao",
+      "plataforma": "Google",
+      "data": "2021-08-23",
+      "lingua": "pt"
+    },
+    {
+      "id": "CIT-BI-MAIS-LIMPA",
+      "review_id": "B-048",
+      "texto_original": "Bislang sauberste und gepflegteste Unterkunft die wir in Portugal überhaupt in dieser Preisklasse gesehen haben.",
+      "autor": "Michael",
+      "plataforma": "Booking",
+      "data": "2023-10-26",
+      "lingua": "de",
+      "traducao": "Até agora, o alojamento mais limpo e mais bem cuidado que vimos em Portugal nesta gama de preço."
+    },
+    {
+      "id": "CIT-BI-BRAND-NEW",
+      "review_id": "B-032",
+      "texto_original": "Very clean and brand new. Spotless kitchen and every aspect available.",
+      "autor": "Arjen",
+      "plataforma": "Booking",
+      "data": "2024-07-09",
+      "lingua": "en",
+      "traducao": "Muito limpo e novo. Cozinha impecável e com tudo."
+    },
+    {
+      "id": "CIT-BI-KITCHENETTE",
+      "review_id": "B-038",
+      "texto_original": "Kitchenette muito bem equipada com tudo o que é necessário para confeccionar refeições.",
+      "autor": "Nazare",
+      "plataforma": "Booking",
+      "data": "2024-04-01",
+      "lingua": "pt"
+    },
+    {
+      "id": "CIT-BI-PEQUENO-ALMOCO",
+      "review_id": "B-038",
+      "texto_original": "Gostámos de tomar o pequeno almoço com essa vista da montanha.",
+      "autor": "Nazare",
+      "plataforma": "Booking",
+      "data": "2024-04-01",
+      "lingua": "pt"
+    },
+    {
+      "id": "CIT-BI-VISTAS-SALA",
+      "review_id": "B-011",
+      "texto_original": "Las vistas desde el salón-cocina-comedor son excelentes",
+      "autor": "Mª",
+      "plataforma": "Booking",
+      "data": "2025-10-07",
+      "lingua": "es",
+      "traducao": "As vistas da sala-cozinha-sala de jantar são excelentes"
+    },
+    {
+      "id": "CIT-BI-GRANITO",
+      "review_id": "G-004",
+      "texto_original": "Um contraste entre o branco do mobiliário e o granito das paredes está ESPECTACULAR.",
+      "autor": "Guiomar Alves",
+      "plataforma": "Google",
+      "data": "2021-10-03",
+      "lingua": "pt"
+    },
+    {
+      "id": "CIT-BI-BOM-GOSTO",
+      "review_id": "B-033",
+      "texto_original": "Todo o prédio decorado com muito bom gosto, tudo muito limpo e com as comodidades necessárias.",
+      "autor": "Kat",
+      "plataforma": "Booking",
+      "data": "2024-07-08",
+      "lingua": "pt"
+    },
+    {
+      "id": "CIT-BI-ATLANTICO",
+      "review_id": "B-048",
+      "texto_original": "Wer mit dem Fahrrad unterwegs ist, kann auf einer ehemaligen Bahnlinie vom Atlantik bis Vouzela fahren.",
+      "autor": "Michael",
+      "plataforma": "Booking",
+      "data": "2023-10-26",
+      "lingua": "de",
+      "traducao": "Quem anda de bicicleta pode pedalar por uma antiga linha de comboio desde o Atlântico até Vouzela."
+    },
+    {
+      "id": "CIT-BI-BIKE-PARKING",
+      "review_id": "B-006",
+      "texto_original": "Bike parking available inside.",
+      "autor": "Carsten",
+      "plataforma": "Booking",
+      "data": "2026-06-15",
+      "lingua": "en",
+      "traducao": "Há lugar para guardar as bicicletas lá dentro."
+    },
+    {
+      "id": "CIT-BI-FAMILIAS",
+      "review_id": "B-017",
+      "texto_original": "Perfekt boende för både familjer, par och vänner.",
+      "autor": "Sandra",
+      "plataforma": "Booking",
+      "data": "2025-07-27",
+      "lingua": "sv",
+      "traducao": "Alojamento perfeito para famílias, casais e amigos."
+    }
+  ],
+  "ativos": [
+    {
+      "id": "ATV-BI-TERRACO-04",
+      "caminho": "marketing/fotos/exterior/terraco-04.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 2250
+      },
+      "assunto": "Terraço com mesa e cadeiras e a vista larga sobre Vouzela e a serra",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou.",
+        "Fotos de 2021 (antes e logo depois da abertura): confirmar com o dono se a casa está igual."
+      ],
+      "entidade_confirmada": "ESP-BI-TERRACO"
+    },
+    {
+      "id": "ATV-BI-TERRACO-02",
+      "caminho": "marketing/fotos/exterior/terraco-02.jpg",
+      "dimensoes": {
+        "largura": 3264,
+        "altura": 2448
+      },
+      "assunto": "Terraço com o nome BIKEINN no vidro e a serra",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou.",
+        "Fotos de 2021 (antes e logo depois da abertura): confirmar com o dono se a casa está igual."
+      ],
+      "entidade_confirmada": "ESP-BI-TERRACO"
+    },
+    {
+      "id": "ATV-BI-QUARTO-10",
+      "caminho": "marketing/fotos/interior/quarto-10.jpg",
+      "dimensoes": {
+        "largura": 3264,
+        "altura": 2448
+      },
+      "assunto": "Quarto Camisola Branca: cama de casal, granito e janelas antigas com luzes",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou.",
+        "Fotos de 2021 (antes e logo depois da abertura): confirmar com o dono se a casa está igual."
+      ]
+    },
+    {
+      "id": "ATV-BI-QUARTO-08",
+      "caminho": "marketing/fotos/interior/quarto-08.jpg",
+      "dimensoes": {
+        "largura": 3264,
+        "altura": 2448
+      },
+      "assunto": "Quarto com cama de casal e individual, com terraço (galeria do triplo no Booking)",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou.",
+        "Fotos de 2021 (antes e logo depois da abertura): confirmar com o dono se a casa está igual."
+      ]
+    },
+    {
+      "id": "ATV-BI-QUARTO-21",
+      "caminho": "marketing/fotos/interior/quarto-21.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 2250
+      },
+      "assunto": "Cama de casal virada para o terraço e a serra (galeria do triplo no Booking)",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou.",
+        "Fotos de 2021 (antes e logo depois da abertura): confirmar com o dono se a casa está igual."
+      ]
+    },
+    {
+      "id": "ATV-BI-COZINHA-01",
+      "caminho": "marketing/fotos/interior/cozinha-01.jpg",
+      "dimensoes": {
+        "largura": 3264,
+        "altura": 2448
+      },
+      "assunto": "Cozinha com parede de granito e mesa alta junto à janela",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou.",
+        "Fotos de 2021 (antes e logo depois da abertura): confirmar com o dono se a casa está igual."
+      ],
+      "entidade_confirmada": "ESP-BI-COZINHAS"
+    },
+    {
+      "id": "ATV-BI-SALA-02",
+      "caminho": "marketing/fotos/interior/sala-02.jpg",
+      "dimensoes": {
+        "largura": 3264,
+        "altura": 2448
+      },
+      "assunto": "Sala comprida com janelas para o terraço",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou.",
+        "Fotos de 2021 (antes e logo depois da abertura): confirmar com o dono se a casa está igual."
+      ]
+    },
+    {
+      "id": "ATV-BI-DETALHE-09",
+      "caminho": "marketing/fotos/interior/detalhe-09.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 2250
+      },
+      "assunto": "Cartazes antigos de bicicletas na escada",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou.",
+        "Fotos de 2021 (antes e logo depois da abertura): confirmar com o dono se a casa está igual."
+      ]
+    },
+    {
+      "id": "ATV-BI-DETALHE-08",
+      "caminho": "marketing/fotos/interior/detalhe-08.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 2250
+      },
+      "assunto": "Silhueta de bicicleta antiga à janela",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou.",
+        "Fotos de 2021 (antes e logo depois da abertura): confirmar com o dono se a casa está igual."
+      ]
+    },
+    {
+      "id": "ATV-BI-BICICLETAS-02",
+      "caminho": "marketing/fotos/exterior/bicicletas-02.jpg",
+      "dimensoes": {
+        "largura": 2448,
+        "altura": 3264
+      },
+      "assunto": "Bicicleta pendurada no pátio de granito",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou.",
+        "Fotos de 2021 (antes e logo depois da abertura): confirmar com o dono se a casa está igual."
+      ]
+    },
+    {
+      "id": "ATV-BI-FACHADA-01",
+      "caminho": "marketing/fotos/exterior/fachada-01.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 4000
+      },
+      "assunto": "Fachada de granito com o letreiro BIKEINN",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou.",
+        "Fotos de 2021 (antes e logo depois da abertura): confirmar com o dono se a casa está igual."
+      ]
+    }
+  ],
+  "decisoes": [
+    {
+      "id": "DEC-BIKEINN-FORA",
+      "estado": "substituida",
+      "efeito": "informativo",
+      "texto": "BIKEINN fora do âmbito por agora (\"vamos deixar de parte por enquanto o bikeinn\").",
+      "decidido_em": "2026-09-25",
+      "fonte": "utilizador (Diogo), mensagem de 2026-09-25",
+      "afetados": [
+        "CASA-BIKEINN"
+      ],
+      "substituida_por": "DEC-BIKEINN-DOSSIE"
+    },
+    {
+      "id": "DEC-BIKEINN-DOSSIE",
+      "estado": "ativa",
+      "efeito": "informativo",
+      "texto": "O utilizador pediu o dossiê do BIKEINN (\"faz tambem o dossiê do BIKEINN\"), como casa separada e com o mesmo peso das outras cinco (\"nao superiorizes […] faz como se fossem casas separadas\").",
+      "decidido_em": "2026-09-25",
+      "fonte": "utilizador (Diogo), mensagem de 2026-09-25",
+      "afetados": [
+        "CASA-BIKEINN"
+      ]
+    },
+    {
+      "id": "DEC-FOTOS-POR-AUTORIZAR",
+      "estado": "ativa",
+      "efeito": "informativo",
+      "texto": "Todas as fotografias foram publicadas pela própria casa, mas o titular ainda não autorizou o uso no site definitivo. Utilizáveis na versão de demonstração.",
+      "decidido_em": "2026-09-25",
+      "fonte": "regra da skill; sem contacto com o dono",
+      "afetados": [
+        "ATV-BI-TERRACO-04",
+        "ATV-BI-TERRACO-02",
+        "ATV-BI-QUARTO-10",
+        "ATV-BI-QUARTO-08",
+        "ATV-BI-QUARTO-21",
+        "ATV-BI-COZINHA-01",
+        "ATV-BI-SALA-02",
+        "ATV-BI-DETALHE-09",
+        "ATV-BI-DETALHE-08",
+        "ATV-BI-BICICLETAS-02",
+        "ATV-BI-FACHADA-01"
+      ]
+    }
+  ],
+  "cobertura": [
+    {
+      "id": "COB-IDENTIDADE",
+      "fonte": "RNT, Booking, Google, Visit Vouzela, Facebook, Instagram, TripAdvisor",
+      "material": "identidade",
+      "estado": "completo_no_universo_observado",
+      "superficie": "nome, registo, titular, morada, telefone e email cruzados"
+    },
+    {
+      "id": "COB-RNT",
+      "fonte": "Registo Nacional de Turismo",
+      "material": "compliance",
+      "estado": "completo_no_universo_observado",
+      "superficie": "RNAL 117909",
+      "observado": 1,
+      "recolhido": 1
+    },
+    {
+      "id": "COB-SITE",
+      "fonte": "bikeinn.pt",
+      "material": "textos",
+      "estado": "bloqueado",
+      "superficie": "página inicial",
+      "limitacao": "Só redireciona para visitvouzela.com/bikeinn, que devolve 404."
+    },
+    {
+      "id": "COB-VV",
+      "fonte": "visitvouzela.com (Web Archive)",
+      "material": "textos",
+      "estado": "completo_no_universo_observado",
+      "superficie": "/bikeinn, /bikeinnquartos, /2020bikeinn, PT e EN",
+      "observado": 6,
+      "recolhido": 6
+    },
+    {
+      "id": "COB-VV-FOTOS",
+      "fonte": "visitvouzela.com (Web Archive)",
+      "material": "fotos",
+      "estado": "completo_no_universo_observado",
+      "superficie": "3 páginas",
+      "observado": 71,
+      "recolhido": 55,
+      "limitacao": "16 logótipos e selos do rodapé do grupo (no dossiê da Casa das Ameias)."
+    },
+    {
+      "id": "COB-BK-REVIEWS",
+      "fonte": "Booking — BIKEINN",
+      "material": "reviews",
+      "estado": "completo_no_universo_observado",
+      "superficie": "6 páginas, mais recentes primeiro",
+      "observado": 52,
+      "recolhido": 52,
+      "limitacao": "O Booking só mostra os últimos três anos."
+    },
+    {
+      "id": "COB-BK-FOTOS",
+      "fonte": "Booking — BIKEINN",
+      "material": "fotos",
+      "estado": "completo_no_universo_observado",
+      "superficie": "galeria completa nos dados da página",
+      "observado": 48,
+      "recolhido": 48
+    },
+    {
+      "id": "COB-BK-QUARTOS",
+      "fonte": "Booking — BIKEINN",
+      "material": "quartos",
+      "estado": "parcial",
+      "superficie": "dados dos 4 tipos; pesquisa 21–23/10/2026, 2 adultos",
+      "observado": 4,
+      "recolhido": 4,
+      "limitacao": "Sem preços: o alojamento não está a receber reservas."
+    },
+    {
+      "id": "COB-BK-QA",
+      "fonte": "Booking — BIKEINN",
+      "material": "textos",
+      "estado": "completo_no_universo_observado",
+      "superficie": "perguntas e respostas",
+      "observado": 10,
+      "recolhido": 10
+    },
+    {
+      "id": "COB-GG",
+      "fonte": "Google Maps — BIKEINN",
+      "material": "reviews",
+      "estado": "parcial",
+      "superficie": "Places API (New), campo reviews",
+      "observado": 31,
+      "recolhido": 5,
+      "limitacao": "A lista de críticas não é servida sem sessão."
+    },
+    {
+      "id": "COB-TA",
+      "fonte": "TripAdvisor — Bikeinn",
+      "material": "reviews",
+      "estado": "completo_no_universo_observado",
+      "superficie": "ficha d25639933",
+      "observado": 0,
+      "recolhido": 0
+    },
+    {
+      "id": "COB-FB",
+      "fonte": "Facebook @BikeInnVouzela",
+      "material": "reviews",
+      "estado": "bloqueado",
+      "superficie": "página pública sem sessão",
+      "observado": 3,
+      "recolhido": 0,
+      "limitacao": "\"3 críticas\" pedem sessão."
+    },
+    {
+      "id": "COB-IG",
+      "fonte": "Instagram @bike.inn",
+      "material": "textos",
+      "estado": "parcial",
+      "superficie": "perfil sem sessão",
+      "observado": 12,
+      "recolhido": 0,
+      "limitacao": "Bio recolhida; legendas e fotos pedem sessão."
+    },
+    {
+      "id": "COB-AB",
+      "fonte": "Airbnb",
+      "material": "canais",
+      "estado": "nao_encontrado",
+      "superficie": "perfil 37054129 do anfitrião do grupo e pesquisa na web",
+      "limitacao": "Nenhum anúncio encontrado."
+    }
+  ]
+}

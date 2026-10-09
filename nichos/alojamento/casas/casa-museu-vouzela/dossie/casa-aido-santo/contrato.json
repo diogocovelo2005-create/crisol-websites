@@ -1,0 +1,1285 @@
+{
+  "schema_version": "1.0",
+  "manifesto": {
+    "slug": "casa-aido-santo",
+    "revisao": "2026-09-25",
+    "prontidao": "com_limitacoes",
+    "notas": "Dossiê da Casa Aido Santo (TER 1238, Casa de Campo, Oliveira de Frades), uma das cinco casas do mesmo casal, tratada como casa separada (ver ../como-se-ligam.md). Separado do dossiê conjunto de 2026-09-24; as reviews do Google foram renumeradas de 1 a 5 (eram de 6 a 10). Limitações: reviews sobretudo de 2016 a 2022; o Booking não está a vender; faltam fotos das cozinhas, do forno e dos quartos por nome."
+  },
+  "entidades": [
+    {
+      "id": "CASA-AIDO-SANTO",
+      "tipo": "casa",
+      "nome": "Casa Aido Santo — casa de campo em Nespereira, Oliveira de Frades"
+    },
+    {
+      "id": "UN-AS-CASA-INTEIRA",
+      "tipo": "unidade",
+      "nome": "Casa Aido Santo inteira, 8 quartos, 16 pessoas",
+      "pai_id": "CASA-AIDO-SANTO"
+    },
+    {
+      "id": "QT-AS-DUPLO",
+      "tipo": "tipo_quarto",
+      "nome": "Quarto Duplo Standard (Aido Santo, histórico)",
+      "pai_id": "CASA-AIDO-SANTO"
+    },
+    {
+      "id": "QT-AS-TWIN",
+      "tipo": "tipo_quarto",
+      "nome": "Quarto Twin Standard (Aido Santo, histórico)",
+      "pai_id": "CASA-AIDO-SANTO"
+    },
+    {
+      "id": "ESP-AS-PATIO",
+      "tipo": "espaco",
+      "nome": "Pátio de granito com galerias de madeira",
+      "pai_id": "CASA-AIDO-SANTO"
+    },
+    {
+      "id": "ESP-AS-PISCINA",
+      "tipo": "espaco",
+      "nome": "Piscina e jardins",
+      "pai_id": "CASA-AIDO-SANTO"
+    },
+    {
+      "id": "ESP-AS-ALPENDRE",
+      "tipo": "espaco",
+      "nome": "Telheiro da piscina com cozinhas, churrasqueira e forno",
+      "pai_id": "CASA-AIDO-SANTO"
+    },
+    {
+      "id": "ESP-AS-SALA-JANTAR",
+      "tipo": "espaco",
+      "nome": "Sala de jantar com lareira de colunas",
+      "pai_id": "CASA-AIDO-SANTO"
+    },
+    {
+      "id": "ESP-AS-SALA",
+      "tipo": "espaco",
+      "nome": "Sala de estar",
+      "pai_id": "CASA-AIDO-SANTO"
+    },
+    {
+      "id": "ESP-AS-JOGOS",
+      "tipo": "espaco",
+      "nome": "Sala de jogos (bilhar, ping-pong, leitura)",
+      "pai_id": "CASA-AIDO-SANTO"
+    },
+    {
+      "id": "ESP-AS-ADEGA",
+      "tipo": "espaco",
+      "nome": "Adega transformada em bar",
+      "pai_id": "CASA-AIDO-SANTO"
+    },
+    {
+      "id": "ESP-AS-CORREDOR",
+      "tipo": "espaco",
+      "nome": "Corredor dos relógios de parede",
+      "pai_id": "CASA-AIDO-SANTO"
+    },
+    {
+      "id": "ESP-AS-VISTA",
+      "tipo": "espaco",
+      "nome": "Vista para o vale e a serra de São Macário",
+      "pai_id": "CASA-AIDO-SANTO"
+    },
+    {
+      "id": "CANAL-AB-AS",
+      "tipo": "canal",
+      "nome": "Airbnb — Casa Aido Santo",
+      "pai_id": "CASA-AIDO-SANTO"
+    },
+    {
+      "id": "CANAL-GG-AS",
+      "tipo": "canal",
+      "nome": "Google — Casa Aido Santo",
+      "pai_id": "CASA-AIDO-SANTO"
+    },
+    {
+      "id": "CANAL-BK-AS",
+      "tipo": "canal",
+      "nome": "Booking — Casa Aido Santo",
+      "pai_id": "CASA-AIDO-SANTO"
+    }
+  ],
+  "evidencias": [
+    {
+      "id": "EV-RNT-AS",
+      "origem": "registo_publico",
+      "entidade_ids": [
+        "CASA-AIDO-SANTO",
+        "UN-AS-CASA-INTEIRA"
+      ],
+      "local": "https://rnt.turismodeportugal.pt/RNT/RNET.aspx?nr=1238",
+      "recolhido_em": "2026-09-24",
+      "bloco": "ficha RNET 1238",
+      "excerto": "Empreendimento de Turismo no Espaço Rural | Casa de Campo; 8 quartos; 16 utentes; Nespereira, 3680-173 Pinheiro, Oliveira de Frades; abertura 2000; classificado 2023-12-12",
+      "atualidade": "Registo público; confirmado em 2026-09-24."
+    },
+    {
+      "id": "EV-SITE-AS",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-AIDO-SANTO",
+        "ESP-AS-PATIO",
+        "ESP-AS-SALA-JANTAR",
+        "ESP-AS-JOGOS",
+        "ESP-AS-ADEGA",
+        "ESP-AS-CORREDOR",
+        "ESP-AS-PISCINA"
+      ],
+      "local": "https://www.casamuseu.com/casaaidosanto.php",
+      "recolhido_em": "2026-09-24",
+      "bloco": "bloco \"A Casa\"",
+      "excerto": "A Casa Aido Santo é uma casa rural, de finais do século XVII, tipicamente beirã, formada por dois pisos em torno dum pátio.",
+      "atualidade": "Página sem data; o texto repete-se no Visit Vouzela em 2026."
+    },
+    {
+      "id": "EV-SITE-AS-PRECOS",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-AIDO-SANTO",
+        "QT-AS-DUPLO"
+      ],
+      "local": "https://www.casamuseu.com/casaaidosanto.php",
+      "recolhido_em": "2026-09-24",
+      "bloco": "bloco \"PREÇOS\"",
+      "excerto": "Quarto duplo 70,00 € - 90,00 € / Aluguer casa | por dia 400,00 € - 800,00 €",
+      "atualidade": "Sem data. Histórico."
+    },
+    {
+      "id": "EV-SITE-CONTACTOS",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-AIDO-SANTO"
+      ],
+      "local": "https://www.casamuseu.com/contactos.php",
+      "recolhido_em": "2026-09-24",
+      "bloco": "bloco \"CONTACTOS\"",
+      "excerto": "+351 232 771 514 / +351 232 772 614 / Telemóvel +351 966 059 265 / info@casamuseu.com"
+    },
+    {
+      "id": "EV-VV-AS",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-AIDO-SANTO",
+        "UN-AS-CASA-INTEIRA",
+        "ESP-AS-ALPENDRE",
+        "ESP-AS-JOGOS",
+        "ESP-AS-PISCINA"
+      ],
+      "local": "https://web.archive.org/web/20260513222416/https://www.visitvouzela.com/aidosanto",
+      "recolhido_em": "2026-09-24",
+      "bloco": "página Casa Aido Santo",
+      "excerto": "Alojamento dedicado a grupos. A casa é alugada na totalidade com um máximo de 16 pessoas.",
+      "publicado_em": "cópia do Web Archive de 2026-05-13",
+      "atualidade": "Site da casa; cópia de maio de 2026."
+    },
+    {
+      "id": "EV-BK-AS",
+      "origem": "plataforma",
+      "entidade_ids": [
+        "CASA-AIDO-SANTO",
+        "UN-AS-CASA-INTEIRA",
+        "QT-AS-DUPLO",
+        "QT-AS-TWIN",
+        "CANAL-BK-AS"
+      ],
+      "local": "https://www.booking.com/hotel/pt/casa-aido-santo.pt-pt.html",
+      "recolhido_em": "2026-09-24",
+      "bloco": "regras, comodidades, tipos de quarto, pesquisas sem disponibilidade",
+      "excerto": "Casa com 8 Quartos × 16; Não disponível no nosso website nas suas datas; Licença número: Nº10/2000TURISMOESPAÇORURAL1238",
+      "atualidade": "Três pesquisas sem disponibilidade (out. e nov. de 2026, jul. de 2027)."
+    },
+    {
+      "id": "EV-BK-AS-QA",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-AIDO-SANTO"
+      ],
+      "local": "https://www.booking.com/hotel/pt/casa-aido-santo.pt-pt.html",
+      "recolhido_em": "2026-09-24",
+      "bloco": "pergunta e resposta",
+      "excerto": "embora a Casa seja alugada por minimo de 2 noites",
+      "publicado_em": "2020-10-12"
+    },
+    {
+      "id": "EV-AB-AS",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-AIDO-SANTO",
+        "UN-AS-CASA-INTEIRA",
+        "ESP-AS-PISCINA",
+        "ESP-AS-ALPENDRE",
+        "ESP-AS-VISTA"
+      ],
+      "local": "https://www.airbnb.pt/rooms/7085728",
+      "recolhido_em": "2026-09-24",
+      "bloco": "descrição, O espaço, Outras coisas a ter em conta, Onde irá ficar",
+      "excerto": "Casa com 800mts2 cobertos, mais 1200mts de jardins. 6 Quartos duplos com casa banho privativa , mais 2 quartos duplos com 1 casa banho completa mas compartilhada."
+    },
+    {
+      "id": "EV-AB-AS-METRICA",
+      "origem": "plataforma",
+      "entidade_ids": [
+        "CANAL-AB-AS"
+      ],
+      "local": "https://www.airbnb.pt/rooms/7085728",
+      "recolhido_em": "2026-09-24",
+      "bloco": "pontuação",
+      "excerto": "4,88 · 17 avaliações; 8 quartos · 11 camas · 9,5 casas de banho"
+    },
+    {
+      "id": "EV-GG-AS",
+      "origem": "plataforma",
+      "entidade_ids": [
+        "CASA-AIDO-SANTO",
+        "CANAL-GG-AS"
+      ],
+      "local": "Google Places API, place ChIJSWuh7wxsIw0Rh_U1FcEKLhE",
+      "recolhido_em": "2026-09-24",
+      "bloco": "ficha",
+      "excerto": "rating 4.3; userRatingCount 29; primaryType swimming_pool; 966 059 265"
+    },
+    {
+      "id": "EV-REV-AS-CARACTER",
+      "origem": "hospede",
+      "entidade_ids": [
+        "CASA-AIDO-SANTO"
+      ],
+      "local": "reviews.md",
+      "recolhido_em": "2026-09-24",
+      "bloco": "pontos-fortes.md, ponto 2",
+      "excerto": "15 de 22 reviews da Aido Santo",
+      "atualidade": "Última prova agosto de 2022."
+    },
+    {
+      "id": "EV-REV-AS-PISCINA",
+      "origem": "hospede",
+      "entidade_ids": [
+        "CASA-AIDO-SANTO",
+        "ESP-AS-PISCINA",
+        "ESP-AS-ALPENDRE"
+      ],
+      "local": "reviews.md",
+      "recolhido_em": "2026-09-24",
+      "bloco": "pontos-fortes.md, ponto 3",
+      "excerto": "14 de 22 reviews da Aido Santo",
+      "atualidade": "Última prova A-001, agosto de 2025."
+    },
+    {
+      "id": "EV-REV-AS-GRUPOS",
+      "origem": "hospede",
+      "entidade_ids": [
+        "CASA-AIDO-SANTO",
+        "UN-AS-CASA-INTEIRA"
+      ],
+      "local": "reviews.md",
+      "recolhido_em": "2026-09-24",
+      "bloco": "pontos-fortes.md, ponto 4",
+      "excerto": "12 de 22 reviews da Aido Santo",
+      "atualidade": "Última prova agosto de 2022."
+    },
+    {
+      "id": "EV-REV-AS-SOSSEGO",
+      "origem": "hospede",
+      "entidade_ids": [
+        "CASA-AIDO-SANTO",
+        "ESP-AS-VISTA"
+      ],
+      "local": "reviews.md",
+      "recolhido_em": "2026-09-24",
+      "bloco": "pontos-fortes.md, ponto 8",
+      "excerto": "6 de 22 reviews da Aido Santo",
+      "atualidade": "Última prova dezembro de 2021."
+    },
+    {
+      "id": "EV-REV-AS-ANFITRIOES",
+      "origem": "hospede",
+      "entidade_ids": [
+        "CASA-AIDO-SANTO"
+      ],
+      "local": "reviews.md",
+      "recolhido_em": "2026-09-25",
+      "bloco": "pontos-fortes.md, ponto 4",
+      "excerto": "14 de 22 reviews da Aido Santo",
+      "atualidade": "Última prova agosto de 2022."
+    },
+    {
+      "id": "EV-IG-AS",
+      "origem": "casa",
+      "entidade_ids": [
+        "CASA-AIDO-SANTO"
+      ],
+      "local": "https://www.instagram.com/casaaidosanto/",
+      "recolhido_em": "2026-09-24",
+      "bloco": "bio",
+      "excerto": "Casa típica beirã de Turismo Rural. Sinta-se mais perto da natureza. 👥 16 Pax. Visite também @casamuseu e @casadasameias"
+    },
+    {
+      "id": "EV-RNT-GRUPO",
+      "origem": "registo_publico",
+      "entidade_ids": [
+        "CASA-AIDO-SANTO"
+      ],
+      "local": "https://rnt.turismodeportugal.pt/",
+      "recolhido_em": "2026-09-25",
+      "bloco": "RNAL 35686, RNET 1238, RNAL 64058, RNAL 25507, RNET 9990",
+      "excerto": "António José Ferreira de Carvalho titular de 35686, 1238, 64058 e 25507; Maria Celeste Silva Coutinho Carvalho titular de 9990",
+      "atualidade": "Confirmado a 2026-09-25."
+    }
+  ],
+  "afirmacoes": [
+    {
+      "id": "AFIR-AS-TIPO",
+      "entidade_id": "CASA-AIDO-SANTO",
+      "texto": "A Casa Aido Santo é um empreendimento de Turismo no Espaço Rural, modalidade Casa de Campo (RNET 1238), em Nespereira, Pinheiro, concelho de Oliveira de Frades.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "registo_publico",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-RNT-AS",
+        "EV-BK-AS",
+        "EV-AB-AS"
+      ]
+    },
+    {
+      "id": "AFIR-AS-HISTORIA",
+      "entidade_id": "CASA-AIDO-SANTO",
+      "texto": "É uma casa rural beirã do fim do século XVII, de dois pisos à volta de um pátio, ligada na origem a uma ordem religiosa.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-SITE-AS",
+        "EV-VV-AS",
+        "EV-AB-AS"
+      ],
+      "atualidade": "Declaração histórica da casa, repetida em três canais."
+    },
+    {
+      "id": "AFIR-AS-ABERTURA",
+      "entidade_id": "CASA-AIDO-SANTO",
+      "texto": "A Casa Aido Santo abriu em 1998.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "conflitante",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-VV-AS",
+        "EV-RNT-AS"
+      ],
+      "atualidade": "A casa diz 1998; o RNT diz 2000."
+    },
+    {
+      "id": "AFIR-AS-INTEIRA",
+      "entidade_id": "UN-AS-CASA-INTEIRA",
+      "texto": "A casa aluga-se só por inteiro, a grupos de até 16 pessoas.",
+      "natureza": "facto",
+      "categoria": "politica",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-VV-AS",
+        "EV-RNT-AS",
+        "EV-AB-AS"
+      ],
+      "condicao": "A casa diz-o em 2026; confirmar com o dono que já não vende quartos soltos."
+    },
+    {
+      "id": "AFIR-AS-QUARTOS",
+      "entidade_id": "UN-AS-CASA-INTEIRA",
+      "texto": "Oito quartos: seis com casa de banho privativa e dois que partilham uma casa de banho completa.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-RNT-AS",
+        "EV-AB-AS",
+        "EV-VV-AS"
+      ]
+    },
+    {
+      "id": "AFIR-AS-CAMAS",
+      "entidade_id": "UN-AS-CASA-INTEIRA",
+      "texto": "Onze camas: um quarto individual, quatro de casal e três com duas camas.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "plataforma",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-BK-AS",
+        "EV-AB-AS-METRICA"
+      ],
+      "condicao": "Booking e Airbnb dizem 11 camas; o site da casa diz três quartos twin e os restantes de casal, sem o individual. Confirmar a distribuição."
+    },
+    {
+      "id": "AFIR-AS-NOMES",
+      "entidade_id": "UN-AS-CASA-INTEIRA",
+      "texto": "Os quartos chamam-se Confissões, Pecados, Abade, Curral, Palheiro, Ninho, Casula e Sacristão, com mobília D. José, romântica de 1880 e Arte Nova.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-SITE-AS",
+        "EV-VV-AS"
+      ]
+    },
+    {
+      "id": "AFIR-AS-PISCINA",
+      "entidade_id": "ESP-AS-PISCINA",
+      "texto": "Piscina exterior grande e 1200 m² de jardins.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-AB-AS",
+        "EV-RNT-AS",
+        "EV-REV-AS-PISCINA"
+      ]
+    },
+    {
+      "id": "AFIR-AS-COZINHAS",
+      "entidade_id": "ESP-AS-ALPENDRE",
+      "texto": "Três cozinhas, dois fornos de lenha e uma churrasqueira, parte deles junto à piscina.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-VV-AS",
+        "EV-REV-AS-PISCINA"
+      ],
+      "atualidade": "Casa em 2026; hóspedes de 2016 a 2025 descrevem as cozinhas e as casas de banho junto à piscina."
+    },
+    {
+      "id": "AFIR-AS-JOGOS",
+      "entidade_id": "ESP-AS-JOGOS",
+      "texto": "Sala de jogos com bilhar, ping-pong e zona de leitura.",
+      "natureza": "facto",
+      "categoria": "inventario",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-VV-AS",
+        "EV-SITE-AS"
+      ]
+    },
+    {
+      "id": "AFIR-AS-ADEGA",
+      "entidade_id": "ESP-AS-ADEGA",
+      "texto": "A antiga adega foi transformada em bar e sala de música e convívio.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-SITE-AS"
+      ]
+    },
+    {
+      "id": "AFIR-AS-LAREIRA",
+      "entidade_id": "ESP-AS-SALA-JANTAR",
+      "texto": "No núcleo da casa há uma grande lareira com colunas de estilo românico e a sala de jantar com mesa e armário rústicos do século XVIII.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-SITE-AS",
+        "EV-VV-AS"
+      ]
+    },
+    {
+      "id": "AFIR-AS-RELOGIOS",
+      "entidade_id": "ESP-AS-CORREDOR",
+      "texto": "No corredor dos quartos há uma coleção de relógios de parede.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-SITE-AS",
+        "EV-VV-AS"
+      ]
+    },
+    {
+      "id": "AFIR-AS-VISTA",
+      "entidade_id": "ESP-AS-VISTA",
+      "texto": "Vista para o vale e para a serra de São Macário.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-AB-AS",
+        "EV-REV-AS-SOSSEGO"
+      ]
+    },
+    {
+      "id": "AFIR-AS-FORNO",
+      "entidade_id": "CASA-AIDO-SANTO",
+      "texto": "Comida de forno de lenha por encomenda, só para hóspedes, e a possibilidade de aprender a fazer vitela de Lafões ou cabrito no forno.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-VV-AS",
+        "EV-AB-AS"
+      ],
+      "condicao": "Serviço declarado pela casa; confirmar preço, como se encomenda e se a aula ainda se faz."
+    },
+    {
+      "id": "AFIR-AS-MIN-NOITES",
+      "entidade_id": "UN-AS-CASA-INTEIRA",
+      "texto": "Estadia mínima de 2 noites.",
+      "natureza": "facto",
+      "categoria": "politica",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-BK-AS-QA"
+      ],
+      "condicao": "Resposta da casa de 2020; confirmar."
+    },
+    {
+      "id": "AFIR-AS-ANIMAIS",
+      "entidade_id": "CASA-AIDO-SANTO",
+      "texto": "Animais admitidos a pedido.",
+      "natureza": "facto",
+      "categoria": "politica",
+      "origem": "plataforma",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-BK-AS",
+        "EV-AB-AS"
+      ],
+      "condicao": "Booking diz que pode haver custo; confirmar condições."
+    },
+    {
+      "id": "AFIR-AS-DISTANCIAS",
+      "entidade_id": "CASA-AIDO-SANTO",
+      "texto": "A cerca de 5 minutos da A25, 30 minutos de Viseu e de Aveiro, uma hora do Porto e de Coimbra, 40 minutos dos Passadiços do Paiva.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-AB-AS",
+        "EV-VV-AS"
+      ],
+      "condicao": "Distâncias dadas pela casa, com pequenas diferenças entre canais (Aveiro 30 min ou 45 km); arredondar."
+    },
+    {
+      "id": "AFIR-AS-TENIS",
+      "entidade_id": "CASA-AIDO-SANTO",
+      "texto": "A Casa Aido Santo tem campo de ténis.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "registo_publico",
+      "estado": "desconhecido",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-RNT-AS",
+        "EV-BK-AS"
+      ],
+      "atualidade": "O RNT e o Booking listam ténis; a casa só fala de ping-pong; sem foto nem hóspede."
+    },
+    {
+      "id": "AFIR-AS-QUARTOS-SOLTOS",
+      "entidade_id": "QT-AS-DUPLO",
+      "texto": "Quartos da Aido Santo à venda à noite, a 70–90 €.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "casa",
+      "estado": "historico",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-SITE-AS-PRECOS",
+        "EV-BK-AS"
+      ],
+      "ambito": {
+        "fonte": "site antigo sem data; Booking sem disponibilidade"
+      },
+      "atualidade": "Substituído pelo aluguer por inteiro (2026)."
+    },
+    {
+      "id": "AFIR-AS-NOTA-AB",
+      "entidade_id": "CANAL-AB-AS",
+      "texto": "Nota 4,88 em 5 no Airbnb, com 17 avaliações.",
+      "natureza": "metrica",
+      "categoria": "avaliacao",
+      "origem": "plataforma",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-AB-AS-METRICA"
+      ],
+      "condicao": "Mostrar com fonte, escala e data (setembro de 2026)."
+    },
+    {
+      "id": "AFIR-AS-NOTA-GG",
+      "entidade_id": "CANAL-GG-AS",
+      "texto": "Nota 4,3 em 5 no Google, com 29 avaliações.",
+      "natureza": "metrica",
+      "categoria": "avaliacao",
+      "origem": "plataforma",
+      "estado": "desconhecido",
+      "uso": "nao_usar",
+      "evidencia_ids": [
+        "EV-GG-AS"
+      ],
+      "atualidade": "A Google classifica o lugar como piscina; a nota pode misturar quem não ficou na casa."
+    },
+    {
+      "id": "AFIR-AS-TESTEMUNHO-CARACTER",
+      "entidade_id": "CASA-AIDO-SANTO",
+      "texto": "Os hóspedes dizem que a casa, antiga e cheia de carácter, é ainda melhor do que nas fotografias.",
+      "natureza": "testemunho",
+      "categoria": "avaliacao",
+      "origem": "hospede",
+      "estado": "confirmado",
+      "uso": "citar",
+      "evidencia_ids": [
+        "EV-REV-AS-CARACTER"
+      ]
+    },
+    {
+      "id": "AFIR-AS-TESTEMUNHO-PISCINA",
+      "entidade_id": "CASA-AIDO-SANTO",
+      "texto": "Os hóspedes passam o dia na piscina e na zona à volta, com cozinhas, churrasqueira e casas de banho.",
+      "natureza": "testemunho",
+      "categoria": "avaliacao",
+      "origem": "hospede",
+      "estado": "confirmado",
+      "uso": "citar",
+      "evidencia_ids": [
+        "EV-REV-AS-PISCINA"
+      ]
+    },
+    {
+      "id": "AFIR-AS-TESTEMUNHO-GRUPOS",
+      "entidade_id": "CASA-AIDO-SANTO",
+      "texto": "Grupos de 14 a 16 pessoas e famílias grandes dizem que a casa é perfeita para eles.",
+      "natureza": "testemunho",
+      "categoria": "avaliacao",
+      "origem": "hospede",
+      "estado": "confirmado",
+      "uso": "citar",
+      "evidencia_ids": [
+        "EV-REV-AS-GRUPOS"
+      ]
+    },
+    {
+      "id": "AFIR-AS-TESTEMUNHO-SOSSEGO",
+      "entidade_id": "CASA-AIDO-SANTO",
+      "texto": "Os hóspedes falam de sossego, vistas e natureza.",
+      "natureza": "testemunho",
+      "categoria": "avaliacao",
+      "origem": "hospede",
+      "estado": "confirmado",
+      "uso": "citar",
+      "evidencia_ids": [
+        "EV-REV-AS-SOSSEGO"
+      ]
+    },
+    {
+      "id": "AFIR-AS-DONOS",
+      "entidade_id": "CASA-AIDO-SANTO",
+      "texto": "A Casa Aido Santo é de Celeste e António José Carvalho, antiquários, que recebem os hóspedes.",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "registo_publico",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-RNT-AS",
+        "EV-VV-AS"
+      ]
+    },
+    {
+      "id": "AFIR-AS-CONTACTOS",
+      "entidade_id": "CASA-AIDO-SANTO",
+      "texto": "Contactos: 966 059 265, 232 771 514, info@casamuseu.com.",
+      "natureza": "facto",
+      "categoria": "contacto",
+      "origem": "casa",
+      "estado": "confirmado",
+      "uso": "afirmar_com_condicao",
+      "evidencia_ids": [
+        "EV-SITE-CONTACTOS",
+        "EV-GG-AS"
+      ],
+      "condicao": "Confirmar com o dono que números pôr no site; o RNT dá à Aido Santo o 232 762 763."
+    },
+    {
+      "id": "AFIR-AS-TESTEMUNHO-ANFITRIOES",
+      "entidade_id": "CASA-AIDO-SANTO",
+      "texto": "Os hóspedes dizem que os donos recebem como família e fazem tudo para que o grupo se sinta em casa.",
+      "natureza": "testemunho",
+      "categoria": "avaliacao",
+      "origem": "hospede",
+      "estado": "confirmado",
+      "uso": "citar",
+      "evidencia_ids": [
+        "EV-REV-AS-ANFITRIOES"
+      ],
+      "atualidade": "Última prova agosto de 2022."
+    },
+    {
+      "id": "AFIR-AS-GRUPO",
+      "entidade_id": "CASA-AIDO-SANTO",
+      "texto": "A Casa Aido Santo faz parte de um grupo de cinco casas do mesmo casal (Casa Museu, Casa das Ameias e Penthouse em Vouzela; Philip's Flat em Alvor).",
+      "natureza": "facto",
+      "categoria": "geral",
+      "origem": "registo_publico",
+      "estado": "confirmado",
+      "uso": "afirmar",
+      "evidencia_ids": [
+        "EV-RNT-GRUPO",
+        "EV-IG-AS"
+      ]
+    }
+  ],
+  "citacoes": [
+    {
+      "id": "CIT-AS-CASAL",
+      "review_id": "A-016",
+      "texto_original": "It is a lovely and welcoming couple who does everything to make you feel at home.",
+      "autor": "Stellina",
+      "plataforma": "Airbnb",
+      "data": "2017-08",
+      "lingua": "en",
+      "traducao": "São um casal adorável e acolhedor que faz tudo para nos sentirmos em casa."
+    },
+    {
+      "id": "CIT-AS-ALUCINANTE",
+      "review_id": "A-002",
+      "texto_original": "La casa de António es alucinante. Las fotografías no hacen justicia.",
+      "autor": "Daniel",
+      "plataforma": "Airbnb",
+      "data": "2022-08",
+      "lingua": "es",
+      "traducao": "A casa do António é alucinante. As fotografias não lhe fazem justiça."
+    },
+    {
+      "id": "CIT-AS-MAIS-QUE-CASA",
+      "review_id": "A-011",
+      "texto_original": "This place was more than just a house - it was a whole different experience!",
+      "autor": "Kim",
+      "plataforma": "Airbnb",
+      "data": "2018-08",
+      "lingua": "en",
+      "traducao": "Este sítio foi mais do que uma casa: foi uma experiência completamente diferente!"
+    },
+    {
+      "id": "CIT-AS-DIA-PISCINA",
+      "review_id": "A-002",
+      "texto_original": "La zona de la piscina, la barbacoa, la cocina exterior hacen que puedas pasar el día entero sin pasar a la casa.",
+      "autor": "Daniel",
+      "plataforma": "Airbnb",
+      "data": "2022-08",
+      "lingua": "es",
+      "traducao": "A zona da piscina, a churrasqueira e a cozinha exterior fazem com que se possa passar o dia inteiro sem ir à casa."
+    },
+    {
+      "id": "CIT-AS-PISCINA-TUDO",
+      "review_id": "A-001",
+      "texto_original": "Great place, the pool area in particular, it had everything necessary - toilets, kitchen, refrigerator etc.",
+      "autor": "Ine",
+      "plataforma": "Airbnb",
+      "data": "2025-08",
+      "lingua": "en",
+      "traducao": "Ótimo sítio, sobretudo a zona da piscina, que tinha tudo o que era preciso — casas de banho, cozinha, frigorífico, etc."
+    },
+    {
+      "id": "CIT-AS-GRUPOS",
+      "review_id": "G-002",
+      "texto_original": "É excelente para reuniões de grupos de 14 a 20 pessoas, sejam reuniões de amigos ou de trabalho.",
+      "autor": "Maria João Moreno",
+      "plataforma": "Google",
+      "data": "~2019",
+      "lingua": "pt"
+    },
+    {
+      "id": "CIT-AS-FAMILIA-16",
+      "review_id": "A-010",
+      "texto_original": "We were A big family of 16 including kids and babies.",
+      "autor": "Einat",
+      "plataforma": "Airbnb",
+      "data": "2018-08",
+      "lingua": "en",
+      "traducao": "Éramos uma família grande, de 16, com crianças e bebés."
+    },
+    {
+      "id": "CIT-AS-ALUGAR-TODA",
+      "review_id": "G-004",
+      "texto_original": "Uma boa ideia é alugar toda a casa e dividir bons momentos com os familiares e amigos.",
+      "autor": "Marilia Paes",
+      "plataforma": "Google",
+      "data": "~2019",
+      "lingua": "pt"
+    },
+    {
+      "id": "CIT-AS-VISTAS",
+      "review_id": "A-015",
+      "texto_original": "The views from the house are great.",
+      "autor": "Shakil",
+      "plataforma": "Airbnb",
+      "data": "2017-08",
+      "lingua": "en",
+      "traducao": "As vistas da casa são ótimas."
+    }
+  ],
+  "ativos": [
+    {
+      "id": "ATV-AS-PATIO-12",
+      "caminho": "marketing/fotos/exterior/patio-12.jpg",
+      "dimensoes": {
+        "largura": 5184,
+        "altura": 3456
+      },
+      "assunto": "Galeria de madeira e escada no pátio de granito da Aido Santo",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou."
+      ],
+      "entidade_confirmada": "ESP-AS-PATIO"
+    },
+    {
+      "id": "ATV-AS-PATIO-11",
+      "caminho": "marketing/fotos/exterior/patio-11.jpg",
+      "dimensoes": {
+        "largura": 5184,
+        "altura": 3456
+      },
+      "assunto": "Pátio com a roda do carro de bois e as varandas de madeira",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou."
+      ],
+      "entidade_confirmada": "ESP-AS-PATIO"
+    },
+    {
+      "id": "ATV-AS-PATIO-03",
+      "caminho": "marketing/fotos/exterior/patio-03.jpg",
+      "dimensoes": {
+        "largura": 1608,
+        "altura": 1068
+      },
+      "assunto": "Pátio visto de cima: varandas de madeira e telhados",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou."
+      ],
+      "entidade_confirmada": "ESP-AS-PATIO"
+    },
+    {
+      "id": "ATV-AS-PISCINA-01",
+      "caminho": "marketing/fotos/exterior/piscina-01.jpg",
+      "dimensoes": {
+        "largura": 1604,
+        "altura": 1068
+      },
+      "assunto": "Piscina com o relvado e a casa de granito ao fundo",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou."
+      ],
+      "entidade_confirmada": "ESP-AS-PISCINA"
+    },
+    {
+      "id": "ATV-AS-PISCINA-02",
+      "caminho": "marketing/fotos/exterior/piscina-02.jpg",
+      "dimensoes": {
+        "largura": 1612,
+        "altura": 1068
+      },
+      "assunto": "Piscina ao longo do relvado, com o espigueiro",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou."
+      ],
+      "entidade_confirmada": "ESP-AS-PISCINA"
+    },
+    {
+      "id": "ATV-AS-ALPENDRE-03",
+      "caminho": "marketing/fotos/exterior/alpendre-03.jpg",
+      "dimensoes": {
+        "largura": 3264,
+        "altura": 2448
+      },
+      "assunto": "Telheiro com mesa comprida, piscina e serra ao fundo",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou."
+      ],
+      "entidade_confirmada": "ESP-AS-ALPENDRE"
+    },
+    {
+      "id": "ATV-AS-FACHADA-01",
+      "caminho": "marketing/fotos/exterior/fachada-01.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 2250
+      },
+      "assunto": "Casa de granito de dois pisos com jardim e escadas",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou."
+      ]
+    },
+    {
+      "id": "ATV-AS-VISTA-01",
+      "caminho": "marketing/fotos/exterior/vista-01.jpg",
+      "dimensoes": {
+        "largura": 3000,
+        "altura": 2250
+      },
+      "assunto": "Vista do vale e da serra por cima da piscina",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou."
+      ],
+      "entidade_confirmada": "ESP-AS-VISTA"
+    },
+    {
+      "id": "ATV-AS-VISTA-05",
+      "caminho": "marketing/fotos/exterior/vista-05.jpg",
+      "dimensoes": {
+        "largura": 4000,
+        "altura": 3000
+      },
+      "assunto": "Pôr-do-sol sobre a serra com cadeiras no terraço",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou."
+      ],
+      "entidade_confirmada": "ESP-AS-VISTA"
+    },
+    {
+      "id": "ATV-AS-SALA-03",
+      "caminho": "marketing/fotos/interior/sala-03.jpg",
+      "dimensoes": {
+        "largura": 3456,
+        "altura": 5184
+      },
+      "assunto": "Sala com teto de madeira, lustre e sofá vermelho",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou."
+      ],
+      "entidade_confirmada": "ESP-AS-SALA"
+    },
+    {
+      "id": "ATV-AS-SALA-04",
+      "caminho": "marketing/fotos/interior/sala-04.jpg",
+      "dimensoes": {
+        "largura": 3456,
+        "altura": 5184
+      },
+      "assunto": "Sala de jantar com a lareira de colunas e pratos de faiança",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou."
+      ],
+      "entidade_confirmada": "ESP-AS-SALA-JANTAR"
+    },
+    {
+      "id": "ATV-AS-CORREDOR-02",
+      "caminho": "marketing/fotos/interior/corredor-02.jpg",
+      "dimensoes": {
+        "largura": 1072,
+        "altura": 1612
+      },
+      "assunto": "Corredor com a coleção de relógios de parede",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou."
+      ],
+      "entidade_confirmada": "ESP-AS-CORREDOR"
+    },
+    {
+      "id": "ATV-AS-BILHAR-01",
+      "caminho": "marketing/fotos/interior/bilhar-01.jpg",
+      "dimensoes": {
+        "largura": 3456,
+        "altura": 5184
+      },
+      "assunto": "Sala de jogos com mesa de bilhar",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou."
+      ],
+      "entidade_confirmada": "ESP-AS-JOGOS"
+    },
+    {
+      "id": "ATV-AS-QUARTO-03",
+      "caminho": "marketing/fotos/interior/quarto-03.jpg",
+      "dimensoes": {
+        "largura": 3456,
+        "altura": 5184
+      },
+      "assunto": "Quarto com cama de madeira escura e teto de madeira",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou."
+      ]
+    },
+    {
+      "id": "ATV-AS-QUARTO-05",
+      "caminho": "marketing/fotos/interior/quarto-05.jpg",
+      "dimensoes": {
+        "largura": 1200,
+        "altura": 808
+      },
+      "assunto": "Quarto com parede de granito e colcha dourada",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou."
+      ]
+    },
+    {
+      "id": "ATV-AS-REFEICOES-01",
+      "caminho": "marketing/fotos/interior/refeicoes-01.jpg",
+      "dimensoes": {
+        "largura": 1200,
+        "altura": 799
+      },
+      "assunto": "Sala de jantar com mesa comprida e lustre",
+      "publicador": "casa",
+      "uso": "utilizavel",
+      "restricoes": [
+        "Autorização do dono para o site definitivo por confirmar; utilizável na versão de demonstração porque foi a própria casa que a publicou."
+      ],
+      "entidade_confirmada": "ESP-AS-SALA-JANTAR"
+    }
+  ],
+  "decisoes": [
+    {
+      "id": "DEC-CINCO-DOSSIES",
+      "estado": "ativa",
+      "efeito": "informativo",
+      "texto": "O utilizador pediu cinco dossiês separados, um por casa, com o mesmo peso e sem superiorizar nenhuma: \"quero que refaças o dossiè, nao eliminando o que já existe, para incluir a informaçao das 5 casas. nao superiorizes. […] faz como se fossem casas separadas.\" O BIKEINN fica de fora por agora.",
+      "decidido_em": "2026-09-25",
+      "fonte": "utilizador (Diogo), mensagem de 2026-09-25",
+      "afetados": [
+        "CASA-AIDO-SANTO"
+      ]
+    },
+    {
+      "id": "DEC-DUAS-CASAS",
+      "estado": "substituida",
+      "efeito": "informativo",
+      "texto": "Dossiê conjunto da Casa Museu e da Casa Aido Santo, com o mesmo peso (\"sao do mesmo dono. por isso nao á uma mais impotante que a outra.\").",
+      "decidido_em": "2026-09-24",
+      "fonte": "utilizador (Diogo), mensagem de 2026-09-24",
+      "afetados": [
+        "CASA-AIDO-SANTO"
+      ],
+      "substituida_por": "DEC-CINCO-DOSSIES"
+    },
+    {
+      "id": "DEC-OUTRAS-UNIDADES",
+      "estado": "substituida",
+      "efeito": "informativo",
+      "texto": "Penthouse Low Cost, Philip's Flat, Casa das Ameias e BIKEINN fora do âmbito (\"eles têm a casa museu e a Casa Aido Santo\").",
+      "decidido_em": "2026-09-24",
+      "fonte": "utilizador (Diogo), mensagem de 2026-09-24",
+      "afetados": [
+        "CASA-AIDO-SANTO"
+      ],
+      "substituida_por": "DEC-CINCO-DOSSIES"
+    },
+    {
+      "id": "DEC-FOTOS-POR-AUTORIZAR",
+      "estado": "ativa",
+      "efeito": "informativo",
+      "texto": "Todas as fotografias foram publicadas pela própria casa, mas o dono ainda não autorizou o uso no site definitivo. Utilizáveis na versão de demonstração.",
+      "decidido_em": "2026-09-25",
+      "fonte": "regra da skill; sem contacto com o dono",
+      "afetados": [
+        "ATV-AS-PATIO-12",
+        "ATV-AS-PATIO-11",
+        "ATV-AS-PATIO-03",
+        "ATV-AS-PISCINA-01",
+        "ATV-AS-PISCINA-02",
+        "ATV-AS-ALPENDRE-03",
+        "ATV-AS-FACHADA-01",
+        "ATV-AS-VISTA-01",
+        "ATV-AS-VISTA-05",
+        "ATV-AS-SALA-03",
+        "ATV-AS-SALA-04",
+        "ATV-AS-CORREDOR-02",
+        "ATV-AS-BILHAR-01",
+        "ATV-AS-QUARTO-03",
+        "ATV-AS-QUARTO-05",
+        "ATV-AS-REFEICOES-01"
+      ]
+    }
+  ],
+  "cobertura": [
+    {
+      "id": "COB-IDENTIDADE",
+      "fonte": "Supabase crm_alojamento, site antigo, RNT, Google, Booking, Airbnb, TripAdvisor",
+      "material": "identidade",
+      "estado": "completo_no_universo_observado",
+      "superficie": "nome, morada, telefone, registo e titular cruzados"
+    },
+    {
+      "id": "COB-RNT",
+      "fonte": "Registo Nacional de Turismo",
+      "material": "compliance",
+      "estado": "completo_no_universo_observado",
+      "superficie": "RNET 1238 (e, para o grupo, RNAL 35686, RNAL 64058, RNAL 25507, RNET 9990)",
+      "observado": 5,
+      "recolhido": 5
+    },
+    {
+      "id": "COB-SITE-ANTIGO",
+      "fonte": "casamuseu.com",
+      "material": "textos",
+      "estado": "completo_no_universo_observado",
+      "superficie": "página Casa Aido Santo (PT e EN), cabeçalho, contactos e rodapé"
+    },
+    {
+      "id": "COB-VISIT-VOUZELA",
+      "fonte": "visitvouzela.com (Web Archive)",
+      "material": "textos",
+      "estado": "parcial",
+      "superficie": "cópias de 2026 das páginas inicial, Casa Museu, Quartos Casa Museu, Casa Aido Santo, Quartos Aido Santo, Rota do Pastel, Contato, Voucher, Vídeo",
+      "limitacao": "O site está em baixo; lido só no arquivo. As páginas das outras casas estão nos dossiês delas."
+    },
+    {
+      "id": "COB-BK-AS",
+      "fonte": "Booking — Casa Aido Santo",
+      "material": "quartos",
+      "estado": "parcial",
+      "superficie": "3 pesquisas (21–23/10/2026, 13–15/11/2026, 16–18/07/2027 com 16 adultos)",
+      "observado": 3,
+      "recolhido": 3,
+      "limitacao": "Nenhuma disponibilidade; dados dos tipos lidos do anúncio, sem tarifa."
+    },
+    {
+      "id": "COB-BK-AS-REVIEWS",
+      "fonte": "Booking — Casa Aido Santo",
+      "material": "reviews",
+      "estado": "bloqueado",
+      "superficie": "anúncio",
+      "observado": 16,
+      "recolhido": 0,
+      "limitacao": "A nota 9,8 vem de 16 comentários externos que o Booking não mostra."
+    },
+    {
+      "id": "COB-BK-AS-FOTOS",
+      "fonte": "Booking — Casa Aido Santo",
+      "material": "fotos",
+      "estado": "completo_no_universo_observado",
+      "superficie": "galeria completa \"1 / 48\"",
+      "observado": 48,
+      "recolhido": 33,
+      "limitacao": "12 guardadas na versão maior do Visit Vouzela; 3 repetidas na própria galeria."
+    },
+    {
+      "id": "COB-GG-AS",
+      "fonte": "Google Maps — Casa Aido Santo",
+      "material": "reviews",
+      "estado": "parcial",
+      "superficie": "Places API (New), campo reviews (numeradas de 1 a 5; no dossiê conjunto eram de 6 a 10)",
+      "observado": 29,
+      "recolhido": 5,
+      "limitacao": "A lista de críticas não é servida sem sessão."
+    },
+    {
+      "id": "COB-AB-AS",
+      "fonte": "Airbnb — Casa Aido Santo",
+      "material": "reviews",
+      "estado": "completo_no_universo_observado",
+      "superficie": "\"Mostrar as 17 avaliações\", tradução desligada",
+      "observado": 17,
+      "recolhido": 17
+    },
+    {
+      "id": "COB-AB-AS-FOTOS",
+      "fonte": "Airbnb — Casa Aido Santo",
+      "material": "fotos",
+      "estado": "completo_no_universo_observado",
+      "superficie": "\"Mostrar todas as fotos\"",
+      "observado": 36,
+      "recolhido": 2,
+      "limitacao": "34 iguais às do Booking ou do site."
+    },
+    {
+      "id": "COB-FACEBOOK",
+      "fonte": "Facebook — Casa Museu e Casa Aido Santo",
+      "material": "textos",
+      "estado": "bloqueado",
+      "superficie": "páginas públicas",
+      "limitacao": "Pede sessão; a da Casa Museu mostra \"não está disponível\"; da Aido Santo só a apresentação e publicações de julho de 2022."
+    },
+    {
+      "id": "COB-CANAIS",
+      "fonte": "pesquisa web, trivago, VisitPortugal, Turismo do Centro, câmaras municipais",
+      "material": "canais",
+      "estado": "completo_no_universo_observado",
+      "superficie": "pesquisa por nome das duas casas",
+      "limitacao": "Portais usados só para descobrir canais."
+    },
+    {
+      "id": "COB-INSTAGRAM-AS",
+      "fonte": "Instagram — @casaaidosanto",
+      "material": "textos",
+      "estado": "parcial",
+      "superficie": "bio",
+      "limitacao": "Publicações pedem sessão."
+    },
+    {
+      "id": "COB-FB-AS",
+      "fonte": "Facebook — Casa Aido Santo",
+      "material": "textos",
+      "estado": "bloqueado",
+      "superficie": "página pública",
+      "limitacao": "Pede sessão; só a apresentação e publicações de julho de 2022."
+    }
+  ]
+}

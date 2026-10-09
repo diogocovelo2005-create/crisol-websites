@@ -1,0 +1,3010 @@
+{
+ "feitos": {
+  "ChIJdfMykU02Iw0R7c1mmGXRKyE": {
+   "em": "2026-09-19T00:13:38.175Z",
+   "regiao": "dentro",
+   "raio_celula_m": 163,
+   "pontos": 24
+  },
+  "ChIJCznAjqKjPA0Rwde12d4q9ek": {
+   "em": "2026-09-19T00:13:38.176Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 22.1
+  },
+  "ChIJAcJHTZ5BIw0R_hZ-m0l5T9Q": {
+   "em": "2026-09-19T00:13:38.176Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 21.3
+  },
+  "ChIJPbF4xbAjIw0R-AkYermU1bU": {
+   "em": "2026-09-19T00:13:38.176Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 20.9
+  },
+  "ChIJN98vpAVbOw0RDbl9gqYsOsg": {
+   "em": "2026-09-19T00:13:38.640Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 20
+  },
+  "ChIJc0_-N69JIw0RoPphj5xhsU4": {
+   "em": "2026-09-19T00:13:38.640Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 19.4
+  },
+  "ChIJd1Wa4MYhIw0RxglRl-siuhg": {
+   "em": "2026-09-19T00:13:38.640Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 18.7
+  },
+  "ChIJSZH0ixo3Iw0R4bTrw5dKRzQ": {
+   "em": "2026-09-19T00:13:38.640Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 18.6
+  },
+  "ChIJ7RY-cfWeJA0R5VPSzD0vPnQ": {
+   "em": "2026-09-19T00:13:39.095Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 18.6
+  },
+  "ChIJ7yXulP5tIw0R7HOSvzUDPyk": {
+   "em": "2026-09-19T00:13:39.096Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 18.3
+  },
+  "ChIJF7-t3kU3Iw0RrGWU8qssru4": {
+   "em": "2026-09-19T00:13:39.096Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 17.3
+  },
+  "ChIJS5gvh3BBIw0RIvKjzl5iuk0": {
+   "em": "2026-09-19T00:13:39.096Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 17.3
+  },
+  "ChIJaxjS_QqjPA0RKp8l1sR3zLg": {
+   "em": "2026-09-19T00:13:39.551Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 17.3
+  },
+  "ChIJEbwsXp6sJA0RyG-JQ8XO0OU": {
+   "em": "2026-09-19T00:13:39.551Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 17.2
+  },
+  "ChIJn3z0vxJCIw0RWAV9NTCwNPU": {
+   "em": "2026-09-19T00:13:39.551Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 17
+  },
+  "ChIJ6U5vdE02Iw0R48wkjA0oCMU": {
+   "em": "2026-09-19T00:13:39.551Z",
+   "regiao": "dentro",
+   "raio_celula_m": 163,
+   "pontos": 16.6
+  },
+  "ChIJqyMq0dItIw0Rc3Bns_JHlHo": {
+   "em": "2026-09-19T00:13:40.067Z",
+   "regiao": "dentro",
+   "raio_celula_m": 323,
+   "pontos": 15.2
+  },
+  "ChIJJdEwhualJA0RJfMUPYFdK3o": {
+   "em": "2026-09-19T00:13:40.067Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 15.2
+  },
+  "ChIJ1QlScWdRIw0RyQHQx8aRi78": {
+   "em": "2026-09-19T00:13:40.067Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 15.1
+  },
+  "ChIJfYWOTnUyIw0R4m_eeuSx8PM": {
+   "em": "2026-09-19T00:13:40.067Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 15
+  },
+  "ChIJX4pW3HFVOw0R0Isg3urk4gk": {
+   "em": "2026-09-19T00:13:40.527Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 14.7
+  },
+  "ChIJU7HmQ95pIw0Ru5g3hm5ZcfU": {
+   "em": "2026-09-19T00:13:40.527Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 14.7
+  },
+  "ChIJH5nR5DCtJA0RwtcNAGaFXuk": {
+   "em": "2026-09-19T00:13:40.527Z",
+   "regiao": "dentro",
+   "raio_celula_m": 323,
+   "pontos": 14.7
+  },
+  "ChIJv9Vo9R9BIw0RRz1tvEpGC2w": {
+   "em": "2026-09-19T00:13:40.528Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 14.4
+  },
+  "ChIJdYQgT9uvJA0Rbu8AX7mcvk4": {
+   "em": "2026-09-19T00:13:40.952Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 14.4
+  },
+  "ChIJK26SqSiiJA0Rzj25fSjGc-4": {
+   "em": "2026-09-19T00:13:40.952Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 14.3
+  },
+  "ChIJcTEeHWCrJA0RX1DcoTJozOM": {
+   "em": "2026-09-19T00:13:40.952Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 14.3
+  },
+  "ChIJHWJ4d-FDIw0RoKnhdrX_Jak": {
+   "em": "2026-09-19T00:13:40.952Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 14.2
+  },
+  "ChIJOaQMDN2sJA0RJI50A1jmUHI": {
+   "em": "2026-09-19T00:13:41.425Z",
+   "regiao": "dentro",
+   "raio_celula_m": 323,
+   "pontos": 14.1
+  },
+  "ChIJvXyLyiwsIw0R3rpbq63DNUc": {
+   "em": "2026-09-19T00:13:41.425Z",
+   "regiao": "dentro",
+   "raio_celula_m": 323,
+   "pontos": 14
+  },
+  "ChIJo6WJzzjLPA0ReIGxnajxGHY": {
+   "em": "2026-09-19T00:13:41.425Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 14
+  },
+  "ChIJv0lI4C-tJA0RGyb04WKDLjs": {
+   "em": "2026-09-19T00:13:41.425Z",
+   "regiao": "dentro",
+   "raio_celula_m": 323,
+   "pontos": 14
+  },
+  "ChIJF5mp7phROw0RxDf8AG9p_78": {
+   "em": "2026-09-19T00:13:41.866Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 14
+  },
+  "ChIJCTwCTBaZJA0RpVVP_Y-yTN0": {
+   "em": "2026-09-19T00:13:41.866Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 14
+  },
+  "ChIJ9eRBnUU2Iw0R-Ael5MH43Q4": {
+   "em": "2026-09-19T00:13:41.866Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 13.8
+  },
+  "ChIJF6gMVS40Iw0R7WQXLthv2C8": {
+   "em": "2026-09-19T00:13:41.866Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 13.8
+  },
+  "ChIJme7560tBIw0RVh5BvdDV2oo": {
+   "em": "2026-09-19T00:13:42.317Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 13.8
+  },
+  "ChIJrdfIlASnJA0RZTXKIT911Xg": {
+   "em": "2026-09-19T00:13:42.317Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 13.8
+  },
+  "ChIJCa78FgCrPA0RM2w2FfRh680": {
+   "em": "2026-09-19T00:13:42.317Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 13.7
+  },
+  "ChIJXfy2KACrPA0Rfne7SioqB2o": {
+   "em": "2026-09-19T00:13:42.317Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 13.7
+  },
+  "ChIJ88InQqs3Iw0RPkg65b36iMM": {
+   "em": "2026-09-19T00:13:42.771Z",
+   "regiao": "dentro",
+   "raio_celula_m": 323,
+   "pontos": 13.6
+  },
+  "ChIJd816SytaOw0Rdn4WsQ7tBeA": {
+   "em": "2026-09-19T00:13:42.771Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 13.6
+  },
+  "ChIJFWYeJCStJA0ReZ1ib94jTtQ": {
+   "em": "2026-09-19T00:13:42.771Z",
+   "regiao": "dentro",
+   "raio_celula_m": 323,
+   "pontos": 13.6
+  },
+  "ChIJibiKsnudJA0RNwX8GBbArOk": {
+   "em": "2026-09-19T00:13:42.771Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 13.6
+  },
+  "ChIJLVtRQItlOw0RmJvybsguqO0": {
+   "em": "2026-09-19T00:13:43.243Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 13.6
+  },
+  "ChIJQdme3F-1PA0RrSNNPVM5x38": {
+   "em": "2026-09-19T00:13:43.243Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 13.4
+  },
+  "ChIJtUXzsq-eJA0RWpP3w13_Zrg": {
+   "em": "2026-09-19T00:13:43.243Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 13.4
+  },
+  "ChIJ6WxsyywsIw0RMhyF9Wd_6lo": {
+   "em": "2026-09-19T00:13:43.243Z",
+   "regiao": "dentro",
+   "raio_celula_m": 323,
+   "pontos": 13.3
+  },
+  "ChIJR7Bv7EfTPA0R3RwD2qYyuZ8": {
+   "em": "2026-09-19T00:13:43.739Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 13.3
+  },
+  "ChIJoVRNaK03Iw0Rf4XjqIeDVEc": {
+   "em": "2026-09-19T00:13:43.739Z",
+   "regiao": "dentro",
+   "raio_celula_m": 163,
+   "pontos": 13.3
+  },
+  "ChIJPTHFTaWpJA0RjhXVkCEqB-U": {
+   "em": "2026-09-19T00:13:43.739Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 13.2
+  },
+  "ChIJM1rfmJ6sJA0RNccqZoOIdyo": {
+   "em": "2026-09-19T00:13:43.739Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 13.2
+  },
+  "ChIJf1LKeRNXOw0RnV7xBQpiGoE": {
+   "em": "2026-09-19T00:13:44.214Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 13.1
+  },
+  "ChIJ4xniAFs2Iw0R0xbuvFeGMpc": {
+   "em": "2026-09-19T00:13:44.214Z",
+   "regiao": "dentro",
+   "raio_celula_m": 323,
+   "pontos": 13
+  },
+  "ChIJFwX3KpxBIw0RcbTwPOAi2d0": {
+   "em": "2026-09-19T00:13:44.214Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 13
+  },
+  "ChIJId-HzCwsIw0RjITBqDNySMc": {
+   "em": "2026-09-19T00:13:44.214Z",
+   "regiao": "dentro",
+   "raio_celula_m": 323,
+   "pontos": 12.9
+  },
+  "ChIJra5JKz5DIw0Rj0rZZMQW6Pk": {
+   "em": "2026-09-19T00:13:44.671Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 12.8
+  },
+  "ChIJASNl_y40Iw0RU8NsDR0-EoU": {
+   "em": "2026-09-19T00:13:44.671Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 12.8
+  },
+  "ChIJIRmL_xNBIw0RP9mPX3UdUTk": {
+   "em": "2026-09-19T00:13:44.671Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 12.8
+  },
+  "ChIJrS6Zms6sJA0RVe55PVHzpTo": {
+   "em": "2026-09-19T00:13:44.671Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 12.8
+  },
+  "ChIJpdETtv1WOw0RQ5rZixc-YRU": {
+   "em": "2026-09-19T00:13:45.137Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 12.8
+  },
+  "ChIJ1fqbc-xTOw0RpXBxnfvHoqw": {
+   "em": "2026-09-19T00:13:45.137Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 12.7
+  },
+  "ChIJ8bag6G-ZJA0RyEIOzsVc4no": {
+   "em": "2026-09-19T00:13:45.137Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 12.7
+  },
+  "ChIJyfIAI1M2Iw0RSa7Kz4v4wp0": {
+   "em": "2026-09-19T00:13:45.137Z",
+   "regiao": "dentro",
+   "raio_celula_m": 163,
+   "pontos": 12.6
+  },
+  "ChIJHd9HBUxnOw0Rshpl4ymqzj8": {
+   "em": "2026-09-19T00:13:45.648Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 12.6
+  },
+  "ChIJ56ItTPRBIw0RDmSNyIIymG8": {
+   "em": "2026-09-19T00:13:45.648Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 12.6
+  },
+  "ChIJl6iDaK9UOw0RwkY465GzXcg": {
+   "em": "2026-09-19T00:13:45.648Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 12.5
+  },
+  "ChIJiaBSb8alJA0Ri2XdRACnfD0": {
+   "em": "2026-09-19T00:13:45.648Z",
+   "regiao": "dentro",
+   "raio_celula_m": 323,
+   "pontos": 12.4
+  },
+  "ChIJoXC5vlJROw0RoYUr3mMGyyY": {
+   "em": "2026-09-19T00:13:46.105Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 12.4
+  },
+  "ChIJcbKkk_GvJA0RUJfrtqfmO5w": {
+   "em": "2026-09-19T00:13:46.105Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 12.4
+  },
+  "ChIJ8-lWZVM2Iw0RbSbEw4CUpYg": {
+   "em": "2026-09-19T00:13:46.105Z",
+   "regiao": "dentro",
+   "raio_celula_m": 163,
+   "pontos": 12.3
+  },
+  "ChIJ3XIJiFI2Iw0RFtCJw-fzBSE": {
+   "em": "2026-09-19T00:13:46.105Z",
+   "regiao": "dentro",
+   "raio_celula_m": 163,
+   "pontos": 12.3
+  },
+  "ChIJT_fc8uCjJA0RlD5F07ZiLx8": {
+   "em": "2026-09-19T00:13:46.566Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 12.3
+  },
+  "ChIJFWy2eJTJPA0RkYB8_PEGHCI": {
+   "em": "2026-09-19T00:13:46.566Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 12.2
+  },
+  "ChIJDR5Isp-sJA0R3rSZWtBbz78": {
+   "em": "2026-09-19T00:13:46.566Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 12.2
+  },
+  "ChIJk5QXsNRbOw0Rrej9As_13hA": {
+   "em": "2026-09-19T00:13:46.566Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 12.2
+  },
+  "ChIJq6qqqtowIw0RIOTFEehsj2A": {
+   "em": "2026-09-19T00:13:47.026Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 12.2
+  },
+  "ChIJczlgTmtBIw0RaL4_qkor8d4": {
+   "em": "2026-09-19T00:13:47.026Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 12.1
+  },
+  "ChIJ83Pf-VBBIw0RG6O6RWvrNQc": {
+   "em": "2026-09-19T00:13:47.026Z",
+   "regiao": "dentro",
+   "raio_celula_m": 323,
+   "pontos": 12.1
+  },
+  "ChIJC4aXX3JnOw0RoiBAxtnYWzc": {
+   "em": "2026-09-19T00:13:47.026Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 12.1
+  },
+  "ChIJ6WBbYbI3Iw0RYIuC2Unm4_A": {
+   "em": "2026-09-19T00:13:47.493Z",
+   "regiao": "dentro",
+   "raio_celula_m": 163,
+   "pontos": 12
+  },
+  "ChIJoWttFCgeIw0R3756C2C1coM": {
+   "em": "2026-09-19T00:13:47.493Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 12
+  },
+  "ChIJwY28YDc3Iw0RbYr0aGTxPFs": {
+   "em": "2026-09-19T00:13:47.493Z",
+   "regiao": "dentro",
+   "raio_celula_m": 163,
+   "pontos": 12
+  },
+  "ChIJURLDNYehJA0RGlLpfdBAX4k": {
+   "em": "2026-09-19T00:13:47.493Z",
+   "regiao": "dentro",
+   "raio_celula_m": 323,
+   "pontos": 12
+  },
+  "ChIJbxODyMs3Iw0RoygtFdXTyLU": {
+   "em": "2026-09-19T00:13:47.910Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 11.9
+  },
+  "ChIJM5v4RM9DIw0RNBfJ81bLia8": {
+   "em": "2026-09-19T00:13:47.910Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 11.8
+  },
+  "ChIJ_9aLs9KrPA0RTADB2_7k02s": {
+   "em": "2026-09-19T00:13:47.910Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 11.8
+  },
+  "ChIJKUbuv_lROw0RvBpvsPgFf0E": {
+   "em": "2026-09-19T00:13:47.910Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 11.8
+  },
+  "ChIJQeJXgs-jPA0ROSTnKfCyP6Y": {
+   "em": "2026-09-19T00:13:48.356Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 11.7
+  },
+  "ChIJI1JoB8OvJA0RBA5e-tZjE1M": {
+   "em": "2026-09-19T00:13:48.357Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 11.7
+  },
+  "ChIJaaCvZ55BIw0RfTQwJ8SBQpw": {
+   "em": "2026-09-19T00:13:48.357Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 11.6
+  },
+  "ChIJHYppYh5bOw0RdaTmRXfKwi0": {
+   "em": "2026-09-19T00:13:48.357Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 11.6
+  },
+  "ChIJEZraUeesJA0R65CCbXu8N_s": {
+   "em": "2026-09-19T00:13:48.824Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 11.6
+  },
+  "ChIJaaCvZ55BIw0R-vVhHOubbh4": {
+   "em": "2026-09-19T00:13:48.824Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 11.5
+  },
+  "ChIJmyAS3u5WOw0Rd-ata_bjhn4": {
+   "em": "2026-09-19T00:13:48.824Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 11.5
+  },
+  "ChIJDx6483YhIw0R_k5R3WvX_qs": {
+   "em": "2026-09-19T00:13:48.824Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 11.4
+  },
+  "ChIJTbSJkZ5BIw0RTz3f8o7n9Kw": {
+   "em": "2026-09-19T00:13:49.237Z",
+   "regiao": "dentro",
+   "raio_celula_m": 323,
+   "pontos": 11.4
+  },
+  "ChIJq978qeBpIw0RtiGlm31Gm-o": {
+   "em": "2026-09-19T00:13:49.237Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 11.4
+  },
+  "ChIJo1P7199DIw0R6APtfJMBHaU": {
+   "em": "2026-09-19T00:13:49.237Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 11.4
+  },
+  "ChIJhf1M6fWjPA0Roz0AHw266dk": {
+   "em": "2026-09-19T00:13:49.237Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 11.4
+  },
+  "ChIJG3dCHltBIw0RMcbxXBIonFQ": {
+   "em": "2026-09-19T00:13:49.790Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 11.2
+  },
+  "ChIJTzDV7wJkOw0RoVgxO-E0FhI": {
+   "em": "2026-09-19T00:13:49.790Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 11.2
+  },
+  "ChIJlTzG5xpBIw0RNOeeGBQ0yJE": {
+   "em": "2026-09-19T00:13:49.790Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 11.2
+  },
+  "ChIJMX-PjiRaOw0R0AFZO9FRcRA": {
+   "em": "2026-09-19T00:13:49.790Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 11.2
+  },
+  "ChIJl9HWtmGrJA0RWZtJDeHTyOw": {
+   "em": "2026-09-19T00:13:50.256Z",
+   "regiao": "dentro",
+   "raio_celula_m": 323,
+   "pontos": 11.2
+  },
+  "ChIJD7482FBBIw0RGLf8LOBtdA4": {
+   "em": "2026-09-19T00:13:50.256Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 11.2
+  },
+  "ChIJn4WOr9Y2Iw0RO10zpvox1x0": {
+   "em": "2026-09-19T00:13:50.256Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 11.2
+  },
+  "ChIJw3jpVs-lJA0R-EuoXvdbBQI": {
+   "em": "2026-09-19T00:13:50.256Z",
+   "regiao": "dentro",
+   "raio_celula_m": 323,
+   "pontos": 11.2
+  },
+  "ChIJtytpLelWOw0RTNbobO6RvWM": {
+   "em": "2026-09-19T00:13:50.702Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 11.2
+  },
+  "ChIJE-trT7VROw0RohBuvoDzJpM": {
+   "em": "2026-09-19T00:13:50.702Z",
+   "regiao": "dentro",
+   "raio_celula_m": 323,
+   "pontos": 11.1
+  },
+  "ChIJUy-VTPZbOw0RlImm-wVZw9A": {
+   "em": "2026-09-19T00:13:50.702Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 11.1
+  },
+  "ChIJ90YCFB5gOw0RGDPRcTpAavQ": {
+   "em": "2026-09-19T00:13:50.702Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 11
+  },
+  "ChIJ_UHKZAxBIw0RY30PRg4XqfM": {
+   "em": "2026-09-19T00:13:51.178Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 11
+  },
+  "ChIJNS-7bgAzIw0ReM5Zf_f9Ht8": {
+   "em": "2026-09-19T00:13:51.178Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 11
+  },
+  "ChIJlS5bhHVBIw0RoDBQuhxO0dE": {
+   "em": "2026-09-19T00:13:51.178Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 11
+  },
+  "ChIJ8_qm6FdVOw0RSPzwsRt_7vc": {
+   "em": "2026-09-19T00:13:51.178Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 10.9
+  },
+  "ChIJ3-jI6rAzIw0RVF_gtSXcMAY": {
+   "em": "2026-09-19T00:13:51.633Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 10.8
+  },
+  "ChIJCyVjDQCjPA0RvBvszvz3SSk": {
+   "em": "2026-09-19T00:13:51.633Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 10.8
+  },
+  "ChIJTfnhfgCjJA0RJkIZ7VP5suw": {
+   "em": "2026-09-19T00:13:51.633Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 10.8
+  },
+  "ChIJ_Zy9qEmvJA0RgVnTZ6eqwU8": {
+   "em": "2026-09-19T00:13:51.633Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 10.8
+  },
+  "ChIJiTtV3ImsJA0RTOGumvZ5GQU": {
+   "em": "2026-09-19T00:13:52.111Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 10.8
+  },
+  "ChIJdx8JkOdjOw0R9DGqBHCNwRo": {
+   "em": "2026-09-19T00:13:52.111Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 10.8
+  },
+  "ChIJSX9x-2-uJA0RlIO6gyR9JBo": {
+   "em": "2026-09-19T00:13:52.111Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 10.8
+  },
+  "ChIJy0YeGk0gIw0Ra2-uSqkTGgs": {
+   "em": "2026-09-19T00:13:52.111Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 10.7
+  },
+  "ChIJF2rz7YVzIw0RYbl3Bvf5aM0": {
+   "em": "2026-09-19T00:13:52.555Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 10.7
+  },
+  "ChIJ_-BXHshBIw0R2dNI_v68L3Y": {
+   "em": "2026-09-19T00:13:52.556Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 10.7
+  },
+  "ChIJ0_-dmE02Iw0Rv3V4CnakFJ0": {
+   "em": "2026-09-19T00:13:52.556Z",
+   "regiao": "dentro",
+   "raio_celula_m": 163,
+   "pontos": 10.6
+  },
+  "ChIJxVHNPeVQIw0RK47fXdJYTFc": {
+   "em": "2026-09-19T00:13:52.556Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 10.6
+  },
+  "ChIJE4dk5xCfJA0RysGGuk1Hvcw": {
+   "em": "2026-09-19T00:13:53.024Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 10.6
+  },
+  "ChIJz1-h9yahJA0ROr38YSvjwz0": {
+   "em": "2026-09-19T00:13:53.025Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 10.6
+  },
+  "ChIJvVoAZCOhJA0Rzh6uvDolJNI": {
+   "em": "2026-09-19T00:13:53.025Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 10.6
+  },
+  "ChIJ69-k7vS4JA0RdVR_RT9yRIA": {
+   "em": "2026-09-19T00:13:53.025Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 10.6
+  },
+  "ChIJMbV87pKvJA0R99mYZ5ahg48": {
+   "em": "2026-09-19T00:13:53.479Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 10.6
+  },
+  "ChIJeVlkxiWrJA0Rkhy7xPHE15E": {
+   "em": "2026-09-19T00:13:53.479Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 10.6
+  },
+  "ChIJswTYsjClJA0R15Q7NIMSYMU": {
+   "em": "2026-09-19T00:13:53.479Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 10.6
+  },
+  "ChIJn9FqYdE8Iw0RUBGBiktJoBw": {
+   "em": "2026-09-19T00:13:53.479Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 10.5
+  },
+  "ChIJg04fS5cxIw0RHsPKNMAWGWI": {
+   "em": "2026-09-19T00:13:53.952Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 10.5
+  },
+  "ChIJS0Q3q9RJIw0RIoz_K70Cmg4": {
+   "em": "2026-09-19T00:13:53.952Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 10.5
+  },
+  "ChIJt4S2Z4zJPA0RCgOQ9hX4Q04": {
+   "em": "2026-09-19T00:13:53.952Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 10.5
+  },
+  "ChIJHf0GycRUOw0R_nqa70TWX9w": {
+   "em": "2026-09-19T00:13:53.952Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 10.5
+  },
+  "ChIJ4xdJ2QRVOw0RiVC7OMUYa80": {
+   "em": "2026-09-19T00:13:54.399Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 10.5
+  },
+  "ChIJQaWXCcCvJA0RNi2-k1TqhcQ": {
+   "em": "2026-09-19T00:13:54.399Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 10.5
+  },
+  "ChIJUZmnMbytJA0RwaQ8WYQJLKM": {
+   "em": "2026-09-19T00:13:54.399Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 10.5
+  },
+  "ChIJgXCrFig3Iw0RpmI7tszfT00": {
+   "em": "2026-09-19T00:13:54.399Z",
+   "regiao": "dentro",
+   "raio_celula_m": 163,
+   "pontos": 10.5
+  },
+  "ChIJN-Lzg3WbJA0RebkPBeYX754": {
+   "em": "2026-09-19T00:13:54.873Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 10.4
+  },
+  "ChIJ9Xzf-shWOw0RxDIR5hNOdFM": {
+   "em": "2026-09-19T00:13:54.873Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 10.3
+  },
+  "ChIJoZSWq9chIw0R6HAFBeeoUjU": {
+   "em": "2026-09-19T00:13:54.873Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 10.3
+  },
+  "ChIJp3haU6BVOw0Rny6BH5sYHR8": {
+   "em": "2026-09-19T00:13:54.873Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 10.3
+  },
+  "ChIJY45bAp5BIw0R6W_PtVKQSis": {
+   "em": "2026-09-19T00:13:55.319Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 10.3
+  },
+  "ChIJHwd6i9RBIw0RRyq31GYQGw8": {
+   "em": "2026-09-19T00:13:55.319Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 10.2
+  },
+  "ChIJK4MLqf9bOw0RQTIGmsMnNsY": {
+   "em": "2026-09-19T00:13:55.319Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 10.2
+  },
+  "ChIJ54Md7TStJA0Rc4Yl4XzNQqY": {
+   "em": "2026-09-19T00:13:55.320Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 10.1
+  },
+  "ChIJnVovvhhnOw0RalpdUWM1taQ": {
+   "em": "2026-09-19T00:13:55.759Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 10.1
+  },
+  "ChIJUzSUGB8tIw0RxBAkr356WBs": {
+   "em": "2026-09-19T00:13:55.759Z",
+   "regiao": "dentro",
+   "raio_celula_m": 323,
+   "pontos": 10
+  },
+  "ChIJ20LAlypAIw0RiMN7OLRtA9Q": {
+   "em": "2026-09-19T00:13:55.759Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 10
+  },
+  "ChIJ7y-5ielQIw0RucNyiEw7uOk": {
+   "em": "2026-09-19T00:13:55.759Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 10
+  },
+  "ChIJyTOwdwBVOw0RQBbrSP09ihA": {
+   "em": "2026-09-19T00:13:56.180Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 10
+  },
+  "ChIJ-47SaEeZJA0RAmc6tKeO0ck": {
+   "em": "2026-09-19T00:13:56.180Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 10
+  },
+  "ChIJ58YB-zRVOw0R6EXvXcW5cx4": {
+   "em": "2026-09-19T00:13:56.180Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 10
+  },
+  "ChIJodpwnMWtJA0RmQ09bknUoEM": {
+   "em": "2026-09-19T00:13:56.180Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 10
+  },
+  "ChIJq0JMLAATIw0Rz5i1ze7RxzY": {
+   "em": "2026-09-19T00:13:56.651Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 9.8
+  },
+  "ChIJWbnSmSQxIw0RaGFux4iMcig": {
+   "em": "2026-09-19T00:13:56.651Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 9.8
+  },
+  "ChIJvVqhp1I2Iw0R7ltt_yC9_TA": {
+   "em": "2026-09-19T00:13:56.651Z",
+   "regiao": "dentro",
+   "raio_celula_m": 163,
+   "pontos": 9.8
+  },
+  "ChIJi42ptftBIw0R2_xSmm7DTMY": {
+   "em": "2026-09-19T00:13:56.651Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 9.8
+  },
+  "ChIJD6cRrNhBIw0RoYMxzpgBNeI": {
+   "em": "2026-09-19T00:13:57.116Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 9.8
+  },
+  "ChIJYQzCHifKPA0RxWIvLsx-xl0": {
+   "em": "2026-09-19T00:13:57.116Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 9.8
+  },
+  "ChIJBVuEHlRBIw0RzZTCJ0SrmGc": {
+   "em": "2026-09-19T00:13:57.116Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 9.8
+  },
+  "ChIJVVVx13ZCIw0RR7Fgn4Ej4Mk": {
+   "em": "2026-09-19T00:13:57.116Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 9.8
+  },
+  "ChIJGXWDOQBBIw0Rsj_lXCcOLck": {
+   "em": "2026-09-19T00:13:57.526Z",
+   "regiao": "dentro",
+   "raio_celula_m": 323,
+   "pontos": 9.8
+  },
+  "ChIJFwYvRZ5BIw0RumUZ7pGoPv0": {
+   "em": "2026-09-19T00:13:57.526Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 9.8
+  },
+  "ChIJNfEoPwCZJA0RYoHfXSW5i-k": {
+   "em": "2026-09-19T00:13:57.526Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 9.8
+  },
+  "ChIJkazBAQClJA0RzOwuocjbdug": {
+   "em": "2026-09-19T00:13:57.526Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 9.8
+  },
+  "ChIJIV9sM-xROw0RG2cc6gIXqss": {
+   "em": "2026-09-19T00:13:57.982Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 9.8
+  },
+  "ChIJqR3gZlCtJA0R4YFJDSomUgw": {
+   "em": "2026-09-19T00:13:57.982Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 9.8
+  },
+  "ChIJZ-I9jedbOw0RlIl7kQG-mAM": {
+   "em": "2026-09-19T00:13:57.982Z",
+   "regiao": "dentro",
+   "raio_celula_m": 323,
+   "pontos": 9.8
+  },
+  "ChIJxxYzdk02Iw0RzhEhuRYHaTc": {
+   "em": "2026-09-19T00:13:57.982Z",
+   "regiao": "dentro",
+   "raio_celula_m": 163,
+   "pontos": 9.8
+  },
+  "ChIJg3k8Ky0sIw0RaIwFb2QS2qk": {
+   "em": "2026-09-19T00:13:58.452Z",
+   "regiao": "dentro",
+   "raio_celula_m": 323,
+   "pontos": 9.7
+  },
+  "ChIJ6Qk4iVI2Iw0RjwXhmMmt2u8": {
+   "em": "2026-09-19T00:13:58.452Z",
+   "regiao": "dentro",
+   "raio_celula_m": 163,
+   "pontos": 9.7
+  },
+  "ChIJm2BSZEKvJA0RB5yuiXL28N0": {
+   "em": "2026-09-19T00:13:58.452Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 9.7
+  },
+  "ChIJAQAAV2GvJA0Rp0-wZcjhNbI": {
+   "em": "2026-09-19T00:13:58.452Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 9.7
+  },
+  "ChIJ_3gmRRKrJA0RP-mnCRAWAZ0": {
+   "em": "2026-09-19T00:13:58.904Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 9.7
+  },
+  "ChIJN0BfgAtoOw0R8CkHRXZRG2k": {
+   "em": "2026-09-19T00:13:58.904Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 9.7
+  },
+  "ChIJaaCvZ55BIw0RFYVAnOqM3xo": {
+   "em": "2026-09-19T00:13:58.904Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 9.7
+  },
+  "ChIJl57x_FNROw0RfGprVLtHcRY": {
+   "em": "2026-09-19T00:13:58.904Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 9.7
+  },
+  "ChIJB6bPLfEfIw0RxaCDuZ43EDM": {
+   "em": "2026-09-19T00:13:59.369Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 9.6
+  },
+  "ChIJC7rOcONSOw0R2PLCRZ_dVlk": {
+   "em": "2026-09-19T00:13:59.369Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 9.6
+  },
+  "ChIJ1_Zoy0w2Iw0ReTmUxAaeLa0": {
+   "em": "2026-09-19T00:13:59.369Z",
+   "regiao": "dentro",
+   "raio_celula_m": 163,
+   "pontos": 9.6
+  },
+  "ChIJKUROo9JBIw0RKS1AyU88X-g": {
+   "em": "2026-09-19T00:13:59.369Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 9.6
+  },
+  "ChIJmXsnagBDIw0ROF_AbfNPYWg": {
+   "em": "2026-09-19T00:13:59.827Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 9.6
+  },
+  "ChIJJ5ICrc6lJA0Rl6EfPS9dsSA": {
+   "em": "2026-09-19T00:13:59.827Z",
+   "regiao": "dentro",
+   "raio_celula_m": 323,
+   "pontos": 9.6
+  },
+  "ChIJ29VP076lJA0Ru2T8MoVbrW8": {
+   "em": "2026-09-19T00:13:59.827Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 9.6
+  },
+  "ChIJs9iEsWJBIw0RVP660SO77og": {
+   "em": "2026-09-19T00:13:59.827Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 9.6
+  },
+  "ChIJKxK2U1VUOw0R5LhN5XUQxts": {
+   "em": "2026-09-19T00:14:00.295Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 9.5
+  },
+  "ChIJgTHob2VROw0RvBVrsOU-eDs": {
+   "em": "2026-09-19T00:14:00.295Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 9.5
+  },
+  "ChIJ56kgygVdOw0RjrcPZ3iEA_8": {
+   "em": "2026-09-19T00:14:00.295Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 9.5
+  },
+  "ChIJ25c8vRdTOw0RuonKLj4xZl0": {
+   "em": "2026-09-19T00:14:00.295Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 9.5
+  },
+  "ChIJg55adBshIw0R5T2NJQwhXag": {
+   "em": "2026-09-19T00:14:00.746Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 9.4
+  },
+  "ChIJXSex855BIw0RmDq8gCH1o5s": {
+   "em": "2026-09-19T00:14:00.746Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 9.4
+  },
+  "ChIJMSIBQWahJA0R1rCj9zrJfpo": {
+   "em": "2026-09-19T00:14:00.746Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 9.4
+  },
+  "ChIJz5OiLASkJA0RX5XsXOd85Jg": {
+   "em": "2026-09-19T00:14:00.746Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 9.4
+  },
+  "ChIJoYsopERROw0Rd884_rpu9MQ": {
+   "em": "2026-09-19T00:14:01.216Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 9.4
+  },
+  "ChIJHYe1YCtaOw0RKwuPVMi61Yg": {
+   "em": "2026-09-19T00:14:01.216Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 9.4
+  },
+  "ChIJ65xMJFtQOw0RhoTyVoTrsB0": {
+   "em": "2026-09-19T00:14:01.216Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 9.4
+  },
+  "ChIJ5Y3rHgFCIw0RHkH0eELlugs": {
+   "em": "2026-09-19T00:14:01.216Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 9.4
+  },
+  "ChIJC-QIXwBDIw0RvHxCpM7Qtvs": {
+   "em": "2026-09-19T00:14:01.662Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 9.3
+  },
+  "ChIJLx9iSACfJA0RRJJw6CYJIq8": {
+   "em": "2026-09-19T00:14:01.662Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 9.3
+  },
+  "ChIJizXmYWNVOw0Rt4z1B4Vs5As": {
+   "em": "2026-09-19T00:14:01.662Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 9.3
+  },
+  "ChIJb6jjBACtJA0RJ-abL-8uzA0": {
+   "em": "2026-09-19T00:14:01.662Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 9.3
+  },
+  "ChIJhbyOyjtbOw0RWLkv1J37Rnc": {
+   "em": "2026-09-19T00:14:02.133Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 9.3
+  },
+  "ChIJ74pbNZasJA0RCWhe4qMsG3k": {
+   "em": "2026-09-19T00:14:02.133Z",
+   "regiao": "dentro",
+   "raio_celula_m": 323,
+   "pontos": 9.3
+  },
+  "ChIJ_466lwWtJA0RU_2hVVXoRak": {
+   "em": "2026-09-19T00:14:02.133Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 9.2
+  },
+  "ChIJF7cHd7pBIw0RMbQtC3Tepbs": {
+   "em": "2026-09-19T00:14:02.133Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 9.2
+  },
+  "ChIJ59cqagY3Iw0RaZvHfoPV7DY": {
+   "em": "2026-09-19T00:14:02.591Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 9.2
+  },
+  "ChIJ5zzNETmjPA0RzyfJxqx5kV8": {
+   "em": "2026-09-19T00:14:02.591Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 9.1
+  },
+  "ChIJAXhvcwA3Iw0RAF0SO4DbLfA": {
+   "em": "2026-09-19T00:14:02.591Z",
+   "regiao": "dentro",
+   "raio_celula_m": 163,
+   "pontos": 9.1
+  },
+  "ChIJdbiYUctSOw0RiXRQv4nPOqo": {
+   "em": "2026-09-19T00:14:02.591Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 9.1
+  },
+  "ChIJs5Srv64tIw0Rm_jlN1QNxo0": {
+   "em": "2026-09-19T00:14:03.000Z",
+   "regiao": "dentro",
+   "raio_celula_m": 323,
+   "pontos": 9
+  },
+  "ChIJGRpyqSIjIw0ReQbD3VuZQ78": {
+   "em": "2026-09-19T00:14:03.000Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 9
+  },
+  "ChIJNSoKTQAxIw0R-qZBj4Mh1D8": {
+   "em": "2026-09-19T00:14:03.000Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 9
+  },
+  "ChIJMcwJEu8TIw0RdoKpCdiWd6w": {
+   "em": "2026-09-19T00:14:03.000Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 9
+  },
+  "ChIJyz2I64g3Iw0Ree09kJjeu5A": {
+   "em": "2026-09-19T00:14:03.461Z",
+   "regiao": "dentro",
+   "raio_celula_m": 163,
+   "pontos": 9
+  },
+  "ChIJyeU4HQDLPA0RsduAH84jXHk": {
+   "em": "2026-09-19T00:14:03.461Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 9
+  },
+  "ChIJo191WABBIw0RwoL-bfti-fY": {
+   "em": "2026-09-19T00:14:03.461Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 9
+  },
+  "ChIJNeuI80dBIw0RuibzUAXG4sA": {
+   "em": "2026-09-19T00:14:03.461Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 9
+  },
+  "ChIJYbSXMABBIw0ROcgj-00wK-c": {
+   "em": "2026-09-19T00:14:03.863Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 9
+  },
+  "ChIJk-Ey3aBEIw0RCz2e9KmpJPc": {
+   "em": "2026-09-19T00:14:03.863Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 9
+  },
+  "ChIJh7YEdQBBIw0R45mA0Hev9W4": {
+   "em": "2026-09-19T00:14:03.863Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 9
+  },
+  "ChIJP6pvNABpIw0RMKoPM-3BjD4": {
+   "em": "2026-09-19T00:14:03.863Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 9
+  },
+  "ChIJyxtNVwBBIw0R5KJXXovEL2Q": {
+   "em": "2026-09-19T00:14:04.333Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 9
+  },
+  "ChIJYWx1wCRBIw0R3_ri0vHG0Q8": {
+   "em": "2026-09-19T00:14:04.333Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 9
+  },
+  "ChIJsysRpH1BIw0Rjp1YHR3vbZo": {
+   "em": "2026-09-19T00:14:04.333Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 9
+  },
+  "ChIJg1YkCgBZIw0RggZfyUEwjsE": {
+   "em": "2026-09-19T00:14:04.333Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 9
+  },
+  "ChIJV9CHdgCjPA0RZ1Zh51FyYl8": {
+   "em": "2026-09-19T00:14:04.798Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 9
+  },
+  "ChIJ3eH1QgC9JA0RF2laLzXOC0M": {
+   "em": "2026-09-19T00:14:04.798Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 9
+  },
+  "ChIJCavpawBVOw0RqiYyqvjenqM": {
+   "em": "2026-09-19T00:14:04.798Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 9
+  },
+  "ChIJRdDSMgChJA0R7njnz1_6clE": {
+   "em": "2026-09-19T00:14:04.798Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 9
+  },
+  "ChIJK_dRl--hJA0ROo3ilB8wwr8": {
+   "em": "2026-09-19T00:14:05.252Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 9
+  },
+  "ChIJw0Wa816nJA0RLAQsl8hNvBg": {
+   "em": "2026-09-19T00:14:05.252Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 9
+  },
+  "ChIJ011NNgCrJA0Rx24Tfuz0VjM": {
+   "em": "2026-09-19T00:14:05.252Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 9
+  },
+  "ChIJ-WpKkTlVOw0RfgAWQCjFQGg": {
+   "em": "2026-09-19T00:14:05.252Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 9
+  },
+  "ChIJJYGlMQCjJA0R1MAw-K4asZI": {
+   "em": "2026-09-19T00:14:05.718Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 9
+  },
+  "ChIJ26vhHwChJA0Rh-Oy21UBriI": {
+   "em": "2026-09-19T00:14:05.718Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 9
+  },
+  "ChIJdfHnCQClJA0R5TrgELDAiBw": {
+   "em": "2026-09-19T00:14:05.718Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 9
+  },
+  "ChIJf8NmDAClJA0RNwuzTfl-bWw": {
+   "em": "2026-09-19T00:14:05.718Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 9
+  },
+  "ChIJjcN_GgClJA0R4PQW4vo3R1s": {
+   "em": "2026-09-19T00:14:06.174Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 9
+  },
+  "ChIJtblO9mChJA0RxH_NOEErs_4": {
+   "em": "2026-09-19T00:14:06.174Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 9
+  },
+  "ChIJQ-tWRQClJA0RypBuFT3Jlts": {
+   "em": "2026-09-19T00:14:06.174Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 9
+  },
+  "ChIJ4WCHAwClJA0Rt-mnx7Sl6c0": {
+   "em": "2026-09-19T00:14:06.174Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 9
+  },
+  "ChIJ28Pnlp9VOw0R4XrJyo0W3NU": {
+   "em": "2026-09-19T00:14:06.639Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 9
+  },
+  "ChIJKyGr6nVVOw0R8Hek-pyl2-4": {
+   "em": "2026-09-19T00:14:06.639Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 9
+  },
+  "ChIJUwdnObusJA0Rea0VxcO_Cew": {
+   "em": "2026-09-19T00:14:06.639Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 9
+  },
+  "ChIJXcxkZZ1TOw0RtnbbuKssBFs": {
+   "em": "2026-09-19T00:14:06.639Z",
+   "regiao": "dentro",
+   "raio_celula_m": 323,
+   "pontos": 9
+  },
+  "ChIJm3so3vNXOw0R-8O9M3CriEI": {
+   "em": "2026-09-19T00:14:07.064Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 9
+  },
+  "ChIJjWJwEzNXOw0RO_1ycOnnEXQ": {
+   "em": "2026-09-19T00:14:07.064Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 9
+  },
+  "ChIJIV9TEQBROw0RdNAbl2tnryk": {
+   "em": "2026-09-19T00:14:07.064Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 9
+  },
+  "ChIJtb6TvX5UOw0RkjNFbTONBpY": {
+   "em": "2026-09-19T00:14:07.064Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 9
+  },
+  "ChIJPbJ7FwBbOw0R8jO25SWKCyg": {
+   "em": "2026-09-19T00:14:07.505Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 9
+  },
+  "ChIJxxZqRgBnOw0RY3ZUgH_A9eo": {
+   "em": "2026-09-19T00:14:07.505Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 9
+  },
+  "ChIJB_lAlWVROw0RQv5uN18eI0Y": {
+   "em": "2026-09-19T00:14:07.505Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 9
+  },
+  "ChIJETYbCwBROw0RrxzXZH1eMSk": {
+   "em": "2026-09-19T00:14:07.505Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 9
+  },
+  "ChIJn8Eyn29bOw0RKoZJA9dD9-Q": {
+   "em": "2026-09-19T00:14:07.970Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 9
+  },
+  "ChIJvyIgZVI2Iw0RfwBo1AMHCYs": {
+   "em": "2026-09-19T00:14:07.970Z",
+   "regiao": "dentro",
+   "raio_celula_m": 163,
+   "pontos": 9
+  },
+  "ChIJoasZ791UOw0Ry8jSAlugL6c": {
+   "em": "2026-09-19T00:14:07.971Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 8.9
+  },
+  "ChIJ1X8AegFbOw0RrrtT07BnhTg": {
+   "em": "2026-09-19T00:14:07.971Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 8.9
+  },
+  "ChIJyezFGwA3Iw0RQKfc41wuhUs": {
+   "em": "2026-09-19T00:14:08.417Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 8.8
+  },
+  "ChIJF_jzvIs3Iw0R9fTbBUZaCpQ": {
+   "em": "2026-09-19T00:14:08.417Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 8.8
+  },
+  "ChIJk9rfaExBIw0RhXygogbeUqo": {
+   "em": "2026-09-19T00:14:08.417Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 8.8
+  },
+  "ChIJ1fq1yFRpIw0RvtoQNI1Dozg": {
+   "em": "2026-09-19T00:14:08.417Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 8.8
+  },
+  "ChIJ_T9qNx1BIw0Rsh_RHN_ErCE": {
+   "em": "2026-09-19T00:14:08.842Z",
+   "regiao": "dentro",
+   "raio_celula_m": 323,
+   "pontos": 8.8
+  },
+  "ChIJ9THPEgBBIw0RV0cyZ4zaeYY": {
+   "em": "2026-09-19T00:14:08.842Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 8.8
+  },
+  "ChIJGZ6EewCfJA0RDJwl7aEPi-c": {
+   "em": "2026-09-19T00:14:08.842Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 8.8
+  },
+  "ChIJe0-Ms3ihJA0RrVdUqgvA9XM": {
+   "em": "2026-09-19T00:14:08.842Z",
+   "regiao": "dentro",
+   "raio_celula_m": 323,
+   "pontos": 8.8
+  },
+  "ChIJO1tTMwCfJA0RNdviz6WO1hs": {
+   "em": "2026-09-19T00:14:09.287Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 8.8
+  },
+  "ChIJm7H7-yWlJA0R5AYuu9jzRko": {
+   "em": "2026-09-19T00:14:09.287Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 8.8
+  },
+  "ChIJ0SGM73atJA0RNoXLOeqXTnc": {
+   "em": "2026-09-19T00:14:09.287Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 8.8
+  },
+  "ChIJmYycWJ6tJA0R4rYunmUrfCs": {
+   "em": "2026-09-19T00:14:09.287Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 8.8
+  },
+  "ChIJVYZl9V-rJA0RJAvsDKYhZTw": {
+   "em": "2026-09-19T00:14:09.758Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 8.7
+  },
+  "ChIJpcL-ZxtROw0R9h4dglun_Wg": {
+   "em": "2026-09-19T00:14:09.758Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 8.7
+  },
+  "ChIJ1wSaIQCfJA0RCJ1E5aUB4P4": {
+   "em": "2026-09-19T00:14:09.758Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 8.7
+  },
+  "ChIJXTiZmuA2Iw0RXOVza42kyl0": {
+   "em": "2026-09-19T00:14:09.758Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 8.6
+  },
+  "ChIJ1Qqwa7FBIw0RseeI9-R9fcI": {
+   "em": "2026-09-19T00:14:10.231Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 8.6
+  },
+  "ChIJxQSP7hFyIw0RYYJ8oYg55ww": {
+   "em": "2026-09-19T00:14:10.231Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 8.6
+  },
+  "ChIJzUcIraeZJA0RjGREewR29IM": {
+   "em": "2026-09-19T00:14:10.231Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 8.6
+  },
+  "ChIJJwAJ-ymjJA0RToSkZW7VgQU": {
+   "em": "2026-09-19T00:14:10.231Z",
+   "regiao": "dentro",
+   "raio_celula_m": 323,
+   "pontos": 8.6
+  },
+  "ChIJTXkmiZ5BIw0RRG_gAqWDPPI": {
+   "em": "2026-09-19T00:14:10.680Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 8.6
+  },
+  "ChIJh9f9WDakJA0RP31XDWKK7j8": {
+   "em": "2026-09-19T00:14:10.680Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 8.5
+  },
+  "ChIJ2Qw8WFWtJA0R2twAbiOj9Rs": {
+   "em": "2026-09-19T00:14:10.680Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 8.5
+  },
+  "ChIJj1V7sFBQIw0RyRt1SDWO-1s": {
+   "em": "2026-09-19T00:14:10.680Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 8.5
+  },
+  "ChIJ7QX3DmOmJA0Rd002mD6KnXg": {
+   "em": "2026-09-19T00:14:11.152Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 8.4
+  },
+  "ChIJ_WweyZesJA0RFcNLsQ4JaJM": {
+   "em": "2026-09-19T00:14:11.152Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 8.4
+  },
+  "ChIJceh3GvFBIw0RiKPp6pTnGZI": {
+   "em": "2026-09-19T00:14:11.152Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 8.4
+  },
+  "ChIJQaDjPjFBIw0RvrBuqgr4C8c": {
+   "em": "2026-09-19T00:14:11.152Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 8.4
+  },
+  "ChIJ17pP-oWjJA0RXuDhKyVcFvs": {
+   "em": "2026-09-19T00:14:11.601Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 8.4
+  },
+  "ChIJ3UyO1U-rJA0Rqb0vMZ3RCMo": {
+   "em": "2026-09-19T00:14:11.601Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 8.4
+  },
+  "ChIJ05gEl-9BIw0Rq8fmPi6AZVc": {
+   "em": "2026-09-19T00:14:11.601Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 8.4
+  },
+  "ChIJQT7O0rU3Iw0RnH--ACEUTSM": {
+   "em": "2026-09-19T00:14:11.601Z",
+   "regiao": "dentro",
+   "raio_celula_m": 323,
+   "pontos": 8.4
+  },
+  "ChIJFW4Tho6bJA0R9wcT1Nkcm9Y": {
+   "em": "2026-09-19T00:14:12.081Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1392,
+   "pontos": 8.4
+  },
+  "ChIJpVflro-lJA0Rko5pT9tOYS8": {
+   "em": "2026-09-19T00:14:12.081Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 8.4
+  },
+  "ChIJw1YcBFRROw0RXFHwDKQIQQU": {
+   "em": "2026-09-19T00:14:12.081Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 8.4
+  },
+  "ChIJV-lncQA3Iw0R4DUARjXqGko": {
+   "em": "2026-09-19T00:14:12.081Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 8.3
+  },
+  "ChIJQ7MRUj5RIw0RkOUtFc1imhs": {
+   "em": "2026-09-19T00:14:12.522Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 8.3
+  },
+  "ChIJhd1girWtJA0RoFV9W-f7jCM": {
+   "em": "2026-09-19T00:14:12.523Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 8.3
+  },
+  "ChIJzeLxb_0iIw0RrcIP7ZkyshM": {
+   "em": "2026-09-19T00:14:12.523Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 8.2
+  },
+  "ChIJC5xDSK3LPA0RwYylvVKyh8g": {
+   "em": "2026-09-19T00:14:12.523Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 8.2
+  },
+  "ChIJ2QHADcWjJA0RH7lcAN-V2zY": {
+   "em": "2026-09-19T00:14:12.932Z",
+   "regiao": "dentro",
+   "raio_celula_m": 323,
+   "pontos": 8.2
+  },
+  "ChIJZ5wAatevJA0RKp8VdKLfOu0": {
+   "em": "2026-09-19T00:14:12.932Z",
+   "regiao": "dentro",
+   "raio_celula_m": 323,
+   "pontos": 8.2
+  },
+  "ChIJaazZb7ZGIw0RcGHLxRhGMrA": {
+   "em": "2026-09-19T00:14:12.932Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 8.2
+  },
+  "ChIJr_wWdgAjIw0RIemwnY7h_1E": {
+   "em": "2026-09-19T00:14:12.932Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 8.1
+  },
+  "ChIJR_Ujg3HMPA0RdqE8tzxmvuk": {
+   "em": "2026-09-19T00:14:13.398Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 8.1
+  },
+  "ChIJE9_mSgAhIw0RfE0L7lvYj2Q": {
+   "em": "2026-09-19T00:14:13.398Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 8
+  },
+  "ChIJBbRRVwAhIw0RsS1ldIQneuE": {
+   "em": "2026-09-19T00:14:13.398Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 8
+  },
+  "ChIJDxxOLwA3Iw0RcRr8-Be2AFM": {
+   "em": "2026-09-19T00:14:13.398Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 8
+  },
+  "ChIJO7d6cqc3Iw0R8NjPR0aElac": {
+   "em": "2026-09-19T00:14:13.854Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 8
+  },
+  "ChIJ2bK8sD03Iw0RqjIIoV1uAH4": {
+   "em": "2026-09-19T00:14:13.854Z",
+   "regiao": "dentro",
+   "raio_celula_m": 163,
+   "pontos": 8
+  },
+  "ChIJKfbTrMM3Iw0RnXcGbrcFRsQ": {
+   "em": "2026-09-19T00:14:13.854Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 8
+  },
+  "ChIJD_Kbme9tIw0RpV8f-Z8CS8A": {
+   "em": "2026-09-19T00:14:13.854Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 8
+  },
+  "ChIJ37welbdBIw0RfrpQ3hpCLhM": {
+   "em": "2026-09-19T00:14:14.321Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 8
+  },
+  "ChIJF0j3JABBIw0RZY2F0OOuM8M": {
+   "em": "2026-09-19T00:14:14.321Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 8
+  },
+  "ChIJfRbrS4RqIw0R1M1eHajOZQE": {
+   "em": "2026-09-19T00:14:14.321Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 8
+  },
+  "ChIJjzQFc79pIw0RIJO-H89yHIg": {
+   "em": "2026-09-19T00:14:14.321Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 8
+  },
+  "ChIJaSAHPKJpIw0RjTiqxO10j0M": {
+   "em": "2026-09-19T00:14:14.788Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 8
+  },
+  "ChIJP5BSagBDIw0RQhlDuWPF5XE": {
+   "em": "2026-09-19T00:14:14.788Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 8
+  },
+  "ChIJNygY0AhDIw0RQMj3zhyBqGc": {
+   "em": "2026-09-19T00:14:14.788Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 8
+  },
+  "ChIJTRS2bgBZIw0RU7y89JagZCE": {
+   "em": "2026-09-19T00:14:14.788Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 8
+  },
+  "ChIJoaDSMwBZIw0R9Zm6EH6TTOU": {
+   "em": "2026-09-19T00:14:15.242Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 8
+  },
+  "ChIJTVXwA7GfJA0RwZB8oWYs_uU": {
+   "em": "2026-09-19T00:14:15.242Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 8
+  },
+  "ChIJB0cc91yfJA0RByx7t17yHwQ": {
+   "em": "2026-09-19T00:14:15.242Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 8
+  },
+  "ChIJ51igdQBVOw0Rw5D7aI-GLus": {
+   "em": "2026-09-19T00:14:15.242Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 8
+  },
+  "ChIJi_y8BQCZJA0RDX_EZHNIQZ4": {
+   "em": "2026-09-19T00:14:15.697Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 8
+  },
+  "ChIJyXwURU-ZJA0RiKlAV9VAMlE": {
+   "em": "2026-09-19T00:14:15.697Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 8
+  },
+  "ChIJGUpRDPebJA0RxzEm9XKu04w": {
+   "em": "2026-09-19T00:14:15.697Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 8
+  },
+  "ChIJnYrVYt2nJA0RdwQWcbnW8hI": {
+   "em": "2026-09-19T00:14:15.697Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 8
+  },
+  "ChIJ17xnxy6rJA0Rj6mB7MZAYL8": {
+   "em": "2026-09-19T00:14:16.125Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 8
+  },
+  "ChIJUdyXYwCrJA0Ra5BQVwfULB4": {
+   "em": "2026-09-19T00:14:16.125Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 8
+  },
+  "ChIJZ2Zxe6CrPA0RAwcatWp9HaU": {
+   "em": "2026-09-19T00:14:16.125Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 8
+  },
+  "ChIJa7zthSOrPA0RNQPqbagJRC0": {
+   "em": "2026-09-19T00:14:16.125Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 8
+  },
+  "ChIJ_0PA9mdVOw0RNsmIWdgILfs": {
+   "em": "2026-09-19T00:14:16.724Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 8
+  },
+  "ChIJj4-nuS9XOw0RBfA3WjceIAs": {
+   "em": "2026-09-19T00:14:16.724Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 8
+  },
+  "ChIJQ4iLJgCZJA0RwiUDMPJpsf8": {
+   "em": "2026-09-19T00:14:16.724Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 8
+  },
+  "ChIJrQTREwCZJA0Rnp06NteYjdc": {
+   "em": "2026-09-19T00:14:16.724Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 8
+  },
+  "ChIJxfirjRmvJA0RRDLwqYtgKyo": {
+   "em": "2026-09-19T00:14:17.139Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 8
+  },
+  "ChIJmwXbmn6lJA0RP__hyrYJPxY": {
+   "em": "2026-09-19T00:14:17.139Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 8
+  },
+  "ChIJI9pVmV-lJA0Rx5CCm9Gxd_o": {
+   "em": "2026-09-19T00:14:17.139Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 8
+  },
+  "ChIJXxYlv_WvJA0RA67cCDUATf0": {
+   "em": "2026-09-19T00:14:17.139Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 8
+  },
+  "ChIJ1V45SABTOw0RQmQvE9HaR4M": {
+   "em": "2026-09-19T00:14:17.597Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 8
+  },
+  "ChIJcxsDqANROw0Rq1bforVrkXo": {
+   "em": "2026-09-19T00:14:17.597Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 8
+  },
+  "ChIJuUAqOQBTOw0Rjcoa_-0_61A": {
+   "em": "2026-09-19T00:14:17.597Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 8
+  },
+  "ChIJOTmvD2lbOw0R-cG1hoLBYb4": {
+   "em": "2026-09-19T00:14:17.597Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 8
+  },
+  "ChIJRywV_1atJA0RVdO-7jWKuJ4": {
+   "em": "2026-09-19T00:14:18.053Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 8
+  },
+  "ChIJPYKAXQCtJA0R7zbsS78S2OE": {
+   "em": "2026-09-19T00:14:18.053Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 8
+  },
+  "ChIJH_xysjCtJA0RmchUVL9uMzE": {
+   "em": "2026-09-19T00:14:18.053Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 8
+  },
+  "ChIJRxRAIuFTOw0RE_Ta9y5EWDE": {
+   "em": "2026-09-19T00:14:18.053Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 8
+  },
+  "ChIJ9-j8qeBpIw0RPLuO2u_99R0": {
+   "em": "2026-09-19T00:14:18.518Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 8
+  },
+  "ChIJc16dXJysJA0RNyNiEFbzk5k": {
+   "em": "2026-09-19T00:14:18.518Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 8
+  },
+  "ChIJUSOvrNFWOw0R5bNSymDiHFo": {
+   "em": "2026-09-19T00:14:18.518Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 8
+  },
+  "ChIJieJNu5-sJA0R0uXjeAloU-0": {
+   "em": "2026-09-19T00:14:18.518Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 8
+  },
+  "ChIJ62rw9_YTIw0R4QTKFTY6ut8": {
+   "em": "2026-09-19T00:14:18.975Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 7.9
+  },
+  "ChIJm54q7v5UOw0RfDC97cv1QSA": {
+   "em": "2026-09-19T00:14:18.975Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 7.9
+  },
+  "ChIJ9SvuXAAhIw0RrNMNhBSnbog": {
+   "em": "2026-09-19T00:14:18.975Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 7.8
+  },
+  "ChIJs10pdgAhIw0Rg-ebq2lq7S8": {
+   "em": "2026-09-19T00:14:18.975Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 7.8
+  },
+  "ChIJIRipXwAhIw0RS_gYX4m1zZE": {
+   "em": "2026-09-19T00:14:19.395Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 7.8
+  },
+  "ChIJXyG6IsNDIw0RiS6YF8nI_vU": {
+   "em": "2026-09-19T00:14:19.395Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 7.8
+  },
+  "ChIJj__ISVRRIw0RxZCeEWszo44": {
+   "em": "2026-09-19T00:14:19.395Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 7.8
+  },
+  "ChIJBePEdfhRIw0R6pQb7Hkq8a4": {
+   "em": "2026-09-19T00:14:19.395Z",
+   "regiao": "dentro",
+   "raio_celula_m": 323,
+   "pontos": 7.8
+  },
+  "ChIJh4tZFQCfJA0RV-t9zJDSLwM": {
+   "em": "2026-09-19T00:14:19.819Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 7.8
+  },
+  "ChIJdczo2yulJA0RpKww-FWW_4E": {
+   "em": "2026-09-19T00:14:19.819Z",
+   "regiao": "dentro",
+   "raio_celula_m": 323,
+   "pontos": 7.8
+  },
+  "ChIJKR5mRgClJA0RMdn1UV1vlKc": {
+   "em": "2026-09-19T00:14:19.819Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 7.8
+  },
+  "ChIJFxYKzuuvJA0RVpzgvSTol10": {
+   "em": "2026-09-19T00:14:19.819Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 7.8
+  },
+  "ChIJhYUS7T5vJA0RUQi4megtZ0s": {
+   "em": "2026-09-19T00:14:20.264Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 7.8
+  },
+  "ChIJtSidRwBTOw0RFQTgtUTQJeA": {
+   "em": "2026-09-19T00:14:20.264Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 7.8
+  },
+  "ChIJwRV71dItIw0RQ467o02jqiQ": {
+   "em": "2026-09-19T00:14:20.264Z",
+   "regiao": "dentro",
+   "raio_celula_m": 323,
+   "pontos": 7.8
+  },
+  "ChIJTXT3lJ5BIw0R8MgEa-SVS0U": {
+   "em": "2026-09-19T00:14:20.264Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 7.8
+  },
+  "ChIJhbOcmZ5BIw0RTws7B0PXNhc": {
+   "em": "2026-09-19T00:14:20.714Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 7.8
+  },
+  "ChIJe6N3ELBBIw0RY9_YhueQ9eg": {
+   "em": "2026-09-19T00:14:20.714Z",
+   "regiao": "dentro",
+   "raio_celula_m": 323,
+   "pontos": 7.8
+  },
+  "ChIJT0EZN4hCIw0RX_W4YWgwUM4": {
+   "em": "2026-09-19T00:14:20.714Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 7.8
+  },
+  "ChIJY8_zARejPA0R6a5pV28I7o8": {
+   "em": "2026-09-19T00:14:20.714Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 7.8
+  },
+  "ChIJY8_zARejPA0RHNcliLKhcsI": {
+   "em": "2026-09-19T00:14:21.227Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 7.8
+  },
+  "ChIJVazGeEifJA0RcqRQrB1s-70": {
+   "em": "2026-09-19T00:14:21.227Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 7.8
+  },
+  "ChIJq4rSBymnJA0Rd8SU87Qh-NE": {
+   "em": "2026-09-19T00:14:21.227Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 7.8
+  },
+  "ChIJGa8d9KiqPA0RpDR4uQ35VwE": {
+   "em": "2026-09-19T00:14:21.227Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 7.8
+  },
+  "ChIJy5zp4sKjJA0RIGglGAhzmSc": {
+   "em": "2026-09-19T00:14:21.694Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 7.8
+  },
+  "ChIJc6U2iSY3Iw0Rcahfc-tjamY": {
+   "em": "2026-09-19T00:14:21.694Z",
+   "regiao": "dentro",
+   "raio_celula_m": 163,
+   "pontos": 7.7
+  },
+  "ChIJATzXpE02Iw0RuOKN4jCMWnU": {
+   "em": "2026-09-19T00:14:21.694Z",
+   "regiao": "dentro",
+   "raio_celula_m": 163,
+   "pontos": 7.7
+  },
+  "ChIJv3tOTy-bJA0RybCMxtdxNWo": {
+   "em": "2026-09-19T00:14:21.694Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 7.6
+  },
+  "ChIJyy2lZz6ZJA0RdEckXjN7Rkw": {
+   "em": "2026-09-19T00:14:22.117Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 7.6
+  },
+  "ChIJ5RBnmtRbOw0R-oxvWpUZFw8": {
+   "em": "2026-09-19T00:14:22.117Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 7.6
+  },
+  "ChIJWb518JMxIw0R0KrVQlIEuIo": {
+   "em": "2026-09-19T00:14:22.117Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 7.6
+  },
+  "ChIJ9Uc4TZ5BIw0Rdntiu93pwPE": {
+   "em": "2026-09-19T00:14:22.117Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 7.6
+  },
+  "ChIJsx15r55BIw0RKrc-iMDmK48": {
+   "em": "2026-09-19T00:14:22.558Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 7.6
+  },
+  "ChIJM_E5cAalJA0RrjhqOM_HP0E": {
+   "em": "2026-09-19T00:14:22.558Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 7.4
+  },
+  "ChIJfWLe4qKZJA0RJPH0JLJNEnQ": {
+   "em": "2026-09-19T00:14:22.558Z",
+   "regiao": "dentro",
+   "raio_celula_m": 323,
+   "pontos": 7.4
+  },
+  "ChIJtzqXKwbLPA0RDrc-Kjono1Q": {
+   "em": "2026-09-19T00:14:22.558Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 7.4
+  },
+  "ChIJW1evtGZBIw0RS8_MiVGTtD4": {
+   "em": "2026-09-19T00:14:23.018Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 7.4
+  },
+  "ChIJ1wWIU1VDIw0Rz4_lBz4Da4E": {
+   "em": "2026-09-19T00:14:23.018Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 7.4
+  },
+  "ChIJvctJTBhDIw0RGBGNon593OQ": {
+   "em": "2026-09-19T00:14:23.018Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 7.4
+  },
+  "ChIJy7WaBgCZJA0RBzsQLQIqmLA": {
+   "em": "2026-09-19T00:14:23.018Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 7.4
+  },
+  "ChIJDw0O0Y5VOw0Ri4tde9aNisY": {
+   "em": "2026-09-19T00:14:23.480Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 7.4
+  },
+  "ChIJBwwkHWCrJA0RK8XwWuT-K64": {
+   "em": "2026-09-19T00:14:23.480Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 7.4
+  },
+  "ChIJlz7Z7KasJA0RwPYrK553Es0": {
+   "em": "2026-09-19T00:14:23.480Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 7.4
+  },
+  "ChIJhdnC-P5TOw0RQ6kZ7pYRnHo": {
+   "em": "2026-09-19T00:14:23.480Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 7.4
+  },
+  "ChIJswVQADqtJA0RNkQwWnjt3xo": {
+   "em": "2026-09-19T00:14:23.944Z",
+   "regiao": "dentro",
+   "raio_celula_m": 323,
+   "pontos": 7.4
+  },
+  "ChIJUUBQZp6sJA0R-mWnGH24MY0": {
+   "em": "2026-09-19T00:14:23.945Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 7.4
+  },
+  "ChIJGVGitrMVIw0RUq-oEOupUQo": {
+   "em": "2026-09-19T00:14:23.945Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 7.3
+  },
+  "ChIJRQ5ynZY3Iw0ROvOup-E0YV4": {
+   "em": "2026-09-19T00:14:23.945Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 7.3
+  },
+  "ChIJxb2DH0lpOw0ReUZgzE46CT8": {
+   "em": "2026-09-19T00:14:24.401Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 7.2
+  },
+  "ChIJVYHSSXE3Iw0R3LdMo0yN6SE": {
+   "em": "2026-09-19T00:14:24.401Z",
+   "regiao": "dentro",
+   "raio_celula_m": 163,
+   "pontos": 7.2
+  },
+  "ChIJpS450EGhJA0RdVyRENujIbw": {
+   "em": "2026-09-19T00:14:24.401Z",
+   "regiao": "dentro",
+   "raio_celula_m": 323,
+   "pontos": 7.1
+  },
+  "ChIJnb6CTHkhIw0RnNiJ4f8j8t8": {
+   "em": "2026-09-19T00:14:24.401Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 7
+  },
+  "ChIJ29dVA00gIw0RdA1X5W_pPRM": {
+   "em": "2026-09-19T00:14:24.913Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 7
+  },
+  "ChIJwRixpqofIw0R4lg2XN0W-CQ": {
+   "em": "2026-09-19T00:14:24.913Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 7
+  },
+  "ChIJcayCV50fIw0RXKF_F7Rdpo0": {
+   "em": "2026-09-19T00:14:24.913Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 7
+  },
+  "ChIJQ-FMCQA3Iw0RuamncLFPfjI": {
+   "em": "2026-09-19T00:14:24.913Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 7
+  },
+  "ChIJ4VLJjrI3Iw0RM0_lBsZmt8g": {
+   "em": "2026-09-19T00:14:25.379Z",
+   "regiao": "dentro",
+   "raio_celula_m": 163,
+   "pontos": 7
+  },
+  "ChIJiflpBwA3Iw0R_rM-EnGVjGM": {
+   "em": "2026-09-19T00:14:25.379Z",
+   "regiao": "dentro",
+   "raio_celula_m": 163,
+   "pontos": 7
+  },
+  "ChIJEynRJwA3Iw0RaS9n-wgyadU": {
+   "em": "2026-09-19T00:14:25.379Z",
+   "regiao": "dentro",
+   "raio_celula_m": 323,
+   "pontos": 7
+  },
+  "ChIJd4oFYgBDIw0RNQXLqVxrUfo": {
+   "em": "2026-09-19T00:14:25.379Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 7
+  },
+  "ChIJaaCvZ55BIw0RZpWzNM4sN0Q": {
+   "em": "2026-09-19T00:14:25.837Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 7
+  },
+  "ChIJ2wceCACjPA0R1NTjOictrz0": {
+   "em": "2026-09-19T00:14:25.838Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 7
+  },
+  "ChIJ64GrxO-nJA0RZLAKOZlRVv4": {
+   "em": "2026-09-19T00:14:25.838Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 7
+  },
+  "ChIJtTt3CQBVOw0RBhmgKhkIm80": {
+   "em": "2026-09-19T00:14:25.838Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 7
+  },
+  "ChIJ8y-O_jGlJA0RfC8RjYOlZ_k": {
+   "em": "2026-09-19T00:14:26.301Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 7
+  },
+  "ChIJp36ROQClJA0Rqzd2s5QBGuc": {
+   "em": "2026-09-19T00:14:26.301Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 7
+  },
+  "ChIJlUwHHAClJA0R8WI1lBy-7pM": {
+   "em": "2026-09-19T00:14:26.301Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 7
+  },
+  "ChIJRRge_buvJA0R7GKZ1vxGjnw": {
+   "em": "2026-09-19T00:14:26.301Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 7
+  },
+  "ChIJLQowWVJTOw0RZ4L12S1bR6s": {
+   "em": "2026-09-19T00:14:26.756Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 7
+  },
+  "ChIJCcqiquhTOw0R-Z9ienetSm4": {
+   "em": "2026-09-19T00:14:26.756Z",
+   "regiao": "dentro",
+   "raio_celula_m": 323,
+   "pontos": 7
+  },
+  "ChIJNzKVO55BIw0RoSsEtNB0xyI": {
+   "em": "2026-09-19T00:14:26.756Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 7
+  },
+  "ChIJlSwK3xmrJA0RChhOPE6i72w": {
+   "em": "2026-09-19T00:14:26.756Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 7
+  },
+  "ChIJyeGuZtBWOw0RwlIAm_uRhMY": {
+   "em": "2026-09-19T00:14:27.203Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 7
+  },
+  "ChIJoZsoYDakJA0R_9Fxix44W4w": {
+   "em": "2026-09-19T00:14:27.203Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 7
+  },
+  "ChIJAR7DU4ZTOw0R0B-XIqSiuOA": {
+   "em": "2026-09-19T00:14:27.203Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 7
+  },
+  "ChIJD8tbhLdBIw0RGiixfWQtI9Y": {
+   "em": "2026-09-19T00:14:27.203Z",
+   "regiao": "dentro",
+   "raio_celula_m": 323,
+   "pontos": 6.9
+  },
+  "ChIJc-CZzLpBIw0RDUPzGtqS4JA": {
+   "em": "2026-09-19T00:14:27.686Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 6.9
+  },
+  "ChIJJ8zePmKvJA0RXyKH4lTrnrM": {
+   "em": "2026-09-19T00:14:27.687Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 6.9
+  },
+  "ChIJd7C8u_JTOw0RVxJi9I-pbLU": {
+   "em": "2026-09-19T00:14:27.687Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 6.9
+  },
+  "ChIJ-bweY14_Iw0RN5lQMpPEZqg": {
+   "em": "2026-09-19T00:14:27.687Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 6.9
+  },
+  "ChIJHe1C-ueYJA0RFjDadlDkSQU": {
+   "em": "2026-09-19T00:14:28.151Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1391,
+   "pontos": 6.9
+  },
+  "ChIJlZJahcytJA0RY5nYjzYy7N8": {
+   "em": "2026-09-19T00:14:28.151Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 6.9
+  },
+  "ChIJXcwTIaNTOw0ReIoydR86RgY": {
+   "em": "2026-09-19T00:14:28.151Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 6.9
+  },
+  "ChIJSclUQrVBIw0Rg2INOWg4suY": {
+   "em": "2026-09-19T00:14:28.151Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 6.8
+  },
+  "ChIJwaun_AhBIw0RfWZQr-LOSRc": {
+   "em": "2026-09-19T00:14:28.600Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 6.8
+  },
+  "ChIJo9MtZtmvJA0RkUoThSsTgKE": {
+   "em": "2026-09-19T00:14:28.600Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 6.8
+  },
+  "ChIJGXPoi2BTOw0RIG5XWr4leQo": {
+   "em": "2026-09-19T00:14:28.600Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 6.8
+  },
+  "ChIJj_7ESH5bOw0RytJzFjFky5c": {
+   "em": "2026-09-19T00:14:28.600Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 6.8
+  },
+  "ChIJ7fP2lJ5BIw0R3ElJIP_19_Y": {
+   "em": "2026-09-19T00:14:29.073Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 6.8
+  },
+  "ChIJEed6JXFBIw0R81zo3Sgo4vE": {
+   "em": "2026-09-19T00:14:29.073Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 6.8
+  },
+  "ChIJZRllJXFBIw0R37XvLvF0Src": {
+   "em": "2026-09-19T00:14:29.073Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 6.8
+  },
+  "ChIJha4p_bdBIw0Rdi__WPgIlzw": {
+   "em": "2026-09-19T00:14:29.073Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 6.8
+  },
+  "ChIJmeeufshBIw0RYbketbmOEOs": {
+   "em": "2026-09-19T00:14:29.485Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 6.8
+  },
+  "ChIJ2fIbhyJBIw0RLk9te39hVek": {
+   "em": "2026-09-19T00:14:29.486Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 6.8
+  },
+  "ChIJWargyCpBIw0R62b1qMhncwo": {
+   "em": "2026-09-19T00:14:29.486Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 6.8
+  },
+  "ChIJmZ7gyCpBIw0RCSD9EB7HSQ4": {
+   "em": "2026-09-19T00:14:29.486Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 6.8
+  },
+  "ChIJX68ehyJBIw0RKabVtiYa9c8": {
+   "em": "2026-09-19T00:14:29.992Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 6.8
+  },
+  "ChIJUW6C7w9BIw0RX3kb9mCCDIg": {
+   "em": "2026-09-19T00:14:29.992Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 6.8
+  },
+  "ChIJYxwIjp5BIw0RYC1K-FaSX50": {
+   "em": "2026-09-19T00:14:29.992Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 6.8
+  },
+  "ChIJq64lEnFBIw0RzyQNkpXp2TM": {
+   "em": "2026-09-19T00:14:30.445Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 6.8
+  },
+  "ChIJpSCFGc43Iw0RhFHB1q6SO6Y": {
+   "em": "2026-09-19T00:14:30.445Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 6.8
+  },
+  "ChIJr1gmm4vJPA0RJO9jRArXwx0": {
+   "em": "2026-09-19T00:14:30.445Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 6.8
+  },
+  "ChIJq3b46X5TIg0RDKaZrjMDFJM": {
+   "em": "2026-09-19T00:14:30.445Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 6.8
+  },
+  "ChIJqycThP-hJA0RIIy9hRfGGXs": {
+   "em": "2026-09-19T00:14:30.908Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 6.8
+  },
+  "ChIJxy2r7eqhJA0Ra-JSaT5VBbA": {
+   "em": "2026-09-19T00:14:30.908Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 6.8
+  },
+  "ChIJNSQThP-hJA0RWg1p74E6sL8": {
+   "em": "2026-09-19T00:14:30.908Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 6.8
+  },
+  "ChIJ7fOQ3i6iJA0RxdwnV2RPNd0": {
+   "em": "2026-09-19T00:14:30.908Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 6.8
+  },
+  "ChIJswtpK56sJA0R1ZqSFDrZekE": {
+   "em": "2026-09-19T00:14:31.364Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 6.8
+  },
+  "ChIJQeGMTP2lJA0RrunPZrekaR4": {
+   "em": "2026-09-19T00:14:31.364Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 6.8
+  },
+  "ChIJQ5EuSJWlJA0RrgAGl60u0RU": {
+   "em": "2026-09-19T00:14:31.364Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 6.8
+  },
+  "ChIJyzBFuiKvJA0RhK5WKCTqRXE": {
+   "em": "2026-09-19T00:14:31.364Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 6.8
+  },
+  "ChIJ6eExo_JTOw0RR-dHDKk-uAU": {
+   "em": "2026-09-19T00:14:31.832Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 6.8
+  },
+  "ChIJAUKBwrJVOw0Rh-155yXSm1U": {
+   "em": "2026-09-19T00:14:31.832Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 6.8
+  },
+  "ChIJcSHHGSetJA0R3FIZfEnpnGI": {
+   "em": "2026-09-19T00:14:31.832Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 6.8
+  },
+  "ChIJ07bHGSetJA0RPPEBIW2RTGQ": {
+   "em": "2026-09-19T00:14:31.832Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 6.8
+  },
+  "ChIJRdRgYjhROw0R7-FkPyS2nWc": {
+   "em": "2026-09-19T00:14:32.287Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 6.8
+  },
+  "ChIJN5gFawlbOw0RsgIdOUxhOlw": {
+   "em": "2026-09-19T00:14:32.287Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 6.8
+  },
+  "ChIJPyqroCtaOw0RJPMsmStMb6Q": {
+   "em": "2026-09-19T00:14:32.287Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 6.8
+  },
+  "ChIJe0Jq_tVbOw0RltmtkFx00CQ": {
+   "em": "2026-09-19T00:14:32.737Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 6.8
+  },
+  "ChIJS0nMSH5bOw0RrLrxYeaqRjU": {
+   "em": "2026-09-19T00:14:32.737Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 6.8
+  },
+  "ChIJ67amWQOlJA0R4EHVSEX7tNI": {
+   "em": "2026-09-19T00:14:32.737Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 6.7
+  },
+  "ChIJx4hiDvknIw0RoNrmnknbxng": {
+   "em": "2026-09-19T00:14:32.737Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 6.6
+  },
+  "ChIJhxq9iEMtIw0Rh0G9Iugbj0w": {
+   "em": "2026-09-19T00:14:33.210Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 6.6
+  },
+  "ChIJoVccJE83Iw0R4HAaMLHCPmw": {
+   "em": "2026-09-19T00:14:33.210Z",
+   "regiao": "dentro",
+   "raio_celula_m": 455,
+   "pontos": 6.6
+  },
+  "ChIJNeBg2NLLPA0Rou9gFN8TbFg": {
+   "em": "2026-09-19T00:14:33.210Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 6.6
+  },
+  "ChIJ8clg2NLLPA0RyDlr7twLfwQ": {
+   "em": "2026-09-19T00:14:33.210Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 6.6
+  },
+  "ChIJV9QNIWNDIw0Rk0Bgc0PzDhw": {
+   "em": "2026-09-19T00:14:33.675Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 6.6
+  },
+  "ChIJ5WC3UgqhJA0R0luqYx-GL0Y": {
+   "em": "2026-09-19T00:14:33.675Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 6.6
+  },
+  "ChIJCVblZQyfJA0RmR1wl1-5nWA": {
+   "em": "2026-09-19T00:14:33.675Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 6.6
+  },
+  "ChIJJVTJNc-lJA0RI7lFe-YPtHc": {
+   "em": "2026-09-19T00:14:33.675Z",
+   "regiao": "dentro",
+   "raio_celula_m": 323,
+   "pontos": 6.6
+  },
+  "ChIJH9mkjtRbOw0R8RGIpPYcoto": {
+   "em": "2026-09-19T00:14:34.100Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 6.6
+  },
+  "ChIJS7g_u5hROw0R0ckuVuYbrPs": {
+   "em": "2026-09-19T00:14:34.100Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 6.6
+  },
+  "ChIJh3QrDehbOw0RN28VS1UglRI": {
+   "em": "2026-09-19T00:14:34.100Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 6.6
+  },
+  "ChIJDefV_IdROw0RGaYJYIl7oeE": {
+   "em": "2026-09-19T00:14:34.100Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 6.6
+  },
+  "ChIJK5e2WHojIw0RdKH800nEzbA": {
+   "em": "2026-09-19T00:14:34.540Z",
+   "regiao": "dentro",
+   "raio_celula_m": 1271,
+   "pontos": 6.6
+  },
+  "ChIJpUqWb3ZBIw0R6SB7v3CS6LU": {
+   "em": "2026-09-19T00:14:34.540Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 6.6
+  },
+  "ChIJ81yF3LZBIw0RKV_LgL4GJ0I": {
+   "em": "2026-09-19T00:14:34.540Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 6.6
+  },
+  "ChIJSxy_fU1BIw0RZGE8uFOhhMs": {
+   "em": "2026-09-19T00:14:34.540Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 6.6
+  },
+  "ChIJmeeufshBIw0R2Gs2AdX6rQA": {
+   "em": "2026-09-19T00:14:35.054Z",
+   "regiao": "dentro",
+   "raio_celula_m": 229,
+   "pontos": 6.6
+  },
+  "ChIJXz7V0sBDIw0RcT5TktfFhv8": {
+   "em": "2026-09-19T00:14:35.054Z",
+   "regiao": "dentro",
+   "raio_celula_m": 641,
+   "pontos": 6.6
+  },
+  "ChIJrfvIbiLKPA0RaiAJFCysQlc": {
+   "em": "2026-09-19T00:14:35.054Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 6.6
+  },
+  "ChIJBzLPbiLKPA0RfT2-k59Cbu0": {
+   "em": "2026-09-19T00:14:35.054Z",
+   "regiao": "dentro",
+   "raio_celula_m": 902,
+   "pontos": 6.6
+  }
+ },
+ "sem_resposta": [
+  "ChIJdfMykU02Iw0R7c1mmGXRKyE",
+  "ChIJCznAjqKjPA0Rwde12d4q9ek",
+  "ChIJAcJHTZ5BIw0R_hZ-m0l5T9Q",
+  "ChIJPbF4xbAjIw0R-AkYermU1bU",
+  "ChIJN98vpAVbOw0RDbl9gqYsOsg",
+  "ChIJc0_-N69JIw0RoPphj5xhsU4",
+  "ChIJd1Wa4MYhIw0RxglRl-siuhg",
+  "ChIJSZH0ixo3Iw0R4bTrw5dKRzQ",
+  "ChIJ7RY-cfWeJA0R5VPSzD0vPnQ",
+  "ChIJ7yXulP5tIw0R7HOSvzUDPyk",
+  "ChIJF7-t3kU3Iw0RrGWU8qssru4",
+  "ChIJS5gvh3BBIw0RIvKjzl5iuk0",
+  "ChIJId3ieQ9EIw0RLsHayWNn-ac",
+  "ChIJKb9q_tVbOw0REnKDOWKL9GI"
+ ],
+ "criado_em": "2026-09-11T08:46:12.427Z",
+ "atualizado_em": "2026-09-19T00:14:35.059Z"
+}

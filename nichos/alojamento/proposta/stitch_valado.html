@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="pt"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Proposta de Website — Casa do Valado</title>
+<!-- Fonts & Google Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with custom configuration -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "background": "#fdf9f3",
+            "on-error-container": "#93000a",
+            "tertiary-fixed": "#d2e7de",
+            "inverse-on-surface": "#f4f0ea",
+            "on-background": "#1c1c18",
+            "inverse-primary": "#b3ccbf",
+            "on-tertiary-container": "#80948c",
+            "tertiary": "#051712",
+            "on-surface": "#1c1c18",
+            "error-container": "#ffdad6",
+            "secondary": "#815500",
+            "on-secondary": "#ffffff",
+            "surface-container-highest": "#e6e2dc",
+            "secondary-fixed": "#ffddb2",
+            "on-primary": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "on-primary-fixed-variant": "#354b41",
+            "primary": "#031810",
+            "surface-container-high": "#ebe8e2",
+            "on-primary-container": "#7d9589",
+            "surface-tint": "#4c6358",
+            "on-secondary-container": "#714a00",
+            "surface-bright": "#fdf9f3",
+            "primary-fixed": "#cfe8db",
+            "secondary-fixed-dim": "#ffb94c",
+            "on-secondary-fixed": "#291800",
+            "outline": "#727974",
+            "surface-variant": "#e6e2dc",
+            "primary-container": "#172d24",
+            "on-primary-fixed": "#091f17",
+            "inverse-surface": "#31302d",
+            "outline-variant": "#c2c8c3",
+            "secondary-container": "#ffb94c",
+            "surface-dim": "#ddd9d4",
+            "surface-container-lowest": "#ffffff",
+            "tertiary-fixed-dim": "#b6cbc2",
+            "error": "#ba1a1a",
+            "tertiary-container": "#1a2c26",
+            "on-secondary-fixed-variant": "#624000",
+            "surface-container": "#f1ede7",
+            "on-tertiary-fixed": "#0c1f19",
+            "on-error": "#ffffff",
+            "on-surface-variant": "#424844",
+            "on-tertiary-fixed-variant": "#384b44",
+            "surface-container-low": "#f7f3ed",
+            "surface": "#fdf9f3",
+            "primary-fixed-dim": "#b3ccbf"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-desktop": "4rem",
+            "gutter-desktop": "2.5rem",
+            "space-lg": "2rem",
+            "space-md": "1.25rem",
+            "margin": "1.25rem",
+            "margin-tablet": "2.5rem",
+            "gutter": "1.5rem",
+            "space-sm": "0.75rem",
+            "space-xs": "0.375rem",
+            "space-xl": "3.5rem"
+          },
+          "fontFamily": {
+            "display-mobile": ["Newsreader"],
+            "headline-lg": ["Newsreader"],
+            "headline-md": ["Newsreader"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "title-md": ["Plus Jakarta Sans"],
+            "title-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Newsreader"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Newsreader"],
+            "display": ["Newsreader"],
+            "body-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "display-mobile": ["3rem", { "lineHeight": "3.5rem", "letterSpacing": "-0.015em", "fontWeight": "400" }],
+            "headline-lg": ["3rem", { "lineHeight": "3.5rem", "letterSpacing": "-0.015em", "fontWeight": "400" }],
+            "headline-md": ["2.25rem", { "lineHeight": "2.875rem", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "label-sm": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.08em", "fontWeight": "600" }],
+            "title-md": ["1.125rem", { "lineHeight": "1.625rem", "letterSpacing": "0em", "fontWeight": "600" }],
+            "title-lg": ["1.375rem", { "lineHeight": "1.875rem", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-md": ["1.0625rem", { "lineHeight": "1.75rem", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg-mobile": ["2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "label-lg": ["0.875rem", { "lineHeight": "1.25rem", "letterSpacing": "0.06em", "fontWeight": "600" }],
+            "headline-sm": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.005em", "fontWeight": "500" }],
+            "display": ["4.5rem", { "lineHeight": "5rem", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+            "body-lg": ["1.25rem", { "lineHeight": "2rem", "letterSpacing": "0.005em", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased font-body-lg selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- TOP APP BAR (Shared Component: editorial_minimalist) -->
+<header class="bg-background/95 dark:bg-background/95 backdrop-blur-sm text-primary dark:text-inverse-primary border-b border-outline-variant/50 dark:border-outline/30 docked full-width top-0 z-50 sticky transition-all duration-200 ease-out">
+<div class="max-w-7xl mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop flex items-center justify-between h-20 w-full">
+<div class="flex items-center gap-space-sm">
+<span class="text-title-lg font-headline-sm font-medium tracking-tight text-primary dark:text-inverse-primary">Casa do Valado</span>
+<span class="hidden sm:inline-block px-2.5 py-0.5 text-xs font-medium tracking-wider bg-surface-container border border-outline-variant/60 text-secondary uppercase">Proposta 2025</span>
+</div>
+<!-- Navigation links desktop -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-label-lg font-label-lg uppercase tracking-wider text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#diagnostico">Diagnóstico</a>
+<a class="text-label-lg font-label-lg uppercase tracking-wider text-primary dark:text-inverse-primary border-b border-secondary pb-1" href="#pacotes">Pacotes</a>
+<a class="text-label-lg font-label-lg uppercase tracking-wider text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#extras">Extras</a>
+<a class="text-label-lg font-label-lg uppercase tracking-wider text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#passos">Passos</a>
+<a class="text-label-lg font-label-lg uppercase tracking-wider text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#contacto">Contacto</a>
+</nav>
+<!-- Trailing Action -->
+<div class="flex items-center gap-4">
+<a class="inline-flex items-center gap-2 bg-primary-container text-surface-container-lowest px-5 py-2.5 text-label-lg font-label-lg uppercase tracking-wider hover:bg-tertiary transition-all duration-200 shadow-sm" href="#contacto">
+<span>Falar com Diogo</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+</div>
+</header>
+<!-- MAIN CANVAS -->
+<main class="max-w-7xl mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop py-8 md:py-14 space-y-16 md:space-y-24">
+<!-- HERO SECTION -->
+<section class="space-y-8">
+<!-- Metadata Strip -->
+<div class="p-4 md:p-6 bg-surface-container-low border border-outline-variant/60 flex flex-wrap items-center justify-between gap-y-3 gap-x-6 text-sm text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="font-semibold text-primary uppercase text-xs tracking-wider">Destinatário:</span>
+<span>Direção da Casa do Valado</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-semibold text-primary uppercase text-xs tracking-wider">Consultor:</span>
+<span>Diogo Covelo</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-semibold text-primary uppercase text-xs tracking-wider">Localização:</span>
+<span>Douro / Minho</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-semibold text-secondary uppercase text-xs tracking-wider">Validade:</span>
+<span class="text-secondary font-medium">30 dias</span>
+</div>
+</div>
+<!-- Headline Block -->
+<div class="space-y-5 max-w-4xl">
+<span class="inline-block text-secondary font-semibold text-sm tracking-widest uppercase">Proposta de Estrutura Digital</span>
+<h1 class="text-4xl md:text-6xl font-headline-lg text-primary tracking-tight leading-tight">
+          Proposta de Website — Casa do Valado
+        </h1>
+<p class="text-xl md:text-2xl font-body-lg text-on-surface-variant leading-relaxed">
+          Um site simples, bonito e direto para receber hóspedes e reservas diretas sem intermediários nem complicações.
+        </p>
+</div>
+<!-- Hero Photograph -->
+<div class="border border-outline-variant/60 bg-surface-container overflow-hidden">
+<div class="relative w-full aspect-[16/9] md:aspect-[21/9]">
+<img alt="Casa do Valado e vinhas circundantes no Douro / Minho" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1WCoQUpBS7SB2t6VSp1dxh_1cikYInQzb0Lylkmzh8L9bCf0iknl3xRdQhS9gXzsWXmMZ-IZJv5E_bQ1YyemDf-BgHT2g7PwPllh8TPDfKJCEAkeTJb8x-dSJHzSFIT-4K5V4p-_BkeZ_RHYW7m3cH1-LgtGySAoB0RHIobwIzjxNiGyVLx9sFA2-9jvKrzrwb1LcmhmWEZ5kzDw8PFqKW8Nx2_IKDKPElYPG44q76CtEAAUkdlrKCN"/>
+</div>
+<div class="px-5 py-3.5 bg-surface-container-low border-t border-outline-variant/50 flex items-center justify-between text-sm text-on-surface-variant">
+<span class="italic font-display-mobile">Casa do Valado • O encanto da nossa quinta e a calma da região.</span>
+<span class="text-xs uppercase tracking-wider font-semibold text-secondary">Douro • Portugal</span>
+</div>
+</div>
+<!-- Value Badges -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 pt-2">
+<div class="p-6 bg-surface-container-low border border-outline-variant/70 flex items-center gap-4">
+<div class="w-12 h-12 bg-secondary-fixed/50 text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-2xl">percent</span>
+</div>
+<div>
+<p class="font-title-md text-primary font-semibold">Sem comissões nem intermediários</p>
+<p class="text-sm text-on-surface-variant mt-0.5">Margem total garantida em cada reserva direta.</p>
+</div>
+</div>
+<div class="p-6 bg-surface-container-low border border-outline-variant/70 flex items-center gap-4">
+<div class="w-12 h-12 bg-tertiary-fixed/60 text-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-2xl">smartphone</span>
+</div>
+<div>
+<p class="font-title-md text-primary font-semibold">100% otimizado para telemóvel</p>
+<p class="text-sm text-on-surface-variant mt-0.5">Navegação rápida e intuitiva para quem reserva na viagem.</p>
+</div>
+</div>
+<div class="p-6 bg-surface-container-low border border-outline-variant/70 flex items-center gap-4">
+<div class="w-12 h-12 bg-secondary-fixed/50 text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-2xl">schedule</span>
+</div>
+<div>
+<p class="font-title-md text-primary font-semibold">Pronto a funcionar em 2 a 3 semanas</p>
+<p class="text-sm text-on-surface-variant mt-0.5">Implementação direta, sem atrasos burocráticos.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- O PONTO DE PARTIDA VS A SOLUÇÃO -->
+<section class="space-y-8 pt-4" id="diagnostico">
+<div class="border-b border-outline-variant/60 pb-4">
+<span class="text-xs uppercase tracking-widest font-semibold text-secondary">Diagnóstico Prático</span>
+<h2 class="text-3xl md:text-4xl font-headline-md text-primary mt-1">O Ponto de Partida vs. A Solução</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- O Problema -->
+<div class="p-8 bg-surface-container-low border-l-4 border-l-error border border-outline-variant/60 space-y-5">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-error text-2xl">warning</span>
+<h3 class="text-2xl font-headline-sm text-primary">O Problema de Hoje</h3>
+</div>
+<p class="text-base font-semibold text-on-surface">Informação dispersa e perda desnecessária de margem:</p>
+<ul class="space-y-4 text-base md:text-lg text-on-surface-variant">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-error text-xl shrink-0 mt-0.5">close</span>
+<span>Os hóspedes perdem-se à procura de fotos de qualidade e preços atualizados nas redes sociais.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-error text-xl shrink-0 mt-0.5">close</span>
+<span>Comissões pesadas de 15% a 25% na Booking e no Airbnb que diminuem o lucro real de cada noite.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-error text-xl shrink-0 mt-0.5">close</span>
+<span>Demora a responder pelo WhatsApp por falta de respostas pré-organizadas com os detalhes da casa.</span>
+</li>
+</ul>
+</div>
+<!-- A Solução -->
+<div class="p-8 bg-surface-container-low border-l-4 border-l-primary-container border border-outline-variant/60 space-y-5">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-2xl">check_circle</span>
+<h3 class="text-2xl font-headline-sm text-primary">O Que Vamos Fazer</h3>
+</div>
+<p class="text-base font-semibold text-primary">Um site direto, acolhedor e feito para reservas:</p>
+<ul class="space-y-4 text-base md:text-lg text-on-surface-variant">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-container text-xl shrink-0 mt-0.5">check</span>
+<span>Canal próprio com apresentação nobre da quinta e fotografias em grande formato dos quartos.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-container text-xl shrink-0 mt-0.5">check</span>
+<span>Botão direto de WhatsApp para os hóspedes falarem consigo com apenas um toque no telemóvel.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-container text-xl shrink-0 mt-0.5">check</span>
+<span>Localização clara com Google Maps e formulário limpo para grupos familiares e estadias longas.</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- PREÇOS & PACOTES -->
+<section class="space-y-10 pt-4" id="pacotes">
+<div class="border-b border-outline-variant/60 pb-4 space-y-2">
+<span class="text-xs uppercase tracking-widest font-semibold text-secondary">Transparência Total</span>
+<h2 class="text-3xl md:text-4xl font-headline-md text-primary">Investimento Transparente</h2>
+<p class="text-lg md:text-xl text-on-surface-variant">Valores fixos de desenvolvimento, sem mensalidades escondidas nem percentagens sobre reservas.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+<!-- Plano Base -->
+<div class="p-8 md:p-10 bg-surface-container-low border border-outline-variant/80 flex flex-col justify-between space-y-8">
+<div class="space-y-6">
+<div class="flex items-center justify-between">
+<span class="text-xs uppercase tracking-widest font-semibold px-3 py-1 bg-surface-container text-on-surface-variant">Presença Essencial</span>
+</div>
+<div>
+<h3 class="text-2xl font-headline-sm text-primary">Plano Base</h3>
+<p class="text-sm text-on-surface-variant mt-1">Ideal para começar rápido com presença online limpa e funcional.</p>
+</div>
+<div class="py-2">
+<div class="flex items-baseline gap-2">
+<span class="text-4xl md:text-5xl font-headline-lg font-bold text-primary">400€</span>
+<span class="text-sm text-on-surface-variant uppercase tracking-wider font-semibold">Pagamento único</span>
+</div>
+</div>
+<hr class="border-outline-variant/50"/>
+<ul class="space-y-4 text-base text-on-surface">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-lg mt-0.5">done</span>
+<span>Website de página única fluida e elegante</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-lg mt-0.5">done</span>
+<span>Apresentação dos espaços, jardins e quartos</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-lg mt-0.5">done</span>
+<span>Botão direto de WhatsApp para pedidos de estadia</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-lg mt-0.5">done</span>
+<span>Integração de mapa Google para fácil localização</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-lg mt-0.5">done</span>
+<span>Adaptado na perfeição a telemóveis e computadores</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-lg mt-0.5">done</span>
+<span>Entrega rápida em 10 a 14 dias úteis</span>
+</li>
+</ul>
+</div>
+<div>
+<a class="block w-full text-center py-4 px-6 border-2 border-primary text-primary font-label-lg uppercase tracking-wider hover:bg-primary hover:text-surface-container-lowest transition-all duration-200" href="#contacto">
+              Escolher Plano Base
+            </a>
+</div>
+</div>
+<!-- Plano Completo (Destaque) -->
+<div class="p-8 md:p-10 bg-surface-container border-2 border-secondary relative flex flex-col justify-between space-y-8 shadow-sm">
+<div class="absolute -top-3.5 right-8 bg-secondary text-on-secondary text-xs uppercase tracking-widest font-semibold px-4 py-1 shadow-sm">
+            Recomendado para a Quinta
+          </div>
+<div class="space-y-6">
+<div class="flex items-center justify-between">
+<span class="text-xs uppercase tracking-widest font-semibold px-3 py-1 bg-secondary-fixed/50 text-secondary">A Experiência da Quinta</span>
+</div>
+<div>
+<h3 class="text-2xl font-headline-sm text-primary">Plano Completo</h3>
+<p class="text-sm text-on-surface-variant mt-1">A solução integral e imersiva para valorizar a propriedade e atrair estadias mais longas.</p>
+</div>
+<div class="py-2">
+<div class="flex items-baseline gap-2">
+<span class="text-4xl md:text-5xl font-headline-lg font-bold text-primary">600€ – 800€</span>
+<span class="text-sm text-on-surface-variant uppercase tracking-wider font-semibold">Pagamento único</span>
+</div>
+</div>
+<hr class="border-outline-variant/60"/>
+<ul class="space-y-4 text-base text-on-surface">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-lg mt-0.5">check_circle</span>
+<span><strong>Múltiplas páginas organizadas:</strong> A Quinta, Os Quartos &amp; Casas, Atividades na Região e Contactos</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-lg mt-0.5">check_circle</span>
+<span>Galeria fotográfica imersiva em alta resolução</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-lg mt-0.5">check_circle</span>
+<span>Formulário detalhado para reservas e eventos de grupo</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-lg mt-0.5">check_circle</span>
+<span>Apoio e pequenos ajustes durante 60 dias após publicação</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-lg mt-0.5">check_circle</span>
+<span>Entrega cuidada em 2 a 3 semanas</span>
+</li>
+</ul>
+</div>
+<div>
+<a class="block w-full text-center py-4 px-6 bg-primary-container text-surface-container-lowest font-label-lg uppercase tracking-wider hover:bg-tertiary transition-all duration-200" href="#contacto">
+              Escolher Plano Completo
+            </a>
+</div>
+</div>
+</div>
+<!-- Box de Soberania & Transparência -->
+<div class="p-6 md:p-8 bg-surface-container-lowest border border-outline-variant/70 flex flex-col sm:flex-row items-center gap-5">
+<div class="w-12 h-12 bg-secondary/10 text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-2xl">verified_user</span>
+</div>
+<div class="space-y-1 text-center sm:text-left">
+<h4 class="font-title-md text-primary font-semibold">Autonomia e Posse 100% da Casa do Valado</h4>
+<p class="text-base text-on-surface-variant leading-relaxed">
+            O domínio e o alojamento ficam 100% registados em nome e posse da Casa do Valado (custo direto de aprox. 20€ a 30€/ano). Zero fidelizações obrigatórias.
+          </p>
+</div>
+</div>
+</section>
+<!-- EXTRAS SOB MEDIDA -->
+<section class="space-y-6 pt-4" id="extras">
+<div class="p-8 md:p-10 bg-secondary-fixed/30 border-2 border-secondary/60 flex flex-col md:flex-row items-center gap-6 justify-between">
+<div class="space-y-2 max-w-3xl">
+<div class="flex items-center gap-2 text-secondary font-semibold text-xs uppercase tracking-widest">
+<span class="material-symbols-outlined text-base">tune</span>
+<span>Elementos Adicionais Sob Medida</span>
+</div>
+<h3 class="text-2xl font-headline-sm text-primary">Necessidades Especiais ou Futuras</h3>
+<p class="text-lg text-on-surface-variant leading-relaxed">
+            Traduções bilingues (Inglês ou Francês para hóspedes estrangeiros) e serviços complementares de fotografia ou sincronização de calendários são orçamentados à parte sob medida, apenas se a casa desejar.
+          </p>
+</div>
+<div class="shrink-0 w-full md:w-auto">
+<a class="block text-center px-6 py-3 border border-secondary text-secondary font-semibold uppercase text-xs tracking-widest hover:bg-secondary hover:text-on-secondary transition-all" href="#contacto">
+            Consultar Opções
+          </a>
+</div>
+</div>
+</section>
+<!-- PASSOS DO PROJETO -->
+<section class="space-y-8 pt-4" id="passos">
+<div class="border-b border-outline-variant/60 pb-4">
+<span class="text-xs uppercase tracking-widest font-semibold text-secondary">Metodologia Simples</span>
+<h2 class="text-3xl md:text-4xl font-headline-md text-primary mt-1">Como Vamos Trabalhar (4 Passos Claros)</h2>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Step 1 -->
+<div class="p-6 bg-surface-container-low border border-outline-variant/60 space-y-4">
+<span class="text-3xl font-headline-lg font-semibold text-secondary block">01</span>
+<h4 class="text-xl font-headline-sm text-primary">Conversa de 20 minutos</h4>
+<p class="text-base text-on-surface-variant leading-relaxed">
+            Alinhamento inicial por telefone ou WhatsApp sobre quartos, preços e a atmosfera que pretendem passar.
+          </p>
+</div>
+<!-- Step 2 -->
+<div class="p-6 bg-surface-container-low border border-outline-variant/60 space-y-4">
+<span class="text-3xl font-headline-lg font-semibold text-secondary block">02</span>
+<h4 class="text-xl font-headline-sm text-primary">Primeiro rascunho do site</h4>
+<p class="text-base text-on-surface-variant leading-relaxed">
+            Demonstração navegável no computador e telemóvel para aprovação da estrutura e disposição das fotos.
+          </p>
+</div>
+<!-- Step 3 -->
+<div class="p-6 bg-surface-container-low border border-outline-variant/60 space-y-4">
+<span class="text-3xl font-headline-lg font-semibold text-secondary block">03</span>
+<h4 class="text-xl font-headline-sm text-primary">Ajustes e afinações</h4>
+<p class="text-base text-on-surface-variant leading-relaxed">
+            Polimento de textos, fotos e detalhes práticos até ficar exatamente ao vosso gosto e estilo.
+          </p>
+</div>
+<!-- Step 4 -->
+<div class="p-6 bg-surface-container-low border border-outline-variant/60 space-y-4">
+<span class="text-3xl font-headline-lg font-semibold text-secondary block">04</span>
+<h4 class="text-xl font-headline-sm text-primary">O site fica no ar</h4>
+<p class="text-base text-on-surface-variant leading-relaxed">
+            Ligação ao domínio oficial, integração com Google Maps e explicação simples de como receber contactos.
+          </p>
+</div>
+</div>
+</section>
+<!-- QUEM SOU & CONTACTO -->
+<section class="space-y-10 pt-4" id="contacto">
+<div class="p-8 md:p-12 bg-surface-container border border-outline-variant/80">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+<!-- Diogo Covelo Photo -->
+<div class="lg:col-span-4 flex flex-col items-center sm:items-start">
+<div class="w-56 h-56 md:w-64 md:h-64 border-2 border-outline-variant/80 overflow-hidden shadow-sm">
+<img alt="Diogo Covelo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1WYZkUfu-3ZP4ZJYRsJ0ig9HIEsk01Gu4d12jbIZHFYi2r8yRDWkjPHf66fywSISgDQVotoALyQvgMb1pBHISdw-WpZG16L5iYMVDP1j4gPoWAaYJW00G5KqjmzjrKmuBxij4BhRucohLgX9_C6FRkD4fiNtOATM8p6oIs0WmmrZIIkc3mpKPtug9nnXIhdmQU6X88mcONqZZu9N7lBvvzkAXwQMeE1DYjQ5lBgCWDvNCQKJ-WCPLbLJA"/>
+</div>
+<div class="mt-4 text-center sm:text-left">
+<p class="font-title-lg text-primary font-semibold">Diogo Covelo</p>
+<p class="text-sm text-secondary font-medium">Desenvolvimento de Sites para Turismo Rural</p>
+</div>
+</div>
+<!-- Bio & Contacts -->
+<div class="lg:col-span-8 space-y-6">
+<span class="text-xs uppercase tracking-widest font-semibold text-secondary">Sem Intermediários</span>
+<h3 class="text-3xl font-headline-md text-primary">Trabalho Direto e Próximo</h3>
+<p class="text-lg md:text-xl text-on-surface-variant leading-relaxed">
+              Olá, sou o Diogo. Não sou uma agência cheia de reuniões compridas nem falo por termos complicados de informática. Crio sites práticos, rápidos e funcionais para quintas e turismo de habitação no Norte de Portugal. Trata tudo diretamente comigo do primeiro ao último dia.
+            </p>
+<div class="p-4 bg-surface-container-lowest border border-outline-variant/60 flex flex-wrap items-center gap-6 text-base text-on-surface">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">mail</span>
+<span class="font-medium">diogocovelo2005@gmail.com</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant text-sm">
+<span class="material-symbols-outlined text-primary-container text-base">bolt</span>
+<span>Resposta rápida no próprio dia</span>
+</div>
+</div>
+<!-- Call to Actions -->
+<div class="flex flex-col sm:flex-row gap-4 pt-2">
+<a class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-primary-container text-surface-container-lowest font-label-lg uppercase tracking-wider hover:bg-tertiary transition-all duration-200 shadow-sm text-center" href="https://wa.me/351912345678" target="_blank">
+<span class="material-symbols-outlined text-xl">chat</span>
+<span>Falar com o Diogo por WhatsApp</span>
+</a>
+<a class="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-primary text-primary font-label-lg uppercase tracking-wider hover:bg-primary hover:text-surface-container-lowest transition-all duration-200 text-center" href="mailto:diogocovelo2005@gmail.com?subject=Website%20Casa%20do%20Valado">
+<span class="material-symbols-outlined text-xl">send</span>
+<span>Enviar mensagem por Email</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- FOOTER (Shared Component: editorial_ledger) -->
+<footer class="bg-surface-container-low dark:bg-surface-container text-primary dark:text-inverse-primary border-t border-outline-variant/40 dark:border-outline/30 docked full-width mt-16 transition-all duration-200 ease-out">
+<div class="max-w-7xl mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop py-space-xl flex flex-col gap-space-lg w-full">
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-6 border-b border-outline-variant/40">
+<div>
+<span class="text-title-lg font-headline-sm font-normal text-primary dark:text-inverse-primary">Casa do Valado</span>
+<p class="text-sm text-on-surface-variant mt-1">Turismo de Habitação &amp; Retiro Rural no Norte de Portugal</p>
+</div>
+<div class="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary underline underline-offset-4 decoration-secondary transition-all duration-200" href="mailto:geral@casadovalado.pt">geral@casadovalado.pt</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary underline underline-offset-4 decoration-secondary transition-all duration-200" href="tel:+351912345678">+351 912 345 678</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary underline underline-offset-4 decoration-secondary transition-all duration-200" href="#">Termos &amp; Condições da Proposta</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary underline underline-offset-4 decoration-secondary transition-all duration-200" href="#">Privacidade</a>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between text-xs text-on-surface-variant gap-4">
+<p>© 2025 Casa do Valado. Proposta confidencial e exclusiva de serviços de arquitetura e curadoria.</p>
+<p class="uppercase tracking-widest text-[10px]">Desenvolvido por Diogo Covelo</p>
+</div>
+</div>
+</footer>
+</body></html>

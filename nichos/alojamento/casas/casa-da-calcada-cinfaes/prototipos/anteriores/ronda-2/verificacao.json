@@ -1,0 +1,24 @@
+{
+  "a": {
+    "ok": true,
+    "falhas": [],
+    "avisos": [
+      "2 paragrafos com letra abaixo de 15 px"
+    ],
+    "corrigido": true
+  },
+  "b": {
+    "ok": true,
+    "falhas": [],
+    "avisos": [
+      "2 parágrafos com letra abaixo de 15 px"
+    ],
+    "corrigido": false
+  },
+  "c": {
+    "ok": true,
+    "falhas": [],
+    "avisos": [],
+    "corrigido": false
+  }
+}

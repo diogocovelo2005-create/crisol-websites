@@ -1,0 +1,30 @@
+{
+  "url": "http://localhost:3500",
+  "data": "2026-10-09T20:58:20.629Z",
+  "reduzido": true,
+  "dispositivos": [
+    {
+      "nome": "tel-390",
+      "motor": "chromium",
+      "largura": 390,
+      "altura": 844,
+      "tipo": "telemovel",
+      "alturaPagina": 13460,
+      "ecras": 15.9,
+      "problemas": []
+    },
+    {
+      "nome": "pc-1440",
+      "motor": "chromium",
+      "largura": 1440,
+      "altura": 900,
+      "tipo": "computador",
+      "alturaPagina": 11821,
+      "ecras": 13.1,
+      "problemas": []
+    }
+  ],
+  "avisos": [],
+  "resumo": {},
+  "ok": true
+}

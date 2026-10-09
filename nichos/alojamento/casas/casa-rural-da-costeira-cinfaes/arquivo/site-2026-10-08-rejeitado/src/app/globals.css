@@ -1,0 +1,193 @@
+@import "tailwindcss";
+
+/*
+  As cores e as fontes sao as do prototipo B «Mato»: papel cinza-esverdeado,
+  tinta verde-quase-preta, o liquen da pedra como acento. Os nomes sao
+  papeis, usados pelo primeiro ecra, pelo cabecalho e pelo rodape:
+
+  linho       o fundo da pagina        tinta     o texto
+  cartao      fundos claros elevados   floresta  os paineis escuros e o rodape
+  ouro        o acento (o botao)       osso      texto sobre foto ou escuro
+  noite       o veu do primeiro ecra   linha     os filetes
+
+  Cada momento tem o seu fundo, tirado das fotos dele:
+  papel (o granito ao sol), agua (o verde-azul da encosta da piscina, na
+  faixa que leva a sala), serao (a madeira e o ferro da sala, ao escuro),
+  pedra (o granito quente dos quartos) e mato (o fecho).
+*/
+
+@theme {
+  /* papel cinza-esverdeado */
+  --color-linho: #e4e7df;
+  --color-linho-escuro: #d8dcd1;
+  --color-cartao: #eef0e8;
+  /* o granito quente dos quartos */
+  --color-pedra: #e9e4d8;
+
+  /* texto */
+  --color-tinta: #1d231d;
+  --color-tinta-medio: #4f5a50;
+
+  /* mato: paineis escuros, o fecho e o rodape */
+  --color-floresta: #2e372e;
+  --color-floresta-fundo: #232a23;
+  /* a faixa da citacao: o verde da encosta na piscina */
+  --color-agua: #33443c;
+  /* o serao: a madeira da sala ao escuro */
+  --color-serao: #2b281f;
+
+  /* o liquen da pedra: o botao e o acento. Como texto, so o liquen claro,
+     e so sobre o escuro. */
+  --color-ouro: #9c9479;
+  --color-ouro-escuro: #7a735c;
+  --color-liquen: #bdb59a;
+
+  --color-osso: #eef0e8;
+  --color-noite: #1a211b;
+
+  --color-linha: rgba(29, 35, 29, 0.16);
+  --color-linha-clara: rgba(238, 240, 232, 0.18);
+
+  --font-display: var(--fonte-display), 'Times New Roman', serif;
+  --font-corpo: var(--fonte-corpo), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-media: 2px;
+  --radius-botao: 2px;
+}
+
+@layer base {
+  html {
+    background-color: var(--color-linho);
+    color-scheme: light;
+  }
+
+  body {
+    font-family: var(--font-corpo);
+    background-color: var(--color-linho);
+    color: var(--color-tinta);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 0.95;
+    text-wrap: balance;
+  }
+
+  /* A voz do B: titulos em maiusculas, a palavra em destaque em italico
+     minusculo. */
+  h1, h2 {
+    text-transform: uppercase;
+  }
+
+  /* O italico dos titulos e da mesma familia. Com descendentes (y g j p)
+     precisa de folga em baixo, senao corta. */
+  h1 em, h2 em, h3 em {
+    font-style: italic;
+    text-transform: none;
+    padding-bottom: 0.06em;
+  }
+
+  ::selection {
+    background: var(--color-floresta);
+    color: var(--color-osso);
+  }
+
+  /* o anel de foco segue a cor do texto: escuro no papel, claro no mato */
+  :focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+  }
+
+  body {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  a {
+    text-underline-offset: 0.2em;
+    text-decoration-thickness: 1px;
+  }
+}
+
+@layer utilities {
+  /* Os titulos das seccoes: curtos, mais pequenos que no prototipo (o
+     Diogo achou-os grandes demais). */
+  .titulo-seccao {
+    font-size: clamp(2.5rem, 4.6vw, 4.25rem);
+    line-height: 0.92;
+  }
+
+  /* A frase de passagem entre seccoes: a pergunta que leva a seguinte.
+     Serifa italica, visivel, com um fio curto do acento a anunciar. */
+  .passagem {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.3rem;
+    line-height: 1.3;
+  }
+  @media (min-width: 768px) {
+    .passagem {
+      font-size: 1.55rem;
+    }
+  }
+  .passagem::before {
+    content: '';
+    display: block;
+    width: 2.5rem;
+    height: 1px;
+    margin-bottom: 0.9rem;
+    background: currentColor;
+    opacity: 0.5;
+  }
+  /* Versaletes das referencias: pequenos, espacados, em maiusculas. */
+  .versalete {
+    font-family: var(--font-corpo);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  /* Veu do hero: so escurece onde esta o texto, em cima e a esquerda (o
+     texto do primeiro ecra fica alinhado em cima). A fotografia fica com
+     a luz dela no resto. */
+  .veu-hero {
+    background:
+      linear-gradient(180deg, rgba(26, 33, 27, 0.46) 0%, rgba(26, 33, 27, 0.3) 45%, rgba(26, 33, 27, 0.12) 80%, rgba(26, 33, 27, 0) 94%),
+      linear-gradient(90deg, rgba(26, 33, 27, 0.55) 0%, rgba(26, 33, 27, 0.4) 34%, rgba(26, 33, 27, 0.12) 52%, rgba(26, 33, 27, 0) 66%);
+  }
+
+  /* No telemovel o texto ocupa a largura toda e fica por cima da casa:
+     o veu passa a cobrir tudo, mais leve em cima e em baixo. */
+  @media (max-width: 767px) {
+    .veu-hero {
+      background: linear-gradient(
+        to bottom,
+        rgba(26, 33, 27, 0.45) 0%,
+        rgba(26, 33, 27, 0.5) 45%,
+        rgba(26, 33, 27, 0.3) 100%
+      );
+    }
+  }
+
+  .sem-barra::-webkit-scrollbar {
+    display: none;
+  }
+  .sem-barra {
+    scrollbar-width: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

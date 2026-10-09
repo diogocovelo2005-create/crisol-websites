@@ -1,0 +1,1272 @@
+{
+  "modelo": "gemini-3.8-flash",
+  "atualizado": "2026-09-28T18:09:32.006Z",
+  "fotos": [
+    {
+      "id": "ATV-CAPA",
+      "assunto": "Piscina exterior com água azul refletindo a torre sineira e um pinheiro, com vista para a encosta e telhados tradicionais.",
+      "onde_esta_o_assunto": "Piscina ocupa toda a metade inferior; torre da capela e pinheiro situam-se no terço superior direito.",
+      "ponto_focal": {
+        "x": 59,
+        "y": 24
+      },
+      "zona_segura": "A torre sineira com o pinheiro adjacente e o respetivo reflexo na água da piscina.",
+      "luz": {
+        "tipo": "sol aberto direto",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 4,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 1620,
+      "mostra": "piscina exterior e torre da capela com envolvente paisagística",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#2677c7",
+        "#8aaad2",
+        "#d96a32",
+        "#485e34",
+        "#c2baa7"
+      ],
+      "desejo": 4,
+      "caminho": "marketing/fotos/capa.jpg",
+      "bytes": 161203,
+      "largura": 1620,
+      "altura": 1080
+    },
+    {
+      "id": "ATV-PISCINA-03",
+      "assunto": "Piscina exterior retangular com reflexo da torre sineira da capela, telhados de telha cerâmica e montes ao fundo.",
+      "onde_esta_o_assunto": "Piscina em primeiro plano preenchendo a metade inferior; torre sineira no terço superior direito.",
+      "ponto_focal": {
+        "x": 59,
+        "y": 24
+      },
+      "zona_segura": "Torre sineira e o seu reflexo na água da piscina.",
+      "luz": {
+        "tipo": "sol aberto direto",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 4,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 1620,
+      "mostra": "piscina exterior e torre da capela",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#2677c7",
+        "#8aaad2",
+        "#d96a32",
+        "#485e34",
+        "#c2baa7"
+      ],
+      "desejo": 4,
+      "caminho": "marketing/fotos/exterior/piscina-torre-03.jpg",
+      "bytes": 161203,
+      "largura": 1620,
+      "altura": 1080
+    },
+    {
+      "id": "ATV-PISCINA-02",
+      "assunto": "Plano aproximado da piscina com água azul clara, enquadrando ao fundo a torre da capela, árvores e céu com nuvens brancas.",
+      "onde_esta_o_assunto": "Água da piscina domina os dois terços inferiores; torre sineira e telhados ocupam o terço superior direito e central.",
+      "ponto_focal": {
+        "x": 62,
+        "y": 32
+      },
+      "zona_segura": "A torre sineira, telhado adjacente e a superfície da água da piscina.",
+      "luz": {
+        "tipo": "sol direto com céu parcialmente nublado",
+        "hora_aparente": "tarde"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 4,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 1620,
+      "mostra": "piscina exterior e torre da capela",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#468fd7",
+        "#75aadb",
+        "#d85a2b",
+        "#8d949b",
+        "#384c27"
+      ],
+      "desejo": 4,
+      "caminho": "marketing/fotos/exterior/piscina-torre-02.jpg",
+      "bytes": 199715,
+      "largura": 1620,
+      "altura": 1080
+    },
+    {
+      "id": "ATV-AEREA",
+      "assunto": "Vista panorâmica aérea do complexo da quinta, exibindo campo de ténis, piscina, capela com torre sineira, edifício principal e estrada adjacente.",
+      "onde_esta_o_assunto": "Campo de ténis no canto superior esquerdo; piscina no centro-topo; edifício principal e capela no terço inferior e centro-direito.",
+      "ponto_focal": {
+        "x": 60,
+        "y": 45
+      },
+      "zona_segura": "Edifício principal com capela no centro-direita até à piscina no piso superior.",
+      "luz": {
+        "tipo": "sol pleno de ângulo médio-alto",
+        "hora_aparente": "manhã"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 4,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 1920,
+      "mostra": "vista geral exterior da propriedade com campo de ténis, piscina, relvados, capela e edifício de alojamento",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#4d6736",
+        "#d26a35",
+        "#979ba2",
+        "#1976a5",
+        "#e5ab6b"
+      ],
+      "desejo": 4,
+      "caminho": "marketing/fotos/exterior/aerea-01.jpg",
+      "bytes": 251916,
+      "largura": 1920,
+      "altura": 760
+    },
+    {
+      "id": "ATV-CAPELA-05",
+      "assunto": "Vista em perspetiva elevada da torre sineira e dos edifícios em cantaria de granito, emoldurada em primeiro plano por arbustos floridos.",
+      "onde_esta_o_assunto": "Arbustos em primeiro plano ocupam o terço inferior; torre da capela ergue-se na metade superior ao centro.",
+      "ponto_focal": {
+        "x": 55,
+        "y": 25
+      },
+      "zona_segura": "A torre sineira central e a transição entre o corpo do edifício de cantaria e a casa.",
+      "luz": {
+        "tipo": "sol direto filtrado por névoa ligeira",
+        "hora_aparente": "tarde"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 4,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 1620,
+      "mostra": "fachadas exteriores em cantaria de granito, torre da capela e telhado com claraboias",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#41532c",
+        "#c7715b",
+        "#a29889",
+        "#dc6238",
+        "#7a8ea3"
+      ],
+      "desejo": 3,
+      "caminho": "marketing/fotos/exterior/capela-05.jpg",
+      "bytes": 241957,
+      "largura": 1620,
+      "altura": 1080
+    },
+    {
+      "id": "ATV-CAPELA-03",
+      "assunto": "Pátio interior com canteiro relvado quadrangular rodeado de pavimento em laje, de frente para fachadas em cantaria de pedra com arcos e ameias.",
+      "onde_esta_o_assunto": "Estrutura de pedra da capela e corpo anexo dominam a metade esquerda e centro; canteiro de relva no terço inferior direito.",
+      "ponto_focal": {
+        "x": 37,
+        "y": 50
+      },
+      "zona_segura": "O canteiro de relva central e a fachada de pedra com porta em arco à esquerda.",
+      "luz": {
+        "tipo": "luz diurna difusa com sombra própria nos edifícios",
+        "hora_aparente": "tarde"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 4,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 3
+      },
+      "largura_maxima_px": 1620,
+      "mostra": "pátio exterior com relvado e fachada em pedra aparelhada",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#c1b7a6",
+        "#395525",
+        "#a49f99",
+        "#717565",
+        "#3a4030"
+      ],
+      "desejo": 2,
+      "caminho": "marketing/fotos/exterior/capela-03.jpg",
+      "bytes": 238253,
+      "largura": 1620,
+      "altura": 1080
+    },
+    {
+      "id": "ATV-CAPELA-06",
+      "assunto": "Vista dos telhados da propriedade, com torre sineira e torre ameada ao fundo, enquadrados por uma sebe viva e relvado.",
+      "onde_esta_o_assunto": "Torre sineira no terço direito; telhado cor de laranja com claraboias no terço esquerdo inferior; sebe verde divide o terço inferior horizontal.",
+      "ponto_focal": {
+        "x": 81,
+        "y": 42
+      },
+      "zona_segura": "A torre sineira à direita e a torre ameada central com os telhados.",
+      "luz": {
+        "tipo": "luz natural direta",
+        "hora_aparente": "manhã"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 4,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 1620,
+      "mostra": "exterior da capela com torre sineira, telhado com claraboias e jardim com relvado",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#c8552b",
+        "#24421b",
+        "#829cb8",
+        "#757168"
+      ],
+      "desejo": 3,
+      "caminho": "marketing/fotos/exterior/capela-06.jpg",
+      "bytes": 202187,
+      "largura": 1620,
+      "altura": 1080
+    },
+    {
+      "id": "ATV-CAPELA-INT",
+      "assunto": "Interior de capela com altares em pedra, imagens religiosas, bancos corridos de madeira e iluminação colorida refletida nas paredes.",
+      "onde_esta_o_assunto": "Altar principal no terço inferior esquerdo; bancos no primeiro plano à direita; arcos e nichos ao longo da parede direita e ao fundo.",
+      "ponto_focal": {
+        "x": 30,
+        "y": 42
+      },
+      "zona_segura": "O altar com a estátua e os bancos em primeiro plano.",
+      "luz": {
+        "tipo": "luz mista artificial com realces coloridos de vitrais",
+        "hora_aparente": "indeterminada"
+      },
+      "qualidade": {
+        "nitidez": 2,
+        "ruido": 2,
+        "exposicao": "correta",
+        "artefactos": "baixa resolução e compressão visível",
+        "nota": 2
+      },
+      "largura_maxima_px": 720,
+      "mostra": "interior da capela com altar, imagens religiosas e bancos de madeira",
+      "pessoas": false,
+      "texto_ou_marcas": "IHS no relevo do altar",
+      "cores_dominantes": [
+        "#d9bfae",
+        "#5e3a29",
+        "#876251",
+        "#975b7c"
+      ],
+      "desejo": 2,
+      "caminho": "marketing/fotos/interior/capela-interior-01.jpg",
+      "bytes": 48750,
+      "largura": 720,
+      "altura": 480
+    },
+    {
+      "id": "ATV-CAPELA-VITRAIS",
+      "assunto": "Janela em arco com vidros de tom alaranjado mostrando reflexos ou árvores no exterior, ladeada por duas consolas de madeira e uma jarra de flores.",
+      "onde_esta_o_assunto": "Janela em arco no terço central vertical; consolas de madeira nos cantos inferiores esquerdo e direito.",
+      "ponto_focal": {
+        "x": 51,
+        "y": 42
+      },
+      "zona_segura": "A janela central em arco completa.",
+      "luz": {
+        "tipo": "luz natural através de vidro colorido alaranjado",
+        "hora_aparente": "fim de tarde"
+      },
+      "qualidade": {
+        "nitidez": 2,
+        "ruido": 2,
+        "exposicao": "correta",
+        "artefactos": "grão e compressão jpeg evidentes",
+        "nota": 2
+      },
+      "largura_maxima_px": 480,
+      "mostra": "interior com janela de caixilharia em arco, mesa de apoio e jarra de flores",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#d45706",
+        "#e5d8d0",
+        "#6f2b0f",
+        "#6a7d97"
+      ],
+      "desejo": 2,
+      "caminho": "marketing/fotos/interior/capela-vitrais-01.jpg",
+      "bytes": 35373,
+      "largura": 480,
+      "altura": 720
+    },
+    {
+      "id": "ATV-ESTRADA",
+      "assunto": "Fachada exterior do edifício em cantaria de granito com portão de ferro vermelho e escadaria, vista a partir da berma da estrada de alcatrão.",
+      "onde_esta_o_assunto": "Estrada no terço inferior horizontal; muro com portão e pilares no terço médio; fachada e escadaria exterior no centro e terço superior.",
+      "ponto_focal": {
+        "x": 37,
+        "y": 55
+      },
+      "zona_segura": "O portão de ferro vermelho, os pilares ameados e a escadaria de pedra.",
+      "luz": {
+        "tipo": "luz de dia difusa / céu nublado",
+        "hora_aparente": "indeterminada"
+      },
+      "qualidade": {
+        "nitidez": 2,
+        "ruido": 3,
+        "exposicao": "correta",
+        "artefactos": "baixa resolução e compressão evidente",
+        "nota": 2
+      },
+      "largura_maxima_px": 720,
+      "mostra": "fachada exterior da casa e da capela em granito, portão de acesso e estrada",
+      "pessoas": false,
+      "texto_ou_marcas": "marcador de estrada 'B' visível na berma à esquerda",
+      "cores_dominantes": [
+        "#8b8e8f",
+        "#bbafa2",
+        "#545455",
+        "#6b2f2d"
+      ],
+      "desejo": 2,
+      "caminho": "marketing/fotos/exterior/estrada-en222-01.jpg",
+      "bytes": 68078,
+      "largura": 720,
+      "altura": 480
+    },
+    {
+      "id": "ATV-GLICINIAS-01",
+      "assunto": "Caminho pedonal em calçada portuguesa ladeado por um muro alto de cantaria à direita e uma pérgula com ramagens à esquerda.",
+      "onde_esta_o_assunto": "Piso de calçada ocupa o terço inferior; muro de pedra alto ocupa a metade direita; ramagens e pilares da pérgula à esquerda e topo.",
+      "ponto_focal": {
+        "x": 48,
+        "y": 60
+      },
+      "zona_segura": "O caminho em calçada e o alinhamento do muro com a ramagem superior.",
+      "luz": {
+        "tipo": "luz natural filtrada pelas folhas com zonas de sombra",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 4,
+        "exposicao": "contraste excessivo",
+        "artefactos": "nenhum",
+        "nota": 3
+      },
+      "largura_maxima_px": 1620,
+      "mostra": "caminho exterior em calçada de pedra com pérgula e muro de granito com entradas",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#858074",
+        "#385718",
+        "#4d463b",
+        "#a49f96"
+      ],
+      "desejo": 3,
+      "caminho": "marketing/fotos/exterior/glicinias-alameda-01.jpg",
+      "bytes": 296087,
+      "largura": 1620,
+      "altura": 1080
+    },
+    {
+      "id": "ATV-GLICINIAS-02",
+      "assunto": "Caminho exterior em calçada de cubos de pedra sob pérgula de vegetação densa, conduzindo a uma escadaria de granito ao fundo.",
+      "onde_esta_o_assunto": "Caminho no terço inferior e centro; muro de pedra à esquerda; pilares e copa vegetal densa ocupando a metade direita e topo.",
+      "ponto_focal": {
+        "x": 43,
+        "y": 66
+      },
+      "zona_segura": "O corredor em calçada desde o primeiro plano até às escadas no fundo.",
+      "luz": {
+        "tipo": "luz natural suave na sombra",
+        "hora_aparente": "manhã"
+      },
+      "qualidade": {
+        "nitidez": 2,
+        "ruido": 2,
+        "exposicao": "correta",
+        "artefactos": "baixa resolução e compressão",
+        "nota": 2
+      },
+      "largura_maxima_px": 720,
+      "mostra": "alameda exterior em calçada com pérgula de glicínias, muro de granito e escadaria",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#2a441e",
+        "#979389",
+        "#5f5c53",
+        "#c2baa8"
+      ],
+      "desejo": 2,
+      "caminho": "marketing/fotos/exterior/glicinias-alameda-02.jpg",
+      "bytes": 73837,
+      "largura": 720,
+      "altura": 480
+    },
+    {
+      "id": "ATV-TANQUE",
+      "assunto": "Tanque de pedra com água límpida e bica a correr no primeiro plano, rodeado por árvores e vegetação sob céu limpo.",
+      "onde_esta_o_assunto": "Bica metálica no canto superior direito; superfície da água ocupa a metade inferior; árvores e céu na metade superior.",
+      "ponto_focal": {
+        "x": 73,
+        "y": 62
+      },
+      "zona_segura": "O jacto de água a cair no tanque e o bordo de pedra circundante.",
+      "luz": {
+        "tipo": "sol direto e duro",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 3,
+        "ruido": 4,
+        "exposicao": "sobreexposta",
+        "artefactos": "céu rebentado sem detalhe, aberração cromática ligeira nos ramos",
+        "nota": 3
+      },
+      "largura_maxima_px": 1200,
+      "mostra": "tanque exterior em pedra",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#4d5c39",
+        "#889868",
+        "#d9e4eb",
+        "#625e51"
+      ],
+      "desejo": 3,
+      "caminho": "marketing/fotos/exterior/tanque-nascente-01.jpg",
+      "bytes": 338323,
+      "largura": 1620,
+      "altura": 1080
+    },
+    {
+      "id": "ATV-VISTA-DOURO",
+      "assunto": "Vista panorâmica sobre o rio Douro encaixado entre encostas arborizadas, com cabos elétricos a cruzar o enquadramento.",
+      "onde_esta_o_assunto": "O rio atravessa horizontalmente o terço médio; encosta no terço superior; copas de árvores e cabos no primeiro plano.",
+      "ponto_focal": {
+        "x": 48,
+        "y": 57
+      },
+      "zona_segura": "O troço visível do rio Douro.",
+      "luz": {
+        "tipo": "luz natural diurna difusa",
+        "hora_aparente": "tarde"
+      },
+      "qualidade": {
+        "nitidez": 2,
+        "ruido": 3,
+        "exposicao": "correta",
+        "artefactos": "falta de definição geral, cabos elétricos a meio da imagem",
+        "nota": 2
+      },
+      "largura_maxima_px": 800,
+      "mostra": "vista para o rio Douro e encostas circundantes",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#4d6439",
+        "#6a8747",
+        "#62787d",
+        "#3b4a2e"
+      ],
+      "desejo": 2,
+      "caminho": "marketing/fotos/exterior/vista-douro-01.jpg",
+      "bytes": 282170,
+      "largura": 1620,
+      "altura": 1080
+    },
+    {
+      "id": "ATV-JARDIM-CAPELA",
+      "assunto": "Vista em plano picado mostrando a fachada e torre sineira de uma capela em pedra, um relvado amplo com conífera e estrada ao lado.",
+      "onde_esta_o_assunto": "Capela em pedra ocupa a metade direita; pinheiro alto e relvado no terço esquerdo e centro; estrada no canto inferior esquerdo.",
+      "ponto_focal": {
+        "x": 80,
+        "y": 55
+      },
+      "zona_segura": "A torre e pórtico da capela à direita e a árvore grande com o relvado.",
+      "luz": {
+        "tipo": "luz natural suave sem sombras duras",
+        "hora_aparente": "manhã"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 4,
+        "exposicao": "correta",
+        "artefactos": "céu ligeiramente esbranquiçado",
+        "nota": 4
+      },
+      "largura_maxima_px": 1620,
+      "mostra": "exterior da capela e jardim relvado",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#384c2f",
+        "#9aa097",
+        "#697943",
+        "#7b7f7c"
+      ],
+      "desejo": 4,
+      "caminho": "marketing/fotos/exterior/jardim-capela-01.jpg",
+      "bytes": 277355,
+      "largura": 1620,
+      "altura": 1080
+    },
+    {
+      "id": "ATV-AGUAS-FURTADAS",
+      "assunto": "Quarto mansardado com teto inclinado de madeira, claraboias com estores pretos, bancada integrada com cadeira e televisão pequena.",
+      "onde_esta_o_assunto": "Janela e claraboias no centro superior; bancada e cadeira no terço inferior ao centro; cama visível no canto inferior direito.",
+      "ponto_focal": {
+        "x": 51,
+        "y": 64
+      },
+      "zona_segura": "A bancada de trabalho com cadeira e o conjunto de claraboias e janelas.",
+      "luz": {
+        "tipo": "luz de contra-luz pelas janelas",
+        "hora_aparente": "tarde"
+      },
+      "qualidade": {
+        "nitidez": 3,
+        "ruido": 3,
+        "exposicao": "contraste excessivo",
+        "artefactos": "altas luzes estouradas nas janelas e vinheta nas bordas",
+        "nota": 3
+      },
+      "largura_maxima_px": 1200,
+      "mostra": "quarto nas águas-furtadas com zona de trabalho",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#6c3c24",
+        "#976742",
+        "#d9d7d2",
+        "#262529"
+      ],
+      "desejo": 3,
+      "caminho": "marketing/fotos/interior/quarto-aguas-furtadas-02.jpg",
+      "bytes": 130285,
+      "largura": 1620,
+      "altura": 1080
+    },
+    {
+      "id": "ATV-AGUAS-FURTADAS-03",
+      "assunto": "Plano aproximado das janelas e claraboias do quarto mansardado, com cortinados corridos, televisão antiga sobre a bancada e espaldar de cadeira.",
+      "onde_esta_o_assunto": "Janelas e cortinados ocupam o centro; televisão no terço esquerdo sobre o móvel; topo da cadeira ao centro inferior.",
+      "ponto_focal": {
+        "x": 51,
+        "y": 51
+      },
+      "zona_segura": "A abertura central da janela com os cortinados e o topo do móvel.",
+      "luz": {
+        "tipo": "contra-luz forte vinda do exterior",
+        "hora_aparente": "indeterminada"
+      },
+      "qualidade": {
+        "nitidez": 2,
+        "ruido": 3,
+        "exposicao": "contraste excessivo",
+        "artefactos": "desfocagem geral, corte visual acidental à direita por ombreira da porta",
+        "nota": 2
+      },
+      "largura_maxima_px": 800,
+      "mostra": "pormenor de janela e móvel em quarto mansardado",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#95867a",
+        "#382017",
+        "#1e1d23",
+        "#ba763f"
+      ],
+      "desejo": 1,
+      "caminho": "marketing/fotos/interior/quarto-aguas-furtadas-03.jpg",
+      "bytes": 105470,
+      "largura": 1620,
+      "altura": 1080
+    },
+    {
+      "id": "ATV-SUITE",
+      "assunto": "Quarto com paredes em alvenaria de pedra pintada de branco, cama de casal com roupão dobrado, mesa de apoio em madeira e duas janelas.",
+      "onde_esta_o_assunto": "Cama no terço inferior em primeiro plano; mesa de apoio e parede branca no centro; janelas com cortinados nos terços esquerdo e direito.",
+      "ponto_focal": {
+        "x": 35,
+        "y": 85
+      },
+      "zona_segura": "A cama de casal no primeiro plano e a mesa com a janela à direita.",
+      "luz": {
+        "tipo": "luz natural suave vinda das janelas",
+        "hora_aparente": "manhã"
+      },
+      "qualidade": {
+        "nitidez": 3,
+        "ruido": 4,
+        "exposicao": "correta",
+        "artefactos": "exterior das janelas sobreexposto sem detalhe",
+        "nota": 3
+      },
+      "largura_maxima_px": 1200,
+      "mostra": "quarto de casal com paredes em pedra pintada",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#e5ded8",
+        "#7d4629",
+        "#b69f8c",
+        "#d0b69e"
+      ],
+      "desejo": 3,
+      "caminho": "marketing/fotos/interior/quarto-casal-01.jpg",
+      "bytes": 148825,
+      "largura": 1620,
+      "altura": 1080
+    },
+    {
+      "id": "ATV-TWIN",
+      "assunto": "Quarto com duas camas individuais com colchas em tons de laranja e castanho, sob teto de madeira inclinado e paredes em alvenaria de granito.",
+      "onde_esta_o_assunto": "As duas camas ocupam a metade inferior e central; a parede de pedra e a cortina estão no centro-esquerda; o forro de madeira ocupa o terço superior.",
+      "ponto_focal": {
+        "x": 55,
+        "y": 62
+      },
+      "zona_segura": "Ambas as camas individuais com as colchas e toalhas dobradas; não cortar a cortina nem a transição da parede de pedra para o teto de madeira.",
+      "luz": {
+        "tipo": "interior com luz artificial quente e difusa",
+        "hora_aparente": "indeterminada"
+      },
+      "qualidade": {
+        "nitidez": 3,
+        "ruido": 3,
+        "exposicao": "correta",
+        "artefactos": "grão fino visível e ligeira perda de detalhe nas sombras",
+        "nota": 3
+      },
+      "largura_maxima_px": 720,
+      "mostra": "quarto twin com paredes em granito e teto em madeira",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#8a471f",
+        "#b4611e",
+        "#685b46",
+        "#3d2b1f"
+      ],
+      "desejo": 2,
+      "caminho": "marketing/fotos/interior/quarto-twin-06.jpg",
+      "bytes": 90389,
+      "largura": 720,
+      "altura": 1080
+    },
+    {
+      "id": "ATV-APARTAMENTO",
+      "assunto": "Área de refeições com mesa redonda e cadeiras estofadas a verde, salamandra a lenha e kitchenette ao fundo encostada à parede de pedra.",
+      "onde_esta_o_assunto": "Mesa redonda e cadeiras no primeiro plano central; salamandra preta à esquerda; kitchenette ao fundo no centro; porta de madeira e extintor à direita.",
+      "ponto_focal": {
+        "x": 51,
+        "y": 72
+      },
+      "zona_segura": "Conjunto da mesa de jantar com cadeiras, salamandra e a zona de bancada ao fundo.",
+      "luz": {
+        "tipo": "interior com luz mista e recurso a flash frontal",
+        "hora_aparente": "indeterminada"
+      },
+      "qualidade": {
+        "nitidez": 3,
+        "ruido": 3,
+        "exposicao": "correta",
+        "artefactos": "fio elétrico pendurado no teto sem candeeiro concluído; reflexo ligeiro de flash",
+        "nota": 2
+      },
+      "largura_maxima_px": 1200,
+      "mostra": "kitchenette e sala de refeições do apartamento",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#a17954",
+        "#ffffff",
+        "#4ea598",
+        "#231f20"
+      ],
+      "desejo": 2,
+      "caminho": "marketing/fotos/interior/anexo-kitchenette-01.jpg",
+      "bytes": 143785,
+      "largura": 1620,
+      "altura": 1080
+    },
+    {
+      "id": "ATV-SALAO-JANTAR",
+      "assunto": "Salão de refeições amplo com parede de blocos de granito, mesa comprida de madeira com várias cadeiras e porta exterior aberta ao fundo.",
+      "onde_esta_o_assunto": "Mesa de jantar comprida atravessa o quadrante inferior direito; parede rústica de cantaria ocupa o fundo e a esquerda; porta aberta no terço esquerdo.",
+      "ponto_focal": {
+        "x": 55,
+        "y": 75
+      },
+      "zona_segura": "A linha de mesa com cadeiras e a parede de granito ao centro.",
+      "luz": {
+        "tipo": "luz natural forte a entrar pela porta aberta e iluminação interior difusa",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 2,
+        "ruido": 2,
+        "exposicao": "contraste excessivo",
+        "artefactos": "sobreexposição forte na porta exterior (estourada); baixa resolução nativa",
+        "nota": 2
+      },
+      "largura_maxima_px": 720,
+      "mostra": "salão de refeições com mesa para grupos",
+      "pessoas": false,
+      "texto_ou_marcas": "placa de saída de emergência ilegível sobre a porta",
+      "cores_dominantes": [
+        "#8e7356",
+        "#ffffff",
+        "#7a462b",
+        "#b2977b"
+      ],
+      "desejo": 2,
+      "caminho": "marketing/fotos/interior/salao-jantar-01.jpg",
+      "bytes": 49128,
+      "largura": 720,
+      "altura": 480
+    },
+    {
+      "id": "ATV-BILHAR",
+      "assunto": "Mesa de bilhar com pano vermelho e acessórios, instalada numa sala com chão de tijoleira, parede de cantaria e duas janelas.",
+      "onde_esta_o_assunto": "Mesa de bilhar domina a metade inferior direita; parede de granito com quadro no terço superior esquerdo; poltrona clara à esquerda.",
+      "ponto_focal": {
+        "x": 68,
+        "y": 66
+      },
+      "zona_segura": "Tampo completo da mesa de bilhar com os tacos e bolas, e a parede de granito com o quadro.",
+      "luz": {
+        "tipo": "luz natural vinda das janelas combinada com iluminação de teto",
+        "hora_aparente": "tarde"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 4,
+        "exposicao": "correta",
+        "artefactos": "ligeira distorção de grande angular nos cantos",
+        "nota": 3
+      },
+      "largura_maxima_px": 1620,
+      "mostra": "sala de jogos com mesa de bilhar",
+      "pessoas": false,
+      "texto_ou_marcas": "sinalização 'SAÍDA' verde sobre a porta",
+      "cores_dominantes": [
+        "#b22b2f",
+        "#8f765b",
+        "#9c5a3a",
+        "#dfd8cd"
+      ],
+      "desejo": 3,
+      "caminho": "marketing/fotos/interior/bilhar-01.jpg",
+      "bytes": 155768,
+      "largura": 1620,
+      "altura": 1080
+    },
+    {
+      "id": "ATV-SALA-LAREIRA",
+      "assunto": "Sala de estar com lareira de canto, televisor sobre móvel baixo, mesa de centro em madeira sobre tapete azul e sofá de canto.",
+      "onde_esta_o_assunto": "Mesa de centro e tapete no quadrante inferior central; lareira e televisão no terço médio direito; janela com cortinas à esquerda.",
+      "ponto_focal": {
+        "x": 53,
+        "y": 57
+      },
+      "zona_segura": "Lareira de canto, móvel com televisão e a mesa de centro sobre o tapete.",
+      "luz": {
+        "tipo": "interior mal iluminada, contra-luz fraca da janela",
+        "hora_aparente": "tarde"
+      },
+      "qualidade": {
+        "nitidez": 3,
+        "ruido": 2,
+        "exposicao": "subexposta",
+        "artefactos": "imagem globalmente escura com sombras empastadas",
+        "nota": 2
+      },
+      "largura_maxima_px": 1200,
+      "mostra": "sala de estar com lareira e televisão",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#3b362f",
+        "#1c2b4a",
+        "#84654b",
+        "#6a5241"
+      ],
+      "desejo": 2,
+      "caminho": "marketing/fotos/interior/sala-lareira-01.jpg",
+      "bytes": 119073,
+      "largura": 1620,
+      "altura": 1080
+    },
+    {
+      "id": "ATV-CORREDOR-PEDRA",
+      "assunto": "Passadiço interior elevado em madeira com guarda-corpos e passadeira, ladeado por pilares de granito e escada de madeira à esquerda.",
+      "onde_esta_o_assunto": "Passadiço e tapete estendem-se no terço central inferior; escadas ocupam o terço esquerdo; paredes de pedra e claraboias no topo e fundo.",
+      "ponto_focal": {
+        "x": 51,
+        "y": 68
+      },
+      "zona_segura": "Eixo central do passadiço em madeira com a passadeira e os pilares de pedra adjacentes.",
+      "luz": {
+        "tipo": "luz natural zenital através de claraboias",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 3,
+        "ruido": 3,
+        "exposicao": "correta",
+        "artefactos": "leve perda de nitidez nas áreas periféricas",
+        "nota": 3
+      },
+      "largura_maxima_px": 1620,
+      "mostra": "corredor e mezanino com escadas e paredes de cantaria",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#977a5a",
+        "#8c4e28",
+        "#d1cbbe",
+        "#473b33"
+      ],
+      "desejo": 3,
+      "caminho": "marketing/fotos/interior/corredor-pedra-01.jpg",
+      "bytes": 174587,
+      "largura": 1620,
+      "altura": 1080
+    },
+    {
+      "id": "ATV-MESA-POSTA",
+      "assunto": "Mesa de jantar comprida com toalha branca, posta com pratos, copos de pé, taça com cerejas e uma terrina de porcelana, num espaço com paredes de pedra de granito.",
+      "onde_esta_o_assunto": "Mesa em primeiro plano ocupando a metade inferior e centro; terrina no canto inferior direito; taça de cerejas e copos ao centro.",
+      "ponto_focal": {
+        "x": 68,
+        "y": 66
+      },
+      "zona_segura": "A terrina branca, os copos de pé e a taça de cerejas sobre a mesa.",
+      "luz": {
+        "tipo": "luz de teto quente combinada com luz difusa de abertura ao fundo",
+        "hora_aparente": "indeterminada"
+      },
+      "qualidade": {
+        "nitidez": 3,
+        "ruido": 3,
+        "exposicao": "correta",
+        "artefactos": "ligeira perda de definição e granulação suave nas sombras",
+        "nota": 3
+      },
+      "largura_maxima_px": 1200,
+      "mostra": "sala de refeições com mesa posta e paredes de granito",
+      "pessoas": false,
+      "texto_ou_marcas": "Monograma ou lettering ilegível gravado na terrina de porcelana",
+      "cores_dominantes": [
+        "#E2DDD9",
+        "#655347",
+        "#A86840",
+        "#2B1B15"
+      ],
+      "desejo": 3,
+      "caminho": "marketing/fotos/interior/mesa-posta-01.jpg",
+      "bytes": 137329,
+      "largura": 1620,
+      "altura": 1080
+    },
+    {
+      "id": "ATV-QUARTO-PEDRA",
+      "assunto": "Canto de uma sala com paredes de granito exposto, fresta vertical, consola estreita de madeira com pequenos frascos e mesa de centro em primeiro plano.",
+      "onde_esta_o_assunto": "Paredes de pedra na metade esquerda e centro; consola encostada à parede no terço inferior esquerdo; mesa de centro cortada na base.",
+      "ponto_focal": {
+        "x": 40,
+        "y": 65
+      },
+      "zona_segura": "A fresta de pedra na parede e a consola de madeira por baixo.",
+      "luz": {
+        "tipo": "luz natural forte lateral vinda da porta/janela aberta à esquerda",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 3,
+        "ruido": 3,
+        "exposicao": "contraste excessivo",
+        "artefactos": "estouros de luz na porta exterior à esquerda; mesa de centro cortada sem critério na base",
+        "nota": 2
+      },
+      "largura_maxima_px": 1080,
+      "mostra": "canto de sala ou quarto com chão de madeira, fresta e paredes de granito",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#876F5E",
+        "#BD9B80",
+        "#FFFFFF",
+        "#7B3B1B"
+      ],
+      "desejo": 2,
+      "caminho": "marketing/fotos/interior/quarto-pedra-01.jpg",
+      "bytes": 139390,
+      "largura": 1620,
+      "altura": 1080
+    },
+    {
+      "id": "ATV-TELHADO-CLARABOIAS",
+      "assunto": "Cobertura de telha cerâmica cor de laranja com mansardas/claraboias modernas metálicas com caixilharia envidraçada, vista de plano elevado.",
+      "onde_esta_o_assunto": "Telhado inclinado ocupa quase todo o enquadramento; mansardas de metal cinzento dispostas em diagonal no centro e terço superior esquerdo.",
+      "ponto_focal": {
+        "x": 56,
+        "y": 46
+      },
+      "zona_segura": "As mansardas de vidro e telhado cerâmico no terço central.",
+      "luz": {
+        "tipo": "sol direto ligeiramente difuso",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 4,
+        "exposicao": "correta",
+        "artefactos": "corte com muro de pedra em primeiro plano no canto inferior direito",
+        "nota": 3
+      },
+      "largura_maxima_px": 1620,
+      "mostra": "cobertura do edifício com telhado cerâmico e mansardas com janelas",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#D96839",
+        "#E19B68",
+        "#484E59",
+        "#8AA7C6"
+      ],
+      "desejo": 2,
+      "caminho": "marketing/fotos/exterior/telhado-claraboias-01.jpg",
+      "bytes": 223784,
+      "largura": 1620,
+      "altura": 1080
+    },
+    {
+      "id": "ATV-PISCINA-01",
+      "assunto": "Piscina exterior em primeiro plano acompanhada por relvado, com vista para telhados com mansardas, torre sineira de pedra e colinas ao fundo.",
+      "onde_esta_o_assunto": "Piscina no terço inferior esquerdo; relvado na metade inferior direita; torre sineira no terço superior direito.",
+      "ponto_focal": {
+        "x": 71,
+        "y": 38
+      },
+      "zona_segura": "A torre sineira, o relvado e a borda da piscina.",
+      "luz": {
+        "tipo": "sol aberto com céu ligeiramente nublado",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 4,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 4
+      },
+      "largura_maxima_px": 1620,
+      "mostra": "piscina exterior, jardim relvado, torre sineira e vista para a serra",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#7A8D4F",
+        "#71A2C3",
+        "#C75E38",
+        "#9D978C"
+      ],
+      "desejo": 4,
+      "caminho": "marketing/fotos/exterior/piscina-torre-01.jpg",
+      "bytes": 218686,
+      "largura": 1620,
+      "altura": 1080
+    },
+    {
+      "id": "ATV-PATIO-TORRE",
+      "assunto": "Pátio interior com relvado, delimitado por ala de edifício cor ocre com aparelhos de ar condicionado e fachada de cantaria com torre sineira ao fundo.",
+      "onde_esta_o_assunto": "Edifício pintado a ocre no terço esquerdo; fachada de pedra ao centro e torre sineira no topo central; relvado na base direita.",
+      "ponto_focal": {
+        "x": 62,
+        "y": 10
+      },
+      "zona_segura": "A fachada de cantaria trabalhada e a base da torre sineira.",
+      "luz": {
+        "tipo": "sol alto com sombras duras projetadas",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 4,
+        "exposicao": "correta",
+        "artefactos": "aparelhos exteriores de ar condicionado visíveis na fachada",
+        "nota": 3
+      },
+      "largura_maxima_px": 1620,
+      "mostra": "pátio exterior com relvado, fachadas dos edifícios e torre de pedra",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#E2A97B",
+        "#A59C90",
+        "#627838",
+        "#3A3836"
+      ],
+      "desejo": 3,
+      "caminho": "marketing/fotos/exterior/patio-torre-01.jpg",
+      "bytes": 169915,
+      "largura": 1620,
+      "altura": 1080
+    },
+    {
+      "id": "ATV-TELHADO-AMEIAS",
+      "assunto": "Vista exterior de varanda em primeiro plano sobre o edifício com telhado de mansardas, torre ameiada e torre sineira de pedra.",
+      "onde_esta_o_assunto": "Mesa e corrimão de varanda no terço inferior esquerdo; fachada e telhado ao centro; torre sineira no terço superior direito.",
+      "ponto_focal": {
+        "x": 82,
+        "y": 23
+      },
+      "zona_segura": "As duas torres históricas em cantaria e o corpo principal do edifício.",
+      "luz": {
+        "tipo": "sol pleno e direto",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 4,
+        "ruido": 4,
+        "exposicao": "correta",
+        "artefactos": "gradeamento e escadas em primeiro plano à direita obstruem parcialmente a cena",
+        "nota": 3
+      },
+      "largura_maxima_px": 1620,
+      "mostra": "varanda com mesa, fachadas exteriores, telhado com mansardas e torres em cantaria",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#DE9668",
+        "#CE5E35",
+        "#97938D",
+        "#7595BF"
+      ],
+      "desejo": 3,
+      "caminho": "marketing/fotos/exterior/telhado-ameias-01.jpg",
+      "bytes": 172470,
+      "largura": 1620,
+      "altura": 1080
+    },
+    {
+      "id": "ATV-TWIN-02",
+      "assunto": "Quarto com duas camas individuais com colchas florais e cabeceiras em madeira, candeeiro de mesa aceso e janela ao fundo com cortinas compridas.",
+      "onde_esta_o_assunto": "Camas na metade inferior e terço central; janela no terço direito superior; parede branca no canto superior esquerdo.",
+      "ponto_focal": {
+        "x": 34,
+        "y": 64
+      },
+      "zona_segura": "As duas camas individuais e o candeeiro aceso entre elas.",
+      "luz": {
+        "tipo": "luz de candeeiro combinada com luz natural suave de janela",
+        "hora_aparente": "indeterminada"
+      },
+      "qualidade": {
+        "nitidez": 3,
+        "ruido": 4,
+        "exposicao": "correta",
+        "artefactos": "nenhum",
+        "nota": 3
+      },
+      "largura_maxima_px": 1620,
+      "mostra": "quarto twin",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#e5ded2",
+        "#5a2b16",
+        "#ff8a24",
+        "#978c7c"
+      ],
+      "desejo": 2,
+      "caminho": "marketing/fotos/interior/quarto-twin-02.jpg",
+      "bytes": 102996,
+      "largura": 1620,
+      "altura": 1080
+    },
+    {
+      "id": "ATV-TWIN-07",
+      "assunto": "Quarto com duas camas individuais com toalhas dobradas por cima, roupeiro embutido em madeira e porta aberta para divisão contígua.",
+      "onde_esta_o_assunto": "Camas em primeiro plano na metade inferior; porta aberta no terço central e roupeiro à direita.",
+      "ponto_focal": {
+        "x": 64,
+        "y": 60
+      },
+      "zona_segura": "Cama central com toalhas, porta aberta e roupeiro em madeira.",
+      "luz": {
+        "tipo": "candeeiro de parede interior",
+        "hora_aparente": "indeterminada"
+      },
+      "qualidade": {
+        "nitidez": 2,
+        "ruido": 3,
+        "exposicao": "correta",
+        "artefactos": "grão visível e ligeira falta de definição",
+        "nota": 2
+      },
+      "largura_maxima_px": 720,
+      "mostra": "quarto twin",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#d98947",
+        "#aa4f39",
+        "#c7b69c",
+        "#8e5627"
+      ],
+      "desejo": 2,
+      "caminho": "marketing/fotos/interior/quarto-twin-07.jpg",
+      "bytes": 77976,
+      "largura": 720,
+      "altura": 1080
+    },
+    {
+      "id": "ATV-CAMINHO-CALCADA",
+      "assunto": "Caminho em calçada portuguesa ladeado por muros de granito e pérgula com trepadeira, com edifícios de telhado tradicional e terraço ao fundo.",
+      "onde_esta_o_assunto": "Caminho na metade inferior esquerda; edifícios no terço superior; torre de cantaria em primeiro plano à direita.",
+      "ponto_focal": {
+        "x": 42,
+        "y": 55
+      },
+      "zona_segura": "O caminho em calçada com a vegetação e a vista dos edifícios ao centro.",
+      "luz": {
+        "tipo": "sol direto ligeiramente difuso",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 2,
+        "ruido": 2,
+        "exposicao": "sobreexposta",
+        "artefactos": "céu rebentado e compressão visível",
+        "nota": 2
+      },
+      "largura_maxima_px": 720,
+      "mostra": "caminho exterior em calçada e fachadas de granito",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#b8b5ab",
+        "#51643c",
+        "#c87550",
+        "#89857d"
+      ],
+      "desejo": 2,
+      "caminho": "marketing/fotos/exterior/caminho-calcada-01.jpg",
+      "bytes": 63517,
+      "largura": 720,
+      "altura": 480
+    },
+    {
+      "id": "ATV-JARDIM-CAPELA-03",
+      "assunto": "Amplo relvado exterior com capela de pedra e torre sineira ao fundo, acompanhada por árvores de grande porte.",
+      "onde_esta_o_assunto": "Relvado em primeiro plano ocupando a metade inferior; capela e torre sineira ao centro e terço superior; conífera alta à direita.",
+      "ponto_focal": {
+        "x": 54,
+        "y": 32
+      },
+      "zona_segura": "Fachada e torre sineira da capela com o relvado em frente.",
+      "luz": {
+        "tipo": "luz natural diurna difusa com sombras suaves",
+        "hora_aparente": "tarde"
+      },
+      "qualidade": {
+        "nitidez": 2,
+        "ruido": 2,
+        "exposicao": "correta",
+        "artefactos": "baixa resolução e céu sobreexposto",
+        "nota": 2
+      },
+      "largura_maxima_px": 720,
+      "mostra": "jardim com relvado e capela",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#6f8f4a",
+        "#8e8b82",
+        "#2c3826",
+        "#c8c9c0"
+      ],
+      "desejo": 3,
+      "caminho": "marketing/fotos/exterior/jardim-capela-03.jpg",
+      "bytes": 60726,
+      "largura": 720,
+      "altura": 480
+    },
+    {
+      "id": "ATV-TANQUE-03",
+      "assunto": "Tanque em pedra de granito com água e bica a correr em primeiro plano, com árvore e vegetação em redor.",
+      "onde_esta_o_assunto": "Superfície da água ocupa o centro e esquerda; bica e jato de água no terço direito; árvore no centro superior.",
+      "ponto_focal": {
+        "x": 73,
+        "y": 55
+      },
+      "zona_segura": "Bica com o jato de água e a superfície do tanque em pedra.",
+      "luz": {
+        "tipo": "sol direto forte",
+        "hora_aparente": "meio-dia"
+      },
+      "qualidade": {
+        "nitidez": 3,
+        "ruido": 3,
+        "exposicao": "contraste excessivo",
+        "artefactos": "céu parcialmente sobreexposto",
+        "nota": 3
+      },
+      "largura_maxima_px": 720,
+      "mostra": "tanque de pedra exterior",
+      "pessoas": false,
+      "texto_ou_marcas": "nenhum",
+      "cores_dominantes": [
+        "#51643c",
+        "#64755a",
+        "#979383",
+        "#2a2e22"
+      ],
+      "desejo": 3,
+      "caminho": "marketing/fotos/exterior/tanque-nascente-03.jpg",
+      "bytes": 81561,
+      "largura": 720,
+      "altura": 480
+    }
+  ]
+}

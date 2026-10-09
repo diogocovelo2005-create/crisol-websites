@@ -1,0 +1,38 @@
+[
+  {
+    "letra": "a",
+    "nome": "Editorial Escuro",
+    "ideia": "A casa é apresentada como um segredo imponente e cinematográfico no Douro. Com um tom editorial de revista de luxo, usa o negrume e o contraste dramático para criar uma narrativa de descoberta ao longo da história da casa.",
+    "composicao": "Secções alternam drasticamente entre fundos escuros de ecrã inteiro (usando as melhores fotos) e blocos cor de pergaminho para leitura. As fotografias de menor resolução nunca preenchem colunas: são usadas como 'polaroids' soltas ou quadros com margens assimétricas, sobrepostas ligeiramente aos cantos das caixas de texto. Não há grelhas simétricas; o texto avança em blocos desalinhados (ora à esquerda, ora à direita) para dar um ritmo de diário.",
+    "primeiro_ecra": "Fotografia de ecrã escurecida a servir de fundo total. A tipografia entra de forma dramática, centrada e a branco, com o botão de reserva elegante na base, obrigando o utilizador a fazer scroll para trazer a luz (secção seguinte).",
+    "tipografia": "Cinzel (títulos, dramática e clássica com serifas afiadas) e Lora (corpo de texto, elegante e de leitura fluida).",
+    "cor": "Fundo escuro principal em #1C1A18, fundos de texto em #F4F1EB (pergaminho/creme), acentos em #C75E38 (terracota roubado aos telhados).",
+    "movimento": "Parallax lento e profundo nas fotografias grandes de fundo; os recortes das fotografias pequenas têm um efeito de desvanecimento e deslizam de baixo para cima a velocidades diferentes das do texto.",
+    "inspiracao": "Vai buscar à Inspiração 1 a paleta negra e contrastante do ecrã inicial, o uso de tipografia de grande porte, e a arrumação de imagens em molduras e recortes sobre fundos claros.",
+    "evitar": "Aumentar as fotos pequenas para preencher larguras de colunas; o charme desta direção depende de tratar as imagens fracas como pequenos detalhes emoldurados em muito espaço vazio."
+  },
+  {
+    "letra": "b",
+    "nome": "Arquitetura em Recortes",
+    "ideia": "Uma viagem visual contínua, orgânica e fresca que reflete os jardins verdes e a arquitetura singular. Usa a cor e os recortes geométricos suaves para guiar o hóspede, mitigando a falta de resolução das fotos ao emoldurá-las.",
+    "composicao": "A página é estruturada por grandes blocos massivos de cor suave que dividem as secções. Em vez de grelhas, a composição usa o esquema de 50/50: texto alinhado verticalmente num lado, e do outro lado uma composição estilo 'moodboard' onde as imagens estão recortadas em arcos, meios-círculos ou cantos muito arredondados. As citações ganham secções próprias com tipografia enorme, quebrando o ritmo de imagens.",
+    "primeiro_ecra": "O ecrã não tem uma foto a fundo inteiro. Sobre um fundo verde suave, a fotografia principal está contida dentro de um grande arco central. O título sobrepõe-se à linha divisória entre a fotografia e o fundo de cor, criando um aspeto de póster contemporâneo.",
+    "tipografia": "Bodoni Moda (títulos, serifa de altíssimo contraste e sofisticação) e Nunito (corpo de texto, sem serifa, redonda e amigável).",
+    "cor": "Fundo base em #F5F6F2 (branco esverdeado), blocos massivos em #8A9A73 (verde salva), texto e títulos em #2C3525 (verde floresta quase negro).",
+    "movimento": "Máscaras de imagem expansivas ao fazer scroll (as imagens desvendam-se de dentro dos seus arcos) e uma transição muito suave de opacidade nos grandes blocos de texto.",
+    "inspiracao": "Retira da Inspiração 2 o uso da cor verde salva como fio condutor, a contenção das fotografias dentro de formas com cantos redondos ou janelas, e os blocos de texto muito limpos e contidos.",
+    "evitar": "Fazer as caixas de texto ou fotos flutuarem como pequenas 'pílulas' soltas (erro de rondas passadas). Aqui, os fundos de cor tocam nos limites do ecrã, servindo como autênticas paredes pintadas."
+  },
+  {
+    "letra": "c",
+    "nome": "Jornada Tátil",
+    "ideia": "Uma abordagem estruturada, espacial e táctil, que transmite a solidez do granito e a dimensão da propriedade. O espaço do ecrã é ativamente dividido para separar a narrativa factual da prova fotográfica.",
+    "composicao": "Uso intensivo de esquemas 'split-screen' (ecrã dividido horizontal ou verticalmente) e faixas largas. Nas secções descritivas (quartos, quinta), o título e texto ficam 'presos' (sticky) numa das metades do ecrã, enquanto na outra metade os utilizadores fazem scroll pelas fotografias contidas em grandes cartões de margens generosas. Secções de história ou reservas são tratadas como faixas horizontais a toda a largura.",
+    "primeiro_ecra": "Divisão rígida e simétrica a 50/50 na vertical. Metade esquerda em tom de areia opaco, com texto alinhado cirurgicamente à esquerda e o botão de reserva. Metade direita totalmente preenchida com a foto da piscina/torre, sangrando até aos limites do ecrã direito.",
+    "tipografia": "Fraunces (títulos, serifa com peso e textura ligeiramente rústica/tátil) e Jost (corpo de texto, geométrica, reta e moderna).",
+    "cor": "Tons terra e arquitetónicos: fundos em #D4C5B9 (areia/taupe) e #F7F5F0 (branco sujo), texto forte em #3E2C22 (castanho café).",
+    "movimento": "Sticky-scroll (o texto fica fixo enquanto as imagens rolam ao lado) e secções de rolagem horizontal (overflow-x) para navegar pelas fotografias menores sem as obrigar a empilhar verticalmente.",
+    "inspiracao": "Vem da Inspiração 3, adotando a estética dos cartões táteis em tons de areia, a divisão vincada dos ecrãs em blocos lógicos e a arrumação quase de portfólio arquitetónico.",
+    "evitar": "Elementos centrados. Toda a força desta direção depende do rigor do alinhamento à esquerda e da tensão criada pela divisão do ecrã em blocos geométricos perfeitos."
+  }
+]

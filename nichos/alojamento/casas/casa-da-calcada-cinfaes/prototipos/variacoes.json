@@ -1,0 +1,29 @@
+[
+  {
+    "letra": "a",
+    "nome": "Granito",
+    "ideia": "A pedra da casa: fundo de pedra clara, uma faixa escura de granito, colagens de fotos e filetes finos.",
+    "cor": "Os cinzentos quentes do granito e da cantaria: #d1cbbe, #9D978C, #757168. O painel forte é o granito escuro.",
+    "formato": "Editorial em colunas: colagens assimétricas de fotos de tamanhos diferentes, com texto curto encaixado entre elas, e filetes finos a separar.",
+    "ritmo": "Arejado e calmo; uma única faixa escura a meio, que é a capela.",
+    "apresentacao": "Citações grandes em itálico da serifa; os quartos como uma lista com filetes; os contactos em caixas de contorno fino."
+  },
+  {
+    "letra": "b",
+    "nome": "Verde da quinta",
+    "ideia": "Os jardins: painéis de verde fundo que alternam com o creme, fotos de cantos arredondados, texto e foto lado a lado.",
+    "cor": "Os verdes da quinta e dos jardins: #384c2f, #4d6736, #7A8D4F. O painel forte é o verde fundo.",
+    "formato": "Painéis arredondados: blocos de cor com texto de um lado e foto do outro, e fotos de cantos arredondados dentro da página.",
+    "ritmo": "Alternado: uma secção clara, uma secção num painel verde, e assim por diante.",
+    "apresentacao": "Os quartos em cartões; as citações dentro dos painéis verdes; os factos em rótulos pequenos em versaletes."
+  },
+  {
+    "letra": "c",
+    "nome": "Telhados",
+    "ideia": "Os telhados e a luz de verão: fundo cinzento-bege, faixas de foto a toda a largura, números grandes e uma faixa escura para as opiniões.",
+    "cor": "A terracota dos telhados, muito dessaturada para painel, com a pedra clara: #C75E38, #DE9668, #9D978C.",
+    "formato": "Faixas: fotografias a toda a largura alternam com colunas de texto estreitas; uma faixa de números grandes.",
+    "ritmo": "Mais contraste: fotos a toda a largura seguidas de texto curto, e um momento forte a meio com os números da casa.",
+    "apresentacao": "A capacidade em números grandes com legenda (só números que estão na estrutura); os espaços numa fila horizontal de fotos; as opiniões numa faixa escura."
+  }
+]

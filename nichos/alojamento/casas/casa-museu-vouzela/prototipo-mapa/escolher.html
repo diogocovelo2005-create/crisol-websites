@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mapa e ecrã final</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --paper: #f5f1ea; --ink: #24160b; --soft: #6b5a48; --red: #b3261e; --line: #d9cfbf; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: Inter, system-ui, sans-serif; }
+  main { max-width: 1400px; margin: 0 auto; padding: 48px 24px 80px; }
+  h1 { font-family: "DM Serif Display", Georgia, serif; font-weight: 400; font-size: clamp(36px, 5vw, 60px); margin: 0 0 10px; }
+  .lead { color: var(--soft); max-width: 66ch; line-height: 1.55; margin: 0 0 12px; }
+  h2 { font-size: 12px; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; color: var(--red); margin: 56px 0 8px; }
+  h2 + p { color: var(--soft); max-width: 70ch; line-height: 1.55; margin: 0 0 22px; }
+  .estilo { display: grid; grid-template-columns: 220px 1fr; gap: 24px; padding: 26px 0; border-top: 1px solid var(--line); }
+  .estilo h3 { font-family: "DM Serif Display", Georgia, serif; font-weight: 400; font-size: 28px; margin: 0 0 8px; }
+  .estilo p { margin: 0 0 12px; font-size: 14px; line-height: 1.5; color: var(--soft); }
+  .sw { display: flex; gap: 6px; margin-bottom: 14px; }
+  .sw i { width: 26px; height: 26px; border-radius: 50%; border: 1px solid rgba(0,0,0,.15); }
+  .estilo a { font-size: 13px; font-weight: 700; color: var(--red); text-decoration: none; letter-spacing: .04em; }
+  .tres { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .tres figure { margin: 0; }
+  .tres img { width: 100%; display: block; border-radius: 4px; box-shadow: 0 12px 30px -20px rgba(40,20,5,.6); }
+  .tres figcaption { font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--soft); margin-top: 7px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 560px), 1fr)); gap: 30px; }
+  .grid figure { margin: 0; }
+  .grid img { width: 100%; display: block; border-radius: 6px; box-shadow: 0 18px 40px -24px rgba(40,20,5,.5); }
+  .grid figcaption { margin-top: 12px; line-height: 1.5; font-size: 14px; color: var(--soft); }
+  .grid figcaption b { display: block; font-family: "DM Serif Display", Georgia, serif; font-weight: 400; font-size: 24px; color: var(--ink); }
+  @media (max-width: 800px) { .estilo { grid-template-columns: 1fr; } .tres { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>Mapa e ecrã final</h1>
+  <p class="lead">Duas escolhas: o estilo do mapa (feito em código, já funciona no site) e a forma do ecrã final com as seis casas (ideias do Higgsfield em qualidade baixa; a escolhida é depois feita em código).</p>
+
+  <h2>1 · Estilo do mapa</h2>
+  <p>As capturas são da viagem Aido Santo → Algarve, descida depressa e sem esperar pelo carregamento. Todos os estilos têm agora a terra da Península desenhada logo à entrada (38 KB), por isso a meio da viagem a costa nunca desaparece. Os quatro novos desenham menos camadas (sem bosques, sem contorno nas estradas, poucos nomes), e por isso chegam ao Algarve já com estradas e rios, enquanto o atual ainda está vazio. Clica em “Experimentar” para ver no site.</p>
+
+  <div class="estilo"><div><h3>Atual · Carta</h3><div class="sw"><i style="background:#f2e6c9"></i><i style="background:#9fc4c0"></i><i style="background:#f0b25a"></i><i style="background:#c8553d"></i></div><p>O de agora, para comparar. Muitas cores, estradas com contorno.</p><a href="index.html?estilo=carta">Experimentar →</a></div>
+    <div class="tres"><figure><img src="opcoes/t-carta-10.jpg" alt=""><figcaption>A meio · 158 km</figcaption></figure><figure><img src="opcoes/t-carta-16.jpg" alt=""><figcaption>A chegar ao Algarve</figcaption></figure><figure><img src="opcoes/t-carta-fim.jpg" alt=""><figcaption>Ecrã final</figcaption></figure></div></div>
+
+  <div class="estilo"><div><h3>Tinta</h3><div class="sw"><i style="background:#f6f3ec"></i><i style="background:#1e2d3b"></i><i style="background:#2b2622"></i></div><p>Mono: terra branca, estradas a carvão, mar azul-tinta muito escuro. O mais sóbrio e o mais contrastado.</p><a href="index.html?estilo=tinta">Experimentar →</a></div>
+    <div class="tres"><figure><img src="opcoes/t-tinta-10.jpg" alt=""><figcaption>A meio</figcaption></figure><figure><img src="opcoes/t-tinta-16.jpg" alt=""><figcaption>A chegar ao Algarve</figcaption></figure><figure><img src="opcoes/t-tinta-fim.jpg" alt=""><figcaption>Ecrã final</figcaption></figure></div></div>
+
+  <div class="estilo"><div><h3>Ardósia</h3><div class="sw"><i style="background:#ebe6dc"></i><i style="background:#2f4a5a"></i><i style="background:#ffffff"></i></div><p>Terra cinza-quente, estradas brancas, mar azul-ardósia. Mais suave que a Tinta.</p><a href="index.html?estilo=ardosia">Experimentar →</a></div>
+    <div class="tres"><figure><img src="opcoes/t-ardosia-10.jpg" alt=""><figcaption>A meio</figcaption></figure><figure><img src="opcoes/t-ardosia-16.jpg" alt=""><figcaption>A chegar ao Algarve</figcaption></figure><figure><img src="opcoes/t-ardosia-fim.jpg" alt=""><figcaption>Ecrã final</figcaption></figure></div></div>
+
+  <div class="estilo"><div><h3>Petróleo</h3><div class="sw"><i style="background:#f2ecdf"></i><i style="background:#123c46"></i><i style="background:#b7a47f"></i></div><p>Terra creme (a cor do site), estradas cor de areia, mar azul-petróleo fundo. O que mais combina com os cartões.</p><a href="index.html?estilo=petroleo">Experimentar →</a></div>
+    <div class="tres"><figure><img src="opcoes/t-petroleo-10.jpg" alt=""><figcaption>A meio</figcaption></figure><figure><img src="opcoes/t-petroleo-16.jpg" alt=""><figcaption>A chegar ao Algarve</figcaption></figure><figure><img src="opcoes/t-petroleo-fim.jpg" alt=""><figcaption>Ecrã final</figcaption></figure></div></div>
+
+  <div class="estilo"><div><h3>Noite</h3><div class="sw"><i style="background:#2b2825"></i><i style="background:#10181f"></i><i style="background:#a48b5c"></i></div><p>Terra carvão, mar quase preto, estradas douradas apagadas. Os cartões creme saltam muito à vista.</p><a href="index.html?estilo=noite">Experimentar →</a></div>
+    <div class="tres"><figure><img src="opcoes/t-noite-10.jpg" alt=""><figcaption>A meio</figcaption></figure><figure><img src="opcoes/t-noite-16.jpg" alt=""><figcaption>A chegar ao Algarve</figcaption></figure><figure><img src="opcoes/t-noite-fim.jpg" alt=""><figcaption>Ecrã final</figcaption></figure></div></div>
+
+  <h2>2 · Ecrã final: dez ideias</h2>
+  <p>Todas com as seis casas juntas e as fotos verdadeiras. São esboços rápidos: os textos e alguns pormenores do mapa têm erros da IA (nomes trocados, pioneses fora do sítio). Serve para escolher a direção; pode ser uma mistura de duas.</p>
+  <div class="grid">
+    <figure><img src="higgsfield/fim/f1-fios.webp" alt=""><figcaption><b>1 · Fios vermelhos</b>Polaroides com pioneses ao lado do mapa, cada uma ligada por um fio à sua casa. Continua a linguagem das polaroides da vila.</figcaption></figure>
+    <figure><img src="higgsfield/fim/f2-tinta.webp" alt=""><figcaption><b>2 · Fila de cartões</b>As seis fotos grandes numa fila em baixo, com linhas finas a subir até ao pionés. Mapa mono por cima.</figcaption></figure>
+    <figure><img src="higgsfield/fim/f3-mesa.webp" alt=""><figcaption><b>3 · Mesa do antiquário</b>Foto de uma mesa de madeira com um mapa antigo, as fotos e uma lupa sobre Vouzela. Conta a história da família.</figcaption></figure>
+    <figure><img src="higgsfield/fim/f4-bento.webp" alt=""><figcaption><b>4 · Grelha de fotos</b>As fotos em mosaico de tamanhos diferentes, com o mapa numa coluna. É o que mais vende as casas.</figcaption></figure>
+    <figure><img src="higgsfield/fim/f5-lupa.webp" alt=""><figcaption><b>5 · Lupa em Vouzela</b>Lista à esquerda; no mapa, um círculo amplia Vouzela para as quatro casas não ficarem em cima umas das outras.</figcaption></figure>
+    <figure><img src="higgsfield/fim/f6-noite.webp" alt=""><figcaption><b>6 · Noite</b>Mapa escuro com medalhões redondos de cada casa e costa dourada. O mais luxuoso.</figcaption></figure>
+    <figure><img src="higgsfield/fim/f7-cartucho.webp" alt=""><figcaption><b>7 · Mapa antigo</b>Pergaminho, mar índigo, molduras ovais e um cartucho com o título. Liga aos antiquários, mas é o mais arriscado.</figcaption></figure>
+    <figure><img src="higgsfield/fim/f8-postais.webp" alt=""><figcaption><b>8 · Postais em leque</b>As seis fotos como postais abertos em leque, mapa à direita.</figcaption></figure>
+    <figure><img src="higgsfield/fim/f9-faixa.webp" alt=""><figcaption><b>9 · Painel e mapa</b>Painel azul-escuro com a lista e as distâncias (0 m, 20 m… 402 km); o mar do mapa é da mesma cor e funde-se com o painel.</figcaption></figure>
+    <figure><img src="higgsfield/fim/f10-rio.webp" alt=""><figcaption><b>10 · Viagem com selos</b>Uma rota tracejada de Vouzela a Alvor, com cada casa num selo de correio ao lado da paragem.</figcaption></figure>
+  </div>
+</main>
+</body>
+</html>

@@ -1,0 +1,286 @@
+<!--
+  O cabeçalho e o primeiro ecrã: formato fixo de todas as casas.
+  Reproduz, em HTML e CSS estáticos, o Cabecalho.tsx e o Hero.tsx do
+  esqueleto: o logótipo ou o nome no canto superior esquerdo, as páginas e
+  a ação de reserva no canto direito (um menu abaixo de 1024 px), e uma
+  foto a ecrã inteiro (100svh) com a etiqueta, o título grande, o texto
+  curto e duas ações, alinhados à esquerda e em cima. O véu só escurece a
+  faixa do texto; o resto da foto fica com a luz dela.
+
+  Como usar num protótipo:
+  1. Copia o <style> para o <head> e o <div class="pe-raiz"> para o início
+     do <body>, antes da primeira secção.
+  2. Preenche os marcadores com o texto da secção 1 do BRIEF, à letra:
+       {{NOME}}            o nome da casa (ou <img src="fotos/logo.png" alt="Nome">)
+       {{NAV}}             os links das secções: <a href="#casa">A casa</a> …
+                           (aparece duas vezes: no cabeçalho e no menu)
+       {{ETIQUETA}}        a etiqueta
+       {{TITULO}}          o título, com <em> no itálico (o *texto* do BRIEF)
+       {{TEXTO}}           o texto curto
+       {{ACAO_PRINCIPAL}}  o rótulo da ação principal (aparece três vezes)
+       {{ACAO_SEGUNDA}}    o rótulo da segunda ação ("Conhecer a casa")
+       {{FOTO}}            a foto da secção 1 do BRIEF (fotos/….jpg)
+       {{ALT}}             a descrição da foto
+       {{FOCO}}            o ponto focal da foto (object-position, de fotos.md)
+     Os href das ações: a principal leva ao link de reserva ou a #contacto;
+     a segunda à primeira secção.
+  3. A pele é tua: define no :root as variáveis --fonte-titulos,
+     --fonte-texto, --cor-fundo, --cor-texto, --cor-acento e --veu (a cor
+     escura do véu e do texto do botão principal). Podes acertar tamanhos,
+     pesos e espaçamento de letra à tua tipografia. O formato não muda:
+     nada de mudar o sítio do nome, da navegação, do texto ou das ações,
+     nem a foto deixar de ocupar o ecrã inteiro.
+
+  No site, o cabeçalho é fixo e ganha fundo depois do primeiro ecrã; aqui,
+  estático, fica só por cima da foto.
+-->
+<style>
+  .pe-raiz {
+    --pe-claro: #f7f2e9; /* o texto sobre a foto; acerta-o à tua pele se quiseres */
+    position: relative;
+  }
+  .pe-raiz a { text-decoration: none; }
+
+  /* versaletes: a navegação, a etiqueta e os botões */
+  .pe-nav a,
+  .pe-etiqueta,
+  .pe-botao {
+    font-family: var(--fonte-texto);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  /* ---------------------------------------------------------- cabeçalho */
+  .pe-cabecalho {
+    position: absolute;
+    inset: 0 0 auto;
+    z-index: 20;
+    border-bottom: 1px solid color-mix(in srgb, var(--pe-claro) 15%, transparent);
+  }
+  .pe-barra {
+    max-width: 1320px;
+    height: 80px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .pe-marca {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    font-family: var(--fonte-titulos);
+    font-size: 1.35rem;
+    font-weight: 500;
+    line-height: 1;
+    color: var(--pe-claro);
+  }
+  .pe-marca img { display: block; width: auto; height: 40px; }
+  .pe-nav { display: none; align-items: center; gap: 36px; }
+  .pe-nav a { color: color-mix(in srgb, var(--pe-claro) 85%, transparent); }
+  .pe-nav a:hover { color: var(--pe-claro); }
+  .pe-nav .pe-reservar {
+    padding: 12px 24px;
+    border-radius: 2px;
+    background: var(--cor-acento);
+    color: var(--veu);
+  }
+
+  /* o menu do telemóvel e do tablet, sem JavaScript */
+  .pe-menu summary {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    margin-right: -10px;
+    list-style: none;
+    cursor: pointer;
+    color: var(--pe-claro);
+  }
+  .pe-menu summary::-webkit-details-marker { display: none; }
+  .pe-menu summary svg { width: 26px; height: 26px; }
+  .pe-menu .pe-fechar,
+  .pe-menu[open] .pe-abrir { display: none; }
+  .pe-menu[open] .pe-fechar { display: block; }
+  .pe-menu[open] summary {
+    position: fixed;
+    top: 18px;
+    right: 24px;
+    z-index: 31;
+    color: var(--cor-texto);
+  }
+  .pe-painel {
+    position: fixed;
+    inset: 0;
+    z-index: 30;
+    overflow-y: auto;
+    padding: 112px 24px 40px;
+    background: var(--cor-fundo);
+    display: flex;
+    flex-direction: column;
+  }
+  .pe-painel a:not(.pe-botao) {
+    padding: 20px 0;
+    border-bottom: 1px solid color-mix(in srgb, var(--cor-texto) 14%, transparent);
+    font-family: var(--fonte-titulos);
+    font-size: 2rem;
+    line-height: 1.1;
+    color: var(--cor-texto);
+  }
+  .pe-painel .pe-botao { margin-top: 40px; width: 100%; }
+
+  /* -------------------------------------------------------- primeiro ecrã */
+  .pe {
+    position: relative;
+    isolation: isolate;
+    height: 100vh;
+    height: 100svh;
+    min-height: 560px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    color: var(--pe-claro);
+  }
+  .pe-foto {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+  }
+  .pe-veu {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    /* só escurece onde está o texto: em cima e à esquerda */
+    background:
+      linear-gradient(180deg,
+        color-mix(in srgb, var(--veu) 46%, transparent) 0%,
+        color-mix(in srgb, var(--veu) 30%, transparent) 45%,
+        color-mix(in srgb, var(--veu) 12%, transparent) 80%,
+        transparent 94%),
+      linear-gradient(90deg,
+        color-mix(in srgb, var(--veu) 55%, transparent) 0%,
+        color-mix(in srgb, var(--veu) 40%, transparent) 34%,
+        color-mix(in srgb, var(--veu) 12%, transparent) 52%,
+        transparent 66%);
+  }
+  .pe-conteudo {
+    max-width: 1320px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 128px 24px 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .pe-etiqueta { margin: 0; color: var(--pe-claro); }
+  .pe-titulo {
+    max-width: 15ch;
+    margin: 20px 0 0;
+    font-family: var(--fonte-titulos);
+    font-size: 2.9rem;
+    font-weight: 500;
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    color: var(--pe-claro);
+  }
+  .pe-titulo em { font-style: italic; padding-bottom: 0.06em; }
+  .pe-texto {
+    max-width: 46ch;
+    margin: 24px 0 0;
+    font-family: var(--fonte-texto);
+    font-size: 1.02rem;
+    line-height: 1.625;
+    color: var(--pe-claro);
+  }
+  .pe-acoes { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 12px; }
+  .pe-botao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 28px;
+    border-radius: 2px;
+    white-space: nowrap;
+    transition: background-color 0.2s, border-color 0.2s;
+  }
+  .pe-botao--cheio { background: var(--cor-acento); color: var(--veu); }
+  .pe-botao--contorno {
+    border: 1px solid color-mix(in srgb, var(--pe-claro) 55%, transparent);
+    color: var(--pe-claro);
+  }
+  .pe-botao--contorno:hover {
+    border-color: var(--pe-claro);
+    background: color-mix(in srgb, var(--pe-claro) 10%, transparent);
+  }
+
+  @media (min-width: 640px) {
+    .pe-titulo { font-size: 4.2rem; }
+  }
+  @media (min-width: 768px) {
+    .pe-barra { padding: 0 40px; }
+    .pe-conteudo { padding: 144px 40px 64px; }
+    .pe-texto { font-size: 1.12rem; }
+  }
+  @media (min-width: 1024px) {
+    .pe-nav { display: flex; }
+    .pe-menu { display: none; }
+    .pe-conteudo { padding-top: 160px; }
+    .pe-titulo { font-size: 5.75rem; }
+  }
+  /* no telemóvel o texto ocupa a largura toda: o véu cobre tudo, mais leve
+     em cima e em baixo */
+  @media (max-width: 767px) {
+    .pe-veu {
+      background: linear-gradient(to bottom,
+        color-mix(in srgb, var(--veu) 45%, transparent) 0%,
+        color-mix(in srgb, var(--veu) 50%, transparent) 45%,
+        color-mix(in srgb, var(--veu) 30%, transparent) 100%);
+    }
+  }
+</style>
+
+<div class="pe-raiz">
+  <header class="pe-cabecalho">
+    <div class="pe-barra">
+      <a class="pe-marca" href="#inicio"><span>{{NOME}}</span></a>
+
+      <nav class="pe-nav" aria-label="Secções">
+        {{NAV}}
+        <a class="pe-reservar" href="#contacto">{{ACAO_PRINCIPAL}}</a>
+      </nav>
+
+      <details class="pe-menu">
+        <summary aria-label="Menu">
+          <svg class="pe-abrir" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round" aria-hidden="true"><path d="M40 64h176M40 128h176M40 192h176"/></svg>
+          <svg class="pe-fechar" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round" aria-hidden="true"><path d="M200 56 56 200M56 56l144 144"/></svg>
+        </summary>
+        <nav class="pe-painel" aria-label="Secções">
+          {{NAV}}
+          <a class="pe-botao pe-botao--cheio" href="#contacto">{{ACAO_PRINCIPAL}}</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+
+  <section class="pe" id="inicio">
+    <img class="pe-foto" src="{{FOTO}}" alt="{{ALT}}" style="object-position: {{FOCO}}">
+    <div class="pe-veu" aria-hidden="true"></div>
+    <div class="pe-conteudo">
+      <p class="pe-etiqueta">{{ETIQUETA}}</p>
+      <h1 class="pe-titulo">{{TITULO}}</h1>
+      <p class="pe-texto">{{TEXTO}}</p>
+      <div class="pe-acoes">
+        <a class="pe-botao pe-botao--cheio" href="#contacto">{{ACAO_PRINCIPAL}}</a>
+        <a class="pe-botao pe-botao--contorno" href="#casa">{{ACAO_SEGUNDA}}</a>
+      </div>
+    </div>
+  </section>
+</div>

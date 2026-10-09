@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+/*
+  As cores e as fontes sao as do prototipo escolhido: trocam-se aqui os
+  valores, nao os nomes. Os nomes sao papeis, usados pelo primeiro ecra,
+  pelo cabecalho e pelo rodape:
+
+  linho       o fundo da pagina        tinta     o texto
+  cartao      fundos claros elevados   floresta  os paineis escuros e o rodape
+  ouro        o acento (o botao)       osso      texto sobre foto ou escuro
+  noite       o veu do primeiro ecra   linha     os filetes
+
+  Os valores abaixo sao do molde antigo: substitui-os todos.
+*/
+
+@theme {
+  /* linho */
+  --color-linho: #f5f0e7;
+  --color-linho-escuro: #ebe3d5;
+  --color-cartao: #fbf8f2;
+
+  /* texto */
+  --color-tinta: #22261f;
+  --color-tinta-medio: #5d5f55;
+
+  /* verde-floresta: faixas escuras, rodape, botao secundario */
+  --color-floresta: #2e3a2b;
+  --color-floresta-fundo: #24301f;
+
+  /* dourado: o CTA, e o acento. Texto dourado so em tamanho grande ou
+     sobre verde, onde passa contraste. */
+  --color-ouro: #b28a4f;
+  --color-ouro-escuro: #8c6a36;
+
+  --color-osso: #f7f2e9;
+  --color-noite: #151a13;
+
+  --color-linha: rgba(34, 38, 31, 0.14);
+  --color-linha-clara: rgba(247, 242, 233, 0.2);
+
+  --font-display: var(--fonte-display), 'Times New Roman', serif;
+  --font-corpo: var(--fonte-corpo), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-media: 10px;
+  --radius-botao: 2px;
+}
+
+@layer base {
+  html {
+    background-color: var(--color-linho);
+    color-scheme: light;
+  }
+
+  body {
+    font-family: var(--font-corpo);
+    background-color: var(--color-linho);
+    color: var(--color-tinta);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.08;
+  }
+
+  /* O italico dos titulos e da mesma familia. Com descendentes (y g j p)
+     precisa de folga em baixo, senao corta. */
+  h1 em, h2 em, h3 em {
+    font-style: italic;
+    padding-bottom: 0.06em;
+  }
+
+  ::selection {
+    background: var(--color-floresta);
+    color: var(--color-osso);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ouro);
+    outline-offset: 3px;
+  }
+}
+
+@layer utilities {
+  /* Versaletes das referencias: pequenos, espacados, em maiusculas. */
+  .versalete {
+    font-family: var(--font-corpo);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  /* Veu do hero: so escurece onde esta o texto, em cima e a esquerda (o
+     texto do primeiro ecra fica alinhado em cima). A fotografia fica com
+     a luz dela no resto. */
+  .veu-hero {
+    background:
+      linear-gradient(180deg, rgba(21, 26, 19, 0.46) 0%, rgba(21, 26, 19, 0.3) 45%, rgba(21, 26, 19, 0.12) 80%, rgba(21, 26, 19, 0) 94%),
+      linear-gradient(90deg, rgba(21, 26, 19, 0.55) 0%, rgba(21, 26, 19, 0.4) 34%, rgba(21, 26, 19, 0.12) 52%, rgba(21, 26, 19, 0) 66%);
+  }
+
+  /* No telemovel o texto ocupa a largura toda e fica por cima da casa:
+     o veu passa a cobrir tudo, mais leve em cima e em baixo. */
+  @media (max-width: 767px) {
+    .veu-hero {
+      background: linear-gradient(
+        to bottom,
+        rgba(21, 26, 19, 0.45) 0%,
+        rgba(21, 26, 19, 0.5) 45%,
+        rgba(21, 26, 19, 0.3) 100%
+      );
+    }
+  }
+
+  .sem-barra::-webkit-scrollbar {
+    display: none;
+  }
+  .sem-barra {
+    scrollbar-width: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
