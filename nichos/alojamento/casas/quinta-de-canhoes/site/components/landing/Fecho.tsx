@@ -5,7 +5,8 @@ import Image from "next/image";
 import { Botao } from "@/components/Botao";
 import { Revelar } from "@/components/Revelar";
 import { Rotativo, type Testemunho } from "@/components/Rotativo";
-import { contactos } from "@/lib/contactos";
+import { contactos, linkWhatsapp } from "@/lib/contactos";
+import { IconeWhatsapp } from "@/components/IconeWhatsapp";
 import { motion, useScroll, useTransform } from "motion/react";
 
 const testemunhos: Testemunho[] = [
@@ -39,7 +40,7 @@ export function Fecho() {
   const imgY = useTransform(scrollYProgress, [0, 1], ["-15%", "15%"]);
 
   return (
-    <section ref={container} className="relative z-30 -mt-[100svh] overflow-hidden bg-[#2c3729]">
+    <section ref={container} data-contacto-whatsapp className="relative z-30 -mt-[100svh] overflow-hidden bg-[#2c3729]">
       <div className="relative w-full flex flex-col justify-center min-h-[100svh]">
         <motion.div style={{ y: imgY }} className="absolute inset-0 h-[130%] -top-[15%] will-change-transform z-[-1]">
         <Image src="/fotos/heroreservar.jpg" alt="Piscina da quinta" fill sizes="100vw" quality={100} unoptimized={true} className="object-cover" />
@@ -63,18 +64,31 @@ export function Fecho() {
                   livre.
                 </p>
 
-                <div className="mt-8 flex flex-wrap items-center gap-5 md:mt-12">
-                  <Botao href="/reservar" variante="cheio">
-                    Reservar
-                  </Botao>
-                  <a
-                    href={contactos.telemovel.href}
-                    className="text-[1.35rem] font-medium tracking-[0.01em] text-cal underline decoration-cal/50 decoration-1 underline-offset-[6px] transition-colors hover:decoration-caixilho md:text-[1.5rem]"
-                    style={{ fontVariantNumeric: "tabular-nums lining-nums" }}
+                <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4 md:mt-12">
+                  <Botao
+                    href={linkWhatsapp()}
+                    target="_blank"
+                    rel="noreferrer"
+                    variante="cheio"
+                    seta={false}
                   >
-                    {contactos.telemovel.texto}
-                  </a>
+                    <IconeWhatsapp className="h-[1.1rem] w-[1.1rem] shrink-0" />
+                    Escrever à Teresa
+                  </Botao>
+                  <p className="text-cal/80">
+                    ou ligue{" "}
+                    <a
+                      href={contactos.telemovel.href}
+                      className="text-[1.2rem] font-medium tracking-[0.01em] text-cal underline decoration-cal/50 decoration-1 underline-offset-[6px] transition-colors hover:decoration-caixilho md:text-[1.35rem]"
+                      style={{ fontVariantNumeric: "tabular-nums lining-nums" }}
+                    >
+                      {contactos.telemovel.texto}
+                    </a>
+                  </p>
                 </div>
+                <p className="mt-6 text-sm italic text-cal/75">
+                  Há vantagens que só encontra ao falar connosco.
+                </p>
               </div>
 
               <div className="border-t border-cal/30 pt-10 md:border-l md:border-t-0 md:pl-16 md:pt-0">

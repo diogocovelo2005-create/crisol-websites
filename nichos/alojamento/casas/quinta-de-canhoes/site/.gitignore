@@ -41,3 +41,11 @@ yarn-error.log*
 next-env.d.ts
 
 .vercel
+
+# reservas: emails da pré-visualização (sem RESEND_API_KEY)
+/.emails/
+# o exemplo das variáveis comita-se; os valores reais nunca
+!.env.example
+
+# Netlify CLI
+.netlify

@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import { Revelar } from "@/components/Revelar";
 import { HeroQuartos } from "@/components/HeroQuartos";
 import { CortinaReserva } from "@/components/CortinaReserva";
 import { ComodidadesRotativas } from "@/components/ComodidadesRotativas";
+import { IconeWhatsapp } from "@/components/IconeWhatsapp";
+import { Botao } from "@/components/Botao";
+import { linkWhatsapp } from "@/lib/contactos";
 
 export const metadata: Metadata = {
   title: "Os quartos | Quinta de Canhões",
-  description: "Quarto Duplo, Quarto Twin e Suite. Todos com janela virada para o vale.",
+  description: "Quarto Duplo, Quarto Twin e duas Suites. Todos com janela virada para o vale.",
 };
 
 
@@ -19,10 +21,12 @@ const fichasQuartos = [
     cama: "Uma cama de casal",
     area: "18 m²",
     vista: "Para o jardim e montanha",
+    pedido: "Perguntar pelo Duplo",
+    mensagem: "Olá Teresa, gostava de saber se o Quarto Duplo está livre para as datas…",
     destaques: ["Temos dois quartos deste tipo", "Casa de banho privativa", "Silêncio absoluto à noite"],
     fotos: [
-      "/fotos/quartos/quarto duplo/quarto duplo.jpg",
       "/fotos/quartos/quarto duplo/quarto duplo 2.jpg",
+      "/fotos/quartos/quarto duplo/quarto duplo.jpg",
       "/fotos/quartos/quarto duplo/wc-duplo-filt.jpg"
     ]
   },
@@ -32,6 +36,8 @@ const fichasQuartos = [
     cama: "Duas camas individuais",
     area: "16 m²",
     vista: "Virado para as árvores antigas",
+    pedido: "Perguntar pelo Twin",
+    mensagem: "Olá Teresa, gostava de saber se o Quarto Twin está livre para as datas…",
     destaques: ["Camas podem juntar-se (a pedido)", "Luz da manhã", "Decoração clássica e simples"],
     fotos: [
       "/fotos/quartos/quarto-twin.jpg",
@@ -40,13 +46,13 @@ const fichasQuartos = [
   },
   {
     id: "03",
-    nome: "A Suite",
-    cama: "Duas camas de casal (em quartos separados)",
-    area: "35 m²",
+    nome: "As 2 Suites",
+    frase: "Cada uma com uma cama de casal e dois sofás-cama.",
     vista: "Vista panorâmica sobre o vale",
-    destaques: ["Composta por 2 quartos independentes", "Ideal para famílias com filhos", "Máquina de café e frigobar"],
+    pedido: "Ver se há Suite livre",
+    mensagem: "Olá Teresa, gostava de saber se uma das 2 Suites está livre para as datas…",
+    destaques: ["Temos duas suites", "Ideal para famílias com filhos", "Máquina de café e frigobar"],
     fotos: [
-      "/fotos/quartos/suite/suite-original.jpg",
       "/fotos/quartos/suite/quarto suite.jpg",
       "/fotos/suite-quarto.jpg",
       "/fotos/suite-wc.jpg",
@@ -83,16 +89,25 @@ export default function PaginaOsQuartos() {
                 {/* Coluna fixa à esquerda */}
                 <div className="md:sticky md:top-32 md:w-[22rem] shrink-0">
                   <span className="font-mono text-sm tracking-widest text-caixilho">({quarto.id})</span>
-                  <h2 className="rustico-medio mt-4 text-4xl text-xisto md:text-5xl">{quarto.nome}</h2>
-                  
+                  <h2 className="rustico-medio mt-4 text-4xl text-xisto md:text-5xl">{quarto.nome.split(/(\d)/).map((parte, k) =>
+                    /^\d$/.test(parte) ? <span key={k} className="text-caixilho">{parte}</span> : parte
+                  )}</h2>
+                  {"frase" in quarto && (
+                    <p className="rustico-medio mt-5 border-l-2 border-caixilho pl-4 text-xl italic leading-snug text-xisto md:text-2xl">
+                      {quarto.frase}
+                    </p>
+                  )}
+
                   <dl className="mt-10 space-y-6 text-sm text-xisto-suave">
+                    {"cama" in quarto && (
+                      <div>
+                        <dt className="font-semibold text-xisto-medio mb-1">Cama</dt>
+                        <dd>{quarto.cama}</dd>
+                      </div>
+                    )}
                     <div>
-                      <dt className="font-semibold text-xisto-medio mb-1">Cama</dt>
-                      <dd>{quarto.cama}</dd>
-                    </div>
-                    <div>
-                      <dt className="font-semibold text-xisto-medio mb-1">Área e Vista</dt>
-                      <dd>{quarto.area} · {quarto.vista}</dd>
+                      <dt className="font-semibold text-xisto-medio mb-1">{"area" in quarto ? "Área e Vista" : "Vista"}</dt>
+                      <dd>{"area" in quarto ? `${quarto.area} · ${quarto.vista}` : quarto.vista}</dd>
                     </div>
                   </dl>
 
@@ -105,9 +120,18 @@ export default function PaginaOsQuartos() {
                   </ul>
 
                   <div className="mt-12">
-                    <Link href="/reservar" className="inline-flex items-center justify-center rounded-full bg-caixilho px-8 py-3 text-sm font-medium text-cal transition-transform hover:scale-105 active:scale-95">
-                      Pedir este quarto
-                    </Link>
+                    <Botao
+                      href={linkWhatsapp(quarto.mensagem)}
+                      target="_blank"
+                      rel="noreferrer"
+                      variante="cheio"
+                      className="w-full max-w-[22rem] justify-between md:px-7 md:py-5"
+                    >
+                      <span className="flex items-center gap-3">
+                        <IconeWhatsapp className="h-5 w-5 shrink-0" />
+                        {quarto.pedido}
+                      </span>
+                    </Botao>
                   </div>
                 </div>
 
@@ -173,7 +197,7 @@ export default function PaginaOsQuartos() {
                   <span className="ml-6 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-granito-linha text-xisto transition-transform group-open:rotate-180">+</span>
                 </summary>
                 <div className="mt-4 pr-12 text-xisto-suave leading-relaxed">
-                  O check-in é habitualmente feito a partir das 15h00 e o check-out até às 11h00. Se precisar de horários diferentes, avise-nos com antecedência para tentarmos acomodar.
+                  O check-in é feito entre as 15h00 e as 21h00, e o check-out até às 11h00. Se precisar de horários diferentes, avise-nos com antecedência para tentarmos acomodar.
                 </div>
               </details>
               <details className="group py-6" name="faq">
@@ -204,6 +228,17 @@ export default function PaginaOsQuartos() {
                 </div>
               </details>
             </div>
+            <p className="mt-10 text-sm text-xisto-suave">
+              Outra pergunta?{" "}
+              <a
+                href={linkWhatsapp()}
+                target="_blank"
+                rel="noreferrer"
+                className="sublinha text-caixilho"
+              >
+                Escreva à Teresa
+              </a>
+            </p>
           </div>
         </section>
       </div>

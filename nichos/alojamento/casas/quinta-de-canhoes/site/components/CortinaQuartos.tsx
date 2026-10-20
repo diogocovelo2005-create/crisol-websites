@@ -52,7 +52,7 @@ export function CortinaQuartos() {
             </p>
 
             <div className="mt-10 flex flex-wrap items-center justify-center gap-5">
-              <Botao href="/os-quartos#inicio" variante="cheio" className="!bg-caixilho-claro !text-cal hover:!bg-caixilho">
+              <Botao href="/os-quartos#inicio" variante="vivo">
                 Ver os quartos
               </Botao>
             </div>

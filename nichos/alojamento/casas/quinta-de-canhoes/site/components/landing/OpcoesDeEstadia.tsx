@@ -45,8 +45,8 @@ const opcoes: Opcao[] = [
     alt: "Quarto com duas camas individuais, cabeceiras brancas em ferro forjado e gravuras botânicas na parede",
   },
   {
-    nome: "Suite",
-    detalhe: "Trinta metros quadrados",
+    nome: "Suites",
+    detalhe: "Cama de casal e dois sofás-cama",
     frase: "Para ficar mais tempo, espalhar-se e deixar o dia entrar.",
     imagem: "/fotos/suite 2.jpg",
     alt: "Sala ampla da suite, com paredes de granito, sofás de couro, mesa de madeira lavrada e a sala de jantar ao fundo",
@@ -80,7 +80,10 @@ export function OpcoesDeEstadia() {
 /** Telemóvel: carrossel em profundidade, arrastável ao dedo. */
 function Carrossel() {
   return (
-    <div className="mt-10">
+    // overflow-x-clip: a secção à volta perde o overflow-hidden (Hero.module.css
+    // põe-na visible), e sem este corte os 24px de cada lado alargavam a página
+    // no telemóvel, empurrando o menu e o botão do WhatsApp para fora do ecrã.
+    <div className="mt-10 overflow-x-clip">
       {/* Sai da goteira da página para o cartão da frente ocupar quase o
           ecrã todo. O overflow-hidden é o que impede os cartões de trás,
           que ficam para lá da borda, de alargarem a página. */}

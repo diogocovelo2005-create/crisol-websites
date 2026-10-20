@@ -5,6 +5,8 @@ import Image from "next/image";
 import { motion, useScroll, useTransform } from "motion/react";
 import { Revelar } from "@/components/Revelar";
 import { Botao } from "@/components/Botao";
+import { IconeWhatsapp } from "@/components/IconeWhatsapp";
+import { contactos, linkWhatsapp } from "@/lib/contactos";
 
 export function CortinaReserva() {
   const container = useRef<HTMLDivElement>(null);
@@ -17,7 +19,7 @@ export function CortinaReserva() {
   const imgY = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
 
   return (
-    <div ref={container} className="relative z-20 -mt-[100vh] min-h-[100svh] w-full overflow-hidden flex flex-col justify-center bg-vale shadow-[0_-25px_50px_rgba(0,0,0,0.3)]">
+    <div ref={container} data-contacto-whatsapp className="relative z-20 -mt-[100vh] min-h-[100svh] w-full overflow-hidden flex flex-col justify-center bg-vale shadow-[0_-25px_50px_rgba(0,0,0,0.3)]">
       
       {/* Imagem de Fundo Colorida com Parallax */}
       {/* O desfoque está na própria foto (desenhada uma vez) e não num backdrop-blur
@@ -51,8 +53,24 @@ export function CortinaReserva() {
             </p>
 
             <div className="mt-12 flex flex-wrap items-center justify-center gap-5">
-              <Botao href="/reservar" variante="cheio" className="!bg-caixilho-claro !text-cal hover:!bg-caixilho !px-12 !py-4 !text-lg">
-                Reservar
+              <Botao
+                href={linkWhatsapp()}
+                target="_blank"
+                rel="noreferrer"
+                variante="vivo"
+                seta={false}
+                className="md:px-10 md:py-5 md:text-lg"
+              >
+                <IconeWhatsapp className="h-5 w-5 shrink-0" />
+                WhatsApp
+              </Botao>
+              <Botao
+                href={contactos.telemovel.href}
+                variante="claro"
+                seta={false}
+                className="md:px-10 md:py-5 md:text-lg"
+              >
+                Ligar {contactos.telemovel.texto}
               </Botao>
             </div>
           </div>

@@ -5,6 +5,8 @@ import "./globals.css";
 import { ScrollSuave } from "@/components/ScrollSuave";
 import { Cabecalho } from "@/components/Cabecalho";
 import { Rodape } from "@/components/Rodape";
+import { AvisoCookies } from "@/components/AvisoCookies";
+import { BotaoWhatsapp } from "@/components/BotaoWhatsapp";
 
 // Young Serif: serifa antiga de traço grosso e cunhas largas.
 const display = Young_Serif({
@@ -67,6 +69,8 @@ export default function RootLayout({
         <Cabecalho />
         <main id="conteudo">{children}</main>
         <Rodape />
+        <AvisoCookies />
+        <BotaoWhatsapp />
       </body>
     </html>
   );

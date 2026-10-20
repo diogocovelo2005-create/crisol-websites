@@ -156,3 +156,120 @@ html {
     scroll-behavior: auto !important;
   }
 }
+
+/* Botão e balão do WhatsApp: entram e saem só com opacidade e transform. */
+.botao-whatsapp {
+  opacity: 0;
+  transform: translateY(8px) scale(0.92);
+  transition:
+    opacity 220ms var(--ease-calma),
+    transform 220ms var(--ease-calma),
+    background-color 200ms ease;
+}
+.botao-whatsapp[data-visivel="true"] {
+  opacity: 1;
+  transform: none;
+}
+.botao-whatsapp[data-visivel="true"]:active {
+  transform: scale(0.96);
+}
+.balao-whatsapp {
+  opacity: 0;
+  transform: translateY(6px) scale(0.97);
+  transition:
+    opacity 240ms var(--ease-calma),
+    transform 240ms var(--ease-calma);
+}
+.balao-whatsapp[data-aberto="true"] {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .botao-whatsapp,
+  .balao-whatsapp,
+  .botao-whatsapp[data-visivel="true"]:active {
+    transform: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Sistema de botões. Ao passar o rato ficam brancos e crescem um pouco; ao
+   tocar encolhem um nada, para se sentir que responderam. Só a cor muda com
+   movimento reduzido.
+   -------------------------------------------------------------------------- */
+.botao {
+  transition:
+    background-color 220ms var(--ease-calma),
+    color 220ms var(--ease-calma),
+    border-color 220ms var(--ease-calma),
+    box-shadow 220ms var(--ease-calma),
+    transform 220ms var(--ease-calma);
+}
+@media (hover: hover) and (pointer: fine) {
+  .botao:hover {
+    background-color: #fff;
+    border-color: #fff;
+    color: var(--color-xisto);
+    transform: scale(1.04);
+    box-shadow: 0 10px 28px rgb(34 31 27 / 0.18);
+  }
+  .botao-whatsapp[data-visivel="true"]:hover {
+    background-color: #fff;
+    border-color: #fff;
+    color: var(--color-xisto);
+    transform: scale(1.06);
+  }
+}
+.botao:active {
+  transform: scale(0.97);
+  transition-duration: 120ms;
+}
+@media (prefers-reduced-motion: reduce) {
+  .botao:hover,
+  .botao:active,
+  .botao-whatsapp[data-visivel="true"]:hover {
+    transform: none;
+  }
+}
+
+/* Formulário de reserva: o que se prime encolhe um nada, para se sentir
+   que respondeu. Sem transformação com movimento reduzido. */
+.premir {
+  transition: transform 160ms var(--ease-calma);
+}
+.premir:active:not(:disabled) {
+  transform: scale(0.97);
+}
+@media (prefers-reduced-motion: reduce) {
+  .premir:active:not(:disabled) {
+    transform: none;
+  }
+}
+
+/* Aviso de cookies: fixo (sem saltos de layout); entra a subir 8 px e a aparecer. */
+.aviso-cookies {
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  visibility: hidden;
+  transition:
+    opacity 200ms var(--ease-calma),
+    transform 200ms var(--ease-calma),
+    visibility 0s linear 200ms;
+}
+.aviso-cookies[data-visivel="true"] {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+  visibility: visible;
+  transition:
+    opacity 200ms var(--ease-calma),
+    transform 200ms var(--ease-calma),
+    visibility 0s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .aviso-cookies,
+  .aviso-cookies[data-visivel="true"] {
+    transform: none;
+  }
+}

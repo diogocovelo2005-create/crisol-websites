@@ -41,7 +41,6 @@
 .actions { bottom: 5rem; opacity: var(--controls-opacity, 1); transform: translateY(var(--controls-y, 0px)); }
 .actions p { font-size: .56rem; letter-spacing: .18em; text-shadow: 0 1px 14px #221f1b; }
 .actions a { min-height: 44px; }
-.reserve:hover { background: var(--color-cal); color: var(--color-caixilho); border-color: var(--color-cal); }
 .hero + section { position: relative; z-index: 2; overflow: visible; margin-top: -18svh; padding-top: clamp(3.5rem, 6vw, 5rem); }
 .hero + section::before { content: ""; position: absolute; z-index: 0; pointer-events: none; left: 0; right: 0; top: -18svh; height: 18svh; background: linear-gradient(to bottom, transparent 0%, color-mix(in srgb, var(--color-cal-fundo) 22%, transparent) 38%, color-mix(in srgb, var(--color-cal-fundo) 72%, transparent) 72%, var(--color-cal-fundo) 100%); }
 @keyframes arrive { from { clip-path: inset(100% 0 0); translate: 0 20px; } to { clip-path: inset(0); translate: 0 0; } }

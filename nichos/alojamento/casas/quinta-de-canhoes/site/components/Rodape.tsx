@@ -1,9 +1,15 @@
 import Link from "next/link";
-import { contactos, navegacao } from "@/lib/contactos";
+import { contactos, linkWhatsapp, navegacao } from "@/lib/contactos";
+import { IconeInstagram, IconeWhatsapp } from "@/components/IconeWhatsapp";
+import { MapaRodape } from "@/components/MapaRodape";
+import { PreferenciasCookies } from "@/components/PreferenciasCookies";
+
+const icone =
+  "inline-flex h-11 w-11 md:h-9 md:w-9 items-center justify-center border border-cal/25 text-cal/70 transition-colors hover:border-cal/60 hover:text-cal";
 
 export function Rodape() {
   return (
-    <footer className="bg-vale py-16 text-cal md:py-20">
+    <footer data-contacto-whatsapp className="bg-vale py-16 text-cal md:py-20">
       <div className="mx-auto max-w-[86rem] px-6 md:px-10">
         <div className="grid gap-12 md:grid-cols-12">
           <div className="md:col-span-3">
@@ -51,37 +57,49 @@ export function Rodape() {
               </li>
             </ul>
 
+            <div className="mt-6 flex gap-3">
+            <a
+              href={linkWhatsapp()}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="WhatsApp da Quinta de Canhões"
+              className={icone}
+            >
+              <IconeWhatsapp className="h-4 w-4" />
+            </a>
+            <a
+              href={contactos.instagram.href}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram da Quinta de Canhões"
+              className={icone}
+            >
+              <IconeInstagram className="h-4 w-4" />
+            </a>
             <a
               href={contactos.facebook}
               target="_blank"
               rel="noreferrer"
               aria-label="Facebook da Quinta de Canhões"
-              className="mt-6 inline-flex h-9 w-9 items-center justify-center border border-cal/25 text-cal/70 transition-colors hover:border-cal/60 hover:text-cal"
+              className={icone}
             >
               <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4 fill-current">
                 <path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5h1.65V3.6A22 22 0 0 0 14.3 3.5c-2.4 0-4 1.45-4 4.13V9.9H7.6V13h2.7v8h3.2Z" />
               </svg>
             </a>
+            </div>
           </div>
 
           <div className="md:col-span-5">
             <p className="etiqueta text-cal/45">Onde estamos</p>
-            <div className="mt-5 overflow-hidden border border-cal/20 bg-vale-claro aspect-[16/9]">
-              <iframe
-                title="Mapa da Quinta de CanhÃµes"
-                src="https://www.google.com/maps?output=embed&q=Rua%20dos%20Canh%C3%B5es%20510%2C%203660-682%20S%C3%A3o%20Pedro%20do%20Sul"
-                className="h-full w-full border-0"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-            </div>
+            <MapaRodape />
             <a
               href={contactos.morada.mapa}
               target="_blank"
               rel="noreferrer"
               className="sublinha mt-4 inline-block text-sm text-cal/75 hover:text-cal"
             >
-              Abrir no Google Maps
+              Ver no Google Maps
             </a>
           </div>
         </div>
@@ -103,6 +121,10 @@ export function Rodape() {
             >
               Livro de Reclamações
             </a>
+            <Link href="/privacidade" className="sublinha hover:text-cal/80">
+              Política de privacidade
+            </Link>
+            <PreferenciasCookies className="sublinha text-left hover:text-cal/80" />
             <span>© {new Date().getFullYear()} Quinta de Canhões</span>
           </div>
         </div>

@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from "motion/react";
 import Image from "next/image";
+import { Botao } from "@/components/Botao";
 
 export function Historia() {
   const reduced = useReducedMotion();
@@ -50,6 +51,9 @@ export function Historia() {
               cada canto, a vista foge para as montanhas que fecham o vale. É um
               refúgio para abrandar.
             </p>
+            <Botao href="/a-casa" variante="texto" className="mt-9 text-base">
+              O que estas paredes guardam
+            </Botao>
           </div>
         </div>
       </div>

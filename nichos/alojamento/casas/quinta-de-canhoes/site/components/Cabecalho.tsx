@@ -32,6 +32,23 @@ export function Cabecalho() {
 
   const claro = !passouHero && !menuAberto;
 
+  // Nas páginas internas das reservas (a da casa, a das propostas) o menu
+  // não faz sentido: fica só o logotipo, claro sobre a faixa verde do topo.
+  const interna = ["/pedido", "/proposta", "/dev"].some((p) => caminho.startsWith(p));
+  if (interna) {
+    return (
+      <header className="absolute inset-x-0 top-0 z-40">
+        <div className="mx-auto max-w-[86rem] px-6 py-5 md:px-10">
+          <Link href="/" className="rustico-encorpado inline-block text-[1.05rem] leading-[0.98] text-cal md:text-[1.2rem]">
+            Quinta de
+            <br />
+            Canhões
+          </Link>
+        </div>
+      </header>
+    );
+  }
+
   return (
     <motion.header
       initial={{ y: 0 }}
@@ -81,10 +98,8 @@ export function Cabecalho() {
           })}
           <Link
             href="/reservar"
-            className={`border px-5 py-2 text-sm transition-colors duration-300 ${
-              claro
-                ? "border-cal/45 text-cal hover:border-cal hover:bg-cal hover:text-xisto"
-                : "border-caixilho text-caixilho hover:bg-caixilho hover:text-cal"
+            className={`botao border px-6 py-2.5 text-sm ${
+              claro ? "border-cal/55 text-cal" : "border-caixilho text-caixilho"
             }`}
           >
             Reservar

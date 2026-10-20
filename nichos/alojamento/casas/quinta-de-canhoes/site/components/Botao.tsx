@@ -1,16 +1,17 @@
 import Link from "next/link";
 import type { ComponentProps } from "react";
 
-type Variante = "cheio" | "contorno" | "claro" | "texto";
+type Variante = "cheio" | "vivo" | "contorno" | "claro" | "texto";
 
 const estilos: Record<Variante, string> = {
-  cheio:
-    "bg-caixilho text-cal border border-caixilho hover:bg-transparent hover:text-caixilho",
-  contorno:
-    "border border-caixilho text-caixilho hover:bg-caixilho hover:text-cal",
-  claro:
-    "border border-cal/45 text-cal hover:border-cal hover:bg-cal hover:text-xisto",
-  texto: "border-b border-current pb-1 text-caixilho hover:opacity-70",
+  // O hover dos botões (fica branco e cresce um pouco) vive na classe .botao,
+  // em globals.css, para ser igual em todo o site.
+  cheio: "botao bg-caixilho text-cal border border-caixilho",
+  /** Vermelho mais vivo, para fundos escuros. */
+  vivo: "botao bg-caixilho-claro text-cal border border-caixilho-claro",
+  contorno: "botao border border-caixilho text-caixilho",
+  claro: "botao border border-cal/55 text-cal",
+  texto: "border-b border-current pb-1 text-caixilho transition-opacity duration-300 hover:opacity-70",
 };
 
 type Props = ComponentProps<typeof Link> & {
@@ -30,13 +31,13 @@ export function Botao({
   ...resto
 }: Props) {
   const caixa =
-    variante === "texto" ? "" : pequeno ? "px-5 py-2.5" : "px-7 py-3.5";
+    variante === "texto" ? "" : pequeno ? "px-6 py-3" : "px-8 py-4";
 
   return (
     <Link
       {...resto}
-      className={`group inline-flex items-center transition-colors duration-300 ${
-        pequeno ? "gap-2.5 text-[0.8rem]" : "gap-3 text-sm"
+      className={`group inline-flex items-center ${
+        pequeno ? "gap-2.5 text-[0.85rem]" : "gap-3 text-base"
       } ${caixa} ${estilos[variante]} ${className}`}
     >
       {children}
