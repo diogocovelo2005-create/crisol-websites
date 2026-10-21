@@ -100,13 +100,13 @@ export function Hero() {
         <div className={styles.scene} aria-hidden="true">
           <div className={`${styles.photo} ${styles.landscape}`}>
             <picture>
-              <source media="(max-width: 767px)" srcSet="/fotos/hero-vale-mobile.webp" />
+              <source media="(max-width: 767px)" srcSet="/fotos/hero-vale-mobile.webp" width="937" height="1678" />
               <img src="/fotos/hero-vale.webp" alt="" width="3070" height="2048" fetchPriority="high" />
             </picture>
           </div>
           <div className={`${styles.photo} ${styles.window}`}>
             <picture>
-              <source media="(max-width: 767px)" srcSet="/fotos/hero-telemovel.jpg" />
+              <source media="(max-width: 767px)" srcSet="/fotos/hero-telemovel.jpg" width="1316" height="2358" />
               <img src="/fotos/hero-janela.webp" alt="" width="3070" height="2048" fetchPriority="high" />
             </picture>
           </div>

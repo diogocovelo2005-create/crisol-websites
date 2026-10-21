@@ -11,7 +11,7 @@ import {
 } from 'react';
 import gsap from 'gsap';
 
-export type DepthCarouselItem = string | { image: string; alt?: string; label?: string; detail?: string; description?: string };
+export type DepthCarouselItem = string | { image: string; srcSet?: string; sizes?: string; alt?: string; label?: string; detail?: string; description?: string };
 type TiltDirection = 'left' | 'right';
 
 export interface DepthCarouselProps {
@@ -91,7 +91,7 @@ const DEFAULT_ITEMS: DepthCarouselItem[] = [
 ];
 
 const clamp = (v: number, min: number, max: number) => Math.min(Math.max(v, min), max);
-const normalizeItem = (it: DepthCarouselItem) => (typeof it === 'string' ? { image: it, alt: '' } : it);
+const normalizeItem = (it: DepthCarouselItem): Exclude<DepthCarouselItem, string> => (typeof it === 'string' ? { image: it, alt: '' } : it);
 
 const DepthCarousel = ({
   items = DEFAULT_ITEMS,
@@ -453,6 +453,9 @@ const DepthCarousel = ({
           >
             <img
               className="block h-full w-full select-none object-cover [pointer-events:none] [-webkit-user-drag:none]"
+              loading="lazy"
+              sizes={item.sizes}
+              srcSet={item.srcSet}
               src={item.image}
               alt={item.alt || ''}
               draggable={false}

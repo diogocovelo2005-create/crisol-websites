@@ -5,6 +5,8 @@ import { gsap } from 'gsap';
 
 export interface AccordionGalleryItem {
   image: string;
+  srcSet?: string;
+  sizes?: string;
   label?: string;
   detail?: string;
   description?: string;
@@ -277,6 +279,9 @@ const AccordionGallery = ({
                 }}
               >
                 <img
+                  loading="lazy"
+                  sizes={item.sizes}
+                  srcSet={item.srcSet}
                   src={item.image}
                   alt={item.alt || item.label || ''}
                   draggable={false}

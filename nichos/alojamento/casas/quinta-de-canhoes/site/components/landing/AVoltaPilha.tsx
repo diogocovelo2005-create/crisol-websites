@@ -3,7 +3,12 @@
 import { useEffect, useRef, useState } from "react";
 import { useMotionValueEvent, useReducedMotion, useScroll } from "motion/react";
 
-type Lugar = { nome: string; distancia: string; texto: string; imagem: string; alt: string };
+type Lugar = { nome: string; distancia: string; texto: string; imagem: string; srcSet: string; sizes: string; alt: string };
+
+const T = "/fotos/tamanhos/";
+/* Largura máxima do cartão em cada faixa (a foto ocupa a largura toda; nas de
+   3:2 a altura do recorte, ≤220 px, nunca pede mais do que isto). */
+const SIZES_CARTAO = "(min-width: 768px) 27rem, (min-width: 640px) 25rem, 23rem";
 
 const lugares: Lugar[] = [
   {
@@ -11,6 +16,8 @@ const lugares: Lugar[] = [
     distancia: "3 km",
     texto: "A água sulfúrea brota a 68,7 graus e a nascente é explorada desde o século I. O balneário romano é Monumento Nacional. D. Afonso Henriques veio aqui curar uma perna partida em 1169 e ficou dois meses.",
     imagem: "/fotos/regiao-termas-wikimedia.jpg",
+    srcSet: `${T}termas-640.jpg 640w, ${T}termas-960.jpg 960w, /fotos/regiao-termas-wikimedia.jpg 1280w`,
+    sizes: SIZES_CARTAO,
     alt: "Termas de São Pedro do Sul junto ao rio Vouga",
   },
   {
@@ -18,6 +25,8 @@ const lugares: Lugar[] = [
     distancia: "22 km",
     texto: "Do alto avistam-se o Montemuro, a Estrela e o Caramulo, e o vale de Lafões inteiro. Um paraíso natural de rocha nua, ar puro e horizontes sem fim.",
     imagem: "/fotos/regiao-serra-arada-wikimedia.jpg",
+    srcSet: `${T}serra-arada-640.jpg 640w, ${T}serra-arada-960.jpg 960w, ${T}serra-arada-1280.jpg 1280w, /fotos/regiao-serra-arada-wikimedia.jpg 1920w`,
+    sizes: SIZES_CARTAO,
     alt: "Encostas rochosas da Serra da Arada iluminadas pelo sol",
   },
   {
@@ -25,6 +34,9 @@ const lugares: Lugar[] = [
     distancia: "19 km",
     texto: "Escondida no fundo do vale, com apenas 6 habitantes. É uma das aldeias de xisto mais preservadas de Portugal, onde parece que o tempo parou.",
     imagem: "/fotos/aldeia_pena-corrigida.jpg",
+    srcSet: `${T}aldeia-pena-640.jpg 640w, ${T}aldeia-pena-960.jpg 960w, ${T}aldeia-pena-1280.jpg 1280w, ${T}aldeia-pena-1920.jpg 1920w, /fotos/aldeia_pena-corrigida.jpg 3888w`,
+    // 2,2:1 num recorte de ≤220 px de altura: a largura vem da altura (≤490 px).
+    sizes: "490px",
     alt: "Aldeia da Pena",
   },
   {
@@ -32,6 +44,8 @@ const lugares: Lugar[] = [
     distancia: "1 km",
     texto: "A ecopista segue o traçado da antiga linha de caminho de ferro, ao lado do rio. Caminha-se e anda-se de bicicleta a partir daqui, acompanhando o curso da água.",
     imagem: "/fotos/regiao-vouga-wikimedia.jpg",
+    srcSet: `${T}vouga-640.jpg 640w, ${T}vouga-960.jpg 960w, ${T}vouga-1280.jpg 1280w, /fotos/regiao-vouga-wikimedia.jpg 1920w`,
+    sizes: SIZES_CARTAO,
     alt: "Ponte da antiga Linha do Vouga sobre o rio em Vouzela",
   },
 ];
@@ -166,7 +180,7 @@ export function AVoltaPilha() {
                   aria-hidden={index !== active}
                 >
                   <div className="relative min-h-0 flex-[0_0_43%] overflow-hidden bg-xisto/5">
-                    <img src={lugar.imagem} alt={lugar.alt} className="object-cover w-full h-full" />
+                    <img loading="lazy" sizes={lugar.sizes} srcSet={lugar.srcSet} src={lugar.imagem} alt={lugar.alt} className="object-cover w-full h-full" />
                   </div>
                   
                   <div className="flex min-h-0 flex-1 flex-col px-5 pb-5 pt-4 md:px-6 md:pb-6 md:pt-5">

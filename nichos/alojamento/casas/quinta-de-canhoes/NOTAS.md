@@ -86,3 +86,63 @@ pronto a trocar por um POST a uma Netlify Function. Sem emails nesta ronda.
 - SEO (2026-10-21): domínio https://quintadecanhoes.com (lib/seo.ts: SITE + metadados()); cada
   página com canonical, título, descrição, og e twitter próprios; og.jpg 1200×630; app/robots.ts e
   app/sitemap.ts; JSON-LD BedAndBreakfast sem avaliações; h1 escondido em /os-quartos.
+
+## Rapidez (2026-10-21)
+
+Página inicial, build de produção local, Lighthouse mediana de 5, fluidez com CPU ÷4.
+
+**Gargalo:** as fotos dos cartões da página inicial (4 estadias no carrossel/acordeão,
+4 lugares da «volta») iam em bruto, sem `srcset`: 2,5–4 MB cada (originais de 2528–3888 px
+para caixas de 330–980 px), todas pedidas logo no arranque. 17,5 MB por visita; o
+Lighthouse simulado punha o LCP em 47 s no telemóvel, porque esses bytes começam antes de o
+hero acabar de pintar e somam-se à conta. O hero em si está bem (LCP observado ≈ FCP).
+
+**Aplicado** (nada muda à vista; as fotos não perdem qualidade):
+- `scripts/tamanhos.mjs` gera versões mais pequenas com a mesma qualidade JPEG do original
+  (estadias a 100; lugares a 92, acima dos originais ~87–90): `public/fotos/tamanhos/`
+  piscina, quarto-duplo, quarto-twin, suite (1024/1280/1440/1920), aldeia-pena
+  (640/960/1280/1920), serra-arada e vouga (640/960/1280), termas (640/960). O original
+  continua no `srcset` para ecrãs que precisam dele.
+- `srcset` + `sizes` calculados contra a caixa real (object-cover): estadias
+  `(max-width: 767px) 640px, max(59vw, 830px)` (piscina 760/980 px); lugares
+  `27rem/25rem/23rem` (aldeia, 2,2:1, `490px`). Iguais no carrossel e no acordeão, para
+  o telemóvel reutilizar o pedido do HTML. `loading="lazy"` nos dois e na pilha.
+  Ficheiros: `components/landing/OpcoesDeEstadia.tsx`, `AVoltaPilha.tsx`,
+  `components/reactbits/DepthCarousel.tsx`, `AccordionGallery.tsx`.
+- Hero: `width`/`height` reais nos `<source>` do telemóvel (aviso de proporção; o CSS
+  manda no tamanho, nada muda).
+
+| | antes | depois |
+|---|---|---|
+| Telemóvel nota (corridas) | 65 (65,65,66,65,65) | 75 (75,75,74,75,75) |
+| Telemóvel LCP observado / simulado | 164 ms / 46,9 s | 206 ms / 19,6 s |
+| Telemóvel TBT / CLS | 12 ms / 0 | 54 ms / 0 (repetição: 22 → 36 ms; ruído, < 100) |
+| Telemóvel peso | 17,5 MB | 7,1 MB |
+| Computador nota (corridas) | 66 (66,66,70,69,65) | 81 (81,80,81,81,81) |
+| Computador LCP observado / simulado | 203 ms / 8,6 s | 238 ms / 3,5 s |
+| Computador TBT / CLS | 0 / 0 | 0 / 0 |
+| Computador peso | 18,0 MB | 6,0 MB |
+| Frames telemóvel p95 / >25 ms | 17,5–18,1 / 0–0,3 % | 17,6–18,1 / 0,1–0,3 % |
+| Frames computador p95 / >25 ms | 32,2–32,9 / 6,1–7,1 % | 31,9–33,3 / 5,5–7,2 % |
+
+Frames em corridas alternadas antes/depois: iguais dentro do ruído. O p95 de ~33 ms no
+computador já existia; não é o blur (`--css` sem backdrop-filter: igual). Fica por investigar.
+
+`rapidez-igual`: as diferenças estão todas dentro das caixas das fotos (média 12–19 níveis
+por canal), reamostragem de uma fonte de outro tamanho; vistas lado a lado, iguais.
+Texto, geometria e animações iguais nos quatro casos.
+
+**Propostas (não aplicadas):**
+- Hero no telemóvel: `hero-telemovel.jpg` (1316 px, 770 KB) e `hero-vale-mobile.webp`
+  são o LCP; uma versão de ~1080 px só serviria a ecrãs de densidade < 2 (o Lighthouse
+  emula 1,75; os iPhones são 3 e precisam do original). Ganho real pequeno, mexe no hero.
+- AVIF/WebP para as fotos dos cartões: −50–70 % de bytes, mas é troca de formato; só com
+  prova foto a foto.
+- Cache das fotos em `/fotos/*` no Netlify: os nomes não têm hash, por isso uma cache
+  longa obrigaria a mudar o nome ao trocar uma foto. Hoje revalidam com ETag (304).
+
+**Recusado:** tirar `framer-motion` do package.json (ninguém o importa, mas é dependência
+do `motion` à mesma; zero bytes no bundle, só mexia no lock).
+
+Cópia de antes: `arquivo/site-2026-10-21-antes-rapidez/` (sem node_modules, .next e
+.env.local). Medidas em `arquivo/rapidez/`.

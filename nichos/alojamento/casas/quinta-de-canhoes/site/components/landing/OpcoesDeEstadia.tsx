@@ -14,8 +14,18 @@ type Opcao = {
   /** Número que decide a reserva, destacado em linha própria. */
   capacidade?: string;
   imagem: string;
+  /** Versões mais pequenas (scripts/tamanhos.mjs), mesma qualidade do original. */
+  srcSet: string;
+  sizes: string;
   alt: string;
 };
+
+/* Largura a que a foto aparece de facto (object-cover). Telemóvel: cartão de
+   408 px de altura, por isso largura = 408 × proporção, com folga para o
+   cartão que avança ao arrastar. Ecrã largo: o painel aberto do acordeão mede
+   ~58,6 % da largura e 550 px de altura, por isso o maior dos dois. */
+const SIZES_3_2 = "(max-width: 767px) 640px, max(59vw, 830px)";
+const SIZES_16_9 = "(max-width: 767px) 760px, max(59vw, 980px)";
 
 const opcoes: Opcao[] = [
   {
@@ -28,6 +38,8 @@ const opcoes: Opcao[] = [
     frase: "Para juntar amigos ou família e fazer da Quinta a casa de todos.",
     extra: "E o dia acaba na piscina, no relvado, com a montanha toda em frente.",
     imagem: "/fotos/piscina canhoes.jpg",
+    srcSet: "/fotos/tamanhos/piscina-1024.jpg 1024w, /fotos/tamanhos/piscina-1280.jpg 1280w, /fotos/tamanhos/piscina-1440.jpg 1440w, /fotos/tamanhos/piscina-1920.jpg 1920w, /fotos/piscina%20canhoes.jpg 2730w",
+    sizes: SIZES_16_9,
     alt: "A piscina no relvado da quinta, com o jardim em socalcos, a pérgula coberta de verde e a casa de granito acima",
   },
   {
@@ -35,6 +47,8 @@ const opcoes: Opcao[] = [
     detalhe: "Uma cama de casal",
     frase: "Para acordar devagar, com a manhã inteira só para os dois.",
     imagem: "/fotos/quarto duplo melhorado.jpg",
+    srcSet: "/fotos/tamanhos/quarto-duplo-1024.jpg 1024w, /fotos/tamanhos/quarto-duplo-1280.jpg 1280w, /fotos/tamanhos/quarto-duplo-1440.jpg 1440w, /fotos/tamanhos/quarto-duplo-1920.jpg 1920w, /fotos/quarto%20duplo%20melhorado.jpg 2528w",
+    sizes: SIZES_3_2,
     alt: "Quarto com cama de casal, colcha verde-água e gravuras botânicas por cima da cabeceira",
   },
   {
@@ -42,6 +56,8 @@ const opcoes: Opcao[] = [
     detalhe: "Duas camas individuais",
     frase: "Para partilhar a viagem sem deixar de ter o seu próprio espaço.",
     imagem: "/fotos/quarto twin 2.jpg",
+    srcSet: "/fotos/tamanhos/quarto-twin-1024.jpg 1024w, /fotos/tamanhos/quarto-twin-1280.jpg 1280w, /fotos/tamanhos/quarto-twin-1440.jpg 1440w, /fotos/tamanhos/quarto-twin-1920.jpg 1920w, /fotos/quarto%20twin%202.jpg 2528w",
+    sizes: SIZES_3_2,
     alt: "Quarto com duas camas individuais, cabeceiras brancas em ferro forjado e gravuras botânicas na parede",
   },
   {
@@ -49,6 +65,8 @@ const opcoes: Opcao[] = [
     detalhe: "Cama de casal e dois sofás-cama",
     frase: "Para ficar mais tempo, espalhar-se e deixar o dia entrar.",
     imagem: "/fotos/suite 2.jpg",
+    srcSet: "/fotos/tamanhos/suite-1024.jpg 1024w, /fotos/tamanhos/suite-1280.jpg 1280w, /fotos/tamanhos/suite-1440.jpg 1440w, /fotos/tamanhos/suite-1920.jpg 1920w, /fotos/suite%202.jpg 2528w",
+    sizes: SIZES_3_2,
     alt: "Sala ampla da suite, com paredes de granito, sofás de couro, mesa de madeira lavrada e a sala de jantar ao fundo",
   },
 ];
@@ -92,6 +110,8 @@ function Carrossel() {
           <DepthCarousel
             items={opcoes.map((o) => ({
               image: o.imagem,
+              srcSet: o.srcSet,
+              sizes: o.sizes,
               alt: o.alt,
               label: o.nome,
               detail: [o.detalhe, o.capacidade].filter(Boolean).join(" · "),
@@ -132,6 +152,8 @@ function Acordeao() {
       <AccordionGallery
         items={opcoes.map((o) => ({
           image: o.imagem,
+          srcSet: o.srcSet,
+          sizes: o.sizes,
           label: o.nome,
           detail: [o.detalhe, o.capacidade].filter(Boolean).join(" · "),
           description: [o.frase, o.extra].filter(Boolean).join(" "),

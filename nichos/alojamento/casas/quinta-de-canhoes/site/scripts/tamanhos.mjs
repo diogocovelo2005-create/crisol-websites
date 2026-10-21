@@ -17,6 +17,16 @@ const OUT = path.resolve("public/fotos/tamanhos");
 const fotos = {
   imagemacasa: ["public/fotos/imagemacasa.jpg", 100, [1280, 1920]],
   "wc-duplo": ["public/fotos/quartos/quarto duplo/wc-duplo-filt.jpg", 95, [1280, 1920]],
+  // Página inicial: cartões das estadias (carrossel/acordeão) e da volta (pilha).
+  // Os originais da volta são ~q87–90; as versões vão a 92 para não somar perda.
+  piscina: ["public/fotos/piscina canhoes.jpg", 100, [1024, 1280, 1440, 1920]],
+  "quarto-duplo": ["public/fotos/quarto duplo melhorado.jpg", 100, [1024, 1280, 1440, 1920]],
+  "quarto-twin": ["public/fotos/quarto twin 2.jpg", 100, [1024, 1280, 1440, 1920]],
+  suite: ["public/fotos/suite 2.jpg", 100, [1024, 1280, 1440, 1920]],
+  "aldeia-pena": ["public/fotos/aldeia_pena-corrigida.jpg", 92, [640, 960, 1280, 1920]],
+  "serra-arada": ["public/fotos/regiao-serra-arada-wikimedia.jpg", 92, [640, 960, 1280]],
+  vouga: ["public/fotos/regiao-vouga-wikimedia.jpg", 92, [640, 960, 1280]],
+  termas: ["public/fotos/regiao-termas-wikimedia.jpg", 92, [640, 960]],
 };
 
 await mkdir(OUT, { recursive: true });
