@@ -146,3 +146,38 @@ do `motion` à mesma; zero bytes no bundle, só mexia no lock).
 
 Cópia de antes: `arquivo/site-2026-10-21-antes-rapidez/` (sem node_modules, .next e
 .env.local). Medidas em `arquivo/rapidez/`.
+
+### Rapidez, 2.ª ronda (2026-10-21): AVIF e hero
+
+- **AVIF nas 4 fotos das estadias** (carrossel/acordeão), aprovado pelo Diogo:
+  `<picture>` com `<source type="image/avif">` e o JPEG por baixo (browsers sem AVIF).
+  Feitos do original a 90, 4:4:4 (`scripts/tamanhos.mjs`), larguras 1024/1280/1440/1920 e
+  a do original. Mais fiéis ao original do que os JPEG (PSNR 40–45 dB; cor média igual a
+  ±0,15) e 50–70 % mais leves. Comparados ampliados 2× (relva, alcatifa, couro, colchas,
+  parede lisa): sem diferença. `rapidez-igual`: «Tudo igual» nos quatro casos.
+- **Ficam em JPEG** as 4 da volta (termas, serra da Arada, aldeia da Pena, Vouga): a 80 o
+  AVIF alisa o grão do céu (termas, aldeia); a 88 pesa o mesmo que o JPEG.
+- **Hero do telemóvel a ~1080 px: não aplicado.** No telemóvel a foto é esticada ao ecrã
+  (object-fit: fill) e a janela aproxima-se até 1,47×, por isso a largura precisa é
+  max(100vw, 55,8svh) × 1,47 × densidade: 1181 px já no aparelho do Lighthouse
+  (412×823, 1,75) e mais em qualquer telemóvel real. Uma versão de 1080 px nunca seria
+  escolhida sem ficar abaixo do tamanho visto. AVIF do hero também não compensa
+  (770 → 640 KB à mesma qualidade).
+
+| | antes | depois |
+|---|---|---|
+| Telemóvel nota | 75 (×5) | 75 (×5) |
+| Telemóvel LCP observado / simulado | 206 ms / 19,5 s | 162 ms / 17,6 s |
+| Telemóvel TBT / CLS | 45 ms / 0 | 38 ms / 0 |
+| Computador nota | 81 (×5) | 84 (83–84) |
+| Computador LCP observado / simulado | 208 ms / 3,5 s | 217 ms / 2,9 s |
+| Frames telemóvel p95 / >25 ms | 17,5 / 0,1 % | 17,6 / 0,2–0,3 % |
+| Frames computador p95 / >25 ms (5 pares alternados) | 32,6–33,4 / 6,0–12,4 % (mediana 6,9) | 32,9–33,9 / 6,0–14,2 % (mediana 7,7) |
+
+O LCP simulado do telemóvel continua a vermelho por causa do próprio hero (770 KB +
+494 KB, já no tamanho mínimo que o zoom pede). Fluidez no computador: igual dentro do
+ruído, com tendência ligeira para pior (AVIF custa mais a descodificar); se o Diogo notar
+algo no acordeão, reverter é tirar o `avifSrcSet` das 4 opções em `OpcoesDeEstadia.tsx`.
+Cópia de antes: `arquivo/site-2026-10-21-antes-avif/` (só código).
+
+**Decisão (2026-10-21):** o AVIF da 2.ª ronda NÃO foi aplicado. O Diogo escolheu não publicar: ganho pequeno na nota e tendência ligeira para o scroll piorar no computador (fluidez acima de velocidade). Código e ficheiros .avif revertidos.
