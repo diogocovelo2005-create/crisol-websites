@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
+import { metadados } from "@/lib/seo";
 import Image from "next/image";
 import { Revelar } from "@/components/Revelar";
 import { HeroTransicao } from "@/components/landing/HeroTransicao";
 import { CortinaQuartos } from "@/components/CortinaQuartos";
 import { JardimSocalcos } from "@/components/JardimSocalcos";
 
-export const metadata: Metadata = {
-  title: "A casa | Quinta de Canhões",
-  description: "Cem anos de granito, jardim em socalcos e uma piscina sobre o vale.",
-};
+export const metadata: Metadata = metadados({
+  titulo: "A casa centenária em Várzea",
+  descricao: "Cem anos de granito em Várzea, São Pedro do Sul: jardim em socalcos, piscina sobre o vale do Vouga e a mesa do pequeno-almoço caseiro.",
+  caminho: "/a-casa",
+});
 
 export default function PaginaACasa() {
   return (

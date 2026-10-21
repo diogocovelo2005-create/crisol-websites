@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
+import { metadados } from "@/lib/seo";
 import type { ReactNode } from "react";
 import { CabecalhoPagina } from "@/components/CabecalhoPagina";
 import { contactos } from "@/lib/contactos";
 
-export const metadata: Metadata = {
-  title: "Política de privacidade",
-  description: "Como a Quinta de Canhões trata os dados dos pedidos de reserva: que dados, para quê, onde ficam, durante quanto tempo e os seus direitos.",
-  alternates: { canonical: "/privacidade" },
-};
+export const metadata: Metadata = metadados({
+  titulo: "Política de privacidade",
+  descricao: "Como a Quinta de Canhões trata os dados dos pedidos de reserva: que dados, para quê, onde ficam, durante quanto tempo e os seus direitos.",
+  caminho: "/privacidade",
+});
 
 const ATUALIZADA = "20 de outubro de 2026";
 

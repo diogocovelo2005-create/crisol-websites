@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { metadados } from "@/lib/seo";
 import { Foto } from "@/components/Foto";
 import { Revelar } from "@/components/Revelar";
 import { CabecalhoPagina } from "@/components/CabecalhoPagina";
@@ -7,11 +8,11 @@ import { contactos, linkWhatsapp } from "@/lib/contactos";
 import { FormularioReserva } from "@/components/reserva/FormularioReserva";
 import { SINAL_PERCENTAGEM } from "@/lib/reserva";
 
-export const metadata: Metadata = {
-  title: "Reservar",
-  description:
-    `Escolha as datas e o quarto e faça o pedido à Quinta de Canhões, em Várzea, São Pedro do Sul. Confirmamos a disponibilidade e a reserva fica feita com um sinal de ${SINAL_PERCENTAGEM} %.`,
-};
+export const metadata: Metadata = metadados({
+  titulo: "Reservar em São Pedro do Sul",
+  descricao: `Escolha as datas e o quarto e faça o pedido direto à Quinta de Canhões, em Várzea, perto de Viseu. Confirmamos a disponibilidade e o sinal é de ${SINAL_PERCENTAGEM} %.`,
+  caminho: "/reservar",
+});
 
 const horarios = [
   { etiqueta: "Check-in", valor: "15h00 – 21h00" },

@@ -61,6 +61,8 @@ export function HeroQuartos() {
           className="absolute inset-0 z-10 flex flex-col justify-center px-6 md:px-10 will-change-[opacity,transform]"
         >
           <div className="mx-auto w-full max-w-[86rem]">
+            {/* O título da página, para quem lê com leitor de ecrã e para os motores de busca. */}
+            <h1 className="sr-only">Os quartos da Quinta de Canhões, em São Pedro do Sul</h1>
             <div className="grid gap-16 md:grid-cols-2 md:gap-24 lg:gap-32">
               
               {/* Opção 1 */}

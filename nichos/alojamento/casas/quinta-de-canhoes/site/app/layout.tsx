@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import { Young_Serif, Playfair_Display, Karla } from "next/font/google";
 import "./globals.css";
+import { SITE } from "@/lib/seo";
 import { ScrollSuave } from "@/components/ScrollSuave";
 import { Cabecalho } from "@/components/Cabecalho";
 import { Rodape } from "@/components/Rodape";
@@ -35,20 +36,9 @@ const DESCRICAO =
   "Casa centenária de Turismo de Habitação sobre o vale do Vouga, em Várzea, São Pedro do Sul. Jardim, piscina e um pequeno-almoço de que os hóspedes não se esquecem.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://quintadecanhoes.pt"),
-  title: {
-    default: "Quinta de Canhões — Turismo de Habitação em São Pedro do Sul",
-    template: "%s — Quinta de Canhões",
-  },
+  metadataBase: new URL(SITE),
+  title: { default: "Quinta de Canhões — Turismo rural em São Pedro do Sul", template: "%s — Quinta de Canhões" },
   description: DESCRICAO,
-  openGraph: {
-    title: "Quinta de Canhões",
-    description: DESCRICAO,
-    locale: "pt_PT",
-    type: "website",
-    images: [{ url: "/fotos/hero.jpg", width: 1535, height: 1024 }],
-  },
-  alternates: { canonical: "/" },
 };
 
 export default function RootLayout({

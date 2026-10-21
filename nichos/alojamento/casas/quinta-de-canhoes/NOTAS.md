@@ -83,3 +83,6 @@ pronto a trocar por um POST a uma Netlify Function. Sem emails nesta ronda.
 - Cookies (2026-10-20): o mapa do Google no rodapé só carrega com consentimento (aviso em
   baixo quando o rodapé se aproxima, ou «Mostrar o mapa»); escolha em localStorage;
   «Preferências de cookies» no rodapé reabre o aviso. Sem aviso automático em /pedido, /proposta, /dev.
+- SEO (2026-10-21): domínio https://quintadecanhoes.com (lib/seo.ts: SITE + metadados()); cada
+  página com canonical, título, descrição, og e twitter próprios; og.jpg 1200×630; app/robots.ts e
+  app/sitemap.ts; JSON-LD BedAndBreakfast sem avaliações; h1 escondido em /os-quartos.

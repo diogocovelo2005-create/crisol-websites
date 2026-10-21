@@ -49,3 +49,17 @@ Não envie esta senha a ninguém por email nem por WhatsApp.
 Abra o site, vá a **Reservar** e faça um pedido com o seu próprio email. Deve
 receber o email «Novo pedido» em poucos minutos. Se não chegar, veja na pasta
 de spam e, se mesmo assim não estiver lá, repita o passo 2 e o passo 3.
+
+---
+
+## O que é seu e onde está
+
+| Serviço | Para quê | Dono |
+|---|---|---|
+| Domínio quintadecanhoes.com (Porkbun) | O endereço do site | Teresa |
+| Netlify | Onde o site está alojado | Teresa |
+| reservas.casadecanhoes@gmail.com | Envia os emails das reservas | Casa (Teresa) |
+| Google Search Console | Ver como o site aparece no Google | Teresa (proprietária) |
+| Google Business Profile | A ficha da casa no Google Maps | Teresa (proprietária principal) |
+
+Os pedidos de reserva chegam a casadecanhoes@gmail.com.

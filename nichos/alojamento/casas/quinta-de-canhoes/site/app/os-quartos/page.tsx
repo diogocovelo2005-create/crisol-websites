@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { metadados } from "@/lib/seo";
 import Image from "next/image";
 import { Revelar } from "@/components/Revelar";
 import { HeroQuartos } from "@/components/HeroQuartos";
@@ -8,10 +9,11 @@ import { IconeWhatsapp } from "@/components/IconeWhatsapp";
 import { Botao } from "@/components/Botao";
 import { linkWhatsapp } from "@/lib/contactos";
 
-export const metadata: Metadata = {
-  title: "Os quartos | Quinta de Canhões",
-  description: "Quarto Duplo, Quarto Twin e duas Suites. Todos com janela virada para o vale.",
-};
+export const metadata: Metadata = metadados({
+  titulo: "Quartos em São Pedro do Sul",
+  descricao: "Quarto Duplo, Quarto Twin e Suite, todos com casa de banho privativa e janela para o vale. A sete minutos das Termas de São Pedro do Sul.",
+  caminho: "/os-quartos",
+});
 
 
 const fichasQuartos = [

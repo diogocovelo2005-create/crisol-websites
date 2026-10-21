@@ -39,3 +39,10 @@ Envio pelo **Resend**, com o domínio **quintadecanhoes.com**.
    - sem `GMAIL_*`
 4. Opcional: reencaminhar `reservas@` para o Gmail dela no registador, para quem
    escrever diretamente para esse endereço.
+
+## Publicar a partir do computador (cuidado)
+
+O `netlify deploy --build` feito no computador mete no servidor do site o que
+estiver na pasta, incluindo `site/.env.local` e `site/.emails/`. Antes de
+publicar, tirar esses dois da pasta (e repor depois). As variáveis de produção
+vivem só no Netlify; `SITE_URL=https://quintadecanhoes.com` está lá.
