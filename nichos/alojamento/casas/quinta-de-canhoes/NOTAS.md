@@ -181,3 +181,6 @@ algo no acordeão, reverter é tirar o `avifSrcSet` das 4 opções em `OpcoesDeE
 Cópia de antes: `arquivo/site-2026-10-21-antes-avif/` (só código).
 
 **Decisão (2026-10-21):** o AVIF da 2.ª ronda NÃO foi aplicado. O Diogo escolheu não publicar: ganho pequeno na nota e tendência ligeira para o scroll piorar no computador (fluidez acima de velocidade). Código e ficheiros .avif revertidos.
+- Scroll entre páginas (2026-10-21): o Lenis acabava a inércia depois da navegação e a página
+  nova abria a meio; ScrollSuave pára-o no layout effect da mudança de caminho, e um clique
+  para a própria página leva ao topo. public/llms.txt criado.
