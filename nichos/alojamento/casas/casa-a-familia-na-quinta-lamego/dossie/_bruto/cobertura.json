@@ -1,0 +1,82 @@
+[
+ {
+  "id": "COB-01",
+  "fonte": "Airbnb: anúncio",
+  "material": "descricao e comodidades",
+  "estado": "completo_no_universo_observado",
+  "superficie": "página + modais (31 comodidades)",
+  "observado": 31,
+  "recolhido": 31,
+  "limitacao": "'Mostrar original' das traduções não aberto"
+ },
+ {
+  "id": "COB-02",
+  "fonte": "Airbnb: reviews",
+  "material": "reviews",
+  "estado": "completo_no_universo_observado",
+  "superficie": "modal 29 avaliações",
+  "observado": 29,
+  "recolhido": 29,
+  "limitacao": "7 traduzidas automaticamente, sem original; datas relativas nas 3 mais recentes"
+ },
+ {
+  "id": "COB-03",
+  "fonte": "Airbnb: fotos",
+  "material": "fotos",
+  "estado": "completo_no_universo_observado",
+  "superficie": "modal Mostrar todas as fotos",
+  "observado": 38,
+  "recolhido": 38,
+  "limitacao": "o Airbnb não indica total; guardadas a largura 1920"
+ },
+ {
+  "id": "COB-04",
+  "fonte": "Site Wix (4 páginas)",
+  "material": "textos e fotos do conceito",
+  "estado": "completo_no_universo_observado",
+  "superficie": "Início, Apadrinhamento, O Nosso Projeto, Galeria",
+  "observado": 53,
+  "recolhido": 53,
+  "limitacao": "sem legendas/nomes ligados às fotos; vídeo da Galeria e vídeos do site não descarregados; formulário de apadrinhamento não explorado"
+ },
+ {
+  "id": "COB-05",
+  "fonte": "Facebook A Família na Quinta",
+  "material": "posts e fotos",
+  "estado": "bloqueado",
+  "superficie": "vista pública sem login",
+  "observado": 1,
+  "recolhido": 1,
+  "limitacao": "só bio, 10 mil seguidores e um post truncado; posts diários e álbuns exigem sessão"
+ },
+ {
+  "id": "COB-06",
+  "fonte": "Instagram",
+  "material": "perfil",
+  "estado": "nao_encontrado",
+  "superficie": "pesquisa web",
+  "observado": 0,
+  "recolhido": 0,
+  "limitacao": "nenhum resultado"
+ },
+ {
+  "id": "COB-07",
+  "fonte": "Google Maps",
+  "material": "reviews e fotos",
+  "estado": "parcial",
+  "superficie": "ficha + 3 críticas",
+  "observado": 3,
+  "recolhido": 3,
+  "limitacao": "2 críticas só com estrelas; textos originais não abertos; fotos do proprietário não percorridas"
+ },
+ {
+  "id": "COB-08",
+  "fonte": "Regiao (cache)",
+  "material": "atracoes",
+  "estado": "completo_no_universo_observado",
+  "superficie": "regiao.py perto/usar a partir de coordenadas aproximadas de Lamego",
+  "observado": 6,
+  "recolhido": 6,
+  "limitacao": "Castelo de Lamego sem foto; tempos a confirmar com coordenadas exatas"
+ }
+]

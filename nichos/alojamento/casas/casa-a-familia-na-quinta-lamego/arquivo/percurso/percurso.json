@@ -1,0 +1,20 @@
+{
+  "url": "http://localhost:4260",
+  "data": "2026-10-21T10:15:00.248Z",
+  "reduzido": true,
+  "dispositivos": [
+    {
+      "nome": "pc-1440",
+      "motor": "chromium",
+      "largura": 1440,
+      "altura": 900,
+      "tipo": "computador",
+      "alturaPagina": 13688,
+      "ecras": 15.2,
+      "problemas": []
+    }
+  ],
+  "avisos": [],
+  "resumo": {},
+  "ok": true
+}

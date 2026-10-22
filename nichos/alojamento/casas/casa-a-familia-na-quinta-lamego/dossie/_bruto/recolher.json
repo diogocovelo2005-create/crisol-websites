@@ -1,0 +1,22 @@
+{
+ "site0": {
+  "ok": true,
+  "segundos": 19,
+  "ultima_linha": "ok site0"
+ },
+ "site1": {
+  "ok": true,
+  "segundos": 19,
+  "ultima_linha": "ok site1"
+ },
+ "gmaps": {
+  "ok": true,
+  "segundos": 39,
+  "ultima_linha": "3 críticas"
+ },
+ "airbnb": {
+  "ok": true,
+  "segundos": 97,
+  "ultima_linha": "1452014258760429542 {'descricao_erro': 128, 'comodidades_erro': 1492, 'avaliacoes': 10882, 'fotos': 19}"
+ }
+}

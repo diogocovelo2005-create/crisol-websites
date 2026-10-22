@@ -1,0 +1,3405 @@
+{
+ "schema_version": "1.0",
+ "manifesto": {
+  "slug": "casa-a-familia-na-quinta-lamego",
+  "revisao": "2026-10-20",
+  "prontidao": "com_limitacoes",
+  "notas": "Casa confirmada pelo Diogo (Airbnb 1452014258760429542) e pelo RNT (169288/AL). O site junta casa e projeto dos animais: a ligação está provada (RNT, Google, Lígia, dono), mas a convivência dos hóspedes com os animais, o papel da casa no sustento do santuário, os animais de hoje e o valor do apadrinhamento estão por confirmar com o dono. Registo e capacidade em conflito no anúncio."
+ },
+ "entidades": [
+  {
+   "id": "CASA-1",
+   "tipo": "casa",
+   "nome": "Casa \"A Família na Quinta\" (chalé de pedra, Lamego; 169288/AL)"
+  },
+  {
+   "id": "ESP-OPEN",
+   "tipo": "espaco",
+   "nome": "Open space de 60 m²: cama, sala e cozinha",
+   "pai_id": "CASA-1"
+  },
+  {
+   "id": "ESP-VARANDA",
+   "tipo": "espaco",
+   "nome": "Varanda privativa com spa e duche exterior",
+   "pai_id": "CASA-1"
+  },
+  {
+   "id": "ESP-WC",
+   "tipo": "espaco",
+   "nome": "Casa de banho",
+   "pai_id": "CASA-1"
+  },
+  {
+   "id": "ESP-QUINTA",
+   "tipo": "espaco",
+   "nome": "A quinta e o projeto dos animais (Quinta Lusitano / \"A Família na Quinta\")",
+   "pai_id": "CASA-1"
+  },
+  {
+   "id": "CANAL-AIRBNB",
+   "tipo": "canal",
+   "nome": "Airbnb 1452014258760429542",
+   "pai_id": "CASA-1"
+  },
+  {
+   "id": "CANAL-WIX",
+   "tipo": "canal",
+   "nome": "Site Wix do projeto (lusitanoquinta.wixsite.com/mysite)",
+   "pai_id": "ESP-QUINTA"
+  },
+  {
+   "id": "CANAL-FB",
+   "tipo": "canal",
+   "nome": "Facebook A Família na Quinta",
+   "pai_id": "ESP-QUINTA"
+  },
+  {
+   "id": "CANAL-GMAPS",
+   "tipo": "canal",
+   "nome": "Google Maps \"Dream Valley - A Familia na Quinta\"",
+   "pai_id": "CASA-1"
+  }
+ ],
+ "evidencias": [
+  {
+   "id": "EV-AB-DESC",
+   "origem": "casa",
+   "entidade_ids": [
+    "CASA-1",
+    "ESP-OPEN",
+    "ESP-VARANDA"
+   ],
+   "local": "https://www.airbnb.pt/rooms/1452014258760429542 ; marketing/textos.md",
+   "bloco": "Airbnb: descrição, O espaço, Acesso dos viajantes, Outras coisas a ter em conta",
+   "excerto": "moradia única de 60 m² em open space! Localizada em uma quinta familiar [...] spa de hidromassagem aquecido sob o céu aberto e do duche exterior com água quente",
+   "recolhido_em": "2026-10-20",
+   "atualidade": "anúncio ativo a 2026-10-20"
+  },
+  {
+   "id": "EV-AB-COMOD",
+   "origem": "casa",
+   "entidade_ids": [
+    "CASA-1"
+   ],
+   "local": "https://www.airbnb.pt/rooms/1452014258760429542 ; factos.md, Comodidades",
+   "bloco": "Airbnb: Mostrar todas as 31 comodidades",
+   "excerto": "Cozinha, Wi-Fi, Estacionamento gratuito no local, Banheira de hidromassagem, TV com Disney+, Netflix, Ar condicionado; indisponível: detetor de fumo, detetor de monóxido de carbono, aquecimento, máquina de lavar",
+   "recolhido_em": "2026-10-20",
+   "atualidade": "anúncio ativo a 2026-10-20"
+  },
+  {
+   "id": "EV-AB-REGRAS",
+   "origem": "casa",
+   "entidade_ids": [
+    "CASA-1"
+   ],
+   "local": "https://www.airbnb.pt/rooms/1452014258760429542",
+   "bloco": "Airbnb: Coisas a saber / Regras da casa; Onde irá dormir",
+   "excerto": "Check-in após as 14:00; Check-out até às 11:00; Máximo de 3 hóspedes; 1 cama queen, 1 sofá-cama, 1 berço; Check-in autónomo com o cofre de chaves",
+   "recolhido_em": "2026-10-20",
+   "atualidade": "anúncio ativo a 2026-10-20"
+  },
+  {
+   "id": "EV-AB-REG",
+   "origem": "casa",
+   "entidade_ids": [
+    "CASA-1"
+   ],
+   "local": "https://www.airbnb.pt/rooms/1452014258760429542",
+   "bloco": "Airbnb: Dados do registo",
+   "excerto": "169351/AL",
+   "recolhido_em": "2026-10-20"
+  },
+  {
+   "id": "EV-AB-NOTA",
+   "origem": "plataforma",
+   "entidade_ids": [
+    "CANAL-AIRBNB"
+   ],
+   "local": "https://www.airbnb.pt/rooms/1452014258760429542 ; reviews.md",
+   "bloco": "Airbnb: avaliações",
+   "excerto": "4,79 · 29 avaliações; limpeza 4,8; precisão 4,8; check-in 5,0; comunicação 4,9; localização 4,5; qualidade-preço 4,5",
+   "recolhido_em": "2026-10-20"
+  },
+  {
+   "id": "EV-AB-HOST",
+   "origem": "plataforma",
+   "entidade_ids": [
+    "CASA-1"
+   ],
+   "local": "https://www.airbnb.pt/rooms/1452014258760429542",
+   "bloco": "Airbnb: Quem sou / Coanfitriões",
+   "excerto": "Ana Bem, Anfitriã/o desde 2025 [...] Coanfitriões Julio Americo",
+   "recolhido_em": "2026-10-20"
+  },
+  {
+   "id": "EV-AB-FOTOS",
+   "origem": "casa",
+   "entidade_ids": [
+    "CASA-1"
+   ],
+   "local": "marketing/fotos.md, Interior e Exterior (Airbnb)",
+   "bloco": "Airbnb: Mostrar todas as fotos (38)",
+   "recolhido_em": "2026-10-20"
+  },
+  {
+   "id": "EV-RNT-169288",
+   "origem": "registo_publico",
+   "entidade_ids": [
+    "CASA-1"
+   ],
+   "local": "https://rnt.turismodeportugal.pt/RNT/RNAL.aspx?nr=169288 ; compliance.md",
+   "bloco": "RNAL 169288/AL",
+   "excerto": "Nome do Alojamento CASA \"A FAMILIA NA QUINTA\" [...] Modalidade Moradia [...] 4 1 2 [...] Rua da Senhora Pilar 5100-513 Rio de Asnos Freguesia: Ferreiros de Avões Concelho: Lamego [...] Júlio Américo Lopes De Bem; seguro válido até 2026-05-22",
+   "recolhido_em": "2026-10-20",
+   "publicado_em": "2025-09-03",
+   "atualidade": "lido a 2026-10-20"
+  },
+  {
+   "id": "EV-RNT-169351",
+   "origem": "registo_publico",
+   "entidade_ids": [
+    "CASA-1"
+   ],
+   "local": "https://rnt.turismodeportugal.pt/RNT/RNAL.aspx?nr=169351 ; compliance.md",
+   "bloco": "RNAL 169351/AL",
+   "excerto": "Nome do Alojamento COSTA BREEZE [...] Modalidade Apartamento [...] Costa de Caparica [...] Concelho: Almada",
+   "recolhido_em": "2026-10-20",
+   "atualidade": "lido a 2026-10-20: é outro AL"
+  },
+  {
+   "id": "EV-GMAPS",
+   "origem": "casa",
+   "entidade_ids": [
+    "CASA-1",
+    "CANAL-GMAPS"
+   ],
+   "local": "_bruto/gmaps_ficha.txt ; canais.md",
+   "bloco": "Google Maps: ficha",
+   "excerto": "Dream Valley - A Familia na Quinta; Casa de férias; 5,0 (3); Rua Senhora do Pilar, 5100-062 Lamego; 455P+RH; 965 741 870; site lusitanoquinta.wixsite.com",
+   "recolhido_em": "2026-10-20"
+  },
+  {
+   "id": "EV-WIX-INICIO",
+   "origem": "casa",
+   "entidade_ids": [
+    "ESP-QUINTA",
+    "CANAL-WIX"
+   ],
+   "local": "https://lusitanoquinta.wixsite.com/mysite ; marketing/textos.md",
+   "bloco": "Wix: página inicial",
+   "excerto": "é um blog diário que relata o nosso dia a dia na \"Quinta Lusitano\". Por detrás desse blog, há um projeto solidário de ajuda animal. Acolhemos animais de quinta necessitados de abrigo e amor e damos-lhes uma família e um lar para a vida inteira!",
+   "recolhido_em": "2026-10-20",
+   "atualidade": "site sem data; a galeria é de 2021"
+  },
+  {
+   "id": "EV-WIX-PROJETO",
+   "origem": "casa",
+   "entidade_ids": [
+    "ESP-QUINTA",
+    "CANAL-WIX"
+   ],
+   "local": "https://lusitanoquinta.wixsite.com/mysite/copy-of-apadrinhamento ; marketing/textos.md",
+   "bloco": "Wix: O Nosso Projeto",
+   "excerto": "O nosso projeto consiste na criação de um Santuário Animal Auto-Sustentável [...] idealizamos um santuário que não viva apenas da solidariedade [...] temos como foco central o acolhimento e não o resgate",
+   "recolhido_em": "2026-10-20",
+   "atualidade": "sem data"
+  },
+  {
+   "id": "EV-WIX-APAD",
+   "origem": "casa",
+   "entidade_ids": [
+    "ESP-QUINTA",
+    "CANAL-WIX"
+   ],
+   "local": "https://lusitanoquinta.wixsite.com/mysite/apadrinhamento ; marketing/textos.md",
+   "bloco": "Wix: Apadrinhamento",
+   "excerto": "O Apadrinhamento é de 15€ anuais, recebes uma fotografia do afilhado com uma dedicatória de \"A Família na Quinta\"! Só precisas de escolher o bebé que queres apadrinhar, deixares o nome do menino e a tua morada!",
+   "recolhido_em": "2026-10-20",
+   "atualidade": "sem data; site com fotos de 2021"
+  },
+  {
+   "id": "EV-WIX-GALERIA",
+   "origem": "casa",
+   "entidade_ids": [
+    "ESP-QUINTA",
+    "CANAL-WIX"
+   ],
+   "local": "_bruto/wix_apadrinhamento.html (galleryData, title e createdDate de cada foto) ; marketing/fotos.md",
+   "bloco": "Wix: galeria de apadrinhamento, 25 fotos com nome",
+   "excerto": "Maéva, Noel, Dylan, Evelyne, Keyla, Kaio, Jade, Ariel, Maggie, Lana, Winnie, Timô, Lily, Baby, Kiara, Nolan, Holly, Woody, Nala, Mel, Tommy, Rudolpho, Kiku, Benji, Amber",
+   "recolhido_em": "2026-10-20",
+   "publicado_em": "2021-02-06 a 2021-05-05",
+   "atualidade": "antigo: mais de 5 anos"
+  },
+  {
+   "id": "EV-WIX-HISTORIAS",
+   "origem": "casa",
+   "entidade_ids": [
+    "ESP-QUINTA",
+    "CANAL-WIX"
+   ],
+   "local": "https://lusitanoquinta.wixsite.com/mysite ; marketing/textos.md",
+   "bloco": "Wix: página inicial (blocos de notícias)",
+   "excerto": "A Kiara e o Nolan tiveram um inicio de vida muito triste [...] Primeira vez na televisão! [...] Compra uma Mascote!",
+   "recolhido_em": "2026-10-20",
+   "atualidade": "sem data; antigo (fotos de 2021)"
+  },
+  {
+   "id": "EV-WIX-PEDIDOS",
+   "origem": "casa",
+   "entidade_ids": [
+    "ESP-QUINTA",
+    "CANAL-WIX"
+   ],
+   "local": "https://lusitanoquinta.wixsite.com/mysite/copy-of-apadrinhamento ; marketing/textos.md",
+   "bloco": "Wix: Precisamos da tua contribuição",
+   "excerto": "Estábulo para cabras e ovelhas [...] Coelheira [...] IBAN PT50 [...] MBWAY 965741870",
+   "recolhido_em": "2026-10-20",
+   "atualidade": "sem data"
+  },
+  {
+   "id": "EV-FB",
+   "origem": "casa",
+   "entidade_ids": [
+    "ESP-QUINTA",
+    "CANAL-FB"
+   ],
+   "local": "https://www.facebook.com/afamilianaquinta ; _bruto/fb_home.txt",
+   "bloco": "Facebook: bio",
+   "excerto": "Acolhemos animais de quinta necessitados de abrigo e amor e damos-lhes uma família e um lar para a vida inteira! Partilhamos aqui o nosso dia a dia! [...] 10 mil seguidores",
+   "recolhido_em": "2026-10-20",
+   "publicado_em": "último post visível 2025-08-18"
+  },
+  {
+   "id": "EV-FOTOS-CONCEITO",
+   "origem": "casa",
+   "entidade_ids": [
+    "ESP-QUINTA"
+   ],
+   "local": "marketing/fotos.md, Conceito",
+   "bloco": "Wix: imagens das 4 páginas (47)",
+   "recolhido_em": "2026-10-20",
+   "publicado_em": "2021",
+   "atualidade": "antigo; nenhuma mostra a casa"
+  },
+  {
+   "id": "EV-DONO",
+   "origem": "dono",
+   "entidade_ids": [
+    "CASA-1",
+    "ESP-QUINTA"
+   ],
+   "local": "dono.md (chamada com o Diogo, 2026-10-20)",
+   "excerto": "Eu quero um site focado na casa com o conceito do alinhamento e do projeto deles por trás",
+   "recolhido_em": "2026-10-20",
+   "publicado_em": "2026-10-20"
+  },
+  {
+   "id": "EV-REV-LIGIA",
+   "origem": "hospede",
+   "entidade_ids": [
+    "CASA-1",
+    "ESP-QUINTA"
+   ],
+   "local": "reviews.md, A-004",
+   "bloco": "Airbnb, Lígia, setembro de 2026",
+   "excerto": "Os animais da quinta foram uma agradável surpresa à chegada [...] É um projeto com grande valor",
+   "recolhido_em": "2026-10-20",
+   "publicado_em": "2026-09"
+  },
+  {
+   "id": "EV-REV-VISTA",
+   "origem": "hospede",
+   "entidade_ids": [
+    "CASA-1",
+    "ESP-VARANDA"
+   ],
+   "local": "reviews.md, A-005, A-010, A-011, A-015, A-016, A-019, A-021, A-027, A-028, G-001",
+   "bloco": "10 reviews, Airbnb e Google",
+   "recolhido_em": "2026-10-20",
+   "publicado_em": "2025-08 a 2026-05"
+  },
+  {
+   "id": "EV-REV-BELEZA",
+   "origem": "hospede",
+   "entidade_ids": [
+    "CASA-1"
+   ],
+   "local": "reviews.md, 17 reviews (ver pontos-fortes.md, ponto 2)",
+   "recolhido_em": "2026-10-20",
+   "publicado_em": "2025-08 a 2026-10"
+  },
+  {
+   "id": "EV-REV-SPA-OK",
+   "origem": "hospede",
+   "entidade_ids": [
+    "ESP-VARANDA"
+   ],
+   "local": "reviews.md, A-002, A-004, A-015, A-017, A-025",
+   "recolhido_em": "2026-10-20",
+   "publicado_em": "2025-08 a 2026-10"
+  },
+  {
+   "id": "EV-REV-SPA-PROB",
+   "origem": "hospede",
+   "entidade_ids": [
+    "ESP-VARANDA"
+   ],
+   "local": "reviews.md, A-001, A-003, A-009, A-012, A-014, A-022",
+   "excerto": "água suja; cloro; avaria de filtração; pouco limpa; não funcionava (reembolso parcial); não estava ligado, água fria",
+   "recolhido_em": "2026-10-20",
+   "publicado_em": "2025-09 a 2026-10"
+  },
+  {
+   "id": "EV-REV-HUMID",
+   "origem": "hospede",
+   "entidade_ids": [
+    "ESP-WC"
+   ],
+   "local": "reviews.md, A-005, A-010, A-012, A-013",
+   "recolhido_em": "2026-10-20",
+   "publicado_em": "2026-01 a 2026-05"
+  },
+  {
+   "id": "EV-REV-CORT",
+   "origem": "hospede",
+   "entidade_ids": [
+    "ESP-OPEN"
+   ],
+   "local": "reviews.md, A-013, A-018, A-022 (contra: A-004)",
+   "recolhido_em": "2026-10-20",
+   "publicado_em": "2025-09 a 2026-01"
+  },
+  {
+   "id": "EV-REV-APE",
+   "origem": "hospede",
+   "entidade_ids": [
+    "CASA-1"
+   ],
+   "local": "reviews.md, A-005",
+   "excerto": "não era realmente uma localização acessível a pé",
+   "recolhido_em": "2026-10-20",
+   "publicado_em": "2026-05"
+  },
+  {
+   "id": "EV-REV-RUIDO",
+   "origem": "hospede",
+   "entidade_ids": [
+    "CASA-1"
+   ],
+   "local": "reviews.md, A-017, A-022",
+   "recolhido_em": "2026-10-20",
+   "publicado_em": "2025-09"
+  },
+  {
+   "id": "EV-REV-HOST",
+   "origem": "hospede",
+   "entidade_ids": [
+    "CASA-1"
+   ],
+   "local": "reviews.md, A-002, A-004, A-007, A-008, A-012, A-015, A-017, A-020, A-021, A-022, A-025, G-001",
+   "recolhido_em": "2026-10-20",
+   "publicado_em": "2025-07 a 2026-10"
+  },
+  {
+   "id": "EV-REV-PRIV",
+   "origem": "hospede",
+   "entidade_ids": [
+    "CASA-1"
+   ],
+   "local": "reviews.md, A-001, A-005, A-006, A-009, A-011, A-020, A-025, A-026, A-029, G-001",
+   "recolhido_em": "2026-10-20",
+   "publicado_em": "2025-07 a 2026-10"
+  },
+  {
+   "id": "EV-REV-UMA",
+   "origem": "hospede",
+   "entidade_ids": [
+    "CASA-1"
+   ],
+   "local": "reviews.md, A-003 (cabaz), A-022 (Superhost), A-009 (esquentador)",
+   "recolhido_em": "2026-10-20",
+   "publicado_em": "2025-09 a 2026-10"
+  },
+  {
+   "id": "EV-OSRM",
+   "origem": "terceiro",
+   "entidade_ids": [
+    "CASA-1"
+   ],
+   "local": "regiao/cache.md e regiao/regiao.md (OSRM a partir do plus code 455P+RH ≈ 41.10956, -7.81356)",
+   "recolhido_em": "2026-10-20",
+   "atualidade": "calculado a 2026-10-20, sem trânsito"
+  },
+  {
+   "id": "EV-AB-PLAT",
+   "origem": "plataforma",
+   "entidade_ids": [
+    "CANAL-AIRBNB"
+   ],
+   "local": "https://www.airbnb.pt/rooms/1452014258760429542",
+   "bloco": "Airbnb: Anúncios em destaque (texto da plataforma)",
+   "excerto": "Este é um dos poucos espaços na região com esta comodidade.",
+   "recolhido_em": "2026-10-20"
+  },
+  {
+   "id": "EV-REG-SE",
+   "origem": "terceiro",
+   "entidade_ids": [
+    "CASA-1"
+   ],
+   "local": "nichos/alojamento/regiao/se-de-lamego.md ; regiao/cache.md",
+   "recolhido_em": "2026-10-20",
+   "atualidade": "ficha «verificado: sim»; distância OSRM 2026-10-20"
+  },
+  {
+   "id": "EV-REG-CASTELO",
+   "origem": "terceiro",
+   "entidade_ids": [
+    "CASA-1"
+   ],
+   "local": "nichos/alojamento/regiao/castelo-de-lamego.md ; regiao/cache.md",
+   "recolhido_em": "2026-10-20",
+   "atualidade": "ficha «verificado: sim»; distância OSRM 2026-10-20"
+  },
+  {
+   "id": "EV-REG-REMEDIOS",
+   "origem": "terceiro",
+   "entidade_ids": [
+    "CASA-1"
+   ],
+   "local": "nichos/alojamento/regiao/santuario-dos-remedios.md ; regiao/cache.md",
+   "recolhido_em": "2026-10-20",
+   "atualidade": "ficha «verificado: sim»; distância OSRM 2026-10-20"
+  },
+  {
+   "id": "EV-REG-BALSEMAO",
+   "origem": "terceiro",
+   "entidade_ids": [
+    "CASA-1"
+   ],
+   "local": "nichos/alojamento/regiao/capela-de-balsemao.md ; regiao/cache.md",
+   "recolhido_em": "2026-10-20",
+   "atualidade": "ficha «verificado: sim»; distância OSRM 2026-10-20"
+  },
+  {
+   "id": "EV-REG-MUSEU",
+   "origem": "terceiro",
+   "entidade_ids": [
+    "CASA-1"
+   ],
+   "local": "nichos/alojamento/regiao/museu-do-douro.md ; regiao/cache.md",
+   "recolhido_em": "2026-10-20",
+   "atualidade": "ficha «verificado: sim»; distância OSRM 2026-10-20"
+  },
+  {
+   "id": "EV-REG-PORTOREI",
+   "origem": "terceiro",
+   "entidade_ids": [
+    "CASA-1"
+   ],
+   "local": "nichos/alojamento/regiao/porto-de-rei.md ; regiao/cache.md",
+   "recolhido_em": "2026-10-20",
+   "atualidade": "ficha «verificado: sim»; distância OSRM 2026-10-20"
+  }
+ ],
+ "afirmacoes": [
+  {
+   "id": "AF-01",
+   "entidade_id": "CASA-1",
+   "texto": "Alojamento inteiro: uma moradia de 60 m² em open space, numa quinta familiar em Lamego.",
+   "natureza": "facto",
+   "categoria": "geral",
+   "origem": "casa",
+   "estado": "confirmado",
+   "uso": "afirmar",
+   "evidencia_ids": [
+    "EV-AB-DESC",
+    "EV-RNT-169288"
+   ]
+  },
+  {
+   "id": "AF-02",
+   "entidade_id": "ESP-OPEN",
+   "texto": "Construção tradicional em pedra, com teto e vigas de madeira à vista e decoração moderna.",
+   "natureza": "facto",
+   "categoria": "geral",
+   "origem": "casa",
+   "estado": "confirmado",
+   "uso": "afirmar",
+   "evidencia_ids": [
+    "EV-AB-DESC",
+    "EV-AB-FOTOS"
+   ]
+  },
+  {
+   "id": "AF-03",
+   "entidade_id": "ESP-OPEN",
+   "texto": "Um quarto em open space com cama queen e sofá-cama; uma casa de banho com duche.",
+   "natureza": "facto",
+   "categoria": "inventario",
+   "origem": "casa",
+   "estado": "confirmado",
+   "uso": "afirmar",
+   "evidencia_ids": [
+    "EV-AB-REGRAS",
+    "EV-RNT-169288",
+    "EV-AB-FOTOS"
+   ]
+  },
+  {
+   "id": "AF-03B",
+   "entidade_id": "ESP-OPEN",
+   "texto": "Há berço.",
+   "natureza": "facto",
+   "categoria": "inventario",
+   "origem": "casa",
+   "estado": "confirmado",
+   "uso": "afirmar_com_condicao",
+   "evidencia_ids": [
+    "EV-AB-REGRAS"
+   ],
+   "condicao": "Só a pedido/confirmação; listado no Airbnb, não visto nas fotos."
+  },
+  {
+   "id": "AF-04",
+   "entidade_id": "CASA-1",
+   "texto": "Até 3 hóspedes.",
+   "natureza": "facto",
+   "categoria": "politica",
+   "origem": "casa",
+   "estado": "confirmado",
+   "uso": "afirmar_com_condicao",
+   "evidencia_ids": [
+    "EV-AB-REGRAS"
+   ],
+   "ambito": {
+    "fonte": "anúncio do Airbnb",
+    "data": "2026-10-20",
+    "tipo": "regra da casa no canal"
+   },
+   "condicao": "Dizer «até 3 hóspedes» como regra do anúncio; o RNT regista 4 utentes: confirmar com o dono (Mário) antes de publicar qualquer número."
+  },
+  {
+   "id": "AF-04N",
+   "entidade_id": "CASA-1",
+   "texto": "Capacidade de 4 pessoas.",
+   "natureza": "facto",
+   "categoria": "politica",
+   "origem": "registo_publico",
+   "estado": "conflitante",
+   "uso": "nao_usar",
+   "evidencia_ids": [
+    "EV-RNT-169288",
+    "EV-AB-REGRAS"
+   ],
+   "condicao": "RNT 4 utentes vs Airbnb 3 hóspedes."
+  },
+  {
+   "id": "AF-05",
+   "entidade_id": "ESP-VARANDA",
+   "texto": "Varanda privativa, de uso exclusivo, com spa de hidromassagem, mesa, cadeiras, espreguiçadeiras e guarda-sol.",
+   "natureza": "facto",
+   "categoria": "inventario",
+   "origem": "casa",
+   "estado": "confirmado",
+   "uso": "afirmar",
+   "evidencia_ids": [
+    "EV-AB-DESC",
+    "EV-AB-FOTOS",
+    "EV-REV-SPA-OK"
+   ]
+  },
+  {
+   "id": "AF-06",
+   "entidade_id": "ESP-VARANDA",
+   "texto": "O spa é aquecido / está sempre pronto e a funcionar.",
+   "natureza": "promessa_subjetiva",
+   "categoria": "geral",
+   "origem": "casa",
+   "estado": "conflitante",
+   "uso": "nao_usar",
+   "evidencia_ids": [
+    "EV-AB-DESC",
+    "EV-REV-SPA-PROB"
+   ],
+   "condicao": "6 reviews de set 2025 a out 2026 com spa sujo, frio, com cloro ou avariado (uma com reembolso parcial)."
+  },
+  {
+   "id": "AF-06B",
+   "entidade_id": "ESP-VARANDA",
+   "texto": "O spa é um jacuzzi embutido/de alvenaria.",
+   "natureza": "inferencia",
+   "categoria": "inventario",
+   "origem": "casa",
+   "estado": "conflitante",
+   "uso": "nao_usar",
+   "evidencia_ids": [
+    "EV-AB-FOTOS"
+   ],
+   "condicao": "As fotos mostram um spa redondo, escuro, aparentemente insuflável: não o descrever como embutido."
+  },
+  {
+   "id": "AF-07",
+   "entidade_id": "ESP-VARANDA",
+   "texto": "Duche exterior com água quente na varanda.",
+   "natureza": "facto",
+   "categoria": "inventario",
+   "origem": "casa",
+   "estado": "confirmado",
+   "uso": "afirmar",
+   "evidencia_ids": [
+    "EV-AB-DESC",
+    "EV-AB-COMOD",
+    "EV-REV-SPA-OK"
+   ]
+  },
+  {
+   "id": "AF-08",
+   "entidade_id": "CASA-1",
+   "texto": "Todo o espaço, a varanda e o spa são exclusivos dos hóspedes; entrada privada.",
+   "natureza": "facto",
+   "categoria": "politica",
+   "origem": "casa",
+   "estado": "confirmado",
+   "uso": "afirmar",
+   "evidencia_ids": [
+    "EV-AB-DESC",
+    "EV-REV-PRIV"
+   ]
+  },
+  {
+   "id": "AF-09",
+   "entidade_id": "CASA-1",
+   "texto": "Estacionamento gratuito em frente ao portão.",
+   "natureza": "facto",
+   "categoria": "inventario",
+   "origem": "casa",
+   "estado": "confirmado",
+   "uso": "afirmar",
+   "evidencia_ids": [
+    "EV-AB-DESC",
+    "EV-AB-FOTOS"
+   ]
+  },
+  {
+   "id": "AF-10",
+   "entidade_id": "CASA-1",
+   "texto": "Check-in autónomo com cofre de chaves; check-in a partir das 14:00, check-out até às 11:00.",
+   "natureza": "facto",
+   "categoria": "politica",
+   "origem": "casa",
+   "estado": "confirmado",
+   "uso": "afirmar_com_condicao",
+   "evidencia_ids": [
+    "EV-AB-REGRAS"
+   ],
+   "ambito": {
+    "fonte": "anúncio do Airbnb",
+    "data": "2026-10-20"
+   },
+   "condicao": "Confirmar horários com o dono antes de publicar."
+  },
+  {
+   "id": "AF-11",
+   "entidade_id": "ESP-OPEN",
+   "texto": "Cozinha equipada: frigorífico com congelador, micro-ondas, chaleira, torradeira, tachos e panelas, loiça e talheres; mesa de refeições.",
+   "natureza": "facto",
+   "categoria": "inventario",
+   "origem": "casa",
+   "estado": "confirmado",
+   "uso": "afirmar",
+   "evidencia_ids": [
+    "EV-AB-COMOD",
+    "EV-AB-FOTOS"
+   ]
+  },
+  {
+   "id": "AF-12",
+   "entidade_id": "CASA-1",
+   "texto": "Ar condicionado, Wi-Fi e TV com Netflix e Disney+.",
+   "natureza": "facto",
+   "categoria": "inventario",
+   "origem": "casa",
+   "estado": "confirmado",
+   "uso": "afirmar",
+   "evidencia_ids": [
+    "EV-AB-COMOD",
+    "EV-AB-DESC"
+   ]
+  },
+  {
+   "id": "AF-13N",
+   "entidade_id": "CASA-1",
+   "texto": "Máquina de lavar roupa, aquecimento, detetor de fumo ou de monóxido de carbono.",
+   "natureza": "facto",
+   "categoria": "inventario",
+   "origem": "casa",
+   "estado": "confirmado",
+   "uso": "nao_usar",
+   "evidencia_ids": [
+    "EV-AB-COMOD"
+   ],
+   "condicao": "Indisponíveis no Airbnb: não os prometer."
+  },
+  {
+   "id": "AF-14",
+   "entidade_id": "ESP-OPEN",
+   "texto": "Estores blackout / quarto escuro de manhã.",
+   "natureza": "facto",
+   "categoria": "inventario",
+   "origem": "casa",
+   "estado": "conflitante",
+   "uso": "nao_usar",
+   "evidencia_ids": [
+    "EV-AB-COMOD",
+    "EV-REV-CORT",
+    "EV-REV-LIGIA"
+   ],
+   "condicao": "Anúncio e Lígia (set 2026) dizem que há; 3 reviews (set 2025 a jan 2026) dizem que faltam. Confirmar com o dono."
+  },
+  {
+   "id": "AF-15",
+   "entidade_id": "CASA-1",
+   "texto": "A poucos minutos de carro do centro de Lamego (Sé de Lamego a cerca de 2,9 km, 4 min de carro).",
+   "natureza": "facto",
+   "categoria": "geral",
+   "origem": "terceiro",
+   "estado": "confirmado",
+   "uso": "afirmar_com_condicao",
+   "evidencia_ids": [
+    "EV-OSRM",
+    "EV-AB-DESC",
+    "EV-REV-APE"
+   ],
+   "condicao": "Sempre «de carro» e «cerca de»; nunca a pé."
+  },
+  {
+   "id": "AF-15N",
+   "entidade_id": "CASA-1",
+   "texto": "A 3 minutos da Câmara / a 5 minutos do centro, sem dizer que é de carro; dá para ir a pé.",
+   "natureza": "facto",
+   "categoria": "geral",
+   "origem": "casa",
+   "estado": "conflitante",
+   "uso": "nao_usar",
+   "evidencia_ids": [
+    "EV-AB-DESC",
+    "EV-REV-APE"
+   ]
+  },
+  {
+   "id": "AF-16",
+   "entidade_id": "ESP-VARANDA",
+   "texto": "Da varanda e das janelas vê-se o vale e as montanhas.",
+   "natureza": "facto",
+   "categoria": "geral",
+   "origem": "casa",
+   "estado": "confirmado",
+   "uso": "afirmar_com_condicao",
+   "evidencia_ids": [
+    "EV-AB-FOTOS",
+    "EV-REV-VISTA"
+   ],
+   "condicao": "Não prometer vista «sem nada à volta» nem silêncio: há casas vizinhas e uma review fala de obras à vista (set 2025)."
+  },
+  {
+   "id": "AF-17",
+   "entidade_id": "CANAL-AIRBNB",
+   "texto": "Nota 4,79 em 5 no Airbnb, com 29 avaliações.",
+   "natureza": "metrica",
+   "categoria": "avaliacao",
+   "origem": "plataforma",
+   "estado": "confirmado",
+   "uso": "afirmar_com_condicao",
+   "evidencia_ids": [
+    "EV-AB-NOTA"
+   ],
+   "ambito": {
+    "fonte": "Airbnb",
+    "data": "2026-10-20",
+    "reviews": 29
+   },
+   "condicao": "Com a data; rever antes de publicar. Reviews com pouco peso no site (pedido do dono)."
+  },
+  {
+   "id": "AF-18",
+   "entidade_id": "CANAL-AIRBNB",
+   "texto": "Superhost.",
+   "natureza": "metrica",
+   "categoria": "avaliacao",
+   "origem": "hospede",
+   "estado": "desconhecido",
+   "uso": "nao_usar",
+   "evidencia_ids": [
+    "EV-REV-UMA"
+   ],
+   "condicao": "Só uma review (set 2025) o diz."
+  },
+  {
+   "id": "AF-19",
+   "entidade_id": "CASA-1",
+   "texto": "Um dos poucos espaços na região com banheira de hidromassagem.",
+   "natureza": "promessa_subjetiva",
+   "categoria": "geral",
+   "origem": "plataforma",
+   "estado": "desconhecido",
+   "uso": "nao_usar",
+   "evidencia_ids": [
+    "EV-AB-PLAT"
+   ]
+  },
+  {
+   "id": "AF-20",
+   "entidade_id": "CASA-1",
+   "texto": "Registo de Alojamento Local n.º 169288/AL.",
+   "natureza": "facto",
+   "categoria": "geral",
+   "origem": "registo_publico",
+   "estado": "confirmado",
+   "uso": "afirmar_com_condicao",
+   "evidencia_ids": [
+    "EV-RNT-169288",
+    "EV-AB-REG"
+   ],
+   "condicao": "Só depois de o dono confirmar: o anúncio do Airbnb mostra 169351/AL, que no RNT é outro AL (Almada)."
+  },
+  {
+   "id": "AF-20N",
+   "entidade_id": "CASA-1",
+   "texto": "Registo 169351/AL.",
+   "natureza": "facto",
+   "categoria": "geral",
+   "origem": "casa",
+   "estado": "conflitante",
+   "uso": "nao_usar",
+   "evidencia_ids": [
+    "EV-AB-REG",
+    "EV-RNT-169351"
+   ]
+  },
+  {
+   "id": "AF-21",
+   "entidade_id": "CASA-1",
+   "texto": "Fica em Lamego, numa quinta familiar, a norte do centro (Rio de Asnos, freguesia de Ferreiros de Avões).",
+   "natureza": "facto",
+   "categoria": "geral",
+   "origem": "registo_publico",
+   "estado": "confirmado",
+   "uso": "afirmar_com_condicao",
+   "evidencia_ids": [
+    "EV-RNT-169288",
+    "EV-GMAPS",
+    "EV-AB-DESC"
+   ],
+   "condicao": "«Lamego» e «quinta familiar» podem dizer-se já; o lugar e a freguesia só com o dono."
+  },
+  {
+   "id": "AF-21N",
+   "entidade_id": "CASA-1",
+   "texto": "Morada completa com código postal.",
+   "natureza": "facto",
+   "categoria": "contacto",
+   "origem": "registo_publico",
+   "estado": "conflitante",
+   "uso": "nao_usar",
+   "evidencia_ids": [
+    "EV-RNT-169288",
+    "EV-GMAPS"
+   ],
+   "condicao": "5100-513 (RNT) vs 5100-062 (Google)."
+  },
+  {
+   "id": "AF-22",
+   "entidade_id": "CASA-1",
+   "texto": "Recebem a Ana e o Júlio, da família da quinta.",
+   "natureza": "facto",
+   "categoria": "geral",
+   "origem": "plataforma",
+   "estado": "confirmado",
+   "uso": "afirmar_com_condicao",
+   "evidencia_ids": [
+    "EV-AB-HOST",
+    "EV-REV-HOST",
+    "EV-RNT-169288"
+   ],
+   "condicao": "Confirmar com o dono como querem aparecer (o contacto do Diogo é o Mário) e o parentesco; nada de fotos dos anfitriões (não há)."
+  },
+  {
+   "id": "AF-23",
+   "entidade_id": "CASA-1",
+   "texto": "Cabaz de boas-vindas à chegada.",
+   "natureza": "facto",
+   "categoria": "geral",
+   "origem": "hospede",
+   "estado": "desconhecido",
+   "uso": "nao_usar",
+   "evidencia_ids": [
+    "EV-REV-UMA"
+   ],
+   "condicao": "Uma menção (out 2026)."
+  },
+  {
+   "id": "AF-24",
+   "entidade_id": "CASA-1",
+   "texto": "Telefone 965 741 870 e email lusitanoquinta@gmail.com.",
+   "natureza": "facto",
+   "categoria": "contacto",
+   "origem": "casa",
+   "estado": "confirmado",
+   "uso": "afirmar_com_condicao",
+   "evidencia_ids": [
+    "EV-GMAPS",
+    "EV-WIX-INICIO",
+    "EV-FB"
+   ],
+   "condicao": "Confirmar com o dono que são os contactos para reservas da casa (o email é do projeto)."
+  },
+  {
+   "id": "AF-25",
+   "entidade_id": "CANAL-AIRBNB",
+   "texto": "Reserva no Airbnb.",
+   "natureza": "facto",
+   "categoria": "contacto",
+   "origem": "casa",
+   "estado": "confirmado",
+   "uso": "afirmar",
+   "evidencia_ids": [
+    "EV-AB-DESC"
+   ]
+  },
+  {
+   "id": "AF-26",
+   "entidade_id": "CASA-1",
+   "texto": "O nome «Dream Valley».",
+   "natureza": "facto",
+   "categoria": "geral",
+   "origem": "casa",
+   "estado": "desconhecido",
+   "uso": "nao_usar",
+   "evidencia_ids": [
+    "EV-GMAPS"
+   ],
+   "condicao": "Só aparece no Google."
+  },
+  {
+   "id": "AF-27",
+   "entidade_id": "CASA-1",
+   "texto": "A casa chama-se «A Família na Quinta».",
+   "natureza": "facto",
+   "categoria": "geral",
+   "origem": "registo_publico",
+   "estado": "confirmado",
+   "uso": "afirmar",
+   "evidencia_ids": [
+    "EV-RNT-169288",
+    "EV-GMAPS"
+   ]
+  },
+  {
+   "id": "AF-28",
+   "entidade_id": "ESP-WC",
+   "texto": "Casa de banho sem humidade / quente.",
+   "natureza": "promessa_subjetiva",
+   "categoria": "geral",
+   "origem": "hospede",
+   "estado": "conflitante",
+   "uso": "nao_usar",
+   "evidencia_ids": [
+    "EV-REV-HUMID"
+   ],
+   "condicao": "4 reviews (jan a mai 2026) falam de humidade ou mofo."
+  },
+  {
+   "id": "AF-29",
+   "entidade_id": "CASA-1",
+   "texto": "Silêncio absoluto / sem ruído.",
+   "natureza": "promessa_subjetiva",
+   "categoria": "geral",
+   "origem": "hospede",
+   "estado": "conflitante",
+   "uso": "nao_usar",
+   "evidencia_ids": [
+    "EV-REV-RUIDO",
+    "EV-REV-PRIV"
+   ]
+  },
+  {
+   "id": "AF-P01",
+   "entidade_id": "ESP-QUINTA",
+   "texto": "A casa e o projeto «A Família na Quinta» são da mesma família e têm o mesmo nome: a casa está registada como CASA «A FAMILIA NA QUINTA» e a ficha Google da casa leva ao site do projeto.",
+   "natureza": "facto",
+   "categoria": "geral",
+   "origem": "registo_publico",
+   "estado": "confirmado",
+   "uso": "afirmar",
+   "evidencia_ids": [
+    "EV-RNT-169288",
+    "EV-GMAPS",
+    "EV-WIX-INICIO",
+    "EV-DONO"
+   ]
+  },
+  {
+   "id": "AF-P02",
+   "entidade_id": "ESP-QUINTA",
+   "texto": "Na quinta onde fica a casa vivem animais do projeto.",
+   "natureza": "facto",
+   "categoria": "geral",
+   "origem": "hospede",
+   "estado": "confirmado",
+   "uso": "afirmar_com_condicao",
+   "evidencia_ids": [
+    "EV-REV-LIGIA",
+    "EV-DONO",
+    "EV-AB-DESC"
+   ],
+   "condicao": "Sem dizer quantos, quais, onde ficam em relação à casa, nem que se veem da varanda; confirmar com o dono antes do site definitivo (prova de hóspede: uma menção, set 2026)."
+  },
+  {
+   "id": "AF-P03",
+   "entidade_id": "ESP-QUINTA",
+   "texto": "O projeto acolhe animais de quinta resgatados da exploração, de maus tratos e da morte, e dá-lhes um lar para a vida inteira.",
+   "natureza": "facto",
+   "categoria": "geral",
+   "origem": "casa",
+   "estado": "confirmado",
+   "uso": "afirmar_com_condicao",
+   "evidencia_ids": [
+    "EV-WIX-INICIO",
+    "EV-WIX-APAD",
+    "EV-FB"
+   ],
+   "condicao": "Nas palavras do projeto, sem números de animais nem de resgates; o Facebook (bio atual) repete-o."
+  },
+  {
+   "id": "AF-P04",
+   "entidade_id": "ESP-QUINTA",
+   "texto": "O objetivo é construir um santuário animal auto-sustentável, que não viva só de donativos.",
+   "natureza": "facto",
+   "categoria": "geral",
+   "origem": "casa",
+   "estado": "confirmado",
+   "uso": "afirmar_com_condicao",
+   "evidencia_ids": [
+    "EV-WIX-PROJETO"
+   ],
+   "condicao": "Como objetivo em construção («Precisamos do Teu Apoio Para Construirmos o Nosso Santuário»), nunca como santuário pronto ou certificado."
+  },
+  {
+   "id": "AF-P05",
+   "entidade_id": "ESP-QUINTA",
+   "texto": "«temos como foco central o acolhimento e não o resgate»",
+   "natureza": "promessa_subjetiva",
+   "categoria": "geral",
+   "origem": "casa",
+   "estado": "confirmado",
+   "uso": "citar",
+   "evidencia_ids": [
+    "EV-WIX-PROJETO"
+   ]
+  },
+  {
+   "id": "AF-P06",
+   "entidade_id": "ESP-QUINTA",
+   "texto": "Os animais são de quinta: cabras, ovelhas, porcos, coelhos, patos, póneis, burros (e um canário).",
+   "natureza": "facto",
+   "categoria": "geral",
+   "origem": "casa",
+   "estado": "confirmado",
+   "uso": "afirmar_com_condicao",
+   "evidencia_ids": [
+    "EV-FOTOS-CONCEITO",
+    "EV-WIX-GALERIA"
+   ],
+   "condicao": "Espécies em geral, sem números nem como inventário de hoje; confirmar a lista atual com o dono.",
+   "atualidade": "fotos de 2021"
+  },
+  {
+   "id": "AF-P07",
+   "entidade_id": "ESP-QUINTA",
+   "texto": "Nomes dos animais (Kaio, Kiara, Nolan, Winnie, Timô e os outros da galeria de 2021).",
+   "natureza": "facto",
+   "categoria": "geral",
+   "origem": "casa",
+   "estado": "historico",
+   "uso": "nao_usar",
+   "evidencia_ids": [
+    "EV-WIX-GALERIA"
+   ],
+   "condicao": "Galeria de 2021: o dono tem de dizer quais vivem hoje na quinta e com que foto."
+  },
+  {
+   "id": "AF-P08",
+   "entidade_id": "ESP-QUINTA",
+   "texto": "Histórias de animais (a Kiara e o Nolan resgatados, a Kiara a dar à luz; a ida à televisão).",
+   "natureza": "facto",
+   "categoria": "geral",
+   "origem": "casa",
+   "estado": "historico",
+   "uso": "nao_usar",
+   "evidencia_ids": [
+    "EV-WIX-HISTORIAS"
+   ]
+  },
+  {
+   "id": "AF-P09",
+   "entidade_id": "ESP-QUINTA",
+   "texto": "Apadrinhamento de um animal por 15 € por ano.",
+   "natureza": "facto",
+   "categoria": "tarifa",
+   "origem": "casa",
+   "estado": "confirmado",
+   "uso": "afirmar_com_condicao",
+   "evidencia_ids": [
+    "EV-WIX-APAD"
+   ],
+   "ambito": {
+    "fonte": "site Wix do projeto",
+    "publicado": "sem data (site de 2021)",
+    "lido": "2026-10-20"
+   },
+   "condicao": "Confirmar valor e se o apadrinhamento continua aberto antes de publicar."
+  },
+  {
+   "id": "AF-P10",
+   "entidade_id": "ESP-QUINTA",
+   "texto": "Quem apadrinha escolhe o animal, deixa o nome e a morada e recebe uma fotografia do afilhado com dedicatória de «A Família na Quinta».",
+   "natureza": "facto",
+   "categoria": "politica",
+   "origem": "casa",
+   "estado": "confirmado",
+   "uso": "afirmar_com_condicao",
+   "evidencia_ids": [
+    "EV-WIX-APAD",
+    "EV-FOTOS-CONCEITO"
+   ],
+   "condicao": "Confirmar com o dono que o processo é este hoje."
+  },
+  {
+   "id": "AF-P11",
+   "entidade_id": "ESP-QUINTA",
+   "texto": "IBAN do projeto.",
+   "natureza": "facto",
+   "categoria": "contacto",
+   "origem": "casa",
+   "estado": "confirmado",
+   "uso": "nao_usar",
+   "evidencia_ids": [
+    "EV-WIX-PEDIDOS"
+   ],
+   "condicao": "Não replicar sem autorização do dono."
+  },
+  {
+   "id": "AF-P12",
+   "entidade_id": "ESP-QUINTA",
+   "texto": "Donativos por MB WAY para o 965 741 870.",
+   "natureza": "facto",
+   "categoria": "contacto",
+   "origem": "casa",
+   "estado": "confirmado",
+   "uso": "afirmar_com_condicao",
+   "evidencia_ids": [
+    "EV-WIX-PEDIDOS"
+   ],
+   "condicao": "Só com autorização expressa do dono."
+  },
+  {
+   "id": "AF-P13",
+   "entidade_id": "ESP-QUINTA",
+   "texto": "Projetos por financiar: estábulo maior para cabras e ovelhas; coelheira.",
+   "natureza": "facto",
+   "categoria": "geral",
+   "origem": "casa",
+   "estado": "historico",
+   "uso": "nao_usar",
+   "evidencia_ids": [
+    "EV-WIX-PEDIDOS"
+   ],
+   "condicao": "Podem já estar feitos."
+  },
+  {
+   "id": "AF-P14",
+   "entidade_id": "ESP-QUINTA",
+   "texto": "Loja de mascotes (peluches) do projeto.",
+   "natureza": "facto",
+   "categoria": "geral",
+   "origem": "casa",
+   "estado": "historico",
+   "uso": "nao_usar",
+   "evidencia_ids": [
+    "EV-WIX-HISTORIAS"
+   ]
+  },
+  {
+   "id": "AF-P15",
+   "entidade_id": "CANAL-FB",
+   "texto": "Página no Facebook com cerca de 10 mil seguidores, onde partilham o dia a dia da quinta.",
+   "natureza": "metrica",
+   "categoria": "geral",
+   "origem": "casa",
+   "estado": "confirmado",
+   "uso": "afirmar_com_condicao",
+   "evidencia_ids": [
+    "EV-FB"
+   ],
+   "ambito": {
+    "fonte": "Facebook",
+    "data": "2026-10-20"
+   },
+   "condicao": "«cerca de 10 mil» com data; não dizer «todos os dias» (o último post visível é de agosto de 2025)."
+  },
+  {
+   "id": "AF-P16",
+   "entidade_id": "ESP-QUINTA",
+   "texto": "Os hóspedes podem visitar, tocar ou alimentar os animais.",
+   "natureza": "facto",
+   "categoria": "geral",
+   "origem": "casa",
+   "estado": "desconhecido",
+   "uso": "nao_usar",
+   "evidencia_ids": [
+    "EV-REV-LIGIA"
+   ],
+   "condicao": "Nenhuma fonte o diz. Por confirmar com o dono."
+  },
+  {
+   "id": "AF-P17",
+   "entidade_id": "ESP-QUINTA",
+   "texto": "Cada estadia na casa ajuda a sustentar os animais.",
+   "natureza": "inferencia",
+   "categoria": "geral",
+   "origem": "casa",
+   "estado": "desconhecido",
+   "uso": "nao_usar",
+   "evidencia_ids": [
+    "EV-WIX-PROJETO",
+    "EV-DONO"
+   ],
+   "condicao": "Plausível (santuário com «fonte sólida de rendimento»), mas ninguém o escreveu. É a ligação mais forte se o dono a confirmar."
+  },
+  {
+   "id": "AF-P18",
+   "entidade_id": "ESP-QUINTA",
+   "texto": "«Acolhemos animais de quinta necessitados de abrigo e amor e damos-lhes uma família e um lar para a vida inteira!»",
+   "natureza": "promessa_subjetiva",
+   "categoria": "geral",
+   "origem": "casa",
+   "estado": "confirmado",
+   "uso": "citar",
+   "evidencia_ids": [
+    "EV-WIX-INICIO",
+    "EV-FB"
+   ]
+  },
+  {
+   "id": "AF-T01",
+   "entidade_id": "ESP-QUINTA",
+   "texto": "Os animais da quinta foram uma surpresa boa à chegada; o projeto tem grande valor (Lígia).",
+   "natureza": "testemunho",
+   "categoria": "avaliacao",
+   "origem": "hospede",
+   "estado": "confirmado",
+   "uso": "citar",
+   "evidencia_ids": [
+    "EV-REV-LIGIA"
+   ]
+  },
+  {
+   "id": "AF-T02",
+   "entidade_id": "ESP-VARANDA",
+   "texto": "A vista do vale, da varanda e das janelas.",
+   "natureza": "testemunho",
+   "categoria": "avaliacao",
+   "origem": "hospede",
+   "estado": "confirmado",
+   "uso": "citar",
+   "evidencia_ids": [
+    "EV-REV-VISTA"
+   ]
+  },
+  {
+   "id": "AF-T03",
+   "entidade_id": "CASA-1",
+   "texto": "Mais bonita ao vivo do que nas fotos; paredes de pedra acolhedoras.",
+   "natureza": "testemunho",
+   "categoria": "avaliacao",
+   "origem": "hospede",
+   "estado": "confirmado",
+   "uso": "citar",
+   "evidencia_ids": [
+    "EV-REV-BELEZA"
+   ]
+  },
+  {
+   "id": "AF-T04",
+   "entidade_id": "CASA-1",
+   "texto": "Sítio para desligar, a dois, com privacidade.",
+   "natureza": "testemunho",
+   "categoria": "avaliacao",
+   "origem": "hospede",
+   "estado": "confirmado",
+   "uso": "citar",
+   "evidencia_ids": [
+    "EV-REV-PRIV"
+   ]
+  },
+  {
+   "id": "AF-T05",
+   "entidade_id": "CASA-1",
+   "texto": "Anfitriões atentos e rápidos a responder.",
+   "natureza": "testemunho",
+   "categoria": "avaliacao",
+   "origem": "hospede",
+   "estado": "confirmado",
+   "uso": "citar",
+   "evidencia_ids": [
+    "EV-REV-HOST"
+   ]
+  },
+  {
+   "id": "AF-T06",
+   "entidade_id": "ESP-VARANDA",
+   "texto": "Uma noite sob as estrelas no spa.",
+   "natureza": "testemunho",
+   "categoria": "avaliacao",
+   "origem": "hospede",
+   "estado": "confirmado",
+   "uso": "inspiracao_editorial",
+   "evidencia_ids": [
+    "EV-REV-SPA-OK"
+   ],
+   "condicao": "Tom apenas: não transformar em promessa de spa aquecido ou sempre pronto (AF-06)."
+  },
+  {
+   "id": "AF-REG-SE",
+   "entidade_id": "CASA-1",
+   "texto": "Sé de Lamego: catedral do séc. XII, com a torre românica e a fachada do início do séc. XVI; a cerca de 2,9 km (4 min de carro).",
+   "natureza": "facto",
+   "categoria": "geral",
+   "origem": "terceiro",
+   "estado": "confirmado",
+   "uso": "afirmar_com_condicao",
+   "evidencia_ids": [
+    "EV-REG-SE",
+    "EV-OSRM"
+   ],
+   "condicao": "Distância sempre com «cerca de» e «de carro»; foto só com o crédito do ativo."
+  },
+  {
+   "id": "AF-REG-SE-NAO",
+   "entidade_id": "CASA-1",
+   "texto": "Não afirmar: «Monumento Nacional», horários, data de conclusão.",
+   "natureza": "facto",
+   "categoria": "geral",
+   "origem": "terceiro",
+   "estado": "desconhecido",
+   "uso": "nao_usar",
+   "evidencia_ids": [
+    "EV-REG-SE"
+   ]
+  },
+  {
+   "id": "AF-REG-CASTELO",
+   "entidade_id": "CASA-1",
+   "texto": "Castelo de Lamego: castelo medieval no ponto mais alto da cidade, com a torre de menagem ameada; a cerca de 2,1 km (4 min de carro).",
+   "natureza": "facto",
+   "categoria": "geral",
+   "origem": "terceiro",
+   "estado": "confirmado",
+   "uso": "afirmar_com_condicao",
+   "evidencia_ids": [
+    "EV-REG-CASTELO",
+    "EV-OSRM"
+   ],
+   "condicao": "Distância sempre com «cerca de» e «de carro»; foto só com o crédito do ativo."
+  },
+  {
+   "id": "AF-REG-CASTELO-NAO",
+   "entidade_id": "CASA-1",
+   "texto": "Não afirmar: «Monumento Nacional» e data do decreto, data da Cisterna, altitude, horários e preços.",
+   "natureza": "facto",
+   "categoria": "geral",
+   "origem": "terceiro",
+   "estado": "desconhecido",
+   "uso": "nao_usar",
+   "evidencia_ids": [
+    "EV-REG-CASTELO"
+   ]
+  },
+  {
+   "id": "AF-REG-REMEDIOS",
+   "entidade_id": "CASA-1",
+   "texto": "Santuário de Nossa Senhora dos Remédios: barroco, primeira pedra em 1750, projeto atribuído a Nasoni, escadório começado em 1777, Pátio dos Reis com obelisco de cerca de 15 m, Imóvel de Interesse Público; a cerca de 4,2 km (8 min de carro).",
+   "natureza": "facto",
+   "categoria": "geral",
+   "origem": "terceiro",
+   "estado": "confirmado",
+   "uso": "afirmar_com_condicao",
+   "evidencia_ids": [
+    "EV-REG-REMEDIOS",
+    "EV-OSRM"
+   ],
+   "condicao": "Distância sempre com «cerca de» e «de carro»; foto só com o crédito do ativo."
+  },
+  {
+   "id": "AF-REG-REMEDIOS-NAO",
+   "entidade_id": "CASA-1",
+   "texto": "Não afirmar: Número de degraus, horários, «de Nasoni» sem «atribuído», minutos a pé.",
+   "natureza": "facto",
+   "categoria": "geral",
+   "origem": "terceiro",
+   "estado": "desconhecido",
+   "uso": "nao_usar",
+   "evidencia_ids": [
+    "EV-REG-REMEDIOS"
+   ]
+  },
+  {
+   "id": "AF-REG-BALSEMAO",
+   "entidade_id": "CASA-1",
+   "texto": "Capela de São Pedro de Balsemão: de origem alto-medieval, com três naves e o sarcófago do bispo D. Afonso Pires; a cerca de 6,5 km (12 min de carro).",
+   "natureza": "facto",
+   "categoria": "geral",
+   "origem": "terceiro",
+   "estado": "confirmado",
+   "uso": "afirmar_com_condicao",
+   "evidencia_ids": [
+    "EV-REG-BALSEMAO",
+    "EV-OSRM"
+   ],
+   "condicao": "Distância sempre com «cerca de» e «de carro»; foto só com o crédito do ativo."
+  },
+  {
+   "id": "AF-REG-BALSEMAO-NAO",
+   "entidade_id": "CASA-1",
+   "texto": "Não afirmar: Data concreta (séc. VI, VII ou 588), «Monumento Nacional», horários.",
+   "natureza": "facto",
+   "categoria": "geral",
+   "origem": "terceiro",
+   "estado": "desconhecido",
+   "uso": "nao_usar",
+   "evidencia_ids": [
+    "EV-REG-BALSEMAO"
+   ]
+  },
+  {
+   "id": "AF-REG-MUSEU",
+   "entidade_id": "CASA-1",
+   "texto": "Museu do Douro: museu da região do Douro em Peso da Régua, na Casa da Companhia, criado por lei em 1997; a cerca de 11,1 km (15 min de carro).",
+   "natureza": "facto",
+   "categoria": "geral",
+   "origem": "terceiro",
+   "estado": "confirmado",
+   "uso": "afirmar_com_condicao",
+   "evidencia_ids": [
+    "EV-REG-MUSEU",
+    "EV-OSRM"
+   ],
+   "condicao": "Distância sempre com «cerca de» e «de carro»; foto só com o crédito do ativo."
+  },
+  {
+   "id": "AF-REG-MUSEU-NAO",
+   "entidade_id": "CASA-1",
+   "texto": "Não afirmar: Entrada gratuita aos sábados sem a condição de residente, data de inauguração, horários, preços.",
+   "natureza": "facto",
+   "categoria": "geral",
+   "origem": "terceiro",
+   "estado": "desconhecido",
+   "uso": "nao_usar",
+   "evidencia_ids": [
+    "EV-REG-MUSEU"
+   ]
+  },
+  {
+   "id": "AF-REG-PORTOREI",
+   "entidade_id": "CASA-1",
+   "texto": "Parque Fluvial de Porto de Rei (Resende): praia fluvial no Douro com piscina, cais e parque de merendas, muito procurada no verão; a cerca de 14,8 km (23 min de carro).",
+   "natureza": "facto",
+   "categoria": "geral",
+   "origem": "terceiro",
+   "estado": "confirmado",
+   "uso": "afirmar_com_condicao",
+   "evidencia_ids": [
+    "EV-REG-PORTOREI",
+    "EV-OSRM"
+   ],
+   "condicao": "Distância sempre com «cerca de» e «de carro»; foto só com o crédito do ativo."
+  },
+  {
+   "id": "AF-REG-PORTOREI-NAO",
+   "entidade_id": "CASA-1",
+   "texto": "Não afirmar: Horários, época balnear, «vigiada».",
+   "natureza": "facto",
+   "categoria": "geral",
+   "origem": "terceiro",
+   "estado": "desconhecido",
+   "uso": "nao_usar",
+   "evidencia_ids": [
+    "EV-REG-PORTOREI"
+   ]
+  }
+ ],
+ "citacoes": [
+  {
+   "id": "CIT-01",
+   "review_id": "A-004",
+   "texto_original": "Os animais da quinta foram uma agradável surpresa à chegada",
+   "autor": "Lígia",
+   "plataforma": "Airbnb",
+   "data": "2026-09",
+   "lingua": "pt"
+  },
+  {
+   "id": "CIT-02",
+   "review_id": "A-004",
+   "texto_original": "É um projeto com grande valor, que merece o nosso apoio para que possa continuar e quem sabe, crescer.",
+   "autor": "Lígia",
+   "plataforma": "Airbnb",
+   "data": "2026-09",
+   "lingua": "pt"
+  },
+  {
+   "id": "CIT-03",
+   "review_id": "A-004",
+   "texto_original": "A Ana foi muito simpática e deu todas as indicações necessárias com clareza.",
+   "autor": "Lígia",
+   "plataforma": "Airbnb",
+   "data": "2026-09",
+   "lingua": "pt"
+  },
+  {
+   "id": "CIT-04",
+   "review_id": "A-029",
+   "texto_original": "Fotos não fazem justiça ao espaço... é ainda mais bonito.",
+   "autor": "Duarte",
+   "plataforma": "Airbnb",
+   "data": "2025-08",
+   "lingua": "pt"
+  },
+  {
+   "id": "CIT-05",
+   "review_id": "A-021",
+   "texto_original": "Uma bonita vista da varanda e das janelas no interior da casa.",
+   "autor": "Joana",
+   "plataforma": "Airbnb",
+   "data": "2025-08",
+   "lingua": "pt"
+  },
+  {
+   "id": "CIT-06",
+   "review_id": "A-028",
+   "texto_original": "Adoramos estar na casinha ! Super acolhedora e com vista deslumbrante!",
+   "autor": "Cristina",
+   "plataforma": "Airbnb",
+   "data": "2025-08",
+   "lingua": "pt"
+  },
+  {
+   "id": "CIT-07",
+   "review_id": "A-001",
+   "texto_original": "Casa muito bem organizada um espaço muito bom para se afastar da cidade e poder relaxar.",
+   "autor": "JosÉ",
+   "plataforma": "Airbnb",
+   "data": "2026-10",
+   "lingua": "pt"
+  },
+  {
+   "id": "CIT-08",
+   "review_id": "A-009",
+   "texto_original": "Um ótimo espaço, alojamento muito bem aproveitado e ideal para uma escapadinha em casal.",
+   "autor": "Diogo Alexandre",
+   "plataforma": "Airbnb",
+   "data": "2026-02",
+   "lingua": "pt"
+  },
+  {
+   "id": "CIT-09",
+   "review_id": "A-021",
+   "texto_original": "Óptima comunicação e amabilidade da Ana e Júlio.",
+   "autor": "Joana",
+   "plataforma": "Airbnb",
+   "data": "2025-08",
+   "lingua": "pt"
+  },
+  {
+   "id": "CIT-10",
+   "review_id": "A-007",
+   "texto_original": "Local com ótima estrutura e bem aconchegante, anfitriã muito atenciosa e responde prontamente.",
+   "autor": "Kallil",
+   "plataforma": "Airbnb",
+   "data": "2026-05",
+   "lingua": "pt"
+  },
+  {
+   "id": "CIT-11",
+   "review_id": "A-006",
+   "texto_original": "Espaço muito limpo, organizado e óptimo para descansar.",
+   "autor": "Tiago",
+   "plataforma": "Airbnb",
+   "data": "2026-06",
+   "lingua": "pt"
+  },
+  {
+   "id": "CIT-12",
+   "review_id": "A-019",
+   "texto_original": "A vista era incrível, um dos melhores amanheceres!",
+   "autor": "Charles",
+   "plataforma": "Airbnb",
+   "data": "2025-09",
+   "lingua": "pt"
+  },
+  {
+   "id": "CIT-13",
+   "review_id": "A-015",
+   "texto_original": "O espaço é lindo e adoro as paredes de pedra que o tornam muito acolhedor!",
+   "autor": "Lisa",
+   "plataforma": "Airbnb",
+   "data": "2025-10",
+   "lingua": "pt"
+  },
+  {
+   "id": "CIT-14",
+   "review_id": "A-015",
+   "texto_original": "Desfrutei de uma bela noite sob as estrelas na banheira de hidromassagem.",
+   "autor": "Lisa",
+   "plataforma": "Airbnb",
+   "data": "2025-10",
+   "lingua": "pt"
+  },
+  {
+   "id": "CIT-15",
+   "review_id": "A-002",
+   "texto_original": "A localização era perfeita para começarmos a nossa descoberta do Vale do Douro.",
+   "autor": "Catherine",
+   "plataforma": "Airbnb",
+   "data": "2026-10",
+   "lingua": "pt"
+  }
+ ],
+ "ativos": [
+  {
+   "id": "ATIVO-interior_airbnb-01",
+   "caminho": "marketing/fotos/interior/airbnb-01.png",
+   "dimensoes": {
+    "largura": 1920,
+    "altura": 1440
+   },
+   "assunto": "quarto: cama king com mesa de centro, pedra e janelas",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo."
+   ],
+   "entidade_confirmada": "CASA-1"
+  },
+  {
+   "id": "ATIVO-interior_airbnb-02",
+   "caminho": "marketing/fotos/interior/airbnb-02.png",
+   "dimensoes": {
+    "largura": 1920,
+    "altura": 1440
+   },
+   "assunto": "sala: sofás, TV, teto de madeira, pedra",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo."
+   ],
+   "entidade_confirmada": "CASA-1"
+  },
+  {
+   "id": "ATIVO-interior_airbnb-05",
+   "caminho": "marketing/fotos/interior/airbnb-05.png",
+   "dimensoes": {
+    "largura": 1920,
+    "altura": 2560
+   },
+   "assunto": "sala: cadeirão de vime junto a janela",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo."
+   ],
+   "entidade_confirmada": "CASA-1"
+  },
+  {
+   "id": "ATIVO-interior_airbnb-06",
+   "caminho": "marketing/fotos/interior/airbnb-06.jpeg",
+   "dimensoes": {
+    "largura": 1920,
+    "altura": 1280
+   },
+   "assunto": "open space: cama, sala e cozinha sob teto de madeira",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo."
+   ],
+   "entidade_confirmada": "CASA-1"
+  },
+  {
+   "id": "ATIVO-interior_airbnb-07",
+   "caminho": "marketing/fotos/interior/airbnb-07.jpeg",
+   "dimensoes": {
+    "largura": 1920,
+    "altura": 2879
+   },
+   "assunto": "open space vertical: cozinha, sala e cama",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo."
+   ],
+   "entidade_confirmada": "CASA-1"
+  },
+  {
+   "id": "ATIVO-interior_airbnb-08",
+   "caminho": "marketing/fotos/interior/airbnb-08.jpeg",
+   "dimensoes": {
+    "largura": 1920,
+    "altura": 1280
+   },
+   "assunto": "kitchenette azul com barril de vinho",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo."
+   ],
+   "entidade_confirmada": "CASA-1"
+  },
+  {
+   "id": "ATIVO-interior_airbnb-09",
+   "caminho": "marketing/fotos/interior/airbnb-09.jpeg",
+   "dimensoes": {
+    "largura": 1920,
+    "altura": 1280
+   },
+   "assunto": "casa de banho: duche e dois espelhos redondos",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo."
+   ],
+   "entidade_confirmada": "CASA-1"
+  },
+  {
+   "id": "ATIVO-interior_airbnb-11",
+   "caminho": "marketing/fotos/interior/airbnb-11.jpeg",
+   "dimensoes": {
+    "largura": 1920,
+    "altura": 1280
+   },
+   "assunto": "open space: sala e cama",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo."
+   ],
+   "entidade_confirmada": "CASA-1"
+  },
+  {
+   "id": "ATIVO-interior_airbnb-12",
+   "caminho": "marketing/fotos/interior/airbnb-12.jpeg",
+   "dimensoes": {
+    "largura": 1920,
+    "altura": 2879
+   },
+   "assunto": "detalhe: máquina de café, flores, barril",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo."
+   ],
+   "entidade_confirmada": "CASA-1"
+  },
+  {
+   "id": "ATIVO-interior_airbnb-13",
+   "caminho": "marketing/fotos/interior/airbnb-13.png",
+   "dimensoes": {
+    "largura": 1920,
+    "altura": 2560
+   },
+   "assunto": "detalhe: barril com chaleira e flores",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo."
+   ],
+   "entidade_confirmada": "CASA-1"
+  },
+  {
+   "id": "ATIVO-interior_airbnb-14",
+   "caminho": "marketing/fotos/interior/airbnb-14.png",
+   "dimensoes": {
+    "largura": 1920,
+    "altura": 1440
+   },
+   "assunto": "cozinha com bancada azul",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo."
+   ],
+   "entidade_confirmada": "CASA-1"
+  },
+  {
+   "id": "ATIVO-interior_airbnb-15",
+   "caminho": "marketing/fotos/interior/airbnb-15.png",
+   "dimensoes": {
+    "largura": 1920,
+    "altura": 1440
+   },
+   "assunto": "mesa redonda de refeições",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo."
+   ],
+   "entidade_confirmada": "CASA-1"
+  },
+  {
+   "id": "ATIVO-interior_airbnb-16",
+   "caminho": "marketing/fotos/interior/airbnb-16.png",
+   "dimensoes": {
+    "largura": 1920,
+    "altura": 1440
+   },
+   "assunto": "mesa de refeições, parede de pedra",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo."
+   ],
+   "entidade_confirmada": "CASA-1"
+  },
+  {
+   "id": "ATIVO-interior_airbnb-17",
+   "caminho": "marketing/fotos/interior/airbnb-17.png",
+   "dimensoes": {
+    "largura": 1920,
+    "altura": 1440
+   },
+   "assunto": "sala de refeições e cozinha",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo."
+   ],
+   "entidade_confirmada": "CASA-1"
+  },
+  {
+   "id": "ATIVO-interior_airbnb-18",
+   "caminho": "marketing/fotos/interior/airbnb-18.png",
+   "dimensoes": {
+    "largura": 1920,
+    "altura": 1440
+   },
+   "assunto": "sala de refeições e cozinha (variante)",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo."
+   ],
+   "entidade_confirmada": "CASA-1"
+  },
+  {
+   "id": "ATIVO-interior_airbnb-19",
+   "caminho": "marketing/fotos/interior/airbnb-19.jpeg",
+   "dimensoes": {
+    "largura": 1920,
+    "altura": 2879
+   },
+   "assunto": "quarto: cama sob candeeiro de globos, teto de madeira",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo."
+   ],
+   "entidade_confirmada": "CASA-1"
+  },
+  {
+   "id": "ATIVO-interior_airbnb-20",
+   "caminho": "marketing/fotos/interior/airbnb-20.jpeg",
+   "dimensoes": {
+    "largura": 1920,
+    "altura": 1280
+   },
+   "assunto": "open space visto da cama",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo."
+   ],
+   "entidade_confirmada": "CASA-1"
+  },
+  {
+   "id": "ATIVO-interior_airbnb-21",
+   "caminho": "marketing/fotos/interior/airbnb-21.jpeg",
+   "dimensoes": {
+    "largura": 1920,
+    "altura": 1280
+   },
+   "assunto": "open space: sala e cama",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo."
+   ],
+   "entidade_confirmada": "CASA-1"
+  },
+  {
+   "id": "ATIVO-interior_airbnb-22",
+   "caminho": "marketing/fotos/interior/airbnb-22.png",
+   "dimensoes": {
+    "largura": 1920,
+    "altura": 1440
+   },
+   "assunto": "quarto com candeeiro de globos e janela",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo."
+   ],
+   "entidade_confirmada": "CASA-1"
+  },
+  {
+   "id": "ATIVO-interior_airbnb-23",
+   "caminho": "marketing/fotos/interior/airbnb-23.png",
+   "dimensoes": {
+    "largura": 1920,
+    "altura": 1440
+   },
+   "assunto": "quarto: cama e cómoda azul",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo."
+   ],
+   "entidade_confirmada": "CASA-1"
+  },
+  {
+   "id": "ATIVO-interior_airbnb-24",
+   "caminho": "marketing/fotos/interior/airbnb-24.png",
+   "dimensoes": {
+    "largura": 1920,
+    "altura": 1440
+   },
+   "assunto": "cama de casal com roupa clara",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo."
+   ],
+   "entidade_confirmada": "CASA-1"
+  },
+  {
+   "id": "ATIVO-interior_airbnb-25",
+   "caminho": "marketing/fotos/interior/airbnb-25.png",
+   "dimensoes": {
+    "largura": 1920,
+    "altura": 1440
+   },
+   "assunto": "casa de banho: lavatório e espelho redondo",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo."
+   ],
+   "entidade_confirmada": "CASA-1"
+  },
+  {
+   "id": "ATIVO-interior_airbnb-33",
+   "caminho": "marketing/fotos/interior/airbnb-33.png",
+   "dimensoes": {
+    "largura": 1920,
+    "altura": 2560
+   },
+   "assunto": "cómoda azul e cabide",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo."
+   ],
+   "entidade_confirmada": "CASA-1"
+  },
+  {
+   "id": "ATIVO-interior_airbnb-34",
+   "caminho": "marketing/fotos/interior/airbnb-34.jpeg",
+   "dimensoes": {
+    "largura": 1920,
+    "altura": 2879
+   },
+   "assunto": "cómoda azul e placa decorativa",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo."
+   ],
+   "entidade_confirmada": "CASA-1"
+  },
+  {
+   "id": "ATIVO-interior_airbnb-35",
+   "caminho": "marketing/fotos/interior/airbnb-35.jpeg",
+   "dimensoes": {
+    "largura": 1920,
+    "altura": 1280
+   },
+   "assunto": "espelho dourado na parede de pedra",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo."
+   ],
+   "entidade_confirmada": "CASA-1"
+  },
+  {
+   "id": "ATIVO-interior_airbnb-36",
+   "caminho": "marketing/fotos/interior/airbnb-36.png",
+   "dimensoes": {
+    "largura": 1920,
+    "altura": 1440
+   },
+   "assunto": "teto de madeira e candeeiro de globos",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo."
+   ],
+   "entidade_confirmada": "CASA-1"
+  },
+  {
+   "id": "ATIVO-interior_airbnb-37",
+   "caminho": "marketing/fotos/interior/airbnb-37.png",
+   "dimensoes": {
+    "largura": 1920,
+    "altura": 1440
+   },
+   "assunto": "entrada/hall com cabide",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo."
+   ],
+   "entidade_confirmada": "CASA-1"
+  },
+  {
+   "id": "ATIVO-interior_airbnb-38",
+   "caminho": "marketing/fotos/interior/airbnb-38.png",
+   "dimensoes": {
+    "largura": 1920,
+    "altura": 1440
+   },
+   "assunto": "entrada: porta de madeira",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo."
+   ],
+   "entidade_confirmada": "CASA-1"
+  },
+  {
+   "id": "ATIVO-exterior_airbnb-03",
+   "caminho": "marketing/fotos/exterior/airbnb-03.jpeg",
+   "dimensoes": {
+    "largura": 1920,
+    "altura": 1280
+   },
+   "assunto": "varanda: jacuzzi, guarda-sol, espreguiçadeiras",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Mostra o spa: não legendar como «aquecido» (AF-06)."
+   ],
+   "entidade_confirmada": "CASA-1"
+  },
+  {
+   "id": "ATIVO-exterior_airbnb-04",
+   "caminho": "marketing/fotos/exterior/airbnb-04.png",
+   "dimensoes": {
+    "largura": 1920,
+    "altura": 1440
+   },
+   "assunto": "varanda: vista do vale, cadeiras e jacuzzi",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo."
+   ],
+   "entidade_confirmada": "CASA-1"
+  },
+  {
+   "id": "ATIVO-exterior_airbnb-10",
+   "caminho": "marketing/fotos/exterior/airbnb-10.jpeg",
+   "dimensoes": {
+    "largura": 1920,
+    "altura": 1280
+   },
+   "assunto": "varanda/pátio: mesa, espreguiçadeiras, jacuzzi",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo."
+   ],
+   "entidade_confirmada": "CASA-1"
+  },
+  {
+   "id": "ATIVO-exterior_airbnb-26",
+   "caminho": "marketing/fotos/exterior/airbnb-26.jpeg",
+   "dimensoes": {
+    "largura": 1920,
+    "altura": 1280
+   },
+   "assunto": "varanda e jacuzzi com guarda-sol",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Quase igual a exterior/airbnb-03.jpeg: não usar as duas lado a lado."
+   ],
+   "entidade_confirmada": "CASA-1"
+  },
+  {
+   "id": "ATIVO-exterior_airbnb-27",
+   "caminho": "marketing/fotos/exterior/airbnb-27.jpeg",
+   "dimensoes": {
+    "largura": 1920,
+    "altura": 1280
+   },
+   "assunto": "varanda: grade de madeira e vista",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo."
+   ],
+   "entidade_confirmada": "CASA-1"
+  },
+  {
+   "id": "ATIVO-exterior_airbnb-28",
+   "caminho": "marketing/fotos/exterior/airbnb-28.jpeg",
+   "dimensoes": {
+    "largura": 1920,
+    "altura": 1280
+   },
+   "assunto": "varanda: guarda-sol e vista do vale",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo."
+   ],
+   "entidade_confirmada": "CASA-1"
+  },
+  {
+   "id": "ATIVO-exterior_airbnb-29",
+   "caminho": "marketing/fotos/exterior/airbnb-29.jpeg",
+   "dimensoes": {
+    "largura": 1920,
+    "altura": 1280
+   },
+   "assunto": "varanda: vista panorâmica",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo."
+   ],
+   "entidade_confirmada": "CASA-1"
+  },
+  {
+   "id": "ATIVO-exterior_airbnb-30",
+   "caminho": "marketing/fotos/exterior/airbnb-30.jpeg",
+   "dimensoes": {
+    "largura": 1920,
+    "altura": 1280
+   },
+   "assunto": "jacuzzi na varanda (spa insuflável escuro)",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Mostra o spa: não legendar como «aquecido» nem «jacuzzi embutido» (AF-06, AF-06B)."
+   ],
+   "entidade_confirmada": "CASA-1"
+  },
+  {
+   "id": "ATIVO-exterior_airbnb-31",
+   "caminho": "marketing/fotos/exterior/airbnb-31.jpeg",
+   "dimensoes": {
+    "largura": 1920,
+    "altura": 1280
+   },
+   "assunto": "estacionamento em gravilha em frente ao portão",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo."
+   ],
+   "entidade_confirmada": "CASA-1"
+  },
+  {
+   "id": "ATIVO-exterior_airbnb-32",
+   "caminho": "marketing/fotos/exterior/airbnb-32.jpeg",
+   "dimensoes": {
+    "largura": 1920,
+    "altura": 1280
+   },
+   "assunto": "fachada em pedra, telhado de telha, varanda",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo."
+   ],
+   "entidade_confirmada": "CASA-1"
+  },
+  {
+   "id": "ATIVO-conceito_3c4517_00dfe6ae410048968706efd7a64a20e6",
+   "caminho": "marketing/fotos/conceito/3c4517_00dfe6ae410048968706efd7a64a20e6.jpg",
+   "dimensoes": {
+    "largura": 484,
+    "altura": 479
+   },
+   "assunto": "pato branco deitado na relva",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Foto do site do projeto (carregada em 2021): mostra animais da quinta nessa altura; não dizer que são os animais de hoje nem que estão junto da casa.",
+    "Sem nomes nem histórias inventados; os nomes da galeria de 2021 só com o dono a confirmar."
+   ]
+  },
+  {
+   "id": "ATIVO-conceito_3c4517_040b5137b385415eb32e6668d2bd2c1a",
+   "caminho": "marketing/fotos/conceito/3c4517_040b5137b385415eb32e6668d2bd2c1a.jpg",
+   "dimensoes": {
+    "largura": 1920,
+    "altura": 1080
+   },
+   "assunto": "cabrito preto no feno, parede de pedra",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Foto do site do projeto (carregada em 2021): mostra animais da quinta nessa altura; não dizer que são os animais de hoje nem que estão junto da casa.",
+    "Sem nomes nem histórias inventados; os nomes da galeria de 2021 só com o dono a confirmar."
+   ]
+  },
+  {
+   "id": "ATIVO-conceito_3c4517_049df7bf6abe4293909d6a87abb074d7",
+   "caminho": "marketing/fotos/conceito/3c4517_049df7bf6abe4293909d6a87abb074d7.jpg",
+   "dimensoes": {
+    "largura": 1827,
+    "altura": 1827
+   },
+   "assunto": "cabrito ruivo ao colo (cabelo e mão de pessoa, sem rosto); na galeria de apadrinhamento: «Ariel» (2021, antigo)",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Foto do site do projeto (carregada em 2021): mostra animais da quinta nessa altura; não dizer que são os animais de hoje nem que estão junto da casa.",
+    "Sem nomes nem histórias inventados; os nomes da galeria de 2021 só com o dono a confirmar."
+   ]
+  },
+  {
+   "id": "ATIVO-conceito_3c4517_09598e7c9d064b50acc0527c235218e1",
+   "caminho": "marketing/fotos/conceito/3c4517_09598e7c9d064b50acc0527c235218e1.jpg",
+   "dimensoes": {
+    "largura": 1080,
+    "altura": 1080
+   },
+   "assunto": "cabrito castanho ao colo dentro de um carro; galeria: «Mel» (2021, antigo)",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Foto do site do projeto (carregada em 2021): mostra animais da quinta nessa altura; não dizer que são os animais de hoje nem que estão junto da casa.",
+    "Sem nomes nem histórias inventados; os nomes da galeria de 2021 só com o dono a confirmar."
+   ]
+  },
+  {
+   "id": "ATIVO-conceito_3c4517_143af93e12ed423e85f0757eebf9d7e4",
+   "caminho": "marketing/fotos/conceito/3c4517_143af93e12ed423e85f0757eebf9d7e4.png",
+   "dimensoes": {
+    "largura": 491,
+    "altura": 548
+   },
+   "assunto": "cabra castanha, grande plano, curral de madeira; galeria: «Jade» (2021, antigo)",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Foto do site do projeto (carregada em 2021): mostra animais da quinta nessa altura; não dizer que são os animais de hoje nem que estão junto da casa.",
+    "Sem nomes nem histórias inventados; os nomes da galeria de 2021 só com o dono a confirmar."
+   ]
+  },
+  {
+   "id": "ATIVO-conceito_3c4517_178ddd2a70474d65944051fa0a533ef9",
+   "caminho": "marketing/fotos/conceito/3c4517_178ddd2a70474d65944051fa0a533ef9.jpg",
+   "dimensoes": {
+    "largura": 540,
+    "altura": 540
+   },
+   "assunto": "ovelha a comer da mão de uma pessoa (braço, sem rosto), curral de pedra; galeria: «Woody» (2021, antigo)",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Foto do site do projeto (carregada em 2021): mostra animais da quinta nessa altura; não dizer que são os animais de hoje nem que estão junto da casa.",
+    "Sem nomes nem histórias inventados; os nomes da galeria de 2021 só com o dono a confirmar."
+   ]
+  },
+  {
+   "id": "ATIVO-conceito_3c4517_180106f228824b24bb97587ce8f61ef9",
+   "caminho": "marketing/fotos/conceito/3c4517_180106f228824b24bb97587ce8f61ef9.jpg",
+   "dimensoes": {
+    "largura": 2000,
+    "altura": 2000
+   },
+   "assunto": "borrego branco, grande plano; galeria: «Nala» (2021, antigo)",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Foto do site do projeto (carregada em 2021): mostra animais da quinta nessa altura; não dizer que são os animais de hoje nem que estão junto da casa.",
+    "Sem nomes nem histórias inventados; os nomes da galeria de 2021 só com o dono a confirmar."
+   ]
+  },
+  {
+   "id": "ATIVO-conceito_3c4517_1869fe1d64294cc68267dea159c909c2",
+   "caminho": "marketing/fotos/conceito/3c4517_1869fe1d64294cc68267dea159c909c2.jpg",
+   "dimensoes": {
+    "largura": 1440,
+    "altura": 831
+   },
+   "assunto": "POSTAL de apadrinhamento impresso: cabrito e texto à mão «Obrigado Madrinha, por todo o amor e carinho! -A Familia na Quinta» (texto na imagem)",
+   "publicador": "casa",
+   "uso": "restrito",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Foto do site do projeto (carregada em 2021): mostra animais da quinta nessa altura; não dizer que são os animais de hoje nem que estão junto da casa.",
+    "Sem nomes nem histórias inventados; os nomes da galeria de 2021 só com o dono a confirmar.",
+    "Postal/cartão com texto escrito à mão na imagem: só para ilustrar o apadrinhamento (AF-P10), sem texto por cima e sem recorte do texto."
+   ]
+  },
+  {
+   "id": "ATIVO-conceito_3c4517_1f6798ed81c84bff989ab5eb3d97c469",
+   "caminho": "marketing/fotos/conceito/3c4517_1f6798ed81c84bff989ab5eb3d97c469.jpg",
+   "dimensoes": {
+    "largura": 1440,
+    "altura": 1114
+   },
+   "assunto": "cabrito preto com gravata às riscas, no feno",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Foto do site do projeto (carregada em 2021): mostra animais da quinta nessa altura; não dizer que são os animais de hoje nem que estão junto da casa.",
+    "Sem nomes nem histórias inventados; os nomes da galeria de 2021 só com o dono a confirmar."
+   ]
+  },
+  {
+   "id": "ATIVO-conceito_3c4517_2513edbc025646eb8a03b929c54eeccf",
+   "caminho": "marketing/fotos/conceito/3c4517_2513edbc025646eb8a03b929c54eeccf.jpg",
+   "dimensoes": {
+    "largura": 1810,
+    "altura": 1810
+   },
+   "assunto": "colagem de 3 fotos de um cabrito preto (rosto parcial de pessoa); galeria: «Kaio» (2021, antigo)",
+   "publicador": "casa",
+   "uso": "restrito",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Foto do site do projeto (carregada em 2021): mostra animais da quinta nessa altura; não dizer que são os animais de hoje nem que estão junto da casa.",
+    "Sem nomes nem histórias inventados; os nomes da galeria de 2021 só com o dono a confirmar.",
+    "Colagem de 3 fotos com rosto parcial de pessoa: evitar como foto principal."
+   ]
+  },
+  {
+   "id": "ATIVO-conceito_3c4517_2dd3aab395e94f2a81fc28853298bddd",
+   "caminho": "marketing/fotos/conceito/3c4517_2dd3aab395e94f2a81fc28853298bddd.jpg",
+   "dimensoes": {
+    "largura": 495,
+    "altura": 499
+   },
+   "assunto": "pónei castanho com cabeçada vermelha; galeria: «Amber» (2021, antigo)",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Foto do site do projeto (carregada em 2021): mostra animais da quinta nessa altura; não dizer que são os animais de hoje nem que estão junto da casa.",
+    "Sem nomes nem histórias inventados; os nomes da galeria de 2021 só com o dono a confirmar."
+   ]
+  },
+  {
+   "id": "ATIVO-conceito_3c4517_3549e8bf2bd44e22a9908c2c72634bd2",
+   "caminho": "marketing/fotos/conceito/3c4517_3549e8bf2bd44e22a9908c2c72634bd2.jpg",
+   "dimensoes": {
+    "largura": 1080,
+    "altura": 1080
+   },
+   "assunto": "cabra preta e branca a comer flores na encosta; galeria: «Maggie» (2021, antigo)",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Foto do site do projeto (carregada em 2021): mostra animais da quinta nessa altura; não dizer que são os animais de hoje nem que estão junto da casa.",
+    "Sem nomes nem histórias inventados; os nomes da galeria de 2021 só com o dono a confirmar."
+   ]
+  },
+  {
+   "id": "ATIVO-conceito_3c4517_3867468b29374f10bce7926850718d12",
+   "caminho": "marketing/fotos/conceito/3c4517_3867468b29374f10bce7926850718d12.jpg",
+   "dimensoes": {
+    "largura": 1440,
+    "altura": 1080
+   },
+   "assunto": "coelho branco num ninho de feno; galeria: «Tommy» (2021, antigo)",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Foto do site do projeto (carregada em 2021): mostra animais da quinta nessa altura; não dizer que são os animais de hoje nem que estão junto da casa.",
+    "Sem nomes nem histórias inventados; os nomes da galeria de 2021 só com o dono a confirmar."
+   ]
+  },
+  {
+   "id": "ATIVO-conceito_3c4517_452b02bcafa649e5befc386a78bb0a5e",
+   "caminho": "marketing/fotos/conceito/3c4517_452b02bcafa649e5befc386a78bb0a5e.jpg",
+   "dimensoes": {
+    "largura": 2420,
+    "altura": 1860
+   },
+   "assunto": "CARTÃO decorado «I love U / Thank you» com foto de cabrito e texto à mão (texto e mão na imagem)",
+   "publicador": "casa",
+   "uso": "restrito",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Foto do site do projeto (carregada em 2021): mostra animais da quinta nessa altura; não dizer que são os animais de hoje nem que estão junto da casa.",
+    "Sem nomes nem histórias inventados; os nomes da galeria de 2021 só com o dono a confirmar.",
+    "Postal/cartão com texto escrito à mão na imagem: só para ilustrar o apadrinhamento (AF-P10), sem texto por cima e sem recorte do texto."
+   ]
+  },
+  {
+   "id": "ATIVO-conceito_3c4517_593e00a447d4465eb5f32578147c3eed",
+   "caminho": "marketing/fotos/conceito/3c4517_593e00a447d4465eb5f32578147c3eed.jpg",
+   "dimensoes": {
+    "largura": 1533,
+    "altura": 1209
+   },
+   "assunto": "cabrito preto, grande plano; galeria: «Noel» (2021, antigo)",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Foto do site do projeto (carregada em 2021): mostra animais da quinta nessa altura; não dizer que são os animais de hoje nem que estão junto da casa.",
+    "Sem nomes nem histórias inventados; os nomes da galeria de 2021 só com o dono a confirmar."
+   ]
+  },
+  {
+   "id": "ATIVO-conceito_3c4517_5cf856c58ad1417faf74ba8e617365cc",
+   "caminho": "marketing/fotos/conceito/3c4517_5cf856c58ad1417faf74ba8e617365cc.jpg",
+   "dimensoes": {
+    "largura": 640,
+    "altura": 640
+   },
+   "assunto": "ninhada de coelhos recém-nascidos no pelo",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Foto do site do projeto (carregada em 2021): mostra animais da quinta nessa altura; não dizer que são os animais de hoje nem que estão junto da casa.",
+    "Sem nomes nem histórias inventados; os nomes da galeria de 2021 só com o dono a confirmar."
+   ]
+  },
+  {
+   "id": "ATIVO-conceito_3c4517_62e71f6e4c084bb892f23a3c41383bdf",
+   "caminho": "marketing/fotos/conceito/3c4517_62e71f6e4c084bb892f23a3c41383bdf.png",
+   "dimensoes": {
+    "largura": 1890,
+    "altura": 1417
+   },
+   "assunto": "leitões pretos a comer no feno (pequena)",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Foto do site do projeto (carregada em 2021): mostra animais da quinta nessa altura; não dizer que são os animais de hoje nem que estão junto da casa.",
+    "Sem nomes nem histórias inventados; os nomes da galeria de 2021 só com o dono a confirmar."
+   ]
+  },
+  {
+   "id": "ATIVO-conceito_3c4517_69bd2057cff34c53baa4c5098eb45c7a",
+   "caminho": "marketing/fotos/conceito/3c4517_69bd2057cff34c53baa4c5098eb45c7a.jpg",
+   "dimensoes": {
+    "largura": 1440,
+    "altura": 892
+   },
+   "assunto": "pónei castanho com cabeçada vermelha, encostado a uma vedação",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Foto do site do projeto (carregada em 2021): mostra animais da quinta nessa altura; não dizer que são os animais de hoje nem que estão junto da casa.",
+    "Sem nomes nem histórias inventados; os nomes da galeria de 2021 só com o dono a confirmar."
+   ]
+  },
+  {
+   "id": "ATIVO-conceito_3c4517_6da66280dddf4abc98509ad629cffa3d",
+   "caminho": "marketing/fotos/conceito/3c4517_6da66280dddf4abc98509ad629cffa3d.jpg",
+   "dimensoes": {
+    "largura": 652,
+    "altura": 503
+   },
+   "assunto": "dois patos brancos na relva; galeria: «Dylan» (2021, antigo)",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Foto do site do projeto (carregada em 2021): mostra animais da quinta nessa altura; não dizer que são os animais de hoje nem que estão junto da casa.",
+    "Sem nomes nem histórias inventados; os nomes da galeria de 2021 só com o dono a confirmar."
+   ]
+  },
+  {
+   "id": "ATIVO-conceito_3c4517_6fe4de7dc15c4263a66b0e0e96bf52d6",
+   "caminho": "marketing/fotos/conceito/3c4517_6fe4de7dc15c4263a66b0e0e96bf52d6.jpg",
+   "dimensoes": {
+    "largura": 946,
+    "altura": 1080
+   },
+   "assunto": "coelho branco junto a árvore de Natal e boneco de neve (decoração)",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Foto do site do projeto (carregada em 2021): mostra animais da quinta nessa altura; não dizer que são os animais de hoje nem que estão junto da casa.",
+    "Sem nomes nem histórias inventados; os nomes da galeria de 2021 só com o dono a confirmar.",
+    "Decoração de Natal: só fora de contexto sazonal se o desenho o aceitar."
+   ]
+  },
+  {
+   "id": "ATIVO-conceito_3c4517_70e2ffe2ad984764ae398f832f747fb2",
+   "caminho": "marketing/fotos/conceito/3c4517_70e2ffe2ad984764ae398f832f747fb2.jpg",
+   "dimensoes": {
+    "largura": 1920,
+    "altura": 1080
+   },
+   "assunto": "leitão preto no feno; galeria: «Winnie» (2021, antigo)",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Foto do site do projeto (carregada em 2021): mostra animais da quinta nessa altura; não dizer que são os animais de hoje nem que estão junto da casa.",
+    "Sem nomes nem histórias inventados; os nomes da galeria de 2021 só com o dono a confirmar."
+   ]
+  },
+  {
+   "id": "ATIVO-conceito_3c4517_785e596730f14b0584e305dcb72a5de8",
+   "caminho": "marketing/fotos/conceito/3c4517_785e596730f14b0584e305dcb72a5de8.jpg",
+   "dimensoes": {
+    "largura": 540,
+    "altura": 540
+   },
+   "assunto": "cabrito claro a receber festas de uma mão",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Foto do site do projeto (carregada em 2021): mostra animais da quinta nessa altura; não dizer que são os animais de hoje nem que estão junto da casa.",
+    "Sem nomes nem histórias inventados; os nomes da galeria de 2021 só com o dono a confirmar."
+   ]
+  },
+  {
+   "id": "ATIVO-conceito_3c4517_807d0bb71ed6491f936b8ef77d46104c",
+   "caminho": "marketing/fotos/conceito/3c4517_807d0bb71ed6491f936b8ef77d46104c.jpg",
+   "dimensoes": {
+    "largura": 960,
+    "altura": 540
+   },
+   "assunto": "PESSOA IDENTIFICÁVEL: jovem agachado com ovelha e cabras no curral",
+   "publicador": "casa",
+   "uso": "restrito",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Foto do site do projeto (carregada em 2021): mostra animais da quinta nessa altura; não dizer que são os animais de hoje nem que estão junto da casa.",
+    "Sem nomes nem histórias inventados; os nomes da galeria de 2021 só com o dono a confirmar.",
+    "Pessoa identificável: só com autorização dela, via o dono."
+   ]
+  },
+  {
+   "id": "ATIVO-conceito_3c4517_846cbf60f839456d87294a013cd99fc0",
+   "caminho": "marketing/fotos/conceito/3c4517_846cbf60f839456d87294a013cd99fc0.png",
+   "dimensoes": {
+    "largura": 1194,
+    "altura": 996
+   },
+   "assunto": "porco preto a comer de uma tigela",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Foto do site do projeto (carregada em 2021): mostra animais da quinta nessa altura; não dizer que são os animais de hoje nem que estão junto da casa.",
+    "Sem nomes nem histórias inventados; os nomes da galeria de 2021 só com o dono a confirmar."
+   ]
+  },
+  {
+   "id": "ATIVO-conceito_3c4517_86e283345d784f879774e038e5477336",
+   "caminho": "marketing/fotos/conceito/3c4517_86e283345d784f879774e038e5477336.jpg",
+   "dimensoes": {
+    "largura": 1280,
+    "altura": 624
+   },
+   "assunto": "PESSOA IDENTIFICÁVEL: mulher com cão branco (cão doméstico)",
+   "publicador": "casa",
+   "uso": "nao_usar",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Foto do site do projeto (carregada em 2021): mostra animais da quinta nessa altura; não dizer que são os animais de hoje nem que estão junto da casa.",
+    "Sem nomes nem histórias inventados; os nomes da galeria de 2021 só com o dono a confirmar.",
+    "Pessoa identificável com um cão doméstico: não mostra a quinta nem os animais do projeto."
+   ]
+  },
+  {
+   "id": "ATIVO-conceito_3c4517_89d2ef8549aa435680f1e3b45d39fc54",
+   "caminho": "marketing/fotos/conceito/3c4517_89d2ef8549aa435680f1e3b45d39fc54.jpg",
+   "dimensoes": {
+    "largura": 1440,
+    "altura": 931
+   },
+   "assunto": "peluches de crochet de animais (mascotes da loja do projeto), não são animais",
+   "publicador": "casa",
+   "uso": "restrito",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Foto do site do projeto (carregada em 2021): mostra animais da quinta nessa altura; não dizer que são os animais de hoje nem que estão junto da casa.",
+    "Sem nomes nem histórias inventados; os nomes da galeria de 2021 só com o dono a confirmar.",
+    "Peluches da loja do projeto (2021, histórico): não são animais; a loja pode já não existir."
+   ]
+  },
+  {
+   "id": "ATIVO-conceito_3c4517_8d2ae3b9782d460ca916af1b51e9d5f3",
+   "caminho": "marketing/fotos/conceito/3c4517_8d2ae3b9782d460ca916af1b51e9d5f3.jpg",
+   "dimensoes": {
+    "largura": 774,
+    "altura": 544
+   },
+   "assunto": "porco preto de perfil no feno; galeria: «Nolan» (2021, antigo)",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Foto do site do projeto (carregada em 2021): mostra animais da quinta nessa altura; não dizer que são os animais de hoje nem que estão junto da casa.",
+    "Sem nomes nem histórias inventados; os nomes da galeria de 2021 só com o dono a confirmar."
+   ]
+  },
+  {
+   "id": "ATIVO-conceito_3c4517_8d6b04f9d0234281b5811c4991488713",
+   "caminho": "marketing/fotos/conceito/3c4517_8d6b04f9d0234281b5811c4991488713.png",
+   "dimensoes": {
+    "largura": 592,
+    "altura": 544
+   },
+   "assunto": "porco preto de perfil no feno (quase igual a 8d2ae3: duplicado)",
+   "publicador": "casa",
+   "uso": "restrito",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Foto do site do projeto (carregada em 2021): mostra animais da quinta nessa altura; não dizer que são os animais de hoje nem que estão junto da casa.",
+    "Sem nomes nem histórias inventados; os nomes da galeria de 2021 só com o dono a confirmar.",
+    "Quase igual a conceito/3c4517_8d2ae3b9782d460ca916af1b51e9d5f3.jpg: usar só uma."
+   ]
+  },
+  {
+   "id": "ATIVO-conceito_3c4517_8e102da316cf42baa44e20e087c45b75",
+   "caminho": "marketing/fotos/conceito/3c4517_8e102da316cf42baa44e20e087c45b75.jpg",
+   "dimensoes": {
+    "largura": 530,
+    "altura": 436
+   },
+   "assunto": "cabrito preto e branco, grande plano; galeria: «Lana» (2021, antigo)",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Foto do site do projeto (carregada em 2021): mostra animais da quinta nessa altura; não dizer que são os animais de hoje nem que estão junto da casa.",
+    "Sem nomes nem histórias inventados; os nomes da galeria de 2021 só com o dono a confirmar."
+   ]
+  },
+  {
+   "id": "ATIVO-conceito_3c4517_93a7092c4b884e17aa75547d8e5324f1",
+   "caminho": "marketing/fotos/conceito/3c4517_93a7092c4b884e17aa75547d8e5324f1.jpg",
+   "dimensoes": {
+    "largura": 1440,
+    "altura": 1080
+   },
+   "assunto": "pés de pessoas com galochas (não mostra animais)",
+   "publicador": "casa",
+   "uso": "restrito",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Foto do site do projeto (carregada em 2021): mostra animais da quinta nessa altura; não dizer que são os animais de hoje nem que estão junto da casa.",
+    "Sem nomes nem histórias inventados; os nomes da galeria de 2021 só com o dono a confirmar.",
+    "Só pés de pessoas com galochas: não mostra animais."
+   ]
+  },
+  {
+   "id": "ATIVO-conceito_3c4517_989d605f217d4730b30f247e3d62427a",
+   "caminho": "marketing/fotos/conceito/3c4517_989d605f217d4730b30f247e3d62427a.jpg",
+   "dimensoes": {
+    "largura": 589,
+    "altura": 705
+   },
+   "assunto": "cabra castanha com cornos; galeria: «Keyla» (2021, antigo)",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Foto do site do projeto (carregada em 2021): mostra animais da quinta nessa altura; não dizer que são os animais de hoje nem que estão junto da casa.",
+    "Sem nomes nem histórias inventados; os nomes da galeria de 2021 só com o dono a confirmar."
+   ]
+  },
+  {
+   "id": "ATIVO-conceito_3c4517_9906519d44e3459396cb64b64c862629",
+   "caminho": "marketing/fotos/conceito/3c4517_9906519d44e3459396cb64b64c862629.jpg",
+   "dimensoes": {
+    "largura": 1384,
+    "altura": 1384
+   },
+   "assunto": "ovelha branca, grande plano; galeria: «Holly» (2021, antigo)",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Foto do site do projeto (carregada em 2021): mostra animais da quinta nessa altura; não dizer que são os animais de hoje nem que estão junto da casa.",
+    "Sem nomes nem histórias inventados; os nomes da galeria de 2021 só com o dono a confirmar."
+   ]
+  },
+  {
+   "id": "ATIVO-conceito_3c4517_9f2461ef3fba4d58b7129e22af8c396a",
+   "caminho": "marketing/fotos/conceito/3c4517_9f2461ef3fba4d58b7129e22af8c396a.jpg",
+   "dimensoes": {
+    "largura": 847,
+    "altura": 847
+   },
+   "assunto": "canário amarelo num poleiro; galeria: «Kiku» (2021, antigo)",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Foto do site do projeto (carregada em 2021): mostra animais da quinta nessa altura; não dizer que são os animais de hoje nem que estão junto da casa.",
+    "Sem nomes nem histórias inventados; os nomes da galeria de 2021 só com o dono a confirmar."
+   ]
+  },
+  {
+   "id": "ATIVO-conceito_3c4517_af78ce6bb8714856aac8170f12b042d0",
+   "caminho": "marketing/fotos/conceito/3c4517_af78ce6bb8714856aac8170f12b042d0.jpg",
+   "dimensoes": {
+    "largura": 1920,
+    "altura": 1080
+   },
+   "assunto": "cabritos no curral junto às pernas de uma pessoa (sem rosto)",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Foto do site do projeto (carregada em 2021): mostra animais da quinta nessa altura; não dizer que são os animais de hoje nem que estão junto da casa.",
+    "Sem nomes nem histórias inventados; os nomes da galeria de 2021 só com o dono a confirmar."
+   ]
+  },
+  {
+   "id": "ATIVO-conceito_3c4517_bf2b17f360d940a39646f8d23b0e9ac6",
+   "caminho": "marketing/fotos/conceito/3c4517_bf2b17f360d940a39646f8d23b0e9ac6.jpg",
+   "dimensoes": {
+    "largura": 1080,
+    "altura": 1080
+   },
+   "assunto": "coelho castanho no feno",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Foto do site do projeto (carregada em 2021): mostra animais da quinta nessa altura; não dizer que são os animais de hoje nem que estão junto da casa.",
+    "Sem nomes nem histórias inventados; os nomes da galeria de 2021 só com o dono a confirmar."
+   ]
+  },
+  {
+   "id": "ATIVO-conceito_3c4517_bfb73ba7d78a473b988b0ae496d1a240",
+   "caminho": "marketing/fotos/conceito/3c4517_bfb73ba7d78a473b988b0ae496d1a240.jpg",
+   "dimensoes": {
+    "largura": 703,
+    "altura": 703
+   },
+   "assunto": "coelho branco junto a decoração de Natal; galeria: «Rudolpho» (2021, antigo)",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Foto do site do projeto (carregada em 2021): mostra animais da quinta nessa altura; não dizer que são os animais de hoje nem que estão junto da casa.",
+    "Sem nomes nem histórias inventados; os nomes da galeria de 2021 só com o dono a confirmar.",
+    "Decoração de Natal: só fora de contexto sazonal se o desenho o aceitar."
+   ]
+  },
+  {
+   "id": "ATIVO-conceito_3c4517_ce1a8e321d68402a8969653b18a6bf17",
+   "caminho": "marketing/fotos/conceito/3c4517_ce1a8e321d68402a8969653b18a6bf17.jpg",
+   "dimensoes": {
+    "largura": 1440,
+    "altura": 1048
+   },
+   "assunto": "fotografias impressas de animais espalhadas numa mesa (as fotos dos afilhados)",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Foto do site do projeto (carregada em 2021): mostra animais da quinta nessa altura; não dizer que são os animais de hoje nem que estão junto da casa.",
+    "Sem nomes nem histórias inventados; os nomes da galeria de 2021 só com o dono a confirmar."
+   ]
+  },
+  {
+   "id": "ATIVO-conceito_3c4517_cf192dbb144341b09e34138706d4da68",
+   "caminho": "marketing/fotos/conceito/3c4517_cf192dbb144341b09e34138706d4da68.jpg",
+   "dimensoes": {
+    "largura": 2250,
+    "altura": 2250
+   },
+   "assunto": "burro castanho, grande plano, com árvores ao fundo",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Foto do site do projeto (carregada em 2021): mostra animais da quinta nessa altura; não dizer que são os animais de hoje nem que estão junto da casa.",
+    "Sem nomes nem histórias inventados; os nomes da galeria de 2021 só com o dono a confirmar."
+   ]
+  },
+  {
+   "id": "ATIVO-conceito_3c4517_d3dabda8556d43d884af52869e8681c4",
+   "caminho": "marketing/fotos/conceito/3c4517_d3dabda8556d43d884af52869e8681c4.jpg",
+   "dimensoes": {
+    "largura": 1080,
+    "altura": 1080
+   },
+   "assunto": "pónei branco com chifres de rena (Natal)",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Foto do site do projeto (carregada em 2021): mostra animais da quinta nessa altura; não dizer que são os animais de hoje nem que estão junto da casa.",
+    "Sem nomes nem histórias inventados; os nomes da galeria de 2021 só com o dono a confirmar.",
+    "Decoração de Natal: só fora de contexto sazonal se o desenho o aceitar."
+   ]
+  },
+  {
+   "id": "ATIVO-conceito_3c4517_d848363b631c42d3aaf0381633953e88",
+   "caminho": "marketing/fotos/conceito/3c4517_d848363b631c42d3aaf0381633953e88.jpg",
+   "dimensoes": {
+    "largura": 582,
+    "altura": 582
+   },
+   "assunto": "burro castanho entre ramos; galeria: «Benji» (2021, antigo)",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Foto do site do projeto (carregada em 2021): mostra animais da quinta nessa altura; não dizer que são os animais de hoje nem que estão junto da casa.",
+    "Sem nomes nem histórias inventados; os nomes da galeria de 2021 só com o dono a confirmar."
+   ]
+  },
+  {
+   "id": "ATIVO-conceito_3c4517_d859b5dbc62a4b5d8b918b8a3269b6da",
+   "caminho": "marketing/fotos/conceito/3c4517_d859b5dbc62a4b5d8b918b8a3269b6da.jpg",
+   "dimensoes": {
+    "largura": 1920,
+    "altura": 1080
+   },
+   "assunto": "porca preta a comer, mão de pessoa (sem rosto); galeria: «Kiara» (2021, antigo)",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Foto do site do projeto (carregada em 2021): mostra animais da quinta nessa altura; não dizer que são os animais de hoje nem que estão junto da casa.",
+    "Sem nomes nem histórias inventados; os nomes da galeria de 2021 só com o dono a confirmar."
+   ]
+  },
+  {
+   "id": "ATIVO-conceito_3c4517_e8ec6b46161342f5b5855d7e46bb0d2a",
+   "caminho": "marketing/fotos/conceito/3c4517_e8ec6b46161342f5b5855d7e46bb0d2a.jpg",
+   "dimensoes": {
+    "largura": 6000,
+    "altura": 4000
+   },
+   "assunto": "borrego branco a mordiscar um dedo; galeria: «Evelyne» (2021, antigo)",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Foto do site do projeto (carregada em 2021): mostra animais da quinta nessa altura; não dizer que são os animais de hoje nem que estão junto da casa.",
+    "Sem nomes nem histórias inventados; os nomes da galeria de 2021 só com o dono a confirmar."
+   ]
+  },
+  {
+   "id": "ATIVO-conceito_3c4517_f1fd0104811941dd9903e67e64d5bcd8",
+   "caminho": "marketing/fotos/conceito/3c4517_f1fd0104811941dd9903e67e64d5bcd8.jpg",
+   "dimensoes": {
+    "largura": 926,
+    "altura": 926
+   },
+   "assunto": "leitão preto e branco no feno; galeria: «Baby» (2021, antigo)",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Foto do site do projeto (carregada em 2021): mostra animais da quinta nessa altura; não dizer que são os animais de hoje nem que estão junto da casa.",
+    "Sem nomes nem histórias inventados; os nomes da galeria de 2021 só com o dono a confirmar."
+   ]
+  },
+  {
+   "id": "ATIVO-conceito_3c4517_f3fc53ceaa5a4091b3b3d87323d0ae47",
+   "caminho": "marketing/fotos/conceito/3c4517_f3fc53ceaa5a4091b3b3d87323d0ae47.jpg",
+   "dimensoes": {
+    "largura": 1387,
+    "altura": 640
+   },
+   "assunto": "PESSOA IDENTIFICÁVEL: jovem a abraçar um cabrito preto",
+   "publicador": "casa",
+   "uso": "restrito",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Foto do site do projeto (carregada em 2021): mostra animais da quinta nessa altura; não dizer que são os animais de hoje nem que estão junto da casa.",
+    "Sem nomes nem histórias inventados; os nomes da galeria de 2021 só com o dono a confirmar.",
+    "Pessoa identificável: só com autorização dela, via o dono."
+   ]
+  },
+  {
+   "id": "ATIVO-conceito_3c4517_f7b4b5b7064c44f88734bf2bbf0bddb9",
+   "caminho": "marketing/fotos/conceito/3c4517_f7b4b5b7064c44f88734bf2bbf0bddb9.jpg",
+   "dimensoes": {
+    "largura": 1379,
+    "altura": 929
+   },
+   "assunto": "porco preto a mordiscar um dedo; galeria: «Timô» (2021, antigo)",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Foto do site do projeto (carregada em 2021): mostra animais da quinta nessa altura; não dizer que são os animais de hoje nem que estão junto da casa.",
+    "Sem nomes nem histórias inventados; os nomes da galeria de 2021 só com o dono a confirmar."
+   ]
+  },
+  {
+   "id": "ATIVO-conceito_3c4517_facf85620a3343c3893e218b512fc41b",
+   "caminho": "marketing/fotos/conceito/3c4517_facf85620a3343c3893e218b512fc41b.jpg",
+   "dimensoes": {
+    "largura": 1080,
+    "altura": 1080
+   },
+   "assunto": "porco preto no feno; galeria: «Lily» (2021, antigo)",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Foto do site do projeto (carregada em 2021): mostra animais da quinta nessa altura; não dizer que são os animais de hoje nem que estão junto da casa.",
+    "Sem nomes nem histórias inventados; os nomes da galeria de 2021 só com o dono a confirmar."
+   ]
+  },
+  {
+   "id": "ATIVO-conceito_3c4517_ff278028f9c34c51bbb3242f61203a90",
+   "caminho": "marketing/fotos/conceito/3c4517_ff278028f9c34c51bbb3242f61203a90.jpg",
+   "dimensoes": {
+    "largura": 6000,
+    "altura": 4000
+   },
+   "assunto": "borrego branco deitado no feno; galeria: «Maéva» (2021, antigo)",
+   "publicador": "casa",
+   "uso": "utilizavel",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Foto do site do projeto (carregada em 2021): mostra animais da quinta nessa altura; não dizer que são os animais de hoje nem que estão junto da casa.",
+    "Sem nomes nem histórias inventados; os nomes da galeria de 2021 só com o dono a confirmar."
+   ]
+  },
+  {
+   "id": "ATIVO-marca_035244_00464e7939644b71b41d864548ca468f",
+   "caminho": "marketing/fotos/marca/035244_00464e7939644b71b41d864548ca468f.png",
+   "dimensoes": {
+    "largura": 200,
+    "altura": 200
+   },
+   "assunto": "ícone de coração (gráfico do Wix)",
+   "publicador": "casa",
+   "uso": "nao_usar",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Ícone genérico do Wix (200×200), sem valor de marca."
+   ]
+  },
+  {
+   "id": "ATIVO-marca_035244_652d12a4071147d4a2fff8f8d2ff5db1",
+   "caminho": "marketing/fotos/marca/035244_652d12a4071147d4a2fff8f8d2ff5db1.png",
+   "dimensoes": {
+    "largura": 200,
+    "altura": 200
+   },
+   "assunto": "ícone de coração (gráfico do Wix)",
+   "publicador": "casa",
+   "uso": "nao_usar",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Ícone genérico do Wix (200×200), sem valor de marca."
+   ]
+  },
+  {
+   "id": "ATIVO-marca_37e0cab3e3eab9253f214920616b7ca2",
+   "caminho": "marketing/fotos/marca/37e0cab3e3eab9253f214920616b7ca2.jpg",
+   "dimensoes": {
+    "largura": 773,
+    "altura": 1000
+   },
+   "assunto": "IMAGEM DE BANCO: rapariga com coração (não é da quinta, não usar)",
+   "publicador": "casa",
+   "uso": "nao_usar",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Imagem de banco: não é da quinta nem da casa."
+   ]
+  },
+  {
+   "id": "ATIVO-marca_3c4517_0568cfa1f935410a97ae3ef438071335",
+   "caminho": "marketing/fotos/marca/3c4517_0568cfa1f935410a97ae3ef438071335.png",
+   "dimensoes": {
+    "largura": 861,
+    "altura": 707
+   },
+   "assunto": "logótipo «A Familia na Quinta» (letras douradas)",
+   "publicador": "casa",
+   "uso": "restrito",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Logótipo do projeto: usar só com aval do dono, sem alterar."
+   ]
+  },
+  {
+   "id": "ATIVO-marca_3c4517_46b128c912634123a2ae85ca67550eb7",
+   "caminho": "marketing/fotos/marca/3c4517_46b128c912634123a2ae85ca67550eb7.jpg",
+   "dimensoes": {
+    "largura": 2173,
+    "altura": 803
+   },
+   "assunto": "banner: colagem de animais com o título «A Familia na Quinta» (texto na imagem)",
+   "publicador": "casa",
+   "uso": "restrito",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Banner com o título escrito na imagem e colagem de animais: não recortar o texto, não pôr texto por cima; preferir as fotos individuais."
+   ]
+  },
+  {
+   "id": "ATIVO-marca_3c4517_9e48c6439e7c45d49f736d80e924189e",
+   "caminho": "marketing/fotos/marca/3c4517_9e48c6439e7c45d49f736d80e924189e.png",
+   "dimensoes": {
+    "largura": 900,
+    "altura": 918
+   },
+   "assunto": "IMAGEM DE BANCO: balões (não é da quinta, não usar)",
+   "publicador": "casa",
+   "uso": "nao_usar",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Imagem de banco: não é da quinta nem da casa."
+   ]
+  },
+  {
+   "id": "ATIVO-marca_e316f544f9094143b9eac01f1f19e697",
+   "caminho": "marketing/fotos/marca/e316f544f9094143b9eac01f1f19e697.png",
+   "dimensoes": {
+    "largura": 200,
+    "altura": 200
+   },
+   "assunto": "ícone do Facebook (marca de terceiros, não usar)",
+   "publicador": "casa",
+   "uso": "nao_usar",
+   "restricoes": [
+    "Publicada pela casa (Airbnb) ou pelo projeto (site Wix); serve para a versão de demonstração: confirmar com o dono antes do site definitivo.",
+    "Ícone do Facebook (marca de terceiros): usar o ícone do próprio sistema do site, não este."
+   ]
+  },
+  {
+   "id": "ATIVO-regiao_se-de-lamego",
+   "caminho": "marketing/fotos/regiao/se-de-lamego.jpg",
+   "dimensoes": {
+    "largura": 6016,
+    "altura": 4016
+   },
+   "assunto": "Sé de Lamego",
+   "publicador": "terceiro",
+   "uso": "restrito",
+   "restricoes": [
+    "Crédito obrigatório junto da foto ou num bloco de créditos ligado a ela: «Foto: Ricardo Saraiva de Almeida / Wikimedia Commons, CC BY-SA 4.0», com ligação à licença (https://creativecommons.org/licenses/by-sa/4.0) e à página da foto (https://commons.wikimedia.org/wiki/File:S%C3%A9_de_Lamego_1_-_2017-05-04.jpg). Licença conferida no Commons a 2026-10-16 (Casa da Real Companhia); ficha da cache «verificado: sim», não reaberta.",
+    "Sem texto por cima e sem recorte: qualquer alteração é obra derivada e fica sob a mesma licença CC BY-SA, com a indicação «alterada».",
+    "Marcas de água e assinaturas intactas.",
+    "Foto de terceiros: nunca a apresentar como da casa."
+   ]
+  },
+  {
+   "id": "ATIVO-regiao_santuario-dos-remedios",
+   "caminho": "marketing/fotos/regiao/santuario-dos-remedios.jpg",
+   "dimensoes": {
+    "largura": 3840,
+    "altura": 2571
+   },
+   "assunto": "Santuário de Nossa Senhora dos Remédios: vista geral",
+   "publicador": "terceiro",
+   "uso": "restrito",
+   "restricoes": [
+    "Crédito obrigatório junto da foto ou num bloco de créditos ligado a ela: «Foto: Concierge.2C / Wikimedia Commons, CC BY-SA 3.0», com ligação à licença (https://creativecommons.org/licenses/by-sa/3.0) e à página da foto (https://commons.wikimedia.org/wiki/File:Lamego_-_Santu%C3%A1rio_de_Nossa_Senhora_dos_Rem%C3%A9dios_-_Vista_geral_(1).jpg). Licença conferida no Commons a 2026-10-16 (Casa da Real Companhia); ficha da cache «verificado: sim», não reaberta.",
+    "Sem texto por cima e sem recorte: qualquer alteração é obra derivada e fica sob a mesma licença CC BY-SA, com a indicação «alterada».",
+    "Marcas de água e assinaturas intactas.",
+    "Foto de terceiros: nunca a apresentar como da casa."
+   ]
+  },
+  {
+   "id": "ATIVO-regiao_capela-de-balsemao",
+   "caminho": "marketing/fotos/regiao/capela-de-balsemao.jpg",
+   "dimensoes": {
+    "largura": 3696,
+    "altura": 2448
+   },
+   "assunto": "Capela de São Pedro de Balsemão",
+   "publicador": "terceiro",
+   "uso": "restrito",
+   "restricoes": [
+    "Crédito obrigatório junto da foto ou num bloco de créditos ligado a ela: «Foto: Pedro Nuno Caetano / Wikimedia Commons, CC BY 2.0», com ligação à licença (https://creativecommons.org/licenses/by/2.0) e à página da foto (https://commons.wikimedia.org/wiki/File:S._Pedro_de_Balsem%C3%A3o_I.jpg). Licença conferida no Commons a 2026-10-16 (Casa da Real Companhia); ficha da cache «verificado: sim», não reaberta.",
+    "Sem texto por cima e sem recorte: qualquer alteração é obra derivada; indicar «alterada» no crédito.",
+    "Marcas de água e assinaturas intactas.",
+    "Foto de terceiros: nunca a apresentar como da casa."
+   ]
+  },
+  {
+   "id": "ATIVO-regiao_museu-do-douro",
+   "caminho": "marketing/fotos/regiao/museu-do-douro.jpg",
+   "dimensoes": {
+    "largura": 3840,
+    "altura": 2560
+   },
+   "assunto": "Museu do Douro, Peso da Régua",
+   "publicador": "terceiro",
+   "uso": "restrito",
+   "restricoes": [
+    "Crédito obrigatório junto da foto ou num bloco de créditos ligado a ela: «Foto: FWinkel / Wikimedia Commons, CC BY-SA 4.0», com ligação à licença (https://creativecommons.org/licenses/by-sa/4.0) e à página da foto (https://commons.wikimedia.org/wiki/File:Museu_do_Douro_in_Peso_da_R%C3%A9gua.jpg). Licença conferida no Commons a 2026-10-16 (Casa da Real Companhia); ficha da cache «verificado: sim», não reaberta.",
+    "Sem texto por cima e sem recorte: qualquer alteração é obra derivada e fica sob a mesma licença CC BY-SA, com a indicação «alterada».",
+    "Marcas de água e assinaturas intactas.",
+    "Foto de terceiros: nunca a apresentar como da casa."
+   ]
+  },
+  {
+   "id": "ATIVO-regiao_porto-de-rei",
+   "caminho": "marketing/fotos/regiao/porto-de-rei.jpg",
+   "dimensoes": {
+    "largura": 3840,
+    "altura": 2560
+   },
+   "assunto": "Parque Fluvial de Porto de Rei",
+   "publicador": "terceiro",
+   "uso": "restrito",
+   "restricoes": [
+    "Crédito obrigatório junto da foto ou num bloco de créditos ligado a ela: «Foto: Vitor Oliveira from Torres Vedras, PORTUGAL / Wikimedia Commons, CC BY-SA 2.0», com ligação à licença (https://creativecommons.org/licenses/by-sa/2.0) e à página da foto (https://commons.wikimedia.org/wiki/File:Praia_Fluvial_de_Porto_de_Rei_-_Portugal_(29051552232).jpg). Licença conferida no Commons a 2026-10-16 (Casa da Real Companhia); ficha da cache «verificado: sim», não reaberta.",
+    "Sem texto por cima e sem recorte: qualquer alteração é obra derivada e fica sob a mesma licença CC BY-SA, com a indicação «alterada».",
+    "Marcas de água e assinaturas intactas.",
+    "Foto de terceiros: nunca a apresentar como da casa.",
+    "Assinatura do autor («Portuguese_eyes / Vitor Oliveira») no canto inferior esquerdo: manter visível."
+   ]
+  }
+ ],
+ "decisoes": [
+  {
+   "id": "DEC-1",
+   "estado": "ativa",
+   "efeito": "informativo",
+   "texto": "Pedido do dono (via Diogo, 2026-10-20): site metade casa, metade conceito (Quinta Lusitano / apadrinhamento), numa só história que liga as duas; a casa apresentada de forma objetiva; do conceito, o principal; reviews com pouco peso; storytelling cuidado. O ponto de ligação provado está em AF-P01, AF-P02 e CIT-01/CIT-02.",
+   "decidido_em": "2026-10-20",
+   "fonte": "Diogo, depois da chamada com o dono",
+   "afetados": [
+    "AF-P01",
+    "AF-P02",
+    "AF-P03",
+    "AF-P04",
+    "AF-T01",
+    "AF-17"
+   ]
+  },
+  {
+   "id": "DEC-2",
+   "estado": "ativa",
+   "efeito": "bloquear_uso",
+   "texto": "Imagens de banco e ícones do site Wix não entram no site novo.",
+   "decidido_em": "2026-10-20",
+   "fonte": "juízo do dossiê",
+   "afetados": [
+    "ATIVO-marca_37e0cab3e3eab9253f214920616b7ca2",
+    "ATIVO-marca_3c4517_9e48c6439e7c45d49f736d80e924189e",
+    "ATIVO-marca_e316f544f9094143b9eac01f1f19e697",
+    "ATIVO-marca_035244_00464e7939644b71b41d864548ca468f",
+    "ATIVO-marca_035244_652d12a4071147d4a2fff8f8d2ff5db1"
+   ]
+  },
+  {
+   "id": "DEC-3",
+   "estado": "ativa",
+   "efeito": "bloquear_uso",
+   "texto": "O IBAN do projeto não se replica no site novo sem autorização do dono.",
+   "decidido_em": "2026-10-20",
+   "fonte": "juízo do dossiê",
+   "afetados": [
+    "AF-P11"
+   ]
+  },
+  {
+   "id": "DEC-4",
+   "estado": "ativa",
+   "efeito": "informativo",
+   "texto": "Identidade do anúncio do Airbnb confirmada pelo Diogo. Para os factos do site vale o anúncio; nenhum número de registo ou capacidade em conflito se afirma sem condição. O RNT confirma 169288/AL como esta casa; o 169351/AL do anúncio é de outro AL em Almada: o Mário deve corrigir o anúncio.",
+   "decidido_em": "2026-10-20",
+   "fonte": "Diogo; RNT lido pelo juízo",
+   "afetados": [
+    "AF-04",
+    "AF-04N",
+    "AF-20",
+    "AF-20N"
+   ]
+  },
+  {
+   "id": "DEC-5",
+   "estado": "ativa",
+   "efeito": "informativo",
+   "texto": "CIT-12 a CIT-15 são tradução automática do Airbnb (original não capturado): no site, identificar como tradução ou ir buscar o original antes de usar. Preferir CIT-01 a CIT-11, escritas em português.",
+   "decidido_em": "2026-10-20",
+   "fonte": "juízo do dossiê",
+   "afetados": [
+    "CIT-12",
+    "CIT-13",
+    "CIT-14",
+    "CIT-15"
+   ]
+  },
+  {
+   "id": "DEC-6",
+   "estado": "ativa",
+   "efeito": "bloquear_uso",
+   "texto": "Nomes e histórias dos animais (galeria e notícias do site, 2021) ficam fora até o dono dizer quais vivem hoje na quinta.",
+   "decidido_em": "2026-10-20",
+   "fonte": "juízo do dossiê",
+   "afetados": [
+    "AF-P07",
+    "AF-P08"
+   ]
+  }
+ ],
+ "cobertura": [
+  {
+   "id": "COB-01",
+   "fonte": "Airbnb: anúncio e comodidades",
+   "material": "textos",
+   "estado": "completo_no_universo_observado",
+   "superficie": "página + modal de 31 comodidades",
+   "observado": 31,
+   "recolhido": 31,
+   "limitacao": "«Mostrar original» das traduções não aberto"
+  },
+  {
+   "id": "COB-02",
+   "fonte": "Airbnb: reviews",
+   "material": "reviews",
+   "estado": "completo_no_universo_observado",
+   "superficie": "modal de 29 avaliações",
+   "observado": 29,
+   "recolhido": 29,
+   "limitacao": "15 em tradução automática do Airbnb, sem original"
+  },
+  {
+   "id": "COB-03",
+   "fonte": "Airbnb: fotos",
+   "material": "fotos",
+   "estado": "completo_no_universo_observado",
+   "superficie": "modal Mostrar todas as fotos",
+   "observado": 38,
+   "recolhido": 38,
+   "limitacao": "o Airbnb não indica total; guardadas a largura 1920"
+  },
+  {
+   "id": "COB-04",
+   "fonte": "Site Wix do projeto (4 páginas do menu)",
+   "material": "textos",
+   "estado": "parcial",
+   "superficie": "Início, Apadrinhamento, O Nosso Projeto, Galeria",
+   "observado": 4,
+   "recolhido": 4,
+   "limitacao": "Páginas fora do menu (A Nossa História, Momentos Importantes, Projeto Baby Miau, Contribuir, MERCH, Blog) não abertas; vídeos e formulário de apadrinhamento não explorados"
+  },
+  {
+   "id": "COB-05",
+   "fonte": "Site Wix: fotos",
+   "material": "fotos",
+   "estado": "completo_no_universo_observado",
+   "superficie": "imagens das 4 páginas do menu",
+   "observado": 53,
+   "recolhido": 53,
+   "limitacao": "fotos de 2021; nomes só na galeria de apadrinhamento"
+  },
+  {
+   "id": "COB-06",
+   "fonte": "Facebook A Família na Quinta",
+   "material": "textos",
+   "estado": "bloqueado",
+   "superficie": "vista pública sem sessão",
+   "observado": 1,
+   "recolhido": 1,
+   "limitacao": "só bio, seguidores e um post truncado (2025-08-18); posts e álbuns exigem sessão"
+  },
+  {
+   "id": "COB-07",
+   "fonte": "Instagram",
+   "material": "canais",
+   "estado": "nao_encontrado",
+   "superficie": "pesquisa web",
+   "observado": 0,
+   "recolhido": 0,
+   "limitacao": "nenhum resultado"
+  },
+  {
+   "id": "COB-08",
+   "fonte": "Google Maps",
+   "material": "reviews",
+   "estado": "parcial",
+   "superficie": "ficha + 3 críticas",
+   "observado": 3,
+   "recolhido": 3,
+   "limitacao": "2 só com estrelas; original russo não aberto; fotos não percorridas"
+  },
+  {
+   "id": "COB-09",
+   "fonte": "RNT (169288 e 169351)",
+   "material": "compliance",
+   "estado": "completo_no_universo_observado",
+   "superficie": "RNAL.aspx?nr=",
+   "observado": 2,
+   "recolhido": 2,
+   "limitacao": "seguro sem renovação visível"
+  },
+  {
+   "id": "COB-10",
+   "fonte": "Booking",
+   "material": "canais",
+   "estado": "nao_aplicavel",
+   "limitacao": "não fornecido nem procurado nesta corrida"
+  },
+  {
+   "id": "COB-11",
+   "fonte": "Região (cache)",
+   "material": "factos",
+   "estado": "completo_no_universo_observado",
+   "superficie": "regiao.py usar, a partir do plus code",
+   "observado": 6,
+   "recolhido": 6,
+   "limitacao": "Castelo de Lamego sem foto"
+  }
+ ]
+}

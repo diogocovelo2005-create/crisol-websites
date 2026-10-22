@@ -1,0 +1,28 @@
+{
+  "marco": "ultimo-deploy",
+  "casa": "casa-a-familia-na-quinta-lamego",
+  "data": "2026-10-21T10:27:53.916Z",
+  "maquina": "darwin unknownea60d5e2cbc4.lan",
+  "commit": "1d9b12c",
+  "instrucoes": {
+    "hash": "a06d06f29e72",
+    "ficheiros": {
+      ".claude/agents/alojamento/descritor-fotos.md": "5f133c5bbe10",
+      ".claude/agents/alojamento/dossie-juizo.md": "2822d3c11272",
+      ".claude/agents/alojamento/dossie-recolha.md": "d19a3c90286f",
+      ".claude/agents/alojamento/estrutura-alojamento.md": "9c7ad4c366d9",
+      ".claude/agents/alojamento/mobile-alojamento.md": "fb4a9af19574",
+      ".claude/agents/alojamento/prototipos-alojamento.md": "acf1e35b09ff",
+      ".claude/agents/alojamento/rapidez-site.md": "61f79ac738e7",
+      ".claude/agents/alojamento/site-alojamento.md": "b9b466b3d1bf",
+      ".claude/agents/retro-analista.md": "e901624a2f5f",
+      "nichos/alojamento/.claude/skills/criar-base/SKILL.md": "72572d2e4014",
+      "nichos/alojamento/.claude/skills/criar-base/references/brief.md": "4214fb09ceeb",
+      "nichos/alojamento/.claude/skills/criar-base/references/correcoes.md": "7ab726900161",
+      "nichos/alojamento/.claude/skills/criar-base/references/esqueleto.md": "24673336b75c",
+      "nichos/alojamento/.claude/skills/criar-base/references/padrao.md": "86792b8c61bc",
+      "nichos/alojamento/.claude/skills/criar-base/references/regras-prototipo.md": "63c0e28c414c",
+      "nichos/alojamento/.claude/skills/criar-base/references/verificar.md": "117eec1ff9d5"
+    }
+  }
+}

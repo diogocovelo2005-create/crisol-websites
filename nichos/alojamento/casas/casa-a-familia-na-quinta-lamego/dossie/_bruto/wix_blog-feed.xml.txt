@@ -1,0 +1,66 @@
+https://lusitanoquinta.wixsite.com/mysite/blog-feed.xml
+
+This XML file does not appear to have any style information associated with it. The document tree is shown below.
+
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<channel>
+<title>
+<![CDATA[ afamilianaquinta ]]>
+</title>
+<description>
+<![CDATA[ afamilianaquinta ]]>
+</description>
+<link>https://lusitanoquinta.wixsite.com/mysite/blog</link>
+<generator>RSS for Node</generator>
+<lastBuildDate>Tue, 20 Oct 2026 11:19:53 GMT</lastBuildDate>
+<atom:link href="https://lusitanoquinta.wixsite.com/mysite/blog-feed.xml" rel="self" type="application/rss+xml"/>
+<item>
+<title>
+<![CDATA[ CI (CAIXA DE IDEIAS) ]]>
+</title>
+<description>
+<![CDATA[ Caixa de Ideias online para gestão de ideias ou sugestões. Objetivos: .Nao perder ideias .Angariar sugestões de colegas para completar... ]]>
+</description>
+<link>https://lusitanoquinta.wixsite.com/mysite/post/ci-caixa-de-ideias</link>
+<guid isPermaLink="false">60793354b76e0f00573a55d4</guid>
+<category>
+<![CDATA[ Ferramentas e Utilidades ]]>
+</category>
+<pubDate>Fri, 16 Apr 2021 07:22:37 GMT</pubDate>
+<enclosure url="https://static.wixstatic.com/media/3c4517_105bf7375b914b6593daadc598e4f621~mv2.png/v1/fit/w_1000,h_1000,al_c,q_80/file.png" length="0" type="image/png"/>
+<dc:creator>Quinta Lusitano</dc:creator>
+</item>
+<item>
+<title>
+<![CDATA[ Now You Can Blog from Everywhere! ]]>
+</title>
+<description>
+<![CDATA[ Campanha de Flyers ]]>
+</description>
+<link>https://lusitanoquinta.wixsite.com/mysite/post/manage-your-blog-from-your-live-site</link>
+<guid isPermaLink="false">6078ab7468c436001501db90</guid>
+<category>
+<![CDATA[ Marketing e Estratégia ]]>
+</category>
+<pubDate>Thu, 15 Apr 2021 21:09:08 GMT</pubDate>
+<enclosure url="https://static.wixstatic.com/media/a27d24_74a5c4593cc1454683305dbaa50c80cb~mv2_d_1880_1560_s_2.png/v1/fit/w_1000,h_1000,al_c,q_80/file.png" length="0" type="image/png"/>
+<dc:creator>Quinta Lusitano</dc:creator>
+</item>
+<item>
+<title>
+<![CDATA[ Design a Stunning Blog ]]>
+</title>
+<description>
+<![CDATA[ When it comes to design, the Wix blog has everything you need to create beautiful posts that will grab your reader's attention. Check out... ]]>
+</description>
+<link>https://lusitanoquinta.wixsite.com/mysite/post/design-a-stunning-blog</link>
+<guid isPermaLink="false">6078ab7468c436001501db8f</guid>
+<category>
+<![CDATA[ Eventos ]]>
+</category>
+<pubDate>Thu, 15 Apr 2021 21:09:08 GMT</pubDate>
+<enclosure url="https://static.wixstatic.com/media/a27d24_f116a7916f5544a79f92d43b4247a457~mv2_d_2845_1900_s_2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png" length="0" type="image/png"/>
+<dc:creator>Quinta Lusitano</dc:creator>
+</item>
+</channel>
+</rss>

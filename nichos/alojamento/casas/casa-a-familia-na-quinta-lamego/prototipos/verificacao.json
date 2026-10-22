@@ -1,0 +1,38 @@
+{
+  "a": {
+    "ok": true,
+    "falhas": [],
+    "avisos": [],
+    "medidas": {
+      "revelacoes": {},
+      "ecrasConteudo": 12.02,
+      "scrollPreso": 0,
+      "ecrasTotal": 12.02,
+      "sequenciasPresas": []
+    }
+  },
+  "b": {
+    "ok": true,
+    "falhas": [],
+    "avisos": [],
+    "medidas": {
+      "revelacoes": {},
+      "ecrasConteudo": 11.77,
+      "scrollPreso": 0,
+      "ecrasTotal": 11.77,
+      "sequenciasPresas": []
+    }
+  },
+  "c": {
+    "ok": true,
+    "falhas": [],
+    "avisos": [],
+    "medidas": {
+      "revelacoes": {},
+      "ecrasConteudo": 10.43,
+      "scrollPreso": 0,
+      "ecrasTotal": 10.43,
+      "sequenciasPresas": []
+    }
+  }
+}

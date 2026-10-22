@@ -1,0 +1,795 @@
+{
+  "versao_validador": "1.0.0",
+  "dossie": "dossie",
+  "resultado": "aprovado",
+  "erros": [],
+  "avisos": [],
+  "verificacoes": [
+    "ficheiros_obrigatorios",
+    "reviews_e_citacoes",
+    "quartos",
+    "pontos_fortes",
+    "fotos",
+    "contrato"
+  ],
+  "impressao_digital": {
+    "sha256": "69785e83ae4a523bfdcae19eeff9a374eddb2b1908984eb93da98b22748853b9",
+    "ficheiros": [
+      {
+        "caminho": "RECOLHA.md",
+        "bytes": 3090,
+        "sha256": "c6028ede4ed4d8b28d951b8ea712c33afead4bef2d33e75d5c407cfbdfb2e382"
+      },
+      {
+        "caminho": "_bruto/PROGRESSO.md",
+        "bytes": 323,
+        "sha256": "d93e8f549ef33edd2d98f3896fc0b945952f8e2ffdc68ac96541102b5e4bc0fe"
+      },
+      {
+        "caminho": "_bruto/ab2.log",
+        "bytes": 248,
+        "sha256": "da471ad4f9357889b9fc9f12b72bcc6a5f7c53a75b80d73370c86d79c9623969"
+      },
+      {
+        "caminho": "_bruto/airbnb_1452014258760429542.html",
+        "bytes": 1059086,
+        "sha256": "35d946a92b3971df4aeb5a55b6c25ed4390ce608260f5b40b5d2a84c61730eb0"
+      },
+      {
+        "caminho": "_bruto/airbnb_1452014258760429542.json",
+        "bytes": 16759,
+        "sha256": "6997bc5cede2c6cd5d47fc9d2b2aec38f9a899eb6d259f58ab71a1e9673743ae"
+      },
+      {
+        "caminho": "_bruto/airbnb_1452014258760429542.txt",
+        "bytes": 9462,
+        "sha256": "b0a5f76dd324372ad455e59316ed659a3cd68431506cd480a39a9ee76335210f"
+      },
+      {
+        "caminho": "_bruto/airbnb_fotos_lista.json",
+        "bytes": 5156,
+        "sha256": "76fd65af49b059cf707742e58a4509f192a61ddda634ec76b8aac49bd1bdb38a"
+      },
+      {
+        "caminho": "_bruto/airbnb_mao.json",
+        "bytes": 42766,
+        "sha256": "f2d68a6c54d47d5e1c39e2184e67bfa3452521f6b5f3315bcc8e5642bd91106a"
+      },
+      {
+        "caminho": "_bruto/cobertura.json",
+        "bytes": 2443,
+        "sha256": "2c8d0ab719262cfe2f911bced09082bd078b024eaca8d783bc0ab552f6d53c9d"
+      },
+      {
+        "caminho": "_bruto/fb_home.html",
+        "bytes": 1234968,
+        "sha256": "d968ada5548046009e863891473c22bc81d07dbbd74372265df47b9d332abc3f"
+      },
+      {
+        "caminho": "_bruto/fb_home.png",
+        "bytes": 294107,
+        "sha256": "d32f406f330b3271ba8eb5098a270d135390ba5a7c214c58512db00d1051cdd7"
+      },
+      {
+        "caminho": "_bruto/fb_home.txt",
+        "bytes": 2757,
+        "sha256": "9c73d1164b3475e6920646cfd49e498e4004576c532cf0407dc5a464b2787d9f"
+      },
+      {
+        "caminho": "_bruto/gerar_contrato.py",
+        "bytes": 38957,
+        "sha256": "4554ffc08793f56582ca459bae57866f42e532158fe962ae1117cea9844d5569"
+      },
+      {
+        "caminho": "_bruto/gmaps_criticas.json",
+        "bytes": 907,
+        "sha256": "e10724fff7b26b23df5133ad5a3ee50dac5df315b5cc7762e04cda3c5bc136f7"
+      },
+      {
+        "caminho": "_bruto/gmaps_ficha.png",
+        "bytes": 672146,
+        "sha256": "4ab9faf84ede3105706de414114905ecdc4f8c0ebed4c97a126e61ce0a1faf85"
+      },
+      {
+        "caminho": "_bruto/gmaps_ficha.txt",
+        "bytes": 1761,
+        "sha256": "b4e0fc6140c767e37783c6b557f482c8271f3592c17f60a815db50d1b7eab9ea"
+      },
+      {
+        "caminho": "_bruto/recolher-airbnb.log",
+        "bytes": 104,
+        "sha256": "8d5d63542568f10f1ea099727656df8cf9603247412f6c3add491c9afc441225"
+      },
+      {
+        "caminho": "_bruto/recolher-gmaps.log",
+        "bytes": 163,
+        "sha256": "ed95c320b59ac9c2221c9007f62cb71c9b0af6cf1593ca0578ec4ddf0d319119"
+      },
+      {
+        "caminho": "_bruto/recolher-site0.log",
+        "bytes": 9,
+        "sha256": "79d002881b3eea0b319adc9c5c1d57b9f08410faf4ae64c472ef1f664f5ffc5c"
+      },
+      {
+        "caminho": "_bruto/recolher-site1.log",
+        "bytes": 9,
+        "sha256": "ad5b39197161a5bb35fbeb835c089d9fb74c639bf6c9c5a5e7973855e339e484"
+      },
+      {
+        "caminho": "_bruto/recolher.json",
+        "bytes": 409,
+        "sha256": "af1d75a623ef7a79956c88fae2e991314601d840c37b151f2e8e80e6c5c07897"
+      },
+      {
+        "caminho": "_bruto/recolher.log",
+        "bytes": 246,
+        "sha256": "effd2ab7896ff54b6bd02179afd617645b436f87e5c76ac60f5ff40d37820125"
+      },
+      {
+        "caminho": "_bruto/reviews.json",
+        "bytes": 16303,
+        "sha256": "ba8ad31ccb50d0c45013c14781d57ce9664dc4380e1ad3090e29b5689cd8831a"
+      },
+      {
+        "caminho": "_bruto/site0.html",
+        "bytes": 835477,
+        "sha256": "386fbf9e24f0b8b85968c404f139e2cd4c2e037fa463d29f32647b6fecff9dbe"
+      },
+      {
+        "caminho": "_bruto/site0.png",
+        "bytes": 724965,
+        "sha256": "9054d297326a51b47b730239658104ea9f3b717fbc75be81134a0fd6e4c9d315"
+      },
+      {
+        "caminho": "_bruto/site0.txt",
+        "bytes": 2201,
+        "sha256": "ac50352ae93c4979c845bf5ab037bb7c481506ececafc757da2b64a75a16dc22"
+      },
+      {
+        "caminho": "_bruto/site1.html",
+        "bytes": 798081,
+        "sha256": "1fbda9c6b9a2b0ba409f3b6b4efc15c723346a3e2af2eaa4682e6dc19f03b372"
+      },
+      {
+        "caminho": "_bruto/site1.png",
+        "bytes": 352333,
+        "sha256": "2542ba3a4db831be311d5d44f3fc0a0c20bc5c8e2ebbb14f25cf65fd8c75639a"
+      },
+      {
+        "caminho": "_bruto/site1.txt",
+        "bytes": 3525,
+        "sha256": "5be813b6a0a6463f15d78defecebfe537039ac219b4ea42fdfce13f01bc04a99"
+      },
+      {
+        "caminho": "_bruto/wix_apadrinhamento.html",
+        "bytes": 1064051,
+        "sha256": "1c1ad717a62c196f2122fd43f9585ed5847c486a35d11030b51ed1f420c6e5eb"
+      },
+      {
+        "caminho": "_bruto/wix_apadrinhamento.png",
+        "bytes": 787557,
+        "sha256": "85bb03449adacb0c85a93d829a260d9399effd0021a5d21f26f21fc175a5461d"
+      },
+      {
+        "caminho": "_bruto/wix_apadrinhamento.txt",
+        "bytes": 1897,
+        "sha256": "8fb85d7066ad2a1156c81b0b81712787e0dda12bb99b20962924d7ac6c004eb1"
+      },
+      {
+        "caminho": "_bruto/wix_blog-feed.xml.html",
+        "bytes": 15644,
+        "sha256": "8920a493ffe535a19864e0759aab0eaae31815a93a7eb8346207d23c4e69f593"
+      },
+      {
+        "caminho": "_bruto/wix_blog-feed.xml.png",
+        "bytes": 251379,
+        "sha256": "bd3363bce40808ad50b16d731f6e0331b0c0ee16259f464cb92c3bb575188cff"
+      },
+      {
+        "caminho": "_bruto/wix_blog-feed.xml.txt",
+        "bytes": 2799,
+        "sha256": "076ff9e5c6b373c39064c52ead0efb6e14cea976e09422043bb905aa6f7d5e87"
+      },
+      {
+        "caminho": "_bruto/wix_copy-of-o-nosso-projeto.html",
+        "bytes": 785109,
+        "sha256": "bd1ed4f50f7be2537998c78a7ef68ce01dc66182eee18b921f2630e02a02c29a"
+      },
+      {
+        "caminho": "_bruto/wix_copy-of-o-nosso-projeto.png",
+        "bytes": 306014,
+        "sha256": "cc6e2cb067be5edd813a5e0cdc2b1a330c6b268b793896ca75579fa5762bd082"
+      },
+      {
+        "caminho": "_bruto/wix_copy-of-o-nosso-projeto.txt",
+        "bytes": 793,
+        "sha256": "fa2e00395d8122d021a1829ca27125f62dc5465ca4d17bfc60fc222616ea6c78"
+      },
+      {
+        "caminho": "_bruto/wix_galeria.html",
+        "bytes": 21032,
+        "sha256": "45a97b64148546498cd83b69bacc194e893c8559dcda07907a4eac7bc4e9b7ad"
+      },
+      {
+        "caminho": "_bruto/wix_galeria.png",
+        "bytes": 61276,
+        "sha256": "95c87374c80c55336f89c0ebafee6e2b83b344416aff26dab5711da7a0f1b7a1"
+      },
+      {
+        "caminho": "_bruto/wix_galeria.txt",
+        "bytes": 206,
+        "sha256": "b31f8284b34a16591940e4695925d1cd3cac0394b12a6a6c99e83b63eed3453e"
+      },
+      {
+        "caminho": "_bruto/wix_imagens_lista.txt",
+        "bytes": 4028,
+        "sha256": "1b7680e56b695d929ae8138755dc3a2b186bbc01593f79c0c739674e4e5cb612"
+      },
+      {
+        "caminho": "canais.md",
+        "bytes": 918,
+        "sha256": "a2fb8cae28709764d125ef10d182aed182130a7b4df3418b4ccc3173105f5027"
+      },
+      {
+        "caminho": "compliance.md",
+        "bytes": 1514,
+        "sha256": "04343b51a1bb7d172495886fafd0b2cd0f8a996b5fea34d45ff954d61d9bb2d4"
+      },
+      {
+        "caminho": "contrato.json",
+        "bytes": 119868,
+        "sha256": "530b67515397a7e0e0ad09d62007312b629388681561cacbe39980d9a3e84241"
+      },
+      {
+        "caminho": "descricao-al.md",
+        "bytes": 1167,
+        "sha256": "a711eea2cb59d1ee85dbba7ce5472a9ed369353d0b87490012ca4d7252a3da3e"
+      },
+      {
+        "caminho": "dono.md",
+        "bytes": 701,
+        "sha256": "318dc1e6246d91b9b7d2c0c40dc956b42174740ffb1dc13cc5292131e860e4a4"
+      },
+      {
+        "caminho": "factos.md",
+        "bytes": 5139,
+        "sha256": "7085d90c6cf9597e0369501f66b38a78d26a0fbee0325a5a10e64830960c69c2"
+      },
+      {
+        "caminho": "fontes.md",
+        "bytes": 8388,
+        "sha256": "12e390b4dcba2303a19bcdea2816f100d822a93a57fd1865434f99298d9cedb9"
+      },
+      {
+        "caminho": "marketing/fotos/conceito/3c4517_00dfe6ae410048968706efd7a64a20e6.jpg",
+        "bytes": 58195,
+        "sha256": "24a49580dd49598af54e0559b04320d5afeab4b4fb9a24ff841e9fe8445a2d20"
+      },
+      {
+        "caminho": "marketing/fotos/conceito/3c4517_040b5137b385415eb32e6668d2bd2c1a.jpg",
+        "bytes": 218435,
+        "sha256": "b6d2b129e326891f158b33a1bc59972dd889adda534cf32ca7b6f3c86eab4665"
+      },
+      {
+        "caminho": "marketing/fotos/conceito/3c4517_049df7bf6abe4293909d6a87abb074d7.jpg",
+        "bytes": 710064,
+        "sha256": "47ed4c2f2bc2038c428cc73d0a8ec440eeb0a1bf14dfdd57075cf1ed1f73030a"
+      },
+      {
+        "caminho": "marketing/fotos/conceito/3c4517_09598e7c9d064b50acc0527c235218e1.jpg",
+        "bytes": 161969,
+        "sha256": "57002cdaa42154458a5bcbbb25300bfd5d735b04887ef860c668a263a6057b12"
+      },
+      {
+        "caminho": "marketing/fotos/conceito/3c4517_143af93e12ed423e85f0757eebf9d7e4.png",
+        "bytes": 677256,
+        "sha256": "b54c30499259ea32ef8f8c1c66ad8ff0c4f627ef70fe9a700495f9771c1ff378"
+      },
+      {
+        "caminho": "marketing/fotos/conceito/3c4517_178ddd2a70474d65944051fa0a533ef9.jpg",
+        "bytes": 83308,
+        "sha256": "c9f2228f1e32e10b658e5ca2ae20ed50c95df05b89d19b0660e49a5c22a1fc49"
+      },
+      {
+        "caminho": "marketing/fotos/conceito/3c4517_180106f228824b24bb97587ce8f61ef9.jpg",
+        "bytes": 470729,
+        "sha256": "57e1b15c1803f1583510a3b9292e542bfa1e80a12b4550e36f82a7522bb7a254"
+      },
+      {
+        "caminho": "marketing/fotos/conceito/3c4517_1869fe1d64294cc68267dea159c909c2.jpg",
+        "bytes": 85864,
+        "sha256": "9e7392f298b3e5ec326f1f8467a9c7429897af5312ab46f3c0293cf172c85549"
+      },
+      {
+        "caminho": "marketing/fotos/conceito/3c4517_1f6798ed81c84bff989ab5eb3d97c469.jpg",
+        "bytes": 319945,
+        "sha256": "ac4db346cf0b70efbcc2f35080b79c9fe301ba8ec16d19aa88bd7c2061faa881"
+      },
+      {
+        "caminho": "marketing/fotos/conceito/3c4517_2513edbc025646eb8a03b929c54eeccf.jpg",
+        "bytes": 152016,
+        "sha256": "95b775912e4f2a76caf763b9ccb633b3fbf50fa7b4db0392c5f8fb89f4360366"
+      },
+      {
+        "caminho": "marketing/fotos/conceito/3c4517_2dd3aab395e94f2a81fc28853298bddd.jpg",
+        "bytes": 110791,
+        "sha256": "a2611c405625d2ba1c5f61062a146e131666bca9d5dd9f7cebdd28a339d8d26e"
+      },
+      {
+        "caminho": "marketing/fotos/conceito/3c4517_3549e8bf2bd44e22a9908c2c72634bd2.jpg",
+        "bytes": 401615,
+        "sha256": "3021359bdcacf0d1117a266863483740b67ec2a45163542c7b07564b59dac18f"
+      },
+      {
+        "caminho": "marketing/fotos/conceito/3c4517_3867468b29374f10bce7926850718d12.jpg",
+        "bytes": 135029,
+        "sha256": "3a81d154b6fcea899da664e78b563e1edabb6316c05320996f5860dca0a0f905"
+      },
+      {
+        "caminho": "marketing/fotos/conceito/3c4517_452b02bcafa649e5befc386a78bb0a5e.jpg",
+        "bytes": 535944,
+        "sha256": "0e0d65ade41e8ae1f052429d2cb71fd5a92f6906bc412a85bf29bc559f7fd187"
+      },
+      {
+        "caminho": "marketing/fotos/conceito/3c4517_593e00a447d4465eb5f32578147c3eed.jpg",
+        "bytes": 311359,
+        "sha256": "4558b4b224005cfcbe78fdc06917941cd417113cd0059a658c8e57969d556f94"
+      },
+      {
+        "caminho": "marketing/fotos/conceito/3c4517_5cf856c58ad1417faf74ba8e617365cc.jpg",
+        "bytes": 67874,
+        "sha256": "9608ff30e917bc667a113f5e58654f4184b4d9963194ccd8d85eb084c84f2982"
+      },
+      {
+        "caminho": "marketing/fotos/conceito/3c4517_62e71f6e4c084bb892f23a3c41383bdf.png",
+        "bytes": 1340727,
+        "sha256": "b7c61c941b8ac2cb7995eeda7e37134ac34641c2a772204646267d3cbae7b141"
+      },
+      {
+        "caminho": "marketing/fotos/conceito/3c4517_69bd2057cff34c53baa4c5098eb45c7a.jpg",
+        "bytes": 138840,
+        "sha256": "6fc994a8c1d9e96a5e86049f348c6702bdb0422cc0fc42cb847e741c0f5524e4"
+      },
+      {
+        "caminho": "marketing/fotos/conceito/3c4517_6da66280dddf4abc98509ad629cffa3d.jpg",
+        "bytes": 105261,
+        "sha256": "d1708e38a6bbc6535667082374a72d741c9fa2e77403565c6d312d34a8c7b394"
+      },
+      {
+        "caminho": "marketing/fotos/conceito/3c4517_6fe4de7dc15c4263a66b0e0e96bf52d6.jpg",
+        "bytes": 93993,
+        "sha256": "3ee4217d1277ad2c00319bec0c66c31d0ba080a4508cb48d2a17fd1fc4e62f92"
+      },
+      {
+        "caminho": "marketing/fotos/conceito/3c4517_70e2ffe2ad984764ae398f832f747fb2.jpg",
+        "bytes": 335938,
+        "sha256": "2693acd44975807b219352adae35620e5eaaeeb8bf20325f74134a7fed8d95d2"
+      },
+      {
+        "caminho": "marketing/fotos/conceito/3c4517_785e596730f14b0584e305dcb72a5de8.jpg",
+        "bytes": 102634,
+        "sha256": "9bbf115456b5bed475d97f2c60d53b87e40061c3f75a9f0f33705e4f2c4e8f47"
+      },
+      {
+        "caminho": "marketing/fotos/conceito/3c4517_807d0bb71ed6491f936b8ef77d46104c.jpg",
+        "bytes": 71775,
+        "sha256": "1e80b771a022963890cb3e987ce3892ec7f5b4cf22c4fa565f01fe54cc00eab4"
+      },
+      {
+        "caminho": "marketing/fotos/conceito/3c4517_846cbf60f839456d87294a013cd99fc0.png",
+        "bytes": 856892,
+        "sha256": "d5dc7734c5f5264a734bebd1778d846b6e8ddd4718d29b18856f6a2156aef057"
+      },
+      {
+        "caminho": "marketing/fotos/conceito/3c4517_86e283345d784f879774e038e5477336.jpg",
+        "bytes": 93255,
+        "sha256": "7235ac788a7090db8ec66b5a37814814e895386b3548370cc762a8786b0d2fe7"
+      },
+      {
+        "caminho": "marketing/fotos/conceito/3c4517_89d2ef8549aa435680f1e3b45d39fc54.jpg",
+        "bytes": 174512,
+        "sha256": "52776fb6da4383d094993c04e8b4acacd312ea7fef2b37c30be185d2598ce32c"
+      },
+      {
+        "caminho": "marketing/fotos/conceito/3c4517_8d2ae3b9782d460ca916af1b51e9d5f3.jpg",
+        "bytes": 57647,
+        "sha256": "de3ce5ca3bdc193ae75538caa7338b860632c0fba947d365f78200a7db8415cb"
+      },
+      {
+        "caminho": "marketing/fotos/conceito/3c4517_8d6b04f9d0234281b5811c4991488713.png",
+        "bytes": 435595,
+        "sha256": "622d0b667824ea78ef0894060c4f464ecbdd67cf5c4ba252ddbfced75d613d21"
+      },
+      {
+        "caminho": "marketing/fotos/conceito/3c4517_8e102da316cf42baa44e20e087c45b75.jpg",
+        "bytes": 72072,
+        "sha256": "b8fa71fa8442a7ad588543fac2054a023c9bd548414c8bca23ece896a3adceda"
+      },
+      {
+        "caminho": "marketing/fotos/conceito/3c4517_93a7092c4b884e17aa75547d8e5324f1.jpg",
+        "bytes": 318504,
+        "sha256": "0a05c696e7fd110ee424f465698b25975977a4ab59e2e4ba5324952017edfce2"
+      },
+      {
+        "caminho": "marketing/fotos/conceito/3c4517_989d605f217d4730b30f247e3d62427a.jpg",
+        "bytes": 122783,
+        "sha256": "162df1f8ed73184ce74f8e7ff24a4e95f34518e755166bbb7128573b9ac28552"
+      },
+      {
+        "caminho": "marketing/fotos/conceito/3c4517_9906519d44e3459396cb64b64c862629.jpg",
+        "bytes": 268023,
+        "sha256": "ddd4ac3e3f37eb77dbf39a3e932751206a6b79cdc32ea2c0298c7dc87b3a986a"
+      },
+      {
+        "caminho": "marketing/fotos/conceito/3c4517_9f2461ef3fba4d58b7129e22af8c396a.jpg",
+        "bytes": 102275,
+        "sha256": "55f268a89a4ce471f46fc0bc97215c4cf919c2dc2c44b1ba6b3f07b8093f87ef"
+      },
+      {
+        "caminho": "marketing/fotos/conceito/3c4517_af78ce6bb8714856aac8170f12b042d0.jpg",
+        "bytes": 259259,
+        "sha256": "af3557bdc1b3f5f5965ec627c1324b439f8f1d64d4bc0f91f6b0abe3784f186e"
+      },
+      {
+        "caminho": "marketing/fotos/conceito/3c4517_bf2b17f360d940a39646f8d23b0e9ac6.jpg",
+        "bytes": 293493,
+        "sha256": "6b8967b40c4aed2cd2183fc0df03c145d9d24d946348b3a765f5c40257fb674a"
+      },
+      {
+        "caminho": "marketing/fotos/conceito/3c4517_bfb73ba7d78a473b988b0ae496d1a240.jpg",
+        "bytes": 85693,
+        "sha256": "481b7e8b8c704e436954b0e16b25fb338fd53b7cc52a1f3cc77e7e67d4c79673"
+      },
+      {
+        "caminho": "marketing/fotos/conceito/3c4517_ce1a8e321d68402a8969653b18a6bf17.jpg",
+        "bytes": 273341,
+        "sha256": "442f744e57ac9c71ac2e29c4cec2eb565b2fd88b6f5c382e701632865a722a7f"
+      },
+      {
+        "caminho": "marketing/fotos/conceito/3c4517_cf192dbb144341b09e34138706d4da68.jpg",
+        "bytes": 939949,
+        "sha256": "af0ea06770d4abaf91d6eb7033afd5f94ea4610c572882775e78f9339540b4c2"
+      },
+      {
+        "caminho": "marketing/fotos/conceito/3c4517_d3dabda8556d43d884af52869e8681c4.jpg",
+        "bytes": 217355,
+        "sha256": "0c02e5380a0d24d2dc5109e0b45e82b72552a01a26e0364d41a458c3deedb509"
+      },
+      {
+        "caminho": "marketing/fotos/conceito/3c4517_d848363b631c42d3aaf0381633953e88.jpg",
+        "bytes": 86828,
+        "sha256": "03c9b11ed95211b989315575f1731b2a748ea977917fb1ea1115d0acb3faa8db"
+      },
+      {
+        "caminho": "marketing/fotos/conceito/3c4517_d859b5dbc62a4b5d8b918b8a3269b6da.jpg",
+        "bytes": 91006,
+        "sha256": "9dff7f50fb461e499b6a6aad1cbcb4eb0614d0fdb0e0ab07602edfcfc754228d"
+      },
+      {
+        "caminho": "marketing/fotos/conceito/3c4517_e8ec6b46161342f5b5855d7e46bb0d2a.jpg",
+        "bytes": 4913554,
+        "sha256": "7b074bee8a8b58ae58d44c5557a26ccb0c295cd1edfc9d3a334c0fd24b43eedc"
+      },
+      {
+        "caminho": "marketing/fotos/conceito/3c4517_f1fd0104811941dd9903e67e64d5bcd8.jpg",
+        "bytes": 161374,
+        "sha256": "dc14cb4a2e529d5b90f1a2523b461b4c3b7648939bef3c65c78f1890476f4769"
+      },
+      {
+        "caminho": "marketing/fotos/conceito/3c4517_f3fc53ceaa5a4091b3b3d87323d0ae47.jpg",
+        "bytes": 112560,
+        "sha256": "5d3f73d2ac8c0f2151122673670d91bb68a2b652de4d35e6dae02e0c8c9cfd6e"
+      },
+      {
+        "caminho": "marketing/fotos/conceito/3c4517_f7b4b5b7064c44f88734bf2bbf0bddb9.jpg",
+        "bytes": 86134,
+        "sha256": "398f552dccdae7c3a8720dcfb17e7e83bfbe63a5b314f3d92c2602a650eaa790"
+      },
+      {
+        "caminho": "marketing/fotos/conceito/3c4517_facf85620a3343c3893e218b512fc41b.jpg",
+        "bytes": 296942,
+        "sha256": "4534e23698d3cbaf84d9d527973b6f5a9a00b438b895ae84ae2efa7ca97d63c3"
+      },
+      {
+        "caminho": "marketing/fotos/conceito/3c4517_ff278028f9c34c51bbb3242f61203a90.jpg",
+        "bytes": 6108603,
+        "sha256": "64410e0990803b0a84613c528ee8f57140dbcb02c50cb64bb4d682ec9d779b91"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/airbnb-03.jpeg",
+        "bytes": 388079,
+        "sha256": "e9155e407e75505b4b09e7fb7d127bf8fb89d2e593902a0f33657930ca5df9e1"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/airbnb-04.png",
+        "bytes": 314398,
+        "sha256": "e18080dc60ebb3d46cb85e5014f169e5990a70402803beb3b57ff5beff334da8"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/airbnb-10.jpeg",
+        "bytes": 459450,
+        "sha256": "d9e83d0e00718b9efe61e206de328c5c6936b62b92e93c42889efc83fe044b65"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/airbnb-26.jpeg",
+        "bytes": 400565,
+        "sha256": "57fe8f60cf43f9395cd1e5b2d00d12edab797b468b153a90fe63f52a1428ec2a"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/airbnb-27.jpeg",
+        "bytes": 272607,
+        "sha256": "2bba64f6d3e85e8c216fbcf2fb14d015ea77801531bb027d44967829788f7bf5"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/airbnb-28.jpeg",
+        "bytes": 252573,
+        "sha256": "4326d1d58973758374be02d56b6d3b4e8d8f9bd916b0a97676e2886299ab417f"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/airbnb-29.jpeg",
+        "bytes": 323871,
+        "sha256": "489699c4202805d3158aecccaeb1afbe06cc5ff731eb79bec6a67baf6685c5b0"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/airbnb-30.jpeg",
+        "bytes": 260352,
+        "sha256": "6413b8daf8ebd438283ec501ae52fe5744ee376d2ff0676f0df45023a37e5cd9"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/airbnb-31.jpeg",
+        "bytes": 343579,
+        "sha256": "56ca798dafe27063ccebfb5e3c0e30867d4a72e487b159d1fbae3ac552cc9452"
+      },
+      {
+        "caminho": "marketing/fotos/exterior/airbnb-32.jpeg",
+        "bytes": 332905,
+        "sha256": "6d2c33d89e16a962044a55ff272b9d7338d257f385a7d2c5e30ba62c905217d9"
+      },
+      {
+        "caminho": "marketing/fotos/interior/airbnb-01.png",
+        "bytes": 343728,
+        "sha256": "9e3aae896b415de7dc76c798debb05c705d960b66bafac59b53b41986ee472dd"
+      },
+      {
+        "caminho": "marketing/fotos/interior/airbnb-02.png",
+        "bytes": 268308,
+        "sha256": "8e6112ed2e115c1de2c14e2b3cc3a70d4e67603bda4935f03ffea5fe862fca95"
+      },
+      {
+        "caminho": "marketing/fotos/interior/airbnb-05.png",
+        "bytes": 390612,
+        "sha256": "667c284b15445651c73c1c297e402eb0ba1ddc3687472e8923bbb6137217eb28"
+      },
+      {
+        "caminho": "marketing/fotos/interior/airbnb-06.jpeg",
+        "bytes": 308129,
+        "sha256": "eb2090ddfb13d038a9129d328ef0500f79f40281c9ab34cfedcc6dfc877f6cf0"
+      },
+      {
+        "caminho": "marketing/fotos/interior/airbnb-07.jpeg",
+        "bytes": 374784,
+        "sha256": "78978d5cb9d70f5c9cb3e23f517d685b43d2cbed6c3845019a6786ce35bf4c50"
+      },
+      {
+        "caminho": "marketing/fotos/interior/airbnb-08.jpeg",
+        "bytes": 300493,
+        "sha256": "a7fc792e626ebde682c4ebb7a061f486e2d8faa9adb75c59c797dc40b00ab790"
+      },
+      {
+        "caminho": "marketing/fotos/interior/airbnb-09.jpeg",
+        "bytes": 180723,
+        "sha256": "312aa86ab86bb02657d9d39936ce90e8ffa23ff56a89b3be82a2377f412c9493"
+      },
+      {
+        "caminho": "marketing/fotos/interior/airbnb-11.jpeg",
+        "bytes": 333038,
+        "sha256": "572931f54d5f344149be61c53218a044a14a14e867646d8e80fa7d03fea5c0fe"
+      },
+      {
+        "caminho": "marketing/fotos/interior/airbnb-12.jpeg",
+        "bytes": 725419,
+        "sha256": "f85c2174aafaac51b15a5e65f5ff541bce6d823845f8c6a371dc833ad1eb4d17"
+      },
+      {
+        "caminho": "marketing/fotos/interior/airbnb-13.png",
+        "bytes": 517324,
+        "sha256": "39ec92df3ef4e7e8fa528415785c03ff27b34ad47c968c4b81bb475cc10c6899"
+      },
+      {
+        "caminho": "marketing/fotos/interior/airbnb-14.png",
+        "bytes": 234366,
+        "sha256": "3f504db2cbef402fa96076e0a0d55ed79897cf3eb65cbf7f5fe8bf3cbd907106"
+      },
+      {
+        "caminho": "marketing/fotos/interior/airbnb-15.png",
+        "bytes": 328529,
+        "sha256": "ed8e460e02454e6afcb8d5801ea113d22f2ec0eef45bf9f71cec4f1390db8d0e"
+      },
+      {
+        "caminho": "marketing/fotos/interior/airbnb-16.png",
+        "bytes": 303341,
+        "sha256": "78a8366062dbd523a6425f205b01b1d39330c3dc25a7e18051cf9b714d503b1d"
+      },
+      {
+        "caminho": "marketing/fotos/interior/airbnb-17.png",
+        "bytes": 237253,
+        "sha256": "eb0e99ae3ffa80494c017fc36cd6865b534a2356a774d0314a9d52f06b33f8e4"
+      },
+      {
+        "caminho": "marketing/fotos/interior/airbnb-18.png",
+        "bytes": 237757,
+        "sha256": "15666acecf552ecc38532347ce37fdbdaf50c4d5c7b7fe601493c5f9445293c1"
+      },
+      {
+        "caminho": "marketing/fotos/interior/airbnb-19.jpeg",
+        "bytes": 487471,
+        "sha256": "2e6a3bf1714e738c1c1934fd555f763b8a922448dd7598bfba39a51170d99f26"
+      },
+      {
+        "caminho": "marketing/fotos/interior/airbnb-20.jpeg",
+        "bytes": 300514,
+        "sha256": "29e339ec92a50099037d2ded0f5ea277bfb75a01aa234b3d18f0925109794235"
+      },
+      {
+        "caminho": "marketing/fotos/interior/airbnb-21.jpeg",
+        "bytes": 256074,
+        "sha256": "adeca22f8f676d7addea2d2e29730d12422bb3c2b1c9dd51555120533275adde"
+      },
+      {
+        "caminho": "marketing/fotos/interior/airbnb-22.png",
+        "bytes": 226832,
+        "sha256": "0f093802b975182cb524792804da3df6710c976c9b1f59283621842bb94191da"
+      },
+      {
+        "caminho": "marketing/fotos/interior/airbnb-23.png",
+        "bytes": 202790,
+        "sha256": "26f6e00f3457925c3e377dcc0328675c45af27b7850c5a2b4da789a13f1d1d9b"
+      },
+      {
+        "caminho": "marketing/fotos/interior/airbnb-24.png",
+        "bytes": 259757,
+        "sha256": "08328ef313a5ce0e2b917402ac44cb4a428984bc5e7dcea2edefb5c0d223d992"
+      },
+      {
+        "caminho": "marketing/fotos/interior/airbnb-25.png",
+        "bytes": 183042,
+        "sha256": "ab0138ac7f31d04751564fa5178eb46c569afb7085bde94efdae319ac8553e50"
+      },
+      {
+        "caminho": "marketing/fotos/interior/airbnb-33.png",
+        "bytes": 602850,
+        "sha256": "e484fe3978ec7ad2e0bbf82d0ad93488d1c59bcd9300a9f0cbedf3174af81b6c"
+      },
+      {
+        "caminho": "marketing/fotos/interior/airbnb-34.jpeg",
+        "bytes": 645730,
+        "sha256": "be8011ff86bb33dd53c47fbb7cec2bd36a989d741399ed65ed04de620af1b904"
+      },
+      {
+        "caminho": "marketing/fotos/interior/airbnb-35.jpeg",
+        "bytes": 439695,
+        "sha256": "aa72d3118ff8f655f5102b83d2c5962a42486f927eb29350dd84090cabdd1c83"
+      },
+      {
+        "caminho": "marketing/fotos/interior/airbnb-36.png",
+        "bytes": 271621,
+        "sha256": "9d96bfb9a6a9549ae15a0a3efb7492bc5d5b0dcd99644dbf5ab6e4adf437535e"
+      },
+      {
+        "caminho": "marketing/fotos/interior/airbnb-37.png",
+        "bytes": 194066,
+        "sha256": "cd235e2c76f876d8fc2226761cf912be688f82c0b077af7ca52a06e96e692b37"
+      },
+      {
+        "caminho": "marketing/fotos/interior/airbnb-38.png",
+        "bytes": 224467,
+        "sha256": "a703eaa16e5ca67aca097ee4f453469d990b51d77647bb8a5f213f5237aa65a5"
+      },
+      {
+        "caminho": "marketing/fotos/marca/035244_00464e7939644b71b41d864548ca468f.png",
+        "bytes": 2322,
+        "sha256": "0cc66bb7d6f41ac2c43f6cf16399b555ffc2a553a61f79f87f62d06d62d569fe"
+      },
+      {
+        "caminho": "marketing/fotos/marca/035244_652d12a4071147d4a2fff8f8d2ff5db1.png",
+        "bytes": 2342,
+        "sha256": "2eda804081f96352a3367e6ff9ae0d244fabffebf49fb0d1c35b994b47dcbc4b"
+      },
+      {
+        "caminho": "marketing/fotos/marca/37e0cab3e3eab9253f214920616b7ca2.jpg",
+        "bytes": 201600,
+        "sha256": "b382131d2625f3b3652db33c57ccaa724ed0e10d69534262e818e968a37d38ac"
+      },
+      {
+        "caminho": "marketing/fotos/marca/3c4517_0568cfa1f935410a97ae3ef438071335.png",
+        "bytes": 679513,
+        "sha256": "aa4305f20fa89adcb6f5eccb49f61fe635f54f46de101f44dfa659e42dfbbecb"
+      },
+      {
+        "caminho": "marketing/fotos/marca/3c4517_46b128c912634123a2ae85ca67550eb7.jpg",
+        "bytes": 467073,
+        "sha256": "45892123daf9c6598544f64d10de39bf500a1678699ff7e85518f8574528174d"
+      },
+      {
+        "caminho": "marketing/fotos/marca/3c4517_9e48c6439e7c45d49f736d80e924189e.png",
+        "bytes": 629755,
+        "sha256": "f1237d61547319275c80d70efeb9c29c18b425644b503ea1158a7b3b443109e2"
+      },
+      {
+        "caminho": "marketing/fotos/marca/e316f544f9094143b9eac01f1f19e697.png",
+        "bytes": 1420,
+        "sha256": "d898b522de484037f148c689fd5b1b1116c63f443ee730e6bdaf7f550d768bd7"
+      },
+      {
+        "caminho": "marketing/fotos/regiao/capela-de-balsemao.jpg",
+        "bytes": 4506039,
+        "sha256": "562451b65b9ad622073abe2c16a1e396944707a2cc0e1104e90c96935445d9c2"
+      },
+      {
+        "caminho": "marketing/fotos/regiao/museu-do-douro.jpg",
+        "bytes": 1578564,
+        "sha256": "842b582b8e4394d8eec35de5cc3dc673ae591b62be00c8438c779cc11c9925f9"
+      },
+      {
+        "caminho": "marketing/fotos/regiao/porto-de-rei.jpg",
+        "bytes": 3022567,
+        "sha256": "27d0bacead718f821f733c106659e9201f8bc88011495d5e708582a0bd1de77b"
+      },
+      {
+        "caminho": "marketing/fotos/regiao/santuario-dos-remedios.jpg",
+        "bytes": 1895969,
+        "sha256": "a305787a0dee1998aa49134b942568d032a75f8d84a35d213b8d2cc781cf2cde"
+      },
+      {
+        "caminho": "marketing/fotos/regiao/se-de-lamego.jpg",
+        "bytes": 10287169,
+        "sha256": "090bf9632353008c2187f078b6fbfaee92d41c8ae5212b6ed8432b9456f6d2a9"
+      },
+      {
+        "caminho": "marketing/fotos.md",
+        "bytes": 19149,
+        "sha256": "2f169a88b2b52fcf4fe25e9576f4767d7ad70eb5340681b4d3dcd87635a29791"
+      },
+      {
+        "caminho": "marketing/textos.md",
+        "bytes": 12647,
+        "sha256": "0e2686eefc6ef953310647c348f00069a1a6c2cd1cb15b55047247365f0dce56"
+      },
+      {
+        "caminho": "pontos-fortes.md",
+        "bytes": 20654,
+        "sha256": "47ba33442d5bbf891d562ca2c2883409be4dfeb30ce31804fbd761183c90f86f"
+      },
+      {
+        "caminho": "quartos.md",
+        "bytes": 949,
+        "sha256": "6bfb40ca73a394a6233444260c687a45abbb97417253c3168ece6eb4abe5898a"
+      },
+      {
+        "caminho": "regiao/cache.md",
+        "bytes": 32555,
+        "sha256": "8c312e244e8c591a4a4e563ad9ce4ac7765ee995f0942d907576cc41b7cf04ae"
+      },
+      {
+        "caminho": "regiao/regiao.md",
+        "bytes": 1391,
+        "sha256": "ee95f35c25188d065c27badcebc9082f9133aa98895b041d82251f91ba1f978b"
+      },
+      {
+        "caminho": "resumo.md",
+        "bytes": 9471,
+        "sha256": "ae03c0e7e34bcd4bb0f84be4ed9d2f25455287b590c17b7b30acd4fc40ee7c2a"
+      },
+      {
+        "caminho": "reviews.md",
+        "bytes": 13728,
+        "sha256": "45aa21ec5e199cce1e13460486666c5c83866865c9f82a3ef7766dd94fe6cd20"
+      },
+      {
+        "caminho": "site-pronto.md",
+        "bytes": 17269,
+        "sha256": "acab80ee4fa090d61aa7322011533698575121d1ca61b73d52f74fa31f412622"
+      }
+    ]
+  }
+}

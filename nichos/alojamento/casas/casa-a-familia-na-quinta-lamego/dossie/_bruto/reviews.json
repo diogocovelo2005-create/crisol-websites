@@ -1,0 +1,369 @@
+{
+ "recolhido_em": "2026-10-20",
+ "plataformas": [
+  {
+   "prefixo": "A",
+   "nome": "Airbnb",
+   "total": 29,
+   "nota": "29 de 29 lidas no modal; 7 traduzidas automaticamente pelo Airbnb (original não capturado)"
+  },
+  {
+   "prefixo": "G",
+   "nome": "Google Maps",
+   "total": 3,
+   "nota": "perfil Dream Valley - A Familia na Quinta: 5,0 (3); 2 sem texto"
+  }
+ ],
+ "notas": "Airbnb: nota 4,79 (79% 5 estrelas, 21% 4). Datas relativas (\"Há 1 semana\") recolhidas a 2026-10-20.",
+ "reviews": [
+  {
+   "plataforma": "A",
+   "nome": "JosÉ",
+   "origem": "Está na Airbnb há 2 anos",
+   "nota": "5/5",
+   "data": "Há 1 semana",
+   "contexto": "Estadia de uma noite",
+   "texto": "Casa muito bem organizada um espaço muito bom para se afastar da cidade e poder relaxar. So faltou fazer a troca da água da jacuzzi, estava um pouco suja. Mas fora isso estava tudo impecável.",
+   "lingua": "pt",
+   "nota_recolha": ""
+  },
+  {
+   "plataforma": "A",
+   "nome": "Catherine",
+   "origem": "Está na Airbnb há 10 anos",
+   "nota": "5/5",
+   "data": "Há 2 semanas",
+   "contexto": "Estadia de algumas noites",
+   "texto": "A casa é muito agradável, espaçosa e luminosa. Sentimo-nos imediatamente muito bem lá. O pequeno terraço com jacuzzi também é muito agradável. \nA localização era perfeita para começarmos a nossa descoberta do Vale do Douro. \nOs anfitriões são simpáticos, embora não nos tenhamos conhecido.",
+   "lingua": "pt",
+   "nota_recolha": "tradução automática do Airbnb; original não capturado"
+  },
+  {
+   "plataforma": "A",
+   "nome": "Joanne",
+   "origem": "Está na Airbnb há 8 meses",
+   "nota": "5/5",
+   "data": "Há 3 semanas",
+   "contexto": "Estadia de uma noite",
+   "texto": "Espaço encantador, muito limpo e foi agradável ter um pequeno cabaz de boas-vindas.\nNão usámos a banheira de hidromassagem porque a água tinha um cheiro forte a cloro. \nMas a água da rede também tinha, por isso não tenho críticas a fazer.",
+   "lingua": "pt",
+   "nota_recolha": "tradução automática do Airbnb; original não capturado"
+  },
+  {
+   "plataforma": "A",
+   "nome": "Lígia",
+   "origem": "Está na Airbnb há 9 anos",
+   "nota": "5/5",
+   "data": "setembro de 2026",
+   "contexto": "Estadia de uma noite",
+   "texto": "Ficámos por apenas uma noite, no entanto a estadia foi muito agradável. O espaço está equipado com ar condicionado, estores blackout e todas as comodidades mencionadas. Os animais da quinta foram uma agradável surpresa à chegada, e o jacuzzi funciona perfeitamente. A Ana foi muito simpática e deu todas as indicações necessárias com clareza. É um projeto com grande valor, que merece o nosso apoio para que possa continuar e quem sabe, crescer. Obrigada por nos receberem 😁",
+   "lingua": "pt",
+   "nota_recolha": ""
+  },
+  {
+   "plataforma": "A",
+   "nome": "Fred",
+   "origem": "Wellington, Nova Zelândia",
+   "nota": "4/5",
+   "data": "maio de 2026",
+   "contexto": "Estadia de algumas noites",
+   "texto": "Adorámos imenso o alojamento único e a privacidade durante a nossa estadia. A vista do nosso pátio era linda. Tínhamos carro, por isso explorar e ir ao centro da cidade foi fácil para nós, mas não era realmente uma localização acessível a pé. Tenho alergias, por isso uma coisa que achei difícil foi o cheiro a mofo e a humidade da casa de banho.",
+   "lingua": "pt",
+   "nota_recolha": "tradução automática do Airbnb; original não capturado"
+  },
+  {
+   "plataforma": "A",
+   "nome": "Tiago",
+   "origem": "Está na Airbnb há 4 meses",
+   "nota": "5/5",
+   "data": "junho de 2026",
+   "contexto": "Estadia de uma noite",
+   "texto": "Espaço muito limpo, organizado e óptimo para descansar.",
+   "lingua": "pt",
+   "nota_recolha": ""
+  },
+  {
+   "plataforma": "A",
+   "nome": "Kallil",
+   "origem": "Está na Airbnb há 2 anos",
+   "nota": "5/5",
+   "data": "maio de 2026",
+   "contexto": "Estadia de uma noite",
+   "texto": "Local com ótima estrutura e bem aconchegante, anfitriã muito atenciosa e responde prontamente.\ncom certeza voltarei outras vezes.",
+   "lingua": "pt",
+   "nota_recolha": ""
+  },
+  {
+   "plataforma": "A",
+   "nome": "Loïc",
+   "origem": "Está na Airbnb há 10 anos",
+   "nota": "5/5",
+   "data": "agosto de 2026",
+   "contexto": "Estadia de algumas noites",
+   "texto": "Com um alojamento ainda mais bonito do que o mostrado, a hospitalidade e o apoio foram excecionais! \nMais uma vez, obrigado ♥️",
+   "lingua": "pt",
+   "nota_recolha": "tradução automática do Airbnb; original não capturado"
+  },
+  {
+   "plataforma": "A",
+   "nome": "Diogo Alexandre",
+   "origem": "Está na Airbnb há 2 anos",
+   "nota": "4/5",
+   "data": "fevereiro de 2026",
+   "contexto": "Estadia de uma noite",
+   "texto": "Um ótimo espaço, alojamento muito bem aproveitado e ideal para uma escapadinha em casal. Espaço perto do centro. Porém houve alguns problemas com o jacuzzi não sendo possível utiliza lo, possíveis erros de filtração que não foram conseguidos reverter, o que foi uma pena, houve ainda algumas chatices com o chuveiro não podendo tomar um banho de nem 10 minutos de água quente, é informado na estadia que existe um esquentador de limite máximo de água quente, que não achamos o mais adequado a esta estadia principalmente quando é de até 3 pessoas. Apesar destes contratempos é uma estadia com uma ótima localização, uma estadia com grande potencial se puder evitar estes problemas. :)",
+   "lingua": "pt",
+   "nota_recolha": ""
+  },
+  {
+   "plataforma": "A",
+   "nome": "Joelle",
+   "origem": "L'Ange-Gardien, Canadá",
+   "nota": "5/5",
+   "data": "maio de 2026",
+   "contexto": "Estadia de uma noite",
+   "texto": "Gostámos muito. Espaçoso, lindamente decorado, com uma vista fantástica.  Havia um ligeiro cheiro a mofo no interior... Acho que isso é bastante normal, tendo em conta que se trata de um edifício de pedra com uma certa idade. Muito obrigado.",
+   "lingua": "pt",
+   "nota_recolha": "tradução automática do Airbnb; original não capturado"
+  },
+  {
+   "plataforma": "A",
+   "nome": "Hichem",
+   "origem": "Está na Airbnb há 6 anos",
+   "nota": "5/5",
+   "data": "fevereiro de 2026",
+   "contexto": "Estadia de uma noite",
+   "texto": "Um alojamento privado com uma bela vista para a montanha, um cenário romântico com total privacidade.\nTodas as comodidades funcionam perfeitamente.\nNo interior, todos os detalhes estão perfeitamente organizados.\nRecomendo vivamente",
+   "lingua": "pt",
+   "nota_recolha": "tradução automática do Airbnb; original não capturado"
+  },
+  {
+   "plataforma": "A",
+   "nome": "Jonas",
+   "origem": "Está na Airbnb há 8 anos",
+   "nota": "4/5",
+   "data": "fevereiro de 2026",
+   "contexto": "Estadia de algumas noites",
+   "texto": "Casa muito bonita e um ótimo anfitrião! As únicas desvantagens são: a banheira de hidromassagem não estava muito limpa, apareceram muitos insetos na casa durante a estadia e a casa de banho é muito fria e húmida.",
+   "lingua": "pt",
+   "nota_recolha": "tradução automática do Airbnb; original não capturado"
+  },
+  {
+   "plataforma": "A",
+   "nome": "Simão",
+   "origem": "Está na Airbnb há 3 anos",
+   "nota": "4/5",
+   "data": "janeiro de 2026",
+   "contexto": "Estadia de uma noite",
+   "texto": "Espaço bastante bonito e agradável, no entanto a casa de banho acumula muita humidade. Além disso, a ausência de persianas ou cortinas nas janelas dificulta dormir um pouco mais durante a manhã.",
+   "lingua": "pt",
+   "nota_recolha": ""
+  },
+  {
+   "plataforma": "A",
+   "nome": "Diogo",
+   "origem": "Está na Airbnb há 9 meses",
+   "nota": "4/5",
+   "data": "janeiro de 2026",
+   "contexto": "Estadia de uma noite",
+   "texto": "Muito bem equipado e tudo muito bem limpo apesar do contratempo do jacuzzi não funcionar de resto tudo impecável. O problema do jacuzzi foi resolvido com um reembolso parcial",
+   "lingua": "pt",
+   "nota_recolha": ""
+  },
+  {
+   "plataforma": "A",
+   "nome": "Lisa",
+   "origem": "Indialantic, Florida",
+   "nota": "5/5",
+   "data": "outubro de 2025",
+   "contexto": "Estadia de uma noite",
+   "texto": "O espaço é lindo e adoro as paredes de pedra que o tornam muito acolhedor!  As vistas de todas as janelas são incríveis!! Desfrutei de uma bela noite sob as estrelas na banheira de hidromassagem.  Adorei o lugar e a localização.  Muito perto da cidade.  O anfitrião foi muito responsivo e prestativo!!",
+   "lingua": "pt",
+   "nota_recolha": "tradução automática do Airbnb; original não capturado"
+  },
+  {
+   "plataforma": "A",
+   "nome": "Clara",
+   "origem": "Está na Airbnb há 3 anos",
+   "nota": "5/5",
+   "data": "novembro de 2025",
+   "contexto": "Estadia de algumas noites",
+   "texto": "Casa impecável e confortável com uma vista linda!\nVoltaremos de certeza!",
+   "lingua": "pt",
+   "nota_recolha": ""
+  },
+  {
+   "plataforma": "A",
+   "nome": "Jayde",
+   "origem": "Squamish, Canadá",
+   "nota": "5/5",
+   "data": "setembro de 2025",
+   "contexto": "Estadia de algumas noites",
+   "texto": "Este espaço é absolutamente lindo! A decoração é moderna e bonita. É exatamente como nas fotos. Super limpo também. Os anfitriões foram muito responsivos e gentis. A única coisa que vou mencionar é que esta área tem mais cães a ladrar do que em qualquer outro lugar que já ouvi. Isto não está de forma alguma sob o controlo dos anfitriões, mas sinto que vale a pena mencionar. \nTem uma casa linda e tivemos uma estadia encantadora. O chuveiro exterior é um toque tão agradável.",
+   "lingua": "pt",
+   "nota_recolha": "tradução automática do Airbnb; original não capturado"
+  },
+  {
+   "plataforma": "A",
+   "nome": "Dorian",
+   "origem": "Está na Airbnb há 2 anos",
+   "nota": "5/5",
+   "data": "setembro de 2025",
+   "contexto": "Estadia de uma noite",
+   "texto": "Ótimo alojamento com tudo o que precisa para uma excelente estadia. Pequena desvantagem pela falta de cortina ou persiana para a manhã. Caso contrário, nada mais a dizer, exceto que é perfeito.",
+   "lingua": "pt",
+   "nota_recolha": "tradução automática do Airbnb; original não capturado"
+  },
+  {
+   "plataforma": "A",
+   "nome": "Charles",
+   "origem": "Weston, Florida",
+   "nota": "5/5",
+   "data": "setembro de 2025",
+   "contexto": "Estadia de algumas noites",
+   "texto": "A vista era incrível, um dos melhores amanheceres! Os alojamentos eram muito confortáveis e limpos.",
+   "lingua": "pt",
+   "nota_recolha": "tradução automática do Airbnb; original não capturado"
+  },
+  {
+   "plataforma": "A",
+   "nome": "Carlos",
+   "origem": "Está na Airbnb há 4 anos",
+   "nota": "5/5",
+   "data": "julho de 2025",
+   "contexto": "",
+   "texto": "Espaço muito limpo e acolhedor. Muito bem decorado.\nO local é tranquilo.\nO/a anfitrião/host é muito simpático e super disponível.",
+   "lingua": "pt",
+   "nota_recolha": ""
+  },
+  {
+   "plataforma": "A",
+   "nome": "Joana",
+   "origem": "Está na Airbnb há 7 anos",
+   "nota": "5/5",
+   "data": "agosto de 2025",
+   "contexto": "Estadia de uma noite",
+   "texto": "A estadia foi óptima! \nTudo impecável e correspondente à descrição.  Uma bonita vista da varanda e das janelas no interior da casa. Espaço confortável, com gosto e muito limpo. \nÓptima comunicação e amabilidade da Ana e Júlio. \nSem dúvida para voltar!",
+   "lingua": "pt",
+   "nota_recolha": ""
+  },
+  {
+   "plataforma": "A",
+   "nome": "Sam",
+   "origem": "Está na Airbnb há 10 anos",
+   "nota": "4/5",
+   "data": "setembro de 2025",
+   "contexto": "Estadia de algumas noites",
+   "texto": "Bonita casa de campo de plano aberto para viagens fáceis pelo Vale do Douro e perto de Lamego. A Ana é super simpática e prestável. A única ligeira desilusão é que a vista tem casas/obras em andamento, por isso é barulhento durante todo o dia. O jacuzzi é uma boa adição, mas não estava ligado, por isso a água fria e fresca à noite era bem-vinda. No geral, ótimo local, posso ver como as persianas podem ser necessárias no meio do verão, como comentado por outros, mas não nos incomodou muito; embora me perguntasse o que as pessoas podem ver à noite com as luzes internas acesas. Superhost, ótimo espaço e alguns pequenos ajustes tornariam isto uma verdadeira jóia. Obrigado por tornar tudo super fácil, Ana!",
+   "lingua": "pt",
+   "nota_recolha": "tradução automática do Airbnb; original não capturado"
+  },
+  {
+   "plataforma": "A",
+   "nome": "Marta E David",
+   "origem": "Está na Airbnb há 12 anos",
+   "nota": "5/5",
+   "data": "setembro de 2025",
+   "contexto": "Estadia de uma noite",
+   "texto": "adoramos o espaço.  Foi uma estadia curta mas gostamos muito",
+   "lingua": "pt",
+   "nota_recolha": ""
+  },
+  {
+   "plataforma": "A",
+   "nome": "Vanderleia",
+   "origem": "Está na Airbnb há 7 anos",
+   "nota": "5/5",
+   "data": "agosto de 2025",
+   "contexto": "Estadia de algumas noites",
+   "texto": "Tudo ótimo. Espaço muito agradável, limpo e bonito. Apenas sentimos falta de mais itens de cozinha, mas não atrapalhou nossa experiência",
+   "lingua": "pt",
+   "nota_recolha": ""
+  },
+  {
+   "plataforma": "A",
+   "nome": "Julien",
+   "origem": "Está na Airbnb há 6 anos",
+   "nota": "5/5",
+   "data": "agosto de 2025",
+   "contexto": "Estadia de uma noite",
+   "texto": "O alojamento é ótimo, bem organizado, decorado com bom gosto e muito limpo! \nO ar condicionado e o Wi-Fi são uma vantagem! \nO terraço e a banheira de hidromassagem são muito agradáveis. \nOs anfitriões são muito atenciosos e disponíveis. \nRecomendo este espaço se quiser ficar num lugar tranquilo! \nDivertimo-nos imenso =)",
+   "lingua": "pt",
+   "nota_recolha": "tradução automática do Airbnb; original não capturado"
+  },
+  {
+   "plataforma": "A",
+   "nome": "Eleanor Frances B",
+   "origem": "Está na Airbnb há 11 anos",
+   "nota": "5/5",
+   "data": "agosto de 2025",
+   "contexto": "Estadia de algumas noites",
+   "texto": "O apartamento está lindamente decorado e numa localização tranquila. Não podíamos ter pedido mais da nossa estadia.",
+   "lingua": "pt",
+   "nota_recolha": "tradução automática do Airbnb; original não capturado"
+  },
+  {
+   "plataforma": "A",
+   "nome": "Alex",
+   "origem": "Está na Airbnb há 10 anos",
+   "nota": "5/5",
+   "data": "agosto de 2025",
+   "contexto": "Estadia de algumas noites",
+   "texto": "Alojamento atípico e muito agradável! \nUma vista incrível.\nGostaria desta propriedade.",
+   "lingua": "pt",
+   "nota_recolha": "tradução automática do Airbnb; original não capturado"
+  },
+  {
+   "plataforma": "A",
+   "nome": "Cristina",
+   "origem": "Está na Airbnb há 9 anos",
+   "nota": "5/5",
+   "data": "agosto de 2025",
+   "contexto": "Estadia de uma noite",
+   "texto": "Adoramos estar na casinha ! Super acolhedora e com vista deslumbrante!",
+   "lingua": "pt",
+   "nota_recolha": ""
+  },
+  {
+   "plataforma": "A",
+   "nome": "Duarte",
+   "origem": "Está na Airbnb há 4 anos",
+   "nota": "5/5",
+   "data": "agosto de 2025",
+   "contexto": "Estadia de algumas noites",
+   "texto": "Fotos não fazem justiça ao espaço... é ainda mais bonito.\n2 dias de descanso fenomenais",
+   "lingua": "pt",
+   "nota_recolha": ""
+  },
+  {
+   "plataforma": "G",
+   "nome": "Екатерина Пухович",
+   "origem": "Guia local · 52 críticas",
+   "nota": "5/5",
+   "data": "há 2 meses (recolha 2026-10-20)",
+   "texto": "Estamos hospedados neste lugar. É fantástico!!! ❤️❤️❤️ A comunicação com o proprietário foi excelente. Estava impecavelmente limpo e agradável. A vista do terraço era deslumbrante!!! Foi uma experiência verdadeiramente relaxante. Lamentamos ter alugado esta casa apenas por um dia.",
+   "lingua": "ru",
+   "nota_recolha": "tradução automática do Google; original em russo não capturado"
+  },
+  {
+   "plataforma": "G",
+   "nome": "Patrícia Gouveia",
+   "origem": "Guia local · 2 críticas",
+   "nota": "",
+   "data": "há 7 meses",
+   "texto": "",
+   "lingua": "pt",
+   "nota_recolha": "só estrelas, sem texto visível"
+  },
+  {
+   "plataforma": "G",
+   "nome": "Lea",
+   "origem": "Guia local · 26 críticas",
+   "nota": "",
+   "data": "há um ano",
+   "texto": "",
+   "lingua": "?",
+   "nota_recolha": "só estrelas, sem texto visível"
+  }
+ ]
+}

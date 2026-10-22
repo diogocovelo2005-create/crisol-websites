@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Família na Quinta · Casa na quinta, Lamego</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Young+Serif&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --fonte-titulos: 'Young Serif', Georgia, serif;
+    --fonte-texto: 'Figtree', system-ui, sans-serif;
+    --cor-fundo: #F5EEE2;
+    --cor-texto: #2C1F16;
+    --cor-acento: #E2A86A;
+    --veu: #22170F;
+    --madeira: #3A2A1E;
+    --telha: #9A4A22;
+    --suave: #615244;
+    --papel: #FBF7EF;
+    --fita: rgba(226, 168, 106, 0.55);
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--cor-fundo); color: var(--cor-texto); font-family: var(--fonte-texto); font-size: 17px; line-height: 1.65; overflow-x: hidden; }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; }
+  p { margin: 0; }
+  h2, h3 { margin: 0; font-family: var(--fonte-titulos); font-weight: 400; letter-spacing: -0.015em; }
+  h2 em { font-style: normal; color: var(--telha); }
+  .folha { max-width: 1320px; margin: 0 auto; padding: 0 40px; }
+  .pagina { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--telha); }
+  .pagina span { color: var(--suave); font-weight: 500; }
+  .passagem { font-family: var(--fonte-titulos); font-size: 1.35rem; line-height: 1.35; color: var(--telha); }
+  blockquote { margin: 0; }
+  .cita p { font-family: var(--fonte-titulos); font-size: 1.4rem; line-height: 1.4; }
+  .cita cite { display: block; margin-top: 10px; font-style: normal; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--suave); }
+
+  /* a fotografia impressa, com a fita-cola */
+  .foto { margin: 0; background: var(--papel); padding: 12px 12px 14px; box-shadow: 0 14px 30px rgba(44,31,22,0.18), 0 2px 4px rgba(44,31,22,0.12); position: relative; }
+  .foto img { width: 100%; object-fit: cover; }
+  .foto figcaption { font-family: var(--fonte-titulos); font-size: 1rem; line-height: 1.35; margin-top: 10px; color: var(--cor-texto); }
+  .fita::before { content: ""; position: absolute; top: -14px; left: 50%; width: 110px; height: 28px; transform: translateX(-50%) rotate(-3deg); background: var(--fita); }
+  .rod-e { transform: rotate(-2deg); } .rod-d { transform: rotate(2deg); }
+  .madeira { background: var(--madeira); color: var(--papel); }
+  .madeira .pagina { color: var(--cor-acento); } .madeira .pagina span { color: color-mix(in srgb, var(--papel) 75%, transparent); }
+  .madeira .passagem, .madeira h2 em { color: var(--cor-acento); }
+  .madeira .cita cite { color: color-mix(in srgb, var(--papel) 75%, transparent); }
+
+  /* ---------- a voz: a primeira página do álbum */
+  .voz { padding: 110px 0 90px; }
+  .voz .cartao { max-width: 900px; margin: 0 auto; background: var(--papel); padding: 64px 72px 52px; position: relative; box-shadow: 0 18px 40px rgba(44,31,22,0.14); transform: rotate(-0.6deg); }
+  .voz .cartao::before { content: ""; position: absolute; top: -14px; left: 70px; width: 120px; height: 28px; background: var(--fita); transform: rotate(-4deg); }
+  .voz .cartao::after { content: ""; position: absolute; top: -12px; right: 70px; width: 120px; height: 28px; background: var(--fita); transform: rotate(5deg); }
+  .voz blockquote p { font-family: var(--fonte-titulos); font-size: 2.5rem; line-height: 1.25; }
+  .voz cite { display: block; margin-top: 22px; font-style: normal; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--suave); }
+  .voz .passagem { max-width: 900px; margin: 44px auto 0; text-align: right; }
+
+  /* ---------- 2. a casa */
+  .casa { padding: 60px 0 110px; }
+  .casa .grelha { display: grid; grid-template-columns: 4fr 5fr 3fr; gap: 48px; align-items: start; }
+  .casa h2 { font-size: 3.3rem; line-height: 1.08; margin: 18px 0 26px; }
+  .casa .intro p + p { margin-top: 14px; }
+  .casa .foto { margin-top: 30px; }
+  .casa .foto img { aspect-ratio: 4 / 5; object-position: 50% 50%; }
+  .etiqueta { margin-top: 110px; background: var(--papel); padding: 28px 24px 22px; position: relative; border-radius: 4px 14px 14px 4px; box-shadow: 0 12px 26px rgba(44,31,22,0.16); transform: rotate(1.5deg); }
+  .etiqueta::before { content: ""; position: absolute; left: 14px; top: 18px; width: 12px; height: 12px; border-radius: 50%; border: 2px solid var(--telha); }
+  .etiqueta h3 { font-size: 1.15rem; margin-left: 22px; }
+  .etiqueta ul { list-style: none; margin: 16px 0 0; padding: 0; }
+  .etiqueta li { padding: 8px 0; border-top: 1px dashed color-mix(in srgb, var(--cor-texto) 30%, transparent); font-size: 0.95rem; line-height: 1.45; }
+  .casa .passagem { margin-top: 36px; }
+
+  /* ---------- 3. a família */
+  .familia { padding: 110px 0 120px; }
+  .familia h2 { font-size: 4rem; line-height: 1.04; max-width: 20ch; margin-top: 18px; }
+  .familia .grelha { margin-top: 56px; display: grid; grid-template-columns: 4fr 4fr 4fr; gap: 56px; align-items: start; }
+  .familia .foto { margin-top: -10px; }
+  .familia .foto img { aspect-ratio: 1; object-position: 57% 34%; }
+  .familia .foto figcaption { color: var(--cor-texto); }
+  .familia .grelha > p { padding-top: 6px; }
+  .familia .passagem { margin-top: 30px; }
+
+  /* ---------- 4. os da quinta, espalhados na mesa */
+  .mesa { padding: 110px 0 90px; position: relative; }
+  .mesa .cabeca { display: grid; grid-template-columns: 6fr 5fr; gap: 64px; align-items: end; }
+  .mesa h2 { font-size: 4rem; line-height: 1.04; margin-top: 18px; }
+  .mesa .cabeca blockquote { margin-top: 18px; }
+  .mesa .cabeca blockquote p { font-family: var(--fonte-titulos); font-size: 1.2rem; color: var(--telha); }
+  .mesa .cabeca cite { display: block; margin-top: 4px; font-style: normal; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--suave); }
+  .espalhadas { position: relative; height: 770px; margin-top: 50px; }
+  .espalhadas .foto { position: absolute; width: 300px; }
+  .espalhadas .foto img { height: 260px; }
+  .espalhadas figcaption { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+  .espalhadas figcaption b { white-space: nowrap; font-weight: 400; font-size: 1.45rem; color: var(--telha); }
+  .espalhadas figcaption span { white-space: nowrap; font-family: var(--fonte-texto); font-size: 0.74rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--suave); }
+  .a1 { left: 0; top: 30px; width: 270px !important; transform: rotate(-4deg); }
+  .a2 { left: 300px; top: 0; width: 380px !important; transform: rotate(2.5deg); z-index: 2; }
+  .a2 img { height: 300px !important; }
+  .a3 { left: 715px; top: 50px; width: 270px !important; transform: rotate(-2deg); }
+  .a4 { left: 1000px; top: 10px; width: 270px !important; transform: rotate(4deg); }
+  .a5 { left: 120px; top: 420px; transform: rotate(3deg); }
+  .a6 { left: 420px; top: 400px; width: 340px !important; transform: rotate(-3deg); }
+  .a6 img { height: 290px !important; }
+  .espalhadas .postit { position: absolute; left: 820px; top: 440px; width: 420px; background: #F3DDA8; padding: 22px 24px; font-size: 0.95rem; line-height: 1.55; transform: rotate(-1.5deg); box-shadow: 0 10px 22px rgba(44,31,22,0.16); }
+  .postit strong { display: block; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--telha); margin-bottom: 6px; }
+  .mesa .passagem { margin-top: 20px; }
+
+  /* ---------- 5. lá dentro: uma tira de fotografias */
+  .dentro { padding: 110px 0 100px; }
+  .dentro .cabeca { display: grid; grid-template-columns: 7fr 5fr; gap: 64px; align-items: end; }
+  .dentro h2 { font-size: 3.6rem; line-height: 1.06; margin-top: 18px; }
+  .tira { margin-top: 56px; display: grid; grid-template-columns: 6fr 3fr 3fr 2fr; gap: 18px; align-items: start; }
+  .tira .foto img { height: 380px; }
+  .tira .foto:nth-child(2) { margin-top: 40px; }
+  .tira .foto:nth-child(4) { margin-top: 70px; }
+  .dentro .baixo { margin-top: 56px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 48px; }
+
+  /* ---------- 6. a varanda: um postal, frente e verso */
+  .varanda { padding: 110px 0; }
+  .varanda .pagina { margin-bottom: 30px; display: block; }
+  .postal { display: grid; grid-template-columns: 7fr 5fr; background: var(--papel); color: var(--cor-texto); box-shadow: 0 24px 50px rgba(0,0,0,0.35); transform: rotate(-0.8deg); }
+  .postal .frente { padding: 16px; position: relative; }
+  .postal .frente img { width: 100%; height: 600px; object-fit: cover; object-position: 55% 60%; }
+  .postal .frente span { position: absolute; left: 32px; bottom: 30px; background: var(--papel); padding: 6px 12px; font-family: var(--fonte-titulos); font-size: 0.95rem; }
+  .postal .verso { padding: 44px 44px 36px 40px; border-left: 1px solid color-mix(in srgb, var(--cor-texto) 18%, transparent); margin: 16px 0; position: relative; display: flex; flex-direction: column; }
+  .postal .selo { position: absolute; right: 30px; top: 30px; width: 110px; border: 3px dotted color-mix(in srgb, var(--telha) 60%, transparent); padding: 5px; transform: rotate(4deg); }
+  .postal .selo img { width: 100%; height: 120px; object-fit: cover; object-position: 45% 60%; }
+  .postal h2 { font-size: 2.3rem; line-height: 1.12; margin-top: 20px; max-width: 11ch; }
+  .postal .linhas p { margin-top: 22px; background: repeating-linear-gradient(transparent 0 27px, color-mix(in srgb, var(--cor-texto) 16%, transparent) 27px 28px); line-height: 28px; }
+  .postal blockquote { margin-top: 22px; }
+  .postal .cita p { font-size: 1.15rem; }
+  .varanda .passagem { margin-top: 40px; }
+  .postal h2 em { color: var(--telha); }
+  .postal .cita cite { color: var(--suave); }
+  a[href^="tel:"] { white-space: nowrap; }
+
+  /* ---------- 7. à volta: postais */
+  .volta { padding: 110px 0; }
+  .volta .cabeca { display: grid; grid-template-columns: 7fr 5fr; gap: 64px; align-items: end; }
+  .volta h2 { font-size: 3.6rem; line-height: 1.06; margin-top: 18px; }
+  .postais { margin-top: 60px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 26px; align-items: start; }
+  .postais article:nth-child(odd) .foto { transform: rotate(-2deg); }
+  .postais article:nth-child(even) .foto { transform: rotate(2deg); margin-top: 26px; }
+  .postais .foto img { height: auto; object-fit: initial; }
+  .postais .min { display: inline-block; margin-top: 22px; padding: 4px 10px; border: 1.5px solid var(--telha); border-radius: 30px; font-size: 0.76rem; font-weight: 600; letter-spacing: 0.08em; color: var(--telha); }
+  .postais h3 { font-size: 1.25rem; line-height: 1.2; margin-top: 10px; }
+  .postais p { font-size: 0.95rem; line-height: 1.5; margin-top: 8px; }
+  .cred { font-family: var(--fonte-texto); font-size: 0.66rem; line-height: 1.35; color: var(--suave); margin-top: 8px; }
+  .lic::after { content: " " attr(data-v); }
+  .volta .passagem { margin-top: 50px; }
+
+  /* ---------- 8. fazer parte: a mesa dos afilhados */
+  .parte { padding: 110px 0; }
+  .parte .grelha { display: grid; grid-template-columns: 6fr 6fr; gap: 72px; align-items: center; }
+  .parte .foto img { aspect-ratio: 1440 / 1048; }
+  .parte h2 { font-size: 3.4rem; line-height: 1.06; margin: 18px 0 22px; }
+  .envelopes { margin-top: 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .envelopes div { background: color-mix(in srgb, var(--papel) 10%, transparent); border: 1px solid color-mix(in srgb, var(--papel) 25%, transparent); padding: 20px; font-size: 0.97rem; line-height: 1.55; }
+  .envelopes h3 { font-size: 1.2rem; margin-bottom: 8px; color: var(--cor-acento); }
+  .envelopes a { color: var(--cor-acento); }
+  .parte blockquote { margin-top: 28px; }
+  .parte .cita p { font-size: 1.2rem; }
+  .parte .passagem { margin-top: 26px; }
+
+  /* ---------- 9. reservar: o bilhete */
+  .reservar { padding: 110px 0 60px; }
+  .bilhete { max-width: 980px; margin: 0 auto; display: grid; grid-template-columns: 1fr 300px; background: var(--papel); box-shadow: 0 16px 36px rgba(44,31,22,0.14); }
+  .bilhete .esq { padding: 52px 56px; }
+  .bilhete h2 { font-size: 3.2rem; line-height: 1.06; margin: 16px 0 20px; }
+  .bilhete .dir { padding: 52px 36px; border-left: 2px dashed color-mix(in srgb, var(--cor-texto) 25%, transparent); display: flex; flex-direction: column; justify-content: center; gap: 12px; }
+  .botao { display: block; text-align: center; padding: 16px 18px; font-size: 0.74rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; border-radius: 40px; }
+  .botao--cheio { background: var(--telha); color: var(--papel); }
+  .botao--linha { border: 1.5px solid var(--cor-texto); }
+  .nota { margin-top: 16px; font-size: 0.95rem; color: var(--suave); }
+  .rodape { max-width: 980px; margin: 70px auto 0; display: flex; justify-content: space-between; font-size: 0.86rem; color: var(--suave); }
+</style>
+
+<!-- primeiro ecrã: formato fixo (references/primeiro-ecra.html) -->
+<style>
+  .pe-raiz { --pe-claro: #faf4ea; position: relative; }
+  .pe-raiz a { text-decoration: none; }
+  .pe-nav a, .pe-etiqueta, .pe-botao { font-family: var(--fonte-texto); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; }
+  .pe-cabecalho { position: absolute; inset: 0 0 auto; z-index: 20; border-bottom: 1px solid color-mix(in srgb, var(--pe-claro) 15%, transparent); }
+  .pe-barra { max-width: 1320px; height: 80px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
+  .pe-marca { display: flex; align-items: center; min-height: 44px; font-family: var(--fonte-titulos); font-size: 1.3rem; font-weight: 400; line-height: 1; color: var(--pe-claro); }
+  .pe-marca img { display: block; width: auto; height: 40px; }
+  .pe-nav { display: none; align-items: center; gap: 36px; }
+  .pe-nav a { color: color-mix(in srgb, var(--pe-claro) 85%, transparent); }
+  .pe-nav a:hover { color: var(--pe-claro); }
+  .pe-nav .pe-reservar { padding: 12px 24px; border-radius: 2px; background: var(--cor-acento); color: var(--veu); }
+  .pe-menu summary { display: grid; place-items: center; width: 44px; height: 44px; margin-right: -10px; list-style: none; cursor: pointer; color: var(--pe-claro); }
+  .pe-menu summary::-webkit-details-marker { display: none; }
+  .pe-menu summary svg { width: 26px; height: 26px; }
+  .pe-menu .pe-fechar, .pe-menu[open] .pe-abrir { display: none; }
+  .pe-menu[open] .pe-fechar { display: block; }
+  .pe-menu[open] summary { position: fixed; top: 18px; right: 24px; z-index: 31; color: var(--cor-texto); }
+  .pe-painel { position: fixed; inset: 0; z-index: 30; overflow-y: auto; padding: 112px 24px 40px; background: var(--cor-fundo); display: flex; flex-direction: column; }
+  .pe-painel a:not(.pe-botao) { padding: 20px 0; border-bottom: 1px solid color-mix(in srgb, var(--cor-texto) 14%, transparent); font-family: var(--fonte-titulos); font-size: 2rem; line-height: 1.1; color: var(--cor-texto); }
+  .pe-painel .pe-botao { margin-top: 40px; width: 100%; }
+  .pe { position: relative; isolation: isolate; height: 100vh; height: 100svh; min-height: 560px; margin: 0; padding: 0; overflow: hidden; color: var(--pe-claro); }
+  .pe-foto { position: absolute; inset: 0; z-index: -2; display: block; width: 100%; height: 100%; max-width: none; object-fit: cover; }
+  .pe-veu { position: absolute; inset: 0; z-index: -1;
+    background:
+      linear-gradient(180deg, color-mix(in srgb, var(--veu) 46%, transparent) 0%, color-mix(in srgb, var(--veu) 30%, transparent) 45%, color-mix(in srgb, var(--veu) 12%, transparent) 80%, transparent 94%),
+      linear-gradient(90deg, color-mix(in srgb, var(--veu) 55%, transparent) 0%, color-mix(in srgb, var(--veu) 40%, transparent) 34%, color-mix(in srgb, var(--veu) 12%, transparent) 52%, transparent 66%); }
+  .pe-conteudo { max-width: 1320px; height: 100%; margin: 0 auto; padding: 128px 24px 64px; display: flex; flex-direction: column; justify-content: flex-start; }
+  .pe-etiqueta { margin: 0; color: var(--pe-claro); }
+  .pe-titulo { max-width: 15ch; margin: 20px 0 0; font-family: var(--fonte-titulos); font-size: 2.9rem; font-weight: 400; line-height: 1.06; letter-spacing: -0.025em; color: var(--pe-claro); }
+  .pe-titulo em { font-style: normal; color: var(--cor-acento); padding-bottom: 0.06em; }
+  .pe-texto { max-width: 46ch; margin: 24px 0 0; font-family: var(--fonte-texto); font-size: 1.02rem; line-height: 1.625; color: var(--pe-claro); }
+  .pe-acoes { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 12px; }
+  .pe-botao { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 28px; border-radius: 2px; white-space: nowrap; transition: background-color 0.2s, border-color 0.2s; }
+  .pe-botao--cheio { background: var(--cor-acento); color: var(--veu); }
+  .pe-botao--contorno { border: 1px solid color-mix(in srgb, var(--pe-claro) 55%, transparent); color: var(--pe-claro); }
+  .pe-botao--contorno:hover { border-color: var(--pe-claro); background: color-mix(in srgb, var(--pe-claro) 10%, transparent); }
+  @media (min-width: 640px) { .pe-titulo { font-size: 4.2rem; } }
+  @media (min-width: 768px) { .pe-barra { padding: 0 40px; } .pe-conteudo { padding: 144px 40px 64px; } .pe-texto { font-size: 1.12rem; } }
+  @media (min-width: 1024px) { .pe-nav { display: flex; } .pe-menu { display: none; } .pe-conteudo { padding-top: 160px; } .pe-titulo { font-size: 5rem; } }
+  @media (max-width: 767px) {
+    .pe-veu { background: linear-gradient(to bottom, color-mix(in srgb, var(--veu) 45%, transparent) 0%, color-mix(in srgb, var(--veu) 50%, transparent) 45%, color-mix(in srgb, var(--veu) 30%, transparent) 100%); }
+  }
+  @media (max-width: 900px) {
+    .folha { padding: 0 20px; }
+    .casa .grelha, .familia .grelha, .mesa .cabeca, .dentro .cabeca, .tira, .dentro .baixo, .postal, .volta .cabeca, .postais, .parte .grelha, .envelopes, .bilhete { grid-template-columns: 1fr; gap: 28px; }
+    .espalhadas { height: auto; display: grid; gap: 30px; }
+    .espalhadas .foto, .espalhadas .postit { position: relative; left: auto; top: auto; width: auto !important; }
+    h2, .familia h2, .mesa h2 { font-size: 2.4rem !important; }
+    .voz .cartao { padding: 40px 24px; } .voz blockquote p { font-size: 1.7rem; }
+    .etiqueta { margin-top: 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="pe-raiz">
+  <header class="pe-cabecalho">
+    <div class="pe-barra">
+      <a class="pe-marca" href="#inicio"><span>A Família na Quinta</span></a>
+      <nav class="pe-nav" aria-label="Secções">
+        <a href="#casa">A casa</a><a href="#quinta">A quinta</a><a href="#dentro">Lá dentro</a><a href="#volta">À volta</a><a href="#parte">Fazer parte</a>
+        <a class="pe-reservar" href="https://www.airbnb.pt/rooms/1452014258760429542">Ver disponibilidade</a>
+      </nav>
+      <details class="pe-menu">
+        <summary aria-label="Menu">
+          <svg class="pe-abrir" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round" aria-hidden="true"><path d="M40 64h176M40 128h176M40 192h176"/></svg>
+          <svg class="pe-fechar" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round" aria-hidden="true"><path d="M200 56 56 200M56 56l144 144"/></svg>
+        </summary>
+        <nav class="pe-painel" aria-label="Secções">
+          <a href="#casa">A casa</a><a href="#quinta">A quinta</a><a href="#dentro">Lá dentro</a><a href="#volta">À volta</a><a href="#parte">Fazer parte</a>
+          <a class="pe-botao pe-botao--cheio" href="https://www.airbnb.pt/rooms/1452014258760429542">Ver disponibilidade</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+
+  <section class="pe" id="inicio">
+    <img class="pe-foto" src="fotos/airbnb-29.jpg" alt="A casa de pedra à esquerda, a varanda com o guarda-sol e o vale a perder de vista" style="object-position: 60% 50%">
+    <div class="pe-veu" aria-hidden="true"></div>
+    <div class="pe-conteudo">
+      <p class="pe-etiqueta">Casa na quinta · Lamego</p>
+      <h1 class="pe-titulo">Uma casa de pedra numa <em>quinta que acolhe</em></h1>
+      <p class="pe-texto">Uma moradia de 60 m² só para vocês, com varanda e spa virados ao vale, numa quinta familiar em Lamego. Na mesma quinta, a família acolhe animais de quinta resgatados, para a vida inteira.</p>
+      <div class="pe-acoes">
+        <a class="pe-botao pe-botao--cheio" href="https://www.airbnb.pt/rooms/1452014258760429542">Ver disponibilidade</a>
+        <a class="pe-botao pe-botao--contorno" href="#casa">Conhecer a casa</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- a voz do projeto: a primeira página do álbum -->
+<section class="voz" aria-label="A voz do projeto">
+  <div class="folha">
+    <div class="cartao">
+      <blockquote>
+        <p>«Acolhemos animais de quinta necessitados de abrigo e amor e damos-lhes uma família e um lar para a vida inteira!»</p>
+        <cite>A Família na Quinta, site do projeto e Facebook</cite>
+      </blockquote>
+    </div>
+    <p class="passagem">Primeiro, a casa.</p>
+  </div>
+</section>
+
+<!-- 2. a casa num só olhar -->
+<section class="casa" id="casa">
+  <div class="folha grelha">
+    <div class="intro">
+      <p class="pagina">A casa <span>· o que é</span></p>
+      <h2>Uma casa inteira, <em>só para vocês</em></h2>
+      <p>Uma moradia de pedra de 60 m², num só espaço aberto, numa quinta familiar em Lamego. Tudo é vosso: a casa, a varanda e o spa, com entrada privada.</p>
+      <p>Fora da cidade e perto dela: o centro de Lamego fica a poucos minutos de carro.</p>
+      <p class="passagem">Chama-se A Família na Quinta, e o nome tem uma razão de ser.</p>
+    </div>
+    <figure class="foto fita rod-e">
+      <img src="fotos/airbnb-32.jpg" alt="A fachada de pedra com telhado de telha, a varanda, o spa e o guarda-sol">
+      <figcaption>Pedra por fora, madeira por dentro.</figcaption>
+    </figure>
+    <div class="etiqueta">
+      <h3>A casa, ao certo</h3>
+      <ul>
+        <li>60 m² em open space, de pedra, com teto e vigas de madeira à vista</li>
+        <li>Cama queen e sofá-cama; uma casa de banho com duche</li>
+        <li>Cozinha equipada e mesa de refeições</li>
+        <li>Varanda privativa com spa de hidromassagem e duche exterior de água quente</li>
+        <li>Ar condicionado, Wi-Fi, Netflix e Disney+</li>
+        <li>Estacionamento gratuito em frente ao portão</li>
+        <li>A Sé de Lamego a cerca de 4 minutos de carro</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 3. a família na quinta -->
+<section class="familia madeira" id="quinta">
+  <div class="folha">
+    <p class="pagina">A quinta <span>· porquê este nome</span></p>
+    <h2>Na quinta, a família acolhe <em>quem precisa de casa</em></h2>
+    <div class="grelha">
+      <p>A casa e o projeto «A Família na Quinta» são da mesma família e têm o mesmo nome. O projeto acolhe animais de quinta resgatados da exploração, de maus tratos e da morte, e dá-lhes um lar para a vida inteira.</p>
+      <figure class="foto fita rod-d">
+        <img src="fotos/3c4517_049df7bf6abe4293909d6a87abb074d7.jpg" alt="Um cabrito cor de creme ao colo">
+        <figcaption>Acolher, nas palavras da família, é dar um lar para a vida inteira.</figcaption>
+      </figure>
+      <div>
+        <p>Vivem na mesma quinta onde fica a casa. Quem lá dorme fica, por umas noites, dentro dessa história.</p>
+        <blockquote class="cita" style="margin-top:30px"><p>"Os animais da quinta foram uma agradável surpresa à chegada"</p><cite>Lígia, Airbnb</cite></blockquote>
+        <p class="passagem">Apresentamos-vos os da quinta.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. os da quinta, espalhados na mesa -->
+<section class="mesa">
+  <div class="folha">
+    <div class="cabeca">
+      <div>
+        <p class="pagina">A quinta <span>· os da quinta</span></p>
+        <h2>Abrigo, amor e <em>um lar para a vida inteira</em></h2>
+      </div>
+      <div>
+        <p>O projeto acolhe animais de quinta de muitas espécies: cabras, ovelhas, porcos, coelhos, patos, póneis, burros, e até um canário. Cada um está ali só para viver, o resto da vida.</p>
+        <blockquote><p>«temos como foco central o acolhimento e não o resgate»</p><cite>A Família na Quinta, O Nosso Projeto</cite></blockquote>
+      </div>
+    </div>
+    <div class="espalhadas">
+      <figure class="foto a1"><img src="fotos/3c4517_3549e8bf2bd44e22a9908c2c72634bd2.jpg" alt="Uma cabra preta e branca a comer uma flor" style="object-position: 68% 20%"><figcaption><b>abrigo</b><span>As cabras</span></figcaption></figure>
+      <figure class="foto fita a2"><img src="fotos/3c4517_ff278028f9c34c51bbb3242f61203a90.jpg" alt="Um borrego branco deitado na palha" style="object-position: 65% 35%"><figcaption><b>amor</b><span>As ovelhas</span></figcaption></figure>
+      <figure class="foto a3"><img src="fotos/3c4517_70e2ffe2ad984764ae398f832f747fb2.jpg" alt="Um porco pequeno, preto, de pé na palha" style="object-position: 55% 35%"><figcaption><b>uma família</b><span>Os porcos</span></figcaption></figure>
+      <figure class="foto fita a4"><img src="fotos/3c4517_3867468b29374f10bce7926850718d12.jpg" alt="Um coelho branco num cesto de palha" style="object-position: 30% 30%"><figcaption><b>um lar</b><span>Os coelhos</span></figcaption></figure>
+      <figure class="foto a5"><img src="fotos/3c4517_69bd2057cff34c53baa4c5098eb45c7a.jpg" alt="A cabeça de um pónei castanho debruçada sobre a porta da baia" style="object-position: 45% 35%"><figcaption><b>para a vida</b><span>Os póneis</span></figcaption></figure>
+      <figure class="foto fita a6"><img src="fotos/3c4517_cf192dbb144341b09e34138706d4da68.jpg" alt="Um burro castanho, de perfil, de cabeça baixa" style="object-position: 62% 50%"><figcaption><b>inteira</b><span>e os burros</span></figcaption></figure>
+      <aside class="postit">
+        <strong>Movimento proposto · o álbum</strong>
+        Ao entrar nesta secção, as fotografias caem sobre a mesa, baralhadas, e vão-se arrumando uma a uma com o scroll. Cada uma pode ser arrastada e, ao clicar, vira-se e mostra a palavra no verso. Em Fazer parte, voltam todas a juntar-se na mesa dos afilhados.
+      </aside>
+    </div>
+    <p class="passagem">Eles têm ali casa para sempre. A vossa, por umas noites, fica lá dentro.</p>
+  </div>
+</section>
+
+<!-- 5. lá dentro -->
+<section class="dentro" id="dentro">
+  <div class="folha">
+    <div class="cabeca">
+      <div>
+        <p class="pagina">A casa <span>· por dentro</span></p>
+        <h2>E o vosso lar, por umas noites, <em>é de pedra e madeira</em></h2>
+      </div>
+      <blockquote class="cita"><p>"Fotos não fazem justiça ao espaço... é ainda mais bonito."</p><cite>Duarte, Airbnb</cite></blockquote>
+    </div>
+    <div class="tira">
+      <figure class="foto rod-e"><img src="fotos/airbnb-06.jpg" alt="O espaço aberto sob o teto de madeira: a cama, o sofá e a cozinha ao fundo" style="object-position: 50% 55%"><figcaption>Um só espaço, de pedra e madeira.</figcaption></figure>
+      <figure class="foto fita rod-d"><img src="fotos/airbnb-01.jpg" alt="A cama contra a parede de pedra" style="object-position: 50% 55%"></figure>
+      <figure class="foto rod-e"><img src="fotos/airbnb-14.jpg" alt="A cozinha de móveis azuis encastrada na parede de pedra" style="object-position: 50% 55%"></figure>
+      <figure class="foto rod-d"><img src="fotos/airbnb-12.jpg" alt="A máquina de café e as chávenas em cima de um barril" style="object-position: 45% 58%"><figcaption>O rústico e o moderno, lado a lado.</figcaption></figure>
+    </div>
+    <div class="baixo">
+      <p>Lá dentro é um só espaço: a cama, a sala e a cozinha à vista umas das outras, debaixo do teto de madeira com as vigas à mostra, entre paredes de pedra. A cama é queen e há um sofá-cama.</p>
+      <p>Na cozinha há o que é preciso para cozinhar e uma mesa para comer. Ar condicionado, Wi-Fi e, para o serão, Netflix e Disney+. Entra-se sem esperar por ninguém, com um cofre de chaves.</p>
+      <p class="passagem">Lá fora, espera-vos a varanda.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 6. a varanda: um postal -->
+<section class="varanda madeira">
+  <div class="folha">
+    <p class="pagina">A casa <span>· cá fora</span></p>
+    <div class="postal">
+      <div class="frente">
+        <img src="fotos/airbnb-04.jpg" alt="A varanda com a mesa, as espreguiçadeiras e o vale ao fundo">
+        <span>O vale, da varanda.</span>
+      </div>
+      <div class="verso">
+        <div class="selo"><img src="fotos/airbnb-30.jpg" alt="O spa e as espreguiçadeiras na varanda"></div>
+        <h2>Cá fora, a varanda é só vossa, <em>de frente para o vale</em></h2>
+        <div class="linhas"><p>A varanda é privativa: spa de hidromassagem, mesa, cadeiras, espreguiçadeiras e guarda-sol. Ao lado, um duche exterior com água quente. Da varanda e das janelas vê-se o vale e as montanhas.</p></div>
+        <blockquote class="cita"><p>"Uma bonita vista da varanda e das janelas no interior da casa."</p><cite>Joana, Airbnb</cite></blockquote>
+      </div>
+    </div>
+    <p class="passagem">Quando apetecer sair, Lamego está perto.</p>
+  </div>
+</section>
+
+<!-- 7. à volta -->
+<section class="volta" id="volta">
+  <div class="folha">
+    <div class="cabeca">
+      <div>
+        <p class="pagina">A casa <span>· à volta</span></p>
+        <h2>À volta, Lamego a minutos de carro, <em>e o Douro logo a seguir</em></h2>
+      </div>
+      <p>A casa fica numa quinta familiar em Lamego, a poucos minutos de carro do centro. De carro, chega-se depressa ao melhor da cidade e ao Douro.</p>
+    </div>
+    <div class="postais">
+      <article>
+        <figure class="foto"><img src="fotos/regiao-se-de-lamego.jpg" alt="A fachada da Sé de Lamego"><div class="cred">Foto: Ricardo Saraiva de Almeida / <a href="https://commons.wikimedia.org/wiki/File:S%C3%A9_de_Lamego_1_-_2017-05-04.jpg">Wikimedia Commons</a>, <a class="lic" data-v="4.0" href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA</a></div></figure>
+        <span class="min">cerca de 4 min de carro</span>
+        <h3>Sé de Lamego</h3>
+        <p>Catedral do séc. XII, com a torre românica e a fachada do início do séc. XVI.</p>
+      </article>
+      <article>
+        <figure class="foto"><img src="fotos/regiao-santuario-dos-remedios.jpg" alt="O Santuário de Nossa Senhora dos Remédios e o escadório"><div class="cred">Foto: Concierge.2C / <a href="https://commons.wikimedia.org/wiki/File:Lamego_-_Santu%C3%A1rio_de_Nossa_Senhora_dos_Rem%C3%A9dios_-_Vista_geral_(1).jpg">Wikimedia Commons</a>, <a class="lic" data-v="3.0" href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA</a></div></figure>
+        <span class="min">cerca de 8 min de carro</span>
+        <h3>Santuário de Nossa Senhora dos Remédios</h3>
+        <p>Barroco, com a primeira pedra em 1750 e o escadório começado em 1777; o projeto é atribuído a Nasoni.</p>
+      </article>
+      <article>
+        <figure class="foto"><img src="fotos/regiao-capela-de-balsemao.jpg" alt="A Capela de São Pedro de Balsemão e o largo empedrado"><div class="cred">Foto: Pedro Nuno Caetano / <a href="https://commons.wikimedia.org/wiki/File:S._Pedro_de_Balsem%C3%A3o_I.jpg">Wikimedia Commons</a>, <a class="lic" data-v="2.0" href="https://creativecommons.org/licenses/by/2.0">CC BY</a></div></figure>
+        <span class="min">cerca de 12 min de carro</span>
+        <h3>Capela de São Pedro de Balsemão</h3>
+        <p>De origem alto-medieval, com três naves e o sarcófago do bispo D. Afonso Pires.</p>
+      </article>
+      <article>
+        <figure class="foto"><img src="fotos/regiao-museu-do-douro.jpg" alt="O Museu do Douro em Peso da Régua, com um barco rabelo à frente"><div class="cred">Foto: FWinkel / <a href="https://commons.wikimedia.org/wiki/File:Museu_do_Douro_in_Peso_da_R%C3%A9gua.jpg">Wikimedia Commons</a>, <a class="lic" data-v="4.0" href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA</a></div></figure>
+        <span class="min">cerca de 15 min de carro</span>
+        <h3>Museu do Douro</h3>
+        <p>O museu da região, em Peso da Régua, na Casa da Companhia.</p>
+      </article>
+      <article>
+        <figure class="foto"><img src="fotos/regiao-porto-de-rei.jpg" alt="A praia fluvial de Porto de Rei, no Douro"><div class="cred">Foto: Vitor Oliveira from Torres Vedras, PORTUGAL / <a href="https://commons.wikimedia.org/wiki/File:Praia_Fluvial_de_Porto_de_Rei_-_Portugal_(29051552232).jpg">Wikimedia Commons</a>, <a class="lic" data-v="2.0" href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA</a></div></figure>
+        <span class="min">cerca de 23 min de carro</span>
+        <h3>Parque Fluvial de Porto de Rei</h3>
+        <p>Praia fluvial no Douro, com piscina, cais e parque de merendas.</p>
+      </article>
+    </div>
+    <p class="passagem">Depois de partir, a quinta continua. E pode continuar convosco.</p>
+  </div>
+</section>
+
+<!-- 8. fazer parte -->
+<section class="parte madeira" id="parte">
+  <div class="folha grelha">
+    <figure class="foto fita rod-e">
+      <img src="fotos/3c4517_ce1a8e321d68402a8969653b18a6bf17.jpg" alt="Fotografias impressas dos animais da quinta espalhadas numa mesa de madeira">
+      <figcaption>Cada afilhado tem a sua fotografia.</figcaption>
+    </figure>
+    <div>
+      <p class="pagina">A quinta <span>· depois da estadia</span></p>
+      <h2>Quem quiser, pode <em>fazer parte da família</em></h2>
+      <p>O que a família quer construir é um santuário animal que se sustente a si próprio e não viva só de donativos. Ainda está a ser construído.</p>
+      <div class="envelopes">
+        <div><h3>Apadrinhar um animal.</h3>Escolhe-se o afilhado, deixa-se o nome e a morada, e recebe-se uma fotografia dele com dedicatória de «A Família na Quinta». Pedidos para <a href="mailto:lusitanoquinta@gmail.com">lusitanoquinta@gmail.com</a>.</div>
+        <div><h3>Acompanhar a quinta.</h3>No Facebook, seguido por cerca de 10 mil pessoas (outubro de 2026), a família partilha o dia a dia da quinta.</div>
+      </div>
+      <blockquote class="cita"><p>"É um projeto com grande valor, que merece o nosso apoio para que possa continuar e quem sabe, crescer."</p><cite>Lígia, Airbnb</cite></blockquote>
+      <p class="passagem">E para viver a casa por dentro, umas noites.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 9. reservar: o bilhete -->
+<section class="reservar" id="contacto">
+  <div class="folha">
+    <div class="bilhete">
+      <div class="esq">
+        <p class="pagina">A casa e a quinta <span>· ficar</span></p>
+        <h2>Para ficar, a casa <em>reserva-se no Airbnb</em></h2>
+        <p>A casa reserva-se no Airbnb. Para perguntar antes, o telefone é o <a href="tel:+351965741870">965 741 870</a>.</p>
+        <p class="nota">Nota no Airbnb: 4,79 em 5, com 29 avaliações (outubro de 2026).</p>
+      </div>
+      <div class="dir">
+        <a class="botao botao--cheio" href="https://www.airbnb.pt/rooms/1452014258760429542">Ver disponibilidade no Airbnb</a>
+        <a class="botao botao--linha" href="tel:+351965741870">Ligar 965 741 870</a>
+      </div>
+    </div>
+    <div class="rodape"><span>A Família na Quinta · Lamego</span><a href="mailto:lusitanoquinta@gmail.com">lusitanoquinta@gmail.com</a></div>
+  </div>
+</section>
+
+</body>
+</html>
