@@ -10,7 +10,7 @@ export const metadata: Metadata = metadados({
   caminho: "/privacidade",
 });
 
-const ATUALIZADA = "20 de outubro de 2026";
+const ATUALIZADA = "21 de outubro de 2026";
 
 /* A política de privacidade, curta e clara. Indexável. */
 export default function PaginaPrivacidade() {
@@ -57,23 +57,25 @@ export default function PaginaPrivacidade() {
 
           <Bloco titulo="Onde ficam">
             <p>
-              O site não guarda os pedidos numa base de dados: cada pedido segue por email e fica nas caixas de correio da casa. Para isso recorremos a dois
-              prestadores, que tratam os dados por nossa conta:
+              Cada pedido fica guardado no alojamento do site (Netlify), com o seu estado (por confirmar, confirmado, pago, cancelado) e as datas, para
+              sabermos que noites estão ocupadas e não as darmos duas vezes. Segue também por email para a caixa de correio da casa. Para isso recorremos
+              a dois prestadores, que tratam os dados por nossa conta:
             </p>
             <ul className="mt-3 list-disc space-y-1 pl-5">
-              <li>Netlify, que aloja o site e o formulário;</li>
+              <li>Netlify, que aloja o site, o formulário e os pedidos;</li>
               <li>Google (Gmail), que envia e recebe os emails.</li>
             </ul>
             <p>
               Estes prestadores podem tratar dados fora da União Europeia, com as garantias previstas no RGPD que oferecem (como as cláusulas contratuais-tipo
-              da Comissão Europeia).
+              da Comissão Europeia). O calendário público do site só mostra as noites ocupadas, sem dados pessoais.
             </p>
           </Bloco>
 
           <Bloco titulo="Durante quanto tempo">
             <p>
-              O tempo necessário para responder ao pedido e tratar da estadia. Depois disso, só o que a lei nos obrigar a guardar (por exemplo, por razões
-              fiscais) e apenas durante o prazo que a lei fixar.
+              Os pedidos guardados no site são apagados automaticamente 12 meses depois da data de saída da estadia. Os emails ficam nas caixas de
+              correio da casa o tempo necessário para tratar da estadia e, depois, só o que a lei nos obrigar a guardar (por exemplo, por razões fiscais)
+              e apenas durante o prazo que a lei fixar.
             </p>
           </Bloco>
 

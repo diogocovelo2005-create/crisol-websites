@@ -5,6 +5,7 @@ import { Revelar } from "@/components/Revelar";
 import { HeroTransicao } from "@/components/landing/HeroTransicao";
 import { CortinaQuartos } from "@/components/CortinaQuartos";
 import { JardimSocalcos } from "@/components/JardimSocalcos";
+import { FotoTamanhos } from "@/components/FotoTamanhos";
 
 export const metadata: Metadata = metadados({
   titulo: "A casa centenária em Várzea",
@@ -44,7 +45,9 @@ export default function PaginaACasa() {
             {/* Tarde e Noite */}
             <div className="md:flex-[2] flex flex-col gap-6 md:gap-4">
               <div className="flex-1 relative overflow-hidden group min-h-[250px]">
-                <Image src="/fotos/dia-alpendre.jpg" alt="Alpendre à tarde" fill quality={100} unoptimized className="object-cover transition-transform duration-700 group-hover:scale-105" />
+                {/* 2/5 da linha (já com o zoom de 1,05 ao passar o rato); num ecrã alto e
+                    estreito a altura (≈30vh × 1,34) pode pedir mais do que a largura. */}
+                <FotoTamanhos src="/fotos/dia-alpendre.jpg" alt="Alpendre à tarde" sizes="(min-width: 768px) max(calc((min(100vw, 86rem) - 6rem) * 0.42), 42vh), calc(100vw - 3rem)" className="object-cover transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-xisto/80 via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-6 text-cal">
                   <span className="font-mono text-xs tracking-widest text-cal/70">FIM DA TARDE</span>

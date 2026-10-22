@@ -33,12 +33,12 @@ pronto a trocar por um POST a uma Netlify Function. Sem emails nesta ronda.
 
 ### Por confirmar com a Teresa
 - Preço por noite da casa inteira (`PRECO_CASA_INTEIRA`), lotação da casa
-  (`CASA_INTEIRA_LUGARES`, soma dos lugares com `UNIDADES_MAX` = 14) e a partir
+  (`CASA_INTEIRA_LUGARES`, soma dos lugares com `UNIDADES_MAX` = 16) e a partir
   de quantas pessoas se sugere (11).
 - Quando se paga o restante (provisório: «à chegada à quinta»).
 - O que acontece ao sinal se o hóspede cancelar (provisório: «As condições de
   cancelamento seguem com a confirmação da casa.»).
-- Quantos quartos de cada tipo existem (`UNIDADES_MAX` está a 2/2/2).
+- Quantos quartos de cada tipo existem: resolvido, 2/2/2 (o Diogo, 2026-10-21).
 - Estadia mínima (1) e as 2 noites sugeridas no calendário.
 - Se as crianças pagam pequeno-almoço e contam como pessoa.
 - Que preço usar: com o desconto do Booking ou o base.
@@ -184,3 +184,37 @@ Cópia de antes: `arquivo/site-2026-10-21-antes-avif/` (só código).
 - Scroll entre páginas (2026-10-21): o Lenis acabava a inércia depois da navegação e a página
   nova abria a meio; ScrollSuave pára-o no layout effect da mudança de caminho, e um clique
   para a própria página leva ao topo. public/llms.txt criado.
+- Reservas com memória mínima (2026-10-21): registos em Netlify Blobs (loja «reservas»; em casa,
+  site/.dados/, fora do git e do deploy). Estados novo/proposta/confirmado/pago/recusado/cancelado/
+  expirado; referência CAN-AAMM-NN; duplicados 15 min; calendário próprio (/api/disponibilidade);
+  alternativas automáticas; ajustar total, animal >8 kg, sinal não chegou, cancelar com devolução;
+  lembretes diários (netlify/functions/lembretes.mts → /api/lembretes). UNIDADES_MAX 2/2/2 definitivo; Suite para 4 (cama de casal + dois sofás-cama), lotação 16.
+
+### Rapidez, 3.ª ronda (2026-10-22): tráfego das páginas interiores
+
+- `/a-casa` (jardim em socalcos e «Um dia») e `/os-quartos` (fotos dos quartos) passam
+  a ter `srcset` com versões em JPEG à qualidade do original (`scripts/tamanhos.mjs`;
+  listas e larguras em `lib/tamanhos.ts`; `components/FotoTamanhos.tsx` é o mesmo
+  `<img>` que o `<Image fill unoptimized>` gerava, com srcset). `sizes` calculado da caixa
+  real e verificado em 390@3, 412@1,75, 768@2, 1024, 1440 e 1920: nenhuma foto servida
+  abaixo do tamanho visto (os ecrãs de densidade 3 recebem o original). Lazy como antes.
+- Cortinas e heróis (capa-quartos, dia-piscina, heroreservar) não mudaram: os originais
+  (768–1024 px) já são mais pequenos do que o ecrã. `/reservar` usa o otimizador do Next.
+- Os PNG de 8–13 MB (hero.png, *-nova.png) não são pedidos por nenhuma página.
+- `netlify.toml`: `Cache-Control: public, max-age=604800` em `/fotos/*` (não testável em
+  local). Ao trocar uma foto pelo mesmo nome, quem já visitou pode vê-la antiga até 7 dias.
+
+Peso transferido, build local (sem scroll → com scroll até ao fim):
+
+| | antes | depois |
+|---|---|---|
+| Telemóvel /a-casa | 4,37 → 9,84 MB | 3,82 → 5,78 MB |
+| Telemóvel /os-quartos | 2,51 → 6,21 MB | 1,30 → 2,88 MB |
+| Computador /a-casa | 3,10 → 8,57 MB | 2,69 → 5,45 MB |
+| Computador /os-quartos | 2,51 → 6,21 MB | 1,87 → 4,63 MB |
+| / e /reservar | iguais | iguais |
+
+`rapidez-igual`: as diferenças estão só dentro das fotos (reamostragem; a versão nova fica
+até ligeiramente mais nítida) e no carrossel das comodidades, que roda sozinho; o antes
+comparado consigo dá 0 %. Fluidez (CPU ÷4, pares alternados): igual nas duas páginas.
+Cópia de antes: `arquivo/site-2026-10-22-antes-trafego/` (só código).

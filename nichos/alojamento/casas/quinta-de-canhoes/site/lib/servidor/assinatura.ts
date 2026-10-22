@@ -12,13 +12,15 @@ import { segredo, VALIDADE_LINKS_DIAS } from "@/lib/servidor/config";
   um só carácter invalida a assinatura.
 */
 
-export type TipoToken = "casa" | "proposta";
+/** «casa»: a página do pedido; «hospede»: a página das propostas. Levam só a referência; o estado vive no servidor. */
+export type TipoToken = "casa" | "hospede";
 
 const b64 = (b: Buffer) => b.toString("base64url");
 const hmac = (corpo: string) => createHmac("sha256", segredo()).update(corpo).digest();
 
-export function assinar<T>(tipo: TipoToken, dados: T, validadeDias = VALIDADE_LINKS_DIAS): string {
-  const corpo = b64(deflateRawSync(Buffer.from(JSON.stringify({ t: tipo, exp: Date.now() + validadeDias * 86400000, d: dados }))));
+/** `expira`: instante (ms) a partir do qual o link deixa de valer; por defeito, VALIDADE_LINKS_DIAS. */
+export function assinar<T>(tipo: TipoToken, dados: T, expira = Date.now() + VALIDADE_LINKS_DIAS * 86400000): string {
+  const corpo = b64(deflateRawSync(Buffer.from(JSON.stringify({ t: tipo, exp: expira, d: dados }))));
   return `${corpo}.${b64(hmac(corpo))}`;
 }
 

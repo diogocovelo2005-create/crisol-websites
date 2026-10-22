@@ -1,41 +1,75 @@
 import { randomInt } from "node:crypto";
-import { recalcularPedido, validarDatas, validarPedido, type PedidoReserva } from "@/lib/reserva";
+import {
+  SINAL_PERCENTAGEM,
+  animalDoPedido,
+  cabeNasNoites,
+  deIso,
+  escolhaDoPedido,
+  iso,
+  noitesDe,
+  recalcularPedido,
+  validarDatas,
+  validarPedido,
+  type Alternativa,
+  type PedidoReserva,
+} from "@/lib/reserva";
 import { assinar, verificar } from "@/lib/servidor/assinatura";
 import { config, TEMPO_MINIMO_SEGUNDOS } from "@/lib/servidor/config";
 import { avisarFalha, enviarEmail } from "@/lib/servidor/email";
 import * as E from "@/lib/servidor/emails";
+import type { SemDestino } from "@/lib/servidor/modelo-email";
+import {
+  anotar,
+  apagarRegisto,
+  atualizar,
+  conflitosDe,
+  criarRegisto,
+  descreverEstado,
+  devolucaoDe,
+  duplicadoRecente,
+  impressaoDe,
+  lerRegisto,
+  listarRegistos,
+  ocupacaoDe,
+  prazoDoSinal,
+  quandoTxt,
+  type Registo,
+} from "@/lib/servidor/reservas";
 
 /*
-  O circuito das reservas, sem base de dados: cada passo recebe um token
-  assinado, faz o que tem a fazer (enviar emails) e devolve o token do passo
-  seguinte. O estado avança pelos links.
+  O circuito das reservas. O estado vive no servidor (lib/servidor/reservas.ts);
+  os links levam só a referência e o papel (casa ou hóspede), assinados.
+  Cada ação lê o estado atual: um botão já usado devolve o que aconteceu
+  («Este pedido já foi confirmado a 21 out às 14h20») em vez de repetir.
 
-    pedido (site) ──► casa: «Novo pedido» (/pedido/T1, fase novo)
-                      (o hóspede vê a confirmação no site; o primeiro email que
-                       recebe é o do sinal, o das novas datas ou a recusa)
-    T1 confirmar ──► hóspede: dados do sinal · casa: «feche no Booking» + /pedido/T2 (fase confirmado)
-    T2 sinal     ──► hóspede: «Reserva confirmada»
-    T1 alternativas ► hóspede: propostas (/proposta/P?alt=i)
-    P aceitar    ──► casa: «Aceitou» + /pedido/T1' (fase novo, datas novas)
-    T1 recusar   ──► hóspede: recusa educada
+    pedido (site)       → casa: «Novo pedido» (/pedido/C)
+    C confirmar         → hóspede: dados do sinal · casa: «Fechar datas no Booking»
+    C sinal recebido    → hóspede: «Reserva confirmada»
+    C o sinal não chegou → hóspede: datas libertadas
+    C cancelar reserva  → hóspede: cancelamento e quanto se devolve
+    C alternativas      → hóspede: propostas (/proposta/H?alt=i)
+    H aceitar (uma só)  → casa: «Aceitou novas datas» (o pedido volta a novo)
+    C recusar           → hóspede: recusa educada
 */
 
-export type DadosCasa = { fase: "novo" | "confirmado"; pedido: PedidoReserva; aceite?: boolean };
-export type DadosProposta = { pedido: PedidoReserva; alternativas: { chegada: string; saida: string }[]; nota: string };
+export type Resposta = { ok: true; [k: string]: unknown } | { ok: false; erro: string; estado?: number; [k: string]: unknown };
 
-export type Resposta = { ok: true; [k: string]: unknown } | { ok: false; erro: string; estado?: number };
+/** Os links valem até 30 dias depois da saída (a reserva pode ser daqui a meses). */
+const expiraEm = (p: PedidoReserva) => Date.parse(`${p.estadia.saida}T00:00:00Z`) + 30 * 86400000;
+export const tokenCasa = (r: Registo) => assinar("casa", { r: r.ref }, expiraEm(r.pedido));
+export const tokenHospede = (r: Registo) => assinar("hospede", { r: r.ref }, expiraEm(r.pedido));
+export const linkCasa = (r: Registo) => `${config.siteUrl}/pedido/${tokenCasa(r)}`;
+const linkProposta = (r: Registo, i: number) => `${config.siteUrl}/proposta/${tokenHospede(r)}?alt=${i}`;
 
-const linkCasa = (dados: DadosCasa) => `${config.siteUrl}/pedido/${assinar("casa", dados)}`;
-const linkProposta = (token: string, i: number) => `${config.siteUrl}/proposta/${token}?alt=${i}`;
+const aCasa = (email: SemDestino, p: PedidoReserva) => enviarEmail({ ...email, para: config.emailCasa, responderA: p.hospede.email });
+const aoHospede = (email: SemDestino, p: PedidoReserva) => enviarEmail({ ...email, para: p.hospede.email, responderA: config.emailCasa });
 
-async function aCasa(email: ReturnType<typeof E.novoPedidoCasa>, p: PedidoReserva) {
-  return enviarEmail({ ...email, para: config.emailCasa, responderA: p.hospede.email });
-}
-async function aoHospede(email: ReturnType<typeof E.novoPedidoCasa>, p: PedidoReserva) {
-  return enviarEmail({ ...email, para: p.hospede.email, responderA: config.emailCasa });
-}
+const noitesIso = (p: PedidoReserva) => noitesDe(deIso(p.estadia.chegada)!, deIso(p.estadia.saida)!).map(iso);
 
-/** O pedido que chega do formulário. */
+/* ------------------------------------------------------------------ */
+/* O pedido que chega do formulário                                    */
+/* ------------------------------------------------------------------ */
+
 export async function receberPedido(corpo: unknown): Promise<Resposta> {
   const c = (corpo ?? {}) as { pedido?: PedidoReserva; armadilha?: string; abertoEm?: number };
   // Anti-spam: o campo escondido vem preenchido, ou o formulário foi enviado
@@ -43,104 +77,229 @@ export async function receberPedido(corpo: unknown): Promise<Resposta> {
   const depressa = typeof c.abertoEm !== "number" || Date.now() - c.abertoEm < TEMPO_MINIMO_SEGUNDOS * 1000;
   if (c.armadilha || depressa) {
     console.warn("[reserva] pedido descartado pelo anti-spam");
-    return { ok: true, referencia: String(randomInt(1000, 10000)) };
+    return { ok: true, referencia: `CAN-${randomInt(1000, 9999)}` };
   }
   const erros = validarPedido(c.pedido as PedidoReserva);
   if (erros.length) return { ok: false, erro: erros.join(" "), estado: 400 };
 
-  const pedido = recalcularPedido({ ...c.pedido!, referencia: String(randomInt(1000, 10000)), criadoEm: new Date().toISOString() });
+  // Os preços ficam congelados aqui: os do momento do pedido.
+  const pedido = recalcularPedido({ ...c.pedido!, criadoEm: new Date().toISOString() });
 
-  const casa = await aCasa(E.novoPedidoCasa(pedido, linkCasa({ fase: "novo", pedido })), pedido);
+  // Duplo envio: o mesmo email, as mesmas datas e os mesmos quartos há menos de 15 minutos.
+  const repetido = await duplicadoRecente(impressaoDe(pedido));
+  if (repetido) return { ok: true, referencia: repetido, repetido: true };
+
+  // O nosso calendário: noites já tomadas por pedidos confirmados ou pagos.
+  const registos = await listarRegistos();
+  if (!cabeNasNoites(ocupacaoDe(registos), noitesIso(pedido), escolhaDoPedido(pedido), pedido.casaInteira !== null)) {
+    return { ok: false, erro: "Estas datas já não estão livres para o que escolheu. Escolha outras datas ou fale connosco.", estado: 409, ocupado: true };
+  }
+
+  const registo = await criarRegisto(pedido);
+  const casa = await aCasa(E.novoPedidoCasa(registo.pedido, linkCasa(registo)), registo.pedido);
   if (!casa.ok) {
-    await avisarFalha(`pedido de ${pedido.hospede.nome} (${pedido.hospede.email}) não chegou à casa`, `${casa.erro}\n\n${JSON.stringify(pedido, null, 2)}`, pedido);
+    await apagarRegisto(registo);
+    await avisarFalha(`pedido de ${pedido.hospede.nome} (${pedido.hospede.email}) não chegou à casa`, `${casa.erro}\n\n${JSON.stringify(pedido, null, 2)}`, registo.pedido);
     return { ok: false, erro: "Não conseguimos enviar o pedido.", estado: 502 };
   }
-  return { ok: true, referencia: pedido.referencia };
+  return { ok: true, referencia: registo.ref };
 }
 
+/* ------------------------------------------------------------------ */
+/* As ações da casa e do hóspede                                       */
+/* ------------------------------------------------------------------ */
+
 type Acao =
-  | { acao: "confirmar"; token: string; totalCombinado?: number }
-  | { acao: "sinal"; token: string }
-  | { acao: "alternativas"; token: string; alternativas: { chegada: string; saida: string }[]; nota?: string }
+  | { acao: "confirmar"; token: string; total?: number; motivo?: string; animal?: "aceite" | "recusado"; forcar?: boolean }
+  | { acao: "sinal" | "sinalNaoChegou" | "cancelarReserva"; token: string }
+  | { acao: "alternativas"; token: string; alternativas: Alternativa[]; nota?: string }
   | { acao: "recusar"; token: string; nota?: string }
   | { acao: "aceitar"; token: string; alt: number };
 
 const invalido: Resposta = { ok: false, erro: "Este link não é válido ou já expirou.", estado: 403 };
+const texto = (v: unknown, max = 1500) => (typeof v === "string" ? v.slice(0, max).trim() : "");
 
 export async function executarAcao(corpo: unknown): Promise<Resposta> {
   const a = (corpo ?? {}) as Acao;
-  if (typeof a.token !== "string" || a.token.length > 20000) return invalido;
+  if (typeof a.token !== "string" || a.token.length > 2000) return invalido;
+  const papel = a.acao === "aceitar" ? "hospede" : "casa";
+  const v = verificar<{ r: string }>(papel, a.token);
+  if (!v.ok || typeof v.dados?.r !== "string") return invalido;
+  const ref = v.dados.r;
+  if (!(await lerRegisto(ref))) return { ok: false, erro: "Este pedido já não existe.", estado: 404 };
 
-  if (a.acao === "aceitar") {
-    const v = verificar<DadosProposta>("proposta", a.token);
-    if (!v.ok) return invalido;
-    const alt = v.dados.alternativas[a.alt];
-    if (!alt) return { ok: false, erro: "Essa alternativa não existe.", estado: 400 };
-    const erro = validarDatas(alt.chegada, alt.saida, v.dados.pedido.casaInteira !== null);
-    if (erro) return { ok: false, erro, estado: 400 };
-    const pedido = recalcularPedido(v.dados.pedido, alt);
-    const r = await aCasa(E.novoPedidoCasa(pedido, linkCasa({ fase: "novo", pedido, aceite: true }), true), pedido);
-    if (!r.ok) return falhou("aceitar proposta", r.erro, pedido);
-    return { ok: true };
-  }
-
-  const v = verificar<DadosCasa>("casa", a.token);
-  if (!v.ok) return invalido;
-  const { fase, pedido } = v.dados;
-
-  if (a.acao === "confirmar") {
-    if (fase !== "novo") return { ok: false, erro: "Este pedido já foi confirmado.", estado: 409 };
-    const erro = validarDatas(pedido.estadia.chegada, pedido.estadia.saida, pedido.casaInteira !== null);
-    if (erro) return { ok: false, erro, estado: 400 };
-    const total = typeof a.totalCombinado === "number" && a.totalCombinado > 0 && a.totalCombinado < 100000 ? a.totalCombinado : null;
-    const final = recalcularPedido(pedido, undefined, total);
-    if (final.sinal.valor === null) return { ok: false, erro: "Indique o total da estadia para se calcular o sinal.", estado: 400 };
-    const proximo = linkCasa({ fase: "confirmado", pedido: final });
-    const h = await aoHospede(E.pagarSinalHospede(final), final);
-    if (!h.ok) return falhou("dados do sinal ao hóspede", h.erro, final);
-    const c = await aCasa(E.confirmadoCasa(final, proximo), final);
-    if (!c.ok) await avisarFalha("lembrete do Booking à casa", c.erro, final);
-    return { ok: true, proximo: proximo.slice(config.siteUrl.length) };
-  }
-
-  if (a.acao === "sinal") {
-    if (fase !== "confirmado") return { ok: false, erro: "Primeiro confirme a disponibilidade.", estado: 409 };
-    const h = await aoHospede(E.reservaConfirmadaHospede(pedido), pedido);
-    if (!h.ok) return falhou("reserva confirmada ao hóspede", h.erro, pedido);
-    return { ok: true };
-  }
-
-  if (a.acao === "alternativas") {
-    if (fase !== "novo") return { ok: false, erro: "Este pedido já foi confirmado.", estado: 409 };
-    const alternativas = Array.isArray(a.alternativas) ? a.alternativas.slice(0, 3) : [];
-    if (!alternativas.length) return { ok: false, erro: "Marque pelo menos uma alternativa.", estado: 400 };
-    for (const alt of alternativas) {
-      const erro = validarDatas(alt?.chegada, alt?.saida, pedido.casaInteira !== null);
-      if (erro) return { ok: false, erro: `${alt?.chegada} → ${alt?.saida}: ${erro}`, estado: 400 };
+  switch (a.acao) {
+    /* ---------------- o hóspede aceita uma proposta ---------------- */
+    case "aceitar": {
+      const m = await atualizar(ref, (r) => {
+        if (r.proposta?.aceite) return { erro: `Já escolheu uma das datas propostas a ${quandoTxt(r.proposta.aceite.em)}.`, estado: 409 };
+        if (r.estado !== "proposta" || !r.proposta) return { erro: "Este pedido já não tem datas por escolher.", estado: 409 };
+        const escolhida = r.proposta.alternativas[a.alt];
+        if (!escolhida) return { erro: "Essa alternativa não existe.", estado: 400 };
+        const erro = validarDatas(escolhida.estadia.chegada, escolhida.estadia.saida, escolhida.casaInteira !== null, 1);
+        if (erro) return { erro, estado: 400 };
+        r.original ??= r.pedido;
+        r.pedido = { ...escolhida, referencia: r.ref };
+        r.proposta.aceite = { indice: a.alt, em: new Date().toISOString() };
+        r.estado = "novo";
+        anotar(r, "O hóspede aceitou outras datas", `${escolhida.estadia.chegada} → ${escolhida.estadia.saida}`);
+        return { registo: r };
+      });
+      if (!("registo" in m)) return { ok: false, erro: m.erro, estado: m.estado };
+      const r = m.registo;
+      const e = await aCasa(E.novoPedidoCasa(r.pedido, linkCasa(r), true), r.pedido);
+      if (!e.ok) return falhou("aceitar proposta", e.erro, r.pedido);
+      return { ok: true };
     }
-    const nota = typeof a.nota === "string" ? a.nota.slice(0, 1500).trim() : "";
-    const token = assinar<DadosProposta>("proposta", { pedido, alternativas: alternativas.map(({ chegada, saida }) => ({ chegada, saida })), nota });
-    const recalculadas = alternativas.map((alt) => recalcularPedido(pedido, alt));
-    const h = await aoHospede(
-      E.propostaHospede(pedido, recalculadas, nota, recalculadas.map((_, i) => linkProposta(token, i))),
-      pedido,
-    );
-    if (!h.ok) return falhou("proposta ao hóspede", h.erro, pedido);
-    return { ok: true };
-  }
 
-  if (a.acao === "recusar") {
-    if (fase !== "novo") return { ok: false, erro: "Este pedido já foi confirmado.", estado: 409 };
-    const nota = typeof a.nota === "string" ? a.nota.slice(0, 1500).trim() : "";
-    const h = await aoHospede(E.recusaHospede(pedido, nota), pedido);
-    if (!h.ok) return falhou("recusa ao hóspede", h.erro, pedido);
-    return { ok: true };
-  }
+    /* ---------------- a casa confirma ---------------- */
+    case "confirmar": {
+      const registos = await listarRegistos();
+      const m = await atualizar(ref, (r) => {
+        if (r.estado !== "novo") return { erro: descreverEstado(r), estado: 409, extra: { jaFeito: true } };
+        const erro = validarDatas(r.pedido.estadia.chegada, r.pedido.estadia.saida, r.pedido.casaInteira !== null);
+        if (erro) return { erro, estado: 400 };
+        const conflitos = conflitosDe(r, registos);
+        if (conflitos.length && !a.forcar) {
+          return {
+            erro: `Estas noites já estão ocupadas por ${conflitos.map((c) => `${c.ref} (${c.estado})`).join(", ")}.`,
+            estado: 409,
+            extra: { conflitos },
+          };
+        }
+        if (animalDoPedido(r.pedido) === "grande" && a.animal !== "aceite" && a.animal !== "recusado")
+          return { erro: "Diga se aceita o animal com mais de 8 kg.", estado: 400 };
+        const p = r.pedido;
+        if (animalDoPedido(p) === "grande") p.animalDecisao = a.animal;
+        // O preço é o congelado no pedido; só muda se a casa o ajustar.
+        if (typeof a.total === "number" && a.total > 0 && a.total < 100000 && Math.round(a.total) !== p.total) {
+          const total = Math.round(a.total);
+          p.ajuste = { totalOriginal: p.total, motivo: texto(a.motivo, 500) };
+          p.total = total;
+          p.sinal.valor = Math.ceil((total * SINAL_PERCENTAGEM) / 100);
+          p.restante.valor = total - p.sinal.valor;
+        }
+        if (p.sinal.valor === null) return { erro: "Indique o total da estadia para se calcular o sinal.", estado: 400 };
+        r.estado = "confirmado";
+        r.confirmacao = { em: new Date().toISOString(), prazoSinal: prazoDoSinal(p.estadia.chegada), ...(conflitos.length ? { forcado: true } : {}) };
+        anotar(r, "Confirmado", [conflitos.length ? "mesmo com noites ocupadas" : "", p.ajuste ? `total ajustado para ${p.total} €` : "", p.animalDecisao ? `animal ${p.animalDecisao}` : ""].filter(Boolean).join(" · ") || undefined);
+        return { registo: r };
+      });
+      if (!("registo" in m)) return { ok: false, erro: m.erro, estado: m.estado, ...(m.extra ?? {}) };
+      const r = m.registo;
+      const h = await aoHospede(E.pagarSinalHospede(r.pedido, r.confirmacao!.prazoSinal), r.pedido);
+      if (!h.ok) await avisarFalha("dados do sinal ao hóspede (use «Enviar por WhatsApp» na página do pedido)", h.erro, r.pedido);
+      const c = await aCasa(E.confirmadoCasa(r.pedido, linkCasa(r)), r.pedido);
+      if (!c.ok) await avisarFalha("lembrete do Booking à casa", c.erro, r.pedido);
+      return h.ok ? { ok: true } : { ok: false, erro: "Confirmado, mas o email ao hóspede falhou. Envie os dados pelo WhatsApp.", estado: 502 };
+    }
 
+    /* ---------------- o sinal chegou ---------------- */
+    case "sinal": {
+      const m = await atualizar(ref, (r) => {
+        if (r.estado !== "confirmado") return { erro: descreverEstado(r), estado: 409 };
+        r.estado = "pago";
+        r.pagamento = { em: new Date().toISOString() };
+        anotar(r, "Sinal recebido");
+        return { registo: r };
+      });
+      if (!("registo" in m)) return { ok: false, erro: m.erro, estado: m.estado };
+      const h = await aoHospede(E.reservaConfirmadaHospede(m.registo.pedido), m.registo.pedido);
+      if (!h.ok) return falhou("reserva confirmada ao hóspede", h.erro, m.registo.pedido);
+      return { ok: true };
+    }
+
+    /* ---------------- o sinal não chegou ---------------- */
+    case "sinalNaoChegou": {
+      const m = await atualizar(ref, (r) => {
+        if (r.estado !== "confirmado") return { erro: descreverEstado(r), estado: 409 };
+        r.estado = "cancelado";
+        r.fim = { em: new Date().toISOString(), motivo: "O sinal não chegou" };
+        anotar(r, "Cancelado: o sinal não chegou");
+        return { registo: r };
+      });
+      if (!("registo" in m)) return { ok: false, erro: m.erro, estado: m.estado };
+      const r = m.registo;
+      const h = await aoHospede(E.sinalNaoChegouHospede(r.pedido, r.confirmacao!.prazoSinal), r.pedido);
+      if (!h.ok) return falhou("aviso de sinal não recebido ao hóspede", h.erro, r.pedido);
+      return { ok: true };
+    }
+
+    /* ---------------- cancelar uma reserva paga ---------------- */
+    case "cancelarReserva": {
+      let calculo = { dias: 0, devolver: 0 };
+      const m = await atualizar(ref, (r) => {
+        if (r.estado !== "pago") return { erro: descreverEstado(r), estado: 409 };
+        calculo = devolucaoDe(r.pedido);
+        r.estado = "cancelado";
+        r.fim = { em: new Date().toISOString(), motivo: "Reserva cancelada", devolver: calculo.devolver };
+        anotar(r, "Reserva cancelada", `a devolver ${calculo.devolver} €`);
+        return { registo: r };
+      });
+      if (!("registo" in m)) return { ok: false, erro: m.erro, estado: m.estado };
+      const h = await aoHospede(E.cancelamentoHospede(m.registo.pedido, calculo.devolver, calculo.dias), m.registo.pedido);
+      if (!h.ok) return falhou("cancelamento ao hóspede", h.erro, m.registo.pedido);
+      return { ok: true, devolver: calculo.devolver };
+    }
+
+    /* ---------------- propor outras datas ---------------- */
+    case "alternativas": {
+      const lista = Array.isArray(a.alternativas) ? a.alternativas.slice(0, 3) : [];
+      if (!lista.length) return { ok: false, erro: "Marque pelo menos uma alternativa.", estado: 400 };
+      const nota = texto(a.nota);
+      const m = await atualizar(ref, (r) => {
+        if (r.estado !== "novo") return { erro: descreverEstado(r), estado: 409 };
+        const recalculadas: PedidoReserva[] = [];
+        for (const alt of lista) {
+          const casa = alt.casaInteira ?? r.pedido.casaInteira !== null;
+          const erro = validarDatas(alt?.chegada, alt?.saida, casa, 1);
+          if (erro) return { erro: `${alt?.chegada} → ${alt?.saida}: ${erro}`, estado: 400 };
+          recalculadas.push({ ...recalcularPedido(r.pedido, alt), referencia: r.ref });
+        }
+        r.estado = "proposta";
+        r.proposta = { em: new Date().toISOString(), nota, alternativas: recalculadas };
+        anotar(r, "Outras datas propostas", recalculadas.map((p) => `${p.estadia.chegada} → ${p.estadia.saida}`).join("; "));
+        return { registo: r };
+      });
+      if (!("registo" in m)) return { ok: false, erro: m.erro, estado: m.estado };
+      const r = m.registo;
+      const h = await aoHospede(E.propostaHospede(r.pedido, r.proposta!.alternativas, nota, r.proposta!.alternativas.map((_, i) => linkProposta(r, i))), r.pedido);
+      if (!h.ok) return falhou("proposta ao hóspede", h.erro, r.pedido);
+      return { ok: true };
+    }
+
+    /* ---------------- recusar ---------------- */
+    case "recusar": {
+      const nota = texto(a.nota);
+      const m = await atualizar(ref, (r) => {
+        if (r.estado !== "novo" && r.estado !== "proposta") return { erro: descreverEstado(r), estado: 409 };
+        r.estado = "recusado";
+        r.fim = { em: new Date().toISOString(), motivo: nota || "Recusado" };
+        anotar(r, "Recusado");
+        return { registo: r };
+      });
+      if (!("registo" in m)) return { ok: false, erro: m.erro, estado: m.estado };
+      const h = await aoHospede(E.recusaHospede(m.registo.pedido, nota), m.registo.pedido);
+      if (!h.ok) return falhou("recusa ao hóspede", h.erro, m.registo.pedido);
+      return { ok: true };
+    }
+  }
   return { ok: false, erro: "Ação desconhecida.", estado: 400 };
 }
 
 async function falhou(contexto: string, erro: string, p?: PedidoReserva): Promise<Resposta> {
   await avisarFalha(contexto, erro, p);
   return { ok: false, erro: "Não foi possível enviar o email. Tente outra vez daqui a pouco.", estado: 502 };
+}
+
+/* ------------------------------------------------------------------ */
+/* Para as páginas                                                     */
+/* ------------------------------------------------------------------ */
+
+/** O registo de um link, se o link for válido para esse papel. */
+export async function registoDoLink(papel: "casa" | "hospede", token: string) {
+  const v = verificar<{ r: string }>(papel, token);
+  if (!v.ok) return { erro: v.motivo } as const;
+  const r = typeof v.dados?.r === "string" ? await lerRegisto(v.dados.r) : null;
+  return r ? ({ registo: r } as const) : ({ erro: "invalido" } as const);
 }

@@ -4,8 +4,20 @@ import { AcoesPedido } from "@/components/reserva/AcoesPedido";
 import { Bilhete, Etiquetas } from "@/components/reserva/BilhetePedido";
 import { FaixaTopo } from "@/components/reserva/ResumoPedido";
 import { POLITICA_SINAL, SINAL_PERCENTAGEM, dataCurta, descreverGrupo, euros, grupoDoPedido, type PedidoReserva } from "@/lib/reserva";
-import { verificar } from "@/lib/servidor/assinatura";
-import type { DadosCasa } from "@/lib/servidor/fluxo";
+import { PAGAMENTO } from "@/lib/servidor/config";
+import { registoDoLink } from "@/lib/servidor/fluxo";
+import {
+  conflitosDe,
+  descreverEstado,
+  devolucaoDe,
+  listarRegistos,
+  quandoTxt,
+  sugerirAlternativas,
+  type EstadoPedido,
+  type Registo,
+} from "@/lib/servidor/reservas";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Pedido de reserva",
@@ -21,18 +33,27 @@ export const metadata: Metadata = {
   responder → o cliente → os detalhes. No computador, «Responder» fica
   ao lado, preso ao topo.
 */
+const ESTADOS: Record<EstadoPedido, { texto: string; cor: string }> = {
+  novo: { texto: "Novo pedido · por responder", cor: "bg-cal text-xisto" },
+  proposta: { texto: "Outras datas propostas · à espera do hóspede", cor: "bg-cal text-xisto" },
+  confirmado: { texto: "Confirmado · à espera do sinal", cor: "bg-[#e7a598] text-xisto" },
+  pago: { texto: "Reserva paga", cor: "bg-[#cfe0c3] text-xisto" },
+  recusado: { texto: "Recusado", cor: "bg-cal/20 text-cal" },
+  cancelado: { texto: "Cancelado", cor: "bg-cal/20 text-cal" },
+  expirado: { texto: "Expirado · o sinal não chegou", cor: "bg-cal/20 text-cal" },
+};
+
 export default async function PaginaPedido({ params }: { params: Promise<{ token: string }> }) {
   const { token } = await params;
-  const v = verificar<DadosCasa>("casa", token);
-  if (!v.ok) return <LinkInvalido expirado={v.motivo === "expirado"} />;
-  const { pedido: p, fase, aceite } = v.dados;
-
-  const estado =
-    fase === "confirmado"
-      ? { texto: "À espera do sinal", cor: "bg-[#e7a598] text-xisto" }
-      : aceite
-        ? { texto: "Aceitou novas datas · por confirmar", cor: "bg-cal text-xisto" }
-        : { texto: "Novo pedido · por responder", cor: "bg-cal text-xisto" };
+  const l = await registoDoLink("casa", token);
+  if ("erro" in l) return <LinkInvalido expirado={l.erro === "expirado"} />;
+  const r = l.registo;
+  const p = r.pedido;
+  const registos = await listarRegistos();
+  const conflitos = ["novo", "proposta"].includes(r.estado) ? conflitosDe(r, registos) : [];
+  const sugestoes = r.estado === "novo" ? sugerirAlternativas(r, registos) : [];
+  const aceite = !!r.proposta?.aceite && r.estado === "novo";
+  const estado = aceite ? { texto: "Aceitou novas datas · por confirmar", cor: "bg-cal text-xisto" } : ESTADOS[r.estado];
 
   return (
     <>
@@ -40,12 +61,13 @@ export default async function PaginaPedido({ params }: { params: Promise<{ token
         <div className="mx-auto max-w-[86rem] px-6 md:px-10">
           <div className="flex flex-wrap items-center gap-3">
             <span className={`etiqueta rounded-full px-3 py-1.5 text-[0.62rem] ${estado.cor}`}>{estado.texto}</span>
-            {p.referencia && <span className="etiqueta text-[0.62rem] text-cal/70">Referência {p.referencia}</span>}
+            <span className="etiqueta text-[0.62rem] text-cal/70">Referência {r.ref}</span>
           </div>
           <h1 className="rustico mt-4 text-[clamp(2.2rem,5vw,3.6rem)] leading-[1.02]">{p.hospede.nome}</h1>
           <p className="mt-2 text-corpo-grande text-cal/80">
             {dataCurta(p.estadia.chegada)} → {dataCurta(p.estadia.saida)} · {p.casaInteira ? "a casa inteira · " : ""}{descreverGrupo(grupoDoPedido(p))}
           </p>
+          {r.estado !== "novo" && <p className="mt-3 text-[0.95rem] text-cal/75">{descreverEstado(r)}</p>}
         </div>
       </section>
 
@@ -53,6 +75,12 @@ export default async function PaginaPedido({ params }: { params: Promise<{ token
         <div className="mx-auto grid max-w-[86rem] gap-8 px-6 md:px-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,440px)] lg:gap-12">
           {/* 1 · o essencial */}
           <div className="space-y-5 lg:col-start-1 lg:row-start-1">
+            {conflitos.length > 0 && (
+              <p role="alert" className="border-l-[3px] border-caixilho bg-white/60 px-4 py-3 text-[0.98rem] text-xisto">
+                <strong className="font-medium text-caixilho">Estas noites já estão ocupadas</strong> por{" "}
+                {conflitos.map((c) => `${c.ref} (${c.estado})`).join(", ")}. Pode propor alternativas ou recusar; confirmar pede «Confirmar mesmo assim».
+              </p>
+            )}
             <Bilhete pedido={p} titulo={aceite ? "As novas datas" : "A estadia pedida"} />
             <Etiquetas pedido={p} />
             <Valores pedido={p} />
@@ -62,7 +90,18 @@ export default async function PaginaPedido({ params }: { params: Promise<{ token
           <div className="lg:col-start-2 lg:row-span-2 lg:row-start-1">
             <div className="lg:sticky lg:top-6">
               <p className="etiqueta mb-3 text-xisto-suave">Responder</p>
-              <AcoesPedido token={token} fase={fase} pedido={p} />
+              <AcoesPedido
+                token={token}
+                estado={r.estado}
+                pedido={p}
+                conflitos={conflitos.map((c) => `${c.ref} (${c.estado})`)}
+                sugestoes={sugestoes.map((x) => ({ rotulo: x.rotulo, alternativa: x.alternativa, pedido: x.pedido }))}
+                prazoSinal={r.confirmacao ? `${quandoTxt(r.confirmacao.prazoSinal)}` : null}
+                devolucao={r.estado === "pago" ? devolucaoDe(p) : null}
+                whatsapp={r.estado === "confirmado" ? linkWhatsappPagamento(r) : null}
+                proposta={r.proposta ? { alternativas: r.proposta.alternativas, aceite: r.proposta.aceite?.indice ?? null } : null}
+              />
+              <Historico itens={r.historico} />
             </div>
           </div>
 
@@ -177,6 +216,38 @@ function Detalhes({ pedido: p }: { pedido: PedidoReserva }) {
         ))}
       </ul>
 
+    </div>
+  );
+}
+
+/* Os dados do sinal, já escritos, para mandar pelo WhatsApp do hóspede (quando o email cai no spam). */
+function linkWhatsappPagamento(r: Registo) {
+  const p = r.pedido;
+  let n = p.hospede.telefone.replace(/[^\d+]/g, "");
+  if (n.startsWith("+")) n = n.slice(1);
+  else if (n.startsWith("00")) n = n.slice(2);
+  else if (n.length === 9) n = `351${n}`;
+  const sinal = p.sinal.valor !== null ? euros(p.sinal.valor) : "";
+  const como =
+    p.pagamento === "mbway"
+      ? `MB WAY para o ${PAGAMENTO.mbway}, com a mensagem «Reserva ${r.ref}»`
+      : `transferência para o IBAN ${PAGAMENTO.iban}${PAGAMENTO.titular ? ` (${PAGAMENTO.titular})` : ""}, com o descritivo «Reserva ${r.ref}»`;
+  const texto = `Olá ${p.hospede.nome.trim().split(/\s+/)[0]}, daqui fala a Quinta de Canhões. Há lugar para ${dataCurta(p.estadia.chegada)} → ${dataCurta(p.estadia.saida)}. Para confirmar a reserva, falta o sinal de ${sinal} por ${como}, até ${r.confirmacao ? quandoTxt(r.confirmacao.prazoSinal) : ""}. Obrigado!`;
+  return `https://wa.me/${n}?text=${encodeURIComponent(texto)}`;
+}
+
+function Historico({ itens }: { itens: Registo["historico"] }) {
+  return (
+    <div className="mt-6 px-1 text-[0.82rem] text-xisto-suave">
+      <p className="etiqueta mb-2 text-[0.6rem]">O que já aconteceu</p>
+      <ol className="space-y-1 border-l border-granito-linha pl-3">
+        {itens.map((h, i) => (
+          <li key={i}>
+            <span className="text-xisto">{quandoTxt(h.em)}</span> · {h.acao}
+            {h.detalhe ? ` (${h.detalhe})` : ""}
+          </li>
+        ))}
+      </ol>
     </div>
   );
 }

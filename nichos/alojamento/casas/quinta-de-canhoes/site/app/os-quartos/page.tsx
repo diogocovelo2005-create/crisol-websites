@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { metadados } from "@/lib/seo";
-import Image from "next/image";
+import { FotoTamanhos } from "@/components/FotoTamanhos";
 import { Revelar } from "@/components/Revelar";
 import { HeroQuartos } from "@/components/HeroQuartos";
 import { CortinaReserva } from "@/components/CortinaReserva";
@@ -63,12 +63,12 @@ const fichasQuartos = [
   }
 ];
 
-// Fotos muito maiores do que aparecem: o browser escolhe a versão que chega ao
-// ecrã. As versões vêm de scripts/tamanhos.mjs, com a mesma qualidade do original.
-const versoes: Record<string, string> = {
-  "/fotos/quartos/quarto duplo/wc-duplo-filt.jpg":
-    "/fotos/tamanhos/wc-duplo-1280.jpg 1280w, /fotos/tamanhos/wc-duplo-1920.jpg 1920w, /fotos/quartos/quarto%20duplo/wc-duplo-filt.jpg 3072w",
-};
+// Largura real da foto (lib/tamanhos.ts dá as versões): a coluna é o conteúdo
+// menos 5rem de margens, 22rem da ficha e o intervalo (3rem; 6rem a partir de
+// 1024px); no telemóvel, o ecrã − 3rem. A casa de banho do twin (3:2) numa caixa
+// 4:3 é cortada dos lados e pede 1,125× a largura.
+const sizesFoto = (foto: string) =>
+  `(min-width: 1024px) calc(min(100vw, 86rem) - 33rem), (min-width: 768px) calc(100vw - 30rem), calc((100vw - 3rem) * ${foto.includes("wc-twin") ? 1.125 : 1})`;
 
 export default function PaginaOsQuartos() {
   return (
@@ -150,27 +150,12 @@ export default function PaginaOsQuartos() {
                       style={{ zIndex: 10 + i }}
                     >
                       <figure className="relative aspect-[4/3] w-full overflow-hidden bg-granito-fundo md:aspect-[3/2] shadow-2xl">
-                        {versoes[foto] ? (
-                          // eslint-disable-next-line @next/next/no-img-element
-                          <img
-                            src={foto}
-                            srcSet={versoes[foto]}
-                            sizes="(min-width: 768px) 60vw, 100vw"
-                            alt={`${quarto.nome} - Vista ${i + 1}`}
-                            loading="lazy"
-                            decoding="async"
-                            className="absolute inset-0 h-full w-full object-cover"
-                          />
-                        ) : (
-                          <Image
-                            src={foto}
-                            alt={`${quarto.nome} - Vista ${i + 1}`}
-                            fill
-                            quality={100}
-                            unoptimized
-                            className="object-cover"
-                          />
-                        )}
+                        <FotoTamanhos
+                          src={foto}
+                          sizes={sizesFoto(foto)}
+                          alt={`${quarto.nome} - Vista ${i + 1}`}
+                          className="object-cover"
+                        />
                       </figure>
                     </div>
                   ))}

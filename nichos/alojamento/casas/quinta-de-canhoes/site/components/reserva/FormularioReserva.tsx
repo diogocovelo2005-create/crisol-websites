@@ -7,7 +7,7 @@ import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { Check, ChevronLeft, ChevronRight, LoaderCircle, Minus, PawPrint, Plus } from "lucide-react";
 import { fotos } from "@/lib/fotos";
 import { enviarPedido } from "@/lib/reserva-envio";
-import { linkWhatsapp } from "@/lib/contactos";
+import { contactos, linkWhatsapp } from "@/lib/contactos";
 import {
   FORMAS_PAGAMENTO,
   NOTA_ANIMAIS,
@@ -41,7 +41,12 @@ import {
   montarPedido,
   noitesDe,
   noitesEntre,
-  noitesSemQuarto,
+  noitesFechadas,
+  deIso,
+  cabeNasNoites,
+  casaLivreEm,
+  primeiraChegadaFormulario,
+  type Ocupacao,
   precoDaNoite,
   quartos,
   quartosDe,
@@ -51,7 +56,7 @@ import {
   mesmaEscolha,
   PRECO_CASA_INTEIRA,
   telefoneValido,
-  tipoLivre,
+  tipoLivreEm,
   type Contas,
   type Escolha,
   type FormaPagamento,
@@ -78,14 +83,13 @@ const SEMANA = ["seg", "ter", "qua", "qui", "sex", "sáb", "dom"];
 const SEMANA_LONGA = ["domingo", "segunda", "terça", "quarta", "quinta", "sexta", "sábado"];
 const CURVA = [0.23, 1, 0.32, 1] as const;
 
-const dia = (d: Date) => new Date(d.getFullYear(), d.getMonth(), d.getDate());
 const igual = (a: Date | null, b: Date | null) => !!a && !!b && a.getTime() === b.getTime();
 const curta = (d: Date) => `${SEMANA_LONGA[d.getDay()].slice(0, 3)} ${d.getDate()} ${MESES_CURTO[d.getMonth()]}`;
 const longa = (d: Date) => `${SEMANA_LONGA[d.getDay()]}, ${d.getDate()} de ${MESES[d.getMonth()]} de ${d.getFullYear()}`;
 const plural = (n: number, um: string, varios: string) => `${n} ${n === 1 ? um : varios}`;
 
 type Passo = 1 | 2 | 3;
-type Dados = { nome: string; email: string; telefone: string; mensagem: string };
+type Dados = { nome: string; email: string; email2: string; telefone: string; mensagem: string };
 
 export function FormularioReserva() {
   const parado = useReducedMotion();
@@ -103,7 +107,7 @@ export function FormularioReserva() {
   const [comPequenoAlmoco, setComPequenoAlmoco] = useState(false);
   const [animal, setAnimal] = useState<TipoAnimal>("nao");
   const [passo, setPasso] = useState<Passo>(1);
-  const [dados, setDados] = useState<Dados>({ nome: "", email: "", telefone: "", mensagem: "" });
+  const [dados, setDados] = useState<Dados>({ nome: "", email: "", email2: "", telefone: "", mensagem: "" });
   const [tocados, setTocados] = useState<Partial<Record<keyof Dados, boolean>>>({});
   const [pagamento, setPagamento] = useState<FormaPagamento | null>(null);
   const [enviando, setEnviando] = useState(false);
@@ -114,17 +118,25 @@ export function FormularioReserva() {
   const abertoEm = useRef(0);
   const armadilha = useRef<HTMLInputElement>(null);
 
-  // A data de hoje só no browser: a página é estática e o dia do build não
-  // é o dia de quem a abre.
+  // O nosso calendário: as noites já tomadas por reservas confirmadas ou pagas.
+  const [ocupacao, setOcupacao] = useState<Ocupacao>({});
+  const lerOcupacao = () =>
+    fetch("/api/disponibilidade")
+      .then((r) => (r.ok ? r.json() : null))
+      .then((j) => j?.noites && setOcupacao(j.noites))
+      .catch(() => {});
+
+  // A primeira chegada que se pode pedir (depois de amanhã, em Portugal), só no
+  // browser: a página é estática e o dia do build não é o dia de quem a abre.
   useEffect(() => {
-    const h = dia(new Date());
+    const h = deIso(primeiraChegadaFormulario())!;
+    lerOcupacao();
     // eslint-disable-next-line react-hooks/set-state-in-effect -- o dia só existe no browser
     setHoje(h);
     setMes({ ano: h.getFullYear(), mes: h.getMonth() });
     abertoEm.current = Date.now();
   }, []);
 
-  const fechadas = useMemo(() => noitesSemQuarto(), []);
 
   const grupo: Grupo = { adultos, criancas: criancas.filter((c): c is Escalao => c !== null) };
 
@@ -158,6 +170,9 @@ export function FormularioReserva() {
     setCasaInteira(casa);
     setMexeuNosQuartos(casa !== s.casaInteira);
   };
+
+  const fechadas = useMemo(() => noitesFechadas(ocupacao, escolha, casaInteira), [ocupacao, escolha, casaInteira]);
+  const noitesEscolhidas = entrada && saida ? noitesDe(entrada, saida).map(iso) : [];
 
   const escolherDia = (d: Date) => {
     if (!entrada || saida || d <= entrada) {
@@ -195,20 +210,27 @@ export function FormularioReserva() {
           : `A estadia mínima é de ${plural(noitesMinimas(false), "noite", "noites")}`
         : !casaInteira && !nQuartos
           ? "Escolha pelo menos um quarto"
-          : criancas.some((c) => c === null)
+          : !cabeNasNoites(ocupacao, noitesEscolhidas, escolha, casaInteira)
+            ? "Já não há lugar nestas datas para esta escolha"
+            : criancas.some((c) => c === null)
             ? "Indique a idade de cada criança"
             : null;
 
   const erros: Partial<Record<keyof Dados, string>> = {
     nome: dados.nome.trim().length < 2 ? "Falta o nome" : undefined,
     email: !dados.email.trim() ? "Falta o email" : !emailValido(dados.email) ? "O email não parece completo" : undefined,
+    email2: !dados.email2.trim()
+      ? "Confirme o email"
+      : dados.email2.trim().toLowerCase() !== dados.email.trim().toLowerCase()
+        ? "Os dois emails não são iguais"
+        : undefined,
     telefone: !dados.telefone.trim()
       ? "Falta o telemóvel"
       : !telefoneValido(dados.telefone)
         ? "O telemóvel não parece certo (9 algarismos, ou com o indicativo do país)"
         : undefined,
   };
-  const falta2 = erros.nome ?? erros.email ?? erros.telefone ?? (!pagamento ? "Escolha como paga o sinal" : null);
+  const falta2 = erros.nome ?? erros.email ?? erros.email2 ?? erros.telefone ?? (!pagamento ? "Escolha como paga o sinal" : null);
 
   const transicao = parado
     ? { initial: { opacity: 0 }, animate: { opacity: 1, transition: { duration: 0.15 } }, exit: { opacity: 0, transition: { duration: 0.1 } } }
@@ -228,16 +250,17 @@ export function FormularioReserva() {
 
   const enviar = async () => {
     if (!entrada || !saida || !pagamento || falta2) {
-      setTocados({ nome: true, email: true, telefone: true });
+      setTocados({ nome: true, email: true, email2: true, telefone: true });
       return;
     }
     setEnviando(true);
     setErroEnvio(null);
-    const pedido = montarPedido({ chegada: entrada, saida, grupo, escolha, casaInteira, comPequenoAlmoco, animal, hospede: dados, pagamento });
+    const pedido = montarPedido({ chegada: entrada, saida, grupo, escolha, casaInteira, comPequenoAlmoco, animal, hospede: { nome: dados.nome, email: dados.email, telefone: dados.telefone, mensagem: dados.mensagem }, pagamento });
     const r = await enviarPedido(pedido, { armadilha: armadilha.current?.value ?? "", abertoEm: abertoEm.current });
     setEnviando(false);
     if (!r.ok) {
       setErroEnvio(r.erro);
+      if (r.ocupado) lerOcupacao();
       return;
     }
     setReferencia(r.referencia);
@@ -330,6 +353,17 @@ export function FormularioReserva() {
                 <p className="mt-4 flex items-center gap-2.5 text-sm text-xisto-suave">
                   <span aria-hidden="true" className="size-3.5 rounded-full border border-dashed border-caixilho" />
                   Sugerido: {plural(NOITES_RECOMENDADAS, "noite", "noites")}, o tempo de ir às Termas e descer ao Vouga
+                </p>
+                <p className="mt-2 text-sm text-xisto-suave">
+                  Para hoje ou amanhã, fale connosco:{" "}
+                  <a href={linkWhatsapp()} target="_blank" rel="noreferrer" className="sublinha text-caixilho">
+                    WhatsApp
+                  </a>{" "}
+                  ou{" "}
+                  <a href={contactos.telemovel.href} className="sublinha text-caixilho">
+                    {contactos.telemovel.texto}
+                  </a>
+                  .
                 </p>
 
                 <dl className="mt-6 grid grid-cols-3 border-y border-granito-linha">
@@ -465,13 +499,13 @@ export function FormularioReserva() {
                   {!casaInteira && <p className="etiqueta text-xisto-suave">Pode escolher mais do que um</p>}
                 </div>
                 {casaInteira ? (
-                  <CasaInteira />
+                  <CasaInteira livre={!entrada || !saida || casaLivreEm(ocupacao, noitesEscolhidas)} />
                 ) : (
                 <ul className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
                   {quartos.map((q) => {
                     const n = escolha[q.id] ?? 0;
                     const sugerido = (sugeridos[q.id] ?? 0) > 0;
-                    const livre = !entrada || !saida || tipoLivre(q.id, entrada, saida);
+                    const livre = !entrada || !saida || tipoLivreEm(ocupacao, q.id, noitesEscolhidas);
                     return (
                       <li
                         key={q.id}
@@ -638,6 +672,16 @@ export function FormularioReserva() {
                       erro={tocados.email ? erros.email : undefined}
                       aoMudar={(v) => setDados({ ...dados, email: v })}
                       aoSair={() => setTocados((t) => ({ ...t, email: true }))}
+                      autoComplete="email"
+                    />
+                    <Campo
+                      rotulo="Confirme o email"
+                      id="email2"
+                      tipo="email"
+                      valor={dados.email2}
+                      erro={tocados.email2 ? erros.email2 : undefined}
+                      aoMudar={(v) => setDados({ ...dados, email2: v })}
+                      aoSair={() => setTocados((t) => ({ ...t, email2: true }))}
                       autoComplete="email"
                     />
                     <Campo
@@ -936,7 +980,7 @@ function ResumoBarra({ contas }: { contas: Contas }) {
 }
 
 /* A casa inteira, em vez dos cartões dos quartos. */
-function CasaInteira() {
+function CasaInteira({ livre }: { livre: boolean }) {
   const f = fotos["casa-fachada"];
   return (
     <div className="grid grid-cols-1 bg-white/45 ring-2 ring-caixilho sm:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
@@ -956,6 +1000,7 @@ function CasaInteira() {
         <p className="mt-2 leading-relaxed text-xisto-suave">
           Todos os quartos da casa para o seu grupo, sem outros hóspedes. Para famílias grandes, amigos ou uma ocasião que se quer só vossa.
         </p>
+        {!livre && <p className="mt-2 text-sm font-medium text-caixilho">Sem vaga nestas datas</p>}
         <p className="mt-auto border-t border-granito-linha pt-4">
           {PRECO_CASA_INTEIRA !== null ? (
             <span className="rustico-medio text-[1.35rem] text-xisto">

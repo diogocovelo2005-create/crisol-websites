@@ -2,7 +2,7 @@
   Os dados e as contas do formulário de reserva (/reservar).
 
   Tudo o que a casa ainda tem de decidir está aqui, em constantes, marcado
-  com «POR CONFIRMAR com a Teresa». O formulário só lê
+  com «POR CONFIRMAR com a Teresa» (quando ainda há). O formulário só lê
   daqui: muda-se um valor nesta página e o site inteiro acompanha.
 
   REGRA DOS ARREDONDAMENTOS (fica igual no ecrã, no pedido e nos emails):
@@ -31,8 +31,8 @@ export type Quarto = {
   /** object-position da foto no cartão. */
   foco: string;
   /** Só para a sugestão e para o aviso de camas; não se mostra. Todos os
-      cama de casal dá 2 pessoas, um sofá-cama dá 1 (o Diogo, 2026-10-17):
-      Duplo 2, Twin 2, Suite 3. */
+      cama de casal dá 2 pessoas, um sofá-cama dá 1 (o Diogo, 2026-10-21):
+      Duplo 2, Twin 2, Suite 4 (cama de casal e dois sofás-cama). */
   lugares: number;
 };
 
@@ -60,21 +60,20 @@ export const quartos: Quarto[] = [
   {
     id: "suite",
     nome: "Suite",
-    camas: "Uma cama de casal e um sofá-cama",
+    camas: "Uma cama de casal e dois sofás-cama",
     nota: "Máquina de café e minibar",
     foto: "/fotos/quartos/suite/quarto suite.jpg",
     alt: "Suite com cama de casal, colcha florida, candeeiros acesos e paredes amarelas quentes.",
     foco: "40% 62%",
-    lugares: 3,
+    lugares: 4,
   },
 ];
 
 export const nomeQuarto = (id: TipoQuarto) => quartos.find((q) => q.id === id)!.nome;
 
 /*
-  Quantos quartos de cada tipo se podem pedir de uma vez. Não se mostra no
-  site (a contagem exata de unidades não está confirmada); só trava o botão
-  de mais. POR CONFIRMAR com a Teresa.
+  Quantos quartos há de cada tipo (o Diogo, 2026-10-21): 2 Duplos, 2 Twin e
+  2 Suites. Conta para o calendário, a validação e a lotação.
 */
 export const UNIDADES_MAX: Record<TipoQuarto, number> = {
   duplo: 2,
@@ -144,11 +143,11 @@ export const PRECO_CASA_INTEIRA: number | null = 600;
 export const NOITES_MINIMAS_CASA = 2;
 
 
-/** Quantas pessoas cabem na casa inteira. POR CONFIRMAR com a Teresa (não se mostra). */
+/** Quantas pessoas cabem na casa inteira: 2×2 + 2×2 + 2×4 = 16. */
 export const CASA_INTEIRA_LUGARES = quartos.reduce((s, q) => s + q.lugares * UNIDADES_MAX[q.id], 0);
 
-/** A partir de quantas pessoas a sugestão passa a ser a casa inteira. POR CONFIRMAR. */
-export const SUGERIR_CASA_A_PARTIR_DE = 11;
+/** A partir de quantas pessoas a sugestão passa a ser a casa inteira (~80 % dos 16 lugares). */
+export const SUGERIR_CASA_A_PARTIR_DE = 13;
 
 /** Por pessoa e por noite, em euros. Pode vir a ser oferta. */
 export const PEQUENO_ALMOCO_POR_PESSOA = 8;
@@ -221,6 +220,15 @@ export type TipoAnimal = "nao" | "pequeno" | "grande";
 /** O animal de um pedido (os antigos guardavam true para «até 8 kg»). */
 export const animalDoPedido = (p: { animal?: unknown }): TipoAnimal =>
   p.animal === "grande" ? "grande" : p.animal === "pequeno" || p.animal === true ? "pequeno" : "nao";
+/** O animal de um pedido, com a decisão da casa quando tem mais de 8 kg. */
+export function textoAnimal(p: { animal?: unknown; animalDecisao?: "aceite" | "recusado" }): string | null {
+  const t = animalDoPedido(p);
+  if (t === "nao") return null;
+  if (t === "pequeno") return "Animal até 8 kg (gratuito)";
+  if (p.animalDecisao === "aceite") return "Animal com mais de 8 kg (aceite)";
+  if (p.animalDecisao === "recusado") return "Animal com mais de 8 kg (não aceite)";
+  return "Animal com mais de 8 kg · a confirmar";
+}
 export const descreverAnimal = (t: TipoAnimal) =>
   t === "grande" ? "Animal com mais de 8 kg (a confirmar)" : t === "pequeno" ? "Animal até 8 kg (gratuito)" : "Sem animal";
 
@@ -235,33 +243,39 @@ export const NOITES_RECOMENDADAS = 2;
 export const PESSOAS_MAX = CASA_INTEIRA_LUGARES;
 
 /* ------------------------------------------------------------------ */
-/* Dias ocupados (para o iCal do Booking, mais tarde)                  */
+/* Ocupação (o nosso calendário)                                       */
 /* ------------------------------------------------------------------ */
 
 /*
-  Noites já vendidas, por tipo de quarto (AAAA-MM-DD da noite). Vazio por
-  agora: quando o iCal do Booking estiver ligado, enche-se isto e o
-  calendário passa a fechar as noites em que nenhum quarto está livre.
+  Por noite (AAAA-MM-DD da noite): quantos quartos de cada tipo estão
+  ocupados por pedidos confirmados ou pagos, e se a casa inteira está tomada.
+  Vem do servidor (/api/disponibilidade), sem dados pessoais.
 */
-export const NOITES_OCUPADAS: Record<TipoQuarto, string[]> = {
-  duplo: [],
-  twin: [],
-  suite: [],
-};
+export type NoiteOcupada = { duplo: number; twin: number; suite: number; casa: boolean };
+export type Ocupacao = Record<string, NoiteOcupada>;
 
-/** As noites em que todos os tipos estão ocupados (o calendário fecha-as). */
-export function noitesSemQuarto(ocupadas = NOITES_OCUPADAS): Set<string> {
-  const listas = Object.values(ocupadas);
-  if (listas.some((l) => l.length === 0)) return new Set();
-  const [primeira, ...resto] = listas.map((l) => new Set(l));
-  return new Set([...primeira].filter((d) => resto.every((s) => s.has(d))));
+const algumQuarto = (n?: NoiteOcupada) => !!n && (n.duplo > 0 || n.twin > 0 || n.suite > 0);
+
+/** Se o que se escolheu cabe numa noite. A casa inteira não cabe com nenhum quarto ocupado. */
+export function cabeNaNoite(n: NoiteOcupada | undefined, escolha: Escolha, casaInteira: boolean) {
+  if (!n) return true;
+  if (n.casa) return false;
+  if (casaInteira) return !algumQuarto(n);
+  // Só contam os tipos que se pedem (um tipo já cheio a mais não fecha os outros).
+  return (Object.keys(UNIDADES_MAX) as TipoQuarto[]).every((t) => !(escolha[t] ?? 0) || n[t] + escolha[t]! <= UNIDADES_MAX[t]);
 }
 
-/** Se um tipo de quarto está livre em todas as noites da estadia. */
-export function tipoLivre(id: TipoQuarto, chegada: Date, saida: Date, ocupadas = NOITES_OCUPADAS) {
-  const fechadas = new Set(ocupadas[id]);
-  return noitesDe(chegada, saida).every((d) => !fechadas.has(iso(d)));
+export const cabeNasNoites = (o: Ocupacao, noites: string[], escolha: Escolha, casaInteira: boolean) =>
+  noites.every((d) => cabeNaNoite(o[d], escolha, casaInteira));
+
+/** As noites em que o que se escolheu não cabe (o calendário fecha-as). */
+export function noitesFechadas(o: Ocupacao, escolha: Escolha, casaInteira: boolean): Set<string> {
+  return new Set(Object.keys(o).filter((d) => !cabeNaNoite(o[d], escolha, casaInteira)));
 }
+
+/** Se cabe mais um quarto deste tipo em todas as noites (para o «Sem vaga» dos cartões). */
+export const tipoLivreEm = (o: Ocupacao, id: TipoQuarto, noites: string[]) => noites.every((d) => cabeNaNoite(o[d], { [id]: 1 }, false));
+export const casaLivreEm = (o: Ocupacao, noites: string[]) => noites.every((d) => cabeNaNoite(o[d], {}, true));
 
 /* ------------------------------------------------------------------ */
 /* Datas                                                               */
@@ -480,6 +494,10 @@ export type PedidoReserva = {
   pagamento: FormaPagamento;
   /** O animal: «pequeno» (até 8 kg, gratuito) ou «grande» (mais de 8 kg, a casa decide). Os antigos tinham true. */
   animal?: boolean | "pequeno" | "grande";
+  /** A decisão da casa sobre um animal com mais de 8 kg. */
+  animalDecisao?: "aceite" | "recusado";
+  /** Total ajustado pela casa ao confirmar. */
+  ajuste?: { totalOriginal: number | null; motivo: string };
   tarifas: { fonte: string; recolhidas: string };
 };
 
@@ -555,9 +573,11 @@ export const escolhaDoPedido = (p: PedidoReserva): Escolha =>
   outras datas (uma alternativa da casa) e com o total combinado da casa
   inteira (quando ainda não há preço fixo).
 */
+export type Alternativa = { chegada: string; saida: string; escolha?: Escolha; casaInteira?: boolean };
+
 export function recalcularPedido(
   p: PedidoReserva,
-  outras?: { chegada: string; saida: string },
+  outras?: Alternativa,
   totalCombinado?: number | null,
 ): PedidoReserva {
   const chegada = deIso(outras?.chegada ?? p.estadia.chegada)!;
@@ -566,8 +586,8 @@ export function recalcularPedido(
     chegada,
     saida,
     grupo: grupoDoPedido(p),
-    escolha: escolhaDoPedido(p),
-    casaInteira: p.casaInteira !== null,
+    escolha: outras?.escolha ?? escolhaDoPedido(p),
+    casaInteira: outras?.casaInteira ?? p.casaInteira !== null,
     comPequenoAlmoco: p.pequenoAlmoco.incluido,
     hospede: p.hospede,
     pagamento: p.pagamento,
@@ -588,12 +608,19 @@ export function recalcularPedido(
 /** As noites mínimas de um pedido: a casa inteira tem as suas. */
 export const noitesMinimas = (casaInteira: boolean) => (casaInteira ? Math.max(NOITES_MINIMAS, NOITES_MINIMAS_CASA) : NOITES_MINIMAS);
 
-/** Datas coerentes e no futuro. Devolve o erro, ou null. */
-export function validarDatas(chegada: string, saida: string, casaInteira = false): string | null {
+/** Pedidos pelo formulário: chegada a partir de depois de amanhã (hoje e amanhã, fala-se connosco). */
+export const DIAS_ANTECEDENCIA_FORMULARIO = 2;
+
+/** A primeira chegada que se pode pedir pelo formulário (AAAA-MM-DD, em Portugal). */
+export const primeiraChegadaFormulario = () => iso(somarDias(deIso(hojeEmPortugal())!, DIAS_ANTECEDENCIA_FORMULARIO));
+
+/** Datas coerentes e no futuro. `antecedencia`: dias mínimos até à chegada. Devolve o erro, ou null. */
+export function validarDatas(chegada: string, saida: string, casaInteira = false, antecedencia = 0): string | null {
   const c = deIso(chegada);
   const s = deIso(saida);
   if (!c || !s) return "As datas não são válidas.";
   if (chegada < hojeEmPortugal()) return "A chegada já passou.";
+  if (chegada < iso(somarDias(deIso(hojeEmPortugal())!, antecedencia))) return "Para hoje ou amanhã, fale connosco.";
   const n = noitesEntre(c, s);
   const minimo = noitesMinimas(casaInteira);
   if (n < minimo) return casaInteira ? `A casa inteira tem um mínimo de ${minimo} noites.` : `A estadia mínima é de ${minimo} noite(s).`;
@@ -606,7 +633,7 @@ export function validarDatas(chegada: string, saida: string, casaInteira = false
 export function validarPedido(p: PedidoReserva): string[] {
   const erros: string[] = [];
   if (!p || typeof p !== "object" || p.versao !== 1) return ["Pedido em formato desconhecido."];
-  const e = validarDatas(p.estadia?.chegada, p.estadia?.saida, p.casaInteira !== null && p.casaInteira !== undefined);
+  const e = validarDatas(p.estadia?.chegada, p.estadia?.saida, p.casaInteira !== null && p.casaInteira !== undefined, DIAS_ANTECEDENCIA_FORMULARIO);
   if (e) erros.push(e);
   if (p.animal !== undefined && typeof p.animal !== "boolean" && p.animal !== "pequeno" && p.animal !== "grande") erros.push("Animal inválido.");
   const adultos = p.adultos ?? p.pessoas;

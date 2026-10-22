@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { FotoTamanhos } from "./FotoTamanhos";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
 import { Revelar } from "./Revelar";
@@ -19,11 +19,18 @@ const jardimNiveis: Nivel[] = [
   { nome: "Terraço", layout: "simples", fotos: ["/fotos/terraco-piscina.jpg"], plantas: "Piscina com vista sobre o vale" }
 ];
 
+/* Largura real de cada foto: a coluna das fotos é 2/3 de (conteúdo − 5rem de
+   margens − 4 a 6rem de intervalo); no telemóvel, o ecrã − 3rem. f = fração da
+   coluna que a figura ocupa. As proporções das caixas seguem as das fotos, por
+   isso o object-cover não pede mais do que a largura. */
+const sizes = (fMd: number, fMob: number, max = "56rem") =>
+  `(min-width: 768px) min(${max}, calc((min(100vw, 86rem) - 9rem) * ${(0.667 * fMd).toFixed(3)})), calc((100vw - 3rem) * ${fMob})`;
+
 function RenderLayout({ nivel }: { nivel: Nivel }) {
   if (nivel.layout === "simples") {
     return (
       <figure className="relative aspect-[4/3] md:aspect-[3/2] w-full max-w-3xl overflow-hidden bg-xisto shadow-[0_15px_40px_rgba(0,0,0,0.4)] rounded-sm border border-cal/5">
-        <Image src={nivel.fotos[0]} alt={nivel.nome} fill quality={100} unoptimized className="object-cover" />
+        <FotoTamanhos src={nivel.fotos[0]} alt={nivel.nome} sizes={sizes(1, 1, "48rem")} className="object-cover" />
       </figure>
     );
   }
@@ -33,11 +40,11 @@ function RenderLayout({ nivel }: { nivel: Nivel }) {
       <div className="relative w-full max-w-4xl aspect-[4/3] md:aspect-[3/2]">
         {/* Foto 1: Quadrada (Tanque/Jardim) - Tamanho grande mantido */}
         <figure className="absolute top-0 left-0 w-[68%] md:w-[65%] aspect-square overflow-hidden bg-xisto shadow-[0_15px_30px_rgba(0,0,0,0.5)] rounded-sm z-10 border border-cal/10">
-          <Image src={nivel.fotos[0]} alt={nivel.nome} fill quality={100} unoptimized className="object-cover" />
+          <FotoTamanhos src={nivel.fotos[0]} alt={nivel.nome} sizes={sizes(0.65, 0.68)} className="object-cover" />
         </figure>
         {/* Foto 2: Paisagem (Casa) - Empurrada mais para a direita para mostrar a de trás */}
         <figure className="absolute bottom-[2%] right-0 md:right-[-12%] w-[78%] md:w-[75%] aspect-[3/2] overflow-hidden bg-xisto shadow-[0_25px_50px_rgba(0,0,0,0.6)] rounded-sm z-20 border border-cal/20">
-          <Image src={nivel.fotos[1]} alt={nivel.nome + " extra"} fill quality={100} unoptimized className="object-cover" />
+          <FotoTamanhos src={nivel.fotos[1]} alt={nivel.nome + " extra"} sizes={sizes(0.75, 0.78)} className="object-cover" />
         </figure>
       </div>
     );
@@ -48,11 +55,11 @@ function RenderLayout({ nivel }: { nivel: Nivel }) {
       <div className="relative w-full max-w-4xl aspect-[4/3] md:aspect-[3/2]">
         {/* Foto 2: Retrato (Casa) no fundo à esquerda */}
         <figure className="absolute top-0 left-0 w-[55%] md:w-[50%] aspect-[3/4] overflow-hidden bg-xisto shadow-[0_15px_30px_rgba(0,0,0,0.5)] rounded-sm z-10 border border-cal/10">
-          <Image src={nivel.fotos[1]} alt={nivel.nome + " extra"} fill quality={100} unoptimized className="object-cover" />
+          <FotoTamanhos src={nivel.fotos[1]} alt={nivel.nome + " extra"} sizes={sizes(0.5, 0.55)} className="object-cover" />
         </figure>
         {/* Foto 1: Quadrada (Pátio) à frente na direita */}
         <figure className="absolute bottom-0 right-0 w-[65%] md:w-[60%] aspect-square overflow-hidden bg-xisto shadow-[0_25px_50px_rgba(0,0,0,0.6)] rounded-sm z-20 border border-cal/20">
-          <Image src={nivel.fotos[0]} alt={nivel.nome} fill quality={100} unoptimized className="object-cover" />
+          <FotoTamanhos src={nivel.fotos[0]} alt={nivel.nome} sizes={sizes(0.6, 0.65)} className="object-cover" />
         </figure>
       </div>
     );

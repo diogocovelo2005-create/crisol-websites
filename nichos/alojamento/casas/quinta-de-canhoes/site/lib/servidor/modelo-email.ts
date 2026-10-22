@@ -1,6 +1,6 @@
 import { contactos } from "@/lib/contactos";
 import { config } from "@/lib/servidor/config";
-import { POLITICA_SINAL, SINAL_PERCENTAGEM, animalDoPedido, bebes, criancasCama, dataCurta, deIso, descreverGrupo, descreverPedido, euros, grupoDoPedido, type PedidoReserva } from "@/lib/reserva";
+import { POLITICA_SINAL, SINAL_PERCENTAGEM, animalDoPedido, bebes, textoAnimal, criancasCama, dataCurta, deIso, descreverGrupo, descreverPedido, euros, grupoDoPedido, type PedidoReserva } from "@/lib/reserva";
 import type { Email } from "@/lib/servidor/email";
 import { FOTOS_EMAIL, LOGO_EMAIL } from "@/lib/servidor/logo-email";
 
@@ -158,8 +158,7 @@ function resumoBilhete(p: PedidoReserva) {
     `<p style="margin:0;font-family:${SERIFA};font-size:19px;line-height:1.3;color:${C.cal};">${esc(descreverPedido(p))}</p>` +
     linha(esc(descreverGrupo(g))) +
     linha(esc(extras.join(" · ")), C.valeClaro) +
-    (animal === "pequeno" ? linha("Animal até 8 kg (gratuito)", C.rosa) : "") +
-    (animal === "grande" ? linha("Animal com mais de 8 kg · a confirmar", C.rosa, "font-weight:600;") : "")
+    (animal !== "nao" ? linha(esc(textoAnimal(p)!), C.rosa, animal === "grande" && !p.animalDecisao ? "font-weight:600;" : "") : "")
   );
 }
 

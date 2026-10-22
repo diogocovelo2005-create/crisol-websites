@@ -19,15 +19,16 @@ function exemplo(pagamento: FormaPagamento = "mbway"): PedidoReserva {
     pagamento,
     animal: "grande",
   });
-  p.referencia = "4821";
+  p.referencia = "CAN-2610-07";
   return p;
 }
 
 const L = `${config.siteUrl}/pedido/exemplo`;
+const prazo = () => new Date(Date.now() + 48 * 3600000).toISOString();
 
 export const MODELOS: Record<string, { titulo: string; email: () => SemDestino }> = {
-  "hospede-sinal-mbway": { titulo: "Hóspede · pague o sinal (MB WAY)", email: () => E.pagarSinalHospede(exemplo()) },
-  "hospede-sinal-transferencia": { titulo: "Hóspede · pague o sinal (transferência)", email: () => E.pagarSinalHospede(exemplo("transferencia")) },
+  "hospede-sinal-mbway": { titulo: "Hóspede · pague o sinal (MB WAY)", email: () => E.pagarSinalHospede(exemplo(), prazo()) },
+  "hospede-sinal-transferencia": { titulo: "Hóspede · pague o sinal (transferência)", email: () => E.pagarSinalHospede(exemplo("transferencia"), prazo()) },
   "hospede-confirmada": { titulo: "Hóspede · reserva confirmada", email: () => E.reservaConfirmadaHospede(exemplo()) },
   "hospede-proposta": {
     titulo: "Hóspede · propostas de datas",
@@ -45,6 +46,18 @@ export const MODELOS: Record<string, { titulo: string; email: () => SemDestino }
   "casa-novo": { titulo: "Casa · novo pedido", email: () => E.novoPedidoCasa(exemplo(), L) },
   "casa-aceitou": { titulo: "Casa · hóspede aceitou proposta", email: () => E.novoPedidoCasa(exemplo(), L, true) },
   "casa-booking": { titulo: "Casa · fechar no Booking", email: () => E.confirmadoCasa(exemplo(), L) },
+  "hospede-sinal-nao-chegou": { titulo: "Hóspede · o sinal não chegou", email: () => E.sinalNaoChegouHospede(exemplo(), prazo()) },
+  "hospede-cancelada-metade": { titulo: "Hóspede · reserva cancelada (devolve metade)", email: () => E.cancelamentoHospede(exemplo(), 46, 24) },
+  "hospede-cancelada-nada": { titulo: "Hóspede · reserva cancelada (sem devolução)", email: () => E.cancelamentoHospede(exemplo(), 0, 6) },
+  "casa-resumo": {
+    titulo: "Casa · resumo do dia",
+    email: () =>
+      E.resumoDiarioCasa([
+        { titulo: "Sem resposta há mais de 24 horas", itens: [{ p: exemplo(), link: L, nota: "pedido de 20 out às 10h12" }] },
+        { titulo: "O sinal ainda não chegou (prazo passado)", itens: [{ p: exemplo("transferencia"), link: L, nota: "prazo: 21 out às 18h00" }] },
+        { titulo: "Expirados hoje: as noites ficaram livres", itens: [] },
+      ]),
+  },
   alerta: { titulo: "Alerta · envio falhou", email: () => E.alertaFalha("o pedido de Ana Ribeiro não chegou à casa", "Gmail: autenticação falhou (EAUTH)", exemplo()) },
 };
 

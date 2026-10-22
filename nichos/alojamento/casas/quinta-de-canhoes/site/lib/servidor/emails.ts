@@ -1,6 +1,6 @@
 import { contactos } from "@/lib/contactos";
-import { POLITICA_SINAL, SINAL_PERCENTAGEM, animalDoPedido, dataCurta, dataLonga, descreverAnimal, descreverGrupo, descreverPedido, euros, grupoDoPedido, type PedidoReserva } from "@/lib/reserva";
-import { PAGAMENTO, PRAZO_SINAL_HORAS, config } from "@/lib/servidor/config";
+import { POLITICA_SINAL, SINAL_PERCENTAGEM, animalDoPedido, dataCurta, dataLonga, textoAnimal, descreverGrupo, descreverPedido, euros, grupoDoPedido, type PedidoReserva } from "@/lib/reserva";
+import { PAGAMENTO, config } from "@/lib/servidor/config";
 import {
   assinatura,
   bilhete,
@@ -43,10 +43,9 @@ const ref = (p: PedidoReserva) => (p.referencia ? `Reserva ${p.referencia}` : "R
 const sinalTxt = (p: PedidoReserva) => (p.sinal.valor !== null ? euros(p.sinal.valor) : `${SINAL_PERCENTAGEM} %`);
 const totalTxt = (p: PedidoReserva) => (p.total !== null ? euros(p.total) : "a indicar pela casa");
 
-/** «segunda-feira, 19 de outubro, às 19h00»: o prazo do sinal, à hora seguinte, em Portugal. */
-function prazo(agora = new Date()) {
-  const fim = new Date(agora.getTime() + PRAZO_SINAL_HORAS * 3600000);
-  fim.setMinutes(60, 0, 0);
+/** «segunda-feira, 19 de outubro, às 19h00»: o prazo do sinal, em Portugal. */
+export function prazoTxt(prazoIso: string) {
+  const fim = new Date(prazoIso);
   const dia = new Intl.DateTimeFormat("pt-PT", { timeZone: "Europe/Lisbon", weekday: "long", day: "numeric", month: "long" }).format(fim);
   const hora = new Intl.DateTimeFormat("pt-PT", { timeZone: "Europe/Lisbon", hour: "2-digit", minute: "2-digit" }).format(fim).replace(":", "h");
   return `${dia}, às ${hora}`;
@@ -56,7 +55,7 @@ function resumoTexto(p: PedidoReserva) {
   return [
     `Chegada: ${dataLonga(p.estadia.chegada)}, desde as 15h`,
     `Saída: ${dataLonga(p.estadia.saida)}, até às 11h`,
-    `${descreverPedido(p)} · ${noites(p.estadia.noites)} · ${descreverGrupo(grupoDoPedido(p))}${p.pequenoAlmoco.incluido ? " · com pequeno-almoço" : ""}${animalDoPedido(p) !== "nao" ? ` · ${descreverAnimal(animalDoPedido(p)).toLowerCase()}` : ""}`,
+    `${descreverPedido(p)} · ${noites(p.estadia.noites)} · ${descreverGrupo(grupoDoPedido(p))}${p.pequenoAlmoco.incluido ? " · com pequeno-almoço" : ""}${textoAnimal(p) ? ` · ${textoAnimal(p)!.toLowerCase()}` : ""}`,
     `Total da estadia: ${totalTxt(p)} · sinal de ${SINAL_PERCENTAGEM} %: ${sinalTxt(p)} · restante: ${p.restante.valor !== null ? euros(p.restante.valor) : "a indicar"} (${p.restante.quando})`,
     ...(p.referencia ? [`Referência: ${p.referencia}`] : []),
   ].join("\n");
@@ -70,8 +69,12 @@ const fimTexto = `\n\nAté breve,\nQuinta de Canhões\n${contactos.telemovel.tex
 /* ------------------------------------------------------------------ */
 
 /** Há lugar: pague o sinal. */
-export function pagarSinalHospede(p: PedidoReserva, agora = new Date()): SemDestino {
-  const ate = prazo(agora);
+export function pagarSinalHospede(p: PedidoReserva, prazoIso: string): SemDestino {
+  const ate = prazoTxt(prazoIso);
+  const avisos =
+    (p.ajuste ? nota(`Ajustámos o total da estadia para ${p.total !== null ? euros(p.total) : "o valor acima"}${p.ajuste.motivo ? `: ${p.ajuste.motivo}` : "."}`) : "") +
+    (p.animalDecisao === "aceite" ? paragrafo("O seu animal com mais de 8 kg é bem-vindo.", "14px 0 0") : "") +
+    (p.animalDecisao === "recusado" ? nota("Infelizmente, não conseguimos receber o seu animal com mais de 8 kg.") : "");
   const mbway = p.pagamento === "mbway";
   const referencia = ref(p);
   const sinal = valorSinal(p);
@@ -89,13 +92,14 @@ export function pagarSinalHospede(p: PedidoReserva, agora = new Date()): SemDest
     foto: p,
     corpo:
       paragrafo(`Para ficar reservado, falta só o sinal de ${pct}. Assim que chegar, enviamos-lhe a confirmação.`, "14px 0 0") +
+      avisos +
       cartao({
         rotulo: "Sinal a pagar",
         valor: sinal,
         sub: `por ${mbway ? "MB WAY" : "transferência bancária"}, <strong class="t-verm" style="color:#7a2b2b;">até ${esc(ate)}</strong>`,
         linhas,
         fim: pequeno(
-          `Ponha «${esc(referencia)}» na ${mbway ? "mensagem" : "descrição"}, para sabermos que é seu. Depois de ${PRAZO_SINAL_HORAS} horas, as datas podem voltar a ficar livres.`,
+          `Ponha «${esc(referencia)}» na ${mbway ? "mensagem" : "descrição"}, para sabermos que é seu. Depois desse prazo, as datas podem voltar a ficar livres.`,
           "0 0 8px",
         ) + politica("0"),
       }) +
@@ -104,7 +108,7 @@ export function pagarSinalHospede(p: PedidoReserva, agora = new Date()): SemDest
       detalhes(p),
     texto: `Há lugar para si, ${primeiroNome(p)}.\nPara ficar reservado, falta só o sinal de ${SINAL_PERCENTAGEM} %.\n\nSINAL A PAGAR: ${sinalTxt(p)}, até ${ate}\n${
       mbway ? `MB WAY para: ${PAGAMENTO.mbway}\nMontante: ${sinalTxt(p)}\nMensagem: ${referencia}` : `IBAN: ${PAGAMENTO.iban || "enviamos-lhe à parte"}\n${PAGAMENTO.titular ? `Titular: ${PAGAMENTO.titular}\n` : ""}Montante: ${sinalTxt(p)}\nDescritivo: ${referencia}`
-    }\nDepois de ${PRAZO_SINAL_HORAS} horas, as datas podem voltar a ficar livres.\n\n${resumoTexto(p)}\n${POLITICA_SINAL}${fimTexto}`,
+    }\nDepois desse prazo, as datas podem voltar a ficar livres.${p.ajuste ? `\nTotal ajustado: ${p.ajuste.motivo}` : ""}${p.animalDecisao === "recusado" ? "\nInfelizmente, não conseguimos receber o seu animal com mais de 8 kg." : ""}\n\n${resumoTexto(p)}\n${POLITICA_SINAL}${fimTexto}`,
   });
 }
 
@@ -262,6 +266,84 @@ export function confirmadoCasa(p: PedidoReserva, linkSinal: string): SemDestino 
       hospede(p) +
       detalhes(p),
     texto: `Feche estas noites no Booking: ${dataLonga(p.estadia.chegada)} a ${dataLonga(p.estadia.saida)} (saída) · ${descreverPedido(p)}\n\n${p.hospede.nome} recebeu os dados para pagar o sinal de ${sinalTxt(p)} (${formaPagamento(p)}, «${ref(p)}»).\nQuando o sinal chegar: ${linkSinal}\n\n${hospedeTexto(p)}`,
+  });
+}
+
+/** Ao hóspede: o sinal não chegou a tempo; as datas ficam livres. */
+export function sinalNaoChegouHospede(p: PedidoReserva, prazoIso: string): SemDestino {
+  return montar({
+    assunto: `O seu pedido para ${datas(p)} · Quinta de Canhões`,
+    previa: "Não recebemos o sinal a tempo e libertámos as datas.",
+    rotulo: "O seu pedido",
+    frase: `Libertámos as datas, ${esc(primeiroNome(p))}.`,
+    corpo:
+      paragrafo(
+        `Não recebemos o sinal de ${valorSinal(p)} até ${esc(prazoTxt(prazoIso))}, por isso as datas de ${esc(datas(p))} voltaram a ficar livres. Não foi cobrado nada.`,
+        "14px 0 0",
+      ) +
+      paragrafo("Se já fez o pagamento, ou se ainda quiser vir, responda a este email ou escreva-nos pelo WhatsApp e vemos o que é possível.", "14px 0 0") +
+      cartao({ rotulo: "Noutra altura?", sub: "Pode fazer um novo pedido quando quiser.", fim: botao(`${config.siteUrl}/reservar`, "Fazer um novo pedido", "verde", "4px 0 4px") }) +
+      assinatura(),
+    texto: `Libertámos as datas, ${primeiroNome(p)}.\n\nNão recebemos o sinal de ${sinalTxt(p)} até ${prazoTxt(prazoIso)}, por isso as datas de ${datas(p)} voltaram a ficar livres. Não foi cobrado nada.\nSe já fez o pagamento, ou se ainda quiser vir, responda a este email.${fimTexto}`,
+  });
+}
+
+/** Ao hóspede: a reserva paga foi cancelada; quanto se devolve. */
+export function cancelamentoHospede(p: PedidoReserva, devolver: number, dias: number): SemDestino {
+  const frase =
+    devolver > 0
+      ? `Como faltavam ${dias} dias para a chegada, devolvemos metade do sinal: <strong>${euros(devolver)}</strong>.`
+      : `Como faltavam menos de 10 dias para a chegada, o sinal não é devolvido, como diz a política de cancelamento.`;
+  return montar({
+    assunto: `Reserva cancelada · ${datas(p)} · Quinta de Canhões`,
+    previa: devolver > 0 ? `Devolvemos ${euros(devolver)} do sinal.` : "A sua reserva foi cancelada.",
+    rotulo: "Reserva cancelada",
+    frase: `A sua reserva foi cancelada, ${esc(primeiroNome(p))}.`,
+    corpo:
+      paragrafo(`A reserva ${esc(p.referencia ?? "")} para ${esc(datas(p))} está cancelada.`, "14px 0 0") +
+      cartao({
+        rotulo: devolver > 0 ? "A devolver" : "Sinal",
+        valor: devolver > 0 ? euros(devolver) : "Não devolvido",
+        sub: frase,
+        fim: politica("0"),
+      }) +
+      paragrafo(devolver > 0 ? "Fazemos a devolução nos próximos dias, pelo mesmo meio do pagamento. Se precisar de alguma coisa, responda a este email." : "Se precisar de alguma coisa, responda a este email.", "20px 0 0") +
+      assinatura(),
+    texto: `A sua reserva foi cancelada, ${primeiroNome(p)}.\n\nA reserva ${p.referencia ?? ""} para ${datas(p)} está cancelada.\n${
+      devolver > 0 ? `Como faltavam ${dias} dias para a chegada, devolvemos metade do sinal: ${euros(devolver)}.` : "Como faltavam menos de 10 dias para a chegada, o sinal não é devolvido."
+    }\n${POLITICA_SINAL}${fimTexto}`,
+  });
+}
+
+/** À casa: o resumo da manhã (pedidos sem resposta, sinais em atraso, expirados). */
+export function resumoDiarioCasa(grupos: { titulo: string; itens: { p: PedidoReserva; link: string; nota: string }[] }[]): SemDestino {
+  const total = grupos.reduce((s, g) => s + g.itens.length, 0);
+  const blocos = grupos
+    .filter((g) => g.itens.length)
+    .map((g) =>
+      etiqueta(esc(g.titulo), "26px 0 8px") +
+      g.itens
+        .map((i) =>
+          cartao({
+            rotulo: `${esc(i.p.referencia ?? "")} · ${esc(datas(i.p))}`,
+            sub: `<strong>${esc(i.p.hospede.nome)}</strong> · ${esc(descreverPedido(i.p))} · ${esc(i.nota)}`,
+            fim: botao(i.link, "Abrir o pedido", "vermelho", "2px 0 4px"),
+            margem: "10px 0 0",
+          }),
+        )
+        .join(""),
+    )
+    .join("");
+  return montar({
+    assunto: `Reservas - Resumo do dia - ${total} ${total === 1 ? "pedido" : "pedidos"} por tratar`,
+    previa: grupos.map((g) => `${g.titulo}: ${g.itens.length}`).join(" · "),
+    rotulo: "Resumo do dia",
+    frase: `${total} ${total === 1 ? "pedido precisa" : "pedidos precisam"} de si.`,
+    corpo: paragrafo("O que ficou por tratar até esta manhã:", "14px 0 0") + blocos,
+    texto: grupos
+      .filter((g) => g.itens.length)
+      .map((g) => `${g.titulo}\n${g.itens.map((i) => `- ${i.p.referencia} · ${i.p.hospede.nome} · ${datas(i.p)} · ${i.nota}\n  ${i.link}`).join("\n")}`)
+      .join("\n\n"),
   });
 }
 

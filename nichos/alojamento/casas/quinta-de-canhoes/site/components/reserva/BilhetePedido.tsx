@@ -2,7 +2,7 @@ import Image from "next/image";
 import type { ReactNode } from "react";
 import { BedDouble, Coffee, Landmark, PawPrint, Smartphone, Users } from "lucide-react";
 import { fotos } from "@/lib/fotos";
-import { animalDoPedido, deIso, descreverGrupo, descreverPedido, grupoDoPedido, quartos, type PedidoReserva } from "@/lib/reserva";
+import { animalDoPedido, textoAnimal, deIso, descreverGrupo, descreverPedido, grupoDoPedido, quartos, type PedidoReserva } from "@/lib/reserva";
 
 /*
   As peças visuais de um pedido, na linguagem dos emails: o bilhete de
@@ -68,7 +68,9 @@ export function Etiquetas({ pedido: p }: { pedido: PedidoReserva }) {
     [<Coffee key="c" size={17} />, p.pequenoAlmoco.incluido ? "Com pequeno-almoço" : "Sem pequeno-almoço", !p.pequenoAlmoco.incluido],
     [p.pagamento === "mbway" ? <Smartphone key="m" size={17} /> : <Landmark key="t" size={17} />, p.pagamento === "mbway" ? "MB WAY" : "Transferência"],
     ...(animal === "pequeno" ? ([[<PawPrint key="a" size={17} />, "Animal até 8 kg (gratuito)"]] as [ReactNode, string][]) : []),
-    ...(animal === "grande" ? ([[<PawPrint key="a" size={17} />, "Animal com mais de 8 kg · a decidir", false, true]] as [ReactNode, string, boolean, boolean][]) : []),
+    ...(animal === "grande"
+      ? ([[<PawPrint key="a" size={17} />, p.animalDecisao ? textoAnimal(p)! : "Animal com mais de 8 kg · a decidir", false, !p.animalDecisao]] as [ReactNode, string, boolean, boolean][])
+      : []),
   ];
   return (
     <ul className="flex flex-wrap gap-2">

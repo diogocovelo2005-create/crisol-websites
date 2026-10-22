@@ -49,3 +49,6 @@ next-env.d.ts
 
 # Netlify CLI
 .netlify
+
+# reservas: o armazenamento local (em casa, sem Netlify)
+/.dados/
