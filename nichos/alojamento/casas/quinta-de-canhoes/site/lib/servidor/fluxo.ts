@@ -15,6 +15,7 @@ import {
 } from "@/lib/reserva";
 import { assinar, verificar } from "@/lib/servidor/assinatura";
 import { config, TEMPO_MINIMO_SEGUNDOS } from "@/lib/servidor/config";
+import { passo } from "@/lib/servidor/diagnostico";
 import { avisarFalha, enviarEmail } from "@/lib/servidor/email";
 import * as E from "@/lib/servidor/emails";
 import type { SemDestino } from "@/lib/servidor/modelo-email";
@@ -26,7 +27,8 @@ import {
   criarRegisto,
   descreverEstado,
   devolucaoDe,
-  duplicadoRecente,
+  fecharImpressao,
+  reservarImpressao,
   impressaoDe,
   lerRegisto,
   listarRegistos,
@@ -80,28 +82,47 @@ export async function receberPedido(corpo: unknown): Promise<Resposta> {
     return { ok: true, referencia: `CAN-${randomInt(1000, 9999)}` };
   }
   const erros = validarPedido(c.pedido as PedidoReserva);
-  if (erros.length) return { ok: false, erro: erros.join(" "), estado: 400 };
+  if (erros.length) {
+    passo("pedido: inválido", { erros });
+    return { ok: false, erro: erros.join(" "), estado: 400 };
+  }
+  passo("pedido: válido", { chegada: c.pedido!.estadia.chegada, saida: c.pedido!.estadia.saida });
 
   // Os preços ficam congelados aqui: os do momento do pedido.
   const pedido = recalcularPedido({ ...c.pedido!, criadoEm: new Date().toISOString() });
 
   // Duplo envio: o mesmo email, as mesmas datas e os mesmos quartos há menos de 15 minutos.
-  const repetido = await duplicadoRecente(impressaoDe(pedido));
-  if (repetido) return { ok: true, referencia: repetido, repetido: true };
+  passo("pedido: reservar a impressão (duplicados)");
+  const imp = await reservarImpressao(impressaoDe(pedido));
+  if ("duplicado" in imp) {
+    passo("pedido: duplicado", { ref: imp.duplicado || "(ainda a ser criado)" });
+    return { ok: true, referencia: imp.duplicado, repetido: true };
+  }
 
   // O nosso calendário: noites já tomadas por pedidos confirmados ou pagos.
+  passo("pedido: ler calendário");
   const registos = await listarRegistos();
+  passo("pedido: calendário lido", { registos: registos.length });
   if (!cabeNasNoites(ocupacaoDe(registos), noitesIso(pedido), escolhaDoPedido(pedido), pedido.casaInteira !== null)) {
+    await fecharImpressao(imp.reservado, null);
     return { ok: false, erro: "Estas datas já não estão livres para o que escolheu. Escolha outras datas ou fale connosco.", estado: 409, ocupado: true };
   }
 
-  const registo = await criarRegisto(pedido);
+  passo("pedido: criar registo");
+  const registo = await criarRegisto(pedido).catch(async (e) => {
+    await fecharImpressao(imp.reservado, null).catch(() => {});
+    throw e;
+  });
+  await fecharImpressao(imp.reservado, registo.ref);
+  passo("pedido: registo criado", { ref: registo.ref });
   const casa = await aCasa(E.novoPedidoCasa(registo.pedido, linkCasa(registo)), registo.pedido);
   if (!casa.ok) {
-    await apagarRegisto(registo);
+    passo("pedido: email à casa falhou; apagar o registo", { ref: registo.ref });
+    await apagarRegisto(registo).catch((e) => passo("pedido: apagar falhou", { erro: (e as Error).message }));
     await avisarFalha(`pedido de ${pedido.hospede.nome} (${pedido.hospede.email}) não chegou à casa`, `${casa.erro}\n\n${JSON.stringify(pedido, null, 2)}`, registo.pedido);
     return { ok: false, erro: "Não conseguimos enviar o pedido.", estado: 502 };
   }
+  passo("pedido: pronto", { ref: registo.ref });
   return { ok: true, referencia: registo.ref };
 }
 
@@ -126,6 +147,7 @@ export async function executarAcao(corpo: unknown): Promise<Resposta> {
   const v = verificar<{ r: string }>(papel, a.token);
   if (!v.ok || typeof v.dados?.r !== "string") return invalido;
   const ref = v.dados.r;
+  passo(`ação ${a.acao}: ler registo`, { ref });
   if (!(await lerRegisto(ref))) return { ok: false, erro: "Este pedido já não existe.", estado: 404 };
 
   switch (a.acao) {

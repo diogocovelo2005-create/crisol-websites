@@ -3,7 +3,7 @@ import { config } from "@/lib/servidor/config";
 import { enviarEmail } from "@/lib/servidor/email";
 import { resumoDiarioCasa } from "@/lib/servidor/emails";
 import { linkCasa } from "@/lib/servidor/fluxo";
-import { anotar, apagarRegisto, atualizar, listarRegistos, quandoTxt } from "@/lib/servidor/reservas";
+import { anotar, apagarRegisto, atualizar, limparDuplicados, listarRegistos, quandoTxt } from "@/lib/servidor/reservas";
 
 /*
   Os lembretes de cada manhã (função agendada do Netlify → /api/lembretes):
@@ -54,6 +54,7 @@ export async function executarLembretes(agora = Date.now()) {
       itens: expirados.map((r) => ({ p: r.pedido, link: linkCasa(r), nota: `o prazo do sinal era ${quandoTxt(r.confirmacao!.prazoSinal)}` })),
     },
   ];
+  await limparDuplicados();
   const total = grupos.reduce((s, g) => s + g.itens.length, 0);
   let email: string | null = null;
   if (total) {

@@ -23,6 +23,7 @@ import {
   type TipoQuarto,
 } from "@/lib/reserva";
 import { obterArmazem } from "@/lib/servidor/armazem";
+import { passo } from "@/lib/servidor/diagnostico";
 import { PRAZO_SINAL_HORAS } from "@/lib/servidor/config";
 
 /*
@@ -87,6 +88,9 @@ export async function atualizar(ref: string, mudar: (r: Registo) => Mudanca | Pr
     if (!("registo" in m)) return m;
     m.registo.atualizadoEm = new Date().toISOString();
     if (await a.escrever(CHAVE(ref), m.registo, { etag: lido.etag })) return m;
+    passo("registo: alguém escreveu ao mesmo tempo (ou a leitura vinha atrasada); tentar outra vez", { ref, tentativa });
+    // As leituras são eventuais: dar tempo a que a versão nova chegue.
+    await new Promise((r) => setTimeout(r, 500 * (tentativa + 1)));
   }
   return { erro: "O pedido estava a ser alterado ao mesmo tempo. Tente outra vez.", estado: 409 };
 }
@@ -107,12 +111,44 @@ export const impressaoDe = (p: PedidoReserva) =>
     .slice(0, 24);
 
 const JANELA_DUPLICADOS_MS = 15 * 60 * 1000;
+const janela = (t: number) => Math.floor(t / JANELA_DUPLICADOS_MS);
+const chaveDuplicado = (impressao: string, j: number) => `duplicados/${impressao}-${j}`;
 
-export async function duplicadoRecente(impressao: string): Promise<string | null> {
+/*
+  Duplo envio. As leituras são eventuais (podem chegar com atraso), por isso
+  a garantia vem de uma escrita condicional: o primeiro pedido «reserva» a
+  chave desta janela de 15 min (onlyIfNew, verificado no servidor do Blobs);
+  um segundo pedido igual falha essa escrita e é tratado como duplicado.
+  Também se olha para a janela anterior (um envio repetido logo a seguir à
+  mudança de janela).
+  Devolve { duplicado: ref | "" } (ref "" se ainda não for legível) ou { reservado: chave }.
+*/
+export async function reservarImpressao(impressao: string): Promise<{ duplicado: string } | { reservado: string }> {
   const a = await obterArmazem();
-  const d = await a.ler<{ ref: string; em: string }>(`duplicados/${impressao}`);
-  if (!d || Date.now() - Date.parse(d.valor.em) > JANELA_DUPLICADOS_MS) return null;
-  return d.valor.ref;
+  const agora = Date.now();
+  const anterior = await a.ler<{ ref: string | null; em: string }>(chaveDuplicado(impressao, janela(agora) - 1));
+  if (anterior?.valor.ref && agora - Date.parse(anterior.valor.em) < JANELA_DUPLICADOS_MS) return { duplicado: anterior.valor.ref };
+  const chave = chaveDuplicado(impressao, janela(agora));
+  if (await a.escrever(chave, { ref: null, em: new Date(agora).toISOString() }, { etag: null })) return { reservado: chave };
+  const atual = await a.ler<{ ref: string | null }>(chave);
+  return { duplicado: atual?.valor.ref ?? "" };
+}
+
+/** Limpeza: chaves de duplicados com mais de um dia. */
+export async function limparDuplicados() {
+  const a = await obterArmazem();
+  const limite = janela(Date.now()) - 96;
+  for (const k of await a.listar("duplicados/")) {
+    const j = Number(k.split("-").pop());
+    if (Number.isFinite(j) && j < limite) await a.apagar(k);
+  }
+}
+
+/** Guarda a referência na chave do duplicado (ou liberta-a, se o pedido falhou). */
+export async function fecharImpressao(chave: string, ref: string | null) {
+  const a = await obterArmazem();
+  if (ref) await a.escrever(chave, { ref, em: new Date().toISOString() });
+  else await a.apagar(chave);
 }
 
 /** Cria o registo com uma referência nova e única: CAN-AAMM-NN (ano, mês, número do mês). */
@@ -134,10 +170,7 @@ export async function criarRegisto(pedido: PedidoReserva): Promise<Registo> {
       impressao,
       historico: [{ em: agora.toISOString(), acao: "Pedido recebido pelo site" }],
     };
-    if (await a.escrever(CHAVE(ref), registo, { etag: null })) {
-      await a.escrever(`duplicados/${impressao}`, { ref, em: agora.toISOString() });
-      return registo;
-    }
+    if (await a.escrever(CHAVE(ref), registo, { etag: null })) return registo;
   }
   throw new Error("Não foi possível gerar uma referência única.");
 }
@@ -145,7 +178,7 @@ export async function criarRegisto(pedido: PedidoReserva): Promise<Registo> {
 export async function apagarRegisto(r: Registo) {
   const a = await obterArmazem();
   await a.apagar(CHAVE(r.ref));
-  await a.apagar(`duplicados/${r.impressao}`);
+  for (const k of await a.listar(`duplicados/${r.impressao}`)) await a.apagar(k);
 }
 
 /* ------------------------------------------------------------------ */

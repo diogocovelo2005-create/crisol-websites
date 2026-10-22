@@ -2,6 +2,7 @@ import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import nodemailer from "nodemailer";
 import { config } from "@/lib/servidor/config";
+import { comTempo, passo } from "@/lib/servidor/diagnostico";
 
 export type Email = {
   para: string;
@@ -29,6 +30,14 @@ export const meioDeEnvio = () =>
   sem conta (ver /dev/emails).
 */
 export async function enviarEmail(original: Email): Promise<ResultadoEmail> {
+  const t0 = Date.now();
+  passo("email: antes", { meio: meioDeEnvio(), assunto: original.assunto.slice(0, 80), gmail: { utilizador: !!config.gmailUtilizador, passe: !!config.gmailPasse }, resend: !!config.resendChave });
+  const r = await enviarEmailSemRegisto(original);
+  passo("email: depois", { ms: Date.now() - t0, ok: r.ok, ...(r.ok ? {} : { erro: r.erro }) });
+  return r;
+}
+
+async function enviarEmailSemRegisto(original: Email): Promise<ResultadoEmail> {
   // EMAIL_PREFIXO_ASSUNTO (ex.: «[Teste]») marca os emails de um teste.
   const email = config.prefixoAssunto ? { ...original, assunto: `${config.prefixoAssunto} ${original.assunto}` } : original;
   const meio = meioDeEnvio();
@@ -68,9 +77,11 @@ async function enviarGmail(email: Email): Promise<ResultadoEmail> {
     port: 465,
     secure: true,
     auth: { user: config.gmailUtilizador, pass: config.gmailPasse },
-    connectionTimeout: 10000,
-    greetingTimeout: 10000,
-    socketTimeout: 15000,
+    // Curtos de propósito: a função do Netlify corta aos ~30 s; um SMTP preso tem de
+    // falhar a tempo de o pedido responder com o aviso do WhatsApp (e de sair o alerta).
+    connectionTimeout: 6000,
+    greetingTimeout: 6000,
+    socketTimeout: 8000,
   });
   try {
     const info = await transporte.sendMail({
@@ -128,6 +139,7 @@ export async function avisarFalha(contexto: string, detalhe: string, pedido?: im
   console.error(`[reserva] ${contexto}: ${detalhe}`);
   try {
     const { alertaFalha } = await import("@/lib/servidor/emails");
-    await enviarEmail({ ...alertaFalha(contexto, detalhe, pedido), para: config.emailAlertas });
+    // Com tempo-limite curto: se o problema for o próprio email, o alerta não pode prender o pedido.
+    await comTempo("alerta de falha", enviarEmail({ ...alertaFalha(contexto, detalhe, pedido), para: config.emailAlertas }), 6000);
   } catch {}
 }
