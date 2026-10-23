@@ -28,16 +28,17 @@ const req = createRequire(path.resolve('../../../.claude/skills/criar-base/packa
 const { chromium } = req('playwright');
 const CAL = '#f3e9d8', CAIX = '#7a2b2b', XISTO = '#221f1b';
 
-const letra = (fg, bg) => `<div style="width:512px;height:512px;background:${bg};border-radius:112px;display:flex;align-items:center;justify-content:center;overflow:hidden">
-  <span class="rustico-encorpado" style="font-size:540px;line-height:1;color:${fg};transform:translateY(-8px)">C</span></div>`;
+// «C» sozinho, sobre transparente; depois medimos a caixa real dos píxeis (trim) e centramo-la no quadrado
+const glifo = (fg) => `<span class="rustico-encorpado" style="font-size:600px;line-height:1.4;padding:60px;display:inline-block;color:${fg}">C</span>`;
+const letra = (fg, bg, alt = 0.8) => ({ glifo: glifo(fg), bg, alt });
 // janela de caixilho: moldura vermelha, quatro vidraças de cal (2 x 2) com travessa e montante
 const janela = `<svg width="512" height="512" viewBox="0 0 512 512"><rect width="512" height="512" rx="112" fill="${CAL}"/>
   <rect x="72" y="56" width="368" height="400" rx="20" fill="${CAIX}"/>
   <rect x="128" y="112" width="116" height="136" rx="4" fill="${CAL}"/><rect x="268" y="112" width="116" height="136" rx="4" fill="${CAL}"/>
   <rect x="128" y="280" width="116" height="120" rx="4" fill="${CAL}"/><rect x="268" y="280" width="116" height="120" rx="4" fill="${CAL}"/></svg>`;
 const VAR = {
-  a: { nome: 'C vermelho caixilho sobre cal', html: letra(CAIX, CAL) },
-  b: { nome: 'C cal sobre vermelho caixilho', html: letra(CAL, CAIX) },
+  a: { nome: 'C vermelho caixilho sobre cal', ...letra(CAIX, CAL) },
+  b: { nome: 'C cal sobre vermelho caixilho', ...letra(CAL, CAIX) },
   c: { nome: 'janela de caixilho', html: janela },
 };
 
@@ -56,15 +57,25 @@ function ico(p16, p32) {
   return Buffer.concat([head, ...dirs, ...imgs.map((i) => i[1])]);
 }
 
+const SO = process.argv[3];
 for (const [k, v] of Object.entries(VAR)) {
+  if (SO && SO !== k) continue;
   await p.evaluate((html) => {
     document.documentElement.style.background = 'transparent';
     document.body.innerHTML = `<div id="i" style="display:inline-block">${html}</div>`;
     document.body.style.cssText = 'margin:0;background:transparent';
-  }, v.html);
+  }, v.glifo ?? v.html);
   await p.evaluate(() => document.fonts.ready);
   await p.waitForTimeout(200);
-  const big = await p.locator('#i').screenshot({ omitBackground: true });
+  let big = await p.locator('#i').screenshot({ omitBackground: true });
+  if (v.glifo) {
+    const t = await sharp(big).trim({ threshold: 10 }).png().toBuffer();
+    const h = Math.round(512 * v.alt);
+    const g = await sharp(t).resize({ height: h }).png().toBuffer();
+    const gw = (await sharp(g).metadata()).width;
+    const fundo = Buffer.from(`<svg width="512" height="512"><rect width="512" height="512" rx="112" fill="${v.bg}"/></svg>`);
+    big = await sharp(fundo).composite([{ input: g, left: Math.round((512 - gw) / 2), top: Math.round((512 - h) / 2) }]).png().toBuffer();
+  }
   const sz = (n) => sharp(big).resize(n, n, { kernel: 'lanczos3' }).png({ compressionLevel: 9 }).toBuffer();
   const [p16, p32, p180, p512] = [await sz(16), await sz(32), await sz(180), await sz(512)];
   const d = path.join(OUT, k); fs.mkdirSync(d, { recursive: true });
