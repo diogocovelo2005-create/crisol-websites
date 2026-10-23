@@ -4,3 +4,4 @@ capturas/
 heros/
 .env
 *.lnk
+node_modules/

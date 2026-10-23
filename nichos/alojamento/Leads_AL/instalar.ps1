@@ -17,6 +17,13 @@ if (-not (Get-Command node -ErrorAction SilentlyContinue) -and -not (Test-Path $
   }
 }
 
+# Playwright para a avaliação dos sites (usa o Edge já instalado: não descarrega browser nenhum)
+$npm = Get-Command npm -ErrorAction SilentlyContinue
+if (-not $npm) { $npm = Join-Path $env:ProgramFiles 'nodejs\npm.cmd' }
+Push-Location $d
+& $npm install --no-audit --no-fund --silent
+Pop-Location
+
 # Dados vazios (sem BOM, para o Node conseguir ler). Se já existirem, ficam como estão.
 $data = Join-Path $d 'data'
 New-Item -ItemType Directory -Force $data | Out-Null

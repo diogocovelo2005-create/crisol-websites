@@ -39,6 +39,19 @@ Um concelho pequeno demora alguns minutos; um grande (Coimbra, Aveiro) pode demo
 
 Se o Claude errar (por exemplo, disse que não tinha site mas tinha), marca a lead como **Falha Claude** e escolhe o tipo de falha. Da próxima vez, o Claude lê essas falhas antes de começar.
 
+## Follow-ups no Google Calendar (opcional, uma vez)
+A página **Follow-up** pode pôr cada follow-up no teu Google Calendar, num calendário só para isto chamado **Leads AL**. Cada follow-up é um bloco de 15 minutos: o primeiro do dia às 9:00, o seguinte às 9:15, e assim por diante, pela ordem da página (enviar base, bases enviadas, propostas). Cada bloco tem aviso no telemóvel à hora certa, e o primeiro do dia também avisa uma hora antes. Quando adias, mudas a data ou a lead fecha, o evento muda ou desaparece sozinho. Os atrasados passam para hoje.
+
+1. Vai a [console.cloud.google.com](https://console.cloud.google.com) com a tua conta Google e cria um projeto (ou usa um que já tenhas).
+2. Em **APIs e serviços → Biblioteca**, ativa a **Google Calendar API**.
+3. Em **Google Auth Platform**, carrega em **Começar**: o nome da app, o teu email, público **Externo**. Cria.
+4. Em **Público-alvo → Usuários de teste → Adicionar usuários**, põe o teu email e guarda.
+5. Em **Clientes → Criar cliente**, escolhe o tipo **App para computador**, cria e carrega em **Transferir JSON**.
+6. Muda o nome do ficheiro para `google-credentials.json` e põe-no na pasta `data` desta aplicação.
+7. No dashboard, abre **Follow-up → Ligar Google Calendar** e escolhe a tua conta. O Google avisa que "não verificou esta app": é normal, porque a app é tua. Carrega em **Continuar**.
+
+A app só consegue mexer no calendário Leads AL, que é ela própria que cria. Não vê nem altera os teus outros calendários. Enquanto a app estiver "Em teste" na Google Cloud, o Google pede para voltares a ligar de 7 em 7 dias. O dashboard mostra uma faixa vermelha com o botão **Voltar a ligar**.
+
 ## Combinar com a equipa
 Cada pessoa tem os seus dados no seu PC. **Dividam os concelhos entre vocês** para não ligarem duas vezes ao mesmo alojamento.
 

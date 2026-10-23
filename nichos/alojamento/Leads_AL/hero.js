@@ -19,10 +19,13 @@ if (args[0] === '--casa') {
   saida = path.join(__dirname, 'capturas', id + '.png');
 }
 
-// Edge ou, se não houver, Chrome (os dois aceitam as mesmas opções)
+// Edge ou, se não houver, Chrome (os dois aceitam as mesmas opções). Windows ou Mac.
 const PF = [process.env['ProgramFiles(x86)'], process.env.ProgramFiles, process.env.LOCALAPPDATA].filter(Boolean);
-const EDGE = PF.flatMap(d => [path.join(d, 'Microsoft\\Edge\\Application\\msedge.exe'), path.join(d, 'Google\\Chrome\\Application\\chrome.exe')])
-  .find(p => fs.existsSync(p));
+const MAC = ['/Applications', path.join(process.env.HOME || '', 'Applications')];
+const EDGE = [
+  ...PF.flatMap(d => [path.join(d, 'Microsoft\\Edge\\Application\\msedge.exe'), path.join(d, 'Google\\Chrome\\Application\\chrome.exe')]),
+  ...MAC.flatMap(d => [path.join(d, 'Microsoft Edge.app/Contents/MacOS/Microsoft Edge'), path.join(d, 'Google Chrome.app/Contents/MacOS/Google Chrome')]),
+].find(p => fs.existsSync(p));
 if (!EDGE) { console.error('Nem Edge nem Chrome encontrados'); process.exit(1); }
 fs.mkdirSync(path.dirname(saida), { recursive: true });
 

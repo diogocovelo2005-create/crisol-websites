@@ -1,0 +1,8 @@
+{
+  "name": "leads-al",
+  "private": true,
+  "description": "Dashboard Leads AL. O Playwright serve só o ferramentas/avaliar-sites.mjs e usa o Edge ou o Chrome já instalados.",
+  "dependencies": {
+    "playwright-core": "1.62.1"
+  }
+}

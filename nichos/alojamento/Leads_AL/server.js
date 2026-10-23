@@ -5,6 +5,8 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const { execFile } = require('child_process');
+const google = require('./google');
+const tarefas = require('./tarefas');
 
 const ROOT = __dirname;
 const DATA = path.join(ROOT, 'data');
@@ -61,10 +63,22 @@ function casas() {
 }
 const pastasSites = () => casas().map(c => c.slug);
 
+// Base enviada: a retrospetiva da casa corre sozinha (oficina/aprendizagem).
+// Só dentro do repositório; uma cópia instalada a partir do zip não a tem.
+const RETRO = path.join(ROOT, '..', '..', '..', 'oficina', 'aprendizagem', 'scripts', 'retro.mjs');
+function retrospetiva(pasta) {
+  if (!pasta || !pastasSites().includes(pasta) || !fs.existsSync(RETRO)) return;
+  execFile(process.execPath, [RETRO, 'lancar', pasta], { windowsHide: true }, () => {});
+}
+
 function send(res, code, body, type = 'application/json; charset=utf-8') {
   res.writeHead(code, { 'Content-Type': type, 'Cache-Control': 'no-store' });
   res.end(typeof body === 'string' || Buffer.isBuffer(body) ? body : JSON.stringify(body));
 }
+
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const pagina = (titulo, texto) => `<!doctype html><meta charset="utf-8"><title>${titulo}</title>
+<body style="font:16px/1.5 system-ui,sans-serif;max-width:520px;margin:80px auto;padding:0 16px;color:#1b1f27"><h1 style="font-size:22px">${titulo}</h1><p>${texto}</p></body>`;
 
 const server = http.createServer((req, res) => {
   const url = decodeURIComponent(req.url.split('?')[0]);
@@ -79,21 +93,75 @@ const server = http.createServer((req, res) => {
       req.on('end', () => {
         try {
           const estado = readJSON('estado.json', {});
+          const antes = estado[m[1]]?.estado;
           estado[m[1]] = { ...JSON.parse(body), atualizado: new Date().toISOString() };
           writeJSON('estado.json', estado);
           send(res, 200, estado[m[1]]);
+          tarefas.fecharSozinhas(); // "Base enviada" fecha a tarefa "enviar a base"
+          google.agendar(); // o Google Calendar acompanha (em segundo plano)
+          if (estado[m[1]].estado === 'base_enviada' && antes !== 'base_enviada') retrospetiva(estado[m[1]].pasta);
         } catch (e) { send(res, 500, { erro: e.message }); }
       });
       return;
     }
     if (req.method === 'GET' && url === '/api/pastas') return send(res, 200, casas());
+    // Tarefas: data/tarefas.json (tarefas.js). Cada alteração acerta o Google Calendar.
+    if (req.method === 'GET' && url === '/api/tarefas') {
+      if (tarefas.fecharSozinhas()) google.agendar();
+      return send(res, 200, { ...tarefas.ler(), auto: tarefas.textoAuto });
+    }
+    const mt = url.match(/^\/api\/tarefas\/([\w-]+)$/);
+    if (mt && req.method === 'PUT') {
+      let body = '';
+      req.on('data', c => (body += c));
+      req.on('end', () => {
+        try {
+          const t = { ...JSON.parse(body), id: mt[1] };
+          if (!String(t.titulo || '').trim() || !/^\d{4}-\d{2}-\d{2}$/.test(t.prazo || '')) return send(res, 400, { erro: 'título e prazo são obrigatórios' });
+          if (t.hora && !/^([01]\d|2[0-3]):[0-5]\d$/.test(t.hora)) return send(res, 400, { erro: 'hora inválida' });
+          if (!t.hora) delete t.hora;
+          if (t.auto === undefined) t.auto = tarefas.regra(t); // null = desligada à mão, fica assim
+          const dados = tarefas.ler();
+          const i = dados.tarefas.findIndex(x => x.id === t.id);
+          if (i < 0) dados.tarefas.push(t); else dados.tarefas[i] = t;
+          tarefas.gravar(dados);
+          send(res, 200, t);
+          google.agendar();
+        } catch (e) { send(res, 500, { erro: e.message }); }
+      });
+      return;
+    }
+    if (mt && req.method === 'DELETE') {
+      const dados = tarefas.ler();
+      dados.tarefas = dados.tarefas.filter(x => x.id !== mt[1]);
+      tarefas.gravar(dados);
+      send(res, 200, { ok: true });
+      google.agendar();
+      return;
+    }
+    // Google Calendar: estado, ligar (abre o consentimento do Google) e o regresso de lá
+    if (req.method === 'GET' && url === '/api/google') return send(res, 200, google.estado());
+    if (req.method === 'GET' && url === '/google/ligar') {
+      if (!google.credenciais()) return send(res, 200, pagina('Falta o ficheiro de credenciais',
+        'Põe o ficheiro que descarregaste da Google Cloud Console em <code>data/google-credentials.json</code> e volta a carregar em "Ligar Google Calendar". Os passos estão no LEIA-ME.'), 'text/html; charset=utf-8');
+      res.writeHead(302, { Location: google.urlLigar() });
+      return res.end();
+    }
+    if (req.method === 'GET' && url === '/google/callback') {
+      const q = new URL(req.url, 'http://x').searchParams;
+      if (q.get('error') || !q.get('code')) return send(res, 400, pagina('Não ficou ligado', 'O Google respondeu: ' + esc(q.get('error') || 'sem código') + '. Podes fechar esta janela e tentar outra vez.'), 'text/html; charset=utf-8');
+      google.callback(q.get('code'))
+        .then(() => { google.agendar(); send(res, 200, pagina('Google Calendar ligado', 'Os follow-ups vão aparecer no calendário <b>Leads AL</b>. Podes fechar esta janela.'), 'text/html; charset=utf-8'); })
+        .catch(e => send(res, 500, pagina('Não ficou ligado', esc(e.message)), 'text/html; charset=utf-8'));
+      return;
+    }
     // Versões para a janela aberta se atualizar sozinha: dados = leads.json (escrito pelo Claude),
     // casas = última alteração em casas/*/site e nos heros, codigo = ficheiros da app
     if (req.method === 'GET' && url === '/api/versao') {
       const mt = f => { try { return fs.statSync(path.join(ROOT, f)).mtimeMs; } catch { return 0; } };
       const cs = casas();
       return send(res, 200, {
-        dados: mt('data/leads.json'), codigo: Math.max(mt('index.html'), mt('app.js'), mt('style.css')),
+        dados: mt('data/leads.json'), tarefas: mt('data/tarefas.json'), codigo: Math.max(mt('index.html'), mt('app.js'), mt('style.css')),
         casas: cs.map(c => `${c.slug}:${c.deploy}:${c.alterado}:${c.hero}`).join('|'),
       });
     }
@@ -136,4 +204,8 @@ server.on('error', e => {
 server.listen(PORT, '127.0.0.1', () => {
   console.log(`Dashboard em http://localhost:${PORT}`);
   abrir();
+  google.iniciar(PORT);
+  google.agendar(); // acerta o calendário com o que mudou enquanto o servidor esteve desligado
+  // de 5 em 5 minutos: tarefas fechadas sozinhas, eventos apagados no telemóvel, leads novas do Claude, mudança de dia
+  setInterval(() => { try { tarefas.fecharSozinhas(); } catch (e) { console.error('Tarefas:', e.message); } google.agendar(); }, 5 * 60 * 1000);
 });
