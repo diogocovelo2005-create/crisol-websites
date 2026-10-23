@@ -26,6 +26,8 @@ async function serper(q) {
       const r = await fetch('https://google.serper.dev/search', { method: 'POST', headers: { 'X-API-KEY': SERPER, 'Content-Type': 'application/json' },
         body: JSON.stringify({ q, gl: 'pt', hl: 'pt-pt', num: 10 }), signal: AbortSignal.timeout(20000) });
       if (r.status === 429) { await pausa(5000 * (t + 1)); continue; }
+      // o plano grátis recusa alguns padrões ("atendinha.guesthouse" parece um domínio): tenta com a pesquisa limpa
+      if (r.status === 400 && /[."]/.test(q)) { q = q.replace(/\./g, ' ').replace(/_/g, ' ').replace(/\s+/g, ' '); continue; }
       if (!r.ok) return null;
       const j = await r.json();
       const resultados = (j.organic || []).map(o => ({ url: o.link, titulo: o.title || '', texto: o.snippet || '' }));

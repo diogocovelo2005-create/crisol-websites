@@ -65,13 +65,34 @@ const TERRAS = [...new Set([CONC, ...cand.flatMap(c => [c.localidade, ...(String
 const RUIDO = /^(feel|discovery|douro|valley|regua|peso|by|your|in|t0|t1|t2|t3|apartments?|apartamentos?|luxury|private|suites?|peso-da-regua)$/;
 const dist = s => palavras(s).filter(w => w.length > 2 && !RUIDO.test(w));
 const AUTO = {};
-const ligaveis = [...Object.entries(bk).filter(([, a]) => !a.registo && a.do_concelho !== false && a.cp && a.ativa).map(([sl, a]) => ['bk-' + sl, a.nome]),
+
+const ligaveis = [...Object.entries(bk).filter(([, a]) => !a.registo && a.ativa && (a.lat != null ? a.do_concelho === true : a.do_concelho !== false && !!a.cp)).map(([sl, a]) => ['bk-' + sl, a.nome]),
   ...Object.entries(ab).filter(([, a]) => !a.registo && !a.al && a.ativa).map(([i, a]) => ['ab-' + i, a.titulo])];
 for (const [id, nome] of ligaveis) {
   if (MAO[id] !== undefined || FORA[id]) continue;
   const w = dist(nome); if (!w.length) continue;
   const hits = cand.filter(c => { const cw = new Set([c.nome, ...(c.unidades || [])].flatMap(dist)); return w.every(x => cw.has(x)) || ([c.nome, ...(c.unidades || [])].some(n => { const nw = dist(n); return (nw.length >= 2 || nw[0]?.length >= 6) && nw.every(x => w.includes(x)); })); });
+  // desempates: o nome sem espaços igual ("Pombinhos Douro" = "POMBINHOSDOURO"); ou todos do mesmo titular (fica o maior)
+  const junto = x => sa(x).replace(/[^a-z0-9]/g, '');
+  const iguais = (hits.length ? hits : cand).filter(c => [c.nome, ...(c.unidades || [])].some(n => junto(n) === junto(nome) || junto(n) === junto(nome).replace(/douro$/, '') || (junto(n).length >= 6 && junto(nome).startsWith(junto(n)))));
   if (hits.length === 1) AUTO[id] = hits[0].id;
+  else if (iguais.length === 1) AUTO[id] = iguais[0].id;
+  else if (hits.length > 1 && new Set(hits.map(c => sa(c.responsavel))).size === 1) AUTO[id] = hits.slice().sort((a, b) => b.capacidade - a.capacidade)[0].id;
+}
+// "X by Casa Y": a casa Y do registo (mesmo dono)
+for (const [id, nome] of ligaveis) {
+  if (MAO[id] !== undefined || AUTO[id] || FORA[id]) continue;
+  const by = String(nome).match(/\bby (.+)$/i); if (!by) continue;
+  const w = dist(by[1]); const hits = w.length ? cand.filter(c => { const cw = dist(c.nome); return cw.length && cw.every(x => w.includes(x)); }) : [];
+  if (hits.length === 1) AUTO[id] = hits[0].id;
+}
+// anúncios sem registo com o mesmo nome no Booking e no Airbnb ("CASA DAS PEDREIRAS", "Shades of Green") = uma casa
+const chaveNome = n => dist(n).sort().join(' ');
+const porNome = new Map();
+for (const [id, nome] of ligaveis) {
+  if (MAO[id] !== undefined || AUTO[id] || FORA[id]) continue;
+  const k = chaveNome(nome); if (!k) continue;
+  if (porNome.has(k)) AUTO[id] = porNome.get(k); else porNome.set(k, id);
 }
 const raiz = k => { for (let i = 0; i < 5; i++) k = MAO[k] || AUTO[k] || JUNTA[k] || k; return k; };
 // anúncio do Airbnb sem registo cuja terra ("Casa em Cidadelhe") não é deste concelho: o mapa mistura vizinhos
@@ -80,7 +101,10 @@ const abForaDaTerra = a => { const G = lerPoligono(CONC); if (G && a.lat != null
 // ---------- unidades ----------
 const un = new Map();
 const add = (k, t, a) => { if (FORA[k]) return; k = raiz(k); if (FORA[k]) return; (un.get(k) || un.set(k, { bk: [], ab: [], outras: [] }).get(k))[t].push(a); };
-for (const [s, a] of Object.entries(bk)) if (a.do_concelho !== false && a.cp && a.ativa) add(a.registo || 'bk-' + s, 'bk', { ...a, slug: s });
+// com coordenadas decide o contorno (a morada pode vir sem código postal); sem coordenadas, o código postal
+const doCaBk = a => a.ativa && (a.lat != null ? a.do_concelho === true : a.do_concelho !== false && !!a.cp);
+// anúncio ligado a uma casa do registo mas fora do concelho (homónima: a "Casa dos Avós" de Aljezur) não conta para ela
+for (const [s, a] of Object.entries(bk)) if (doCaBk(a)) add(a.registo || 'bk-' + s, 'bk', { ...a, slug: s });
 for (const [i, a] of Object.entries(ab)) if (a.ativa && !(a.al && !a.registo) && !(!a.registo && abForaDaTerra(a))) add(a.registo || 'ab-' + i, 'ab', { ...a, id: i });
 // casas que o paradas.mjs encontrou ativas (anúncio com outro nome, Vrbo, Hostelworld…)
 // (casas novas do Maps/Câmara — ids mp-/cm-: só com morada do concelho no Booking, ou terra do concelho no Airbnb,
@@ -137,7 +161,7 @@ if (FASE === 'unidades') {
   escreve(f('lista-verificar'), ver.map(({ id, nome, localidade, nomes }) => ({ id, nome, localidade, nomes })));
   console.log(`${unidades.length} casas ativas (${unidades.filter(u => u.pequena).length} pequenas, fora) · sem registo ${unidades.filter(u => !u.registo).length} · a verificar ${ver.length}`);
   console.log(`por verificar antes de dar como paradas: ${pv.length} (registo ${pv.filter(x => !x.origem).length}, Maps ${pv.filter(x => x.origem === 'Google Maps').length}, Câmara ${pv.filter(x => x.origem === 'Câmara').length}) -> node ferramentas/paradas.mjs "${CONC}"`);
-  if (Object.keys(AUTO).length) console.log('ligados ao registo pelo nome (confirmar; se algum estiver errado, pô-lo em MAO com null ou com o id certo):\n  ' + Object.entries(AUTO).map(([a, c]) => `${a} -> ${c} ${cand.find(x => x.id === c).nome}`).join('\n  '));
+  if (Object.keys(AUTO).length) console.log('ligados ao registo pelo nome (confirmar; se algum estiver errado, pô-lo em MAO com null ou com o id certo):\n  ' + Object.entries(AUTO).map(([a, c]) => `${a} -> ${c} ${cand.find(x => x.id === c)?.nome || "(o mesmo nome noutro anúncio)"}`).join('\n  '));
   const semReg = unidades.filter(u => !u.registo);
   if (semReg.length) console.log('anúncios sem registo (ver se são casas do registo com outro nome -> MAO em ajustes):\n  ' + semReg.map(u => `${u.id} | ${u.nome}`).join('\n  '));
   process.exit(0);
@@ -249,7 +273,8 @@ function gestora(u) {
   for (const [k, v] of Object.entries(VER)) if (k.split('~')[0] === u.id && /^gestora\b/i.test(v.dono || '') && !/plataforma/i.test(v.dono))
     return { nome: v.dono.replace(/^gestora:?\s*/i, '').replace(/\s*\(.*$/, '').trim(), prova: `o site da casa (${host(v.url)}) é da ${v.dono}` };
   const titulares = u.membros.map(id => cand.find(c => c.id === id)?.responsavel || '');
-  const txt = [u.nome, ...u.nomes, ...u.bk.map(a => a.gerido_por || ''), ...u.ab.map(a => a.anfitriao_nome || ''), ...titulares].join(' | ');
+  // inclui o endereço do anúncio ("casa-da-lameira-by-feel-discovery"): a gestora às vezes só aparece aí
+  const txt = [u.nome, ...u.nomes, ...u.bk.map(a => `${a.gerido_por || ''} ${(a.url || '').replace(/[-_/]/g, ' ')}`), ...u.ab.map(a => a.anfitriao_nome || ''), ...titulares].join(' | ');
   for (const g of conhecidas) if (new RegExp(g.padrao || g.nome, 'i').test(txt)) return { nome: g.nome, prova: `"${g.nome}" no anúncio, na gestão ou no titular (gestora conhecida)` };
   // "… by X": gestora, a não ser que X seja outra casa do registo (é o mesmo dono: "Casa das Vinhas Velhas by Casa do Poço")
   const by = [u.nome, ...u.nomes].join(' ').match(/\bby (\p{Lu}[\p{L}\w'’ ]{2,30})/u);

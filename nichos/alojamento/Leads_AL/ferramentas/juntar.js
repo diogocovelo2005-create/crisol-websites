@@ -65,6 +65,17 @@ function validar(l) {
   return e;
 }
 
+// Auditoria (ferramentas/auditar.js): tem de ter passado DEPOIS da última montagem. Prova, com números, que não ficou
+// nenhuma casa por apanhar nem por verificar; sem ela não se grava.
+{
+  const nf = String(concelho).toLowerCase().replace(/\s+/g, '-');
+  const fa = path.join(DATA, `auditoria-${nf}.json`), fn = path.resolve(entrada);
+  const aud = lerJSON(fa, null);
+  if (!aud || !aud.ok || fs.statSync(fa).mtimeMs < fs.statSync(fn).mtimeMs) {
+    console.error(`NADA GRAVADO. Falta a auditoria OK do concelho, feita depois da última montagem:\n  node ferramentas/auditar.js "${concelho}"`);
+    process.exit(1);
+  }
+}
 const erros = novas.flatMap(l => validar(l).map(m => `${l.id || '?'} ${l.nome || ''}: ${m}`));
 if (erros.length) { console.error(`NADA GRAVADO. ${erros.length} erro(s):\n- ` + erros.join('\n- ')); process.exit(1); }
 

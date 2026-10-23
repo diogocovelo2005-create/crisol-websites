@@ -128,9 +128,18 @@ node ferramentas/montar.js "<Concelho>" final          # outra vez, com os telef
 - **Casa A, B ou gestora sem telefone:** o `contactos.mjs` procura no site próprio, em duas pesquisas web e nas páginas que falam da casa. Se ainda assim não houver, procurar à mão no Facebook/Instagram da casa antes de a deixar sair. Só sai com `verificacao.contacto` a dizer onde se procurou.
 - **Casa C sem telefone:** sai logo.
 
+### Passo 7 — Auditoria (obrigatória)
+
+```bash
+node ferramentas/auditar.js "<Concelho>"
+```
+Prova, com números, que não ficou nenhuma casa por apanhar nem por verificar: Booking lido até ao total que o Booking diz ter; coordenadas e contorno; Airbnb lido da página; cada casa do registo com 5+ pessoas ativa ou pesquisada pelo nome e pelas redes; cada casa do Maps/Câmara pesquisada; cada casa ativa com Google, pesquisa e domínios; cada site com veredito; cada casa boa sem telefone com procura a fundo; paradas com prova. **FALHA** = trabalho por fazer (a própria linha diz que ferramenta correr). **AVISO** = decisões a rever antes de mostrar: sinais de gestora não marcados (decidir cada um: gestora → `gestoras-conhecidas.json` ou `EXTRA`; dono com várias casas → nada) e anúncios sem registo (ligar em `MAO` se forem do registo).
+
+**Nunca dizer ao Diogo que um concelho está completo sem a auditoria OK e os avisos revistos.** Se ele perguntar "tens a certeza?", a resposta é o resultado da auditoria, não uma nova volta.
+
 Mostrar o resumo ao Diogo (ver abaixo) e, com o "sim":
 ```bash
-node ferramentas/juntar.js data/novos-<c>.json
+node ferramentas/juntar.js data/novos-<c>.json      # recusa gravar sem auditoria OK feita depois da última montagem
 ```
 O `juntar.js` valida as regras; se der erros, **nada é gravado**: corrigir a verificação (não inventar o campo) e voltar a correr.
 
@@ -156,4 +165,4 @@ Com site: `"site": { "url", "veredito": "antigo", "captura": "capturas/<id>.png"
 
 ## Resumo ao Diogo
 
-Por concelho: a conta de controlo (casas no Booking vs lidas), casas ativas, **Ligar** (gestoras, A, B, C), **Dúvida**, **Fora** por razão (paradas, nota, site moderno, sem contacto), as 10 melhores com o sub-nicho e o gancho, e o que ficou fraco na verificação. No chat, não em ficheiro.
+Por concelho: o resultado da auditoria (OK e os avisos que ficaram, com a decisão de cada um), a conta de controlo (casas no Booking vs lidas), casas ativas, **Ligar** (gestoras, A, B, C), **Dúvida**, **Fora** por razão (paradas, nota, site moderno, sem contacto), as 10 melhores com o sub-nicho e o gancho, e o que ficou fraco na verificação. No chat, não em ficheiro.
