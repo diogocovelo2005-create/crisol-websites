@@ -103,6 +103,16 @@ for (const l of novas) {
     protegidas++;
   } else { porId.set(l.id, l); atualizadas++; }
 }
+// leads deste concelho que já não aparecem na corrida (juntaram-se a outra casa, ou saíram do concelho) e que o
+// utilizador não trabalhou: retiram-se, para não ficarem repetidas. As trabalhadas ficam sempre.
+const idsNovos = new Set(novas.map(l => l.id));
+let retiradas = 0;
+for (const [id, l] of porId) {
+  if (l.concelho !== concelho || idsNovos.has(id)) continue;
+  const s = estado[id];
+  if (s && (s.estado !== 'por_contactar' || s.decisao || s.estrela || s.notas?.length)) continue;
+  porId.delete(id); retiradas++;
+}
 leads = [...porId.values()];
 
 const concelhos = (atual.demo ? [] : atual.concelhos || []).filter(c => c.nome !== concelho);
@@ -116,5 +126,5 @@ JSON.parse(fs.readFileSync(f + '.tmp', 'utf8'));
 fs.renameSync(f + '.tmp', f);
 
 const conta = fn => novas.filter(fn).length;
-console.log(`${concelho}: ${novasN} novas, ${atualizadas} atualizadas, ${protegidas} protegidas (já trabalhadas por ti)`);
+console.log(`${concelho}: ${novasN} novas, ${atualizadas} atualizadas, ${protegidas} protegidas (já trabalhadas por ti), ${retiradas} retiradas (já não estão na corrida)`);
 console.log(`para contactar ${conta(l => l.funil === 'contactar')} · dúvida ${conta(l => l.funil === 'duvida')} · eliminadas ${conta(l => l.funil === 'eliminado')}`);
