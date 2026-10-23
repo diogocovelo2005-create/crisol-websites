@@ -92,12 +92,14 @@ Feita pelo `pontuacao.js` (o dashboard e o `montar.js` usam o mesmo). Só 4 cois
 
 Se o `pontuacao.js` classificar mal uma casa (ex.: quinta de vinho sem a palavra "vinho" no nome), fixar à mão em `ajustes` → `EXTRA.<id>.subnicho`.
 
-**Gestoras** (empresas que gerem casas de outros, pequenas e grandes): têm separador próprio no dashboard e ficam sempre no topo; uma chamada vale por todas as casas. O `montar.js` marca-as por:
-1. Booking "gerido por X" com X diferente do nome da casa e em 2+ casas do concelho (ou anfitrião profissional);
-2. Airbnb: o mesmo anfitrião profissional em 3+ anúncios do concelho;
-3. nomes "by X" nos anúncios;
-4. a lista `ferramentas/gestoras-conhecidas.json` (`[{ "nome", "padrao" }]`; acrescentar as que se forem descobrindo).
-Gestora à mão: `ajustes` → `EXTRA.<id>.gestora = { nome, prova }`.
+**Gestoras** (empresas que gerem casas de OUTROS donos, pequenas e grandes): têm separador próprio no dashboard e ficam sempre no topo; uma chamada vale por todas as casas. Uma casa de gestora com telefone vai sempre para as Gestoras, seja qual for o site da casa (quem compra é a gestora), e entra mesmo que a casa tenha menos de 5 pessoas. O `montar.js` marca-as por:
+1. a lista `ferramentas/gestoras-conhecidas.json` (Feel Discovery, Holidu, FERO, Alcmena, Quantique, gestoras do Porto…; acrescentar as que se forem descobrindo) no nome, no "gerido por" ou no titular;
+2. o site da casa ser de uma gestora (o subagente escreve `dono: "gestora X"`);
+3. "… by X" no anúncio, se X não for outra casa do registo;
+4. Booking "gerido por X" com nome de empresa de gestão (Homes, Rentals, Villas, Gestão…) ou em 2+ casas do concelho;
+5. Airbnb: o mesmo anfitrião com 3+ anúncios de casas diferentes de **2 ou mais titulares** do registo;
+6. titular do registo com nome de empresa de gestão.
+**Dono com várias casas não é gestora** (Bugalha com 9 lofts, Imperial Douro com 8 apartamentos, o mesmo titular com 3 casas): a diferença é gerir casas de titulares diferentes. Gestora à mão: `ajustes` → `EXTRA.<id>.gestora = { nome, prova }`.
 
 ### Passo 5 — Site
 

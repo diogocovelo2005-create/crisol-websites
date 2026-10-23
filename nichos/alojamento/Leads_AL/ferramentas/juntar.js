@@ -39,7 +39,7 @@ function validar(l) {
   const regra = !a ? 'sem prova de atividade (nenhuma plataforma lida nem redes ativas)'
     : notaBk ? `Booking ${b.nota} com ${b.avaliacoes} avaliações (mínimo 7,5; entre 7,5 e 8 só com mais de 50)`
     : airbnb ? `Airbnb ${airbnb.nota} com ${airbnb.avaliacoes} avaliações (mínimo 4,2)`
-    : l.site?.veredito === 'moderno' ? 'site moderno'
+    : l.site?.veredito === 'moderno' && !l.gestora ? 'site moderno' // casa de gestora: quem compra é a gestora
     : semTel ? 'sem contacto'
     : null;
   if (regra && l.funil !== 'eliminado') e.push(`${regra}: tem de ser eliminado`);
@@ -52,14 +52,14 @@ function validar(l) {
   if (a && (!a.fonte || !a.url)) e.push('atividade precisa de fonte (Booking, Airbnb, Vrbo, Hostelworld, Facebook, Instagram) e url');
   // Site moderno só com prova de que é recente: design novo no Wayback (3 anos ou menos) ou plataforma recente.
   // Sinais que também existem em sites antigos (https, telemóvel, WordPress, foto grande, cookies, ©) não contam.
-  if (l.site?.veredito === 'moderno' && !l.site.prova) e.push('site moderno precisa de "prova" (Wayback ou plataforma recente); sem prova é "duvida"');
+  if (l.site?.veredito === 'moderno' && !l.site.prova && !l.gestora) e.push('site moderno precisa de "prova" (Wayback ou plataforma recente); sem prova é "duvida"');
   if (!regra || regra === 'sem contacto') {
     // Regra de ouro: só se afirma "sem site" com as 3 verificações feitas e registadas
     for (const c of ['maps', 'pesquisa', 'dominio']) if (!v[c]) e.push(`verificacao.${c} em falta`);
     if (l.site) {
       if (!l.site.url || !['antigo', 'moderno', 'duvida'].includes(l.site.veredito)) e.push('site precisa de url e veredito antigo/moderno/duvida');
       const esperado = { antigo: 'contactar', duvida: 'duvida' }[l.site.veredito];
-      if (!regra && esperado && l.funil !== esperado) e.push(`site ${l.site.veredito} -> funil devia ser "${esperado}"`);
+      if (!regra && esperado && l.funil !== esperado && !l.gestora) e.push(`site ${l.site.veredito} -> funil devia ser "${esperado}"`);
     } else if (!regra && l.funil !== 'contactar') e.push('sem site -> funil devia ser "contactar"');
   }
   return e;

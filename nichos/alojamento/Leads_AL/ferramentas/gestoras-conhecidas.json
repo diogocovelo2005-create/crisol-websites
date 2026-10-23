@@ -1,1 +1,19 @@
-[{"nome":"Feel Discovery","padrao":"feel discovery"}]
+[
+ { "nome": "Feel Discovery", "padrao": "feel ?discovery" },
+ { "nome": "Holidu", "padrao": "\\bholidu\\b" },
+ { "nome": "FERO - Slow Living Homes", "padrao": "\\bby fero\\b|fero - slow living" },
+ { "nome": "Alcmena", "padrao": "\\balcmena\\b" },
+ { "nome": "Quantique", "padrao": "\\bquantique\\b" },
+ { "nome": "Ecorustics", "padrao": "\\becorustics\\b" },
+ { "nome": "Ahcor Housing", "padrao": "\\bahcor\\b" },
+ { "nome": "Domus26", "padrao": "\\bdomus ?26\\b" },
+ { "nome": "Host Wise", "padrao": "\\bhost ?wise\\b" },
+ { "nome": "Houst", "padrao": "\\bhoust\\b" },
+ { "nome": "GuestReady", "padrao": "\\bguest ?ready\\b" },
+ { "nome": "One Fine BnB", "padrao": "\\bone fine b(n|&)b\\b" },
+ { "nome": "Amarante Villas", "padrao": "\\bamarante villas\\b" },
+ { "nome": "LovelyStay", "padrao": "\\blovely ?stay\\b" },
+ { "nome": "Feels Like Home", "padrao": "\\bfeels like home\\b" },
+ { "nome": "Da Home", "padrao": "\\bda home\\b" },
+ { "nome": "SuperAnfitriões", "padrao": "\\bsuper ?anfitri" }
+]

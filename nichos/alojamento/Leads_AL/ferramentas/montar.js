@@ -234,21 +234,40 @@ for (const u of unidades) {
   for (const a of u.bk) if (a.gerido_por) (porGerente.get(sa(a.gerido_por)) || porGerente.set(sa(a.gerido_por), new Set()).get(sa(a.gerido_por))).add(u.id);
   for (const a of u.ab) if (a.anfitriao_chave) (porAnfitriao.get(a.anfitriao_chave) || porAnfitriao.set(a.anfitriao_chave, new Set()).get(a.anfitriao_chave)).add(u.id);
 }
+// nome de empresa de gestão (no "gerido por" do Booking ou no titular do registo)
+const EMPRESA_GESTAO = /\b(homes?|rentals?|gest[aã]o|management|properties|villas|hosting|stays?|hospitality|alojamentos)\b/i;
+// nomes distintos de casa num conjunto de anúncios ("Casa da Glorinha", "Casa da Rosalina"… = casas diferentes;
+// "Suite Arinto", "Suite Touriga", "Quarto Twin" = quartos da mesma casa)
+const casasDistintas = titulos => new Set(titulos.filter(t => !/^(su[ií]te|quarto|room|apartamento \d|apartment|t\d)\b/i.test(t.trim()))
+  .map(t => palavras(t).filter(w => !/^\d+$/.test(w)).slice(0, 2).join(' ')).filter(Boolean)).size;
+// anfitrião do Airbnb -> todos os anúncios lidos dele (de cá e dos vizinhos)
+const anunciosDoAnfitriao = new Map();
+for (const a of Object.values(ab)) if (a.anfitriao_chave) (anunciosDoAnfitriao.get(a.anfitriao_chave) || anunciosDoAnfitriao.set(a.anfitriao_chave, []).get(a.anfitriao_chave)).push(a);
 function gestora(u) {
   if (EXTRA[u.id]?.gestora) return EXTRA[u.id].gestora;
   // o subagente, ao ver o site, diz que é de uma gestora ("gestora Alcmena")
-  for (const [k, v] of Object.entries(VER)) if (k.split('~')[0] === u.id && /^gestora\b/i.test(v.dono || ''))
+  for (const [k, v] of Object.entries(VER)) if (k.split('~')[0] === u.id && /^gestora\b/i.test(v.dono || '') && !/plataforma/i.test(v.dono))
     return { nome: v.dono.replace(/^gestora:?\s*/i, '').replace(/\s*\(.*$/, '').trim(), prova: `o site da casa (${host(v.url)}) é da ${v.dono}` };
-  const txt = [u.nome, ...u.nomes].join(' ');
-  for (const g of conhecidas) if (new RegExp(g.padrao || g.nome, 'i').test(txt + ' ' + u.bk.map(a => a.gerido_por || '').join(' '))) return { nome: g.nome, prova: `nome/gestão "${g.nome}" (lista de gestoras conhecidas)` };
-  const by = txt.match(/\bby ([A-Z][\w'’ ]{2,30})/);
-  if (by) return { nome: by[1].trim(), prova: `anúncio "${txt.slice(0, 60)}" (by ${by[1].trim()})` };
+  const titulares = u.membros.map(id => cand.find(c => c.id === id)?.responsavel || '');
+  const txt = [u.nome, ...u.nomes, ...u.bk.map(a => a.gerido_por || ''), ...u.ab.map(a => a.anfitriao_nome || ''), ...titulares].join(' | ');
+  for (const g of conhecidas) if (new RegExp(g.padrao || g.nome, 'i').test(txt)) return { nome: g.nome, prova: `"${g.nome}" no anúncio, na gestão ou no titular (gestora conhecida)` };
+  // "… by X": gestora, a não ser que X seja outra casa do registo (é o mesmo dono: "Casa das Vinhas Velhas by Casa do Poço")
+  const by = [u.nome, ...u.nomes].join(' ').match(/\bby (\p{Lu}[\p{L}\w'’ ]{2,30})/u);
+  if (by && !cand.some(c => palavras(c.nome).length && palavras(c.nome).every(w => palavras(by[1]).includes(w))))
+    return { nome: by[1].trim(), prova: `anúncio "… by ${by[1].trim()}"` };
   for (const a of u.bk) if (a.gerido_por && !palavras(a.gerido_por).some(x => palavras(u.nome).includes(x))) {
     const n = porGerente.get(sa(a.gerido_por))?.size || 1;
-    if (n >= 2 || a.profissional) return { nome: a.gerido_por, prova: `Booking: gerido por ${a.gerido_por}${n >= 2 ? ` (${n} casas no concelho)` : ', anfitrião profissional'}` };
+    if (EMPRESA_GESTAO.test(a.gerido_por) || n >= 2) return { nome: a.gerido_por, prova: `Booking: gerido por ${a.gerido_por}${n >= 2 ? ` (${n} casas no concelho)` : ''}` };
   }
-  for (const a of u.ab) if (a.anfitriao === 'profissional' && a.anfitriao_chave && (porAnfitriao.get(a.anfitriao_chave)?.size || 0) >= 3)
-    return { nome: a.anfitriao_nome, prova: `Airbnb: anfitrião profissional ${a.anfitriao_chave.replace('|', ', ')} em ${porAnfitriao.get(a.anfitriao_chave).size} casas do concelho` };
+  for (const a of u.ab) if (a.anfitriao_chave) {
+    const todos = anunciosDoAnfitriao.get(a.anfitriao_chave) || [];
+    const n = casasDistintas(todos.map(x => x.titulo));
+    // gestora = gere casas de TITULARES diferentes; o mesmo titular com várias casas é um dono, não uma gestora
+    const titularesDele = new Set(todos.map(x => x.registo).filter(Boolean).map(id => sa(cand.find(c => c.id === id)?.responsavel)).filter(Boolean));
+    if (todos.length >= 3 && n >= 3 && titularesDele.size >= 2)
+      return { nome: a.anfitriao_nome, prova: `Airbnb: o anfitrião ${a.anfitriao_chave.replace('|', ', ')} tem ${todos.length} anúncios de ${n} casas, de ${titularesDele.size} titulares diferentes no registo` };
+  }
+  for (const t of titulares) if (EMPRESA_GESTAO.test(t) && !palavras(t).some(x => palavras(u.nome).includes(x))) return { nome: t, prova: `titular do registo: ${t}` };
   return null;
 }
 
@@ -267,7 +286,9 @@ const leads = [], semContacto = [];
 const E = J(path.join(D, 'estado.json'), {});
 const mexida = id => { const s = E[id]; return s && (s.decisao || (s.estado && s.estado !== 'por_contactar')); };
 const porRever = [];
-for (const u of ver) {
+// casas pequenas (menos de 5 pessoas) só entram se forem de uma gestora: a lead é a gestora, não a casa
+const pequenasDeGestora = unidades.filter(u => u.pequena && gestora(u));
+for (const u of [...ver, ...pequenasDeGestora]) {
   if (mexida(u.id)) continue;
   const c = cand.find(x => x.id === u.id), membros = u.membros.map(m => cand.find(x => x.id === m));
   const ex = EXTRA[u.id] || {};
@@ -311,6 +332,7 @@ for (const u of ver) {
       pesquisa: pesqTxt(u.id, u.nome) || 'pesquisa não corrida', dominio: dominioTxt(u.id), data: HOJE },
   };
   if ((camCruz[u.id] || []).length) lead.verificacao.maps += `; ficha da Câmara (${camCruz[u.id].map(x => x.nome).join(', ')})`;
+  if (u.pequena) Object.assign(lead.verificacao, { pesquisa: lead.verificacao.pesquisa === 'pesquisa não corrida' ? 'casa com menos de 5 pessoas: entra só pela gestora; o site da casa não foi verificado' : lead.verificacao.pesquisa, dominio: dominioTxt(u.id) || 'não verificado (casa pequena de gestora)' });
   const pt = pontuacao(lead);
   lead.subnicho = pt.subnicho;
 
@@ -320,13 +342,17 @@ for (const u of ver) {
   const notaMa = bkMau ? `Booking ${virg(booking.nota)} com ${booking.avaliacoes} avaliações (mínimo 7,5; entre 7,5 e 8 só com mais de 50)` : abMau ? `Airbnb ${virg(abMau.nota)} com ${abMau.avaliacoes} avaliações (mínimo 4,2)` : null;
   const provaTxt = [...redes.map(r => `${r.nome} ${r.seguidores} seguidores`), b0 && `Booking ${b0.nota != null ? virg(b0.nota) : 'sem nota'} (${b0.avaliacoes})`, ...plataformas.map(p => `${p.nome} ${p.nota != null ? virg(p.nota) : 'novo'} (${p.avaliacoes || 0}${p.ultima ? ', última ' + p.ultima : ''})`)].filter(Boolean).join(' · ');
   if (notaMa) { lead.funil = 'eliminado'; lead.motivo = `Nota baixa: ${notaMa}`; }
-  else if (siteL?.veredito === 'moderno') { lead.funil = 'eliminado'; lead.motivo = `Site moderno (${siteL.prova})`; }
+  else if (siteL?.veredito === 'moderno' && !ge) { lead.funil = 'eliminado'; lead.motivo = `Site moderno (${siteL.prova})`; }
   else if (!telefones.length) {
     const boa = ge || pt.escalao !== 'C';
     lead.verificacao.contacto = `registo, Google e lista da Câmara sem telefone${contactos[u.id] ? '; procura a fundo: ' + contactos[u.id].procurado.join(', ') : ''}`;
-    if (boa && !contactos[u.id]) semContacto.push({ id: u.id, nome: u.nome, localidade: lead.localidade, site: siteL?.url, email });
+    // casa de gestora: procura-se o contacto da gestora (quem se liga), se ela tiver nome de empresa e não só um primeiro nome
+    const alvo = ge && ge.nome.split(' ').length > 1 ? ge.nome : u.nome;
+    if (boa && !contactos[u.id]) semContacto.push({ id: u.id, nome: alvo, localidade: lead.localidade, site: siteL?.url, email });
     lead.funil = 'eliminado'; lead.motivo = `Sem contacto: ${boa ? (contactos[u.id] ? 'procura a fundo sem telefone' : 'POR PROCURAR A FUNDO') : 'escalão C, sem telefone no registo, no Google nem na Câmara'} · ${provaTxt}`;
   }
+  // casa de gestora: quem compra é a gestora; o site da casa não decide (vai para o separador Gestoras)
+  else if (ge && telefones.length) { lead.funil = 'contactar'; lead.motivo = `Gestora ${ge.nome} · site da casa: ${siteL ? siteL.veredito + (s.nota ? ' (' + s.nota + ')' : '') : s.nota} · ${provaTxt}`; }
   else if (siteL?.veredito === 'duvida') { lead.funil = 'duvida'; lead.motivo = `Site em dúvida: ${s.nota || ''} · ${provaTxt}`; }
   else { lead.funil = 'contactar'; lead.motivo = `${siteL ? 'Site antigo: ' + (s.nota || '') : 'Sem site: ' + s.nota} · ${provaTxt}`; }
   leads.push(lead);
