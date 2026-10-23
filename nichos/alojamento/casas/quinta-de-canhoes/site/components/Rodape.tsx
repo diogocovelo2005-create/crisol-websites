@@ -17,7 +17,7 @@ export function Rodape() {
               Quinta de Canhões
             </Link>
             <p className="mt-5 max-w-[28ch] leading-relaxed text-cal/60">
-              Turismo de Habitação em Várzea, São Pedro do Sul, sobre o vale do Vouga.
+              Turismo em Espaço Rural em Várzea, São Pedro do Sul, sobre o vale do Vouga.
             </p>
           </div>
 
@@ -53,7 +53,7 @@ export function Rodape() {
                 </a>
               </li>
               <li className="pt-2 text-cal/60">
-                {contactos.morada.rua}, {contactos.morada.codigo}
+                {contactos.morada.rua}, {contactos.morada.localidade}, {contactos.morada.codigo}
               </li>
             </ul>
 

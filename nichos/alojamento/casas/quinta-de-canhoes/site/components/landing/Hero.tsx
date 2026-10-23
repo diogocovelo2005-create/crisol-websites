@@ -121,7 +121,7 @@ export function Hero() {
             <Botao href="/reservar" variante="cheio" pequeno className={styles.reserve}>Reservar</Botao>
             <Botao href="/a-casa" variante="claro" pequeno>Conhecer a casa</Botao>
           </div>
-          <p className="etiqueta mt-5">Turismo de Habitação · Várzea, São Pedro do Sul</p>
+          <p className="etiqueta mt-5">Turismo em Espaço Rural · Várzea, São Pedro do Sul</p>
         </div>
       </div>
     </section>

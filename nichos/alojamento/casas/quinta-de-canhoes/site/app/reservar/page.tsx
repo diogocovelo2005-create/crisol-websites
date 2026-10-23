@@ -17,7 +17,7 @@ export const metadata: Metadata = metadados({
 const horarios = [
   { etiqueta: "Check-in", valor: "15h00 – 21h00" },
   { etiqueta: "Check-out", valor: "Até às 11h00" },
-  { etiqueta: "Animais", valor: "Até 8 kg, gratuitos" },
+  { etiqueta: "Animais", valor: "Até 8 kg ficam consigo, gratuitos; com mais de 8 kg ficam no canil da quinta" },
 ];
 
 const vantagens = [
@@ -194,7 +194,7 @@ export default function PaginaReservar() {
                 </a>
               </div>
               <p className="mt-12 border-t border-granito-linha pt-5 text-sm text-xisto-medio">
-                Turismo de Habitação · Registo Nacional de Turismo 1638
+                Turismo em Espaço Rural · Registo Nacional de Turismo 1638
               </p>
             </Revelar>
 

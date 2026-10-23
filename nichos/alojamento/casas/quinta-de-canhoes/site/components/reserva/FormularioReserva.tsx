@@ -11,14 +11,17 @@ import { contactos, linkWhatsapp } from "@/lib/contactos";
 import {
   FORMAS_PAGAMENTO,
   NOTA_ANIMAIS,
-  NOTA_ANIMAIS_GRANDES,
   descreverAnimal,
   type TipoAnimal,
   noitesMinimas,
   NOITES_RECOMENDADAS,
   PEQUENO_ALMOCO_POR_PESSOA,
   PESSOAS_MAX,
-  CAMAS_SUPLEMENTARES_POR_QUARTO,
+  AVISO_SPAM,
+  NOTA_SUITE_ADULTOS,
+  adultosNasSuites,
+  cabeGrupo,
+  faltaSuite,
   CRIANCAS_MAX,
   ESCALOES,
   NOTA_CRIANCAS,
@@ -195,8 +198,9 @@ export function FormularioReserva() {
   const sugeridos = sug.escolha;
   const nQuartos = quartosDe(escolha);
   const contas = entrada && saida && (casaInteira || nQuartos) ? calcular(entrada, saida, escolha, grupo, comPequenoAlmoco, casaInteira) : null;
-  const faltamCamas =
-    !casaInteira && nQuartos > 0 && (lugaresDe(escolha) < lugaresNormais(grupo) || nQuartos * CAMAS_SUPLEMENTARES_POR_QUARTO < criancasCama(grupo));
+  const faltamCamas = !casaInteira && nQuartos > 0 ? cabeGrupo(escolha, grupo) : null;
+  const semSuite = !casaInteira && nQuartos > 0 ? faltaSuite(escolha, grupo) : null;
+  const avisoSuite = !casaInteira && adultosNasSuites(escolha, grupo) ? NOTA_SUITE_ADULTOS : null;
   const sugestaoAplicada = sug.casaInteira ? casaInteira : !casaInteira && mesmaEscolha(escolha, sug.escolha);
   const oQuePediu = casaInteira ? "A casa inteira" : descreverEscolha(escolha);
 
@@ -214,7 +218,9 @@ export function FormularioReserva() {
             ? "Já não há lugar nestas datas para esta escolha"
             : criancas.some((c) => c === null)
             ? "Indique a idade de cada criança"
-            : null;
+            : semSuite
+              ? semSuite.startsWith("Cada") ? "Junte mais uma Suite para as crianças" : "Escolha uma Suite para as crianças"
+              : null;
 
   const erros: Partial<Record<keyof Dados, string>> = {
     nome: dados.nome.trim().length < 2 ? "Falta o nome" : undefined,
@@ -543,7 +549,7 @@ export function FormularioReserva() {
                           <span className="flex flex-1 flex-col px-4 pt-3.5">
                             <span className="rustico-medio text-[1.35rem] leading-tight text-xisto">{q.nome}</span>
                             <span className="mt-1 text-sm leading-snug text-xisto-suave">
-                              Para {q.lugares} pessoas · {q.camas} · {q.nota}
+                              {q.paraQuem} · {q.camas} · {q.nota}
                             </span>
                             {!livre && <span className="mt-1 text-sm font-medium text-caixilho">Sem vaga nestas datas</span>}
                           </span>
@@ -576,9 +582,8 @@ export function FormularioReserva() {
                 )}
                 {faltamCamas && (
                   <p className="mt-4 border-l-2 border-caixilho pl-4 text-sm text-xisto">
-                    {lugaresDe(escolha) < lugaresNormais(grupo)
-                      ? `Os quartos escolhidos são para ${plural(lugaresDe(escolha), "adulto", "adultos")}. Junte mais um quarto ou explique na mensagem do passo seguinte.`
-                      : "Para este grupo, fale connosco ou explique na mensagem do passo seguinte."}
+                    {semSuite ??
+                      `Os quartos escolhidos são para ${plural(lugaresDe(escolha), "pessoa", "pessoas")}. Junte mais um quarto ou explique na mensagem do passo seguinte.`}
                   </p>
                 )}
 
@@ -588,7 +593,7 @@ export function FormularioReserva() {
                 <div className="mt-10">
                   <p className="etiqueta mb-3 text-xisto-suave">As contas</p>
                   {contas ? (
-                    <ContasEstadia contas={contas} />
+                    <ContasEstadia contas={contas} aviso={avisoSuite} />
                   ) : (
                     <p className="border-y border-granito-linha py-5 text-xisto-suave">
                       Escolha as datas e o quarto, e as contas aparecem aqui: o total, o sinal de {SINAL_PERCENTAGEM} % que confirma a reserva e o que fica para pagar depois.
@@ -644,7 +649,7 @@ export function FormularioReserva() {
                     ))}
                   </dl>
                   <div className="mt-8">
-                    <ContasEstadia contas={contas} compacto />
+                    <ContasEstadia contas={contas} aviso={avisoSuite} compacto />
                   </div>
                   <button type="button" onClick={() => irPara(1)} className="sublinha mt-5 text-[0.95rem] text-xisto">
                     Alterar as datas, os quartos ou o pequeno-almoço
@@ -759,6 +764,7 @@ export function FormularioReserva() {
                       e tratamos do resto.
                     </p>
                   )}
+                  <p className="mt-5 border-l-2 border-caixilho pl-4 text-[0.95rem] leading-snug text-xisto">{AVISO_SPAM}</p>
                   <p className="mt-5 text-[0.85rem] leading-snug text-xisto-suave">
                     Usamos estes dados só para responder ao seu pedido e gerir a reserva.{" "}
                     <Link href="/privacidade" target="_blank" className="sublinha text-caixilho">
@@ -832,7 +838,7 @@ export function FormularioReserva() {
                   </li>
                 </ul>
                 <p className="mt-5 max-w-[56ch] text-[0.95rem] leading-relaxed text-xisto-suave">
-                  Não recebeu nada? Veja na pasta de spam, ou fale connosco pelo{" "}
+                  {AVISO_SPAM} Ou fale connosco pelo{" "}
                   <a href={linkWhatsapp()} target="_blank" rel="noreferrer" className="sublinha font-medium text-caixilho">
                     WhatsApp
                   </a>
@@ -856,7 +862,7 @@ export function FormularioReserva() {
               </div>
               <div>
                 <p className="etiqueta mb-3 text-xisto-suave">O que pediu · {formaEscolhida?.nome}</p>
-                <ContasEstadia contas={contas} compacto />
+                <ContasEstadia contas={contas} aviso={avisoSuite} compacto />
               </div>
             </div>
           </motion.div>
@@ -867,7 +873,7 @@ export function FormularioReserva() {
 }
 
 /* As contas: as linhas, o total, e o sinal destacado. Igual nos três passos. */
-function ContasEstadia({ contas, compacto = false }: { contas: Contas; compacto?: boolean }) {
+function ContasEstadia({ contas, aviso = null, compacto = false }: { contas: Contas; aviso?: string | null; compacto?: boolean }) {
   const noites = plural(contas.noites, "noite", "noites");
   return (
     <div>
@@ -913,9 +919,9 @@ function ContasEstadia({ contas, compacto = false }: { contas: Contas; compacto?
         {contas.camaSuplementar && !contas.camaSuplementar.incluidaNaCasa && (
           <li className="flex items-baseline justify-between gap-4 border-b border-granito-linha py-3">
             <span>
-              Cama suplementar
+              {contas.camaSuplementar.criancas === 1 ? "Criança" : "Crianças"} dos 3 aos 10
               <span className="block text-sm text-xisto-suave">
-                {plural(contas.camaSuplementar.criancas, "criança", "crianças")} (3–10) × {noites} × {euros(contas.camaSuplementar.porNoite)} · com pequeno-almoço
+                {contas.camaSuplementar.criancas} × {noites} × {euros(contas.camaSuplementar.porNoite)} · cama suplementar e pequeno-almoço
               </span>
             </span>
             <span className="shrink-0">{euros(contas.camaSuplementar.subtotal)}</span>
@@ -929,6 +935,7 @@ function ContasEstadia({ contas, compacto = false }: { contas: Contas; compacto?
             <span className="text-right text-[0.95rem] text-xisto-suave">Na nossa resposta</span>
           )}
         </li>
+        {aviso && <li className="-mt-1 pb-4 text-sm leading-snug text-caixilho">{aviso}</li>}
       </ul>
       <Sinal contas={contas} compacto={compacto} />
     </div>
@@ -1068,12 +1075,12 @@ function PequenoAlmoco({
   );
 }
 
-/* «Traz um animal?»: não, até 8 kg (gratuito) ou mais de 8 kg (a casa confirma). */
+/* «Traz um animal?»: não, até 8 kg (fica consigo, gratuito) ou mais de 8 kg (fica no canil da quinta). */
 function Animal({ tipo, aoMudar }: { tipo: TipoAnimal; aoMudar: (v: TipoAnimal) => void }) {
   const opcoes: [TipoAnimal, string][] = [
     ["nao", "Não"],
     ["pequeno", "Sim, até 8 kg"],
-    ["grande", "Sim, com mais de 8 kg"],
+    ["grande", "Sim, com mais de 8 kg (fica no canil da quinta)"],
   ];
   return (
     <div className="flex flex-wrap items-center gap-x-5 gap-y-3 border-b border-granito-linha py-5">
@@ -1084,8 +1091,8 @@ function Animal({ tipo, aoMudar }: { tipo: TipoAnimal; aoMudar: (v: TipoAnimal) 
         <p id="rotulo-animal" className="rustico-medio text-[1.35rem] leading-tight text-xisto">
           Traz um animal?
         </p>
-        <p className={`mt-0.5 text-sm leading-snug ${tipo === "grande" ? "font-medium text-caixilho" : "text-xisto-suave"}`}>
-          {tipo === "grande" ? NOTA_ANIMAIS_GRANDES : NOTA_ANIMAIS}
+        <p className="mt-0.5 text-sm leading-snug text-xisto-suave">
+          {NOTA_ANIMAIS}
         </p>
       </div>
       <div role="radiogroup" aria-labelledby="rotulo-animal" className="inline-flex shrink-0 flex-wrap border border-granito-linha p-1">

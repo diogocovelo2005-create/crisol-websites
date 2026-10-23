@@ -6,7 +6,6 @@ import { Check, ChevronLeft, ChevronRight, LoaderCircle, MessageCircle, X } from
 import { Calendario } from "@/components/reserva/FormularioReserva";
 import {
   SINAL_PERCENTAGEM,
-  animalDoPedido,
   dataCurta,
   deIso,
   descreverPedido,
@@ -143,20 +142,18 @@ function Confirmar({ pedido, conflitos, correr }: { pedido: PedidoReserva; confl
   const [ajustar, setAjustar] = useState(false);
   const [total, setTotal] = useState(pedido.total !== null ? String(pedido.total) : "");
   const [motivo, setMotivo] = useState("");
-  const [animal, setAnimal] = useState<"aceite" | "recusado" | null>(null);
   const [conflitoVisto, setConflitoVisto] = useState<string[]>(conflitos);
 
   const totalNum = Math.round(Number(total.replace(",", ".")));
   const semPreco = pedido.total === null;
   const usarTotal = ajustar || semPreco;
   const sinalNovo = usarTotal && totalNum > 0 ? Math.ceil((totalNum * SINAL_PERCENTAGEM) / 100) : pedido.sinal.valor;
-  const grande = animalDoPedido(pedido) === "grande";
-  const falta = usarTotal && !(totalNum > 0) ? "Indique o total" : grande && !animal ? "Diga se aceita o animal" : null;
+  const falta = usarTotal && !(totalNum > 0) ? "Indique o total" : null;
   const forcar = conflitoVisto.length > 0;
 
   const confirmar = async () => {
     const r = await correr(
-      { acao: "confirmar", ...(usarTotal ? { total: totalNum, motivo } : {}), ...(grande ? { animal } : {}), ...(forcar ? { forcar: true } : {}) },
+      { acao: "confirmar", ...(usarTotal ? { total: totalNum, motivo } : {}), ...(forcar ? { forcar: true } : {}) },
       setEstado,
     );
     if (!r.ok && r.conflitos?.length) setConflitoVisto(r.conflitos.map((c) => `${c.ref} (${c.estado})`));
@@ -169,30 +166,6 @@ function Confirmar({ pedido, conflitos, correr }: { pedido: PedidoReserva; confl
         {pedido.pagamento === "mbway" ? "MB WAY" : "transferência"}. E a si chega um lembrete para fechar estas noites no Booking.
       </p>
 
-      {grande && (
-        <fieldset className="mt-5 border-l-[3px] border-caixilho pl-4">
-          <legend className="text-[0.95rem] font-medium text-xisto">Traz um animal com mais de 8 kg</legend>
-          <div className="mt-2 flex flex-wrap gap-2">
-            {(
-              [
-                ["aceite", "Aceito o animal"],
-                ["recusado", "Não aceito"],
-              ] as const
-            ).map(([v, t]) => (
-              <button
-                key={v}
-                type="button"
-                aria-pressed={animal === v}
-                onClick={() => setAnimal(v)}
-                className={`premir border px-4 py-2 text-[0.92rem] ${animal === v ? "border-xisto bg-xisto text-cal" : "border-xisto/35 text-xisto"}`}
-              >
-                {t}
-              </button>
-            ))}
-          </div>
-          {animal === "recusado" && <p className="mt-2 text-sm text-xisto-suave">O hóspede lê: «Infelizmente, não conseguimos receber o seu animal com mais de 8 kg.»</p>}
-        </fieldset>
-      )}
 
       <div className="mt-5">
         {!semPreco && (

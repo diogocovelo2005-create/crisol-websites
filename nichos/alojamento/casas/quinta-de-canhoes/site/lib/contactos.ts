@@ -8,10 +8,10 @@ export const contactos = {
   resposta: "A Teresa responde normalmente no próprio dia.",
   email: { texto: "casadecanhoes@gmail.com", href: `mailto:casadecanhoes@gmail.com?subject=${encodeURIComponent("Pedido de reserva — Quinta de Canhões")}` },
   morada: {
-    rua: "Rua dos Canhões, 510",
+    rua: "Rua de Canhões, 501",
     localidade: "Canhões, Várzea",
     codigo: "3660-682 São Pedro do Sul",
-    mapa: "https://www.google.com/maps/search/?api=1&query=Rua+dos+Canh%C3%B5es+510+3660-682+S%C3%A3o+Pedro+do+Sul",
+    mapa: "https://www.google.com/maps/search/?api=1&query=Rua+de+Canh%C3%B5es+501+3660-682+S%C3%A3o+Pedro+do+Sul",
   },
   booking:
     "https://www.booking.com/hotel/pt/quinta-de-canhaues.pt-pt.html",

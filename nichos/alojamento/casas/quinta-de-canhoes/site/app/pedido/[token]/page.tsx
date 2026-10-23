@@ -82,7 +82,7 @@ export default async function PaginaPedido({ params }: { params: Promise<{ token
               </p>
             )}
             <Bilhete pedido={p} titulo={aceite ? "As novas datas" : "A estadia pedida"} />
-            <Etiquetas pedido={p} />
+            <Etiquetas pedido={p} casa />
             <Valores pedido={p} />
           </div>
 
@@ -199,7 +199,7 @@ function Detalhes({ pedido: p }: { pedido: PedidoReserva }) {
   if (p.camaSuplementar && !p.camaSuplementar.incluidaNaCasa) {
     const c = p.camaSuplementar;
     linhas.push([
-      `Cama suplementar · ${c.criancas} ${c.criancas === 1 ? "criança" : "crianças"} (3–10) × ${n} × ${euros(c.porNoite)}`,
+      `${c.criancas === 1 ? "Criança" : "Crianças"} dos 3 aos 10 · ${c.criancas} × ${n} × ${euros(c.porNoite)} (cama suplementar e pequeno-almoço)`,
       euros(c.subtotal),
     ]);
   }

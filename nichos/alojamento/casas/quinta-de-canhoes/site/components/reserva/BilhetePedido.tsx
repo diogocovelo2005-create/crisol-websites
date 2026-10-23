@@ -2,7 +2,7 @@ import Image from "next/image";
 import type { ReactNode } from "react";
 import { BedDouble, Coffee, Landmark, PawPrint, Smartphone, Users } from "lucide-react";
 import { fotos } from "@/lib/fotos";
-import { animalDoPedido, textoAnimal, deIso, descreverGrupo, descreverPedido, grupoDoPedido, quartos, type PedidoReserva } from "@/lib/reserva";
+import { adultosNasSuites, animalDoPedido, escolhaDoPedido, deIso, descreverGrupo, descreverPedido, grupoDoPedido, quartos, type PedidoReserva } from "@/lib/reserva";
 
 /*
   As peças visuais de um pedido, na linguagem dos emails: o bilhete de
@@ -60,16 +60,18 @@ export function Bilhete({ pedido: p, foto = true, titulo, rodape, compacto = fal
 }
 
 /** O que se pediu, em etiquetas com ícone. */
-export function Etiquetas({ pedido: p }: { pedido: PedidoReserva }) {
+export function Etiquetas({ pedido: p, casa = false }: { pedido: PedidoReserva; casa?: boolean }) {
   const animal = animalDoPedido(p);
+  const adultosSuite = !p.casaInteira ? adultosNasSuites(escolhaDoPedido(p), grupoDoPedido(p)) : 0;
   const itens: [ReactNode, string, boolean?, boolean?][] = [
     [<BedDouble key="q" size={17} />, descreverPedido(p)],
     [<Users key="p" size={17} />, descreverGrupo(grupoDoPedido(p))],
     [<Coffee key="c" size={17} />, p.pequenoAlmoco.incluido ? "Com pequeno-almoço" : "Sem pequeno-almoço", !p.pequenoAlmoco.incluido],
     [p.pagamento === "mbway" ? <Smartphone key="m" size={17} /> : <Landmark key="t" size={17} />, p.pagamento === "mbway" ? "MB WAY" : "Transferência"],
     ...(animal === "pequeno" ? ([[<PawPrint key="a" size={17} />, "Animal até 8 kg (gratuito)"]] as [ReactNode, string][]) : []),
-    ...(animal === "grande"
-      ? ([[<PawPrint key="a" size={17} />, p.animalDecisao ? textoAnimal(p)! : "Animal com mais de 8 kg · a decidir", false, !p.animalDecisao]] as [ReactNode, string, boolean, boolean][])
+    ...(animal === "grande" ? ([[<PawPrint key="a" size={17} />, "Animal com mais de 8 kg (canil)"]] as [ReactNode, string][]) : []),
+    ...(casa && adultosSuite
+      ? ([[<Users key="s" size={17} />, `Suite com ${adultosSuite} adultos — confirme o total`, false, true]] as [ReactNode, string, boolean, boolean][])
       : []),
   ];
   return (

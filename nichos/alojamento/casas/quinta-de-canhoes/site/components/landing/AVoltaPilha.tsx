@@ -3,14 +3,15 @@
 import { useEffect, useRef, useState } from "react";
 import { useMotionValueEvent, useReducedMotion, useScroll } from "motion/react";
 
-type Lugar = { nome: string; distancia: string; texto: string; imagem: string; srcSet: string; sizes: string; alt: string };
+/* imagem null: o cartão está escrito mas espera uma foto de uso livre; não aparece até a ter. */
+type Lugar = { nome: string; distancia: string; texto: string; imagem: string | null; srcSet: string; sizes: string; alt: string };
 
 const T = "/fotos/tamanhos/";
 /* Largura máxima do cartão em cada faixa (a foto ocupa a largura toda; nas de
    3:2 a altura do recorte, ≤220 px, nunca pede mais do que isto). */
 const SIZES_CARTAO = "(min-width: 768px) 27rem, (min-width: 640px) 25rem, 23rem";
 
-const lugares: Lugar[] = [
+const todosLugares: Lugar[] = [
   {
     nome: "As Termas",
     distancia: "3 km",
@@ -21,6 +22,15 @@ const lugares: Lugar[] = [
     alt: "Termas de São Pedro do Sul junto ao rio Vouga",
   },
   {
+    nome: "Parque das Nogueiras",
+    distancia: "3 km",
+    texto: "Um bosque de nogueiras no meio de São Pedro do Sul, com relvado, bancos à sombra, uma pérgola e uma antiga roda de água junto a um arco de pedra. A Ecopista do Vouga passa mesmo ao lado.",
+    imagem: "/fotos/regiao-nogueiras-wikimedia.jpg",
+    srcSet: `${T}nogueiras-640.jpg 640w, ${T}nogueiras-960.jpg 960w, ${T}nogueiras-1280.jpg 1280w, /fotos/regiao-nogueiras-wikimedia.jpg 2048w`,
+    sizes: SIZES_CARTAO,
+    alt: "Nogueiras sem folhas sobre o relvado do Parque Urbano das Nogueiras, em São Pedro do Sul",
+  },
+  {
     nome: "Serra da Arada",
     distancia: "22 km",
     texto: "Do alto avistam-se o Montemuro, a Estrela e o Caramulo, e o vale de Lafões inteiro. Um paraíso natural de rocha nua, ar puro e horizontes sem fim.",
@@ -28,6 +38,16 @@ const lugares: Lugar[] = [
     srcSet: `${T}serra-arada-640.jpg 640w, ${T}serra-arada-960.jpg 960w, ${T}serra-arada-1280.jpg 1280w, /fotos/regiao-serra-arada-wikimedia.jpg 1920w`,
     sizes: SIZES_CARTAO,
     alt: "Encostas rochosas da Serra da Arada iluminadas pelo sol",
+  },
+  {
+    // À espera de uma foto de uso livre (não há nenhuma no Wikimedia Commons nem no Openverse).
+    nome: "Poço Azul",
+    distancia: "15 km",
+    texto: "Uma piscina natural na Ribeira da Landeira, perto de Santa Cruz da Trapa: uma pequena cascata, rochas de granito polidas pela água e merendas à sombra. Os últimos 500 metros fazem-se a pé, a descer.",
+    imagem: null,
+    srcSet: "",
+    sizes: SIZES_CARTAO,
+    alt: "Poço Azul, piscina natural na Ribeira da Landeira",
   },
   {
     nome: "Aldeia da Pena",
@@ -49,6 +69,8 @@ const lugares: Lugar[] = [
     alt: "Ponte da antiga Linha do Vouga sobre o rio em Vouzela",
   },
 ];
+
+const lugares = todosLugares.filter((l): l is Lugar & { imagem: string } => l.imagem !== null);
 
 export function AVoltaPilha() {
   const sectionRef = useRef<HTMLElement>(null);

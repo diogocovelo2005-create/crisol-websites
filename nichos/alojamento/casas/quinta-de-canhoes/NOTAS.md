@@ -218,3 +218,29 @@ Peso transferido, build local (sem scroll → com scroll até ao fim):
 até ligeiramente mais nítida) e no carrossel das comodidades, que roda sozinho; o antes
 comparado consigo dá 0 %. Fluidez (CPU ÷4, pares alternados): igual nas duas páginas.
 Cópia de antes: `arquivo/site-2026-10-22-antes-trafego/` (só código).
+
+## Última ronda antes da publicação (2026-10-23)
+
+- **Preços da casa** (a D. Teresa, 23 out 2026): Duplo 64 €, Twin 61 €, Suite 97 € (para 2 pessoas), em `lib/reserva.ts` (TARIFAS). O `priceRange` do JSON-LD sai daí (61–97 €). O llms.txt não tem preços.
+- **Crianças dos 3 aos 10:** 15 €/noite cada, com cama suplementar e pequeno-almoço, **só nas Suites** (dois sofás-cama por Suite: `SOFAS_CAMA_POR_SUITE`). `faltaSuite()` trava o formulário («Escolha uma Suite para as crianças») e o servidor recusa o pedido com uma mensagem clara. Na casa inteira não pagam nada a mais. Até 3 anos: grátis, com berço.
+- **Suite com 3 ou 4 adultos:** fica ao preço da Suite. O hóspede vê junto do total «Com mais de 2 adultos na Suite, o preço final é confirmado pela casa.» A casa vê a etiqueta «Suite com N adultos — confirme o total» (na página do pedido e no email) e usa «Ajustar total». As sugestões nunca põem mais de 2 adultos numa Suite, para levarem sempre um total certo.
+- **Animais:** até 8 kg ficam com o hóspede, gratuitos; com mais de 8 kg ficam no canil da quinta, sem custo. Saíram o «a decidir», o passo de aceitar ou recusar na confirmação e as etiquetas vermelhas. A casa lê só «Animal com mais de 8 kg (canil)». Textos mudados no formulário, em /reservar, na pergunta de /os-quartos e nos emails.
+- **Morada:** Rua de Canhões, 501, Canhões, Várzea, 3660-682 São Pedro do Sul (`lib/contactos.ts`). Aparece no rodapé, no mapa do rodapé, em /reservar, em /privacidade, nos emails, no JSON-LD e no llms.txt.
+- **Classificação:** Turismo em Espaço Rural (RNET 1638), em todo o lado.
+- **Spam:** no passo 2 e no passo 3 do formulário, «A nossa resposta vem de reservas.casadecanhoes@gmail.com. Se não a vir na caixa de entrada, veja no spam (e adicione-nos aos contactos).» No fim de cada email ao hóspede, em letra pequena, vai uma linha equivalente.
+
+### Sugestões (sem pequeno-almoço, por noite)
+1–2 adultos: Duplo (64) · 3–4: 2 Twin (122) · 5–6: Duplo + 2 Twin (186) · 7–8: 2 Duplo + 2 Twin (250) · 9–10: mais 1 Suite (347) · 11–12: tudo (444) · 13–16: casa inteira (600). Com crianças dos 3 aos 10: 2 adultos + 1 criança → Suite (112); 2 + 2 → Suite (127); 2 + 3 → 2 Suites (239); 4 + 2 → Twin + Suite (188).
+
+### À volta: dois lugares novos
+- **Parque das Nogueiras** (cartão publicado; 3 km, cerca de 3 minutos de carro, contados a partir do centro de Várzea porque não temos as coordenadas exatas da quinta).
+  - Localização e Ecopista ao lado: OpenStreetMap/Nominatim («Parque Urbano das Nogueiras», Bairro da Ponte, São Pedro do Sul; 40.7585, -8.0603). A Ecopista do Vouga e a Ponte do Forno Telheiro (antiga Linha do Vouga) ficam junto ao parque.
+  - O que se diz do parque (nogueiras, relvado, bancos, pérgola, roda de água, arco de pedra) vem das fotografias de Vitor Oliveira no Wikimedia Commons.
+  - Foto: «Parque Urbano das Nogueiras - São Pedro do Sul - Portugal (54350846966).jpg», Vitor Oliveira, CC BY-SA 2.0, Wikimedia Commons. Os créditos estão no rodapé.
+- **Poço Azul** (cartão pronto mas escondido, com `imagem: null`, à espera de foto; 15 km, cerca de 17 minutos de carro).
+  - Fontes: aquapolis.com.pt/poco-azul-praia-fluvial-selvagem-perto-de-santa-cruz-da-trapa/ (40.7810, -8.1652; Ribeira da Landeira; uma pequena cascata, granito polido, merendas, os últimos 500 m a pé e a descer); centerofportugal.com/pt/poi/poco-azul; Wikipédia «Santa Cruz da Trapa».
+  - Não encontrei nenhuma foto com licença livre (a «Poço Azul - Pisão - Termas» do Commons é outro sítio). Quando houver foto: pôr em `public/fotos/`, juntá-la ao `scripts/tamanhos.mjs`, preencher `imagem` e `srcSet` no `AVoltaPilha.tsx` e pôr o crédito no rodapé.
+
+### Por confirmar
+- Uma foto do Poço Azul (da casa, ou com licença livre).
+- As coordenadas da quinta, para acertar as distâncias.

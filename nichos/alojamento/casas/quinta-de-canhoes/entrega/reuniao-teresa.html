@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<title>Reunião Teresa</title>
+<style>
+  @page { size: A4; margin: 18mm 16mm 18mm 16mm; }
+  :root { --vermelho:#7a2e2a; --verde:#2f3a2c; --cal:#f4efe6; --linha:#d8d0c2; --texto:#1f1d1a; --suave:#5d574e; }
+  * { box-sizing: border-box; }
+  body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: var(--texto); font-size: 10.2pt; line-height: 1.45; margin: 0; }
+  h1 { font-family: Georgia, "Times New Roman", serif; font-size: 26pt; line-height: 1.1; margin: 0 0 6mm; color: var(--verde); }
+  h2 { font-family: Georgia, serif; font-size: 16pt; color: var(--vermelho); margin: 0 0 3mm; padding-bottom: 2mm; border-bottom: 1.5px solid var(--vermelho); }
+  h3 { font-size: 11.5pt; margin: 5mm 0 2mm; color: var(--verde); }
+  h4 { font-size: 10.4pt; margin: 4mm 0 1.5mm; }
+  p { margin: 0 0 2.4mm; }
+  ul, ol { margin: 0 0 3mm; padding-left: 5.5mm; }
+  li { margin: 0 0 1.2mm; }
+  .seccao { page-break-before: always; }
+  .capa { height: 255mm; display: flex; flex-direction: column; justify-content: space-between; }
+  .capa .topo { border-top: 6px solid var(--vermelho); padding-top: 8mm; }
+  .sub { color: var(--suave); font-size: 12pt; }
+  .caixa { background: var(--cal); border-left: 4px solid var(--vermelho); padding: 3mm 4mm; margin: 3mm 0 4mm; page-break-inside: avoid; }
+  .caixa.verde { border-left-color: var(--verde); }
+  .aviso { background: #fbeceb; border-left: 4px solid #b3261e; padding: 3mm 4mm; margin: 3mm 0 4mm; page-break-inside: avoid; }
+  table { width: 100%; border-collapse: collapse; margin: 2mm 0 4mm; font-size: 9.4pt; page-break-inside: auto; }
+  tr { page-break-inside: avoid; }
+  th, td { border-bottom: 1px solid var(--linha); padding: 1.8mm 2mm; text-align: left; vertical-align: top; }
+  th { background: var(--verde); color: #fff; font-weight: 600; }
+  .tag { display: inline-block; font-size: 7.4pt; font-weight: 700; letter-spacing: .04em; padding: .4mm 1.6mm; border-radius: 1.2mm; color: #fff; vertical-align: 1px; white-space: nowrap; }
+  .p { background: var(--vermelho); } .c { background: #8a6d1d; } .s { background: var(--verde); } .t { background: #5d574e; }
+  .check li { list-style: none; position: relative; padding-left: 1mm; }
+  .check li::before { content: "☐"; position: absolute; left: -5mm; color: var(--vermelho); }
+  .citacao { font-family: Georgia, serif; font-style: italic; background: #fff; border: 1px dashed var(--linha); padding: 3mm 4mm; margin: 2mm 0 3mm; page-break-inside: avoid; }
+  .indice li { margin-bottom: .8mm; }
+  .peq { font-size: 8.6pt; color: var(--suave); }
+  code { font-family: Menlo, monospace; font-size: 8.8pt; background: var(--cal); padding: 0 1mm; }
+
+  @media screen {
+    body { background:#ece6dc; }
+    .folha { max-width: 190mm; margin: 0 auto; background:#fff; padding: 14mm 14mm 24mm; box-shadow: 0 1px 8px rgba(0,0,0,.08); }
+    .seccao { page-break-before: auto; margin-top: 12mm; }
+    .capa { height: auto; min-height: 0; gap: 10mm; }
+    .barra-topo { position: sticky; top: 0; z-index: 9; background:#2f3a2c; color:#fff; display:flex; gap:8px; justify-content:space-between; align-items:center; padding:7px 14px; font-size:9.5pt; }
+    .barra-topo button { font:inherit; font-size:9pt; border:0; border-radius:4px; padding:4px 9px; cursor:pointer; background:#f4efe6; color:#2f3a2c; }
+    .barra-topo button.prim { background:#7a2e2a; color:#fff; }
+  }
+  .resp { display:flex; gap:2.5mm; align-items:flex-start; margin:1.6mm 0 2.4mm; }
+  .resp input[type=checkbox] { width:15px; height:15px; margin-top:6px; accent-color:#2f6b3a; flex-shrink:0; cursor:pointer; }
+  .resp textarea { flex:1; font:inherit; font-size:9.3pt; line-height:1.4; border:1px solid var(--linha); border-radius:4px; padding:4px 7px; min-height:26px; height:26px; resize:vertical; background:#fcfaf6; color:var(--texto); }
+  .resp textarea:focus { outline:2px solid #c9b9a2; background:#fff; }
+  li.feito > :not(.resp), tr.feito > td:not(.col-resp) { opacity:.5; text-decoration: line-through; }
+  .check li::before { content: none; }
+  .check { padding-left: 1mm; }
+  td.col-resp { width: 34%; }
+  td.col-resp .resp { margin:0; }
+  @media print { .barra-topo { display:none; } .resp textarea { border-color:#ccc; } }
+</style>
+</head>
+<body>
+<div class="barra-topo"><span id="estado">Reunião D. Teresa · 0 feitos</span><span><button class="prim" id="copiar">Copiar respostas</button> <button id="baixar">Descarregar</button> <button id="imprimir">Imprimir</button></span></div>
+<div class="folha">
+
+<!-- CAPA -->
+<div class="capa">
+  <div class="topo">
+    <p class="sub">Crisol · documento interno do Diogo</p>
+    <h1>Quinta de Canhões<br>Fechar o site por completo</h1>
+    <p class="sub">Tudo o que falta fazer com a D. Teresa, o Google Business Profile nas duas situações possíveis, as perguntas que fecham o site, a entrega das contas e como tirar desta primeira cliente um testemunho e referências — sem a cansar.</p>
+  </div>
+  <div>
+    <h3>Legenda usada em todo o documento</h3>
+    <p><span class="tag p">PRESENCIAL</span> tem de ser feito ao lado dela (ou da casa).</p>
+    <p><span class="tag c">CHAMADA</span> pode ser por telefone ou videochamada.</p>
+    <p><span class="tag s">SOZINHO</span> fazes tu, sem ela.</p>
+    <p><span class="tag t">DEPOIS</span> não é para a reunião; fica para as semanas seguintes.</p>
+    <p class="peq">Estado à data: site publicado em quintadecanhoes.com, formulário de reservas com memória a funcionar e testado em produção, Search Console verificado, pedidos ainda a chegar ao email do Diogo.</p>
+  </div>
+</div>
+
+<!-- ÍNDICE -->
+<div class="seccao">
+  <h2>Índice</h2>
+  <ol class="indice">
+    <li>Onde estamos: o que já está feito</li>
+    <li>Antes da reunião (hoje)</li>
+    <li>Agenda sugerida para a reunião</li>
+    <li>Mostrar o formulário e ensinar os botões</li>
+    <li>Perguntas para fechar o site (lista completa)</li>
+    <li>O Gmail dela passa a receber os pedidos</li>
+    <li>Google Business Profile — Opção A: ela já tem acesso</li>
+    <li>Google Business Profile — Opção B: ela não tem acesso</li>
+    <li>Google Business Profile — tudo o que se preenche (textos prontos)</li>
+    <li>O site nos outros sítios onde a casa aparece</li>
+    <li>Contas, acessos e entrega</li>
+    <li>O que é presencial e o que não é</li>
+    <li>Testemunho, referências e pós-venda</li>
+    <li>O que ainda se pode melhorar no site</li>
+    <li>Depois da reunião</li>
+  </ol>
+  <div class="caixa">
+    <strong>Como usar:</strong> lê tudo hoje. Na reunião, segue a secção 3 (agenda) e vai riscando as listas. O que não couber amanhã fica marcado <span class="tag c">CHAMADA</span> ou <span class="tag t">DEPOIS</span> — não é preciso fazer tudo num dia, e com uma pessoa de idade é melhor não fazer.
+  </div>
+</div>
+
+<!-- 1 -->
+<div class="seccao">
+  <h2>1 · Onde estamos</h2>
+  <table>
+    <tr><th>Peça</th><th>Estado</th></tr>
+    <tr><td>Site em quintadecanhoes.com</td><td>Publicado, HTTPS, domínio dela (Porkbun), alojado no Netlify dela.</td></tr>
+    <tr><td>Formulário de reservas</td><td>Funciona e foi testado em produção: pedido → confirmar → sinal; propostas de datas; cancelamentos; calendário que fecha noites por tipo de quarto; lembretes diários.</td></tr>
+    <tr><td>Emails</td><td>Saem de reservas.casadecanhoes@gmail.com. Os pedidos chegam <strong>ainda ao teu email</strong>.</td></tr>
+    <tr><td>Pagamento</td><td>Sinal de 30 %; MB WAY 964 506 038 ou IBAN PT50 0045 3120 4029 0713 341 57 (Teresa Gomes). Restante à chegada.</td></tr>
+    <tr><td>Google Search Console</td><td>Verificado, sitemap enviado, indexação pedida. Teresa adicionada como proprietária.</td></tr>
+    <tr><td>SEO técnico</td><td>Títulos, descrições, dados estruturados de alojamento, sitemap, robots, llms.txt. PageSpeed: 78 telemóvel / 94 computador.</td></tr>
+    <tr><td>Privacidade e cookies</td><td>Página de privacidade; mapa do Google só carrega com consentimento.</td></tr>
+    <tr><td>Ícone do separador</td><td>«C» vermelho da casa.</td></tr>
+    <tr><td>Google Business Profile</td><td><strong>Por fazer</strong> — é o tema principal de amanhã.</td></tr>
+  </table>
+  <p>Ficheiros de apoio no repositório: <code>entrega/google-business-profile.md</code>, <code>entrega/reuniao-teresa.md</code>, <code>EMAILS-RESERVAS.md</code>, <code>NOTAS.md</code>.</p>
+</div>
+
+<!-- 2 -->
+<div class="seccao">
+  <h2>2 · Antes da reunião (hoje)</h2>
+  <span class="tag s">SOZINHO</span>
+  <ul class="check">
+    <li><strong>Google Maps, no computador:</strong> pesquisa «Quinta de Canhões, Várzea». Anota: aparece «Reclamar esta empresa» ou «É o proprietário desta empresa?»? Se sim, a ficha não tem dono (Opção B1). Se não aparece, alguém já a gere (Opção A ou B2). Anota também o website, telefone, fotos e avaliações que lá estão.</li>
+    <li>Pesquisa se há <strong>duas fichas</strong> da casa (às vezes há «Casa de Canhões» e «Quinta de Canhões»).</li>
+    <li>Separa as <strong>11 fotos</strong> para o Business Profile numa pasta do computador/telemóvel (lista na secção 9).</li>
+    <li>Tem à mão: login de reservas.casadecanhoes@gmail.com e os códigos de recuperação; acesso ao Netlify e ao Porkbun; este PDF.</li>
+    <li>Prepara o <strong>telemóvel</strong> para a demonstração: abre quintadecanhoes.com/reservar.</li>
+    <li>Leva <strong>papel e caneta</strong> (para as respostas dela e para o «caderno de acessos», secção 11) e um <strong>carregador</strong>.</li>
+    <li>Se fores à quinta: telemóvel com bateria para gravar (vídeo de verificação do Google e, se ela quiser, o testemunho — secção 13).</li>
+    <li>Decide o que vais oferecer como agradecimento no fim (secção 13 — opcional).</li>
+  </ul>
+  <div class="caixa verde"><strong>Mentalidade para amanhã:</strong> ela é a primeira cliente e uma pessoa de idade. Ritmo calmo, uma coisa de cada vez, mostrar no telemóvel dela sempre que possível, e parar antes de ela se cansar. O que ficar por fazer, fica para uma chamada.</div>
+</div>
+
+<!-- 3 -->
+<div class="seccao">
+  <h2>3 · Agenda sugerida para a reunião (~1h15)</h2>
+  <table>
+    <tr><th>#</th><th>Tema</th><th>Tempo</th><th>Onde</th><th>Secção</th></tr>
+    <tr><td>1</td><td>Conversa inicial: como tem corrido, o que acha do site</td><td>5 min</td><td><span class="tag p">PRESENCIAL</span></td><td>13 (primeiras impressões)</td></tr>
+    <tr><td>2</td><td>Demonstração do formulário e dos botões</td><td>15 min</td><td><span class="tag p">PRESENCIAL</span></td><td>4</td></tr>
+    <tr><td>3</td><td>Perguntas para fechar o site</td><td>10 min</td><td><span class="tag p">PRESENCIAL</span> / <span class="tag c">CHAMADA</span></td><td>5</td></tr>
+    <tr><td>4</td><td>Gmail dela: contacto e filtro anti-spam</td><td>10 min</td><td><span class="tag p">PRESENCIAL</span></td><td>6</td></tr>
+    <tr><td>5</td><td>Google Business Profile</td><td>25 min</td><td><span class="tag p">PRESENCIAL</span></td><td>7 a 9</td></tr>
+    <tr><td>6</td><td>Outros sítios (Instagram, Facebook, TripAdvisor…)</td><td>5 min</td><td><span class="tag p">PRESENCIAL</span> / <span class="tag t">DEPOIS</span></td><td>10</td></tr>
+    <tr><td>7</td><td>Entrega: o que é dela e onde está</td><td>5 min</td><td><span class="tag p">PRESENCIAL</span></td><td>11</td></tr>
+    <tr><td>8</td><td>Fecho: agradecer, testemunho leve, próximos passos</td><td>5 min</td><td><span class="tag p">PRESENCIAL</span></td><td>13</td></tr>
+  </table>
+  <p class="peq">Se ela der sinais de cansaço, corta pela ordem 6 → 7 → 3 (estas fazem-se por chamada). Nunca cortes a 4 (Gmail) nem a 5 (Business Profile), que precisam do telemóvel e da conta dela.</p>
+</div>
+
+<!-- 4 -->
+<div class="seccao">
+  <h2>4 · Mostrar o formulário e ensinar os botões</h2>
+  <span class="tag p">PRESENCIAL</span>
+  <h3>A demonstração</h3>
+  <ol>
+    <li>No teu telemóvel, faz um pedido em quintadecanhoes.com/reservar (datas a uns meses, 1 Quarto Duplo, o teu outro email).</li>
+    <li>Mostra-lhe o email «Reservas - Nome (CAN-…) - Novo pedido» que te chega (ainda és tu a receber).</li>
+    <li>Abre o pedido e mostra a página: datas, quarto, total, sinal, contactos do hóspede.</li>
+    <li>Carrega em <strong>Confirmar</strong> e mostra o email que o hóspede recebe com os dados para pagar.</li>
+    <li>Carrega em <strong>O sinal não chegou</strong> para o cancelar e libertar as noites (não deixar o teste a ocupar o calendário).</li>
+  </ol>
+  <h3>O que ela tem de saber (deixa-lhe esta tabela impressa)</h3>
+  <table>
+    <tr><th>Quando…</th><th>Carrega em…</th><th>O que acontece</th></tr>
+    <tr><td>Chega um «Novo pedido»</td><td>Abrir o pedido</td><td>Vê tudo numa página.</td></tr>
+    <tr><td>Há lugar</td><td><strong>Confirmar disponibilidade</strong></td><td>O hóspede recebe os dados para pagar 30 %. Pode ajustar o total e, se trouxer animal grande, dizer se aceita.</td></tr>
+    <tr><td>Depois de confirmar</td><td>(no Booking)</td><td><strong>Fechar essas noites no Booking.</strong> O email lembra-a.</td></tr>
+    <tr><td>Não há lugar nessas datas</td><td><strong>Não há estas datas</strong></td><td>A página sugere outras datas e outros quartos; ela escolhe até 3; o hóspede escolhe uma.</td></tr>
+    <tr><td>Não quer aceitar</td><td><strong>Recusar o pedido</strong></td><td>Mensagem educada ao hóspede.</td></tr>
+    <tr><td>O dinheiro do sinal entrou</td><td><strong>Recebi o sinal</strong></td><td>O hóspede recebe «Reserva confirmada».</td></tr>
+    <tr><td>O sinal não chegou no prazo</td><td><strong>O sinal não chegou</strong></td><td>Cancela, avisa o hóspede, liberta as noites. <em>Reabrir no Booking.</em></td></tr>
+    <tr><td>O hóspede desiste depois de pagar</td><td><strong>Cancelar reserva</strong></td><td>Diz quanto devolver (metade do sinal até 10 dias antes; depois, nada). <em>Reabrir no Booking.</em></td></tr>
+    <tr><td>O hóspede diz que não recebeu o email</td><td><strong>Enviar por WhatsApp</strong></td><td>Abre o WhatsApp com os dados de pagamento já escritos.</td></tr>
+  </table>
+  <ul>
+    <li>Todas as manhãs (8–9h) pode receber um resumo: pedidos por responder e sinais em atraso.</li>
+    <li>Pedidos para hoje ou amanhã não passam pelo formulário: o site manda ligar ou escrever no WhatsApp.</li>
+    <li>O hóspede paga os outros 70 % à chegada.</li>
+  </ul>
+</div>
+
+<!-- 5 -->
+<div class="seccao">
+  <h2>5 · Perguntas para fechar o site (lista completa)</h2>
+  <p><span class="tag p">PRESENCIAL</span> ou <span class="tag c">CHAMADA</span>. Anota as respostas: aplico tudo numa só publicação (cada publicação gasta créditos do Netlify).</p>
+  <h3>Reservas e preços</h3>
+  <ul class="check">
+    <li><strong>Email dela:</strong> é mesmo casadecanhoes@gmail.com? Lê-o no telemóvel dela todos os dias?</li>
+    <li><strong>Preços:</strong> o site usa Duplo 86 €, Twin 77 €, Suite 113 € por noite (o que o Booking mostra com a promoção de ~10 %). A promoção é permanente? Concorda com estes preços no site? Quer o site <em>mais barato</em> que o Booking (ex.: −5 %) para incentivar reservas diretas?</li>
+    <li><strong>Épocas:</strong> há preços diferentes em agosto, Páscoa, Natal, Ano Novo, feriados, fins de semana?</li>
+    <li><strong>Casa inteira:</strong> 600 €/noite, mínimo 2 noites — confirmado? O mesmo em agosto?</li>
+    <li><strong>Estadia mínima geral:</strong> hoje é 1 noite. Quer mínimo de 2 em alguma época?</li>
+    <li><strong>Fecho:</strong> a quinta fecha nalguma época do ano? Em que dias? (Para fechar o calendário do site.)</li>
+    <li><strong>Prazo do sinal:</strong> 48 horas está bem? (Para chegadas próximas, o prazo é a véspera às 12h.)</li>
+    <li><strong>Cancelamento:</strong> a regra do sinal (metade até 10 dias antes) mantém-se? E se cancelarem já com tudo pago à chegada?</li>
+    <li><strong>Dados de pagamento:</strong> mostrar-lhe no telemóvel: IBAN PT50 0045 3120 4029 0713 341 57, titular Teresa Gomes, MB WAY 964 506 038. Estão certos?</li>
+  </ul>
+  <h3>Quartos e hóspedes</h3>
+  <ul class="check">
+    <li><strong>Cama suplementar (3–10 anos, 25 €/noite com pequeno-almoço):</strong> cabe em todos os quartos? Só uma por quarto? Na casa inteira já está incluída nos 600 €?</li>
+    <li><strong>Berço:</strong> quantos tem? (O site não diz o número.)</li>
+    <li><strong>Animais com mais de 8 kg:</strong> aceita? Cobra alguma coisa?</li>
+    <li><strong>Pequeno-almoço:</strong> 8 € por adulto e por noite — certo? A que horas é servido? (Pode ir para o site.)</li>
+    <li><strong>Check-in 15h–21h, check-out até às 11h:</strong> certos? Chegadas depois das 21h, como fazem?</li>
+    <li><strong>Regras da casa:</strong> fumar, festas, silêncio, piscina (época e horário) — quer que estejam no site?</li>
+  </ul>
+  <h3>Factos e textos</h3>
+  <ul class="check">
+    <li><strong>Classificação:</strong> o site diz «Turismo de Habitação», mas o registo oficial (RNET 1638) diz «Turismo em Espaço Rural». Qual é a correta?</li>
+    <li><strong>Assinatura:</strong> os emails acabam em «Até breve, Quinta de Canhões». Prefere «Teresa e António»? (O nome do António nunca foi confirmado.)</li>
+    <li><strong>Textos e fotos do site:</strong> leu? Há alguma coisa que não esteja certa ou de que não goste? Falta alguma foto (pequeno-almoço, sala, jardim no verão)?</li>
+    <li><strong>Línguas:</strong> recebe muitos estrangeiros? O site só está em português — uma versão em inglês ajudaria? (Ver secção 14.)</li>
+    <li><strong>Contactos:</strong> o WhatsApp é o 964 506 038? Quem responde (só ela)?</li>
+  </ul>
+</div>
+
+<!-- 6 -->
+<div class="seccao">
+  <h2>6 · O Gmail dela passa a receber os pedidos</h2>
+  <span class="tag p">PRESENCIAL</span>
+  <p>Faz-se no Gmail dela. Sem isto, os pedidos podem cair no spam — e ela perde reservas sem saber.</p>
+  <h3>No computador (mais fácil)</h3>
+  <ol>
+    <li>Abrir o Gmail dela → na barra de pesquisa, carregar no ícone das opções (à direita).</li>
+    <li>Em «De», escrever <code>reservas.casadecanhoes@gmail.com</code> → <strong>Criar filtro</strong>.</li>
+    <li>Marcar <strong>Nunca enviar para spam</strong> e, se quiser, <strong>Marcar sempre como importante</strong> → <strong>Criar filtro</strong>.</li>
+    <li>Adicionar <code>reservas.casadecanhoes@gmail.com</code> aos Contactos dela com o nome «Reservas do site».</li>
+  </ol>
+  <h3>Só telemóvel</h3>
+  <p>A app do Gmail não cria filtros. Basta adicionar o contacto e, quando chegar o primeiro email, abri-lo e carregar em «Não é spam» se for lá parar. O filtro faz-se depois por ti numa chamada com acesso ao computador dela, ou num browser no telemóvel em modo «versão para computador».</p>
+  <h3>Depois</h3>
+  <ol>
+    <li>Dizes-me (Claude) que está feito → troco <code>EMAIL_CASA</code> para casadecanhoes@gmail.com no Netlify e publico (~15 créditos).</li>
+    <li>Fazes um pedido de teste no teu telemóvel e ela vê-o chegar no telemóvel dela. Cancelas o teste com «O sinal não chegou».</li>
+    <li>Os avisos técnicos de falha (<code>EMAIL_ALERTAS</code>) continuam a ir para ti.</li>
+  </ol>
+  <div class="aviso"><strong>Atenção:</strong> combina com ela que, a partir desse dia, tem de ver o email todos os dias. Se ela preferir, os pedidos podem ir para os dois emails (o dela e o teu) durante as primeiras semanas — pede-me e faço.</div>
+</div>
+
+<!-- 7 -->
+<div class="seccao">
+  <h2>7 · Google Business Profile — Opção A: ela já tem acesso</h2>
+  <p>É o melhor caso: não há reclamação nem verificação. A ficha já é dela; só te dá acesso para editares.</p>
+  <h3>A1 · Confirmar que é mesmo ela <span class="tag p">PRESENCIAL</span></h3>
+  <ol>
+    <li>No telemóvel/computador dela, com o Gmail dela aberto: pesquisar no Google «<em>o meu perfil da empresa</em>» ou abrir <code>business.google.com</code>.</li>
+    <li>Se aparecer «Quinta de Canhões» com um painel de edição (Editar perfil, Fotos, Avaliações…), a dona é ela.</li>
+    <li>Se não aparecer nada: a ficha está noutra conta (outro Gmail dela, um familiar, quem fez o site antigo). Perguntar que outros emails usa. Se ninguém souber → Opção B2.</li>
+    <li>Se aparecerem <strong>duas</strong> fichas da casa: anotar; uma tem de ser marcada como duplicada (eu explico-te depois).</li>
+  </ol>
+  <h3>A2 · Ela adiciona-te como Gestor <span class="tag p">PRESENCIAL</span> (2 min)</h3>
+  <ol>
+    <li>No perfil: <strong>⋮</strong> (menu) → <strong>Definições do perfil</strong> → <strong>Pessoas e acesso</strong> → <strong>Adicionar</strong>.</li>
+    <li>Escrever o teu email → função <strong>Gestor</strong> (não Proprietário) → <strong>Convidar</strong>.</li>
+    <li>Aceitas o convite no teu email (ali mesmo, no teu telemóvel).</li>
+  </ol>
+  <h3>A3 · Preencher a ficha <span class="tag p">PRESENCIAL</span> com ela ao lado, ou <span class="tag s">SOZINHO</span> depois</h3>
+  <p>Tudo na secção 9. Com ela ao lado é melhor: ela confirma os factos e vê o resultado.</p>
+  <h3>A4 · Fica assim</h3>
+  <ul>
+    <li>Ela: proprietária principal. Tu: gestor. Nada a transferir mais tarde.</li>
+    <li>Se um dia saíres, ela tira-te em Pessoas e acesso. Coerente com «o cliente é dono das contas».</li>
+  </ul>
+</div>
+
+<!-- 8 -->
+<div class="seccao">
+  <h2>8 · Google Business Profile — Opção B: ela não tem acesso</h2>
+  <h3>B1 · A ficha existe mas não tem dono («Reclamar esta empresa»)</h3>
+  <ol>
+    <li><span class="tag s">SOZINHO</span> ou <span class="tag p">PRESENCIAL</span> No Google Maps (computador), abrir a ficha → <strong>Reclamar esta empresa</strong> → <strong>Gerir agora</strong>, com a <strong>tua</strong> conta Google.</li>
+    <li>Confirmar nome, categoria, morada e telefone.</li>
+    <li><strong>Verificação</strong> — o Google escolhe as opções que dá (não se escolhe à vontade):
+      <ul>
+        <li><strong>Chamada ou SMS</strong> para o telefone da ficha (964 506 038 ou 232 724 449) → <span class="tag p">PRESENCIAL</span>/<span class="tag c">CHAMADA</span>: ela diz-te o código. É o mais simples.</li>
+        <li><strong>Email</strong> para um endereço do domínio — raro; se aparecer, diz-me.</li>
+        <li><strong>Vídeo</strong> → <span class="tag p">PRESENCIAL na quinta</span>: um vídeo contínuo de 1–2 min a mostrar a placa/nome à entrada, a rua, a entrada da casa e uma prova de gestão (ex.: abrir a porta com a chave, a receção, documentos da casa). Grava-se e envia-se pela própria app.</li>
+        <li><strong>Postal</strong> → chega à morada em ~2 semanas com um código de 5 dígitos; ela guarda-o e liga-te (<span class="tag c">CHAMADA</span>).</li>
+      </ul>
+    </li>
+    <li>Depois da verificação: preencher (secção 9).</li>
+    <li><strong>Passar para ela:</strong> Pessoas e acesso → Adicionar → <code>casadecanhoes@gmail.com</code> → <strong>Proprietário</strong> → Convidar. Ela aceita no email (<span class="tag p">PRESENCIAL</span>, ou <span class="tag c">CHAMADA</span> a guiá-la).</li>
+    <li><span class="tag t">DEPOIS</span> Passados 7 dias: Pessoas e acesso → <strong>Transferir propriedade</strong> → ela. Tu ficas Gestor.</li>
+  </ol>
+  <h3>B2 · A ficha tem dono mas ninguém sabe quem</h3>
+  <ol>
+    <li>Perguntar-lhe: algum familiar, o antigo webdesigner, uma agência, o Turismo? Muitas vezes é um filho ou sobrinho.</li>
+    <li>Se não aparecer ninguém: na ficha, <strong>Reclamar esta empresa</strong> → o Google mostra «Este perfil já foi reclamado» → <strong>Pedir acesso</strong>. Preencher com os dados dela (é a dona do negócio).</li>
+    <li>O dono atual tem <strong>3 a 7 dias</strong> para responder. Se não responder, o Google deixa reclamar/verificar (volta ao passo de verificação de B1). Acompanhar o pedido no email.</li>
+  </ol>
+  <h3>B3 · Não há ficha nenhuma</h3>
+  <ol>
+    <li><code>business.google.com/create</code> com a tua conta → nome «Quinta de Canhões» → categoria «Turismo rural» (ou a mais próxima) → morada, telefone, website.</li>
+    <li>Verificação e passagem para ela como em B1.</li>
+  </ol>
+  <div class="aviso"><strong>Não fazer:</strong> criar uma ficha nova se já existir uma (gera duplicados e o Google pode suspender ambas); usar a conta reservas.casadecanhoes (essa só envia emails); pôr palavras-chave no nome (ex.: «Quinta de Canhões – Alojamento Termas S. Pedro do Sul») — é contra as regras do Google e dá suspensão.</div>
+</div>
+
+<!-- 9 -->
+<div class="seccao">
+  <h2>9 · Google Business Profile — tudo o que se preenche</h2>
+  <p>Textos prontos a copiar. Só factos confirmados; corrige o que ela disser na secção 5.</p>
+  <table>
+    <tr><th style="width:28%">Campo</th><th>O que pôr</th></tr>
+    <tr><td>Nome</td><td>Quinta de Canhões <span class="peq">(exatamente assim; sem palavras-chave)</span></td></tr>
+    <tr><td>Categoria principal</td><td>Turismo rural <span class="peq">(se não existir: «Casa de campo» ou «Pousada»)</span></td></tr>
+    <tr><td>Categorias secundárias</td><td>Alojamento com pequeno-almoço (Bed &amp; breakfast)</td></tr>
+    <tr><td>Website</td><td><code>https://quintadecanhoes.com</code></td></tr>
+    <tr><td>Link de reservas / marcações</td><td><code>https://quintadecanhoes.com/reservar</code> <span class="peq">(se o campo existir para esta categoria)</span></td></tr>
+    <tr><td>Telefone principal</td><td>964 506 038 · adicional: 232 724 449</td></tr>
+    <tr><td>Morada</td><td>Rua dos Canhões, 510, Canhões, Várzea, 3660-682 São Pedro do Sul</td></tr>
+    <tr><td>Check-in / check-out</td><td>15h00–21h00 / até às 11h00 <span class="peq">(nos alojamentos aparece em «Detalhes»)</span></td></tr>
+    <tr><td>Data de abertura</td><td>Perguntar-lhe (ano em que abriu ao turismo)</td></tr>
+  </table>
+  <h3>Descrição (até 750 caracteres)</h3>
+  <div class="citacao">Casa centenária de granito em Várzea, São Pedro do Sul, recuperada mantendo a estrutura original e decorada com peças de família. Quartos e suites com casa de banho privativa e ar condicionado, virados para o jardim, a piscina ou o vale do Vouga. Jardim em socalcos, piscina exterior de época, alpendre e estacionamento à porta. O pequeno-almoço é caseiro: bolos, compotas, sumos naturais, pão, queijo e fruta. As Termas de São Pedro do Sul ficam a sete minutos e Viseu a cerca de 20 km. Animais até 8 kg são bem-vindos. Reserve diretamente connosco no site.</div>
+  <p class="peq">~640 caracteres. Sem links nem promoções (o Google não deixa).</p>
+  <h3>Atributos a marcar</h3>
+  <p>Piscina exterior · Pequeno-almoço (pago) · Estacionamento gratuito no local · Aceita animais de estimação · Wi-Fi · Ar condicionado · Jardim · Adequado a crianças (berço disponível) · Não fumadores (se ela confirmar).</p>
+  <h3>Fotografias (mínimo 10; por esta ordem)</h3>
+  <ol>
+    <li><strong>Capa:</strong> a vista do vale pela janela (a imagem de abertura do site).</li>
+    <li><strong>Logótipo:</strong> o «C» vermelho (o ícone do site) — <code>site/app/icon.png</code>.</li>
+    <li>A casa de granito vista do jardim.</li>
+    <li>A piscina.</li>
+    <li>O jardim em socalcos.</li>
+    <li>A mesa do pequeno-almoço.</li>
+    <li>Quarto Duplo · 8. Quarto Twin · 9. Suite.</li>
+    <li value="10">Sala / interior em pedra · 11. O alpendre sobre o vale.</li>
+  </ol>
+  <p class="peq">Fotos originais em <code>site/public/fotos/</code>. Boas práticas: horizontais, luz natural, sem texto por cima, pelo menos 720 px.</p>
+  <h3>Primeira publicação («Novidades»)</h3>
+  <div class="citacao">Já pode reservar diretamente no nosso site, sem intermediários. Escolha as datas e o quarto em quintadecanhoes.com e confirmamos a disponibilidade no próprio dia.</div>
+  <p class="peq">Botão: «Reservar» → https://quintadecanhoes.com/reservar</p>
+  <h3>Avaliações</h3>
+  <ol>
+    <li>No perfil: <strong>Pedir avaliações</strong> → copiar o link curto → guardá-lo no telemóvel dela (nota ou mensagem a ela própria no WhatsApp).</li>
+    <li>Mensagem para ela enviar aos hóspedes no dia da partida (WhatsApp):</li>
+  </ol>
+  <div class="citacao">Obrigada pela visita! Se gostou da estadia, deixe-nos uma avaliação no Google, ajuda-nos muito: [link]. Volte sempre. — Teresa, Quinta de Canhões</div>
+  <p>Respostas modelo às avaliações (ela ou tu respondem):</p>
+  <div class="citacao">Muito obrigada, [nome]! Foi um gosto recebê-los na Quinta de Canhões. Esperamos vê-los de volta. — Teresa</div>
+  <div class="citacao">[Nome], obrigada pelo seu comentário. Lamentamos que [ponto] não tenha corrido como esperava; já estamos a tratar disso. Esperamos recebê-lo de novo. — Teresa</div>
+  <p class="peq">Nunca oferecer descontos em troca de avaliações (proibido pelo Google). Responder a todas, boas e más, nos primeiros dias.</p>
+</div>
+
+<!-- 10 -->
+<div class="seccao">
+  <h2>10 · O site nos outros sítios onde a casa aparece</h2>
+  <p>Cada link de um sítio conhecido para quintadecanhoes.com ajuda o Google a confiar no site. Precisas dos logins dela ou da autorização dela.</p>
+  <table>
+    <tr><th>Onde</th><th>O que fazer</th><th>Quem / onde</th></tr>
+    <tr><td>Instagram @quintadecanhoes</td><td>Link na biografia → quintadecanhoes.com</td><td><span class="tag p">PRESENCIAL</span> (telemóvel dela) ou <span class="tag s">SOZINHO</span> se gerires</td></tr>
+    <tr><td>Facebook</td><td>Campo «Website» da página; publicação a anunciar o site</td><td><span class="tag p">PRESENCIAL</span></td></tr>
+    <tr><td>WhatsApp Business (se usa)</td><td>Perfil da empresa → Website</td><td><span class="tag p">PRESENCIAL</span></td></tr>
+    <tr><td>TripAdvisor</td><td>Reclamar a ficha (Management Center, verificação por telefone/cartão) → website</td><td><span class="tag c">CHAMADA</span> / <span class="tag t">DEPOIS</span></td></tr>
+    <tr><td>VisitPortugal / Turismo do Centro</td><td>Email a pedir a atualização do website (modelo abaixo)</td><td><span class="tag s">SOZINHO</span> com autorização dela</td></tr>
+    <tr><td>RNT (Registo Nacional de Turismo)</td><td>Atualizar o website no registo (RNET 1638), no portal do Turismo de Portugal com as credenciais dela</td><td><span class="tag t">DEPOIS</span></td></tr>
+    <tr><td>Booking</td><td>Não permite links para o site. Nada a fazer.</td><td>—</td></tr>
+    <tr><td>Junta de Freguesia / Câmara de S. Pedro do Sul / Termas</td><td>Pedir para constar nas listas de alojamento com o link</td><td><span class="tag t">DEPOIS</span></td></tr>
+  </table>
+  <h3>Modelo de email para o VisitPortugal / Turismo do Centro</h3>
+  <div class="citacao">Assunto: Atualização do website — Quinta de Canhões (RNET 1638)<br><br>Bom dia,<br>Escrevo em nome da Quinta de Canhões, em Várzea, São Pedro do Sul (RNET 1638). Temos um novo website e gostaríamos que a nossa ficha passasse a indicar https://quintadecanhoes.com. Os restantes contactos mantêm-se: casadecanhoes@gmail.com, 964 506 038 e 232 724 449.<br>Muito obrigada,<br>Teresa Gomes — Quinta de Canhões</div>
+</div>
+
+<!-- 11 -->
+<div class="seccao">
+  <h2>11 · Contas, acessos e entrega</h2>
+  <p>A tua regra: tudo em nome dela, no plano grátis, e ela nunca depende de ti. Isto é o inventário completo e como lho entregar.</p>
+  <table>
+    <tr><th>Conta</th><th>Para quê</th><th>Dono</th><th>O que falta</th></tr>
+    <tr><td>Domínio quintadecanhoes.com (Porkbun)</td><td>Endereço do site e DNS</td><td>Teresa</td><td>Confirmar <strong>renovação automática ligada</strong> e cartão válido (expira 16 out 2027). Confirmar o email de avisos.</td></tr>
+    <tr><td>Netlify («casadecanhoes's team»)</td><td>Onde o site está; variáveis; reservas guardadas</td><td>Teresa</td><td>O plano grátis só tem 1 membro: vês com o login dela. Confirmar que o email da conta é o dela; ativar 2 passos.</td></tr>
+    <tr><td>reservas.casadecanhoes@gmail.com</td><td>Envia os emails do formulário</td><td>Casa (Teresa)</td><td>Entregar palavra-passe + códigos de recuperação; telemóvel de recuperação é o dela.</td></tr>
+    <tr><td>Google Search Console</td><td>Como o site aparece no Google</td><td>Teresa (proprietária) + tu</td><td>Nada; ela recebe um aviso da Google.</td></tr>
+    <tr><td>Google Business Profile</td><td>Ficha no Maps</td><td>Teresa (proprietária principal) + tu (gestor)</td><td>Secções 7–9.</td></tr>
+    <tr><td>Bing Webmaster Tools</td><td>Bing / DuckDuckGo / ChatGPT search</td><td>Tu (importado do Search Console)</td><td>Fazer; adicionar o email dela.</td></tr>
+    <tr><td>Código do site (GitHub do Diogo, repositório crisol-websites)</td><td>O código-fonte</td><td><strong>Tu</strong></td><td>Ver abaixo — é a única peça que não é dela.</td></tr>
+  </table>
+  <h3>Como entregar os acessos <span class="tag p">PRESENCIAL</span> ou <span class="tag t">DEPOIS</span></h3>
+  <ul>
+    <li><strong>Um «Caderno da casa» em papel</strong>, entregue em mão, que ela guarda com os documentos da quinta: cada conta, o email de acesso, a palavra-passe (escrita à mão por ti, não impressa) e, no caso do Gmail das reservas, os códigos de recuperação. Ela não precisa de usar nada disto — é para o dia em que alguém o precise.</li>
+    <li><strong>Nunca</strong> enviar palavras-passe por WhatsApp ou email.</li>
+    <li>Uma <strong>cópia digital sem palavras-passe</strong> (o PDF da tabela «O que é seu e onde está», com os links e as instruções) — <code>entrega/emails-do-site-teresa.md</code>, a reescrever.</li>
+    <li>Opcional: um <strong>envelope fechado</strong> com as palavras-passe entregue a um familiar de confiança, se ela quiser.</li>
+  </ul>
+  <h3>O código do site</h3>
+  <p>Hoje o código está no teu GitHub, junto com os outros clientes. Para cumprir a tua regra, há três caminhos (por ordem de esforço):</p>
+  <ol>
+    <li>Entregar-lhe uma <strong>cópia do código</strong> (ZIP numa pen ou no Google Drive dela) com um LEIA-ME de como publicar. Qualquer programador consegue pegar.</li>
+    <li>Criar um <strong>repositório próprio</strong> da Quinta de Canhões e transferi-lo para uma conta GitHub dela (ou de um familiar).</li>
+    <li>Ligar o Netlify dela a esse repositório, para publicar sem o teu computador.</li>
+  </ol>
+  <p class="peq">Não é para amanhã. Decide quando fechares a forma de manutenção (abaixo).</p>
+  <h3>Manutenção: combinar com ela <span class="tag p">PRESENCIAL</span></h3>
+  <ul>
+    <li>Como te pede alterações (WhatsApp? chamada?) e em quanto tempo respondes.</li>
+    <li>O que está incluído e o que se paga à parte (mudar preços, fotos, textos, épocas).</li>
+    <li>Quem vê os avisos do Netlify (créditos) e do Porkbun (renovação) — ela reencaminha-tos.</li>
+    <li>O que acontece se um dia deixares de trabalhar com ela (já está tudo em nome dela; entregas o código).</li>
+  </ul>
+</div>
+
+<!-- 12 -->
+<div class="seccao">
+  <h2>12 · O que é presencial e o que não é</h2>
+  <table>
+    <tr><th>Tarefa</th><th>Presencial?</th><th>Porquê</th></tr>
+    <tr><td>Demonstração e ensinar os botões</td><td><span class="tag p">PRESENCIAL</span></td><td>Ela aprende a fazer, no telemóvel dela.</td></tr>
+    <tr><td>Filtro anti-spam e contacto no Gmail dela</td><td><span class="tag p">PRESENCIAL</span></td><td>Precisa do Gmail dela aberto (idealmente no computador).</td></tr>
+    <tr><td>Business Profile — ela adicionar-te como gestor (Opção A)</td><td><span class="tag p">PRESENCIAL</span> ou <span class="tag c">CHAMADA</span></td><td>Precisa da conta dela; por chamada é difícil para ela.</td></tr>
+    <tr><td>Business Profile — verificação por vídeo</td><td><span class="tag p">PRESENCIAL na quinta</span></td><td>Tem de ser gravado no local.</td></tr>
+    <tr><td>Business Profile — verificação por SMS/chamada/postal</td><td><span class="tag c">CHAMADA</span></td><td>Ela só lê o código.</td></tr>
+    <tr><td>Aceitar convites (Business Profile)</td><td><span class="tag p">PRESENCIAL</span> ou <span class="tag c">CHAMADA</span></td><td>Um clique no email dela.</td></tr>
+    <tr><td>Perguntas para fechar o site</td><td><span class="tag c">CHAMADA</span></td><td>Só respostas.</td></tr>
+    <tr><td>Preencher a ficha do Business Profile</td><td><span class="tag s">SOZINHO</span></td><td>Depois de teres acesso.</td></tr>
+    <tr><td>Instagram / Facebook / WhatsApp</td><td><span class="tag p">PRESENCIAL</span> (ou sozinho se gerires)</td><td>Logins dela.</td></tr>
+    <tr><td>TripAdvisor, RNT</td><td><span class="tag t">DEPOIS</span></td><td>Verificações demoradas.</td></tr>
+    <tr><td>Emails ao VisitPortugal / Turismo do Centro</td><td><span class="tag s">SOZINHO</span></td><td>Com autorização dela.</td></tr>
+    <tr><td>Caderno da casa com os acessos</td><td><span class="tag p">PRESENCIAL</span></td><td>Entrega em mão.</td></tr>
+    <tr><td>Testemunho em vídeo/foto</td><td><span class="tag p">PRESENCIAL</span></td><td>Ver secção 13.</td></tr>
+    <tr><td>Testemunho escrito / nota de voz</td><td><span class="tag c">CHAMADA</span></td><td>Ver secção 13.</td></tr>
+    <tr><td>Trocar EMAIL_CASA, publicar, aplicar respostas</td><td><span class="tag s">SOZINHO</span> (com o Claude)</td><td>—</td></tr>
+  </table>
+</div>
+
+<!-- 13 -->
+<div class="seccao">
+  <h2>13 · Testemunho, referências e pós-venda</h2>
+  <div class="caixa"><strong>Ponto de partida.</strong> Ela é a tua primeira cliente: o que ela disser vale mais do que qualquer texto que escrevas sobre ti. Mas é uma senhora de idade, e o pior que pode acontecer é ela sentir que lhe estás a pedir trabalho. A regra é simples: <strong>tu fazes o trabalho, ela só diz que sim</strong>. Pede pouco de cada vez, no momento certo, e dá-lhe sempre a hipótese de dizer que não sem ficar mal.</div>
+
+  <h3>O momento certo</h3>
+  <ul>
+    <li><strong>Amanhã:</strong> só o que é leve — as impressões dela, de viva voz, e a autorização para usar o nome dela e fotos do site no teu portefólio.</li>
+    <li><strong>Depois da primeira reserva direta</strong> (quando um hóspede reservar pelo site e pagar o sinal): é o pico de satisfação. É aí que pedes o testemunho «a sério». Liga-lhe a dar os parabéns.</li>
+    <li><strong>Aos 3 meses:</strong> resultados (quantas reservas diretas, quanto poupou em comissões) — é o caso de estudo.</li>
+  </ul>
+
+  <h3>O que podes pedir, do mais leve ao mais exigente</h3>
+  <table>
+    <tr><th>#</th><th>O quê</th><th>Esforço para ela</th><th>Valor para ti</th><th>Como</th></tr>
+    <tr><td>1</td><td>Autorização para mostrar o site no teu portefólio (capturas, link, nome da casa)</td><td>Nenhum</td><td>Alto</td><td><span class="tag p">PRESENCIAL</span> «Importa-se que mostre o seu site a outras casas como exemplo do meu trabalho?»</td></tr>
+    <tr><td>2</td><td>Frase dita por ela, escrita por ti, aprovada por ela</td><td>Muito baixo</td><td>Alto</td><td>Conversa natural; tu anotas as palavras dela tal como as diz e lês-lhe no fim: «Posso usar esta frase com o seu nome?»</td></tr>
+    <tr><td>3</td><td>Nota de voz no WhatsApp (30–60 s)</td><td>Baixo — as pessoas mais velhas estão habituadas</td><td>Muito alto (autêntico)</td><td><span class="tag c">CHAMADA</span>/WhatsApp, depois da 1.ª reserva: «Se não se importar, mande-me uma mensagem de voz a dizer o que achou. Uso só com a sua autorização.» Transcreves e usas como texto (e o áudio, se ela deixar).</td></tr>
+    <tr><td>4</td><td>Fotografia dela (na quinta, com o site no telemóvel/computador, ou à porta)</td><td>Baixo</td><td>Alto (cara real)</td><td><span class="tag p">PRESENCIAL</span>. Só se ela gostar de fotos; nunca insistir.</td></tr>
+    <tr><td>5</td><td>Vídeo curto (30–60 s) com 2–3 perguntas</td><td>Médio</td><td>O mais forte</td><td><span class="tag p">PRESENCIAL na quinta</span>, depois de uma boa notícia. Telemóvel na horizontal, luz natural, sem microfone à vista; conversa, não entrevista. Se ela hesitar, desiste e fica a nota de voz.</td></tr>
+    <tr><td>6</td><td>Avaliação no Google da Crisol (se tiveres Business Profile)</td><td>Médio (precisa de conta Google)</td><td>Alto para SEO local</td><td><span class="tag c">CHAMADA</span>: mandas-lhe o link; se for difícil, um familiar ajuda. Se não tiveres ficha, fica para quando tiveres.</td></tr>
+    <tr><td>7</td><td>Ser referência (falar com potenciais clientes)</td><td>Variável</td><td>Muito alto</td><td>Pedir licença uma vez e combinar limites: «Se uma casa me perguntar, posso dar o seu número? No máximo uma ou duas pessoas por mês, e aviso sempre antes.»</td></tr>
+    <tr><td>8</td><td>Recomendações (outras casas que conheça)</td><td>Baixo</td><td>Muito alto</td><td>Pergunta aberta, sem pressão: «Conhece outras casas aqui à volta que precisem de ajuda com o site ou com reservas?» Turismo rural é uma rede pequena (vizinhos, associações, Termas).</td></tr>
+    <tr><td>9</td><td>Caso de estudo com números</td><td>Baixo (dados que tu tens)</td><td>Muito alto</td><td>Aos 3 meses: n.º de pedidos e reservas diretas, valor reservado pelo site, comissão do Booking poupada (~15 %). Pedir autorização para publicar números (ou só percentagens).</td></tr>
+    <tr><td>10</td><td>Link «site feito por Crisol» no rodapé do site dela</td><td>Nenhum</td><td>Médio (SEO e visibilidade)</td><td>Pedir licença; discreto, pequeno. Se ela preferir não, não.</td></tr>
+  </table>
+
+  <h3>Perguntas para tirar um bom testemunho (abertas, uma de cada vez)</h3>
+  <ol>
+    <li>Como faziam as reservas antes do site? O que era mais difícil?</li>
+    <li>O que a fez decidir avançar?</li>
+    <li>Como foi trabalhar comigo? Houve alguma coisa que a surpreendeu?</li>
+    <li>O que mudou desde que o site está no ar? (depois da 1.ª reserva)</li>
+    <li>O que diria a outra casa como a sua que esteja a pensar fazer o mesmo?</li>
+  </ol>
+  <p class="peq">Não lhe dês respostas feitas nem lhe peças que «diga bem». As frases imperfeitas dela são mais credíveis do que um texto polido. Anota as palavras exatas.</p>
+
+  <h3>Como pedir sem pressionar (frases)</h3>
+  <div class="citacao">«D. Teresa, a senhora foi a minha primeira cliente e isso para mim conta muito. Se um dia lhe apetecer dizer-me o que achou, nem que seja numa mensagem de voz, ajudava-me imenso a mostrar o meu trabalho a outras casas. Sem pressa nenhuma, e só se quiser.»</div>
+  <div class="citacao">«Importa-se que eu escreva o que me disse agora e o use com o seu nome? Leio-lhe primeiro e só uso se gostar.»</div>
+
+  <h3>Autorização por escrito (simples, RGPD)</h3>
+  <p>Para usar nome, frase, voz, fotografia ou vídeo, convém ter a autorização escrita. Um papel curto, assinado no fim da reunião ou mais tarde:</p>
+  <div class="citacao">Eu, Teresa Gomes, autorizo a Crisol / Diogo Covelo a usar, para divulgar o seu trabalho, o meu nome, o nome da Quinta de Canhões, imagens do site quintadecanhoes.com e as declarações, fotografias, gravações de voz ou vídeo que eu aprovar. Posso retirar esta autorização a qualquer momento, por escrito.<br><br>Data: ____ / ____ / ______   Assinatura: ______________________</div>
+  <p class="peq">Imprime duas cópias: uma fica com ela.</p>
+
+  <h3>Agradecer (opcional, fica bem)</h3>
+  <ul>
+    <li>Um gesto simples na entrega: flores, um livro da região, ou um quadro com a fotografia da casa que está na abertura do site.</li>
+    <li>Um «obrigado» escrito à mão. Para uma pessoa de idade vale mais do que qualquer email.</li>
+    <li>Se ela trouxer outro cliente: um mês de manutenção oferecido, ou um pequeno trabalho gratuito (ex.: versão inglesa de uma página). Combina isto só se surgir, não como «comissão».</li>
+  </ul>
+
+  <h3>Pós-venda (cria confiança e dá-te os dados para o caso de estudo)</h3>
+  <table>
+    <tr><th>Quando</th><th>O quê</th></tr>
+    <tr><td>1 semana</td><td>Chamada curta: os emails chegam? Algum pedido? Alguma dúvida nos botões?</td></tr>
+    <tr><td>1.º pedido real</td><td>Mensagem a dar os parabéns; ajudar na 1.ª confirmação se ela quiser.</td></tr>
+    <tr><td>1 mês</td><td>Mini-relatório (1 página): visitas no Google (Search Console), pedidos recebidos, reservas, ficha do Maps. Créditos do Netlify.</td></tr>
+    <tr><td>3 meses</td><td>Relatório com números e caso de estudo (com autorização). Pedir o testemunho completo, se ainda não houver.</td></tr>
+    <tr><td>Antes do verão</td><td>Rever preços de época, fotos novas da piscina, plano do Netlify.</td></tr>
+    <tr><td>Natal</td><td>Postal ou mensagem pessoal.</td></tr>
+  </table>
+</div>
+
+<!-- 14 -->
+<div class="seccao">
+  <h2>14 · O que ainda se pode melhorar no site</h2>
+  <p>Nada disto é preciso para o site funcionar. É a lista para decidires com ela o que vale a pena.</p>
+  <table>
+    <tr><th>Melhoria</th><th>Porquê</th><th>Depende dela?</th></tr>
+    <tr><td><strong>Versão em inglês</strong> (pelo menos início, quartos e reservar)</td><td>Hóspedes estrangeiros (Booking) não reservam num site só em português.</td><td>Sim — se recebe estrangeiros.</td></tr>
+    <tr><td><strong>Email automático pós-estadia</strong> com o link de avaliação do Google</td><td>Avaliações sem ela ter de se lembrar; é o que mais faz subir no Maps.</td><td>Precisa do link de avaliações (secção 9).</td></tr>
+    <tr><td><strong>Ligação Booking ↔ site (iCal)</strong></td><td>O calendário do site passa a saber das reservas do Booking, e vice-versa; ela deixa de fechar datas à mão.</td><td>Sim — links de exportação do extranet do Booking.</td></tr>
+    <tr><td>Épocas, preços especiais e estadia mínima no formulário</td><td>Agosto, feriados, Ano Novo.</td><td>Sim — respostas da secção 5.</td></tr>
+    <tr><td>Fechar no calendário as épocas em que a quinta está fechada</td><td>Evita pedidos impossíveis.</td><td>Sim.</td></tr>
+    <tr><td>Página «Perto das Termas de São Pedro do Sul»</td><td>Muita gente pesquisa alojamento perto das Termas; traz visitas do Google.</td><td>Não.</td></tr>
+    <tr><td>Avaliações reais no site (com autorização)</td><td>Confiança para reservar diretamente.</td><td>Autorização para citar.</td></tr>
+    <tr><td>Fotos novas (pequeno-almoço, piscina no verão, quartos com luz natural)</td><td>As fotos vendem a estadia.</td><td>Sim — sessão de fotos.</td></tr>
+    <tr><td>Fotos em AVIF (recusado por fluidez)</td><td>Metade do tráfego nos quartos → mais visitas no plano grátis.</td><td>Não — decisão tua.</td></tr>
+    <tr><td>Calendário público a atualizar em 10–15 s em vez de ~60 s</td><td>Mais rapidez depois de confirmar.</td><td>Não.</td></tr>
+    <tr><td>Apagar 4 PNG enormes não usados (hero.png, *-nova.png)</td><td>Publicações mais leves.</td><td>Não.</td></tr>
+    <tr><td>«Turismo de Habitação» vs «Turismo em Espaço Rural»</td><td>Coerência com o registo oficial.</td><td>Sim — secção 5.</td></tr>
+  </table>
+  <h3>Pendentes técnicos (só teus)</h3>
+  <ul class="check">
+    <li>Reencaminhar para ela/ti os emails que voltam para trás (conta reservas.casadecanhoes → Definições → Filtros → «mailer-daemon» → Reencaminhar).</li>
+    <li>Trocar o token do Netlify e a palavra-passe de aplicação do Gmail das reservas (ficaram expostos num deploy).</li>
+    <li>Bing Webmaster Tools → Importar do Search Console.</li>
+    <li>Reescrever o documento de entrega para ela (tirar os passos antigos da palavra-passe do Gmail dela).</li>
+    <li>Ver os créditos do Netlify ao fim de 30 dias.</li>
+  </ul>
+</div>
+
+<!-- 15 -->
+<div class="seccao">
+  <h2>15 · Depois da reunião</h2>
+  <h3>No próprio dia</h3>
+  <ul class="check">
+    <li>Mandar ao Claude as respostas da secção 5 → aplica tudo numa só publicação.</li>
+    <li>Se o filtro do Gmail ficou feito: trocar <code>EMAIL_CASA</code> para o dela, publicar e fazer o pedido de teste (cancelar no fim).</li>
+    <li>Preencher a ficha do Business Profile (se não ficou feito na reunião).</li>
+    <li>Enviar os emails ao VisitPortugal / Turismo do Centro.</li>
+    <li>Mensagem de agradecimento à D. Teresa.</li>
+  </ul>
+  <h3>Nas semanas seguintes</h3>
+  <ul class="check">
+    <li>+7 dias: transferir a propriedade principal do Business Profile para ela (Opção B).</li>
+    <li>+7 dias: chamada de acompanhamento.</li>
+    <li>1.ª reserva direta: parabéns + pedir a nota de voz / testemunho.</li>
+    <li>+30 dias: mini-relatório, créditos do Netlify, Search Console (Indexação → Páginas; Desempenho).</li>
+    <li>TripAdvisor e RNT.</li>
+    <li>Decidir a versão em inglês e o email pós-estadia.</li>
+    <li>Decidir como entregar o código (secção 11).</li>
+    <li>+3 meses: caso de estudo.</li>
+  </ul>
+  <div class="caixa verde"><strong>O site está fechado quando:</strong> (1) os pedidos chegam ao email dela e ela sabe responder; (2) a ficha do Google aponta para o site e é dela; (3) as respostas da secção 5 estão aplicadas; (4) ela tem o caderno com os acessos e sabe como te pedir alterações.</div>
+</div>
+
+</div>
+
+<script>
+(() => {
+  const CHAVE = "reuniao-teresa-pdf-v1";
+  let d = {}; try { d = JSON.parse(localStorage.getItem(CHAVE) || "{}"); } catch {}
+  const guardar = () => { try { localStorage.setItem(CHAVE, JSON.stringify(d)); } catch {} contar(); };
+  const alvos = [];
+  // itens de lista (exceto o índice e a capa) e linhas de tabelas
+  document.querySelectorAll(".seccao li").forEach((li) => { if (!li.closest(".indice")) alvos.push(li); });
+  document.querySelectorAll(".seccao table").forEach((t) => {
+    const cab = t.querySelector("tr");
+    if (cab) { const th = document.createElement("th"); th.textContent = "Feito · notas"; cab.appendChild(th); }
+    t.querySelectorAll("tr").forEach((tr, i) => { if (i > 0) alvos.push(tr); });
+  });
+  alvos.forEach((el, n) => {
+    const id = "i" + n, v = d[id] || {};
+    const box = document.createElement("div"); box.className = "resp";
+    box.innerHTML = '<input type="checkbox" title="Feito"><textarea rows="1" placeholder="Resposta / notas"></textarea>';
+    const cb = box.querySelector("input"), ta = box.querySelector("textarea");
+    cb.checked = !!v.f; ta.value = v.t || ""; el.classList.toggle("feito", cb.checked);
+    const ajustar = () => { ta.style.height = "26px"; ta.style.height = Math.max(26, ta.scrollHeight + 2) + "px"; };
+    cb.onchange = () => { (d[id] ||= {}).f = cb.checked; el.classList.toggle("feito", cb.checked); guardar(); };
+    ta.oninput = () => { (d[id] ||= {}).t = ta.value; ajustar(); guardar(); };
+    if (el.tagName === "TR") { const td = document.createElement("td"); td.className = "col-resp"; td.appendChild(box); el.appendChild(td); }
+    else el.appendChild(box);
+    requestAnimationFrame(ajustar);
+    el.dataset.rid = id;
+  });
+  function texto(el) {
+    const c = el.cloneNode(true); c.querySelectorAll(".resp, .col-resp").forEach((x) => x.remove());
+    return c.textContent.replace(/\s+/g, " ").trim();
+  }
+  function relatorio() {
+    let md = "# Reunião D. Teresa — respostas (" + new Date().toLocaleString("pt-PT") + ")\n";
+    document.querySelectorAll(".seccao").forEach((s) => {
+      let linhas = "";
+      s.querySelectorAll("[data-rid]").forEach((el) => {
+        const v = d[el.dataset.rid] || {}; if (!v.f && !v.t) return;
+        linhas += "- " + (v.f ? "[x] " : "[ ] ") + texto(el).slice(0, 220) + (v.t ? "\n  → " + v.t.replace(/\n/g, "\n    ") : "") + "\n";
+      });
+      if (linhas) md += "\n## " + s.querySelector("h2").textContent + "\n" + linhas;
+    });
+    return md;
+  }
+  function contar() {
+    const f = Object.values(d).filter((v) => v.f).length;
+    document.getElementById("estado").textContent = "Reunião D. Teresa · " + f + " de " + alvos.length + " feitos";
+  }
+  document.getElementById("copiar").onclick = async (e) => { try { await navigator.clipboard.writeText(relatorio()); e.target.textContent = "Copiado ✓"; } catch { e.target.textContent = "Usa Descarregar"; } setTimeout(() => e.target.textContent = "Copiar respostas", 1500); };
+  document.getElementById("baixar").onclick = () => { const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([relatorio()], { type: "text/markdown" })); a.download = "reuniao-teresa-respostas.md"; a.click(); };
+  document.getElementById("imprimir").onclick = () => print();
+  window.relatorio = relatorio;
+  contar();
+})();
+</script>
+</body>
+</html>

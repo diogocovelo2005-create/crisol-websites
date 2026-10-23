@@ -1,7 +1,8 @@
 import { createHash } from "node:crypto";
 import {
-  CAMAS_SUPLEMENTARES_POR_QUARTO,
   UNIDADES_MAX,
+  adultosNasSuites,
+  cabeGrupo,
   cabeNasNoites,
   criancasCama,
   deIso,
@@ -246,7 +247,7 @@ export function sugerirAlternativas(r: Registo, registos: Registo[], maxDatas = 
       for (let s = 0; s <= UNIDADES_MAX.suite; s++) {
         const e: Escolha = Object.fromEntries(Object.entries({ duplo: d, twin: t, suite: s }).filter(([, v]) => v > 0));
         const nq = d + t + s;
-        if (!nq || lugaresDe(e) < lugaresNormais(g) || nq * CAMAS_SUPLEMENTARES_POR_QUARTO < criancasCama(g)) continue;
+        if (!nq || cabeGrupo(e, g) || adultosNasSuites(e, g)) continue;
         if (!casa && JSON.stringify(e) === JSON.stringify(escolha)) continue;
         if (!cabe(chegada, e, false)) continue;
         combos.push({ e, nq, preco: d * TARIFAS.base.duplo + t * TARIFAS.base.twin + s * TARIFAS.base.suite });

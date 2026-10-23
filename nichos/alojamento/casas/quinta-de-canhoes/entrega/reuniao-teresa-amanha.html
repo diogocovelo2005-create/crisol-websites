@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reunião Teresa · amanhã</title>
+<style>
+  :root { --vermelho:#7a2e2a; --verde:#2f3a2c; --cal:#f4efe6; --linha:#d8d0c2; --texto:#1f1d1a; --suave:#5d574e; }
+  * { box-sizing: border-box; }
+  body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: var(--texto); font-size: 10.6pt; line-height: 1.45; margin: 0; }
+  h1 { font-family: Georgia, serif; font-size: 22pt; line-height: 1.1; margin: 0 0 3mm; color: var(--verde); }
+  h2 { font-family: Georgia, serif; font-size: 15pt; color: var(--vermelho); margin: 0 0 3mm; padding-bottom: 2mm; border-bottom: 1.5px solid var(--vermelho); }
+  p { margin: 0 0 2.4mm; }
+  ul, ol { margin: 0 0 3mm; padding-left: 5.5mm; }
+  li { margin: 0 0 1.4mm; }
+  .seccao { margin-top: 9mm; }
+  .sub { color: var(--suave); font-size: 11pt; }
+  .citacao { font-family: Georgia, serif; font-style: italic; background: var(--cal); padding: 3mm 4mm; margin: 2mm 0 3mm; }
+  .peq { font-size: 9pt; color: var(--suave); }
+  code { font-family: Menlo, monospace; font-size: 9pt; background: var(--cal); padding: 0 1mm; }
+
+  @media screen {
+    body { background:#ece6dc; }
+    .folha { max-width: 190mm; margin: 0 auto; background:#fff; padding: 12mm 14mm 24mm; box-shadow: 0 1px 8px rgba(0,0,0,.08); }
+    .barra-topo { position: sticky; top: 0; z-index: 9; background:#2f3a2c; color:#fff; display:flex; gap:8px; justify-content:space-between; align-items:center; padding:7px 14px; font-size:9.5pt; }
+    .barra-topo button { font:inherit; font-size:9pt; border:0; border-radius:4px; padding:4px 9px; cursor:pointer; background:#f4efe6; color:#2f3a2c; }
+    .barra-topo button.prim { background:#7a2e2a; color:#fff; }
+  }
+  .resp { display:flex; gap:2.5mm; align-items:flex-start; margin:1.6mm 0 2.6mm; }
+  .resp input[type=checkbox] { width:15px; height:15px; margin-top:6px; accent-color:#2f6b3a; flex-shrink:0; cursor:pointer; }
+  .resp textarea { flex:1; font:inherit; font-size:9.6pt; line-height:1.4; border:1px solid var(--linha); border-radius:4px; padding:4px 7px; min-height:26px; height:26px; resize:vertical; background:#fcfaf6; color:var(--texto); }
+  .resp textarea:focus { outline:2px solid #c9b9a2; background:#fff; }
+  li.feito > :not(.resp):not(ul) { opacity:.5; text-decoration: line-through; }
+  .check { padding-left: 5mm; }
+  @media print { .barra-topo { display:none; } }
+</style>
+</head>
+<body>
+<div class="barra-topo"><span id="estado">Reunião D. Teresa · amanhã</span><span><button class="prim" id="copiar">Copiar respostas</button> <button id="baixar">Descarregar</button> <button id="imprimir">Imprimir</button></span></div>
+<div class="folha">
+
+<h1>Reunião com a D. Teresa</h1>
+<p class="sub">Quatro coisas, ~40 minutos.</p>
+
+<div class="seccao">
+  <h2>1 · Perguntas que faltam</h2>
+  <ul class="check">
+    <li><strong>Cama suplementar:</strong> só cabe em 2 quartos — em quais?</li>
+    <li><strong>Casa inteira:</strong> a cama suplementar das crianças já está nos 600 €?</li>
+    <li><strong>Animais com mais de 8 kg:</strong> aceita? Cobra alguma coisa?</li>
+    <li><strong>Preços:</strong> Duplo 86 €, Twin 77 €, Suite 113 € por noite estão bem?</li>
+    <li><strong>Épocas:</strong> algum preço diferente (agosto, feriados, Ano Novo)? Estadia mínima nalguma época? A quinta fecha nalguma altura?</li>
+    <li><strong>Morada:</strong> «Rua <em>de</em> Canhões» ou «Rua <em>dos</em> Canhões»? (confirmar a forma exata)</li>
+    <li><strong>Pequeno-almoço:</strong> a que horas é servido?</li>
+  </ul>
+</div>
+
+<div class="seccao">
+  <h2>2 · Gmail dela</h2>
+  <ul class="check">
+    <li>Adicionar <code>reservas.casadecanhoes@gmail.com</code> aos contactos dela («Reservas do site»).</li>
+    <li>Criar filtro (Gmail no computador): De <code>reservas.casadecanhoes@gmail.com</code> → <strong>Nunca enviar para spam</strong>.</li>
+  </ul>
+</div>
+
+<div class="seccao">
+  <h2>3 · Contas</h2>
+  <ul class="check">
+    <li>Mostrar-lhe a página «As suas contas» do PDF (Google das reservas, Netlify, Porkbun).</li>
+    <li>Ela escreve a palavra-passe (a mesma nas três) num papel e guarda-o com os documentos da quinta.</li>
+  </ul>
+</div>
+
+<div class="seccao">
+  <h2>4 · Testemunho</h2>
+  <p>Quatro perguntas abertas sobre o teu trabalho. Deixa-a falar e só puxa por exemplos («por exemplo?»). Escreve as respostas com as palavras dela; no fim junta-as num texto curto e lê-lho.</p>
+  <ol class="check">
+    <li>Como foi trabalhar comigo, do início até agora?</li>
+    <li>Sente que o site mostra bem a Quinta de Canhões? Porquê?</li>
+    <li>O que mudou para si e para a quinta com o site novo?</li>
+    <li>O que diria a alguém com uma casa como a sua que está a pensar fazer o mesmo?</li>
+  </ol>
+  <ul class="check">
+    <li><strong>Texto final</strong> (junta aqui as respostas e lê-lho)</li>
+    <li>Autoriza usar este texto com o nome dela e o da Quinta de Canhões?</li>
+  </ul>
+  <div class="citacao">«D. Teresa, foi a minha primeira cliente. Posso fazer-lhe umas perguntas rápidas e escrever um pequeno texto com o que me disser? Leio-lho e só uso se gostar.»</div>
+</div>
+
+<div class="seccao">
+  <h2>No fim</h2>
+  <ul class="check">
+    <li>Entregar o PDF «O seu site».</li>
+    <li>Mandar ao Claude as respostas → uma só publicação (email dela, ícone novo, cama suplementar, preços, morada, «Turismo em Espaço Rural»).</li>
+  </ul>
+</div>
+
+</div>
+<script>
+(() => {
+  const CHAVE = "reuniao-teresa-amanha-v3";
+  let d = {}; try { d = JSON.parse(localStorage.getItem(CHAVE) || "{}"); } catch {}
+  const guardar = () => { try { localStorage.setItem(CHAVE, JSON.stringify(d)); } catch {} contar(); };
+  const alvos = [...document.querySelectorAll(".check > li")];
+  alvos.forEach((el, n) => {
+    const id = "i" + n, v = d[id] || {};
+    const box = document.createElement("div"); box.className = "resp";
+    box.innerHTML = '<input type="checkbox" title="Feito"><textarea rows="1" placeholder="Resposta / notas"></textarea>';
+    const cb = box.querySelector("input"), ta = box.querySelector("textarea");
+    cb.checked = !!v.f; ta.value = v.t || ""; el.classList.toggle("feito", cb.checked);
+    const ajustar = () => { ta.style.height = "26px"; ta.style.height = Math.max(26, ta.scrollHeight + 2) + "px"; };
+    cb.onchange = () => { (d[id] ||= {}).f = cb.checked; el.classList.toggle("feito", cb.checked); guardar(); };
+    ta.oninput = () => { (d[id] ||= {}).t = ta.value; ajustar(); guardar(); };
+    el.appendChild(box); requestAnimationFrame(ajustar); el.dataset.rid = id;
+  });
+  const texto = (el) => { const c = el.cloneNode(true); c.querySelectorAll(".resp").forEach((x) => x.remove()); return c.textContent.replace(/\s+/g, " ").trim(); };
+  function relatorio() {
+    let md = "# Reunião D. Teresa (amanhã) — respostas (" + new Date().toLocaleString("pt-PT") + ")\n";
+    document.querySelectorAll(".seccao").forEach((s) => {
+      let linhas = "";
+      s.querySelectorAll("[data-rid]").forEach((el) => { const v = d[el.dataset.rid] || {}; if (!v.f && !v.t) return; linhas += "- " + (v.f ? "[x] " : "[ ] ") + texto(el).slice(0, 220) + (v.t ? "\n  → " + v.t.replace(/\n/g, "\n    ") : "") + "\n"; });
+      if (linhas) md += "\n## " + s.querySelector("h2").textContent + "\n" + linhas;
+    });
+    return md;
+  }
+  function contar() { const f = Object.values(d).filter((v) => v.f).length; document.getElementById("estado").textContent = "Reunião D. Teresa · amanhã · " + f + " de " + alvos.length + " feitos"; }
+  document.getElementById("copiar").onclick = async (e) => { try { await navigator.clipboard.writeText(relatorio()); e.target.textContent = "Copiado ✓"; } catch { e.target.textContent = "Usa Descarregar"; } setTimeout(() => e.target.textContent = "Copiar respostas", 1500); };
+  document.getElementById("baixar").onclick = () => { const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([relatorio()], { type: "text/markdown" })); a.download = "reuniao-teresa-amanha-respostas.md"; a.click(); };
+  document.getElementById("imprimir").onclick = () => print();
+  window.relatorio = relatorio; contar();
+})();
+</script>
+</body>
+</html>

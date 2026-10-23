@@ -4,7 +4,7 @@ import { MapPin } from "lucide-react";
 import { contactos } from "@/lib/contactos";
 import { gravarConsentimento, useConsentimento } from "@/lib/consentimento";
 
-const SRC = "https://www.google.com/maps?output=embed&q=Rua%20dos%20Canh%C3%B5es%20510%2C%203660-682%20S%C3%A3o%20Pedro%20do%20Sul";
+const SRC = "https://www.google.com/maps?output=embed&q=Rua%20de%20Canh%C3%B5es%20501%2C%203660-682%20S%C3%A3o%20Pedro%20do%20Sul";
 
 /* O mapa do rodapé: o iframe do Google só carrega depois de a pessoa aceitar.
    Até lá, a morada no mesmo espaço e um botão que dá o consentimento. */

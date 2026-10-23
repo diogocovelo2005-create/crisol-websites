@@ -43,6 +43,7 @@ const fotos = {
   "serra-arada": ["public/fotos/regiao-serra-arada-wikimedia.jpg", 92, [640, 960, 1280]],
   vouga: ["public/fotos/regiao-vouga-wikimedia.jpg", 92, [640, 960, 1280]],
   termas: ["public/fotos/regiao-termas-wikimedia.jpg", 92, [640, 960]],
+  nogueiras: ["public/fotos/regiao-nogueiras-wikimedia.jpg", 92, [640, 960, 1280]],
 };
 
 await mkdir(OUT, { recursive: true });

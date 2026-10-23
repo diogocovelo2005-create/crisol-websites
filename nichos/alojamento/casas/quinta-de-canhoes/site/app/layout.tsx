@@ -33,7 +33,7 @@ const corpo = Karla({
 });
 
 const DESCRICAO =
-  "Casa centenária de Turismo de Habitação sobre o vale do Vouga, em Várzea, São Pedro do Sul. Jardim, piscina e um pequeno-almoço de que os hóspedes não se esquecem.";
+  "Casa centenária de Turismo em Espaço Rural sobre o vale do Vouga, em Várzea, São Pedro do Sul. Jardim, piscina e um pequeno-almoço de que os hóspedes não se esquecem.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),

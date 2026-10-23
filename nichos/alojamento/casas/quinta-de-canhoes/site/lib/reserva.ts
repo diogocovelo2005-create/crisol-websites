@@ -34,6 +34,8 @@ export type Quarto = {
       cama de casal dá 2 pessoas, um sofá-cama dá 1 (o Diogo, 2026-10-21):
       Duplo 2, Twin 2, Suite 4 (cama de casal e dois sofás-cama). */
   lugares: number;
+  /** O que se mostra no cartão: para quantas pessoas é o preço. */
+  paraQuem: string;
 };
 
 export const quartos: Quarto[] = [
@@ -46,6 +48,7 @@ export const quartos: Quarto[] = [
     alt: "Quarto Duplo com cama de casal de cabeceira de madeira, almofadas bordadas e candeeiros acesos nas mesas de cabeceira.",
     foco: "50% 62%",
     lugares: 2,
+    paraQuem: "Para 2 pessoas",
   },
   {
     id: "twin",
@@ -56,6 +59,7 @@ export const quartos: Quarto[] = [
     alt: "Quarto Twin com duas camas individuais juntas, almofadas bordadas e janela com portadas de madeira abertas.",
     foco: "50% 60%",
     lugares: 2,
+    paraQuem: "Para 2 pessoas",
   },
   {
     id: "suite",
@@ -66,6 +70,7 @@ export const quartos: Quarto[] = [
     alt: "Suite com cama de casal, colcha florida, candeeiros acesos e paredes amarelas quentes.",
     foco: "40% 62%",
     lugares: 4,
+    paraQuem: "Preço para 2 pessoas; crianças dos 3 aos 10 nos sofás-cama",
   },
 ];
 
@@ -86,11 +91,9 @@ export const UNIDADES_MAX: Record<TipoQuarto, number> = {
 /* ------------------------------------------------------------------ */
 
 /*
-  Booking 2026-10-17; preço base flexível sem desconto 95/85/125 — o Diogo
-  pode escolher. Os de baixo são a tarifa flexível com o desconto que o
-  Booking mostra hoje (86/77/113), por noite, 2 adultos, impostos incluídos,
-  sem pequeno-almoço. Iguais o ano inteiro (ver pesquisa/booking/
-  precos-2026-10-17.md).
+  Preços da casa, 23 out 2026 (a D. Teresa): Quarto Duplo 64 €, Quarto Twin
+  61 €, Suite 97 € (para 2 pessoas), por noite, sem pequeno-almoço. Iguais
+  o ano inteiro.
 
   `base` é o preço por noite de cada tipo. `periodos` sobrepõem-se à base
   quando a noite cai dentro deles (o último que servir ganha). Um período
@@ -116,12 +119,12 @@ export const TARIFAS: {
   base: Record<TipoQuarto, number>;
   periodos: Periodo[];
 } = {
-  fonte: "Booking.com, tarifa flexível com desconto",
-  recolhidas: "2026-10-17",
+  fonte: "Preços da casa",
+  recolhidas: "2026-10-23",
   base: {
-    duplo: 86,
-    twin: 77,
-    suite: 113,
+    duplo: 64,
+    twin: 61,
+    suite: 97,
   },
   periodos: [],
 };
@@ -142,7 +145,6 @@ export const PRECO_CASA_INTEIRA: number | null = 600;
 /** Estadia mínima da casa inteira (a Teresa, 2026-10-20). */
 export const NOITES_MINIMAS_CASA = 2;
 
-
 /** Quantas pessoas cabem na casa inteira: 2×2 + 2×2 + 2×4 = 16. */
 export const CASA_INTEIRA_LUGARES = quartos.reduce((s, q) => s + q.lugares * UNIDADES_MAX[q.id], 0);
 
@@ -160,14 +162,15 @@ export const SINAL_PERCENTAGEM = 30;
 export const QUANDO_RESTANTE = "à chegada à quinta";
 
 /* ------------------------------------------------------------------ */
-/* Crianças (a Teresa e o Diogo, 2026-10-20)                           */
+/* Crianças (a Teresa e o Diogo, 2026-10-23)                           */
 /* ------------------------------------------------------------------ */
 
 /*
   - até 3 anos: grátis (estadia e pequeno-almoço); dorme num berço que cabe
     em qualquer quarto; não ocupa lugar.
-  - 3 a 10 anos: cama suplementar a 25 €/noite, com o pequeno-almoço
-    incluído; não ocupa lugar normal do quarto.
+  - 3 a 10 anos: 15 €/noite, com cama suplementar e pequeno-almoço. A cama
+    suplementar só cabe nas Suites: as crianças dormem nos sofás-cama (dois
+    por Suite). Na casa inteira não pagam extra (já está nos 600 €).
   - com mais de 10 anos: conta-se nos adultos (não há escalão próprio).
 */
 export type Escalao = "bebe" | "crianca";
@@ -177,17 +180,17 @@ export const ESCALOES: { id: Escalao; nome: string }[] = [
 ];
 export type Grupo = { adultos: number; criancas: Escalao[] };
 
-/** Cama suplementar (3 a 10 anos), por noite, com o pequeno-almoço incluído. */
-export const CAMA_SUPLEMENTAR_POR_NOITE = 25;
-/** Camas suplementares que cabem num quarto. A confirmar com a Teresa. */
-export const CAMAS_SUPLEMENTARES_POR_QUARTO = 1;
-/** Na casa inteira (preço fechado por noite) as crianças 3–10 não pagam a cama suplementar. Configurável. */
+/** Criança dos 3 aos 10, por noite, com cama suplementar e pequeno-almoço. */
+export const CAMA_SUPLEMENTAR_POR_NOITE = 15;
+/** Sofás-cama por Suite: onde dormem as crianças dos 3 aos 10. */
+export const SOFAS_CAMA_POR_SUITE = 2;
+/** Na casa inteira as crianças 3–10 não pagam extra (está nos 600 €). */
 export const CAMA_SUPLEMENTAR_PAGA_NA_CASA_INTEIRA = false;
 /** Crianças por pedido, no máximo. */
 export const CRIANCAS_MAX = 8;
 
 export const NOTA_CRIANCAS =
-  "Até aos 3 anos é gratuito; temos berço. Dos 3 aos 10 anos, cama suplementar a 25 € por noite, com pequeno-almoço incluído. Com mais de 10 anos, conte como adulto.";
+  "Até aos 3 anos é gratuito; temos berço. 3 a 10 anos: 15 € por noite, com cama suplementar e pequeno-almoço (só nas Suites). Com mais de 10 anos, conte como adulto.";
 
 const contar = (g: Grupo, e: Escalao) => g.criancas.filter((c) => c === e).length;
 /** Quem ocupa um lugar normal (e paga o pequeno-almoço): os adultos. */
@@ -196,6 +199,45 @@ export const lugaresNormais = (g: Grupo) => g.adultos;
 export const criancasCama = (g: Grupo) => contar(g, "crianca");
 export const bebes = (g: Grupo) => contar(g, "bebe");
 export const totalPessoas = (g: Grupo) => g.adultos + g.criancas.length;
+
+/*
+  Se a escolha de quartos serve o grupo. As crianças dos 3 aos 10 dormem nos
+  sofás-cama das Suites (até 2 por Suite); os adultos ocupam os outros lugares.
+*/
+export function faltaSuite(escolha: Escolha, g: Grupo): string | null {
+  const c = criancasCama(g);
+  const suites = escolha.suite ?? 0;
+  if (c <= SOFAS_CAMA_POR_SUITE * suites) return null;
+  return suites === 0
+    ? "As crianças dos 3 aos 10 anos só podem ficar numa Suite (dormem nos sofás-cama): escolha uma Suite."
+    : `Cada Suite leva até ${SOFAS_CAMA_POR_SUITE} crianças dos 3 aos 10 anos: escolha mais uma Suite.`;
+}
+export function cabeGrupo(escolha: Escolha, g: Grupo): string | null {
+  const falta = faltaSuite(escolha, g);
+  if (falta) return falta;
+  if (lugaresDe(escolha) < g.adultos + criancasCama(g)) return "Os quartos escolhidos não chegam para o grupo.";
+  return null;
+}
+
+/*
+  Adultos a mais nas Suites: os que não cabem nos Duplos/Twin nem nas camas
+  de casal das Suites. Não há preço definido para isso; o pedido segue com o
+  preço da Suite e a casa confirma o total.
+*/
+export function adultosNasSuites(escolha: Escolha, g: Grupo): number {
+  const suites = escolha.suite ?? 0;
+  if (!suites) return 0;
+  const foraDasSuites = 2 * ((escolha.duplo ?? 0) + (escolha.twin ?? 0));
+  const nasSuites = Math.max(0, g.adultos - foraDasSuites);
+  return nasSuites > 2 * suites ? nasSuites : 0;
+}
+
+/** O remetente das respostas, para o hóspede procurar no spam. */
+export const EMAIL_RESPOSTAS = "reservas.casadecanhoes@gmail.com";
+export const AVISO_SPAM = `A nossa resposta vem de ${EMAIL_RESPOSTAS}. Se não a vir na caixa de entrada, veja no spam (e adicione-nos aos contactos).`;
+export const AVISO_SPAM_EMAIL = `Os nossos emails vêm de ${EMAIL_RESPOSTAS}: adicione-nos aos contactos para não irem parar ao spam.`;
+
+export const NOTA_SUITE_ADULTOS = "Com mais de 2 adultos na Suite, o preço final é confirmado pela casa.";
 
 /** «2 adultos · 1 criança (3–10) · 1 bebé (berço)». */
 export function descreverGrupo(g: Grupo) {
@@ -208,29 +250,22 @@ export function descreverGrupo(g: Grupo) {
 }
 
 /* O que acontece ao sinal se o hóspede cancelar (a Teresa, 2026-10-20). */
-export const POLITICA_SINAL =
-  "Se cancelar até 10 dias antes da chegada, devolvemos metade do sinal. Depois disso, o sinal não é devolvido.";
+export const POLITICA_SINAL = "Se cancelar até 10 dias antes da chegada, devolvemos metade do sinal. Depois disso, o sinal não é devolvido.";
 
-/** Animais (a Teresa, 2026-10-20). */
-export const NOTA_ANIMAIS = "Animais até 8 kg são gratuitos.";
-/** Mais de 8 kg: sem preço definido, não soma nada; a casa decide. */
-export const NOTA_ANIMAIS_GRANDES = "Animais com mais de 8 kg: confirmamos consigo na resposta.";
+/** Animais (a Teresa, 2026-10-23): até 8 kg ficam consigo; com mais, no canil da quinta. Sem custo. */
+export const NOTA_ANIMAIS = "Animais até 8 kg ficam consigo, gratuitos; com mais de 8 kg ficam no canil da quinta.";
 
 export type TipoAnimal = "nao" | "pequeno" | "grande";
 /** O animal de um pedido (os antigos guardavam true para «até 8 kg»). */
 export const animalDoPedido = (p: { animal?: unknown }): TipoAnimal =>
   p.animal === "grande" ? "grande" : p.animal === "pequeno" || p.animal === true ? "pequeno" : "nao";
-/** O animal de um pedido, com a decisão da casa quando tem mais de 8 kg. */
-export function textoAnimal(p: { animal?: unknown; animalDecisao?: "aceite" | "recusado" }): string | null {
+/** O animal de um pedido, em texto. */
+export function textoAnimal(p: { animal?: unknown }): string | null {
   const t = animalDoPedido(p);
-  if (t === "nao") return null;
-  if (t === "pequeno") return "Animal até 8 kg (gratuito)";
-  if (p.animalDecisao === "aceite") return "Animal com mais de 8 kg (aceite)";
-  if (p.animalDecisao === "recusado") return "Animal com mais de 8 kg (não aceite)";
-  return "Animal com mais de 8 kg · a confirmar";
+  return t === "nao" ? null : descreverAnimal(t);
 }
 export const descreverAnimal = (t: TipoAnimal) =>
-  t === "grande" ? "Animal com mais de 8 kg (a confirmar)" : t === "pequeno" ? "Animal até 8 kg (gratuito)" : "Sem animal";
+  t === "grande" ? "Animal com mais de 8 kg (canil)" : t === "pequeno" ? "Animal até 8 kg (gratuito)" : "Sem animal";
 
 /** Noites mínimas por estadia. POR CONFIRMAR com a Teresa. */
 export const NOITES_MINIMAS = 1;
@@ -251,7 +286,12 @@ export const PESSOAS_MAX = CASA_INTEIRA_LUGARES;
   ocupados por pedidos confirmados ou pagos, e se a casa inteira está tomada.
   Vem do servidor (/api/disponibilidade), sem dados pessoais.
 */
-export type NoiteOcupada = { duplo: number; twin: number; suite: number; casa: boolean };
+export type NoiteOcupada = {
+  duplo: number;
+  twin: number;
+  suite: number;
+  casa: boolean;
+};
 export type Ocupacao = Record<string, NoiteOcupada>;
 
 const algumQuarto = (n?: NoiteOcupada) => !!n && (n.duplo > 0 || n.twin > 0 || n.suite > 0);
@@ -281,8 +321,7 @@ export const casaLivreEm = (o: Ocupacao, noites: string[]) => noites.every((d) =
 /* Datas                                                               */
 /* ------------------------------------------------------------------ */
 
-export const iso = (d: Date) =>
-  `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+export const iso = (d: Date) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
 
 export const somarDias = (d: Date, n: number) => new Date(d.getFullYear(), d.getMonth(), d.getDate() + n);
 
@@ -327,31 +366,44 @@ export type Contas = {
   /** Só quando é a casa inteira; preço null enquanto a Teresa não o der. */
   casaInteira: { precoPorNoite: number | null; subtotal: number | null } | null;
   /** `pessoas`: quem paga o pequeno-almoço (adultos e crianças com mais de 10). */
-  pequenoAlmoco: { incluido: boolean; porPessoaNoite: number; pessoas?: number; subtotal: number };
+  pequenoAlmoco: {
+    incluido: boolean;
+    porPessoaNoite: number;
+    pessoas?: number;
+    subtotal: number;
+  };
   /** Camas suplementares das crianças dos 3 aos 10 (null se não houver). */
-  camaSuplementar?: { criancas: number; porNoite: number; subtotal: number; incluidaNaCasa: boolean } | null;
+  camaSuplementar?: {
+    criancas: number;
+    porNoite: number;
+    subtotal: number;
+    incluidaNaCasa: boolean;
+  } | null;
   /** null quando o preço vem na resposta da Teresa (casa inteira sem preço). */
   total: number | null;
   sinal: number | null;
   restante: number | null;
 };
 
-export function calcular(
-  chegada: Date,
-  saida: Date,
-  escolha: Escolha,
-  grupo: Grupo,
-  comPequenoAlmoco: boolean,
-  casaInteira = false,
-): Contas {
+export function calcular(chegada: Date, saida: Date, escolha: Escolha, grupo: Grupo, comPequenoAlmoco: boolean, casaInteira = false): Contas {
   const noites = noitesDe(chegada, saida);
   const pagantesPA = lugaresNormais(grupo);
   const pa = comPequenoAlmoco ? PEQUENO_ALMOCO_POR_PESSOA * pagantesPA * noites.length : 0;
-  const pequenoAlmoco = { incluido: comPequenoAlmoco, porPessoaNoite: PEQUENO_ALMOCO_POR_PESSOA, pessoas: pagantesPA, subtotal: pa };
+  const pequenoAlmoco = {
+    incluido: comPequenoAlmoco,
+    porPessoaNoite: PEQUENO_ALMOCO_POR_PESSOA,
+    pessoas: pagantesPA,
+    subtotal: pa,
+  };
   const nCama = criancasCama(grupo);
   const camaIncluida = casaInteira && !CAMA_SUPLEMENTAR_PAGA_NA_CASA_INTEIRA;
   const camaSuplementar = nCama
-    ? { criancas: nCama, porNoite: CAMA_SUPLEMENTAR_POR_NOITE, subtotal: camaIncluida ? 0 : nCama * CAMA_SUPLEMENTAR_POR_NOITE * noites.length, incluidaNaCasa: camaIncluida }
+    ? {
+        criancas: nCama,
+        porNoite: CAMA_SUPLEMENTAR_POR_NOITE,
+        subtotal: camaIncluida ? 0 : nCama * CAMA_SUPLEMENTAR_POR_NOITE * noites.length,
+        incluidaNaCasa: camaIncluida,
+      }
     : null;
   const extra = pa + (camaSuplementar?.subtotal ?? 0);
   if (casaInteira) {
@@ -373,7 +425,10 @@ export function calcular(
     .filter((q) => (escolha[q.id] ?? 0) > 0)
     .map((q) => {
       const quantidade = escolha[q.id]!;
-      const precosPorNoite = noites.map((n) => ({ noite: iso(n), preco: precoDaNoite(q.id, n) }));
+      const precosPorNoite = noites.map((n) => ({
+        noite: iso(n),
+        preco: precoDaNoite(q.id, n),
+      }));
       const subtotal = precosPorNoite.reduce((s, n) => s + n.preco, 0) * quantidade;
       return { tipo: q.id, nome: q.nome, quantidade, precosPorNoite, subtotal };
     });
@@ -401,37 +456,45 @@ export function calcular(
 */
 export function sugestao(grupo: Grupo): Escolha {
   const normais = Math.min(PESSOAS_MAX, Math.max(1, lugaresNormais(grupo)));
-  const camas = criancasCama(grupo);
-  if (normais <= 2 && camas <= CAMAS_SUPLEMENTARES_POR_QUARTO) return { duplo: 1 };
+  const g = { ...grupo, adultos: normais };
+  if (normais <= 2 && criancasCama(grupo) === 0) return { duplo: 1 };
+  // Primeiro sem adultos a mais nas Suites (o preço da Suite é para 2): a
+  // sugestão leva sempre um total certo. Só se não houver, aceita-os.
   let melhor: { escolha: Escolha; quartos: number; preco: number } | null = null;
-  for (let d = 0; d <= UNIDADES_MAX.duplo; d++)
-    for (let t = 0; t <= UNIDADES_MAX.twin; t++)
-      for (let su = 0; su <= UNIDADES_MAX.suite; su++) {
-        const escolha: Escolha = { duplo: d, twin: t, suite: su };
-        const nq = d + t + su;
-        if (lugaresDe(escolha) < normais || nq * CAMAS_SUPLEMENTARES_POR_QUARTO < camas) continue;
-        const preco = d * TARIFAS.base.duplo + t * TARIFAS.base.twin + su * TARIFAS.base.suite;
-        if (!melhor || nq < melhor.quartos || (nq === melhor.quartos && preco < melhor.preco)) {
-          melhor = { escolha, quartos: nq, preco };
+  for (const precoCerto of [true, false]) {
+    if (melhor) break;
+    for (let d = 0; d <= UNIDADES_MAX.duplo; d++)
+      for (let t = 0; t <= UNIDADES_MAX.twin; t++)
+        for (let su = 0; su <= UNIDADES_MAX.suite; su++) {
+          const escolha: Escolha = { duplo: d, twin: t, suite: su };
+          const nq = d + t + su;
+          if (!nq || cabeGrupo(escolha, g) || (precoCerto && adultosNasSuites(escolha, g))) continue;
+          const preco = d * TARIFAS.base.duplo + t * TARIFAS.base.twin + su * TARIFAS.base.suite;
+          if (!melhor || nq < melhor.quartos || (nq === melhor.quartos && preco < melhor.preco)) {
+            melhor = { escolha, quartos: nq, preco };
+          }
         }
-      }
+  }
   const e = melhor?.escolha ?? { ...UNIDADES_MAX };
   return Object.fromEntries(Object.entries(e).filter(([, v]) => v! > 0)) as Escolha;
 }
 
 /** A sugestão completa: a casa inteira quando o grupo a enche (ou quase). */
-export function sugestaoCompleta(grupo: Grupo): { casaInteira: boolean; escolha: Escolha } {
-  return { casaInteira: lugaresNormais(grupo) + criancasCama(grupo) >= SUGERIR_CASA_A_PARTIR_DE, escolha: sugestao(grupo) };
+export function sugestaoCompleta(grupo: Grupo): {
+  casaInteira: boolean;
+  escolha: Escolha;
+} {
+  return {
+    casaInteira: lugaresNormais(grupo) + criancasCama(grupo) >= SUGERIR_CASA_A_PARTIR_DE,
+    escolha: sugestao(grupo),
+  };
 }
 
-export const mesmaEscolha = (a: Escolha, b: Escolha) =>
-  quartos.every((q) => (a[q.id] ?? 0) === (b[q.id] ?? 0));
+export const mesmaEscolha = (a: Escolha, b: Escolha) => quartos.every((q) => (a[q.id] ?? 0) === (b[q.id] ?? 0));
 
-export const lugaresDe = (escolha: Escolha) =>
-  quartos.reduce((s, q) => s + q.lugares * (escolha[q.id] ?? 0), 0);
+export const lugaresDe = (escolha: Escolha) => quartos.reduce((s, q) => s + q.lugares * (escolha[q.id] ?? 0), 0);
 
-export const quartosDe = (escolha: Escolha) =>
-  quartos.reduce((s, q) => s + (escolha[q.id] ?? 0), 0);
+export const quartosDe = (escolha: Escolha) => quartos.reduce((s, q) => s + (escolha[q.id] ?? 0), 0);
 
 /** «Quarto Duplo», «2 × Quarto Twin», «1 × Quarto Duplo + 1 × Quarto Twin». */
 export function descreverEscolha(escolha: Escolha) {
@@ -459,9 +522,17 @@ export function telefoneValido(v: string) {
 
 export type FormaPagamento = "mbway" | "transferencia";
 
-export const FORMAS_PAGAMENTO: { id: FormaPagamento; nome: string; detalhe: string }[] = [
+export const FORMAS_PAGAMENTO: {
+  id: FormaPagamento;
+  nome: string;
+  detalhe: string;
+}[] = [
   { id: "mbway", nome: "MB WAY", detalhe: "Para o telemóvel da casa" },
-  { id: "transferencia", nome: "Transferência", detalhe: "O IBAN segue por email" },
+  {
+    id: "transferencia",
+    nome: "Transferência",
+    detalhe: "O IBAN segue por email",
+  },
 ];
 
 /*
@@ -517,7 +588,11 @@ export function montarPedido(dados: {
     versao: 1,
     criadoEm: new Date().toISOString(),
     casa: "Quinta de Canhões",
-    estadia: { chegada: iso(dados.chegada), saida: iso(dados.saida), noites: c.noites },
+    estadia: {
+      chegada: iso(dados.chegada),
+      saida: iso(dados.saida),
+      noites: c.noites,
+    },
     pessoas: totalPessoas(dados.grupo),
     adultos: dados.grupo.adultos,
     criancas: [...dados.grupo.criancas],
@@ -555,17 +630,24 @@ export function deIso(v: string): Date | null {
 
 /** O dia de hoje em Portugal, AAAA-MM-DD. */
 export const hojeEmPortugal = () =>
-  new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Lisbon", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
+  new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Europe/Lisbon",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(new Date());
 
 /* Os pedidos antigos podiam ter o escalão «maior10»: conta como adulto. */
 export const grupoDoPedido = (p: PedidoReserva): Grupo => {
   const todas = (p.criancas ?? []) as string[];
   const maiores = todas.filter((c) => c === "maior10").length;
-  return { adultos: (p.adultos ?? p.pessoas) + maiores, criancas: todas.filter((c): c is Escalao => c === "bebe" || c === "crianca") };
+  return {
+    adultos: (p.adultos ?? p.pessoas) + maiores,
+    criancas: todas.filter((c): c is Escalao => c === "bebe" || c === "crianca"),
+  };
 };
 
-export const escolhaDoPedido = (p: PedidoReserva): Escolha =>
-  Object.fromEntries(p.quartos.map((l) => [l.tipo, l.quantidade])) as Escolha;
+export const escolhaDoPedido = (p: PedidoReserva): Escolha => Object.fromEntries(p.quartos.map((l) => [l.tipo, l.quantidade])) as Escolha;
 
 /*
   Refaz o pedido a partir do que o hóspede escolheu, com as tarifas desta
@@ -573,13 +655,14 @@ export const escolhaDoPedido = (p: PedidoReserva): Escolha =>
   outras datas (uma alternativa da casa) e com o total combinado da casa
   inteira (quando ainda não há preço fixo).
 */
-export type Alternativa = { chegada: string; saida: string; escolha?: Escolha; casaInteira?: boolean };
+export type Alternativa = {
+  chegada: string;
+  saida: string;
+  escolha?: Escolha;
+  casaInteira?: boolean;
+};
 
-export function recalcularPedido(
-  p: PedidoReserva,
-  outras?: Alternativa,
-  totalCombinado?: number | null,
-): PedidoReserva {
+export function recalcularPedido(p: PedidoReserva, outras?: Alternativa, totalCombinado?: number | null): PedidoReserva {
   const chegada = deIso(outras?.chegada ?? p.estadia.chegada)!;
   const saida = deIso(outras?.saida ?? p.estadia.saida)!;
   const novo = montarPedido({
@@ -644,8 +727,8 @@ export function validarPedido(p: PedidoReserva): string[] {
   else {
     const g = { adultos, criancas };
     if (lugaresNormais(g) > PESSOAS_MAX) erros.push("Grupo maior do que a casa.");
-    const quartosMax = Object.values(UNIDADES_MAX).reduce((a, b) => a + b, 0);
-    if (criancasCama(g) > quartosMax * CAMAS_SUPLEMENTARES_POR_QUARTO) erros.push("Para este grupo, fale connosco.");
+    if (lugaresNormais(g) + criancasCama(g) > PESSOAS_MAX || criancasCama(g) > UNIDADES_MAX.suite * SOFAS_CAMA_POR_SUITE)
+      erros.push("Para este grupo, fale connosco.");
   }
   const casa = p.casaInteira !== null && p.casaInteira !== undefined;
   if (!Array.isArray(p.quartos)) erros.push("Quartos inválidos.");
@@ -654,6 +737,15 @@ export function validarPedido(p: PedidoReserva): string[] {
     for (const l of p.quartos) {
       if (!(l.tipo in UNIDADES_MAX)) erros.push("Tipo de quarto desconhecido.");
       else if (!Number.isInteger(l.quantidade) || l.quantidade < 1 || l.quantidade > UNIDADES_MAX[l.tipo]) erros.push("Quantidade de quartos inválida.");
+    }
+    if (!erros.length && p.quartos.length) {
+      const escolha: Escolha = {};
+      for (const l of p.quartos) escolha[l.tipo] = (escolha[l.tipo] ?? 0) + l.quantidade;
+      const falta = faltaSuite(escolha, {
+        adultos: adultos as number,
+        criancas,
+      });
+      if (falta) erros.push(falta);
     }
   }
   if (typeof p.pequenoAlmoco?.incluido !== "boolean") erros.push("Pequeno-almoço inválido.");
@@ -668,7 +760,12 @@ export function validarPedido(p: PedidoReserva): string[] {
 
 export const dataLonga = (v: string) => {
   const d = deIso(v)!;
-  return new Intl.DateTimeFormat("pt-PT", { weekday: "long", day: "numeric", month: "long", year: "numeric" }).format(d);
+  return new Intl.DateTimeFormat("pt-PT", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  }).format(d);
 };
 
 const SEMANA_CURTA = ["dom", "seg", "ter", "qua", "qui", "sex", "sáb"];
@@ -680,8 +777,12 @@ export const dataCurta = (v: string) => {
   return `${SEMANA_CURTA[d.getDay()]} ${d.getDate()} ${MESES_CURTOS[d.getMonth()]}`;
 };
 
-export const descreverPedido = (p: PedidoReserva) =>
-  p.casaInteira ? "A casa inteira" : descreverEscolha(escolhaDoPedido(p));
+export const descreverPedido = (p: PedidoReserva) => (p.casaInteira ? "A casa inteira" : descreverEscolha(escolhaDoPedido(p)));
 
 export const euros = (v: number) =>
-  new Intl.NumberFormat("pt-PT", { style: "currency", currency: "EUR", maximumFractionDigits: 0, minimumFractionDigits: 0 }).format(v);
+  new Intl.NumberFormat("pt-PT", {
+    style: "currency",
+    currency: "EUR",
+    maximumFractionDigits: 0,
+    minimumFractionDigits: 0,
+  }).format(v);

@@ -189,10 +189,7 @@ export async function executarAcao(corpo: unknown): Promise<Resposta> {
             extra: { conflitos },
           };
         }
-        if (animalDoPedido(r.pedido) === "grande" && a.animal !== "aceite" && a.animal !== "recusado")
-          return { erro: "Diga se aceita o animal com mais de 8 kg.", estado: 400 };
         const p = r.pedido;
-        if (animalDoPedido(p) === "grande") p.animalDecisao = a.animal;
         // O preço é o congelado no pedido; só muda se a casa o ajustar.
         if (typeof a.total === "number" && a.total > 0 && a.total < 100000 && Math.round(a.total) !== p.total) {
           const total = Math.round(a.total);
@@ -204,7 +201,7 @@ export async function executarAcao(corpo: unknown): Promise<Resposta> {
         if (p.sinal.valor === null) return { erro: "Indique o total da estadia para se calcular o sinal.", estado: 400 };
         r.estado = "confirmado";
         r.confirmacao = { em: new Date().toISOString(), prazoSinal: prazoDoSinal(p.estadia.chegada), ...(conflitos.length ? { forcado: true } : {}) };
-        anotar(r, "Confirmado", [conflitos.length ? "mesmo com noites ocupadas" : "", p.ajuste ? `total ajustado para ${p.total} €` : "", p.animalDecisao ? `animal ${p.animalDecisao}` : ""].filter(Boolean).join(" · ") || undefined);
+        anotar(r, "Confirmado", [conflitos.length ? "mesmo com noites ocupadas" : "", p.ajuste ? `total ajustado para ${p.total} €` : ""].filter(Boolean).join(" · ") || undefined);
         return { registo: r };
       });
       if (!("registo" in m)) return { ok: false, erro: m.erro, estado: m.estado, ...(m.extra ?? {}) };

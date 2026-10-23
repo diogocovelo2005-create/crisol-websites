@@ -11,7 +11,7 @@ import { contactos } from "@/lib/contactos";
 export const metadata: Metadata = metadados({
   titulo: "Quinta de Canhões — Turismo rural em São Pedro do Sul",
   descricao:
-    "Casa centenária de turismo de habitação em Várzea, São Pedro do Sul, perto das Termas. Piscina, jardim em socalcos e pequeno-almoço caseiro.",
+    "Casa centenária de turismo em espaço rural em Várzea, São Pedro do Sul, perto das Termas. Piscina, jardim em socalcos e pequeno-almoço caseiro.",
   caminho: "/",
   absoluto: true,
 });
@@ -24,7 +24,7 @@ const dadosEstruturados = {
   name: "Quinta de Canhões",
   url: SITE,
   description:
-    "Casa centenária de turismo de habitação sobre o vale do Vouga, em Várzea, São Pedro do Sul. Piscina, jardim em socalcos e pequeno-almoço caseiro.",
+    "Casa centenária de turismo em espaço rural sobre o vale do Vouga, em Várzea, São Pedro do Sul. Piscina, jardim em socalcos e pequeno-almoço caseiro.",
   address: {
     "@type": "PostalAddress",
     streetAddress: `${contactos.morada.rua}, ${contactos.morada.localidade}`,

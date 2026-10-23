@@ -1,5 +1,5 @@
 import { contactos } from "@/lib/contactos";
-import { POLITICA_SINAL, SINAL_PERCENTAGEM, animalDoPedido, dataCurta, dataLonga, textoAnimal, descreverGrupo, descreverPedido, euros, grupoDoPedido, type PedidoReserva } from "@/lib/reserva";
+import { AVISO_SPAM_EMAIL, POLITICA_SINAL, SINAL_PERCENTAGEM, adultosNasSuites, animalDoPedido, escolhaDoPedido, dataCurta, dataLonga, textoAnimal, descreverGrupo, descreverPedido, euros, grupoDoPedido, type PedidoReserva } from "@/lib/reserva";
 import { PAGAMENTO, config } from "@/lib/servidor/config";
 import {
   assinatura,
@@ -62,7 +62,7 @@ function resumoTexto(p: PedidoReserva) {
 }
 const hospedeTexto = (p: PedidoReserva) =>
   `Hóspede: ${p.hospede.nome} · ${p.hospede.telefone} · ${p.hospede.email}\nPagamento: ${formaPagamento(p)}\nMensagem: ${p.hospede.mensagem || "(sem mensagem)"}`;
-const fimTexto = `\n\nAté breve,\nQuinta de Canhões\n${contactos.telemovel.texto} · ${contactos.email.texto}`;
+const fimTexto = `\n\nAté breve,\nQuinta de Canhões\n${contactos.telemovel.texto} · ${contactos.email.texto}\n\n${AVISO_SPAM_EMAIL}`;
 
 /* ------------------------------------------------------------------ */
 /* Ao hóspede                                                          */
@@ -72,9 +72,7 @@ const fimTexto = `\n\nAté breve,\nQuinta de Canhões\n${contactos.telemovel.tex
 export function pagarSinalHospede(p: PedidoReserva, prazoIso: string): SemDestino {
   const ate = prazoTxt(prazoIso);
   const avisos =
-    (p.ajuste ? nota(`Ajustámos o total da estadia para ${p.total !== null ? euros(p.total) : "o valor acima"}${p.ajuste.motivo ? `: ${p.ajuste.motivo}` : "."}`) : "") +
-    (p.animalDecisao === "aceite" ? paragrafo("O seu animal com mais de 8 kg é bem-vindo.", "14px 0 0") : "") +
-    (p.animalDecisao === "recusado" ? nota("Infelizmente, não conseguimos receber o seu animal com mais de 8 kg.") : "");
+    (p.ajuste ? nota(`Ajustámos o total da estadia para ${p.total !== null ? euros(p.total) : "o valor acima"}${p.ajuste.motivo ? `: ${p.ajuste.motivo}` : "."}`) : "");
   const mbway = p.pagamento === "mbway";
   const referencia = ref(p);
   const sinal = valorSinal(p);
@@ -108,7 +106,7 @@ export function pagarSinalHospede(p: PedidoReserva, prazoIso: string): SemDestin
       detalhes(p),
     texto: `Há lugar para si, ${primeiroNome(p)}.\nPara ficar reservado, falta só o sinal de ${SINAL_PERCENTAGEM} %.\n\nSINAL A PAGAR: ${sinalTxt(p)}, até ${ate}\n${
       mbway ? `MB WAY para: ${PAGAMENTO.mbway}\nMontante: ${sinalTxt(p)}\nMensagem: ${referencia}` : `IBAN: ${PAGAMENTO.iban || "enviamos-lhe à parte"}\n${PAGAMENTO.titular ? `Titular: ${PAGAMENTO.titular}\n` : ""}Montante: ${sinalTxt(p)}\nDescritivo: ${referencia}`
-    }\nDepois desse prazo, as datas podem voltar a ficar livres.${p.ajuste ? `\nTotal ajustado: ${p.ajuste.motivo}` : ""}${p.animalDecisao === "recusado" ? "\nInfelizmente, não conseguimos receber o seu animal com mais de 8 kg." : ""}\n\n${resumoTexto(p)}\n${POLITICA_SINAL}${fimTexto}`,
+    }\nDepois desse prazo, as datas podem voltar a ficar livres.${p.ajuste ? `\nTotal ajustado: ${p.ajuste.motivo}` : ""}\n\n${resumoTexto(p)}\n${POLITICA_SINAL}${fimTexto}`,
   });
 }
 
@@ -130,7 +128,7 @@ export function reservaConfirmadaHospede(p: PedidoReserva): SemDestino {
         margem: "24px 0 0",
       }) +
       paragrafo(
-        `Chega-se de carro e o estacionamento é à porta: ${esc(contactos.morada.rua)}, ${esc(contactos.morada.localidade)}. Se precisar de chegar fora das 15h às 21h, diga-nos.`,
+        `Chega-se de carro e o estacionamento é à porta: ${esc(contactos.morada.rua)}, ${esc(contactos.morada.localidade)}, ${esc(contactos.morada.codigo)}. Se precisar de chegar fora das 15h às 21h, diga-nos.`,
         "24px 0 0",
       ) +
       botao(contactos.morada.mapa, "Ver o caminho no mapa", "verde", "16px 0 0") +
@@ -211,8 +209,8 @@ export function novoPedidoCasa(p: PedidoReserva, linkPedido: string, aceiteAlter
         aceiteAlternativa ? `Confirme se estas datas continuam livres e responda no pedido.` : `Ainda não é reserva. Veja se há lugar e responda no pedido: um clique e o hóspede recebe a resposta.`,
         "14px 0 0",
       ) +
-      (animalDoPedido(p) === "grande"
-        ? nota("A decidir: traz um animal com mais de 8 kg. Não tem preço definido; diga ao hóspede se o aceita (e em que condições) antes de confirmar.")
+      (!p.casaInteira && adultosNasSuites(escolhaDoPedido(p), grupoDoPedido(p))
+        ? nota(`Suite com ${adultosNasSuites(escolhaDoPedido(p), grupoDoPedido(p))} adultos — confirme o total. Não há preço definido para mais de 2 adultos na Suite: o total segue com o preço da Suite; use «Ajustar total» antes de confirmar.`)
         : "") +
       cartao({
         rotulo: `${esc(datas(p))} · ${esc(descreverPedido(p))}`,
@@ -238,7 +236,7 @@ function preparar(p: PedidoReserva) {
   if (p.pequenoAlmoco.incluido) itens.push("pequeno-almoço");
   const a = animalDoPedido(p);
   if (a === "pequeno") itens.push("animal até 8 kg");
-  if (a === "grande") itens.push("animal com mais de 8 kg");
+  if (a === "grande") itens.push("canil para o animal com mais de 8 kg");
   return itens.join(" · ");
 }
 

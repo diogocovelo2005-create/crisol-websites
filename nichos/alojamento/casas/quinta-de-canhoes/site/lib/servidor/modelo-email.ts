@@ -1,6 +1,6 @@
 import { contactos } from "@/lib/contactos";
 import { config } from "@/lib/servidor/config";
-import { POLITICA_SINAL, SINAL_PERCENTAGEM, animalDoPedido, bebes, textoAnimal, criancasCama, dataCurta, deIso, descreverGrupo, descreverPedido, euros, grupoDoPedido, type PedidoReserva } from "@/lib/reserva";
+import { AVISO_SPAM_EMAIL, POLITICA_SINAL, SINAL_PERCENTAGEM, animalDoPedido, bebes, textoAnimal, criancasCama, dataCurta, deIso, descreverGrupo, descreverPedido, euros, grupoDoPedido, type PedidoReserva } from "@/lib/reserva";
 import type { Email } from "@/lib/servidor/email";
 import { FOTOS_EMAIL, LOGO_EMAIL } from "@/lib/servidor/logo-email";
 
@@ -158,7 +158,7 @@ function resumoBilhete(p: PedidoReserva) {
     `<p style="margin:0;font-family:${SERIFA};font-size:19px;line-height:1.3;color:${C.cal};">${esc(descreverPedido(p))}</p>` +
     linha(esc(descreverGrupo(g))) +
     linha(esc(extras.join(" · ")), C.valeClaro) +
-    (animal !== "nao" ? linha(esc(textoAnimal(p)!), C.rosa, animal === "grande" && !p.animalDecisao ? "font-weight:600;" : "") : "")
+    (animal !== "nao" ? linha(esc(textoAnimal(p)!), C.rosa) : "")
   );
 }
 
@@ -200,7 +200,7 @@ export function hospede(p: PedidoReserva) {
       linha("Email", `<a class="t-verm" href="mailto:${esc(h.email)}" style="color:${C.caixilho};">${esc(h.email)}</a>`) +
       linha("Pagamento", esc(formaPagamento(p))) +
       (animalDoPedido(p) === "pequeno" ? linha("Animal", "Até 8 kg (gratuito)") : "") +
-      (animalDoPedido(p) === "grande" ? linha("Animal", `<span class="t-verm" style="color:${C.caixilho};">Mais de 8 kg · a decidir</span>`) : "") +
+      (animalDoPedido(p) === "grande" ? linha("Animal", "Com mais de 8 kg (canil)") : "") +
       (h.mensagem ? linha("Mensagem", `<span style="font-weight:normal;">${esc(h.mensagem).replace(/\n/g, "<br>")}</span>`) : ""),
     fim: pequeno("Para falar com o hóspede, basta responder a este email.", "0"),
     margem: "24px 0 0",
@@ -222,7 +222,7 @@ export function detalhes(p: PedidoReserva) {
   if (p.camaSuplementar && !p.camaSuplementar.incluidaNaCasa) {
     const c = p.camaSuplementar;
     contas.push([
-      `Cama suplementar · ${c.criancas} ${c.criancas === 1 ? "criança" : "crianças"} (3–10) × ${noites(p.estadia.noites)} × ${euros(c.porNoite)} · com pequeno-almoço`,
+      `${c.criancas === 1 ? "Criança" : "Crianças"} dos 3 aos 10 · ${c.criancas} × ${noites(p.estadia.noites)} × ${euros(c.porNoite)} · cama suplementar e pequeno-almoço`,
       euros(c.subtotal),
     ]);
   }
@@ -249,7 +249,8 @@ ${pequeno(`Referência do pedido: ${esc(p.referencia ?? "—")} · ${esc(dataCur
 
 export const assinatura = () =>
   paragrafo(`Alguma dúvida? Responda a este email ou escreva-nos pelo ${link(contactos.whatsapp, "WhatsApp")}.`, "28px 0 0") +
-  `<p class="t-xisto" style="margin:14px 0 0;font-family:${SERIFA};font-size:18px;color:${C.xisto};">Até breve,<br>Quinta de Canhões</p>`;
+  `<p class="t-xisto" style="margin:14px 0 0;font-family:${SERIFA};font-size:18px;color:${C.xisto};">Até breve,<br>Quinta de Canhões</p>` +
+  pequeno(esc(AVISO_SPAM_EMAIL), "18px 0 0");
 
 /* ------------------------------------------------------------------ */
 /* A moldura                                                           */

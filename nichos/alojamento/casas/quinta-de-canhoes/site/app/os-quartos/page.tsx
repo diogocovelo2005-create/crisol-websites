@@ -211,7 +211,7 @@ export default function PaginaOsQuartos() {
                   <span className="ml-6 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-granito-linha text-xisto transition-transform group-open:rotate-180">+</span>
                 </summary>
                 <div className="mt-4 pr-12 text-xisto-suave leading-relaxed">
-                  Sim, os animais de estimação são bem-vindos na Quinta de Canhões, mediante pedido prévio. Podem aplicar-se custos adicionais.
+                  Sim. Animais até 8 kg ficam consigo, gratuitos; com mais de 8 kg ficam no canil da quinta.
                 </div>
               </details>
             </div>
