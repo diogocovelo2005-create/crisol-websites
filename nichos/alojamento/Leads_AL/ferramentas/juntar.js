@@ -30,14 +30,16 @@ function validar(l) {
   const v = l.verificacao || {};
   // Regras de 22/10/2026 (decisão do Diogo). Só chega a ele uma casa ATIVA, com NOTA ACEITÁVEL, SEM SITE MODERNO e COM CONTACTO.
   // Ativa = uma página de plataforma aberta e lida (Booking, Airbnb, Vrbo, Hostelworld), ou redes sociais com publicações recentes.
-  // Nota: Booking abaixo de 7,5 sai; entre 7,5 e 8 só fica com mais de 50 avaliações. Airbnb abaixo de 4,2 sai. Sempre com 10+ avaliações.
+  // Nota (24/10/2026): Booking abaixo de 7,5 sai; entre 7,5 e 8 só fica com mais de 20 avaliações. Airbnb abaixo de 4,2 sai (10+ avaliações).
   // Contacto: ou tem telefone, ou sai (já não há lista "Mensagem"); antes de sair, uma casa boa tem de ter tido a procura a fundo.
   const a = l.atividade;
-  const airbnb = (l.plataformas || []).find(p => /airbnb/i.test(p.nome) && p.nota != null && p.avaliacoes >= 10 && p.nota < 4.2);
-  const notaBk = b && b.nota > 0 && b.avaliacoes >= 10 && (b.nota < 7.5 || (b.nota < 8 && b.avaliacoes <= 50)); // nota 0 = sem nota
+  // no Airbnb conta o anúncio com mais avaliações (como no Booking)
+  const abP = (l.plataformas || []).filter(p => /airbnb/i.test(p.nome) && p.nota != null).sort((x, y) => (y.avaliacoes || 0) - (x.avaliacoes || 0))[0];
+  const airbnb = abP && abP.avaliacoes >= 10 && abP.nota < 4.2 ? abP : null;
+  const notaBk = b && b.nota > 0 && (b.nota < 7.5 || (b.nota < 8 && b.avaliacoes <= 20)); // nota 0 = sem nota
   const semTel = !l.telefones?.length;
   const regra = !a ? 'sem prova de atividade (nenhuma plataforma lida nem redes ativas)'
-    : notaBk ? `Booking ${b.nota} com ${b.avaliacoes} avaliações (mínimo 7,5; entre 7,5 e 8 só com mais de 50)`
+    : notaBk ? `Booking ${b.nota} com ${b.avaliacoes} avaliações (mínimo 7,5; entre 7,5 e 8 só com mais de 20)`
     : airbnb ? `Airbnb ${airbnb.nota} com ${airbnb.avaliacoes} avaliações (mínimo 4,2)`
     : l.site?.veredito === 'moderno' && !l.gestora ? 'site moderno' // casa de gestora: quem compra é a gestora
     : semTel ? 'sem contacto'
@@ -68,11 +70,14 @@ function validar(l) {
 // Auditoria (ferramentas/auditar.js): tem de ter passado DEPOIS da última montagem. Prova, com números, que não ficou
 // nenhuma casa por apanhar nem por verificar; sem ela não se grava.
 {
-  const nf = String(concelho).toLowerCase().replace(/\s+/g, '-');
+  const nf = String(concelho).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/\s+/g, '-');
   const fa = path.join(DATA, `auditoria-${nf}.json`), fn = path.resolve(entrada);
+  // só se grava a corrida COMPLETA do concelho (data/novos-<c>.json), e exatamente a versão que a auditoria viu:
+  // um ficheiro parcial (só umas casas) retirava do dashboard todas as outras leads do concelho
+  if (fn !== path.join(DATA, `novos-${nf}.json`)) { console.error(`NADA GRAVADO. Só se grava data/novos-${nf}.json (a corrida completa do concelho, auditada).`); process.exit(1); }
   const aud = lerJSON(fa, null);
-  if (!aud || !aud.ok || fs.statSync(fa).mtimeMs < fs.statSync(fn).mtimeMs) {
-    console.error(`NADA GRAVADO. Falta a auditoria OK do concelho, feita depois da última montagem:\n  node ferramentas/auditar.js "${concelho}"`);
+  if (!aud || !aud.ok || aud.novos_mtime !== fs.statSync(fn).mtimeMs) {
+    console.error(`NADA GRAVADO. Falta a auditoria OK desta montagem (o novos-${nf}.json mudou depois da auditoria, ou ela falhou):\n  node ferramentas/auditar.js "${concelho}"`);
     process.exit(1);
   }
 }

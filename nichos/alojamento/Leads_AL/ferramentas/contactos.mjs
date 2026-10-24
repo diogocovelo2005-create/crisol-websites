@@ -1,12 +1,13 @@
 // Procura a fundo o telefone das casas BOAS (escalão A, B ou gestora) que ainda não têm nenhum.
 // Uma casa boa não se perde por uma pesquisa fraca; uma casa fraca sem telefone sai sem esta procura.
 //   node ferramentas/contactos.mjs "<Concelho>"
-// Lê data/sem-contacto-<concelho>.json (o montar.js escreve-o): [{ id, nome, localidade, site?, email? }].
-// Onde procura, por ordem:
+// Lê data/sem-contacto-<concelho>.json (o montar.js escreve-o): [{ id, nome, nomes, gestora?, localidade, site?, email? }].
+// Onde procura, por ordem, com CADA nome da casa (registo sem o nº da unidade, anúncios, ficha da Câmara, gestora):
 //   1. o site próprio: página inicial e as páginas de contactos/sobre (links tel: e números no texto);
-//   2. duas pesquisas web ("<nome> <terra> telefone", "<nome> <concelho> contactos"): números nos resumos
-//      dos resultados que falam da casa (o Google mostra muitas vezes o telefone do Facebook ou de diretórios);
+//   2. três pesquisas web por nome ("<nome> <terra> telefone", "<nome> <concelho> contactos", "<nome> facebook"):
+//      números nos resumos dos resultados que falam da casa (o Google mostra muitas vezes o telefone do Facebook);
 //   3. as páginas desses resultados fora das plataformas (diretórios, páginas da casa), se falarem da casa.
+// Volta a procurar quando a casa ganhou um nome novo (outro anúncio, a gestora).
 // Escreve data/contactos-<concelho>.json { id: { telefones: [{ numero, fontes }], procurado: [...] } }. Retoma se parar.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -16,7 +17,7 @@ import { pesquisar, telefonesEm } from './lib/pesquisar.mjs';
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const concelho = process.argv[2];
 if (!concelho) { console.error('uso: node ferramentas/contactos.mjs "<Concelho>"'); process.exit(1); }
-const nomeF = concelho.toLowerCase().replace(/\s+/g, '-');
+const nomeF = concelho.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/\s+/g, '-');
 const lista = JSON.parse(fs.readFileSync(path.join(RAIZ, 'data', `sem-contacto-${nomeF}.json`), 'utf8'));
 const fSaida = path.join(RAIZ, 'data', `contactos-${nomeF}.json`);
 const out = fs.existsSync(fSaida) ? JSON.parse(fs.readFileSync(fSaida, 'utf8')) : {};
@@ -40,18 +41,28 @@ async function abrir(u) {
 const textoDe = h => h.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/g, ' ').replace(/<[^>]+>/g, ' ').replace(/&nbsp;|&#160;/g, ' ').replace(/\s+/g, ' ');
 const telsDe = h => [...new Set([...[...h.matchAll(/href="tel:([^"]+)"/g)].flatMap(m => telefonesEm(m[1])), ...telefonesEm(textoDe(h))])];
 
+// (sem a parte do anúncio depois de " | ": "Oliveira Douro House | Apartamento de um quarto")
+const limpo = n => String(n || '').split(' | ')[0].replace(/^"|"$/g, '').replace(/\s*(n\.?º\s*|#\s*)?\d{1,2}\s*$/i, '').replace(/\s+/g, ' ').trim();
 for (const c of lista) {
-  if (out[c.id]) continue;
-  const ws = distintas(c.nome);
+  const nomes = [...new Set([c.nome, ...(c.nomes || [])].map(limpo).filter(n => n.length > 2 && !/^(airbnb|booking)\b/i.test(n)))].slice(0, 5);
+  const feitos = out[c.id]?.nomes || (out[c.id] ? [limpo(c.nome)] : []);
+  const falta = nomes.filter(n => !feitos.includes(n));
+  if (!falta.length && !(c.site && !out[c.id]?.procurado?.some(p => p.startsWith('site'))) && !(c.email && !out[c.id]?.procurado?.some(p => p.includes(c.email)))) continue;
+  const ws = [...new Set(nomes.flatMap(distintas))];
   // tem de falar da casa E do sítio (concelho, terra ou Douro): há casas com o mesmo nome noutras terras
   // (só o nome do concelho: terras como Sergude existem noutros concelhos, e "Douro" aparece em todo o lado)
   const sitio = [sa(concelho), sa(concelho).replace(/^peso da /, '')].filter(x => x.length > 3);
-  const fala = t => (!ws.length || ws.some(w => sa(t).includes(w))) && sitio.some(x => sa(t).includes(x));
+  // e de ALOJAMENTO (a "Janela d'Ouro" apanhava o telefone de uma farmácia com o mesmo nome)
+  // (e um restaurante ou uma farmácia só conta se a página falar também de dormir)
+  const ALOJ = /alojamento|aloj\.|guest ?house|hostel|hotel|apartament|quarto|rooms?\b|suite|turismo rural|tourism|accommodation|booking|airbnb|ferias|holiday|check-in|hosped|dormir|noites|nights/;
+  const OUTRO = /farmacia|pharmacy|clinica|saude|restaurante|restaurant|cafe\b|pastelaria|oficina|imobiliaria/;
+  const fala = t => { const x = sa(t); return (!ws.length || ws.some(w => x.includes(w))) && sitio.some(z => x.includes(z)) && ALOJ.test(x) && !(OUTRO.test(x) && !/alojamento|guest ?house|accommodation|hosped/.test(x)); };
   const achados = new Map(); const add = (n, f) => { if (daZona(n)) (achados.get(n) || achados.set(n, new Set()).get(n)).add(f); };
-  const procurado = [];
+  for (const t of out[c.id]?.telefones || []) for (const f of t.fontes) add(t.numero, f);
+  const procurado = [...(out[c.id]?.procurado || [])].filter(p => !/^ignorados/.test(p));
 
   // 1. site próprio
-  if (c.site) {
+  if (c.site && !procurado.some(p => p.startsWith('site'))) {
     const h = await abrir(c.site);
     for (const n of telsDe(h)) add(n, 'site');
     const links = [...h.matchAll(/href="([^"#]+)"/g)].map(m => { try { return new URL(m[1], c.site).href; } catch { return null; } })
@@ -61,30 +72,44 @@ for (const c of lista) {
   }
   // 2 e 3. pesquisa web
   const local = c.localidade && sa(c.localidade) !== sa(concelho) ? c.localidade : concelho;
-  for (const q of [`"${c.nome}" ${local} telefone`, `"${c.nome}" ${concelho} contactos`]) {
+  // e o email da casa (da ficha da Câmara): nas páginas onde aparece, o telefone costuma estar ao lado
+  const comEmail = c.email && !procurado.some(p => p.includes(c.email)) ? [`"${c.email}"`] : [];
+  for (const q of [...falta.flatMap(n => [`"${n}" ${local} telefone`, `"${n}" ${concelho} contactos`, `"${n}" ${concelho} facebook`]), ...comEmail]) {
     const r = await pesquisar(q);
     if (!r) { procurado.push(`pesquisa "${q}" falhou`); continue; }
     procurado.push(`pesquisa ${r.motor} "${q}"`);
-    for (const x of r.resultados) if (!SEM_TEL.test(x.url) && fala(x.titulo + ' ' + x.texto + ' ' + x.url)) for (const n of telefonesEm(x.texto)) add(n, `pesquisa (${(x.url.match(/\/\/(?:www\.)?([^/]+)/) || [])[1]})`);
+    for (const x of r.resultados) {
+      if (SEM_TEL.test(x.url) || telefonesEm(x.texto).length > 3) continue;
+      const h = (x.url.match(/\/\/(?:www\.)?([^/]+)/) || [])[1];
+      // o mesmo email da casa noutro negócio (o dono tem também uma farmácia, um restaurante…): o telefone chega ao dono
+      // (nunca listas de pessoas — sorteios, passatempos, participantes, atas: são dados pessoais publicados, não o contacto da casa)
+      const lista = /sorteio|passatempo|giveaway|particip|vencedor|premiad|\bata\b|inscri|lista de/i.test(x.url + ' ' + x.titulo + ' ' + x.texto);
+      const fonte = fala(x.titulo + ' ' + x.texto + ' ' + x.url) ? `pesquisa (${h})` : c.email && x.texto.includes(c.email) && !lista && /lda|unipessoal|empresa|loja|farm|restaurante|servi[cç]os|com[eé]rcio|nif|contribuinte/i.test(x.titulo + ' ' + x.texto) ? `outro negócio com o mesmo email da casa (${h})` : null;
+      if (fonte) for (const n of telefonesEm(x.texto)) add(n, fonte);
+    }
     for (const x of r.resultados.filter(x => x.url && !SEM_TEL.test(x.url) && fala(x.titulo + ' ' + x.url)).slice(0, 2)) {
       const h = await abrir(x.url);
       if (!fala(textoDe(h).slice(0, 20000))) continue;
       const host = (x.url.match(/\/\/(?:www\.)?([^/]+)/) || [])[1];
-      for (const n of telsDe(h)) add(n, host);
+      // página com 4+ telefones é uma lista de várias casas (ViaMichelin, diretórios): os números não são desta
+      const ns = telsDe(h); if (ns.length > 3) { procurado.push(`${host}: lista com ${ns.length} telefones, ignorada`); continue; }
+      for (const n of ns) add(n, host);
     }
   }
   const telefones = [...achados].map(([numero, f]) => ({ numero, fontes: [...f] }))
     // um número que só aparece num diretório genérico, sem estar no site nem na pesquisa, fica marcado para confirmar
     .sort((a, b) => b.fontes.length - a.fontes.length);
-  out[c.id] = { telefones, procurado };
+  out[c.id] = { telefones, procurado, nomes: [...new Set([...feitos, ...falta])], gestora: c.gestora || undefined };
   grava();
   console.log(c.id, c.nome, '|', telefones.length ? telefones.map(t => `${t.numero} (${t.fontes.join('+')})`).join(', ') : 'NENHUM', '|', procurado.length, 'sítios');
 }
 // o mesmo número em casas diferentes é de um portal ou diretório, não da casa
-const contagem = new Map();
-for (const x of Object.values(out)) for (const t of x.telefones) contagem.set(t.numero, (contagem.get(t.numero) || 0) + 1);
+// (exceto entre casas da MESMA gestora: aí é o telefone dela)
+const quem = new Map();
+for (const x of Object.values(out)) for (const t of x.telefones) (quem.get(t.numero) || quem.set(t.numero, []).get(t.numero)).push(x.gestora || null);
+const repetido = n => { const g = quem.get(n) || []; return g.length > 1 && !(g[0] && g.every(y => y === g[0])); };
 for (const x of Object.values(out)) {
-  const rep = x.telefones.filter(t => contagem.get(t.numero) > 1 && !t.fontes.includes('site'));
+  const rep = x.telefones.filter(t => repetido(t.numero) && !t.fontes.includes('site'));
   if (rep.length) { x.telefones = x.telefones.filter(t => !rep.includes(t)); x.procurado.push(`ignorados por aparecerem noutras casas: ${rep.map(t => t.numero).join(', ')}`); }
 }
 grava();

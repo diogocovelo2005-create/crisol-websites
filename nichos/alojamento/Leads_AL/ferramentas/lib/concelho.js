@@ -7,7 +7,7 @@
 const fs = require('fs');
 const path = require('path');
 const DATA = path.join(__dirname, '..', '..', 'data');
-const nf = c => c.toLowerCase().replace(/\s+/g, '-');
+const nf = c => c.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/\s+/g, '-');
 
 async function poligono(concelho) {
   const f = path.join(DATA, `poligono-${nf(concelho)}.json`);
@@ -35,4 +35,18 @@ function dentro(geo, lat, lng) {
   const pols = geo.type === 'MultiPolygon' ? geo.coordinates : [geo.coordinates];
   return pols.some(([fora, ...buracos]) => noAnel(fora, lng, lat) && !buracos.some(b => noAnel(b, lng, lat)));
 }
-module.exports = { poligono, lerPoligono, dentro };
+// distância (km, aproximada) do ponto à fronteira do concelho: o Airbnb desloca o ponto do mapa até ~500 m
+function distFronteira(geo, lat, lng) {
+  const pols = geo.type === 'MultiPolygon' ? geo.coordinates : [geo.coordinates];
+  const kx = 111.32 * Math.cos(lat * Math.PI / 180), ky = 110.57;
+  let m = Infinity;
+  for (const pol of pols) for (const anel of pol) for (let i = 1; i < anel.length; i++) {
+    const [x1, y1] = anel[i - 1], [x2, y2] = anel[i];
+    const ax = (x1 - lng) * kx, ay = (y1 - lat) * ky, bx = (x2 - lng) * kx, by = (y2 - lat) * ky;
+    const dx = bx - ax, dy = by - ay, l2 = dx * dx + dy * dy;
+    const t = l2 ? Math.max(0, Math.min(1, -(ax * dx + ay * dy) / l2)) : 0;
+    m = Math.min(m, Math.hypot(ax + t * dx, ay + t * dy));
+  }
+  return m;
+}
+module.exports = { poligono, lerPoligono, dentro, distFronteira };

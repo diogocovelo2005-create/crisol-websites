@@ -16,7 +16,7 @@ import { fileURLToPath } from 'node:url';
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const concelho = process.argv[2];
 if (!concelho) { console.error('uso: node ferramentas/airbnb.mjs "<Concelho>"'); process.exit(1); }
-const nomeF = concelho.toLowerCase().replace(/\s+/g, '-');
+const nomeF = concelho.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/\s+/g, '-');
 const { candidatos } = JSON.parse(fs.readFileSync(path.join(RAIZ, 'data', `candidatos-${nomeF}.json`), 'utf8'));
 const fSaida = path.join(RAIZ, 'data', `airbnb-${nomeF}.json`);
 const out = fs.existsSync(fSaida) ? JSON.parse(fs.readFileSync(fSaida, 'utf8')) : { concelho, anuncios: {} };
@@ -26,8 +26,6 @@ const sa = s => (s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase()
 // nº AL -> id do candidato (cada titular pode ter várias unidades)
 const porAL = new Map(), porRNET = new Map();
 for (const c of candidatos) for (const r of c.registos || [String(c.id).replace(/\D/g, '')]) (c.id.startsWith('rnet-') ? porRNET : porAL).set(r, c.id);
-// terras do concelho, para filtrar os cartões da pesquisa (que mistura concelhos vizinhos)
-const TERRAS = new Set([sa(concelho), ...candidatos.map(c => sa(c.localidade).trim())].filter(t => t.length > 2));
 // "Anfitriã/o: Tiago" + "Superhost · 11 anos de experiência": nome + experiência identificam o anfitrião
 // (o mesmo anfitrião em 3+ anúncios do concelho = gestora; só o primeiro nome não chega, há muitas Marias)
 const anfitriaoDe = t => {
@@ -73,38 +71,56 @@ async function pesquisarQuadrado([s, n, w, e], nivel = 0) {
     url = href ? new URL(href, 'https://www.airbnb.pt').href : null;
   }
   console.log(`${'  '.repeat(nivel)}quadrado ${[s, n, w, e].map(x => x.toFixed(3)).join(',')}: ${pag} páginas (${cartoes.size} no total)`);
+  // quadrado ainda cheio no último nível: fica registado (a auditoria mostra-o)
+  if (url && nivel >= 2) (out.cortados = out.cortados || []).push([s, n, w, e]);
   // quadrado cheio (15 páginas): o Airbnb cortou; parte-se em 4
   if (url && nivel < 2) {
     const ms = (s + n) / 2, mw = (w + e) / 2;
     for (const q of [[s, ms, w, mw], [s, ms, mw, e], [ms, n, w, mw], [ms, n, mw, e]]) await pesquisarQuadrado(q, nivel + 1);
   }
 }
-if (!out.pesquisa_feita) {
+// (um ficheiro antigo, sem a lista dos cartões, refaz a pesquisa)
+if (!out.pesquisa_feita || !out.cartoes) {
+  out.cortados = [];
   const [s, n, w, e] = await caixa();
   const ds = (n - s) / 3, dw = (e - w) / 3;
   for (let i = 0; i < 3; i++) for (let j = 0; j < 3; j++)
     await pesquisarQuadrado([s + i * ds, s + (i + 1) * ds, w + j * dw, w + (j + 1) * dw]);
 }
 
-// ---------- 2. ler cada anúncio da zona ----------
-const daZona = t => { const m = sa(t).match(/ em ([a-z ]+?) \|/); return m ? TERRAS.has(m[1].trim()) : true; };
+// ---------- 2. ler cada anúncio ----------
+// Lêem-se TODOS os cartões (os do mapa não dizem a terra; o filtro pela terra do registo deixava de fora casas de
+// terras sem nenhuma casa no registo). O concelho decide-se depois, no montar.js, pelas coordenadas da página.
+// Ficam guardados os ids de todos os cartões, para a auditoria confirmar que nenhum ficou por ler.
+if (cartoes.size) out.cartoes = [...new Set([...(out.cartoes || []), ...cartoes.keys()])];
 // lê um anúncio: tudo da PÁGINA (o texto dos cartões muda com o tipo de pesquisa; o do mapa não traz nota nem terra)
 async function ler(id, texto = '') {
   await page.goto(`https://www.airbnb.pt/rooms/${id}`, { timeout: 45000 }); await pausa(4500);
   try { await page.keyboard.press('Escape'); } catch {}
   for (let i = 0; i < 6; i++) { await page.mouse.wheel(0, 2500); await pausa(400); } // a secção do anfitrião e as avaliações carregam ao descer
   const t = await page.evaluate(() => document.body.innerText);
+  // página de erro do Airbnb ("503 Service Unavailable"): não se grava; fica em erros e volta a ler-se
+  if (/^\s*(5\d\d|429)\b|Service Unavailable|Too Many Requests/i.test(await page.title())) throw new Error('página de erro: ' + (await page.title()));
   const al = (t.match(/\b(\d{2,7})\s?\/\s?AL\b/i) || [])[1];
   // turismo rural e de habitação: o Airbnb mostra o nº do RNET em "Dados do registo"
   const rnet = !al ? (t.match(/\b(\d{2,6})\s?\/\s?RNET\b/i) || t.match(/Dados do registo\s*\n?\s*(\d{2,6})\b/i) || [])[1] : null;
   const datas = [...t.matchAll(/(janeiro|fevereiro|março|abril|maio|junho|julho|agosto|setembro|outubro|novembro|dezembro) de (20\d\d)/gi)]
     .map(m => `${m[2]}-${String(MESES[m[1].toLowerCase()]).padStart(2, '0')}`).sort();
   const nota = t.match(/(\d,\d{1,2})\s*·?\s*\n?\s*(\d+)\s+avalia/) || texto.match(/(\d,\d{1,2}) \((\d+)\)/);
+  const h = await page.content().catch(() => '');
+  const lat = Number((h.match(/"latitude":\s*(-?\d+\.\d+)/) || h.match(/"lat":\s*(-?\d+\.\d+)/) || [])[1]) || null;
+  const lng = Number((h.match(/"longitude":\s*(-?\d+\.\d+)/) || h.match(/"lng":\s*(-?\d+\.\d+)/) || [])[1]) || null;
   const a = {
     url: `https://www.airbnb.pt/rooms/${id}`,
-    titulo: (await page.title()).split(' - ')[0],
+    // o título da página às vezes é o genérico ("Airbnb: alojamentos de férias…"): então vale o h1
+    titulo: (t => /^Airbnb\b|alojamentos de férias/i.test(t) ? '' : t)((await page.title()).split(' - ')[0]) || (await page.locator('h1').first().innerText().catch(() => '')).trim() || (await page.title()).split(' - ')[0],
     // "Alojamento inteiro: casa em Vilarinho dos Freires, Portugal" / "Quarto em hotel boutique em Canelas"
-    tipo: (t.match(/^(?:Alojamento inteiro: |Quarto (?:na seguinte localização: |em )?)?[^\n]{0,40}? em [^\n]{2,60}$/m) || [''])[0].trim(),
+    // (linhas como "Avaliação de 5,0 em 5 estrelas" ou "Anúncios em destaque" também têm " em ": não são a terra)
+    tipo: ([...t.matchAll(/^(?:Alojamento inteiro: |Quarto (?:na seguinte localização: |em )?)?[^\n]{0,40}? em [^\n]{2,60}$/gm)].map(m => m[0].trim())
+      .find(x => !/avalia|estrela|destaque|anúncio|experiência|anfitri|\d,\d/i.test(x)) || ''),
+    // "2 pessoas · 1 quarto · 2 camas" (ou "personCapacity" no código da página)
+    hospedes: Number((h.match(/"personCapacity":\s*(\d+)/) || t.match(/(\d+)\+?\s+(?:pessoas|hóspedes)\s+·/) || [])[1]) || null,
+    lat, lng,
     nota: nota ? Number(nota[1].replace(',', '.')) : null,
     avaliacoes: nota ? Number(nota[2]) : 0,
     novo: /\bNovo\b/.test(texto) || /^Novo$/m.test(t),
@@ -112,7 +128,7 @@ async function ler(id, texto = '') {
     ...anfitriaoDe(t),
     al: al || null,
     ultima_avaliacao: datas.at(-1) || null,
-    v2: true,
+    v2: true, v3: true, // v3 = com coordenadas e hóspedes
   };
   if (!a.anfitriao_chave) a.anfitriao_chave = null;
   const limite = new Date(); limite.setMonth(limite.getMonth() - 12);
@@ -122,17 +138,21 @@ async function ler(id, texto = '') {
   out.anuncios[id] = a; grava();
   console.log(id, '|', a.titulo.slice(0, 40), '|', a.nota ?? '-', `(${a.avaliacoes})`, '|', a.tipo.slice(0, 40), '| AL', a.al || '?', a.registo ? '→ ' + a.registo : '', '|', a.anfitriao_chave || '-', a.ativa ? '' : 'PARADA');
 }
-for (const [id, texto] of cartoes) {
-  if (out.anuncios[id] || !daZona(texto)) continue;
-  try { await ler(id, texto); } catch (e) { console.log(id, 'ERRO', e.message.slice(0, 60)); }
+out.erros = {};
+for (const id of out.cartoes || []) {
+  if (out.anuncios[id]) continue;
+  try { await ler(id, cartoes.get(id) || ''); } catch (e) { out.erros[id] = e.message.slice(0, 80); console.log(id, 'ERRO', e.message.slice(0, 60)); }
 }
-// node ferramentas/airbnb.mjs "<Concelho>" --reler : relê os anúncios do concelho (ligados ao registo ou sem nº AL) lidos com a versão antiga
+// node ferramentas/airbnb.mjs "<Concelho>" --reler : relê os anúncios lidos com uma versão antiga (sem coordenadas)
 if (process.argv.includes('--reler'))
   for (const [id, a] of Object.entries(out.anuncios)) {
-    if (a.v2 || (a.al && !a.registo)) continue;
-    try { await ler(id); } catch (e) { console.log(id, 'ERRO', e.message.slice(0, 60)); }
+    if (a.v3 && !/^Airbnb\b|alojamentos de férias|Service Unavailable/i.test(a.titulo)) continue;
+    try { await ler(id); delete out.erros[id]; } catch (e) { out.erros[id] = e.message.slice(0, 80); console.log(id, 'ERRO', e.message.slice(0, 60)); }
   }
-out.pesquisa_feita = true; grava();
+// a pesquisa só fica feita se trouxe cartões (uma página de bloqueio dá 0 e não pode passar por "concelho sem casas")
+if ((out.cartoes || []).length) out.pesquisa_feita = true;
+grava();
+if (Object.keys(out.erros).length) console.log(`${Object.keys(out.erros).length} anúncios não abriram: volta a correr (retoma)`);
 await browser.close();
 
 const an = Object.values(out.anuncios);

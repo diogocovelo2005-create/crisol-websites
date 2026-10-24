@@ -21,7 +21,7 @@ import { fileURLToPath } from 'node:url';
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const concelho = process.argv[2];
 if (!concelho) { console.error('uso: node ferramentas/booking.mjs "<Concelho>"'); process.exit(1); }
-const nomeF = concelho.toLowerCase().replace(/\s+/g, '-');
+const nomeF = concelho.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/\s+/g, '-');
 const fCand = path.join(RAIZ, 'data', `candidatos-${nomeF}.json`);
 const fSaida = path.join(RAIZ, 'data', `booking-${nomeF}.json`);
 const { candidatos } = JSON.parse(fs.readFileSync(fCand, 'utf8'));
@@ -82,18 +82,24 @@ async function destId() {
   grava();
   return out.dest_id;
 }
-const novos = new Set();
+// anúncios por ler: ficam no ficheiro, para não se perderem se o processo parar a meio
+const novos = new Set(out.pendentes || []);
+const guardaPendentes = () => { out.pendentes = [...novos].filter(s => !out.anuncios[s]); grava(); };
 let cookies = false;
 // Carrega a lista toda: o Booking só mostra 25 de cada vez e vai acrescentando à medida que se desce a página
 async function carregarTudo(url) {
   if (!(await ir(url))) return { h1: '', cartoes: [] };
   if (!cookies) { try { await page.locator('#onetrust-reject-all-handler, button:has-text("Recusar")').first().click({ timeout: 5000 }); cookies = true; } catch {} await pausa(800); }
   try { await page.keyboard.press('Escape'); } catch {}
+  // o alvo é o total que o próprio Booking escreve no título ("116 alojamentos encontrados"): continua a descer até lá
+  // chegar (ou até a lista parar de crescer 8 vezes seguidas; com a máquina lenta, 4 vezes parava aos 75)
+  const alvo = Number(((await page.locator('h1').first().innerText().catch(() => '')).match(/([\d.\s]+)\s+alojamentos?/) || [])[1]?.replace(/\D/g, '')) || 0;
   let ant = 0, parado = 0;
-  for (let i = 0; i < 60 && parado < 4; i++) {
-    await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight)); await pausa(1800);
-    await page.mouse.wheel(0, -800); await pausa(400); await page.mouse.wheel(0, 1600); await pausa(1200);
-    const mais = page.locator('button:has-text("Carregar mais"), button:has-text("Load more"), button:has-text("Mostrar mais")');
+  for (let i = 0; i < 80 && parado < 8 && !(alvo && ant >= alvo * 0.98); i++) {
+    await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight)); await pausa(2500);
+    if (parado) { await page.mouse.wheel(0, -800); await pausa(400); await page.mouse.wheel(0, 1600); await pausa(1500); }
+    // o botão muda de nome conforme a versão da página ("Ver mais resultados" deixava a lista nos 75-90 de 116)
+    const mais = page.getByRole('button', { name: /ver mais resultados|mais resultados|carregar mais|mostrar mais|load more|show more results/i });
     if (await mais.count()) { try { await mais.first().click({ timeout: 4000 }); } catch {} await pausa(2000); }
     const n = await page.locator('[data-testid="property-card"]').count();
     parado = n === ant ? parado + 1 : 0; ant = n;
@@ -107,14 +113,26 @@ async function carregarTudo(url) {
   })).catch(() => ({ h1: '', cartoes: [] }));
 }
 async function pesquisas() {
-  if (out.pesquisa_feita) return;
+  if (out.pesquisa_feita && out.lista_sem_datas) return; // (um ficheiro antigo, sem a lista guardada, refaz a pesquisa)
   const id = await destId();
   out.precos = out.precos || {};
   // sem datas: todas as casas do destino (conta de controlo)
   const base = `https://www.booking.com/searchresults.pt-pt.html?dest_id=${id}&dest_type=${out.dest_type}&lang=pt-pt`;
-  const r0 = await carregarTudo(base);
-  out.total_booking = Number((r0.h1.match(/([\d.\s]+)\s+alojamentos?/) || [])[1]?.replace(/\D/g, '')) || null;
-  for (const c of r0.cartoes) { const s = slugDoUrl(c.href); if (s && !out.anuncios[s]) novos.add(s); }
+  // até 3 tentativas, juntando o que cada uma carregou, até chegar ao total que o Booking diz ter
+  const lista = new Set();
+  let r0;
+  for (let t = 0; t < 3; t++) {
+    r0 = await carregarTudo(base);
+    out.total_booking = Number((r0.h1.match(/([\d.\s]+)\s+alojamentos?/) || [])[1]?.replace(/\D/g, '')) || out.total_booking || null;
+    for (const c of r0.cartoes) { const s = slugDoUrl(c.href); if (s) lista.add(s); }
+    console.log(`sem datas, tentativa ${t + 1}: ${r0.cartoes.length} cartões (${lista.size} no total de ${out.total_booking || '?'})`);
+    if (out.total_booking && lista.size >= out.total_booking * 0.98) break;
+  }
+  // a lista sem datas é a conta de controlo: vazia (bloqueio, timeout) não pode passar por "feita"
+  if (!lista.size) throw new Error('A lista do Booking sem datas veio vazia (bloqueio ou página que não carregou): volta a correr');
+  out.lista_sem_datas = [...lista];
+  for (const s of out.lista_sem_datas) if (!out.anuncios[s]) novos.add(s);
+  guardaPendentes();
   console.log(`sem datas: "${r0.h1}" · ${r0.cartoes.length} cartões`);
   // 12 datas: casas a mais (raro) e o preço de 1 noite para 2 pessoas
   const f = d => d.toISOString().slice(0, 10);
@@ -128,6 +146,7 @@ async function pesquisas() {
       if (!out.anuncios[s] && !novos.has(s)) { novos.add(s); n++; }
       if (c.preco) (out.precos[s] = out.precos[s] || []).push(Number(c.preco));
     }
+    guardaPendentes();
     console.log(`pesquisa ${f(d)}: ${r.cartoes.length} cartões, ${n} novos`);
   }
 }
@@ -147,7 +166,7 @@ async function paginasLocalidade() {
     const hrefs = await page.$$eval('a[href*="/hotel/pt/"]', as => as.map(a => a.href)).catch(() => []);
     let n = 0;
     for (const h of hrefs) { const s = slugDoUrl(h); if (s && !out.anuncios[s] && !novos.has(s)) { novos.add(s); n++; } }
-    if (n) console.log(`localidade ${t}: ${n} novos`);
+    if (n) { guardaPendentes(); console.log(`localidade ${t}: ${n} novos`); }
   }
 }
 
@@ -161,7 +180,7 @@ async function ler(slug) {
     const titulo = document.querySelector('h2.pp-header__title, [data-testid="property-header"] h2')?.innerText || document.title.split(',')[0];
     if (/^Booking\.com/.test(titulo)) return null; // endereço que não existe: o Booking manda para a página inicial
     const rs = t('[data-testid="review-score-component"]');
-    const nota = rs.match(/(\d{1,2},\d)/)?.[1];
+    const nota = rs.match(/\b(10|\d,\d)\b/)?.[1]; // "9,1" ou "10" (sem vírgula)
     const aval = rs.match(/([\d.\s ]+)\s+coment/)?.[1];
     const corpo = document.body.innerText;
     return {
@@ -237,7 +256,8 @@ if (process.argv.includes('--coords')) {
 }
 await pesquisas(); out.pesquisa_feita = true; grava();
 await paginasLocalidade(); out.localidades_feitas = true; grava();
-for (const s of novos) { const r = await ler(s); console.log('anúncio', s, '=>', r ? `${r.nome} | ${r.nota ?? '-'} (${r.avaliacoes}) | ${r.cp || '?'} ${r.do_concelho ? '' : '(fora)'}` : 'não abriu'); }
+out.nao_abriram = [];
+for (const s of novos) { const r = await ler(s); if (!r) out.nao_abriram.push(s); guardaPendentes(); console.log('anúncio', s, '=>', r ? `${r.nome} | ${r.nota ?? '-'} (${r.avaliacoes}) | ${r.cp || '?'} ${r.do_concelho ? '' : '(fora)'}` : 'não abriu'); }
 
 // para cada casa do registo ainda sem anúncio, tentar o endereço pelo nome
 const jaAssociados = () => new Set(Object.values(out.anuncios).map(a => a.registo).filter(Boolean));

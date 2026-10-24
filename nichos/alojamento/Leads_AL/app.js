@@ -194,7 +194,8 @@ function linha(l, i = 0) {
 }
 
 // Casa pequena (menos de 5 pessoas e até 2 tipos de quarto): só turismo rural ou de habitação chega cá assim; leva a etiqueta
-const pequeno = l => typeof l.capacidade === 'number' && l.capacidade < 5 && !(l.tipos_quarto > 2);
+// (capacidade 0 = desconhecida, casa sem registo: não é "pequena")
+const pequeno = l => typeof l.capacidade === 'number' && l.capacidade > 0 && l.capacidade < 5 && !(l.tipos_quarto > 2);
 const grupo = (titulo, ls) => {
   ls = ls.slice().sort(porPontos); // mais pontos primeiro; estável: entre iguais, a ordem fica
   return ls.length ? `<div class="grupo-titulo">${titulo} · ${ls.length}</div><div class="lista">${ls.map((l, i) => linha(l, i)).join('')}</div>` : '';

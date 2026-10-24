@@ -40,7 +40,7 @@
     if (l.gestora) return 'gestora';
     const tipo = sa(l.tipo), nome = sa([l.nome, ...(l.unidades || [])].join(' ')), desc = sa(l.descricao);
     const tudo = `${nome} ${tipo} ${desc} ${sa((l.etiquetas || []).join(' '))}`;
-    if (/cadeia/.test(tudo)) return 'cadeia';
+    if (/cadeia|\bgrupo hoteleiro\b/.test(tudo)) return 'cadeia';
     if (/hostel/.test(tudo)) {
       // hostel que vale a pena: grande (20+ camas ou 150+ avaliações), independente e com quartos privados
       const grande = l.capacidade >= 20 || avaliacoes(l) >= 150;
@@ -50,7 +50,8 @@
     if (/casament|eventos|wedding|event venue/.test(tudo)) return 'quinta-eventos';
     if (/habitac/.test(tipo) || /\bsolar\b|\bpaco\b|casa senhorial|manor/.test(nome)) return 'turismo-habitacao';
     const vinho = /vinho|vinha|wine|vineyard|winery|adega|enoturismo|port wine|provas/.test(`${nome} ${desc}`);
-    if (/quinta/.test(nome) && (vinho || /espaco rural/.test(tipo))) return 'quinta-vinho';
+    // quinta com vinho: só com sinal de vinho (no nome ou na descrição); uma quinta de turismo rural sem vinho é casa de campo
+    if (/quinta/.test(nome) && vinho) return 'quinta-vinho';
     if (vinho && /espaco rural/.test(tipo)) return 'quinta-vinho';
     if (/glamping|yoga|retiro|retreat|eco ?lodge|eco-resort|tenda|yurt|cabana/.test(tudo)) return 'glamping-retiro';
     if (/restaurante com|restaurante e alojamento|restaurante/.test(sa((l.etiquetas || []).join(' ')))) return 'restaurante-quartos';

@@ -13,7 +13,7 @@ import { fileURLToPath } from 'node:url';
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const concelho = process.argv[2];
 if (!concelho) { console.error('uso: node ferramentas/redes.mjs "<Concelho>"'); process.exit(1); }
-const nomeF = concelho.toLowerCase().replace(/\s+/g, '-');
+const nomeF = concelho.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/\s+/g, '-');
 const lerJ = f => fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : {};
 const leads = lerJ(path.join(RAIZ, 'data', 'leads.json')).leads.filter(l => l.concelho === concelho && l.canal === 'mensagem');
 const bk = lerJ(path.join(RAIZ, 'data', `booking-${nomeF}.json`)).anuncios || {};

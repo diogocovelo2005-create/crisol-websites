@@ -13,7 +13,7 @@ import { fileURLToPath } from 'node:url';
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const [, , concelho, ...inicios] = process.argv;
 if (!inicios.length) { console.error('uso: node ferramentas/camara.mjs "<Concelho>" <url> [<url> ...]'); process.exit(1); }
-const nomeF = concelho.toLowerCase().replace(/\s+/g, '-');
+const nomeF = concelho.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/\s+/g, '-');
 const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36';
 const pausa = ms => new Promise(r => setTimeout(r, ms));
 const get = async u => { for (let t = 0; t < 3; t++) { try { const r = await fetch(u, { headers: { 'user-agent': UA }, signal: AbortSignal.timeout(20000) }); if (r.ok) return await r.text(); } catch {} await pausa(1500); } return ''; };

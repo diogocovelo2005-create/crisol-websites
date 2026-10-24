@@ -91,7 +91,7 @@ const telefones = (...nums) => [...new Set(nums
   }
   // Pela ordem em que se verificam: a pontuação só com o registo (o site ainda não se sabe), as pequenas no fim
   candidatos.sort((a, b) => !!a.pequena - !!b.pequena || pontuacao({ ...b, site: null }).pontos - pontuacao({ ...a, site: null }).pontos);
-  const ficheiro = path.join(DATA, `candidatos-${concelho.toLowerCase().replace(/\s+/g, '-')}.json`);
+  const ficheiro = path.join(DATA, `candidatos-${concelho.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/\s+/g, '-')}.json`);
   fs.mkdirSync(DATA, { recursive: true });
   fs.writeFileSync(ficheiro, JSON.stringify({ concelho, data: new Date().toISOString().slice(0, 10), candidatos }, null, 2));
 

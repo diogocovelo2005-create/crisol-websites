@@ -11,14 +11,19 @@ import { fileURLToPath } from 'node:url';
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const concelho = process.argv[2];
 if (!concelho) { console.error('uso: node ferramentas/descobrir.mjs "<Concelho>"'); process.exit(1); }
-const nomeF = concelho.toLowerCase().replace(/\s+/g, '-');
+const nomeF = concelho.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/\s+/g, '-');
 const { candidatos } = JSON.parse(fs.readFileSync(path.join(RAIZ, 'data', `candidatos-${nomeF}.json`), 'utf8'));
 const fSaida = path.join(RAIZ, 'data', `descobrir-${nomeF}.json`);
 const out = fs.existsSync(fSaida) ? JSON.parse(fs.readFileSync(fSaida, 'utf8')) : { concelho, feitas: [], sitios: {} };
 const grava = () => fs.writeFileSync(fSaida, JSON.stringify(out, null, 1));
 const sa = s => (s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
 
-const terras = [...new Set([concelho, ...candidatos.map(c => (c.localidade || '').trim())].filter(t => t.length > 2).map(t => t.replace(/\b\w/g, l => l.toUpperCase())))].slice(0, 20);
+// TODAS as terras: o concelho, as localidades e as freguesias do registo (não há limite: na Régua, o limite de 20
+// deixou Covelinhas, Sedielos, Loureiro e Mera por pesquisar)
+const titulo = t => t.toLowerCase().split(' ').map(w => /^(d[aeo]s?|e)$/.test(w) ? w : w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+const terras = [...new Map([concelho, ...candidatos.flatMap(c => [c.localidade, ...String(c.freguesia || '').split(/ e |,/)])]
+  .map(t => String(t || '').replace(/^uni[aã]o das freguesias de /i, '').replace(/\s*\(.*?\)/g, '').replace(/\s+prg$/i, '').trim()).filter(t => t.length > 2).map(t => [sa(t), titulo(t)])).values()];
+out.terras = terras;
 const TERMOS = ['alojamento', 'turismo rural quinta', 'hostel guest house'];
 // categorias do Maps que não são alojamento
 const NAO = /restaurante|caf[eé]|bar\b|supermercado|igreja|escola|farm[aá]cia|loja|oficina|cl[ií]nica|imobili|c[aâ]mara|junta|museu|miradouro|parque\b(?! de campismo)|adega(?!.*aloj)/i;
