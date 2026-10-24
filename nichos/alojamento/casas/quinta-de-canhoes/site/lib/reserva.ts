@@ -15,6 +15,11 @@
        e no ecrã não aparecem cêntimos.
 */
 
+import { listaDeOfertas } from "@/lib/oferta";
+import { NOME_PADRAO, PRECOS_PADRAO, TABELA_PADRAO, aplicarPromocoes, descreverOferta, nomeDe, ofertasDe, promocaoDoAlmoco, promocoesDaEstadia, type Alvo, type OfertaAplicada, type PromocaoAplicada, type TabelaPrecos } from "@/lib/precos";
+
+export { TABELA_PADRAO, type TabelaPrecos } from "@/lib/precos";
+
 /* ------------------------------------------------------------------ */
 /* Quartos                                                             */
 /* ------------------------------------------------------------------ */
@@ -95,6 +100,10 @@ export const UNIDADES_MAX: Record<TipoQuarto, number> = {
   61 €, Suite 97 € (para 2 pessoas), por noite, sem pequeno-almoço. Iguais
   o ano inteiro.
 
+  A D. Teresa muda-os em /precos (preços de todos os dias e promoções): ver
+  lib/precos.ts. Os de origem (PRECOS_PADRAO) só valem enquanto ela não
+  guardar nada. Todas as contas recebem a tabela em vigor (`t`).
+
   `base` é o preço por noite de cada tipo. `periodos` sobrepõem-se à base
   quando a noite cai dentro deles (o último que servir ganha). Um período
   pode valer só para certos dias da semana, contados pela NOITE: a noite
@@ -122,9 +131,9 @@ export const TARIFAS: {
   fonte: "Preços da casa",
   recolhidas: "2026-10-23",
   base: {
-    duplo: 64,
-    twin: 61,
-    suite: 97,
+    duplo: PRECOS_PADRAO.duplo,
+    twin: PRECOS_PADRAO.twin,
+    suite: PRECOS_PADRAO.suite,
   },
   periodos: [],
 };
@@ -140,7 +149,7 @@ export const TARIFAS: {
 /* Preço por noite da casa inteira, em euros (a Teresa, 2026-10-20). As
    contas, o sinal e o pequeno-almoço fazem-se como nos quartos. Se voltar
    a null, o formulário diz que o preço vem na nossa resposta. */
-export const PRECO_CASA_INTEIRA: number | null = 600;
+export const PRECO_CASA_INTEIRA: number | null = PRECOS_PADRAO.casa;
 
 /** Estadia mínima da casa inteira (a Teresa, 2026-10-20). */
 export const NOITES_MINIMAS_CASA = 2;
@@ -152,7 +161,7 @@ export const CASA_INTEIRA_LUGARES = quartos.reduce((s, q) => s + q.lugares * UNI
 export const SUGERIR_CASA_A_PARTIR_DE = 13;
 
 /** Por pessoa e por noite, em euros. Pode vir a ser oferta. */
-export const PEQUENO_ALMOCO_POR_PESSOA = 8;
+export const PEQUENO_ALMOCO_POR_PESSOA = PRECOS_PADRAO.pequenoAlmoco;
 
 /** Percentagem do total que confirma a reserva. */
 export const SINAL_PERCENTAGEM = 30;
@@ -181,7 +190,7 @@ export const ESCALOES: { id: Escalao; nome: string }[] = [
 export type Grupo = { adultos: number; criancas: Escalao[] };
 
 /** Criança dos 3 aos 10, por noite, com cama suplementar e pequeno-almoço. */
-export const CAMA_SUPLEMENTAR_POR_NOITE = 15;
+export const CAMA_SUPLEMENTAR_POR_NOITE = PRECOS_PADRAO.crianca;
 /** Sofás-cama por Suite: onde dormem as crianças dos 3 aos 10. */
 export const SOFAS_CAMA_POR_SUITE = 2;
 /** Na casa inteira as crianças 3–10 não pagam extra (está nos 600 €). */
@@ -189,8 +198,9 @@ export const CAMA_SUPLEMENTAR_PAGA_NA_CASA_INTEIRA = false;
 /** Crianças por pedido, no máximo. */
 export const CRIANCAS_MAX = 8;
 
-export const NOTA_CRIANCAS =
-  "Até aos 3 anos é gratuito; temos berço. 3 a 10 anos: 15 € por noite, com cama suplementar e pequeno-almoço (só nas Suites). Com mais de 10 anos, conte como adulto.";
+export const notaCriancas = (t: TabelaPrecos = TABELA_PADRAO) =>
+  `Até aos 3 anos é gratuito; temos berço. 3 a 10 anos: ${t.base.crianca} € por noite, com cama suplementar e pequeno-almoço (só nas Suites). Com mais de 10 anos, conte como adulto.`;
+export const NOTA_CRIANCAS = notaCriancas();
 
 const contar = (g: Grupo, e: Escalao) => g.criancas.filter((c) => c === e).length;
 /** Quem ocupa um lugar normal (e paga o pequeno-almoço): os adultos. */
@@ -336,17 +346,65 @@ export function noitesDe(chegada: Date, saida: Date): Date[] {
 /* Contas                                                              */
 /* ------------------------------------------------------------------ */
 
-export function precoDaNoite(id: TipoQuarto, noite: Date): number {
+/** O preço normal de uma noite (sem promoções): a base da tabela, com os períodos do código. */
+function precoNormal(alvo: Alvo, noite: Date, t: TabelaPrecos): number {
+  if (alvo === "casa") return t.base.casa;
   const dia = iso(noite);
-  let preco = TARIFAS.base[id];
+  let preco = t.base[alvo];
   for (const p of TARIFAS.periodos) {
     if (p.de && dia < p.de) continue;
     if (p.ate && dia >= p.ate) continue;
     if (p.diasDaSemana && !p.diasDaSemana.includes(noite.getDay())) continue;
-    if (p.precos[id] !== undefined) preco = p.precos[id]!;
+    if (p.precos[alvo] !== undefined) preco = p.precos[alvo]!;
   }
   return preco;
 }
+
+/** O preço de uma noite, já com as promoções; `antes` é o normal quando há promoção (para riscar). */
+/** `noitesEstadia`: as promoções com mínimo de noites só contam se a estadia chegar (sem ele, não contam). */
+export function precoDaNoiteComAntes(
+  alvo: Alvo,
+  noite: Date,
+  t: TabelaPrecos = TABELA_PADRAO,
+  noitesEstadia = 1,
+): { preco: number; antes: number | null; promo: string | null } {
+  return aplicarPromocoes(t, alvo, iso(noite), precoNormal(alvo, noite, t), noitesEstadia);
+}
+
+export function precoDaNoite(id: TipoQuarto, noite: Date, t: TabelaPrecos = TABELA_PADRAO): number {
+  return precoDaNoiteComAntes(id, noite, t).preco;
+}
+
+/** Uma noite e o seu preço; `antes` e `promo` (o nome da promoção) só quando a noite tem promoção. */
+export type PrecoNoite = { noite: string; preco: number; antes?: number; promo?: string };
+
+/*
+  As noites agrupadas por preço, para se ler «2 noites × 97 € + 1 noite × 80 €»
+  (pela ordem em que aparecem). Sem promoções e sem períodos, um só grupo.
+*/
+export function gruposDeNoites(lista: PrecoNoite[]): { n: number; preco: number; antes?: number; promo?: string }[] {
+  const grupos: { n: number; preco: number; antes?: number; promo?: string }[] = [];
+  for (const x of lista) {
+    const g = grupos.find((y) => y.preco === x.preco && y.antes === x.antes && y.promo === x.promo);
+    if (g) g.n++;
+    else grupos.push({ n: 1, preco: x.preco, ...(x.antes !== undefined ? { antes: x.antes } : {}), ...(x.promo ? { promo: x.promo } : {}) });
+  }
+  return grupos;
+}
+
+/** Em texto simples: «2 noites × 97 € + 1 noite × 80 € (promoção; normal 97 €)». */
+export function textoNoites(lista: PrecoNoite[]): string {
+  return gruposDeNoites(lista)
+    .map((g) => `${g.n} ${g.n === 1 ? "noite" : "noites"} × ${euros(g.preco)}${g.antes !== undefined ? ` (${g.promo ?? "promoção"}; normal ${euros(g.antes)})` : ""}`)
+    .join(" + ");
+}
+
+const precosDasNoites = (alvo: Alvo, noites: Date[], t: TabelaPrecos): PrecoNoite[] =>
+  noites.map((n) => {
+    const { preco, antes, promo } = precoDaNoiteComAntes(alvo, n, t, noites.length);
+    return { noite: iso(n), preco, ...(antes !== null ? { antes } : {}), ...(antes !== null && promo ? { promo } : {}) };
+  });
+const somaNormal = (l: PrecoNoite[]) => l.reduce((s, n) => s + (n.antes ?? n.preco), 0);
 
 export type Escolha = Partial<Record<TipoQuarto, number>>;
 
@@ -354,9 +412,11 @@ export type LinhaQuarto = {
   tipo: TipoQuarto;
   nome: string;
   quantidade: number;
-  precosPorNoite: { noite: string; preco: number }[];
+  precosPorNoite: PrecoNoite[];
   /** Todas as noites de todas as unidades deste tipo. */
   subtotal: number;
+  /** O subtotal sem as promoções (só quando alguma noite tem promoção). */
+  subtotalSemPromocao?: number;
 };
 
 export type Contas = {
@@ -364,14 +424,28 @@ export type Contas = {
   /** Vazio quando é a casa inteira. */
   linhas: LinhaQuarto[];
   /** Só quando é a casa inteira; preço null enquanto a Teresa não o der. */
-  casaInteira: { precoPorNoite: number | null; subtotal: number | null } | null;
+  casaInteira: {
+    precoPorNoite: number | null;
+    subtotal: number | null;
+    /** As noites e os preços (ausente nos pedidos antigos). */
+    precosPorNoite?: PrecoNoite[];
+    subtotalSemPromocao?: number;
+  } | null;
   /** `pessoas`: quem paga o pequeno-almoço (adultos e crianças com mais de 10). */
   pequenoAlmoco: {
     incluido: boolean;
     porPessoaNoite: number;
     pessoas?: number;
     subtotal: number;
+    /** Sem a promoção (só quando incluído e alguma noite é oferecida). */
+    subtotalSemPromocao?: number;
+    /** Pequeno-almoço oferecido por uma promoção (mesmo que não esteja incluído, para o mostrar). */
+    oferecido?: { noites: number; todas: boolean; nomes?: string[] };
   };
+  /** As ofertas das promoções que valem para esta estadia (texto limpo e nome da promoção). */
+  ofertas?: OfertaAplicada[];
+  /** As promoções que esta estadia apanha: nome e frase. */
+  promocoes?: PromocaoAplicada[];
   /** Camas suplementares das crianças dos 3 aos 10 (null se não houver). */
   camaSuplementar?: {
     criancas: number;
@@ -381,42 +455,64 @@ export type Contas = {
   } | null;
   /** null quando o preço vem na resposta da Teresa (casa inteira sem preço). */
   total: number | null;
+  /** O total sem as promoções, para o riscar (só quando há promoção). */
+  totalSemPromocao?: number | null;
   sinal: number | null;
   restante: number | null;
 };
 
-export function calcular(chegada: Date, saida: Date, escolha: Escolha, grupo: Grupo, comPequenoAlmoco: boolean, casaInteira = false): Contas {
+export function calcular(
+  chegada: Date,
+  saida: Date,
+  escolha: Escolha,
+  grupo: Grupo,
+  comPequenoAlmoco: boolean,
+  casaInteira = false,
+  t: TabelaPrecos = TABELA_PADRAO,
+): Contas {
   const noites = noitesDe(chegada, saida);
   const pagantesPA = lugaresNormais(grupo);
-  const pa = comPequenoAlmoco ? PEQUENO_ALMOCO_POR_PESSOA * pagantesPA * noites.length : 0;
-  const pequenoAlmoco = {
+  const pa = pequenoAlmocoDaEstadia(noites, escolha, grupo, casaInteira, t);
+  const paNormal = t.base.pequenoAlmoco * pagantesPA * noites.length;
+  const pequenoAlmoco: Contas["pequenoAlmoco"] = {
     incluido: comPequenoAlmoco,
-    porPessoaNoite: PEQUENO_ALMOCO_POR_PESSOA,
+    porPessoaNoite: t.base.pequenoAlmoco,
     pessoas: pagantesPA,
-    subtotal: pa,
+    subtotal: comPequenoAlmoco ? pa.subtotal : 0,
+    ...(comPequenoAlmoco && pa.subtotal < paNormal ? { subtotalSemPromocao: paNormal } : {}),
+    ...(pa.noitesOferecidas ? { oferecido: { noites: pa.noitesOferecidas, todas: pa.subtotal === 0, nomes: pa.nomes } } : {}),
   };
+  const alvos: Alvo[] = casaInteira ? ["casa"] : quartos.filter((q) => (escolha[q.id] ?? 0) > 0).map((q) => q.id);
+  const ofertas = ofertasDe(t, alvos, noites.map(iso));
+  const promocoesAplicadas = promocoesDaEstadia(t, alvos, noites.map(iso));
+  const paPoupado = (pequenoAlmoco.subtotalSemPromocao ?? pequenoAlmoco.subtotal) - pequenoAlmoco.subtotal;
   const nCama = criancasCama(grupo);
   const camaIncluida = casaInteira && !CAMA_SUPLEMENTAR_PAGA_NA_CASA_INTEIRA;
   const camaSuplementar = nCama
     ? {
         criancas: nCama,
-        porNoite: CAMA_SUPLEMENTAR_POR_NOITE,
-        subtotal: camaIncluida ? 0 : nCama * CAMA_SUPLEMENTAR_POR_NOITE * noites.length,
+        porNoite: t.base.crianca,
+        subtotal: camaIncluida ? 0 : nCama * t.base.crianca * noites.length,
         incluidaNaCasa: camaIncluida,
       }
     : null;
-  const extra = pa + (camaSuplementar?.subtotal ?? 0);
+  const extra = pequenoAlmoco.subtotal + (camaSuplementar?.subtotal ?? 0);
   if (casaInteira) {
-    const subtotal = PRECO_CASA_INTEIRA === null ? null : PRECO_CASA_INTEIRA * noites.length;
-    const total = subtotal === null ? null : Math.round(subtotal + extra);
-    const sinal = total === null ? null : Math.ceil((total * SINAL_PERCENTAGEM) / 100);
+    const precosPorNoite = precosDasNoites("casa", noites, t);
+    const subtotal = precosPorNoite.reduce((s, n) => s + n.preco, 0);
+    const normal = somaNormal(precosPorNoite);
+    const total = Math.round(subtotal + extra);
+    const sinal = Math.ceil((total * SINAL_PERCENTAGEM) / 100);
     return {
       noites: noites.length,
       linhas: [],
-      casaInteira: { precoPorNoite: PRECO_CASA_INTEIRA, subtotal },
+      casaInteira: { precoPorNoite: t.base.casa, subtotal, precosPorNoite, ...(normal > subtotal ? { subtotalSemPromocao: normal } : {}) },
       pequenoAlmoco,
       camaSuplementar,
+      ...(ofertas.length ? { ofertas } : {}),
+      ...(promocoesAplicadas.length ? { promocoes: promocoesAplicadas } : {}),
       total,
+      totalSemPromocao: normal + paPoupado > subtotal ? Math.round(normal + paPoupado + extra) : null,
       sinal,
       restante: total === null || sinal === null ? null : total - sinal,
     };
@@ -425,14 +521,13 @@ export function calcular(chegada: Date, saida: Date, escolha: Escolha, grupo: Gr
     .filter((q) => (escolha[q.id] ?? 0) > 0)
     .map((q) => {
       const quantidade = escolha[q.id]!;
-      const precosPorNoite = noites.map((n) => ({
-        noite: iso(n),
-        preco: precoDaNoite(q.id, n),
-      }));
+      const precosPorNoite = precosDasNoites(q.id, noites, t);
       const subtotal = precosPorNoite.reduce((s, n) => s + n.preco, 0) * quantidade;
-      return { tipo: q.id, nome: q.nome, quantidade, precosPorNoite, subtotal };
+      const normal = somaNormal(precosPorNoite) * quantidade;
+      return { tipo: q.id, nome: q.nome, quantidade, precosPorNoite, subtotal, ...(normal > subtotal ? { subtotalSemPromocao: normal } : {}) };
     });
   const total = Math.round(linhas.reduce((s, l) => s + l.subtotal, 0) + extra);
+  const semPromocao = Math.round(linhas.reduce((s, l) => s + (l.subtotalSemPromocao ?? l.subtotal), 0) + paPoupado + extra);
   const sinal = Math.ceil((total * SINAL_PERCENTAGEM) / 100);
   return {
     noites: noites.length,
@@ -440,10 +535,52 @@ export function calcular(chegada: Date, saida: Date, escolha: Escolha, grupo: Gr
     casaInteira: null,
     pequenoAlmoco,
     camaSuplementar,
+    ...(ofertas.length ? { ofertas } : {}),
+    ...(promocoesAplicadas.length ? { promocoes: promocoesAplicadas } : {}),
     total,
+    totalSemPromocao: semPromocao > total ? semPromocao : null,
     sinal,
     restante: total - sinal,
   };
+}
+
+/*
+  O pequeno-almoço noite a noite, com o oferecido pelas promoções.
+
+  É por adulto, mas a promoção é por tipo de quarto: por isso os adultos
+  repartem-se pelos quartos como a casa os arruma (2 em cada Duplo, depois 2
+  em cada Twin, o resto nas Suites, como em adultosNasSuites). Numa noite, não
+  pagam os adultos dos quartos com o pequeno-almoço oferecido. Na casa
+  inteira, conta a promoção da casa inteira para todos.
+*/
+function pequenoAlmocoDaEstadia(noites: Date[], escolha: Escolha, grupo: Grupo, casaInteira: boolean, t: TabelaPrecos) {
+  const adultos = lugaresNormais(grupo);
+  const n = noites.length;
+  let duplo = 0;
+  let twin = 0;
+  let suite = 0;
+  if (!casaInteira) {
+    duplo = Math.min(adultos, 2 * (escolha.duplo ?? 0));
+    twin = Math.min(adultos - duplo, 2 * (escolha.twin ?? 0));
+    suite = (escolha.suite ?? 0) > 0 ? adultos - duplo - twin : 0;
+  }
+  let subtotal = 0;
+  let noitesOferecidas = 0;
+  const nomes = new Set<string>();
+  for (const d of noites) {
+    const dia = iso(d);
+    const oferecido = (a: Alvo) => {
+      const p = promocaoDoAlmoco(t, a, dia, n);
+      if (p && (casaInteira ? a === "casa" : (escolha[a as TipoQuarto] ?? 0) > 0)) nomes.add(nomeDe(p));
+      return !!p;
+    };
+    const gratis = casaInteira
+      ? oferecido("casa") ? adultos : 0
+      : (oferecido("duplo") ? duplo : 0) + (oferecido("twin") ? twin : 0) + (oferecido("suite") ? suite : 0);
+    if (gratis > 0) noitesOferecidas++;
+    subtotal += t.base.pequenoAlmoco * Math.max(0, adultos - gratis);
+  }
+  return { subtotal, noitesOferecidas, nomes: [...nomes] };
 }
 
 /*
@@ -454,22 +591,23 @@ export function calcular(chegada: Date, saida: Date, escolha: Escolha, grupo: Gr
   Exceção: para 1 ou 2 pessoas sugere sempre o Duplo (o Twin é mais barato,
   mas fica por decidir com o Diogo).
 */
-export function sugestao(grupo: Grupo): Escolha {
+export function sugestao(grupo: Grupo, t: TabelaPrecos = TABELA_PADRAO): Escolha {
   const normais = Math.min(PESSOAS_MAX, Math.max(1, lugaresNormais(grupo)));
   const g = { ...grupo, adultos: normais };
   if (normais <= 2 && criancasCama(grupo) === 0) return { duplo: 1 };
   // Primeiro sem adultos a mais nas Suites (o preço da Suite é para 2): a
   // sugestão leva sempre um total certo. Só se não houver, aceita-os.
   let melhor: { escolha: Escolha; quartos: number; preco: number } | null = null;
+  const tb = t.base;
   for (const precoCerto of [true, false]) {
     if (melhor) break;
     for (let d = 0; d <= UNIDADES_MAX.duplo; d++)
-      for (let t = 0; t <= UNIDADES_MAX.twin; t++)
+      for (let tw = 0; tw <= UNIDADES_MAX.twin; tw++)
         for (let su = 0; su <= UNIDADES_MAX.suite; su++) {
-          const escolha: Escolha = { duplo: d, twin: t, suite: su };
-          const nq = d + t + su;
+          const escolha: Escolha = { duplo: d, twin: tw, suite: su };
+          const nq = d + tw + su;
           if (!nq || cabeGrupo(escolha, g) || (precoCerto && adultosNasSuites(escolha, g))) continue;
-          const preco = d * TARIFAS.base.duplo + t * TARIFAS.base.twin + su * TARIFAS.base.suite;
+          const preco = d * tb.duplo + tw * tb.twin + su * tb.suite;
           if (!melhor || nq < melhor.quartos || (nq === melhor.quartos && preco < melhor.preco)) {
             melhor = { escolha, quartos: nq, preco };
           }
@@ -480,13 +618,13 @@ export function sugestao(grupo: Grupo): Escolha {
 }
 
 /** A sugestão completa: a casa inteira quando o grupo a enche (ou quase). */
-export function sugestaoCompleta(grupo: Grupo): {
+export function sugestaoCompleta(grupo: Grupo, t: TabelaPrecos = TABELA_PADRAO): {
   casaInteira: boolean;
   escolha: Escolha;
 } {
   return {
     casaInteira: lugaresNormais(grupo) + criancasCama(grupo) >= SUGERIR_CASA_A_PARTIR_DE,
-    escolha: sugestao(grupo),
+    escolha: sugestao(grupo, t),
   };
 }
 
@@ -559,6 +697,12 @@ export type PedidoReserva = {
   moeda: "EUR";
   /* null quando é a casa inteira sem preço: a Teresa indica-o na resposta. */
   total: number | null;
+  /** O total sem as promoções, quando o pedido as teve (para riscar). */
+  semPromocao?: number;
+  /** As ofertas que se aplicaram, com o texto e o nome desse momento (para a casa as cumprir). Os da ronda anterior guardavam só o texto. */
+  ofertas?: (OfertaAplicada | string)[];
+  /** As promoções que o pedido apanhou, com o nome e a frase desse momento. */
+  promocoes?: PromocaoAplicada[];
   sinal: { percentagem: number; valor: number | null };
   restante: { valor: number | null; quando: string };
   hospede: { nome: string; email: string; telefone: string; mensagem: string };
@@ -569,7 +713,8 @@ export type PedidoReserva = {
   animalDecisao?: "aceite" | "recusado";
   /** Total ajustado pela casa ao confirmar. */
   ajuste?: { totalOriginal: number | null; motivo: string };
-  tarifas: { fonte: string; recolhidas: string };
+  /** De onde vieram os preços: a versão da tabela de /precos (0 = os de origem). */
+  tarifas: { fonte: string; recolhidas: string; versao?: number };
 };
 
 export function montarPedido(dados: {
@@ -582,8 +727,8 @@ export function montarPedido(dados: {
   hospede: PedidoReserva["hospede"];
   pagamento: FormaPagamento;
   animal?: TipoAnimal;
-}): PedidoReserva {
-  const c = calcular(dados.chegada, dados.saida, dados.escolha, dados.grupo, dados.comPequenoAlmoco, dados.casaInteira);
+}, t: TabelaPrecos = TABELA_PADRAO): PedidoReserva {
+  const c = calcular(dados.chegada, dados.saida, dados.escolha, dados.grupo, dados.comPequenoAlmoco, dados.casaInteira, t);
   return {
     versao: 1,
     criadoEm: new Date().toISOString(),
@@ -602,6 +747,9 @@ export function montarPedido(dados: {
     pequenoAlmoco: c.pequenoAlmoco,
     moeda: "EUR",
     total: c.total,
+    ...(c.totalSemPromocao ? { semPromocao: c.totalSemPromocao } : {}),
+    ...(c.ofertas?.length ? { ofertas: c.ofertas } : {}),
+    ...(c.promocoes?.length ? { promocoes: c.promocoes } : {}),
     sinal: { percentagem: SINAL_PERCENTAGEM, valor: c.sinal },
     restante: { valor: c.restante, quando: QUANDO_RESTANTE },
     hospede: {
@@ -612,7 +760,7 @@ export function montarPedido(dados: {
     },
     pagamento: dados.pagamento,
     animal: dados.animal && dados.animal !== "nao" ? dados.animal : false,
-    tarifas: { fonte: TARIFAS.fonte, recolhidas: TARIFAS.recolhidas },
+    tarifas: { fonte: TARIFAS.fonte, recolhidas: t.atualizadoEm?.slice(0, 10) ?? TARIFAS.recolhidas, versao: t.versao },
   };
 }
 
@@ -662,7 +810,7 @@ export type Alternativa = {
   casaInteira?: boolean;
 };
 
-export function recalcularPedido(p: PedidoReserva, outras?: Alternativa, totalCombinado?: number | null): PedidoReserva {
+export function recalcularPedido(p: PedidoReserva, outras?: Alternativa, totalCombinado?: number | null, t: TabelaPrecos = TABELA_PADRAO): PedidoReserva {
   const chegada = deIso(outras?.chegada ?? p.estadia.chegada)!;
   const saida = deIso(outras?.saida ?? p.estadia.saida)!;
   const novo = montarPedido({
@@ -675,7 +823,7 @@ export function recalcularPedido(p: PedidoReserva, outras?: Alternativa, totalCo
     hospede: p.hospede,
     pagamento: p.pagamento,
     animal: animalDoPedido(p),
-  });
+  }, t);
   novo.referencia = p.referencia;
   novo.criadoEm = p.criadoEm;
   if (novo.total === null && totalCombinado && totalCombinado > 0) {
@@ -776,6 +924,45 @@ export const dataCurta = (v: string) => {
   const d = deIso(v)!;
   return `${SEMANA_CURTA[d.getDay()]} ${d.getDate()} ${MESES_CURTOS[d.getMonth()]}`;
 };
+
+/** As ofertas de um pedido em texto: «Garrafa de vinho à chegada (Magusto)». */
+export const ofertasDoPedido = (p: Pick<PedidoReserva, "ofertas">) => (p.ofertas ?? []).map(descreverOferta);
+
+/** Os nomes das promoções que um pedido apanhou (preço, pequeno-almoço ou oferta), sem repetir. */
+export function promocoesDoPedido(p: PedidoReserva): string[] {
+  const nomes = new Set<string>();
+  for (const l of p.quartos) for (const n of l.precosPorNoite) if (n.promo) nomes.add(n.promo);
+  for (const n of p.casaInteira?.precosPorNoite ?? []) if (n.promo) nomes.add(n.promo);
+  for (const n of p.pequenoAlmoco.oferecido?.nomes ?? []) nomes.add(n);
+  for (const o of p.ofertas ?? []) if (typeof o !== "string") nomes.add(o.nome);
+  for (const x of p.promocoes ?? []) nomes.add(x.nome);
+  if (nomes.size > 1) nomes.delete(NOME_PADRAO);
+  return [...nomes];
+}
+
+/*
+  O que o hóspede lê sobre a promoção (nos emails e na simulação do editor):
+  as frases das promoções e a linha «A sua estadia tem a promoção «X»:
+  oferecemos …». Texto simples; quem o põe em HTML escapa-o.
+*/
+/** O pequeno-almoço oferecido pela promoção, para uma frase: «o pequeno-almoço», «o pequeno-almoço em 2 noites» (ou null). */
+export function pequenoAlmocoOferecidoTexto(p: Pick<PedidoReserva, "pequenoAlmoco">): string | null {
+  const o = p.pequenoAlmoco.oferecido;
+  if (!p.pequenoAlmoco.incluido || !o || o.noites < 1) return null;
+  return o.todas ? "o pequeno-almoço" : `o pequeno-almoço em ${o.noites} ${o.noites === 1 ? "noite" : "noites"}`;
+}
+
+export function mensagemPromocao(p: PedidoReserva): { frases: string[]; linha: string | null } {
+  const nomes = promocoesDoPedido(p);
+  const frases = [...new Set((p.promocoes ?? []).map((x) => x.frase).filter(Boolean))];
+  const ofertas = (p.ofertas ?? []).map((o) => (typeof o === "string" ? o : o.texto));
+  const almoco = pequenoAlmocoOferecidoTexto(p);
+  if (!nomes.length && !ofertas.length && !almoco) return { frases, linha: null };
+  const promo = nomes.length ? `A sua estadia tem ${nomes.length === 1 ? "a promoção" : "as promoções"} ${nomes.map((n) => `«${n}»`).join(" e ")}` : "Na sua estadia";
+  // «o pequeno-almoço» vai à frente; tudo junto como «a, b e c».
+  const lista = listaDeOfertas([...(almoco ? [almoco] : []), ...ofertas]);
+  return { frases, linha: `${promo}${lista ? `${nomes.length ? ": " : " "}oferecemos ${lista}` : ""}.` };
+}
 
 export const descreverPedido = (p: PedidoReserva) => (p.casaInteira ? "A casa inteira" : descreverEscolha(escolhaDoPedido(p)));
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PrecoAoVivo } from "@/components/reserva/Preco";
 import { metadados } from "@/lib/seo";
 import { FotoTamanhos } from "@/components/FotoTamanhos";
 import { Revelar } from "@/components/Revelar";
@@ -193,7 +194,7 @@ export default function PaginaOsQuartos() {
                   <span className="ml-6 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-granito-linha text-xisto transition-transform group-open:rotate-180">+</span>
                 </summary>
                 <div className="mt-4 pr-12 text-xisto-suave leading-relaxed">
-                  O pequeno-almoço é servido na sala de jantar da casa principal, habitualmente entre as 8h30 e as 10h30. Tem o custo de 8€ por pessoa e inclui pão fresco, bolos caseiros, fruta da época e compotas feitas na quinta. Pode pedi-lo à chegada.
+                  O pequeno-almoço é servido na sala de jantar da casa principal, habitualmente entre as 8h30 e as 10h30. Tem o custo de <PrecoAoVivo campo="pequenoAlmoco" /> por pessoa e inclui pão fresco, bolos caseiros, fruta da época e compotas feitas na quinta. Pode pedi-lo à chegada.
                 </div>
               </details>
               <details className="group py-6" name="faq">

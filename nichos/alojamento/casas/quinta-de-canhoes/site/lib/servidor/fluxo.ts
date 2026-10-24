@@ -4,6 +4,7 @@ import {
   animalDoPedido,
   cabeNasNoites,
   deIso,
+  euros,
   escolhaDoPedido,
   iso,
   noitesDe,
@@ -17,6 +18,7 @@ import { assinar, verificar } from "@/lib/servidor/assinatura";
 import { config, TEMPO_MINIMO_SEGUNDOS } from "@/lib/servidor/config";
 import { passo } from "@/lib/servidor/diagnostico";
 import { avisarFalha, enviarEmail } from "@/lib/servidor/email";
+import { lerTabela } from "@/lib/servidor/precos";
 import * as E from "@/lib/servidor/emails";
 import type { SemDestino } from "@/lib/servidor/modelo-email";
 import {
@@ -88,8 +90,19 @@ export async function receberPedido(corpo: unknown): Promise<Resposta> {
   }
   passo("pedido: válido", { chegada: c.pedido!.estadia.chegada, saida: c.pedido!.estadia.saida });
 
-  // Os preços ficam congelados aqui: os do momento do pedido.
-  const pedido = recalcularPedido({ ...c.pedido!, criadoEm: new Date().toISOString() });
+  // Os preços ficam congelados aqui: os do momento do pedido (a tabela de /precos).
+  const tabela = await lerTabela();
+  const pedido = recalcularPedido({ ...c.pedido!, criadoEm: new Date().toISOString() }, undefined, undefined, tabela);
+  // O hóspede viu outro total (a casa mudou os preços entretanto): mostra-se o novo antes de enviar.
+  if (typeof c.pedido!.total === "number" && c.pedido!.total !== pedido.total) {
+    passo("pedido: o total do browser não bate com os preços atuais", { browser: c.pedido!.total, servidor: pedido.total, versao: tabela.versao });
+    return {
+      ok: false,
+      erro: `Os preços acabaram de ser atualizados${pedido.total !== null ? `: o total passa a ser ${euros(pedido.total)}` : ""}. Confira as contas e envie outra vez.`,
+      estado: 409,
+      precosMudaram: true,
+    };
+  }
 
   // Duplo envio: o mesmo email, as mesmas datas e os mesmos quartos há menos de 15 minutos.
   passo("pedido: reservar a impressão (duplicados)");
@@ -266,6 +279,7 @@ export async function executarAcao(corpo: unknown): Promise<Resposta> {
       const lista = Array.isArray(a.alternativas) ? a.alternativas.slice(0, 3) : [];
       if (!lista.length) return { ok: false, erro: "Marque pelo menos uma alternativa.", estado: 400 };
       const nota = texto(a.nota);
+      const tabela = await lerTabela();
       const m = await atualizar(ref, (r) => {
         if (r.estado !== "novo") return { erro: descreverEstado(r), estado: 409 };
         const recalculadas: PedidoReserva[] = [];
@@ -273,7 +287,7 @@ export async function executarAcao(corpo: unknown): Promise<Resposta> {
           const casa = alt.casaInteira ?? r.pedido.casaInteira !== null;
           const erro = validarDatas(alt?.chegada, alt?.saida, casa, 1);
           if (erro) return { erro: `${alt?.chegada} → ${alt?.saida}: ${erro}`, estado: 400 };
-          recalculadas.push({ ...recalcularPedido(r.pedido, alt), referencia: r.ref });
+          recalculadas.push({ ...recalcularPedido(r.pedido, alt, undefined, tabela), referencia: r.ref });
         }
         r.estado = "proposta";
         r.proposta = { em: new Date().toISOString(), nota, alternativas: recalculadas };

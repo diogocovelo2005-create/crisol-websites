@@ -1,6 +1,6 @@
 import type { PedidoReserva } from "@/lib/reserva";
 
-export type RespostaEnvio = { ok: true; referencia: string } | { ok: false; erro: string; ocupado?: boolean };
+export type RespostaEnvio = { ok: true; referencia: string } | { ok: false; erro: string; ocupado?: boolean; precosMudaram?: boolean };
 
 /*
   O único ponto de saída do pedido: envia-o a /api/reserva (Route Handler,
@@ -22,7 +22,7 @@ export async function enviarPedido(
     });
     const corpo = await r.json().catch(() => null);
     if (r.ok && corpo?.ok) return { ok: true, referencia: corpo.referencia };
-    return { ok: false, erro: corpo?.erro ?? "Não conseguimos enviar o pedido.", ocupado: corpo?.ocupado === true };
+    return { ok: false, erro: corpo?.erro ?? "Não conseguimos enviar o pedido.", ocupado: corpo?.ocupado === true, precosMudaram: corpo?.precosMudaram === true };
   } catch {
     return { ok: false, erro: "Não conseguimos enviar o pedido." };
   }

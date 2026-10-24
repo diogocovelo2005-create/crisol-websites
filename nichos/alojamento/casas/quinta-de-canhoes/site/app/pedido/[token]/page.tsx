@@ -3,7 +3,8 @@ import { Mail, MessageCircle, Phone } from "lucide-react";
 import { AcoesPedido } from "@/components/reserva/AcoesPedido";
 import { Bilhete, Etiquetas } from "@/components/reserva/BilhetePedido";
 import { FaixaTopo } from "@/components/reserva/ResumoPedido";
-import { POLITICA_SINAL, SINAL_PERCENTAGEM, dataCurta, descreverGrupo, euros, grupoDoPedido, type PedidoReserva } from "@/lib/reserva";
+import { POLITICA_SINAL, SINAL_PERCENTAGEM, dataCurta, descreverGrupo, euros, grupoDoPedido, textoNoites, ofertasDoPedido, type PedidoReserva } from "@/lib/reserva";
+import { lerTabela } from "@/lib/servidor/precos";
 import { PAGAMENTO } from "@/lib/servidor/config";
 import { registoDoLink } from "@/lib/servidor/fluxo";
 import {
@@ -49,9 +50,9 @@ export default async function PaginaPedido({ params }: { params: Promise<{ token
   if ("erro" in l) return <LinkInvalido expirado={l.erro === "expirado"} />;
   const r = l.registo;
   const p = r.pedido;
-  const registos = await listarRegistos();
+  const [registos, tabela] = await Promise.all([listarRegistos(), lerTabela()]);
   const conflitos = ["novo", "proposta"].includes(r.estado) ? conflitosDe(r, registos) : [];
-  const sugestoes = r.estado === "novo" ? sugerirAlternativas(r, registos) : [];
+  const sugestoes = r.estado === "novo" ? sugerirAlternativas(r, registos, 4, tabela) : [];
   const aceite = !!r.proposta?.aceite && r.estado === "novo";
   const estado = aceite ? { texto: "Aceitou novas datas · por confirmar", cor: "bg-cal text-xisto" } : ESTADOS[r.estado];
 
@@ -100,6 +101,7 @@ export default async function PaginaPedido({ params }: { params: Promise<{ token
                 devolucao={r.estado === "pago" ? devolucaoDe(p) : null}
                 whatsapp={r.estado === "confirmado" ? linkWhatsappPagamento(r) : null}
                 proposta={r.proposta ? { alternativas: r.proposta.alternativas, aceite: r.proposta.aceite?.indice ?? null } : null}
+                tabela={tabela}
               />
               <Historico itens={r.historico} />
             </div>
@@ -187,15 +189,26 @@ function Cliente({ pedido: p }: { pedido: PedidoReserva }) {
 function Detalhes({ pedido: p }: { pedido: PedidoReserva }) {
   const n = `${p.estadia.noites} ${p.estadia.noites === 1 ? "noite" : "noites"}`;
   const linhas: [string, string][] = [];
-  if (p.casaInteira) linhas.push(["A casa inteira", p.casaInteira.subtotal !== null ? euros(p.casaInteira.subtotal) : "a indicar"]);
+  if (p.casaInteira)
+    linhas.push([
+      `A casa inteira${p.casaInteira.precosPorNoite?.length ? ` · ${textoNoites(p.casaInteira.precosPorNoite)}` : ""}`,
+      p.casaInteira.subtotal !== null ? euros(p.casaInteira.subtotal) : "a indicar",
+    ]);
   for (const l of p.quartos) {
-    const preco = l.precosPorNoite[0]?.preco;
-    linhas.push([`${l.quantidade > 1 ? `${l.quantidade} × ` : ""}${l.nome} · ${n}${preco ? ` × ${euros(preco)}` : ""}`, euros(l.subtotal)]);
+    linhas.push([`${l.quantidade > 1 ? `${l.quantidade} × ` : ""}${l.nome} · ${l.precosPorNoite.length ? textoNoites(l.precosPorNoite) : n}`, euros(l.subtotal)]);
   }
+  const pa = p.pequenoAlmoco;
   linhas.push([
-    p.pequenoAlmoco.incluido ? `Pequeno-almoço · ${p.pequenoAlmoco.pessoas ?? p.pessoas} ${(p.pequenoAlmoco.pessoas ?? p.pessoas) === 1 ? "adulto" : "adultos"} × ${n} × ${euros(p.pequenoAlmoco.porPessoaNoite)}` : "Pequeno-almoço",
-    p.pequenoAlmoco.incluido ? euros(p.pequenoAlmoco.subtotal) : "não incluído",
+    pa.incluido
+      ? `Pequeno-almoço · ${pa.pessoas ?? p.pessoas} ${(pa.pessoas ?? p.pessoas) === 1 ? "adulto" : "adultos"} × ${n} × ${euros(pa.porPessoaNoite)}${
+          pa.subtotalSemPromocao !== undefined
+            ? ` (oferecido${pa.oferecido && !pa.oferecido.todas ? ` em ${pa.oferecido.noites} noite(s)` : ""}${pa.oferecido?.nomes?.length ? `, ${pa.oferecido.nomes.join(", ")}` : ""}; normal ${euros(pa.subtotalSemPromocao)})`
+            : ""
+        }`
+      : "Pequeno-almoço",
+    pa.incluido ? (pa.subtotal === 0 && pa.subtotalSemPromocao ? "oferecido" : euros(pa.subtotal)) : "não incluído",
   ]);
+  for (const o of ofertasDoPedido(p)) linhas.push([`Oferta a dar · ${o}`, "incluída"]);
   if (p.camaSuplementar && !p.camaSuplementar.incluidaNaCasa) {
     const c = p.camaSuplementar;
     linhas.push([
@@ -204,6 +217,7 @@ function Detalhes({ pedido: p }: { pedido: PedidoReserva }) {
     ]);
   }
   linhas.push(["Total", p.total !== null ? euros(p.total) : "a indicar"]);
+  if (p.semPromocao && p.total !== null) linhas.push(["Sem as promoções seria", euros(p.semPromocao)]);
   return (
     <div className="px-1 text-sm text-xisto-suave">
       <p className="etiqueta mb-2 text-[0.6rem]">As contas</p>

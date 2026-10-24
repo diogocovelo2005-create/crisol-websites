@@ -1,8 +1,8 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
-import { BedDouble, Coffee, Landmark, PawPrint, Smartphone, Users } from "lucide-react";
+import { BedDouble, Coffee, Landmark, PawPrint, Smartphone, Users, Gift } from "lucide-react";
 import { fotos } from "@/lib/fotos";
-import { adultosNasSuites, animalDoPedido, escolhaDoPedido, deIso, descreverGrupo, descreverPedido, grupoDoPedido, quartos, type PedidoReserva } from "@/lib/reserva";
+import { pequenoAlmocoOferecidoTexto, adultosNasSuites, animalDoPedido, escolhaDoPedido, deIso, descreverGrupo, descreverPedido, grupoDoPedido, ofertasDoPedido, quartos, type PedidoReserva } from "@/lib/reserva";
 
 /*
   As peças visuais de um pedido, na linguagem dos emails: o bilhete de
@@ -66,10 +66,12 @@ export function Etiquetas({ pedido: p, casa = false }: { pedido: PedidoReserva; 
   const itens: [ReactNode, string, boolean?, boolean?][] = [
     [<BedDouble key="q" size={17} />, descreverPedido(p)],
     [<Users key="p" size={17} />, descreverGrupo(grupoDoPedido(p))],
-    [<Coffee key="c" size={17} />, p.pequenoAlmoco.incluido ? "Com pequeno-almoço" : "Sem pequeno-almoço", !p.pequenoAlmoco.incluido],
+    [<Coffee key="c" size={17} />, p.pequenoAlmoco.incluido ? `Com pequeno-almoço${pequenoAlmocoOferecidoTexto(p) ? ` (${pequenoAlmocoOferecidoTexto(p)!.replace("o pequeno-almoço", "oferecido")})` : ""}` : "Sem pequeno-almoço", !p.pequenoAlmoco.incluido],
     [p.pagamento === "mbway" ? <Smartphone key="m" size={17} /> : <Landmark key="t" size={17} />, p.pagamento === "mbway" ? "MB WAY" : "Transferência"],
     ...(animal === "pequeno" ? ([[<PawPrint key="a" size={17} />, "Animal até 8 kg (gratuito)"]] as [ReactNode, string][]) : []),
     ...(animal === "grande" ? ([[<PawPrint key="a" size={17} />, "Animal com mais de 8 kg (canil)"]] as [ReactNode, string][]) : []),
+    // As ofertas da promoção: à casa, para se lembrar de as dar.
+    ...(ofertasDoPedido(p).map((o, i) => [<Gift key={`o${i}`} size={17} />, `${casa ? "Oferta a dar" : "Oferta"}: ${o}`]) as [ReactNode, string][]),
     ...(casa && adultosSuite
       ? ([[<Users key="s" size={17} />, `Suite com ${adultosSuite} adultos — confirme o total`, false, true]] as [ReactNode, string, boolean, boolean][])
       : []),

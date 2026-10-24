@@ -16,7 +16,8 @@ import {
   noitesEntre,
   recalcularPedido,
   somarDias,
-  TARIFAS,
+  TABELA_PADRAO,
+  type TabelaPrecos,
   type Alternativa,
   type Escolha,
   type Ocupacao,
@@ -225,7 +226,7 @@ export type Sugestao = { rotulo: string; alternativa: Alternativa; pedido: Pedid
   (com o mesmo número de noites e os mesmos quartos) e, nas mesmas datas,
   outras combinações de quartos que caibam.
 */
-export function sugerirAlternativas(r: Registo, registos: Registo[], maxDatas = 4): Sugestao[] {
+export function sugerirAlternativas(r: Registo, registos: Registo[], maxDatas = 4, t: TabelaPrecos = TABELA_PADRAO): Sugestao[] {
   const p = r.pedido;
   const o = ocupacaoDe(registos, r.ref);
   const casa = p.casaInteira !== null;
@@ -237,20 +238,20 @@ export function sugerirAlternativas(r: Registo, registos: Registo[], maxDatas = 
     cabeNasNoites(o, noitesDe(c, somarDias(c, n)).map(iso), e, ci);
 
   const sugestoes: Sugestao[] = [];
-  const juntar = (rotulo: string, alt: Alternativa) => sugestoes.push({ rotulo, alternativa: alt, pedido: recalcularPedido(p, alt) });
+  const juntar = (rotulo: string, alt: Alternativa) => sugestoes.push({ rotulo, alternativa: alt, pedido: recalcularPedido(p, alt, undefined, t) });
 
   // Mesmas datas, outros quartos.
   const g = grupoDoPedido(p);
   const combos: { e: Escolha; nq: number; preco: number }[] = [];
   for (let d = 0; d <= UNIDADES_MAX.duplo; d++)
-    for (let t = 0; t <= UNIDADES_MAX.twin; t++)
+    for (let tw = 0; tw <= UNIDADES_MAX.twin; tw++)
       for (let s = 0; s <= UNIDADES_MAX.suite; s++) {
-        const e: Escolha = Object.fromEntries(Object.entries({ duplo: d, twin: t, suite: s }).filter(([, v]) => v > 0));
-        const nq = d + t + s;
+        const e: Escolha = Object.fromEntries(Object.entries({ duplo: d, twin: tw, suite: s }).filter(([, v]) => v > 0));
+        const nq = d + tw + s;
         if (!nq || cabeGrupo(e, g) || adultosNasSuites(e, g)) continue;
         if (!casa && JSON.stringify(e) === JSON.stringify(escolha)) continue;
         if (!cabe(chegada, e, false)) continue;
-        combos.push({ e, nq, preco: d * TARIFAS.base.duplo + t * TARIFAS.base.twin + s * TARIFAS.base.suite });
+        combos.push({ e, nq, preco: d * t.base.duplo + tw * t.base.twin + s * t.base.suite });
       }
   combos.sort((a, b) => a.nq - b.nq || a.preco - b.preco);
   for (const c of combos.slice(0, 2)) juntar("Mesmas datas, outros quartos", { chegada: p.estadia.chegada, saida: p.estadia.saida, escolha: c.e, casaInteira: false });

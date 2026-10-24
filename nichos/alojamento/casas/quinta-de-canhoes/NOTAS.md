@@ -244,3 +244,97 @@ Cópia de antes: `arquivo/site-2026-10-22-antes-trafego/` (só código).
 ### Por confirmar
 - Uma foto do Poço Azul (da casa, ou com licença livre).
 - As coordenadas da quinta, para acertar as distâncias.
+
+## Preços e promoções pela D. Teresa (/precos), 2026-10-24
+
+- Os preços saem do código para o armazém das reservas (Blobs «reservas», chave `precos/atual`;
+  em casa `site/.dados/precos/`). Vazio = os de origem (`PRECOS_PADRAO` em `lib/precos.ts`:
+  64/61/97, casa 600, criança 15, pequeno-almoço 8): o site fica igual. O sinal (30 %) e as
+  noites mínimas continuam no código.
+- Promoções: noites de/até (as duas incluídas), quartos e/ou casa inteira, desconto em % (arredondado
+  ao euro por noite) ou preço novo por tipo. Duas na mesma noite: vale a mais barata. As que acabaram
+  saem ao guardar.
+- Uma só conta (`lib/reserva.ts`, todas as funções recebem a tabela): formulário (`/api/precos`),
+  pedido, alternativas, página do pedido, emails. O servidor recusa o pedido se o total do browser
+  não bater («Os preços acabaram de ser atualizados…») e o formulário recarrega os preços.
+  O pedido guarda o preço de cada noite (`antes` quando teve promoção), `semPromocao` e a versão.
+- Riscado: cartões (por cima, pequeno), linhas, total e barra; `ResumoPedido`; emails e página
+  da casa em texto («promoção; normal 97 €»).
+- **Acesso privado** (o Diogo, 2026-10-24: «só ela consegue ver essa página»): não há página
+  pública nem email. O editor está em `/precos/<chave>`; a chave (43 caracteres aleatórios) só
+  existe no link que se dá à Teresa. No armazém fica só o hash (`precos/chave`); a página e a rota
+  de guardar comparam-no em tempo constante. Sem chave guardada, ou com outra, é o 404 normal do
+  site (igual ao pixel e no título; `app/precos/[chave]/not-found.tsx`). `/precos` não está no
+  robots.txt nem no sitemap; a página leva noindex e `referrer: no-referrer`, e não tem rodapé,
+  WhatsApp, aviso de cookies nem nenhum link, iframe ou script externo (`ForaDaPaginaPrivada`).
+  A chave nunca vai para os registos nem para o email ao Diogo.
+- Editor: 4 passos (preços de todos os dias, promoções, como o hóspede vê, guardar) e «Desfazer
+  a última alteração». Limites: 30–200 % dos preços de origem; promoção ≥ 30 % e abaixo do normal;
+  desconto 5–70 %; datas válidas e não passadas. Cada alteração → email ao EMAIL_ALERTAS.
+  Escrita condicional + id por alteração (idempotente) + versão selada (HMAC) contra leituras atrasadas.
+
+### Promoções: preço, pequeno-almoço oferecido e ofertas (2026-10-24)
+- Uma promoção tem quartos, noites, mínimo de noites opcional (2–30) e duas partes, pelo menos uma:
+  o efeito no preço (`efeito`: nenhum, desconto em %, preço novo, pequeno-almoço oferecido) e uma
+  oferta em texto livre (`oferta`, não mexe no total).
+- Pequeno-almoço oferecido: conta-se noite a noite. Os adultos repartem-se pelos quartos como a casa
+  os arruma (2 por Duplo, depois 2 por Twin, o resto nas Suites); não pagam os dos quartos abrangidos.
+  Junta-se a um desconto no quarto; entre duas promoções de preço vale a mais barata.
+- Mínimo de noites: se a estadia não chega, a promoção não conta; nas contas aparece um convite
+  discreto («Fique 3 noites ou mais e ganhe 10 % na Suite», «Fique 3 noites ou mais: …»).
+- Ofertas: limpas por `lib/oferta.ts` (determinístico; no browser para a pré-visualização e no
+  servidor, que volta a limpar tudo e é quem manda). Testes: `node --test scripts/testes/oferta.test.mjs`.
+  Aparecem nas contas («Oferta · …»), no resumo, na página do pedido e no email do novo pedido
+  («Ofertas a dar: …»), nos emails ao hóspede («Na sua estadia oferecemos: …») e no detalhe das contas.
+  O pedido guarda as ofertas com o texto desse momento.
+
+### Promoções com nome, e as três coisas combinadas (2026-10-24, 3.ª ronda)
+- Uma promoção tem nome opcional (mesma limpeza das ofertas, até 40 caracteres; sem nome, «Promoção»;
+  sugestões de épocas e eventos), começa/acaba, quartos, e «O que oferece» com três caixas que se
+  combinam: «Baixar o preço do quarto» (desconto em % ou preço novo por noite), «Pequeno-almoço
+  oferecido», «Outra oferta». Pelo menos uma. Mínimo de noites opcional.
+- Modelo: `nome`, `desconto` | `precos`, `pequenoAlmoco: true`, `oferta` (as da ronda anterior com
+  `efeito` convertem-se ao ler). O pedido guarda o nome em cada noite com promoção, no pequeno-almoço
+  oferecido e em cada oferta ({nome, texto}).
+- /reservar: antes do calendário, um aviso discreto com as promoções que ainda se apanham e começam
+  nos próximos 60 dias (no máximo 3, as mais próximas); «ver estas datas» marca as datas. Com datas,
+  o nome aparece junto do preço riscado («Magusto · ~~97 €~~ 80 €»), e o cartão do quarto diz
+  «Pequeno-almoço oferecido · Oferta: …».
+- Emails e página do pedido: «Promoção: Magusto. Ofertas a dar: … (Magusto)»; ao hóspede «A sua
+  estadia tem a promoção «Magusto»: oferecemos …»; ao Diogo, cada promoção completa.
+- O cartão «Nova promoção» acaba em «Assim o hóspede vai ver» (aviso, quarto, contas e total).
+
+### Frases por época e simulação no editor (2026-10-24, 4.ª ronda)
+- Cada sugestão de nome traz 2 ou 3 frases (`SUGESTOES` em lib/precos.ts). Carregar numa sugestão
+  preenche «Frase da promoção»; «Outra frase» percorre as variantes; um nome próprio deixa a frase
+  vazia (o site usa `FRASE_NEUTRA`). Mesma limpeza das ofertas, até 140 caracteres.
+- A frase aparece no aviso de /reservar (por baixo do nome), no cartão do quarto, nos emails ao
+  hóspede (antes de «oferecemos…»), no email ao Diogo, e fica guardada no pedido (`promocoes`).
+- Bloco 3 do editor sem campos: «Hoje no site» e as promoções como aparecem em «Reservar».
+- «Assim o hóspede vai ver» é uma simulação com as peças reais do formulário (AvisoPromocoes,
+  CartaoQuarto, CasaInteira, ContasEstadia, exportadas de FormularioReserva) numa moldura de browser,
+  inerte, com «No site» / «No email» (o email usa mensagemPromocao, a mesma função do servidor).
+
+### A chave do link dos preços (gerar ou trocar, sem publicar)
+Na pasta `site/`:
+- `node scripts/chave-precos.mjs --producao` → chave nova no site publicado (Netlify Blobs, loja
+  «reservas»). Usa `NETLIFY_AUTH_TOKEN` e `NETLIFY_SITE_ID` do `.env.local` do site (os do deploy);
+  só imprime a chave nova e o link. A anterior deixa de abrir o editor (até ~1 minuto, porque as
+  leituras do Blobs no site são eventuais).
+- `node scripts/chave-precos.mjs` → o mesmo em casa (`site/.dados/precos/chave.json`), para testar
+  em http://localhost:4160.
+- Depois do primeiro deploy com esta funcionalidade é preciso correr o `--producao` uma vez:
+  sem chave, o editor não existe.
+- Para o manual: «Para mudar os preços, abra este link (guarde-o nos favoritos e não o partilhe):
+  https://quintadecanhoes.com/precos/<CHAVE>»
+- Movimento: só a barra «N alterações por guardar» (sobe 12 px e aparece, 200 ms).
+- `/os-quartos`: o «8€» do pequeno-almoço vem da tabela. O `priceRange` do JSON-LD fica nos de origem.
+
+### Por confirmar
+- Testado só com o armazém em ficheiros; no Netlify Blobs falta confirmar a etag devolvida pela escrita e o script `--producao`.
+- Se a Teresa pode mudar pequeno-almoço e criança (estão no editor) ou só quartos/casa.
+
+### Editor de promoções: três acertos (2026-10-24)
+- A simulação «No site» mostra só os quartos da promoção (ou a casa inteira).
+- A linha da promoção no email ao hóspede diz quando o pequeno-almoço é oferecido (`pequenoAlmocoOferecidoTexto` em `lib/reserva.ts`, «o pequeno-almoço em N noites» se for só em parte); os emails à casa e o bilhete do pedido passam a dizer «(oferecido)».
+- Escolher uma sugestão de nome não apaga uma frase escrita à mão (`fraseAoEscolherSugestao`, testada).

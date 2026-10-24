@@ -1,6 +1,6 @@
 import { contactos } from "@/lib/contactos";
 import { config } from "@/lib/servidor/config";
-import { AVISO_SPAM_EMAIL, POLITICA_SINAL, SINAL_PERCENTAGEM, animalDoPedido, bebes, textoAnimal, criancasCama, dataCurta, deIso, descreverGrupo, descreverPedido, euros, grupoDoPedido, type PedidoReserva } from "@/lib/reserva";
+import { AVISO_SPAM_EMAIL, POLITICA_SINAL, SINAL_PERCENTAGEM, animalDoPedido, bebes, textoAnimal, criancasCama, dataCurta, deIso, descreverGrupo, descreverPedido, euros, grupoDoPedido, textoNoites, ofertasDoPedido, type PedidoReserva } from "@/lib/reserva";
 import type { Email } from "@/lib/servidor/email";
 import { FOTOS_EMAIL, LOGO_EMAIL } from "@/lib/servidor/logo-email";
 
@@ -210,15 +210,26 @@ export function hospede(p: PedidoReserva) {
 /** As contas linha a linha, a política e a referência, em pequeno. */
 export function detalhes(p: PedidoReserva) {
   const contas: [string, string][] = [];
-  if (p.casaInteira) contas.push(["A casa inteira", p.casaInteira.subtotal !== null ? euros(p.casaInteira.subtotal) : "a indicar"]);
+  if (p.casaInteira)
+    contas.push([
+      `A casa inteira${p.casaInteira.precosPorNoite?.length ? ` · ${textoNoites(p.casaInteira.precosPorNoite)}` : ""}`,
+      p.casaInteira.subtotal !== null ? euros(p.casaInteira.subtotal) : "a indicar",
+    ]);
   for (const l of p.quartos) {
-    const preco = l.precosPorNoite[0]?.preco;
-    contas.push([`${l.quantidade > 1 ? `${l.quantidade} × ` : ""}${l.nome} · ${noites(p.estadia.noites)}${preco ? ` × ${euros(preco)}` : ""}`, euros(l.subtotal)]);
+    contas.push([`${l.quantidade > 1 ? `${l.quantidade} × ` : ""}${l.nome} · ${l.precosPorNoite.length ? textoNoites(l.precosPorNoite) : noites(p.estadia.noites)}`, euros(l.subtotal)]);
   }
+  const pa = p.pequenoAlmoco;
   contas.push([
-    p.pequenoAlmoco.incluido ? `Pequeno-almoço · ${adultosTxt(p.pequenoAlmoco.pessoas ?? p.pessoas)} × ${noites(p.estadia.noites)} × ${euros(p.pequenoAlmoco.porPessoaNoite)}` : "Pequeno-almoço",
-    p.pequenoAlmoco.incluido ? euros(p.pequenoAlmoco.subtotal) : "não incluído",
+    pa.incluido
+      ? `Pequeno-almoço · ${adultosTxt(pa.pessoas ?? p.pessoas)} × ${noites(p.estadia.noites)} × ${euros(pa.porPessoaNoite)}${
+          pa.subtotalSemPromocao !== undefined
+            ? ` (oferecido${pa.oferecido && !pa.oferecido.todas ? ` em ${noites(pa.oferecido.noites)}` : ""}${pa.oferecido?.nomes?.length ? `, ${pa.oferecido.nomes.join(", ")}` : ""}; normal ${euros(pa.subtotalSemPromocao)})`
+            : ""
+        }`
+      : "Pequeno-almoço",
+    pa.incluido ? (pa.subtotal === 0 && pa.subtotalSemPromocao ? "oferecido" : euros(pa.subtotal)) : "não incluído",
   ]);
+  for (const o of ofertasDoPedido(p)) contas.push([`Oferta · ${o}`, "incluída"]);
   if (p.camaSuplementar && !p.camaSuplementar.incluidaNaCasa) {
     const c = p.camaSuplementar;
     contas.push([
@@ -226,7 +237,7 @@ export function detalhes(p: PedidoReserva) {
       euros(c.subtotal),
     ]);
   }
-  contas.push(["Total da estadia", p.total !== null ? euros(p.total) : "a indicar"]);
+  contas.push([p.semPromocao && p.total !== null ? `Total da estadia (sem as promoções: ${euros(p.semPromocao)})` : "Total da estadia", p.total !== null ? euros(p.total) : "a indicar"]);
   contas.push([`Sinal de ${SINAL_PERCENTAGEM} %`, p.sinal.valor !== null ? euros(p.sinal.valor) : "a indicar"]);
   contas.push([`Restante (${p.restante.quando})`, p.restante.valor !== null ? euros(p.restante.valor) : "a indicar"]);
   return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" class="b-linha" style="margin:34px 0 0;border-top:1px solid ${C.linha};">

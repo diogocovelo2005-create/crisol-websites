@@ -20,6 +20,8 @@ export interface Armazem {
   ler<T>(chave: string): Promise<Lido<T>>;
   /** true se escreveu; false se a condição falhou (alguém escreveu entretanto). */
   escrever(chave: string, valor: unknown, condicao?: Condicao): Promise<boolean>;
+  /** Como escrever, mas devolve a etag nova (string vazia se o Blobs não a der), ou null se a condição falhou. */
+  escreverComEtag(chave: string, valor: unknown, condicao?: Condicao): Promise<string | null>;
   listar(prefixo: string): Promise<string[]>;
   apagar(chave: string): Promise<void>;
 }
@@ -137,6 +139,15 @@ async function lojaBlobs(): Promise<Armazem> {
         condicao.etag === null ? await loja.setJSON(chave, valor, { onlyIfNew: true }) : await loja.setJSON(chave, valor, { onlyIfMatch: condicao.etag });
       return r.modified;
     },
+    async escreverComEtag(chave, valor, condicao = {}) {
+      const r =
+        condicao.etag === undefined
+          ? await loja.setJSON(chave, valor)
+          : condicao.etag === null
+            ? await loja.setJSON(chave, valor, { onlyIfNew: true })
+            : await loja.setJSON(chave, valor, { onlyIfMatch: condicao.etag });
+      return r.modified ? (r.etag ?? "") : null;
+    },
     async listar(prefixo) {
       const { blobs } = await loja.list({ prefix: prefixo });
       return blobs.map((b) => b.key);
@@ -168,18 +179,22 @@ const lojaFicheiros: Armazem = {
       return null;
     }
   },
-  escrever(chave, valor, condicao = {}) {
+  async escrever(chave, valor, condicao = {}) {
+    return (await lojaFicheiros.escreverComEtag(chave, valor, condicao)) !== null;
+  },
+  escreverComEtag(chave, valor, condicao = {}) {
     return emFila(async () => {
       const f = ficheiro(chave);
       let atual: string | null = null;
       try {
         atual = await readFile(f, "utf8");
       } catch {}
-      if (condicao.etag === null && atual !== null) return false;
-      if (typeof condicao.etag === "string" && (atual === null || etagDe(atual) !== condicao.etag)) return false;
+      if (condicao.etag === null && atual !== null) return null;
+      if (typeof condicao.etag === "string" && (atual === null || etagDe(atual) !== condicao.etag)) return null;
       await mkdir(path.dirname(f), { recursive: true });
-      await writeFile(f, JSON.stringify(valor, null, 2), "utf8");
-      return true;
+      const texto = JSON.stringify(valor, null, 2);
+      await writeFile(f, texto, "utf8");
+      return etagDe(texto);
     });
   },
   async listar(prefixo) {
@@ -201,6 +216,7 @@ function comLimites(a: Armazem, nome: string): Armazem {
   return {
     ler: (c) => comTempo(`armazém ${nome} ler ${c}`, a.ler(c), LIMITE_MS),
     escrever: (c, v, cond) => comTempo(`armazém ${nome} escrever ${c}`, a.escrever(c, v, cond), LIMITE_MS),
+    escreverComEtag: (c, v, cond) => comTempo(`armazém ${nome} escrever ${c}`, a.escreverComEtag(c, v, cond), LIMITE_MS),
     listar: (p) => comTempo(`armazém ${nome} listar ${p}`, a.listar(p), LIMITE_MS),
     apagar: (c) => comTempo(`armazém ${nome} apagar ${c}`, a.apagar(c), LIMITE_MS),
   };

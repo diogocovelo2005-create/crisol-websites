@@ -1,5 +1,5 @@
 import { contactos } from "@/lib/contactos";
-import { AVISO_SPAM_EMAIL, POLITICA_SINAL, SINAL_PERCENTAGEM, adultosNasSuites, animalDoPedido, escolhaDoPedido, dataCurta, dataLonga, textoAnimal, descreverGrupo, descreverPedido, euros, grupoDoPedido, type PedidoReserva } from "@/lib/reserva";
+import { pequenoAlmocoOferecidoTexto, AVISO_SPAM_EMAIL, POLITICA_SINAL, SINAL_PERCENTAGEM, adultosNasSuites, animalDoPedido, escolhaDoPedido, dataCurta, dataLonga, textoAnimal, descreverGrupo, descreverPedido, euros, grupoDoPedido, mensagemPromocao, ofertasDoPedido, promocoesDoPedido, type PedidoReserva } from "@/lib/reserva";
 import { PAGAMENTO, config } from "@/lib/servidor/config";
 import {
   assinatura,
@@ -55,8 +55,10 @@ function resumoTexto(p: PedidoReserva) {
   return [
     `Chegada: ${dataLonga(p.estadia.chegada)}, desde as 15h`,
     `Saída: ${dataLonga(p.estadia.saida)}, até às 11h`,
-    `${descreverPedido(p)} · ${noites(p.estadia.noites)} · ${descreverGrupo(grupoDoPedido(p))}${p.pequenoAlmoco.incluido ? " · com pequeno-almoço" : ""}${textoAnimal(p) ? ` · ${textoAnimal(p)!.toLowerCase()}` : ""}`,
+    `${descreverPedido(p)} · ${noites(p.estadia.noites)} · ${descreverGrupo(grupoDoPedido(p))}${p.pequenoAlmoco.incluido ? ` · com pequeno-almoço${pequenoAlmocoOferecidoTexto(p) ? ` (${pequenoAlmocoOferecidoTexto(p)!.replace("o pequeno-almoço", "oferecido")})` : ""}` : ""}${textoAnimal(p) ? ` · ${textoAnimal(p)!.toLowerCase()}` : ""}`,
     `Total da estadia: ${totalTxt(p)} · sinal de ${SINAL_PERCENTAGEM} %: ${sinalTxt(p)} · restante: ${p.restante.valor !== null ? euros(p.restante.valor) : "a indicar"} (${p.restante.quando})`,
+    ...(promocoesDoPedido(p).length ? [`Promoção: ${promocoesDoPedido(p).join(", ")}${mensagemPromocao(p).frases.length ? ` (${mensagemPromocao(p).frases.join(". ")})` : ""}`] : []),
+    ...(p.ofertas?.length ? [`Oferta: ${ofertasDoPedido(p).join("; ")}`] : []),
     ...(p.referencia ? [`Referência: ${p.referencia}`] : []),
   ].join("\n");
 }
@@ -91,6 +93,7 @@ export function pagarSinalHospede(p: PedidoReserva, prazoIso: string): SemDestin
     corpo:
       paragrafo(`Para ficar reservado, falta só o sinal de ${pct}. Assim que chegar, enviamos-lhe a confirmação.`, "14px 0 0") +
       avisos +
+      ofertasHospede(p) +
       cartao({
         rotulo: "Sinal a pagar",
         valor: sinal,
@@ -110,6 +113,12 @@ export function pagarSinalHospede(p: PedidoReserva, prazoIso: string): SemDestin
   });
 }
 
+/** A promoção ao hóspede: a frase (o convite) e depois a linha das ofertas. Texto já limpo, aqui escapado. */
+function ofertasHospede(p: PedidoReserva) {
+  const m = mensagemPromocao(p);
+  return m.frases.map((f) => paragrafo(esc(`${f}.`), "14px 0 0")).join("") + (m.linha ? paragrafo(esc(m.linha), "14px 0 0") : "");
+}
+
 /** Reserva confirmada: o restante e quando. */
 export function reservaConfirmadaHospede(p: PedidoReserva): SemDestino {
   return montar({
@@ -120,6 +129,7 @@ export function reservaConfirmadaHospede(p: PedidoReserva): SemDestino {
     foto: p,
     corpo:
       paragrafo(`Recebemos o sinal de ${sinal(p)}. Ficamos à sua espera.`, "14px 0 0") +
+      ofertasHospede(p) +
       bilhete(p, { margem: "28px 0 0" }) +
       cartao({
         rotulo: "Fica a pagar",
@@ -212,6 +222,16 @@ export function novoPedidoCasa(p: PedidoReserva, linkPedido: string, aceiteAlter
       (!p.casaInteira && adultosNasSuites(escolhaDoPedido(p), grupoDoPedido(p))
         ? nota(`Suite com ${adultosNasSuites(escolhaDoPedido(p), grupoDoPedido(p))} adultos — confirme o total. Não há preço definido para mais de 2 adultos na Suite: o total segue com o preço da Suite; use «Ajustar total» antes de confirmar.`)
         : "") +
+      (promocoesDoPedido(p).length || p.ofertas?.length
+        ? nota(
+            [
+              promocoesDoPedido(p).length ? `Promoção: ${promocoesDoPedido(p).join(", ")}.` : "",
+              p.ofertas?.length ? `Ofertas a dar: ${ofertasDoPedido(p).join("; ")}.` : "",
+            ]
+              .filter(Boolean)
+              .join(" "),
+          )
+        : "") +
       cartao({
         rotulo: `${esc(datas(p))} · ${esc(descreverPedido(p))}`,
         valor: p.total !== null ? euros(p.total) : "Preço a indicar",
@@ -233,10 +253,11 @@ function preparar(p: PedidoReserva) {
   const itens: string[] = [];
   if (c) itens.push(c === 1 ? "cama suplementar" : `${c} camas suplementares`);
   if (b) itens.push(b === 1 ? "berço" : `${b} berços`);
-  if (p.pequenoAlmoco.incluido) itens.push("pequeno-almoço");
+  if (p.pequenoAlmoco.incluido) itens.push(`pequeno-almoço${pequenoAlmocoOferecidoTexto(p) ? ` (${pequenoAlmocoOferecidoTexto(p)!.replace("o pequeno-almoço", "oferecido")})` : ""}`);
   const a = animalDoPedido(p);
   if (a === "pequeno") itens.push("animal até 8 kg");
   if (a === "grande") itens.push("canil para o animal com mais de 8 kg");
+  for (const o of ofertasDoPedido(p)) itens.push(`oferta: ${o}`);
   return itens.join(" · ");
 }
 

@@ -7,6 +7,8 @@ import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { Check, ChevronLeft, ChevronRight, LoaderCircle, Minus, PawPrint, Plus } from "lucide-react";
 import { fotos } from "@/lib/fotos";
 import { enviarPedido } from "@/lib/reserva-envio";
+import { NoitesPrecos, Riscado, usePrecos } from "@/components/reserva/Preco";
+import { convite, descreverDatas, descreverMinimo, nomeDe, NOME_PADRAO, partesDaPromocao, promocoesAnunciar, promocoesPorPoucas, pequenoAlmocoOferecido, ofertasDe, fraseDe, promocoesDaEstadia, type Alvo, type TabelaPrecos as Tabela, type PrecosBase, type Promocao } from "@/lib/precos";
 import { contactos, linkWhatsapp } from "@/lib/contactos";
 import {
   FORMAS_PAGAMENTO,
@@ -15,7 +17,6 @@ import {
   type TipoAnimal,
   noitesMinimas,
   NOITES_RECOMENDADAS,
-  PEQUENO_ALMOCO_POR_PESSOA,
   PESSOAS_MAX,
   AVISO_SPAM,
   NOTA_SUITE_ADULTOS,
@@ -24,7 +25,7 @@ import {
   faltaSuite,
   CRIANCAS_MAX,
   ESCALOES,
-  NOTA_CRIANCAS,
+  notaCriancas,
   criancasCama,
   descreverGrupo,
   lugaresNormais,
@@ -50,14 +51,13 @@ import {
   casaLivreEm,
   primeiraChegadaFormulario,
   type Ocupacao,
-  precoDaNoite,
+  precoDaNoiteComAntes,
   quartos,
   quartosDe,
   somarDias,
   sugestao,
   sugestaoCompleta,
   mesmaEscolha,
-  PRECO_CASA_INTEIRA,
   telefoneValido,
   tipoLivreEm,
   type Contas,
@@ -116,6 +116,9 @@ export function FormularioReserva() {
   const [enviando, setEnviando] = useState(false);
   const [erroEnvio, setErroEnvio] = useState<string | null>(null);
   const [referencia, setReferencia] = useState<string | null>(null);
+  // Os preços em vigor (os que a casa muda em /precos); os de origem até chegarem.
+  const [tabela, recarregarPrecos] = usePrecos();
+  const [precosMudaram, setPrecosMudaram] = useState(false);
   const topo = useRef<HTMLDivElement>(null);
   // Anti-spam: quando o formulário abriu, e um campo que só os robôs preenchem.
   const abertoEm = useRef(0);
@@ -149,7 +152,7 @@ export function FormularioReserva() {
     setCriancas(c);
     // Até o hóspede mexer à mão, a escolha acompanha a sugestão.
     if (!mexeuNosQuartos) {
-      const s = sugestaoCompleta({ adultos: novoA, criancas: c.filter((x): x is Escalao => x !== null) });
+      const s = sugestaoCompleta({ adultos: novoA, criancas: c.filter((x): x is Escalao => x !== null) }, tabela);
       setEscolha(s.escolha);
       setCasaInteira(s.casaInteira);
     }
@@ -168,7 +171,7 @@ export function FormularioReserva() {
 
   // Aplicar a sugestão principal volta a deixá-la acompanhar as pessoas.
   const aplicarSugestao = (casa: boolean) => {
-    const s = sugestaoCompleta(grupo);
+    const s = sugestaoCompleta(grupo, tabela);
     setEscolha(s.escolha);
     setCasaInteira(casa);
     setMexeuNosQuartos(casa !== s.casaInteira);
@@ -194,10 +197,26 @@ export function FormularioReserva() {
 
   const noites = entrada && saida ? noitesEntre(entrada, saida) : 0;
   const recomendada = entrada && !saida ? somarDias(entrada, NOITES_RECOMENDADAS) : null;
-  const sug = sugestaoCompleta(grupo);
+  const sug = sugestaoCompleta(grupo, tabela);
   const sugeridos = sug.escolha;
   const nQuartos = quartosDe(escolha);
-  const contas = entrada && saida && (casaInteira || nQuartos) ? calcular(entrada, saida, escolha, grupo, comPequenoAlmoco, casaInteira) : null;
+  const contas = entrada && saida && (casaInteira || nQuartos) ? calcular(entrada, saida, escolha, grupo, comPequenoAlmoco, casaInteira, tabela) : null;
+  // As promoções a anunciar antes das datas (em curso ou nos próximos 60 dias).
+  const anunciar = hoje ? promocoesAnunciar(tabela, iso(hoje)) : [];
+  // Um clique num aviso marca as datas da promoção (a partir da primeira chegada possível).
+  const datasDaPromocao = (p: Promocao) => {
+    if (!hoje) return;
+    const c = deIso(p.de > iso(hoje) ? p.de : iso(hoje))!;
+    const n = Math.max(p.minNoites ?? NOITES_RECOMENDADAS, noitesMinimas(casaInteira));
+    const s = somarDias(c, n);
+    setMes({ ano: c.getFullYear(), mes: c.getMonth() });
+    setEntrada(c);
+    setSaida(noitesDe(c, s).some((x) => fechadas.has(iso(x))) ? null : s);
+    setPrevia(null);
+  };
+  // Promoções a que só faltam noites: um convite discreto junto das contas.
+  const alvosEscolhidos: Alvo[] = casaInteira ? ["casa"] : quartos.filter((q) => (escolha[q.id] ?? 0) > 0).map((q) => q.id);
+  const convites = contas ? promocoesPorPoucas(tabela, alvosEscolhidos, noitesEscolhidas).map((p) => convite(p, alvosEscolhidos, tabela.base)) : [];
   const faltamCamas = !casaInteira && nQuartos > 0 ? cabeGrupo(escolha, grupo) : null;
   const semSuite = !casaInteira && nQuartos > 0 ? faltaSuite(escolha, grupo) : null;
   const avisoSuite = !casaInteira && adultosNasSuites(escolha, grupo) ? NOTA_SUITE_ADULTOS : null;
@@ -261,8 +280,16 @@ export function FormularioReserva() {
     }
     setEnviando(true);
     setErroEnvio(null);
-    const pedido = montarPedido({ chegada: entrada, saida, grupo, escolha, casaInteira, comPequenoAlmoco, animal, hospede: { nome: dados.nome, email: dados.email, telefone: dados.telefone, mensagem: dados.mensagem }, pagamento });
+    setPrecosMudaram(false);
+    const pedido = montarPedido({ chegada: entrada, saida, grupo, escolha, casaInteira, comPequenoAlmoco, animal, hospede: { nome: dados.nome, email: dados.email, telefone: dados.telefone, mensagem: dados.mensagem }, pagamento }, tabela);
     const r = await enviarPedido(pedido, { armadilha: armadilha.current?.value ?? "", abertoEm: abertoEm.current });
+    if (!r.ok && r.precosMudaram) {
+      // A casa mudou os preços entretanto: as contas passam a ser as novas, e o hóspede confere antes de enviar.
+      await recarregarPrecos();
+      setEnviando(false);
+      setPrecosMudaram(true);
+      return;
+    }
     setEnviando(false);
     if (!r.ok) {
       setErroEnvio(r.erro);
@@ -301,6 +328,7 @@ export function FormularioReserva() {
       <AnimatePresence mode="wait" initial={false}>
         {passo === 1 && (
           <motion.div key="p1" {...transicao}>
+            <AvisoPromocoes promocoes={anunciar} base={tabela.base} aoEscolher={datasDaPromocao} />
             <div className="grid grid-cols-1 gap-14 lg:grid-cols-[400px_1fr] lg:gap-16">
               {/* calendário, datas e pessoas */}
               <div>
@@ -448,7 +476,7 @@ export function FormularioReserva() {
                     ))}
                   </ul>
                 )}
-                <p className="mt-4 text-sm leading-snug text-xisto-suave">{NOTA_CRIANCAS}</p>
+                <p className="mt-4 text-sm leading-snug text-xisto-suave">{notaCriancas(tabela)}</p>
               </div>
 
               {/* a sugestão, os quartos, o pequeno-almoço e as contas */}
@@ -505,77 +533,26 @@ export function FormularioReserva() {
                   {!casaInteira && <p className="etiqueta text-xisto-suave">Pode escolher mais do que um</p>}
                 </div>
                 {casaInteira ? (
-                  <CasaInteira livre={!entrada || !saida || casaLivreEm(ocupacao, noitesEscolhidas)} />
+                  <CasaInteira livre={!entrada || !saida || casaLivreEm(ocupacao, noitesEscolhidas)} preco={precoDaNoiteComAntes("casa", entrada ?? hoje ?? new Date(), tabela, noites || 1)} />
                 ) : (
                 <ul className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
                   {quartos.map((q) => {
                     const n = escolha[q.id] ?? 0;
                     const sugerido = (sugeridos[q.id] ?? 0) > 0;
                     const livre = !entrada || !saida || tipoLivreEm(ocupacao, q.id, noitesEscolhidas);
+                    const preco = precoDaNoiteComAntes(q.id, entrada ?? hoje ?? new Date(), tabela, noites || 1);
+                    const destaques = destaquesDoQuarto(tabela, q.id, noitesEscolhidas);
                     return (
-                      <li
+                      <CartaoQuarto
                         key={q.id}
-                        className={`flex flex-col bg-white/45 ring-1 transition-shadow duration-200 ${n ? "ring-2 ring-caixilho" : "ring-granito-linha hover:ring-xisto/30"} ${livre ? "" : "opacity-55"}`}
-                      >
-                        <button
-                          type="button"
-                          aria-pressed={n > 0}
-                          disabled={!livre}
-                          onClick={() => mudarQuarto(q.id, n ? 0 : 1)}
-                          className="flex flex-1 flex-col text-left disabled:cursor-not-allowed"
-                        >
-                          <span className="relative block aspect-[4/3] w-full overflow-hidden bg-granito">
-                            <Image
-                              src={q.foto}
-                              alt={q.alt}
-                              fill
-                              sizes="(min-width: 1280px) 280px, (min-width: 640px) 45vw, 100vw"
-                              quality={85}
-                              className="object-cover"
-                              style={{ objectPosition: q.foco }}
-                            />
-                            {sugerido && (
-                              <span className="etiqueta absolute left-3 top-3 bg-vale px-2.5 py-1 text-[0.6rem] text-cal">
-                                Sugerido: {sugeridos[q.id]}
-                              </span>
-                            )}
-                            <span
-                              aria-hidden="true"
-                              className={`absolute right-3 top-3 grid size-7 place-items-center rounded-full bg-caixilho text-cal transition-opacity duration-150 ${n ? "opacity-100" : "opacity-0"}`}
-                            >
-                              <Check size={14} strokeWidth={2.5} />
-                            </span>
-                          </span>
-                          <span className="flex flex-1 flex-col px-4 pt-3.5">
-                            <span className="rustico-medio text-[1.35rem] leading-tight text-xisto">{q.nome}</span>
-                            <span className="mt-1 text-sm leading-snug text-xisto-suave">
-                              {q.paraQuem} · {q.camas} · {q.nota}
-                            </span>
-                            {!livre && <span className="mt-1 text-sm font-medium text-caixilho">Sem vaga nestas datas</span>}
-                          </span>
-                        </button>
-                        <div className="mx-4 mb-4 mt-3 flex min-h-11 items-center justify-between gap-3 border-t border-granito-linha pt-3">
-                          <span className="rustico-medio text-[1.35rem] text-xisto">
-                            {euros(precoDaNoite(q.id, entrada ?? hoje ?? new Date()))}
-                            <span className="ml-1 font-[family-name:var(--font-corpo)] text-sm text-xisto-suave">/ noite</span>
-                          </span>
-                          {n > 0 ? (
-                            <div className="flex items-center gap-2.5" role="group" aria-label={`Quantos ${q.nome}`}>
-                              <BotaoRedondo pequeno rotulo={`Menos um ${q.nome}`} aoPremir={() => mudarQuarto(q.id, n - 1)}>
-                                <Minus size={14} />
-                              </BotaoRedondo>
-                              <output aria-live="polite" className="min-w-4 text-center font-medium text-xisto">
-                                {n}
-                              </output>
-                              <BotaoRedondo pequeno rotulo={`Mais um ${q.nome}`} desligado={n >= UNIDADES_MAX[q.id]} aoPremir={() => mudarQuarto(q.id, n + 1)}>
-                                <Plus size={14} />
-                              </BotaoRedondo>
-                            </div>
-                          ) : (
-                            <span className="text-sm text-xisto-suave">{livre ? "Escolher" : ""}</span>
-                          )}
-                        </div>
-                      </li>
+                        q={q}
+                        n={n}
+                        sugeridos={sugerido ? sugeridos[q.id]! : 0}
+                        livre={livre}
+                        preco={preco}
+                        destaques={destaques}
+                        aoMudar={(x) => mudarQuarto(q.id, x)}
+                      />
                     );
                   })}
                 </ul>
@@ -587,13 +564,13 @@ export function FormularioReserva() {
                   </p>
                 )}
 
-                <PequenoAlmoco ligado={comPequenoAlmoco} aoMudar={setComPequenoAlmoco} valor={contas?.pequenoAlmoco.subtotal ?? null} pessoas={lugaresNormais(grupo)} noites={noites} />
+                <PequenoAlmoco ligado={comPequenoAlmoco} aoMudar={setComPequenoAlmoco} valor={contas?.pequenoAlmoco.subtotal ?? null} pessoas={lugaresNormais(grupo)} noites={noites} porPessoa={tabela.base.pequenoAlmoco} oferecido={contas?.pequenoAlmoco.oferecido} semPromocao={contas?.pequenoAlmoco.subtotalSemPromocao} />
                 <Animal tipo={animal} aoMudar={setAnimal} />
 
                 <div className="mt-10">
                   <p className="etiqueta mb-3 text-xisto-suave">As contas</p>
                   {contas ? (
-                    <ContasEstadia contas={contas} aviso={avisoSuite} />
+                    <ContasEstadia contas={contas} aviso={avisoSuite} convites={convites} />
                   ) : (
                     <p className="border-y border-granito-linha py-5 text-xisto-suave">
                       Escolha as datas e o quarto, e as contas aparecem aqui: o total, o sinal de {SINAL_PERCENTAGEM} % que confirma a reserva e o que fica para pagar depois.
@@ -753,6 +730,12 @@ export function FormularioReserva() {
                     Vemos primeiro se há lugar e respondemos-lhe por email, normalmente no próprio dia: se houver, com o pedido do pagamento do sinal; se não
                     houver, com novas datas sugeridas.
                   </p>
+                  {precosMudaram && (
+                    <p role="alert" className="mt-5 border-l-2 border-caixilho pl-4 text-[0.95rem] text-xisto">
+                      <strong className="font-medium text-caixilho">Os preços acabaram de ser atualizados.</strong> As contas ao lado já estão certas: confira o
+                      total e carregue outra vez em «Enviar o pedido».
+                    </p>
+                  )}
                   {erroEnvio && (
                     <p role="alert" className="mt-5 border-l-2 border-caixilho pl-4 text-[0.95rem] text-xisto">
                       <strong className="font-medium text-caixilho">Não conseguimos enviar o pedido.</strong>{" "}
@@ -873,7 +856,7 @@ export function FormularioReserva() {
 }
 
 /* As contas: as linhas, o total, e o sinal destacado. Igual nos três passos. */
-function ContasEstadia({ contas, aviso = null, compacto = false }: { contas: Contas; aviso?: string | null; compacto?: boolean }) {
+export function ContasEstadia({ contas, aviso = null, compacto = false, convites = [] }: { contas: Contas; aviso?: string | null; compacto?: boolean; convites?: string[] }) {
   const noites = plural(contas.noites, "noite", "noites");
   return (
     <div>
@@ -883,38 +866,63 @@ function ContasEstadia({ contas, aviso = null, compacto = false }: { contas: Con
             <span>
               A casa inteira
               <span className="block text-sm text-xisto-suave">
-                {contas.casaInteira.precoPorNoite !== null ? `${noites} × ${euros(contas.casaInteira.precoPorNoite)}` : "O preço vem na nossa resposta"}
+                {contas.casaInteira.precosPorNoite?.length ? (
+                  <NoitesPrecos lista={contas.casaInteira.precosPorNoite} />
+                ) : contas.casaInteira.precoPorNoite !== null ? (
+                  `${noites} × ${euros(contas.casaInteira.precoPorNoite)}`
+                ) : (
+                  "O preço vem na nossa resposta"
+                )}
               </span>
             </span>
-            <span className="shrink-0">{contas.casaInteira.subtotal !== null ? euros(contas.casaInteira.subtotal) : "—"}</span>
+            <span className="shrink-0">
+              {contas.casaInteira.subtotalSemPromocao !== undefined && <Riscado antes={contas.casaInteira.subtotalSemPromocao} />}
+              {contas.casaInteira.subtotal !== null ? euros(contas.casaInteira.subtotal) : "—"}
+            </span>
           </li>
         )}
-        {contas.linhas.map((l) => {
-          const precos = [...new Set(l.precosPorNoite.map((p) => p.preco))];
-          return (
-            <li key={l.tipo} className="flex items-baseline justify-between gap-4 border-b border-granito-linha py-3">
-              <span>
-                {l.quantidade > 1 ? `${l.quantidade} × ` : ""}
-                {l.nome}
-                <span className="block text-sm text-xisto-suave">
-                  {noites} × {precos.length === 1 ? euros(precos[0]) : "preço da noite"}
-                  {l.quantidade > 1 ? ` × ${l.quantidade}` : ""}
-                </span>
+        {contas.linhas.map((l) => (
+          <li key={l.tipo} className="flex items-baseline justify-between gap-4 border-b border-granito-linha py-3">
+            <span>
+              {l.quantidade > 1 ? `${l.quantidade} × ` : ""}
+              {l.nome}
+              <span className="block text-sm text-xisto-suave">
+                <NoitesPrecos lista={l.precosPorNoite} quantidade={l.quantidade} />
               </span>
-              <span className="shrink-0">{euros(l.subtotal)}</span>
-            </li>
-          );
-        })}
+            </span>
+            <span className="shrink-0">
+              {l.subtotalSemPromocao !== undefined && <Riscado antes={l.subtotalSemPromocao} />}
+              {euros(l.subtotal)}
+            </span>
+          </li>
+        ))}
         <li className="flex items-baseline justify-between gap-4 border-b border-granito-linha py-3">
           <span>
             Pequeno-almoço
             <span className="block text-sm text-xisto-suave">
               {contas.pequenoAlmoco.incluido
-                ? `${plural(contas.pequenoAlmoco.pessoas ?? 0, "adulto", "adultos")} × ${noites} × ${euros(contas.pequenoAlmoco.porPessoaNoite)}`
+                ? `${plural(contas.pequenoAlmoco.pessoas ?? 0, "adulto", "adultos")} × ${noites} × ${euros(contas.pequenoAlmoco.porPessoaNoite)}${
+                    contas.pequenoAlmoco.oferecido
+                      ? ` · oferecido${contas.pequenoAlmoco.oferecido.todas ? "" : ` em ${plural(contas.pequenoAlmoco.oferecido.noites, "noite", "noites")}`}${
+                          contas.pequenoAlmoco.oferecido.nomes?.filter((n) => n !== NOME_PADRAO).length
+                            ? ` (${contas.pequenoAlmoco.oferecido.nomes.filter((n) => n !== NOME_PADRAO).join(", ")})`
+                            : ""
+                        }`
+                      : ""
+                  }`
                 : "Não incluído"}
             </span>
           </span>
-          <span className="shrink-0">{contas.pequenoAlmoco.incluido ? euros(contas.pequenoAlmoco.subtotal) : "—"}</span>
+          <span className="shrink-0">
+            {contas.pequenoAlmoco.incluido ? (
+              <>
+                {contas.pequenoAlmoco.subtotalSemPromocao !== undefined && <Riscado antes={contas.pequenoAlmoco.subtotalSemPromocao} />}
+                {contas.pequenoAlmoco.subtotal === 0 && contas.pequenoAlmoco.subtotalSemPromocao ? "Oferecido" : euros(contas.pequenoAlmoco.subtotal)}
+              </>
+            ) : (
+              "—"
+            )}
+          </span>
         </li>
         {contas.camaSuplementar && !contas.camaSuplementar.incluidaNaCasa && (
           <li className="flex items-baseline justify-between gap-4 border-b border-granito-linha py-3">
@@ -927,10 +935,27 @@ function ContasEstadia({ contas, aviso = null, compacto = false }: { contas: Con
             <span className="shrink-0">{euros(contas.camaSuplementar.subtotal)}</span>
           </li>
         )}
+        {contas.ofertas?.map((o) => (
+          <li key={`${o.nome}|${o.texto}`} className="flex items-baseline gap-3 border-b border-granito-linha py-3 text-[0.95rem]">
+            <span className="etiqueta shrink-0 text-[0.6rem] text-caixilho">Oferta</span>
+            <span>
+              {o.texto}
+              {o.nome !== NOME_PADRAO && <span className="text-xisto-suave"> · {o.nome}</span>}
+            </span>
+          </li>
+        ))}
+        {convites.map((c) => (
+          <li key={c} className="border-b border-granito-linha py-3 text-sm leading-snug text-xisto-suave">
+            {c}
+          </li>
+        ))}
         <li className="flex items-baseline justify-between gap-4 py-4">
           <span className="rustico-medio text-[1.3rem]">Total da estadia</span>
           {contas.total !== null ? (
-            <span className="rustico-medio text-[1.6rem]">{euros(contas.total)}</span>
+            <span className="rustico-medio text-[1.6rem]">
+              {contas.totalSemPromocao ? <Riscado antes={contas.totalSemPromocao} className="text-[1.15rem] text-xisto-suave" /> : null}
+              {euros(contas.total)}
+            </span>
           ) : (
             <span className="text-right text-[0.95rem] text-xisto-suave">Na nossa resposta</span>
           )}
@@ -971,7 +996,10 @@ function ResumoBarra({ contas }: { contas: Contas }) {
     <div className="hidden shrink-0 text-right md:block">
       {contas.total !== null && contas.sinal !== null ? (
         <>
-          <p className="text-[0.9rem] text-cal/75">Total {euros(contas.total)}</p>
+          <p className="text-[0.9rem] text-cal/75">
+            Total {contas.totalSemPromocao ? <Riscado antes={contas.totalSemPromocao} className="text-cal/75" /> : null}
+            {euros(contas.total)}
+          </p>
           <p className="text-[1.05rem] leading-tight">
             Sinal {SINAL_PERCENTAGEM} %: <span className="rustico-medio text-[1.3rem]">{euros(contas.sinal)}</span>
           </p>
@@ -986,8 +1014,154 @@ function ResumoBarra({ contas }: { contas: Contas }) {
   );
 }
 
+/*
+  O cartão de um quarto no passo 1. Também serve a simulação do editor dos
+  preços (/precos/<chave>), com as mesmas peças: lá, os botões não fazem nada.
+*/
+export function CartaoQuarto({
+  q,
+  n,
+  sugeridos = 0,
+  livre = true,
+  preco,
+  destaques,
+  aoMudar,
+}: {
+  q: (typeof quartos)[number];
+  n: number;
+  sugeridos?: number;
+  livre?: boolean;
+  preco: { preco: number; antes: number | null; promo: string | null };
+  destaques: { frase: string | null; extras: string[] };
+  aoMudar: (n: number) => void;
+}) {
+  return (
+    <li
+      className={`flex flex-col bg-white/45 ring-1 transition-shadow duration-200 ${n ? "ring-2 ring-caixilho" : "ring-granito-linha hover:ring-xisto/30"} ${livre ? "" : "opacity-55"}`}
+    >
+      <button
+        type="button"
+        aria-pressed={n > 0}
+        disabled={!livre}
+        onClick={() => aoMudar(n ? 0 : 1)}
+        className="flex flex-1 flex-col text-left disabled:cursor-not-allowed"
+      >
+        <span className="relative block aspect-[4/3] w-full overflow-hidden bg-granito">
+          <Image
+            src={q.foto}
+            alt={q.alt}
+            fill
+            sizes="(min-width: 1280px) 280px, (min-width: 640px) 45vw, 100vw"
+            quality={85}
+            className="object-cover"
+            style={{ objectPosition: q.foco }}
+          />
+          {sugeridos > 0 && (
+            <span className="etiqueta absolute left-3 top-3 bg-vale px-2.5 py-1 text-[0.6rem] text-cal">
+              Sugerido: {sugeridos}
+            </span>
+          )}
+          <span
+            aria-hidden="true"
+            className={`absolute right-3 top-3 grid size-7 place-items-center rounded-full bg-caixilho text-cal transition-opacity duration-150 ${n ? "opacity-100" : "opacity-0"}`}
+          >
+            <Check size={14} strokeWidth={2.5} />
+          </span>
+        </span>
+        <span className="flex flex-1 flex-col px-4 pt-3.5">
+          <span className="rustico-medio text-[1.35rem] leading-tight text-xisto">{q.nome}</span>
+          <span className="mt-1 text-sm leading-snug text-xisto-suave">
+            {q.paraQuem} · {q.camas} · {q.nota}
+          </span>
+          {!livre && <span className="mt-1 text-sm font-medium text-caixilho">Sem vaga nestas datas</span>}
+          {destaques.frase && <span className="mt-2 text-sm leading-snug text-xisto">{destaques.frase}</span>}
+          {destaques.extras.length > 0 && <span className="mt-1 text-sm leading-snug text-caixilho">{destaques.extras.join(" · ")}</span>}
+        </span>
+      </button>
+      <div className="mx-4 mb-4 mt-3 flex min-h-11 items-center justify-between gap-3 border-t border-granito-linha pt-3">
+        <span className="rustico-medio text-[1.35rem] text-xisto">
+          {/* Com promoção, o preço normal riscado por cima, pequeno (ao lado não cabe com o contador). */}
+          {preco.antes !== null && (
+            <span className="block font-[family-name:var(--font-corpo)] text-sm leading-tight text-xisto-suave">
+              {preco.promo && preco.promo !== NOME_PADRAO ? `${preco.promo} · ` : ""}
+              <Riscado antes={preco.antes} className="text-xisto-suave" />
+            </span>
+          )}
+          {euros(preco.preco)}
+          <span className="ml-1 font-[family-name:var(--font-corpo)] text-sm text-xisto-suave">/ noite</span>
+        </span>
+        {n > 0 ? (
+          <div className="flex items-center gap-2.5" role="group" aria-label={`Quantos ${q.nome}`}>
+            <BotaoRedondo pequeno rotulo={`Menos um ${q.nome}`} aoPremir={() => aoMudar(n - 1)}>
+              <Minus size={14} />
+            </BotaoRedondo>
+            <output aria-live="polite" className="min-w-4 text-center font-medium text-xisto">
+              {n}
+            </output>
+            <BotaoRedondo pequeno rotulo={`Mais um ${q.nome}`} desligado={n >= UNIDADES_MAX[q.id]} aoPremir={() => aoMudar(n + 1)}>
+              <Plus size={14} />
+            </BotaoRedondo>
+          </div>
+        ) : (
+          <span className="text-sm text-xisto-suave">{livre ? "Escolher" : ""}</span>
+        )}
+      </div>
+    </li>
+  );
+}
+
+/** O que o cartão do quarto diz da promoção nestas noites: a frase e, numa linha, o pequeno-almoço oferecido e as ofertas. */
+export function destaquesDoQuarto(t: Tabela, alvo: Alvo, noites: string[]): { frase: string | null; extras: string[] } {
+  if (!noites.length) return { frase: null, extras: [] };
+  const n = noites.length;
+  return {
+    frase: promocoesDaEstadia(t, [alvo], noites, n)[0]?.frase ?? null,
+    extras: [
+      ...(noites.some((d) => pequenoAlmocoOferecido(t, alvo, d, n)) ? ["Pequeno-almoço oferecido"] : []),
+      ...ofertasDe(t, [alvo], noites, n).map((o) => `Oferta: ${o.texto}`),
+    ],
+  };
+}
+
+/*
+  As promoções em curso ou a começar em breve, antes de escolher datas:
+  discretas, como as notas do formulário. Um clique marca as datas.
+*/
+export function AvisoPromocoes({
+  promocoes,
+  base,
+  aoEscolher,
+  className = "mb-12",
+}: {
+  promocoes: Promocao[];
+  base: PrecosBase;
+  aoEscolher: (p: Promocao) => void;
+  className?: string;
+}) {
+  if (!promocoes.length) return null;
+  return (
+    <div className={`${className} border-l-2 border-caixilho pl-5`}>
+      <p className="etiqueta text-caixilho">{promocoes.length === 1 ? "Promoção" : "Promoções"}</p>
+      <ul className="mt-2 space-y-3">
+        {promocoes.map((p) => (
+          <li key={p.id}>
+            <button type="button" onClick={() => aoEscolher(p)} className="text-left text-[0.98rem] leading-snug text-xisto-suave">
+              <span className="rustico-medio text-[1.12rem] text-xisto">{nomeDe(p)}</span>
+              <span className="block text-xisto">{fraseDe(p)}</span>
+              <span className="block">
+                {[descreverDatas(p), ...partesDaPromocao(p, base), descreverMinimo(p)].filter(Boolean).join(" · ")}
+                <span className="sublinha ml-2 whitespace-nowrap text-sm text-caixilho">ver estas datas</span>
+              </span>
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 /* A casa inteira, em vez dos cartões dos quartos. */
-function CasaInteira({ livre }: { livre: boolean }) {
+export function CasaInteira({ livre, preco }: { livre: boolean; preco: { preco: number; antes: number | null; promo: string | null } }) {
   const f = fotos["casa-fachada"];
   return (
     <div className="grid grid-cols-1 bg-white/45 ring-2 ring-caixilho sm:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
@@ -1009,14 +1183,16 @@ function CasaInteira({ livre }: { livre: boolean }) {
         </p>
         {!livre && <p className="mt-2 text-sm font-medium text-caixilho">Sem vaga nestas datas</p>}
         <p className="mt-auto border-t border-granito-linha pt-4">
-          {PRECO_CASA_INTEIRA !== null ? (
-            <span className="rustico-medio text-[1.35rem] text-xisto">
-              {euros(PRECO_CASA_INTEIRA)}
-              <span className="ml-1 font-[family-name:var(--font-corpo)] text-sm text-xisto-suave">/ noite · mínimo de {noitesMinimas(true)} noites</span>
-            </span>
-          ) : (
-            <span className="text-[0.95rem] text-xisto">O preço vem na nossa resposta.</span>
-          )}
+          <span className="rustico-medio text-[1.35rem] text-xisto">
+            {preco.antes !== null && (
+              <span className="mr-1.5 font-[family-name:var(--font-corpo)] text-sm text-xisto-suave">
+                {preco.promo && preco.promo !== NOME_PADRAO ? `${preco.promo} · ` : ""}
+                <Riscado antes={preco.antes} className="text-xisto-suave" />
+              </span>
+            )}
+            {euros(preco.preco)}
+            <span className="ml-1 font-[family-name:var(--font-corpo)] text-sm text-xisto-suave">/ noite · mínimo de {noitesMinimas(true)} noites</span>
+          </span>
         </p>
       </div>
     </div>
@@ -1029,12 +1205,19 @@ function PequenoAlmoco({
   valor,
   pessoas,
   noites,
+  porPessoa,
+  oferecido,
+  semPromocao,
 }: {
   ligado: boolean;
   aoMudar: (v: boolean) => void;
   valor: number | null;
   pessoas: number;
   noites: number;
+  porPessoa: number;
+  /** Promoção: pequeno-almoço oferecido nestas datas (em todas ou em parte das noites). */
+  oferecido?: { noites: number; todas: boolean; nomes?: string[] };
+  semPromocao?: number;
 }) {
   const f = fotos["dia-pequeno-almoco"];
   return (
@@ -1047,13 +1230,26 @@ function PequenoAlmoco({
           Pequeno-almoço
         </p>
         <p id="desc-pa" className="mt-0.5 text-sm leading-snug text-xisto-suave">
-          {euros(PEQUENO_ALMOCO_POR_PESSOA)} por adulto e por noite (crianças até aos 10 já incluídas) · bolos caseiros, panquecas, sumos naturais e compotas, à mesa da casa
+          {oferecido?.todas ? (
+            <>
+              <Riscado antes={porPessoa} />
+              <span className="font-medium text-xisto">Oferecido</span> nestas datas
+              {oferecido.nomes?.filter((n) => n !== NOME_PADRAO).length ? ` (${oferecido.nomes.filter((n) => n !== NOME_PADRAO).join(", ")})` : ""}
+            </>
+          ) : (
+            <>
+              {euros(porPessoa)} por adulto e por noite
+              {oferecido ? <> · <span className="font-medium text-xisto">oferecido</span> em {plural(oferecido.noites, "noite", "noites")} de {noites}</> : null}
+            </>
+          )}{" "}
+          (crianças até aos 10 já incluídas) · bolos caseiros, panquecas, sumos naturais e compotas, à mesa da casa
         </p>
       </div>
       <div className="flex shrink-0 items-center gap-4">
         {ligado && valor !== null && noites > 0 && (
           <span className="hidden text-sm text-xisto-suave md:inline">
-            + {euros(valor)} <span className="sr-only">para {plural(pessoas, "pessoa", "pessoas")}</span>
+            {semPromocao !== undefined && <Riscado antes={semPromocao} />}
+            {valor === 0 && semPromocao ? "Oferecido" : `+ ${euros(valor)}`} <span className="sr-only">para {plural(pessoas, "pessoa", "pessoas")}</span>
           </span>
         )}
         <button

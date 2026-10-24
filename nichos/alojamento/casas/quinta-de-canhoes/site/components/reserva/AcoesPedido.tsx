@@ -13,6 +13,7 @@ import {
   hojeEmPortugal,
   iso,
   recalcularPedido,
+  type TabelaPrecos,
   type Alternativa,
   type PedidoReserva,
 } from "@/lib/reserva";
@@ -54,6 +55,7 @@ export function AcoesPedido({
   devolucao,
   whatsapp,
   proposta,
+  tabela,
 }: {
   token: string;
   estado: "novo" | "proposta" | "confirmado" | "pago" | "recusado" | "cancelado" | "expirado";
@@ -64,6 +66,8 @@ export function AcoesPedido({
   devolucao: { dias: number; devolver: number } | null;
   whatsapp: string | null;
   proposta: { alternativas: PedidoReserva[]; aceite: number | null } | null;
+  /** Os preços em vigor (para as datas marcadas à mão). */
+  tabela?: TabelaPrecos;
 }) {
   const router = useRouter();
   const [painel, setPainel] = useState<"nenhum" | "datas" | "recusar">("nenhum");
@@ -94,7 +98,7 @@ export function AcoesPedido({
               Recusar o pedido
             </button>
           </div>
-          {painel === "datas" && <PropostaDatas pedido={pedido} sugestoes={sugestoes} correr={correr} />}
+          {painel === "datas" && <PropostaDatas pedido={pedido} sugestoes={sugestoes} correr={correr} tabela={tabela} />}
           {painel === "recusar" && <Recusar correr={correr} />}
         </Cartao>
       </div>
@@ -342,7 +346,7 @@ export function BotaoAcao({
 }
 
 /* «Não há estas datas»: as sugestões do nosso calendário e, à mão, outras datas. Até três. */
-function PropostaDatas({ pedido, sugestoes, correr }: { pedido: PedidoReserva; sugestoes: SugestaoCliente[]; correr: Correr }) {
+function PropostaDatas({ pedido, sugestoes, correr, tabela }: { pedido: PedidoReserva; sugestoes: SugestaoCliente[]; correr: Correr; tabela?: TabelaPrecos }) {
   const [hoje, setHoje] = useState<Date | null>(null);
   const [mes, setMes] = useState<{ ano: number; mes: number } | null>(null);
   const [entrada, setEntrada] = useState<Date | null>(null);
@@ -446,7 +450,7 @@ function PropostaDatas({ pedido, sugestoes, correr }: { pedido: PedidoReserva; s
       {manuais.length > 0 && (
         <ol className="mt-3 border-t border-granito-linha">
           {manuais.map((a, i) => {
-            const p = recalcularPedido(pedido, a);
+            const p = recalcularPedido(pedido, a, undefined, tabela);
             return (
               <li key={`${a.chegada}-${a.saida}`} className="flex items-start justify-between gap-4 border-b border-granito-linha py-3">
                 <span>

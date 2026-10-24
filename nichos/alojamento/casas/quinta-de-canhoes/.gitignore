@@ -1,3 +1,7 @@
 # Cópias de segurança grandes do site
 arquivo/site-*-antes*/
 arquivo/rapidez/
+
+# Manual com o link privado dos preços: nunca no git (o repositório é público). Gera-se com entrega/manual/gerar-pdf.mjs <link>.
+entrega/Manual-Quinta-de-Canhoes.pdf
+entrega/manual/.o-seu-site-com-link.html

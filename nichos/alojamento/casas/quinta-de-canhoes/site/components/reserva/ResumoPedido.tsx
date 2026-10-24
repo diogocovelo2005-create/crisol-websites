@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+import { NoitesPrecos, Riscado } from "@/components/reserva/Preco";
 import {
   FORMAS_PAGAMENTO,
   POLITICA_SINAL,
@@ -6,6 +8,7 @@ import {
   descreverPedido,
   euros,
   type PedidoReserva,
+  ofertasDoPedido,
 } from "@/lib/reserva";
 
 const plural = (n: number, um: string, varios: string) => `${n} ${n === 1 ? um : varios}`;
@@ -14,27 +17,43 @@ const plural = (n: number, um: string, varios: string) => `${n} ${n === 1 ? um :
    vista), para as páginas da casa e do hóspede. Sem estado. */
 export function ResumoPedido({ pedido: p, comHospede = false }: { pedido: PedidoReserva; comHospede?: boolean }) {
   const noites = plural(p.estadia.noites, "noite", "noites");
-  const linhas: [string, string, string][] = [];
+  const linhas: [string, ReactNode, ReactNode][] = [];
+  // Com promoção, o preço normal riscado antes do novo (os pedidos antigos não têm `antes`).
+  const valor = (v: number, antes?: number) => (
+    <>
+      {antes !== undefined && <Riscado antes={antes} />}
+      {euros(v)}
+    </>
+  );
   if (p.casaInteira) {
+    const c = p.casaInteira;
     linhas.push([
       "A casa inteira",
-      p.casaInteira.precoPorNoite !== null ? `${noites} × ${euros(p.casaInteira.precoPorNoite)}` : "Preço a indicar pela casa",
-      p.casaInteira.subtotal !== null ? euros(p.casaInteira.subtotal) : "—",
+      c.precosPorNoite?.length ? <NoitesPrecos lista={c.precosPorNoite} /> : c.precoPorNoite !== null ? `${noites} × ${euros(c.precoPorNoite)}` : "Preço a indicar pela casa",
+      c.subtotal !== null ? valor(c.subtotal, c.subtotalSemPromocao) : "—",
     ]);
   }
   for (const l of p.quartos) {
-    const precos = [...new Set(l.precosPorNoite.map((n) => n.preco))];
-    linhas.push([
-      `${l.quantidade > 1 ? `${l.quantidade} × ` : ""}${l.nome}`,
-      `${noites} × ${precos.length === 1 ? euros(precos[0]) : "preço da noite"}${l.quantidade > 1 ? ` × ${l.quantidade}` : ""}`,
-      euros(l.subtotal),
-    ]);
+    linhas.push([`${l.quantidade > 1 ? `${l.quantidade} × ` : ""}${l.nome}`, <NoitesPrecos key="n" lista={l.precosPorNoite} quantidade={l.quantidade} />, valor(l.subtotal, l.subtotalSemPromocao)]);
   }
+  const pa = p.pequenoAlmoco;
   linhas.push([
     "Pequeno-almoço",
-    p.pequenoAlmoco.incluido ? `${plural(p.pessoas, "pessoa", "pessoas")} × ${noites} × ${euros(p.pequenoAlmoco.porPessoaNoite)}` : "Não incluído",
-    p.pequenoAlmoco.incluido ? euros(p.pequenoAlmoco.subtotal) : "—",
+    pa.incluido ? `${plural(p.pessoas, "pessoa", "pessoas")} × ${noites} × ${euros(pa.porPessoaNoite)}` : "Não incluído",
+    pa.incluido ? (
+      pa.subtotal === 0 && pa.subtotalSemPromocao ? (
+        <>
+          <Riscado antes={pa.subtotalSemPromocao} />
+          Oferecido
+        </>
+      ) : (
+        valor(pa.subtotal, pa.subtotalSemPromocao)
+      )
+    ) : (
+      "—"
+    ),
   ]);
+  for (const o of ofertasDoPedido(p)) linhas.push([`Oferta`, o, ""]);
 
   const dados: [string, string][] = [
     ["Chegada", `${dataLonga(p.estadia.chegada)}, a partir das 15h00`],
@@ -71,8 +90,8 @@ export function ResumoPedido({ pedido: p, comHospede = false }: { pedido: Pedido
       )}
 
       <ul className="mt-8 border-t border-granito-linha">
-        {linhas.map(([a, b, c]) => (
-          <li key={a} className="flex items-baseline justify-between gap-4 border-b border-granito-linha py-3">
+        {linhas.map(([a, b, c], i) => (
+          <li key={`${a}-${i}`} className="flex items-baseline justify-between gap-4 border-b border-granito-linha py-3">
             <span>
               {a}
               <span className="block text-sm text-xisto-suave">{b}</span>
@@ -82,7 +101,16 @@ export function ResumoPedido({ pedido: p, comHospede = false }: { pedido: Pedido
         ))}
         <li className="flex items-baseline justify-between gap-4 py-4">
           <span className="rustico-medio text-[1.3rem]">Total da estadia</span>
-          <span className="rustico-medio text-[1.5rem]">{p.total !== null ? euros(p.total) : <span className="text-base text-xisto-suave">A indicar pela casa</span>}</span>
+          <span className="rustico-medio text-[1.5rem]">
+            {p.total !== null ? (
+              <>
+                {p.semPromocao ? <Riscado antes={p.semPromocao} className="text-[1.1rem] text-xisto-suave" /> : null}
+                {euros(p.total)}
+              </>
+            ) : (
+              <span className="text-base text-xisto-suave">A indicar pela casa</span>
+            )}
+          </span>
         </li>
       </ul>
       <div className="bg-vale px-5 py-5 text-cal">
